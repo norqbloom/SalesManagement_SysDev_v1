@@ -98,6 +98,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "login";
             this.Text = "login";
             this.ResumeLayout(false);
