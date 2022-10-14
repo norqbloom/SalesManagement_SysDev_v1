@@ -30,23 +30,23 @@ namespace SalesManagement_SysDev
         private void InitializeComponent()
         {
             this.sidepanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.clientsubmenu = new System.Windows.Forms.Panel();
             this.client_serchbtn = new System.Windows.Forms.Button();
             this.client_upbtn = new System.Windows.Forms.Button();
             this.client_regbtn = new System.Windows.Forms.Button();
             this.btn_client = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Product_btn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.Productsubmenu = new System.Windows.Forms.Panel();
             this.Product_serchbtn = new System.Windows.Forms.Button();
             this.Product_upbtn = new System.Windows.Forms.Button();
             this.Product_regbtn = new System.Windows.Forms.Button();
             this.stock_btn = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.stocksubmenu = new System.Windows.Forms.Panel();
             this.stock_serchbtn = new System.Windows.Forms.Button();
             this.stock_upbtn = new System.Windows.Forms.Button();
             this.emp_btn = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.empsubmenu = new System.Windows.Forms.Panel();
             this.emp_serchbtn = new System.Windows.Forms.Button();
             this.emp_upbtn = new System.Windows.Forms.Button();
             this.emp_regbtn = new System.Windows.Forms.Button();
@@ -55,14 +55,14 @@ namespace SalesManagement_SysDev
             this.Earnings_serchbtn = new System.Windows.Forms.Button();
             this.received_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.receivedsubmenu = new System.Windows.Forms.Panel();
             this.received_upbtn = new System.Windows.Forms.Button();
             this.received_regbtn = new System.Windows.Forms.Button();
             this.order_btn = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.order_serchbtn = new System.Windows.Forms.Button();
             this.instruct_btn = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.instructsubmeun = new System.Windows.Forms.Panel();
             this.instruct_serchbtn = new System.Windows.Forms.Button();
             this.instruct_upbtn = new System.Windows.Forms.Button();
             this.instruct_regbtn = new System.Windows.Forms.Button();
@@ -79,14 +79,14 @@ namespace SalesManagement_SysDev
             this.panel14 = new System.Windows.Forms.Panel();
             this.shipping_display = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.clientsubmenu.SuspendLayout();
+            this.Productsubmenu.SuspendLayout();
+            this.stocksubmenu.SuspendLayout();
+            this.empsubmenu.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.receivedsubmenu.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.instructsubmeun.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -105,21 +105,21 @@ namespace SalesManagement_SysDev
             this.sidepanel.Controls.Add(this.issue_btn);
             this.sidepanel.Controls.Add(this.panel11);
             this.sidepanel.Controls.Add(this.warehousing_btn);
-            this.sidepanel.Controls.Add(this.panel10);
+            this.sidepanel.Controls.Add(this.instructsubmeun);
             this.sidepanel.Controls.Add(this.instruct_btn);
             this.sidepanel.Controls.Add(this.panel9);
             this.sidepanel.Controls.Add(this.order_btn);
-            this.sidepanel.Controls.Add(this.panel8);
+            this.sidepanel.Controls.Add(this.receivedsubmenu);
             this.sidepanel.Controls.Add(this.received_btn);
             this.sidepanel.Controls.Add(this.panel7);
             this.sidepanel.Controls.Add(this.Earnings_btn);
-            this.sidepanel.Controls.Add(this.panel6);
+            this.sidepanel.Controls.Add(this.empsubmenu);
             this.sidepanel.Controls.Add(this.emp_btn);
-            this.sidepanel.Controls.Add(this.panel5);
+            this.sidepanel.Controls.Add(this.stocksubmenu);
             this.sidepanel.Controls.Add(this.stock_btn);
-            this.sidepanel.Controls.Add(this.panel4);
+            this.sidepanel.Controls.Add(this.Productsubmenu);
             this.sidepanel.Controls.Add(this.Product_btn);
-            this.sidepanel.Controls.Add(this.panel2);
+            this.sidepanel.Controls.Add(this.clientsubmenu);
             this.sidepanel.Controls.Add(this.btn_client);
             this.sidepanel.Controls.Add(this.panel1);
             this.sidepanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -129,17 +129,17 @@ namespace SalesManagement_SysDev
             this.sidepanel.TabIndex = 0;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
             // 
-            // panel2
+            // clientsubmenu
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel2.Controls.Add(this.client_serchbtn);
-            this.panel2.Controls.Add(this.client_upbtn);
-            this.panel2.Controls.Add(this.client_regbtn);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 167);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(374, 125);
-            this.panel2.TabIndex = 2;
+            this.clientsubmenu.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.clientsubmenu.Controls.Add(this.client_serchbtn);
+            this.clientsubmenu.Controls.Add(this.client_upbtn);
+            this.clientsubmenu.Controls.Add(this.client_regbtn);
+            this.clientsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clientsubmenu.Location = new System.Drawing.Point(0, 167);
+            this.clientsubmenu.Name = "clientsubmenu";
+            this.clientsubmenu.Size = new System.Drawing.Size(374, 125);
+            this.clientsubmenu.TabIndex = 2;
             // 
             // client_serchbtn
             // 
@@ -237,18 +237,19 @@ namespace SalesManagement_SysDev
             this.Product_btn.Text = "商品管理";
             this.Product_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_btn.UseVisualStyleBackColor = false;
+            this.Product_btn.Click += new System.EventHandler(this.Product_btn_Click);
             // 
-            // panel4
+            // Productsubmenu
             // 
-            this.panel4.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel4.Controls.Add(this.Product_serchbtn);
-            this.panel4.Controls.Add(this.Product_upbtn);
-            this.panel4.Controls.Add(this.Product_regbtn);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 359);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(374, 125);
-            this.panel4.TabIndex = 4;
+            this.Productsubmenu.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.Productsubmenu.Controls.Add(this.Product_serchbtn);
+            this.Productsubmenu.Controls.Add(this.Product_upbtn);
+            this.Productsubmenu.Controls.Add(this.Product_regbtn);
+            this.Productsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Productsubmenu.Location = new System.Drawing.Point(0, 359);
+            this.Productsubmenu.Name = "Productsubmenu";
+            this.Productsubmenu.Size = new System.Drawing.Size(374, 125);
+            this.Productsubmenu.TabIndex = 4;
             // 
             // Product_serchbtn
             // 
@@ -317,17 +318,18 @@ namespace SalesManagement_SysDev
             this.stock_btn.Text = "在庫管理";
             this.stock_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stock_btn.UseVisualStyleBackColor = false;
+            this.stock_btn.Click += new System.EventHandler(this.stock_btn_Click);
             // 
-            // panel5
+            // stocksubmenu
             // 
-            this.panel5.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel5.Controls.Add(this.stock_serchbtn);
-            this.panel5.Controls.Add(this.stock_upbtn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 551);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(374, 83);
-            this.panel5.TabIndex = 6;
+            this.stocksubmenu.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.stocksubmenu.Controls.Add(this.stock_serchbtn);
+            this.stocksubmenu.Controls.Add(this.stock_upbtn);
+            this.stocksubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.stocksubmenu.Location = new System.Drawing.Point(0, 551);
+            this.stocksubmenu.Name = "stocksubmenu";
+            this.stocksubmenu.Size = new System.Drawing.Size(374, 83);
+            this.stocksubmenu.TabIndex = 6;
             // 
             // stock_serchbtn
             // 
@@ -379,18 +381,19 @@ namespace SalesManagement_SysDev
             this.emp_btn.Text = "社員管理";
             this.emp_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emp_btn.UseVisualStyleBackColor = false;
+            this.emp_btn.Click += new System.EventHandler(this.emp_btn_Click);
             // 
-            // panel6
+            // empsubmenu
             // 
-            this.panel6.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel6.Controls.Add(this.emp_serchbtn);
-            this.panel6.Controls.Add(this.emp_upbtn);
-            this.panel6.Controls.Add(this.emp_regbtn);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 701);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(374, 125);
-            this.panel6.TabIndex = 8;
+            this.empsubmenu.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.empsubmenu.Controls.Add(this.emp_serchbtn);
+            this.empsubmenu.Controls.Add(this.emp_upbtn);
+            this.empsubmenu.Controls.Add(this.emp_regbtn);
+            this.empsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.empsubmenu.Location = new System.Drawing.Point(0, 701);
+            this.empsubmenu.Name = "empsubmenu";
+            this.empsubmenu.Size = new System.Drawing.Size(374, 125);
+            this.empsubmenu.TabIndex = 8;
             // 
             // emp_serchbtn
             // 
@@ -459,6 +462,7 @@ namespace SalesManagement_SysDev
             this.Earnings_btn.Text = "売上管理";
             this.Earnings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Earnings_btn.UseVisualStyleBackColor = false;
+            this.Earnings_btn.Click += new System.EventHandler(this.Earnings_btn_Click);
             // 
             // panel7
             // 
@@ -481,7 +485,7 @@ namespace SalesManagement_SysDev
             this.Earnings_serchbtn.Location = new System.Drawing.Point(0, 0);
             this.Earnings_serchbtn.Name = "Earnings_serchbtn";
             this.Earnings_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Earnings_serchbtn.Size = new System.Drawing.Size(374, 39);
+            this.Earnings_serchbtn.Size = new System.Drawing.Size(374, 41);
             this.Earnings_serchbtn.TabIndex = 2;
             this.Earnings_serchbtn.Text = "検索";
             this.Earnings_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -513,16 +517,16 @@ namespace SalesManagement_SysDev
             this.panel1.Size = new System.Drawing.Size(374, 100);
             this.panel1.TabIndex = 0;
             // 
-            // panel8
+            // receivedsubmenu
             // 
-            this.panel8.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel8.Controls.Add(this.received_upbtn);
-            this.panel8.Controls.Add(this.received_regbtn);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 1001);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(374, 83);
-            this.panel8.TabIndex = 12;
+            this.receivedsubmenu.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.receivedsubmenu.Controls.Add(this.received_upbtn);
+            this.receivedsubmenu.Controls.Add(this.received_regbtn);
+            this.receivedsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.receivedsubmenu.Location = new System.Drawing.Point(0, 1001);
+            this.receivedsubmenu.Name = "receivedsubmenu";
+            this.receivedsubmenu.Size = new System.Drawing.Size(374, 83);
+            this.receivedsubmenu.TabIndex = 12;
             // 
             // received_upbtn
             // 
@@ -575,6 +579,7 @@ namespace SalesManagement_SysDev
             this.order_btn.Text = "注文管理";
             this.order_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order_btn.UseVisualStyleBackColor = false;
+            this.order_btn.Click += new System.EventHandler(this.order_btn_Click_1);
             // 
             // panel9
             // 
@@ -619,18 +624,19 @@ namespace SalesManagement_SysDev
             this.instruct_btn.Text = "発注管理";
             this.instruct_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.instruct_btn.UseVisualStyleBackColor = false;
+            this.instruct_btn.Click += new System.EventHandler(this.instruct_btn_Click);
             // 
-            // panel10
+            // instructsubmeun
             // 
-            this.panel10.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel10.Controls.Add(this.instruct_serchbtn);
-            this.panel10.Controls.Add(this.instruct_upbtn);
-            this.panel10.Controls.Add(this.instruct_regbtn);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 1259);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(374, 125);
-            this.panel10.TabIndex = 16;
+            this.instructsubmeun.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.instructsubmeun.Controls.Add(this.instruct_serchbtn);
+            this.instructsubmeun.Controls.Add(this.instruct_upbtn);
+            this.instructsubmeun.Controls.Add(this.instruct_regbtn);
+            this.instructsubmeun.Dock = System.Windows.Forms.DockStyle.Top;
+            this.instructsubmeun.Location = new System.Drawing.Point(0, 1259);
+            this.instructsubmeun.Name = "instructsubmeun";
+            this.instructsubmeun.Size = new System.Drawing.Size(374, 125);
+            this.instructsubmeun.TabIndex = 16;
             // 
             // instruct_serchbtn
             // 
@@ -699,6 +705,7 @@ namespace SalesManagement_SysDev
             this.warehousing_btn.Text = "入庫管理";
             this.warehousing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.warehousing_btn.UseVisualStyleBackColor = false;
+            this.warehousing_btn.Click += new System.EventHandler(this.warehousing_btn_Click);
             // 
             // panel11
             // 
@@ -744,6 +751,7 @@ namespace SalesManagement_SysDev
             this.issue_btn.Text = "出庫管理";
             this.issue_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.issue_btn.UseVisualStyleBackColor = false;
+            this.issue_btn.Click += new System.EventHandler(this.issue_btn_Click);
             // 
             // panel12
             // 
@@ -788,6 +796,7 @@ namespace SalesManagement_SysDev
             this.Arrival_btn.Text = "入荷管理";
             this.Arrival_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Arrival_btn.UseVisualStyleBackColor = false;
+            this.Arrival_btn.Click += new System.EventHandler(this.Arrival_btn_Click);
             // 
             // panel13
             // 
@@ -832,6 +841,7 @@ namespace SalesManagement_SysDev
             this.shipping_btn.Text = "出荷管理";
             this.shipping_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.shipping_btn.UseVisualStyleBackColor = false;
+            this.shipping_btn.Click += new System.EventHandler(this.shipping_btn_Click);
             // 
             // panel14
             // 
@@ -871,14 +881,14 @@ namespace SalesManagement_SysDev
             this.Text = "template";
             this.Load += new System.EventHandler(this.template_Load);
             this.sidepanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.clientsubmenu.ResumeLayout(false);
+            this.Productsubmenu.ResumeLayout(false);
+            this.stocksubmenu.ResumeLayout(false);
+            this.empsubmenu.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
+            this.receivedsubmenu.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
+            this.instructsubmeun.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
@@ -891,21 +901,21 @@ namespace SalesManagement_SysDev
 
         private System.Windows.Forms.Panel sidepanel;
         private System.Windows.Forms.Button btn_client;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel clientsubmenu;
         private System.Windows.Forms.Button client_regbtn;
         private System.Windows.Forms.Button client_serchbtn;
         private System.Windows.Forms.Button client_upbtn;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel stocksubmenu;
         private System.Windows.Forms.Button stock_serchbtn;
         private System.Windows.Forms.Button stock_upbtn;
         private System.Windows.Forms.Button stock_btn;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel Productsubmenu;
         private System.Windows.Forms.Button Product_serchbtn;
         private System.Windows.Forms.Button Product_upbtn;
         private System.Windows.Forms.Button Product_regbtn;
         private System.Windows.Forms.Button Product_btn;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel empsubmenu;
         private System.Windows.Forms.Button emp_serchbtn;
         private System.Windows.Forms.Button emp_upbtn;
         private System.Windows.Forms.Button emp_regbtn;
@@ -915,7 +925,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button Earnings_btn;
         private System.Windows.Forms.Button received_btn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel receivedsubmenu;
         private System.Windows.Forms.Button received_upbtn;
         private System.Windows.Forms.Button received_regbtn;
         private System.Windows.Forms.Panel panel14;
@@ -930,7 +940,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button warehousing_display;
         private System.Windows.Forms.Button warehousing_btn;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel instructsubmeun;
         private System.Windows.Forms.Button instruct_serchbtn;
         private System.Windows.Forms.Button instruct_upbtn;
         private System.Windows.Forms.Button instruct_regbtn;
