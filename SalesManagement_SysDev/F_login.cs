@@ -35,6 +35,7 @@ namespace SalesManagement_SysDev
             MessageBox.Show("テーブル作成完了");
             //テスト1回目
             //テスト2回目
+            //テスト3回目
         }
     }
 }
