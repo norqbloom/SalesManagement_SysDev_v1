@@ -44,5 +44,11 @@ namespace SalesManagement_SysDev
             form.Show(this);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form form = new login();
+            form.Show(this);
+        }
     }
 }
