@@ -37,5 +37,12 @@ namespace SalesManagement_SysDev
             //テスト2回目
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Form form = new template();
+            form.Show(this);
+
+        }
     }
 }

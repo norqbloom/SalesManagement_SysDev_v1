@@ -92,6 +92,12 @@
     <Compile Include="Entity\T_Warehousing.cs" />
     <Compile Include="Entity\T_WarehousingDetail.cs" />
     <Compile Include="SalesManagement_DevContext.cs" />
+    <Compile Include="template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="template.Designer.cs">
+      <DependentUpon>template.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="F_login.resx">
       <DependentUpon>F_login.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +110,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="template.resx">
+      <DependentUpon>template.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
