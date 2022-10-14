@@ -16,5 +16,30 @@ namespace SalesManagement_SysDev
         {
             InitializeComponent();
         }
+
+        private void client_regbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_client_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void client_upbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void client_serchbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidepanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
