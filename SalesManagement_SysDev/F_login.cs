@@ -33,6 +33,7 @@ namespace SalesManagement_SysDev
             context.Dispose();
 
             MessageBox.Show("テーブル作成完了");
+            //テスト1回目
         }
     }
 }
