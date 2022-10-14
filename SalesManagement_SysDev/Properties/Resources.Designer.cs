@@ -69,5 +69,25 @@ namespace SalesManagement_SysDev.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_FILL0_wght300_GRAD0_opsz48 {
+            get {
+                object obj = ResourceManager.GetObject("logout_FILL0_wght300_GRAD0_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap person_add_FILL0_wght300_GRAD0_opsz48 {
+            get {
+                object obj = ResourceManager.GetObject("person_add_FILL0_wght300_GRAD0_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
