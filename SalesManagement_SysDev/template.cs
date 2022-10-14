@@ -94,6 +94,23 @@ namespace SalesManagement_SysDev
             panel14.Visible = false;
             */
         }
+
+        private Form activeForm = null;
+        private void openChildForm(Form chidform)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = chidform;
+            chidform.TopLevel = false;
+            chidform.FormBorderStyle = FormBorderStyle.None;
+            chidform.Dock = DockStyle.Fill;
+            childsubmenu.Controls.Add(chidform);
+            childsubmenu.Tag = chidform;
+            chidform.BringToFront();
+            chidform.Show();
+        }
+
+
         private void btn_client_Click(object sender, EventArgs e)
         {
             showsubmenu(clientsubmenu);
@@ -149,7 +166,7 @@ namespace SalesManagement_SysDev
         }
         private void client_regbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new login());
         }
 
 
