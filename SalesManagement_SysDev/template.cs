@@ -20,7 +20,9 @@ namespace SalesManagement_SysDev
         private void template_Load(object sender, EventArgs e)
         {
             customizeDesing();
+            
         }
+
 
         private void customizeDesing()
         {
@@ -78,21 +80,7 @@ namespace SalesManagement_SysDev
             {
                 subMenu.Visible = false;
             }
-            /*            clientsubmenu.Visible = false;          
-            Productsubmenu.Visible = false;
-            stocksubmenu.Visible = false;
-            empsubmenu.Visible = false;
-            //売上
-            panel7.Visible = false;
-            receivedsubmenu.Visible = false;
-            //注文
-            panel9.Visible = false;
-            instructsubmeun.Visible = false;
-            panel11.Visible = false;
-            panel12.Visible = false;
-            panel13.Visible = false;
-            panel14.Visible = false;
-            */
+
         }
 
         private Form activeForm = null;

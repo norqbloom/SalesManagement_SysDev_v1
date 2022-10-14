@@ -62,5 +62,7 @@ namespace SalesManagement_SysDev
                 textBox_id.ForeColor = Color.Silver;
             }
         }
+
+
     }
 }

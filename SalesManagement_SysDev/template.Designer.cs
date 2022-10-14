@@ -865,7 +865,6 @@ namespace SalesManagement_SysDev
             // 
             // childsubmenu
             // 
-            this.childsubmenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.childsubmenu.Location = new System.Drawing.Point(395, 0);
             this.childsubmenu.Name = "childsubmenu";
             this.childsubmenu.Size = new System.Drawing.Size(672, 562);
