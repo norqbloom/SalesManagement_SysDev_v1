@@ -41,5 +41,30 @@ namespace SalesManagement_SysDev
         {
 
         }
+
+        private void template_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Order_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
