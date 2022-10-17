@@ -38,8 +38,9 @@ namespace SalesManagement_SysDev
             // 
             // button_login
             // 
+            this.button_login.AutoSize = true;
             this.button_login.Location = new System.Drawing.Point(256, 395);
-            this.button_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_login.Margin = new System.Windows.Forms.Padding(4);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(269, 52);
             this.button_login.TabIndex = 0;
@@ -52,7 +53,7 @@ namespace SalesManagement_SysDev
             this.textBox_id.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox_id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_id.Location = new System.Drawing.Point(199, 178);
-            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(399, 37);
             this.textBox_id.TabIndex = 3;
@@ -65,7 +66,7 @@ namespace SalesManagement_SysDev
             this.textBox_pass.Font = new System.Drawing.Font("MS UI Gothic", 18F);
             this.textBox_pass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_pass.Location = new System.Drawing.Point(199, 291);
-            this.textBox_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_pass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(399, 37);
             this.textBox_pass.TabIndex = 4;
@@ -77,7 +78,7 @@ namespace SalesManagement_SysDev
             // 
             this.button_add.Image = global::SalesManagement_SysDev.Properties.Resources.person_add_FILL0_wght300_GRAD0_opsz48;
             this.button_add.Location = new System.Drawing.Point(607, 15);
-            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(80, 75);
             this.button_add.TabIndex = 2;
@@ -87,7 +88,7 @@ namespace SalesManagement_SysDev
             // 
             this.button_logout.Image = global::SalesManagement_SysDev.Properties.Resources.logout_FILL0_wght300_GRAD0_opsz48;
             this.button_logout.Location = new System.Drawing.Point(695, 15);
-            this.button_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(80, 75);
             this.button_logout.TabIndex = 1;
@@ -104,7 +105,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "login";
             this.Text = "login";
             this.ResumeLayout(false);

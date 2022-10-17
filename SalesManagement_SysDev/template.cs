@@ -69,6 +69,8 @@ namespace SalesManagement_SysDev
             if (panel14.Visible == true)
                 panel14.Visible = false;
         }
+
+
         private void showsubmenu(Panel subMenu)
         {
             if (subMenu.Visible == false)

@@ -134,7 +134,7 @@ namespace SalesManagement_SysDev
             this.panel14.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel14.Controls.Add(this.shipping_display);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 1775);
+            this.panel14.Location = new System.Drawing.Point(0, 1813);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(374, 41);
             this.panel14.TabIndex = 24;
@@ -164,7 +164,7 @@ namespace SalesManagement_SysDev
             this.shipping_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shipping_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.shipping_btn.ForeColor = System.Drawing.Color.White;
-            this.shipping_btn.Location = new System.Drawing.Point(0, 1708);
+            this.shipping_btn.Location = new System.Drawing.Point(0, 1746);
             this.shipping_btn.Name = "shipping_btn";
             this.shipping_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.shipping_btn.Size = new System.Drawing.Size(374, 67);
@@ -179,7 +179,7 @@ namespace SalesManagement_SysDev
             this.panel13.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel13.Controls.Add(this.Arrival_display);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 1667);
+            this.panel13.Location = new System.Drawing.Point(0, 1705);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(374, 41);
             this.panel13.TabIndex = 22;
@@ -209,7 +209,7 @@ namespace SalesManagement_SysDev
             this.Arrival_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Arrival_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Arrival_btn.ForeColor = System.Drawing.Color.White;
-            this.Arrival_btn.Location = new System.Drawing.Point(0, 1600);
+            this.Arrival_btn.Location = new System.Drawing.Point(0, 1638);
             this.Arrival_btn.Name = "Arrival_btn";
             this.Arrival_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Arrival_btn.Size = new System.Drawing.Size(374, 67);
@@ -224,7 +224,7 @@ namespace SalesManagement_SysDev
             this.panel12.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel12.Controls.Add(this.issue_display);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 1559);
+            this.panel12.Location = new System.Drawing.Point(0, 1597);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(374, 41);
             this.panel12.TabIndex = 20;
@@ -254,7 +254,7 @@ namespace SalesManagement_SysDev
             this.issue_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.issue_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.issue_btn.ForeColor = System.Drawing.Color.White;
-            this.issue_btn.Location = new System.Drawing.Point(0, 1492);
+            this.issue_btn.Location = new System.Drawing.Point(0, 1530);
             this.issue_btn.Name = "issue_btn";
             this.issue_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.issue_btn.Size = new System.Drawing.Size(374, 67);
@@ -269,7 +269,7 @@ namespace SalesManagement_SysDev
             this.panel11.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel11.Controls.Add(this.warehousing_display);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 1451);
+            this.panel11.Location = new System.Drawing.Point(0, 1489);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(374, 41);
             this.panel11.TabIndex = 18;
@@ -300,7 +300,7 @@ namespace SalesManagement_SysDev
             this.warehousing_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.warehousing_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.warehousing_btn.ForeColor = System.Drawing.Color.White;
-            this.warehousing_btn.Location = new System.Drawing.Point(0, 1384);
+            this.warehousing_btn.Location = new System.Drawing.Point(0, 1422);
             this.warehousing_btn.Name = "warehousing_btn";
             this.warehousing_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.warehousing_btn.Size = new System.Drawing.Size(374, 67);
@@ -317,7 +317,7 @@ namespace SalesManagement_SysDev
             this.instructsubmeun.Controls.Add(this.instruct_upbtn);
             this.instructsubmeun.Controls.Add(this.instruct_regbtn);
             this.instructsubmeun.Dock = System.Windows.Forms.DockStyle.Top;
-            this.instructsubmeun.Location = new System.Drawing.Point(0, 1259);
+            this.instructsubmeun.Location = new System.Drawing.Point(0, 1297);
             this.instructsubmeun.Name = "instructsubmeun";
             this.instructsubmeun.Size = new System.Drawing.Size(374, 125);
             this.instructsubmeun.TabIndex = 16;
@@ -381,7 +381,7 @@ namespace SalesManagement_SysDev
             this.instruct_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.instruct_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.instruct_btn.ForeColor = System.Drawing.Color.White;
-            this.instruct_btn.Location = new System.Drawing.Point(0, 1192);
+            this.instruct_btn.Location = new System.Drawing.Point(0, 1230);
             this.instruct_btn.Name = "instruct_btn";
             this.instruct_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.instruct_btn.Size = new System.Drawing.Size(374, 67);
@@ -396,7 +396,7 @@ namespace SalesManagement_SysDev
             this.panel9.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel9.Controls.Add(this.order_serchbtn);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 1151);
+            this.panel9.Location = new System.Drawing.Point(0, 1189);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(374, 41);
             this.panel9.TabIndex = 14;
@@ -426,7 +426,7 @@ namespace SalesManagement_SysDev
             this.order_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.order_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.order_btn.ForeColor = System.Drawing.Color.White;
-            this.order_btn.Location = new System.Drawing.Point(0, 1084);
+            this.order_btn.Location = new System.Drawing.Point(0, 1122);
             this.order_btn.Name = "order_btn";
             this.order_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.order_btn.Size = new System.Drawing.Size(374, 67);
@@ -442,7 +442,7 @@ namespace SalesManagement_SysDev
             this.receivedsubmenu.Controls.Add(this.received_upbtn);
             this.receivedsubmenu.Controls.Add(this.received_regbtn);
             this.receivedsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.receivedsubmenu.Location = new System.Drawing.Point(0, 1001);
+            this.receivedsubmenu.Location = new System.Drawing.Point(0, 1039);
             this.receivedsubmenu.Name = "receivedsubmenu";
             this.receivedsubmenu.Size = new System.Drawing.Size(374, 83);
             this.receivedsubmenu.TabIndex = 12;
@@ -490,7 +490,7 @@ namespace SalesManagement_SysDev
             this.received_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.received_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.received_btn.ForeColor = System.Drawing.Color.White;
-            this.received_btn.Location = new System.Drawing.Point(0, 934);
+            this.received_btn.Location = new System.Drawing.Point(0, 972);
             this.received_btn.Name = "received_btn";
             this.received_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.received_btn.Size = new System.Drawing.Size(374, 67);
@@ -505,7 +505,7 @@ namespace SalesManagement_SysDev
             this.panel7.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel7.Controls.Add(this.Earnings_serchbtn);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 893);
+            this.panel7.Location = new System.Drawing.Point(0, 931);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(374, 41);
             this.panel7.TabIndex = 10;
@@ -535,7 +535,7 @@ namespace SalesManagement_SysDev
             this.Earnings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Earnings_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Earnings_btn.ForeColor = System.Drawing.Color.White;
-            this.Earnings_btn.Location = new System.Drawing.Point(0, 826);
+            this.Earnings_btn.Location = new System.Drawing.Point(0, 864);
             this.Earnings_btn.Name = "Earnings_btn";
             this.Earnings_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Earnings_btn.Size = new System.Drawing.Size(374, 67);
@@ -552,7 +552,7 @@ namespace SalesManagement_SysDev
             this.empsubmenu.Controls.Add(this.emp_upbtn);
             this.empsubmenu.Controls.Add(this.emp_regbtn);
             this.empsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.empsubmenu.Location = new System.Drawing.Point(0, 701);
+            this.empsubmenu.Location = new System.Drawing.Point(0, 739);
             this.empsubmenu.Name = "empsubmenu";
             this.empsubmenu.Size = new System.Drawing.Size(374, 125);
             this.empsubmenu.TabIndex = 8;
@@ -616,7 +616,7 @@ namespace SalesManagement_SysDev
             this.emp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emp_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.emp_btn.ForeColor = System.Drawing.Color.White;
-            this.emp_btn.Location = new System.Drawing.Point(0, 634);
+            this.emp_btn.Location = new System.Drawing.Point(0, 672);
             this.emp_btn.Name = "emp_btn";
             this.emp_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.emp_btn.Size = new System.Drawing.Size(374, 67);
@@ -632,7 +632,7 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.Controls.Add(this.stock_serchbtn);
             this.stocksubmenu.Controls.Add(this.stock_upbtn);
             this.stocksubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.stocksubmenu.Location = new System.Drawing.Point(0, 551);
+            this.stocksubmenu.Location = new System.Drawing.Point(0, 589);
             this.stocksubmenu.Name = "stocksubmenu";
             this.stocksubmenu.Size = new System.Drawing.Size(374, 83);
             this.stocksubmenu.TabIndex = 6;
@@ -679,7 +679,7 @@ namespace SalesManagement_SysDev
             this.stock_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stock_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.stock_btn.ForeColor = System.Drawing.Color.White;
-            this.stock_btn.Location = new System.Drawing.Point(0, 484);
+            this.stock_btn.Location = new System.Drawing.Point(0, 522);
             this.stock_btn.Name = "stock_btn";
             this.stock_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.stock_btn.Size = new System.Drawing.Size(374, 67);
@@ -696,7 +696,7 @@ namespace SalesManagement_SysDev
             this.Productsubmenu.Controls.Add(this.Product_upbtn);
             this.Productsubmenu.Controls.Add(this.Product_regbtn);
             this.Productsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Productsubmenu.Location = new System.Drawing.Point(0, 359);
+            this.Productsubmenu.Location = new System.Drawing.Point(0, 397);
             this.Productsubmenu.Name = "Productsubmenu";
             this.Productsubmenu.Size = new System.Drawing.Size(374, 125);
             this.Productsubmenu.TabIndex = 4;
@@ -761,7 +761,7 @@ namespace SalesManagement_SysDev
             this.Product_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Product_btn.ForeColor = System.Drawing.Color.White;
             this.Product_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Product_btn.Location = new System.Drawing.Point(0, 292);
+            this.Product_btn.Location = new System.Drawing.Point(0, 330);
             this.Product_btn.Name = "Product_btn";
             this.Product_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Product_btn.Size = new System.Drawing.Size(374, 67);
@@ -778,7 +778,7 @@ namespace SalesManagement_SysDev
             this.clientsubmenu.Controls.Add(this.client_upbtn);
             this.clientsubmenu.Controls.Add(this.client_regbtn);
             this.clientsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.clientsubmenu.Location = new System.Drawing.Point(0, 167);
+            this.clientsubmenu.Location = new System.Drawing.Point(0, 205);
             this.clientsubmenu.Name = "clientsubmenu";
             this.clientsubmenu.Size = new System.Drawing.Size(374, 125);
             this.clientsubmenu.TabIndex = 2;
@@ -845,7 +845,7 @@ namespace SalesManagement_SysDev
             this.btn_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_client.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_client.ForeColor = System.Drawing.Color.White;
-            this.btn_client.Location = new System.Drawing.Point(0, 100);
+            this.btn_client.Location = new System.Drawing.Point(0, 138);
             this.btn_client.Name = "btn_client";
             this.btn_client.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_client.Size = new System.Drawing.Size(374, 67);
@@ -860,7 +860,7 @@ namespace SalesManagement_SysDev
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 100);
+            this.panel1.Size = new System.Drawing.Size(374, 138);
             this.panel1.TabIndex = 0;
             // 
             // childsubmenu
