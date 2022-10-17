@@ -78,6 +78,7 @@ namespace SalesManagement_SysDev
             this.btn_client = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.childsubmenu = new System.Windows.Forms.Panel();
+            this.tilepanel = new System.Windows.Forms.Panel();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -865,10 +866,21 @@ namespace SalesManagement_SysDev
             // 
             // childsubmenu
             // 
-            this.childsubmenu.Location = new System.Drawing.Point(395, 0);
+            this.childsubmenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.childsubmenu.Location = new System.Drawing.Point(395, 60);
             this.childsubmenu.Name = "childsubmenu";
-            this.childsubmenu.Size = new System.Drawing.Size(672, 562);
+            this.childsubmenu.Size = new System.Drawing.Size(672, 502);
             this.childsubmenu.TabIndex = 1;
+            // 
+            // tilepanel
+            // 
+            this.tilepanel.BackColor = System.Drawing.Color.White;
+            this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tilepanel.Location = new System.Drawing.Point(395, 0);
+            this.tilepanel.Name = "tilepanel";
+            this.tilepanel.Size = new System.Drawing.Size(672, 60);
+            this.tilepanel.TabIndex = 2;
+            this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
             // 
             // template
             // 
@@ -876,6 +888,7 @@ namespace SalesManagement_SysDev
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this.childsubmenu);
+            this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
             this.Name = "template";
             this.Text = "template";
@@ -948,5 +961,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button order_serchbtn;
         private System.Windows.Forms.Button order_btn;
+        private System.Windows.Forms.Panel tilepanel;
     }
 }
