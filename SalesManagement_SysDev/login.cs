@@ -24,7 +24,15 @@ namespace SalesManagement_SysDev
 
         private void button_login_Click(object sender, EventArgs e)
         {
+            //ログイン処理
+            string logID = textBox_id.Text;
+            string logPass = textBox_pass.Text;
 
+            if (logID.Trim() == "" || logID == null || logPass.Trim() == "" || logPass == null)
+            {
+                //メッセージ表示
+                return;
+            }
         }
 
         private void textBox_id_Enter(object sender, EventArgs e)
@@ -62,6 +70,7 @@ namespace SalesManagement_SysDev
                 textBox_id.ForeColor = Color.Silver;
             }
         }
+
 
 
     }

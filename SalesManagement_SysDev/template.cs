@@ -24,6 +24,11 @@ namespace SalesManagement_SysDev
             
         }
 
+        private void formresize()
+        {
+            int size = 609 / 15;
+            tilepanel.Height = size;
+        }
 
         private void customizeDesing()
         {
@@ -111,6 +116,10 @@ namespace SalesManagement_SysDev
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void template_Resize(object sender, EventArgs e)
+        {
+            formresize();
         }
 
         private void btn_client_Click(object sender, EventArgs e)
@@ -201,6 +210,11 @@ namespace SalesManagement_SysDev
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tilepanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

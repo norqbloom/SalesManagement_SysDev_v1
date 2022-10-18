@@ -39,9 +39,10 @@ namespace SalesManagement_SysDev
             // button_login
             // 
             this.button_login.AutoSize = true;
-            this.button_login.Location = new System.Drawing.Point(192, 316);
+            this.button_login.Location = new System.Drawing.Point(256, 395);
+            this.button_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(202, 42);
+            this.button_login.Size = new System.Drawing.Size(269, 52);
             this.button_login.TabIndex = 0;
             this.button_login.Text = "ログイン";
             this.button_login.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@ namespace SalesManagement_SysDev
             // 
             this.textBox_id.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox_id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_id.Location = new System.Drawing.Point(149, 142);
+            this.textBox_id.Location = new System.Drawing.Point(199, 178);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(300, 31);
+            this.textBox_id.Size = new System.Drawing.Size(399, 37);
             this.textBox_id.TabIndex = 3;
             this.textBox_id.Text = "担当者ID";
             this.textBox_id.Enter += new System.EventHandler(this.textBox_id_Enter);
@@ -66,9 +68,10 @@ namespace SalesManagement_SysDev
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_pass.Font = new System.Drawing.Font("MS UI Gothic", 18F);
             this.textBox_pass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_pass.Location = new System.Drawing.Point(149, 233);
+            this.textBox_pass.Location = new System.Drawing.Point(199, 291);
+            this.textBox_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_pass.Name = "textBox_pass";
-            this.textBox_pass.Size = new System.Drawing.Size(300, 31);
+            this.textBox_pass.Size = new System.Drawing.Size(307, 37);
             this.textBox_pass.TabIndex = 4;
             this.textBox_pass.Text = "パスワード";
             this.textBox_pass.Enter += new System.EventHandler(this.textBox_pass_Enter);
@@ -77,31 +80,34 @@ namespace SalesManagement_SysDev
             // button_add
             // 
             this.button_add.Image = global::SalesManagement_SysDev.Properties.Resources.person_add_FILL0_wght300_GRAD0_opsz48;
-            this.button_add.Location = new System.Drawing.Point(455, 12);
+            this.button_add.Location = new System.Drawing.Point(459, 13);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(60, 60);
+            this.button_add.Size = new System.Drawing.Size(80, 75);
             this.button_add.TabIndex = 2;
             this.button_add.UseVisualStyleBackColor = true;
             // 
             // button_logout
             // 
             this.button_logout.Image = global::SalesManagement_SysDev.Properties.Resources.logout_FILL0_wght300_GRAD0_opsz48;
-            this.button_logout.Location = new System.Drawing.Point(521, 12);
+            this.button_logout.Location = new System.Drawing.Point(598, 13);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(60, 60);
+            this.button_logout.Size = new System.Drawing.Size(80, 75);
             this.button_logout.TabIndex = 1;
             this.button_logout.UseVisualStyleBackColor = true;
             // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 411);
+            this.ClientSize = new System.Drawing.Size(699, 475);
             this.Controls.Add(this.textBox_pass);
             this.Controls.Add(this.textBox_id);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_login);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "login";
             this.Text = "login";
             this.ResumeLayout(false);

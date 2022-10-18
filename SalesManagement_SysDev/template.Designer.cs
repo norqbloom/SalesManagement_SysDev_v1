@@ -866,7 +866,9 @@ namespace SalesManagement_SysDev
             // 
             // childsubmenu
             // 
-            this.childsubmenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.childsubmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.childsubmenu.Location = new System.Drawing.Point(350, 40);
             this.childsubmenu.Name = "childsubmenu";
             this.childsubmenu.Size = new System.Drawing.Size(717, 522);
@@ -880,6 +882,7 @@ namespace SalesManagement_SysDev
             this.tilepanel.Name = "tilepanel";
             this.tilepanel.Size = new System.Drawing.Size(717, 40);
             this.tilepanel.TabIndex = 2;
+            this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
             // 
             // template
@@ -891,8 +894,9 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
             this.Name = "template";
-            this.Text = "template";
+            this.Text = "b";
             this.Load += new System.EventHandler(this.template_Load);
+            this.Resize += new System.EventHandler(this.template_Resize);
             this.sidepanel.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
