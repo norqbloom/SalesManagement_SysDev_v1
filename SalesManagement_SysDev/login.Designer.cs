@@ -34,17 +34,13 @@ namespace SalesManagement_SysDev
             this.textBox_pass = new System.Windows.Forms.TextBox();
             this.button_add = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_login
             // 
-            this.button_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_login.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button_login.AutoSize = true;
-            this.button_login.Location = new System.Drawing.Point(109, 210);
+            this.button_login.Location = new System.Drawing.Point(215, 381);
             this.button_login.Margin = new System.Windows.Forms.Padding(4);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(269, 52);
@@ -55,22 +51,21 @@ namespace SalesManagement_SysDev
             // 
             // textBox_id
             // 
+            this.textBox_id.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_id.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox_id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_id.Location = new System.Drawing.Point(17, 40);
+            this.textBox_id.Location = new System.Drawing.Point(199, 139);
             this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(399, 37);
+            this.textBox_id.Size = new System.Drawing.Size(307, 37);
             this.textBox_id.TabIndex = 3;
             this.textBox_id.Text = "担当者ID";
             this.textBox_id.Enter += new System.EventHandler(this.textBox_id_Enter);
-            this.textBox_id.Leave += new System.EventHandler(this.textBox_id_Leave);
+            this.textBox_id.Leave += new System.EventHandler(this.groupBox1_Enter);
             // 
             // textBox_pass
             // 
-            this.textBox_pass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_pass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_pass.Font = new System.Drawing.Font("MS UI Gothic", 18F);
             this.textBox_pass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_pass.Location = new System.Drawing.Point(199, 291);
@@ -84,6 +79,7 @@ namespace SalesManagement_SysDev
             // 
             // button_add
             // 
+            this.button_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_add.Image = global::SalesManagement_SysDev.Properties.Resources.person_add_FILL0_wght300_GRAD0_opsz48;
             this.button_add.Location = new System.Drawing.Point(459, 13);
             this.button_add.Margin = new System.Windows.Forms.Padding(4);
@@ -94,6 +90,7 @@ namespace SalesManagement_SysDev
             // 
             // button_logout
             // 
+            this.button_logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_logout.Image = global::SalesManagement_SysDev.Properties.Resources.logout_FILL0_wght300_GRAD0_opsz48;
             this.button_logout.Location = new System.Drawing.Point(598, 13);
             this.button_logout.Margin = new System.Windows.Forms.Padding(4);
@@ -102,31 +99,21 @@ namespace SalesManagement_SysDev
             this.button_logout.TabIndex = 1;
             this.button_logout.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox_id);
-            this.groupBox1.Controls.Add(this.button_login);
-            this.groupBox1.Location = new System.Drawing.Point(90, 106);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(475, 282);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(699, 475);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textBox_id);
+            this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_pass);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_logout);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "login";
             this.Text = "login";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +126,5 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.TextBox textBox_id;
         private System.Windows.Forms.TextBox textBox_pass;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

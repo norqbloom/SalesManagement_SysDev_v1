@@ -7,19 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+
 
 namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
+        
+        
         public login()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void button_login_Click(object sender, EventArgs e)
@@ -44,15 +43,6 @@ namespace SalesManagement_SysDev
             }
         }
 
-        private void textBox_id_Leave(object sender, EventArgs e)
-        {
-            if (textBox_id.Text == "")
-            {
-                textBox_id.Text = "担当者ID";
-                textBox_id.ForeColor = Color.Silver;
-            }
-        }
-
         private void textBox_pass_Enter(object sender, EventArgs e)
         {
             if (textBox_id.Text == "パスワード")
@@ -71,7 +61,14 @@ namespace SalesManagement_SysDev
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
 
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
