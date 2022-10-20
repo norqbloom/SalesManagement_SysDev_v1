@@ -67,6 +67,8 @@
     </Compile>
     <Compile Include="Common\MessageDsp.cs" />
     <Compile Include="Common\PasswordHash.cs" />
+    <Compile Include="DbAccess\ClientDataAccess.cs" />
+    <Compile Include="DbAccess\EmployeeDataAccess.cs" />
     <Compile Include="Entity\M_MajorCassification.cs" />
     <Compile Include="Entity\M_Message.cs" />
     <Compile Include="Entity\M_Product.cs" />
