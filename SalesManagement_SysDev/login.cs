@@ -14,8 +14,7 @@ namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
-        
-        
+        PasswordHash passwordHash = new PasswordHash();
         public login()
         {
             InitializeComponent();
@@ -26,11 +25,21 @@ namespace SalesManagement_SysDev
             //ログイン処理
             string logID = textBox_id.Text;
             string logPass = textBox_pass.Text;
-
+            bool flg;
             if (logID.Trim() == "" || logID == null || logPass.Trim() == "" || logPass == null)
             {
                 //メッセージ表示
                 return;
+            }
+            try
+            {
+                var pw = passwordHash.CreatePasswordHash(textBox_pass.Text.Trim());
+                //データベースチェック 
+                
+            }
+            catch
+            {
+
             }
         }
 

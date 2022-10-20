@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 
 
-namespace SalesManagement_SysDev.Common
+namespace SalesManagement_SysDev
 {
     class PasswordHash
     {
