@@ -72,10 +72,10 @@
     <Compile Include="Entity\M_MajorCassification.cs" />
     <Compile Include="Entity\M_Message.cs" />
     <Compile Include="Entity\M_Product.cs" />
-    <Compile Include="F_login.cs">
+    <Compile Include="login\F_login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_login.Designer.cs">
+    <Compile Include="login\F_login.Designer.cs">
       <DependentUpon>F_login.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\M_Client.cs" />
@@ -84,10 +84,10 @@
     <Compile Include="Entity\M_Position.cs" />
     <Compile Include="Entity\M_SalesOffice.cs" />
     <Compile Include="Entity\M_SmallClassification.cs" />
-    <Compile Include="login.cs">
+    <Compile Include="login\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
+    <Compile Include="login\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -121,10 +121,10 @@
     <EmbeddedResource Include="Client\client_reg.resx">
       <DependentUpon>client_reg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_login.resx">
+    <EmbeddedResource Include="login\F_login.resx">
       <DependentUpon>F_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="login\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
