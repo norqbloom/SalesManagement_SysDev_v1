@@ -70,6 +70,7 @@
     <Compile Include="Common\PasswordHash.cs" />
     <Compile Include="DbAccess\ClientDataAccess.cs" />
     <Compile Include="DbAccess\EmployeeDataAccess.cs" />
+    <Compile Include="DbAccess\ProductDataAccess.cs" />
     <Compile Include="empcnt.cs">
       <SubType>Form</SubType>
     </Compile>
