@@ -44,9 +44,9 @@ namespace SalesManagement_SysDev
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Emphone = new System.Windows.Forms.Label();
-            this.EmCheck = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimeHidden = new System.Windows.Forms.DateTimePicker();
+            this.EmCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // add_btn
@@ -172,17 +172,6 @@ namespace SalesManagement_SysDev
             this.Emphone.TabIndex = 16;
             this.Emphone.Text = "phone";
             // 
-            // EmCheck
-            // 
-            this.EmCheck.AutoSize = true;
-            this.EmCheck.BackColor = System.Drawing.Color.White;
-            this.EmCheck.Location = new System.Drawing.Point(380, 297);
-            this.EmCheck.Name = "EmCheck";
-            this.EmCheck.Size = new System.Drawing.Size(44, 19);
-            this.EmCheck.TabIndex = 17;
-            this.EmCheck.Text = "flg";
-            this.EmCheck.UseVisualStyleBackColor = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -199,14 +188,25 @@ namespace SalesManagement_SysDev
             this.dateTimeHidden.Size = new System.Drawing.Size(200, 22);
             this.dateTimeHidden.TabIndex = 19;
             // 
+            // EmCheck
+            // 
+            this.EmCheck.AutoSize = true;
+            this.EmCheck.Location = new System.Drawing.Point(393, 298);
+            this.EmCheck.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.EmCheck.Name = "EmCheck";
+            this.EmCheck.Size = new System.Drawing.Size(69, 19);
+            this.EmCheck.TabIndex = 20;
+            this.EmCheck.Text = "チェック";
+            this.EmCheck.UseVisualStyleBackColor = true;
+            // 
             // empcnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 524);
+            this.Controls.Add(this.EmCheck);
             this.Controls.Add(this.dateTimeHidden);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.EmCheck);
             this.Controls.Add(this.Emphone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -246,8 +246,8 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Emphone;
-        private System.Windows.Forms.CheckBox EmCheck;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimeHidden;
+        private System.Windows.Forms.CheckBox EmCheck;
     }
 }

@@ -14,6 +14,8 @@ namespace SalesManagement_SysDev
     {
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
+        PasswordHash passwordHash = new PasswordHash();
+        
         public empcnt()
         {
             InitializeComponent();
@@ -200,6 +202,7 @@ namespace SalesManagement_SysDev
 
             if (EmCheck.CheckState == CheckState.Indeterminate)
             {
+
                 MessageBox.Show("不確定な状況");
                 EmCheck.Focus();
                 return false;
@@ -210,7 +213,25 @@ namespace SalesManagement_SysDev
         }
         private M_Employee GenerateDataAtRegistration()
         {
+            //次はチェックボックスの数字化から
 
+            string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
+            return new M_Employee
+            {
+                EmID=int.Parse(EmPassWord.Text.Trim()),
+                EmName=EmNametxt.Text.Trim(),
+                SoID=int.Parse(SoIDtxt.Text.Trim()),
+                PoID=int.Parse(PoIDtxt.Text.Trim()),
+                EmHiredate=dateTimeHidden.Value,
+                EmPassword=pw,
+                EmPhone=Emphone.Text.Trim(),
+                EmFlag=EmCheck.Checked,
+                EmHidden=hiddentxt.Text.Trim()
+               
+                 
+
+
+            };
         }
 
         
