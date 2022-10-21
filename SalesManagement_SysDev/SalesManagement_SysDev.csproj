@@ -70,12 +70,6 @@
     <Compile Include="Common\PasswordHash.cs" />
     <Compile Include="DbAccess\ClientDataAccess.cs" />
     <Compile Include="DbAccess\EmployeeDataAccess.cs" />
-    <Compile Include="empcnt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="empcnt.Designer.cs">
-      <DependentUpon>empcnt.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entity\M_MajorCassification.cs" />
     <Compile Include="Entity\M_Message.cs" />
     <Compile Include="Entity\M_Product.cs" />
