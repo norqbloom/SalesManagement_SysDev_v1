@@ -219,6 +219,9 @@ namespace SalesManagement_SysDev
 
         }
 
-
+        private void empadd_btn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new empcnt());
+        }
     }
 }

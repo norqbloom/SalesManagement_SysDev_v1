@@ -65,10 +65,17 @@
     <Compile Include="Client\client_reg.Designer.cs">
       <DependentUpon>client_reg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\DataInputFormCheck.cs" />
     <Compile Include="Common\MessageDsp.cs" />
     <Compile Include="Common\PasswordHash.cs" />
     <Compile Include="DbAccess\ClientDataAccess.cs" />
     <Compile Include="DbAccess\EmployeeDataAccess.cs" />
+    <Compile Include="empcnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empcnt.Designer.cs">
+      <DependentUpon>empcnt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity\M_MajorCassification.cs" />
     <Compile Include="Entity\M_Message.cs" />
     <Compile Include="Entity\M_Product.cs" />
@@ -120,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Client\client_reg.resx">
       <DependentUpon>client_reg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empcnt.resx">
+      <DependentUpon>empcnt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login\F_login.resx">
       <DependentUpon>F_login.cs</DependentUpon>

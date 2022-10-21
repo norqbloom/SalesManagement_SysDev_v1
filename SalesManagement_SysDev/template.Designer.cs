@@ -79,6 +79,7 @@ namespace SalesManagement_SysDev
             this.panel1 = new System.Windows.Forms.Panel();
             this.childsubmenu = new System.Windows.Forms.Panel();
             this.tilepanel = new System.Windows.Forms.Panel();
+            this.empadd_btn = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -98,6 +99,7 @@ namespace SalesManagement_SysDev
             // 
             this.sidepanel.AutoScroll = true;
             this.sidepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.sidepanel.Controls.Add(this.empadd_btn);
             this.sidepanel.Controls.Add(this.panel14);
             this.sidepanel.Controls.Add(this.shipping_btn);
             this.sidepanel.Controls.Add(this.panel13);
@@ -885,6 +887,24 @@ namespace SalesManagement_SysDev
             this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
             // 
+            // empadd_btn
+            // 
+            this.empadd_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.empadd_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.empadd_btn.FlatAppearance.BorderSize = 0;
+            this.empadd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empadd_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.empadd_btn.ForeColor = System.Drawing.Color.White;
+            this.empadd_btn.Location = new System.Drawing.Point(0, 1854);
+            this.empadd_btn.Name = "empadd_btn";
+            this.empadd_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.empadd_btn.Size = new System.Drawing.Size(329, 67);
+            this.empadd_btn.TabIndex = 25;
+            this.empadd_btn.Text = "社員追加";
+            this.empadd_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.empadd_btn.UseVisualStyleBackColor = false;
+            this.empadd_btn.Click += new System.EventHandler(this.empadd_btn_Click);
+            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -966,5 +986,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button order_serchbtn;
         private System.Windows.Forms.Button order_btn;
         private System.Windows.Forms.Panel tilepanel;
+        private System.Windows.Forms.Button empadd_btn;
     }
 }
