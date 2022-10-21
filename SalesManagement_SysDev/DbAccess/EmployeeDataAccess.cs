@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+
 
 namespace SalesManagement_SysDev
 {
@@ -36,18 +38,21 @@ namespace SalesManagement_SysDev
         }
         ///////////////////////////////
         //メソッド名：SelectEmployeeExistenceCheck()
-        //引　数   ：社員コード、社員名
+        //引　数   ：社員コード、パスワード
         //戻り値   ：True or False
-        //機　能   ：部分一致する社員コード、社員名の有無を確認
+        //機　能   ：部分一致する社員コード、パスワードの有無を確認
         //          ：部分一致データありの場合True
         //          ：部分一致データなしの場合False
         ///////////////////////////////
-        public bool SelectEmployeeExistenceCheck(string EmID, string EmName)
+        public bool SelectEmployeeExistenceCheck(string EmID, string EmPass)
         {
             bool flg = false;
             try
             {
-                
+                var context = new SalesManagement_DevContext();
+                flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
+                                                  && x.EmPassword.Contains(EmPass));
+                context.Dispose();
             }
             catch (Exception ex)
             {
@@ -56,5 +61,9 @@ namespace SalesManagement_SysDev
 
             return flg;
         }
+
+
+
+
     }
 }

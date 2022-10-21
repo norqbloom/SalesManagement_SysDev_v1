@@ -34,8 +34,22 @@ namespace SalesManagement_SysDev
             try
             {
                 var pw = passwordHash.CreatePasswordHash(textBox_pass.Text.Trim());
-                //データベースチェック 
-                
+                //社員ID・パスワードチェック 
+                var context = new SalesManagement_DevContext();
+                var empcontext = new EmployeeDataAccess();
+                //ハッシュ化するとtextboxをpsに変換
+                flg = empcontext.SelectEmployeeExistenceCheck(textBox_id.Text.Trim(), textBox_pass.Text.ToString().Trim());
+                if (flg == true)
+                {
+                    MessageBox.Show("一致");
+                    context.Dispose();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("動いてないわ");
+                    return;
+                }
             }
             catch
             {
