@@ -15,6 +15,10 @@ namespace SalesManagement_SysDev
     public partial class login : Form
     {
         PasswordHash passwordHash = new PasswordHash();
+
+
+
+
         public login()
         {
             InitializeComponent();
@@ -42,18 +46,21 @@ namespace SalesManagement_SysDev
                 if (flg == true)
                 {
                     MessageBox.Show("一致");
+
                     context.Dispose();
                     this.Close();
-                }
+
+
+    }
                 else
                 {
                     MessageBox.Show("動いてないわ");
                     return;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

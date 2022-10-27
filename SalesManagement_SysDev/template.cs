@@ -13,6 +13,10 @@ namespace SalesManagement_SysDev
 {
     public partial class template : Form
     {
+        internal static string loginID = "";
+        internal static string loginName = "";
+        internal static DateTime? loginTime = null;
+        internal static string loginPosition = "";
         public template()
         {
             InitializeComponent();
