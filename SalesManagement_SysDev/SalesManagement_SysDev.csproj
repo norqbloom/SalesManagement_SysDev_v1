@@ -180,7 +180,6 @@
     <Folder Include="Employee_Additions\" />
     <Folder Include="Management_Arrival\" />
     <Folder Include="Management_Chumon\" />
-    <Folder Include="Management_Client - コピー\" />
     <Folder Include="Management_Client\" />
     <Folder Include="Management_Employee\" />
     <Folder Include="Management_Hattyu\" />
