@@ -216,23 +216,23 @@ namespace SalesManagement_SysDev
             int checkflg;
             if (EmCheck.Checked == true)
             {
-                checkflg = 1;
+                checkflg = 0;
             }
             else
             {
-                checkflg = 2;
+                checkflg = 1;
             }
 
 
-            string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
+            //ハッシュ化string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
             return new M_Employee
             {
-                EmID=int.Parse(EmPassWord.Text.Trim()),
+                EmID=int.Parse(EmIDtxt.Text.Trim()),
                 EmName=EmNametxt.Text.Trim(),
                 SoID=int.Parse(SoIDtxt.Text.Trim()),
                 PoID=int.Parse(PoIDtxt.Text.Trim()),
                 EmHiredate=dateTimeHidden.Value,
-                EmPassword="sss",
+                EmPassword=EmPassWord.Text.Trim(),
                 EmPhone=Emphone.Text.Trim(),
                 EmFlag=checkflg,
                 EmHidden=hiddentxt.Text.Trim()
@@ -256,8 +256,7 @@ namespace SalesManagement_SysDev
             else
                 MessageBox.Show("no");
             
-            
-
+           
         }
     }
 }
