@@ -213,7 +213,16 @@ namespace SalesManagement_SysDev
         }
         private M_Employee GenerateDataAtRegistration()
         {
-            //次はチェックボックスの数字化から
+            int checkflg;
+            if (EmCheck.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 2;
+            }
+
 
             string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
             return new M_Employee
@@ -223,9 +232,9 @@ namespace SalesManagement_SysDev
                 SoID=int.Parse(SoIDtxt.Text.Trim()),
                 PoID=int.Parse(PoIDtxt.Text.Trim()),
                 EmHiredate=dateTimeHidden.Value,
-                EmPassword=pw,
+                EmPassword="sss",
                 EmPhone=Emphone.Text.Trim(),
-                EmFlag=EmCheck.Checked,
+                EmFlag=checkflg,
                 EmHidden=hiddentxt.Text.Trim()
                
                  
@@ -237,6 +246,17 @@ namespace SalesManagement_SysDev
         
         private void RegistrationStaff(M_Employee regEmp)
         {
+            DialogResult result = MessageBox.Show("確認",MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+                return;
+            //登録
+            bool flg = employeeDataAccess.AddEmpData(regEmp);
+            if (flg == true)
+                MessageBox.Show("ok");
+            else
+                MessageBox.Show("no");
+            
+            
 
         }
     }

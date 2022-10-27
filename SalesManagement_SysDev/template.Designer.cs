@@ -30,6 +30,7 @@ namespace SalesManagement_SysDev
         private void InitializeComponent()
         {
             this.sidepanel = new System.Windows.Forms.Panel();
+            this.empadd_btn = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.shipping_display = new System.Windows.Forms.Button();
             this.shipping_btn = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@ namespace SalesManagement_SysDev
             this.panel1 = new System.Windows.Forms.Panel();
             this.childsubmenu = new System.Windows.Forms.Panel();
             this.tilepanel = new System.Windows.Forms.Panel();
-            this.empadd_btn = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -131,6 +131,24 @@ namespace SalesManagement_SysDev
             this.sidepanel.Size = new System.Drawing.Size(350, 562);
             this.sidepanel.TabIndex = 0;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
+            // 
+            // empadd_btn
+            // 
+            this.empadd_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.empadd_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.empadd_btn.FlatAppearance.BorderSize = 0;
+            this.empadd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empadd_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.empadd_btn.ForeColor = System.Drawing.Color.White;
+            this.empadd_btn.Location = new System.Drawing.Point(0, 1854);
+            this.empadd_btn.Name = "empadd_btn";
+            this.empadd_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.empadd_btn.Size = new System.Drawing.Size(329, 67);
+            this.empadd_btn.TabIndex = 25;
+            this.empadd_btn.Text = "社員追加";
+            this.empadd_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.empadd_btn.UseVisualStyleBackColor = false;
+            this.empadd_btn.Click += new System.EventHandler(this.empadd_btn_Click);
             // 
             // panel14
             // 
@@ -610,6 +628,7 @@ namespace SalesManagement_SysDev
             this.emp_regbtn.Text = "登録";
             this.emp_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emp_regbtn.UseVisualStyleBackColor = false;
+            this.emp_regbtn.Click += new System.EventHandler(this.emp_regbtn_Click);
             // 
             // emp_btn
             // 
@@ -886,24 +905,6 @@ namespace SalesManagement_SysDev
             this.tilepanel.TabIndex = 2;
             this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
-            // 
-            // empadd_btn
-            // 
-            this.empadd_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
-            this.empadd_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.empadd_btn.FlatAppearance.BorderSize = 0;
-            this.empadd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empadd_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empadd_btn.ForeColor = System.Drawing.Color.White;
-            this.empadd_btn.Location = new System.Drawing.Point(0, 1854);
-            this.empadd_btn.Name = "empadd_btn";
-            this.empadd_btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.empadd_btn.Size = new System.Drawing.Size(329, 67);
-            this.empadd_btn.TabIndex = 25;
-            this.empadd_btn.Text = "社員追加";
-            this.empadd_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.empadd_btn.UseVisualStyleBackColor = false;
-            this.empadd_btn.Click += new System.EventHandler(this.empadd_btn_Click);
             // 
             // template
             // 

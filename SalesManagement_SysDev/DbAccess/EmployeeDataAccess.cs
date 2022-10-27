@@ -62,8 +62,30 @@ namespace SalesManagement_SysDev
             return flg;
         }
 
-
-
+        ///////////////////////////////
+        //メソッド名：AddEmpData()
+        //引　数   ：社員データ
+        //戻り値   ：True or False
+        //機　能   ：部分一致する社員コード、パスワードの有無を確認
+        //          ：部分一致データありの場合True
+        //          ：部分一致データなしの場合False
+        ///////////////////////////////
+        public bool AddEmpData(M_Employee regEmp)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.M_Employees.Add(regEmp);
+                context.SaveChanges();
+                context.Dispose();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
 
     }
 }

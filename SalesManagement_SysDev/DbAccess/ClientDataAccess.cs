@@ -152,6 +152,11 @@ namespace SalesManagement_SysDev
         //戻り値   ：条件一致顧客データ
         //機　能   ：条件一致商品顧客データの取得
         ///////////////////////////////
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        /*
         public List<M_Client> GetClientsData(M_Client selectCondition)
         {
             List<M_Client> clients = new List<M_Client>();
@@ -174,6 +179,7 @@ namespace SalesManagement_SysDev
             return clients;
 
         }
+        */
         ///////////////////////////////
         //メソッド名：GetClientsDspData()
         //引　数   ：なし

@@ -223,5 +223,10 @@ namespace SalesManagement_SysDev
         {
             openChildForm(new empcnt());
         }
+
+        private void emp_regbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
