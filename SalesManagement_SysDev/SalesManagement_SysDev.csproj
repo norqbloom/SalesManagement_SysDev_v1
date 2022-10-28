@@ -177,11 +177,11 @@
     <None Include="Resources\logout_FILL0_wght300_GRAD0_opsz48.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Employee_Additions\" />
     <Folder Include="Management_Arrival\" />
     <Folder Include="Management_Chumon\" />
     <Folder Include="Management_Client\" />
     <Folder Include="Management_Employee\" />
+    <Folder Include="Management_Employee_add\" />
     <Folder Include="Management_Hattyu\" />
     <Folder Include="Management_Order\" />
     <Folder Include="Management_Product\" />

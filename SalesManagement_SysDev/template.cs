@@ -123,7 +123,10 @@ namespace SalesManagement_SysDev
         }
         private void template_Resize(object sender, EventArgs e)
         {
-            formresize();
+            Size size = childsubmenu.Size;
+            int width = size.Width;
+            int height = size.Height;
+            label1.Text = $"幅:{ width} 高さ:{height}";
         }
 
         private void btn_client_Click(object sender, EventArgs e)
