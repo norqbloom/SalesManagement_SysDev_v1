@@ -13,7 +13,8 @@ namespace SalesManagement_SysDev
 {
     public partial class template : Form
     {
-        internal static string loginID = "";
+
+        internal static int loginID ;
         internal static string loginName = "";
         internal static DateTime? loginTime = null;
         internal static string loginPosition = "";
@@ -25,6 +26,11 @@ namespace SalesManagement_SysDev
         private void template_Load(object sender, EventArgs e)
         {
             customizeDesing();
+            label1.Text = loginID.ToString();
+            label2.Text = loginName;
+            label3.Text = loginTime.ToString();
+            label4.Text = loginPosition;
+
             
         }
 

@@ -45,14 +45,30 @@ namespace SalesManagement_SysDev
                 var empcontext = new EmployeeDataAccess();
                 //ハッシュ化するとtextboxをpsに変換
                 flg = empcontext.SelectEmployeeExistenceCheck(textBox_id.Text.Trim(), pw);
+                int loginID = int.Parse(logID);
                 if (flg == true)
                 {
-
+                    var tb = from t1 in context.M_Employees
+                             join t2 in context.M_Positions
+                             on t1.PoID equals t2.PoID
+                             /*join t3 in context.M_Authoritys
+                             on t1.AuthorityCD equals t3.AuthorityCD*/
+                             where t1.EmID == loginID && t1.EmPassword == pw
+                             select new
+                             {
+                                 t1.EmName,
+                                 t2.PoName,
+                             };
+                    foreach (var p in tb)
+                    {
+                        template.loginName = p.EmName;
+                        template.loginPosition = p.PoName;
+                        template.loginTime = DateTime.Now;
+                    }
+                    template.loginID = loginID;
 
                     context.Dispose();
                     this.Close();
-
-
     }
                 else
                 {
