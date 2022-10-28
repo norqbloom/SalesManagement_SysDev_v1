@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Common
+namespace SalesManagement_SysDev
 {
     class MessageDsp
     {
