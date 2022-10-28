@@ -132,7 +132,7 @@ namespace SalesManagement_SysDev
             Size size = childsubmenu.Size;
             int width = size.Width;
             int height = size.Height;
-            label1.Text = $"幅:{ width} 高さ:{height}";
+            //label1.Text = $"幅:{ width} 高さ:{height}";
         }
 
         private void btn_client_Click(object sender, EventArgs e)
