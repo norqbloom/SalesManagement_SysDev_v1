@@ -42,7 +42,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 var empcontext = new EmployeeDataAccess();
                 //ハッシュ化するとtextboxをpsに変換
-                flg = empcontext.SelectEmployeeExistenceCheck(textBox_id.Text.Trim(), textBox_pass.Text.ToString().Trim());
+                flg = empcontext.SelectEmployeeExistenceCheck(textBox_id.Text.Trim(), pw);
                 if (flg == true)
                 {
                     MessageBox.Show("一致");
