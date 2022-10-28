@@ -232,5 +232,10 @@ namespace SalesManagement_SysDev
         {
 
         }
+
+        private void childsubmenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

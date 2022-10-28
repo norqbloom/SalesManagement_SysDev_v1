@@ -21,7 +21,7 @@ namespace SalesManagement_SysDev
                 MessageBoxButtons btn = new MessageBoxButtons();
                 MessageBoxIcon icon = new MessageBoxIcon();
                 string msgcom = message.MsgComments.Replace("\\r", "\r").Replace("\\n", "\n");
-                string msgtitle = message.MsgTitle + "　（メッセージ番号：" + msgCD + "）";
+                string msgtitle = message.MsgTitle;
                 btn = (MessageBoxButtons)message.MsgButton;
                 icon = (MessageBoxIcon)message.MsgICon;
                 result = MessageBox.Show(msgcom, msgtitle, btn, icon);

@@ -894,6 +894,7 @@ namespace SalesManagement_SysDev
             this.childsubmenu.Name = "childsubmenu";
             this.childsubmenu.Size = new System.Drawing.Size(717, 522);
             this.childsubmenu.TabIndex = 1;
+            this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
             // 
             // tilepanel
             // 
