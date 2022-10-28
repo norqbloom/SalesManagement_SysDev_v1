@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\client_reg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\client_reg.Designer.cs">
+      <DependentUpon>client_reg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\DataInputFormCheck.cs" />
     <Compile Include="Common\MessageDsp.cs" />
     <Compile Include="Common\PasswordHash.cs" />
@@ -142,6 +148,9 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Client\client_reg.resx">
+      <DependentUpon>client_reg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="empcnt.resx">
       <DependentUpon>empcnt.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,7 +198,21 @@
   <ItemGroup>
     <None Include="Resources\logout_FILL0_wght300_GRAD0_opsz48.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Management_Arrival\" />
+    <Folder Include="Management_Chumon\" />
+    <Folder Include="Management_Client\" />
+    <Folder Include="Management_Employee\" />
+    <Folder Include="Management_Employee_add\" />
+    <Folder Include="Management_Hattyu\" />
+    <Folder Include="Management_Order\" />
+    <Folder Include="Management_Product\" />
+    <Folder Include="Management_Sales\" />
+    <Folder Include="Management_Shipment\" />
+    <Folder Include="Management_Stock\" />
+    <Folder Include="Management_Syukko\" />
+    <Folder Include="Management_Warehouse\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
