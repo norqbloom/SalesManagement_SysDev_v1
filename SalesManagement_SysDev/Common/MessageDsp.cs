@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Common
+namespace SalesManagement_SysDev
 {
     class MessageDsp
     {
@@ -22,6 +22,7 @@ namespace SalesManagement_SysDev.Common
                 MessageBoxIcon icon = new MessageBoxIcon();
                 string msgcom = message.MsgComments.Replace("\\r", "\r").Replace("\\n", "\n");
                 string msgtitle = message.MsgTitle ;
+                string msgtitle = message.MsgTitle;
                 btn = (MessageBoxButtons)message.MsgButton;
                 icon = (MessageBoxIcon)message.MsgICon;
                 result = MessageBox.Show(msgcom, msgtitle, btn, icon);

@@ -14,6 +14,8 @@ namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
+        MessageDsp messageDsp = new MessageDsp();
+
         PasswordHash passwordHash = new PasswordHash();
 
 
@@ -42,10 +44,10 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 var empcontext = new EmployeeDataAccess();
                 //ハッシュ化するとtextboxをpsに変換
-                flg = empcontext.SelectEmployeeExistenceCheck(textBox_id.Text.Trim(), textBox_pass.Text.ToString().Trim());
+                flg = empcontext.SelectEmployeeExistenceCheck(textBox_id.Text.Trim(), pw);
                 if (flg == true)
                 {
-                    MessageBox.Show("一致");
+
 
                     context.Dispose();
                     this.Close();
@@ -54,7 +56,8 @@ namespace SalesManagement_SysDev
     }
                 else
                 {
-                    MessageBox.Show("動いてないわ");
+                    messageDsp.DspMsg("M0005");
+                    //MessageBox.Show("動いてないわ");
                     return;
                 }
             }

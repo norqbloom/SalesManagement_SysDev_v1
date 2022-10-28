@@ -224,7 +224,7 @@ namespace SalesManagement_SysDev
             }
 
 
-            //ハッシュ化string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
+            string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
             return new M_Employee
             {
                 EmID=int.Parse(EmIDtxt.Text.Trim()),
@@ -232,8 +232,8 @@ namespace SalesManagement_SysDev
                 SoID=int.Parse(SoIDtxt.Text.Trim()),
                 PoID=int.Parse(PoIDtxt.Text.Trim()),
                 EmHiredate=dateTimeHidden.Value,
-                EmPassword=EmPassWord.Text.Trim(),
-                EmPhone=Emphone.Text.Trim(),
+                EmPassword=pw,
+                EmPhone=Emphonetxt.Text.Trim(),
                 EmFlag=checkflg,
                 EmHidden=hiddentxt.Text.Trim()
                
