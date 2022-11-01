@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Threading;
 
 
 namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
+        bool flg;
         MessageDsp messageDsp = new MessageDsp();
 
         PasswordHash passwordHash = new PasswordHash();
@@ -23,12 +25,81 @@ namespace SalesManagement_SysDev
             InitializeComponent();
         }
 
-        private void button_login_Click(object sender, EventArgs e)
+
+        private void button_login_Click(object sender, EventArgs e) 
+           
         {
+            button_login.Visible = false;
+            lodinggif.Visible = true;
+            logina.Visible = true;
+            logina.Text = "ようこそ";
+
+            this.backgroundWorker1.RunWorkerAsync();
+
+        }
+
+        private void logincheck()
+        {
+
+        }
+
+        private void textBox_id_Enter(object sender, EventArgs e)
+        {
+            if (textBox_id.Text == "担当者ID")
+            {
+                textBox_id.Text = "";
+                textBox_id.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_pass_Enter(object sender, EventArgs e)
+        {
+            if (textBox_id.Text == "パスワード")
+            {
+                textBox_id.Text = "";
+                textBox_id.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_pass_Leave(object sender, EventArgs e)
+        {
+            if (textBox_id.Text == "")
+            {
+                textBox_id.Text = "パスワード";
+                textBox_id.ForeColor = Color.Silver;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+            logina.Visible = false;
+            lodinggif.Visible = false;
+            button_login.Visible = true;
+
+        }
+
+        private void textBox_pass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
             //ログイン処理
             string logID = textBox_id.Text;
             string logPass = textBox_pass.Text;
-            bool flg;
+
             if (logID.Trim() == "" || logID == null || logPass.Trim() == "" || logPass == null)
             {
                 //メッセージ表示
@@ -67,56 +138,47 @@ namespace SalesManagement_SysDev
                     template.loginID = loginID;
 
                     context.Dispose();
-                    this.Close();
-    }
+                    //sthis.Close();
+
+                }
                 else
                 {
-                    messageDsp.DspMsg("M0005");
                     //MessageBox.Show("動いてないわ");
-                    return;
+
                 }
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void textBox_id_Enter(object sender, EventArgs e)
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            if(textBox_id.Text == "担当者ID")
+
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (flg == true)
             {
-                textBox_id.Text = "";
-                textBox_id.ForeColor = Color.Black;
+                Form form = new template();
+                form.Show(this);
             }
-        }
-
-        private void textBox_pass_Enter(object sender, EventArgs e)
-        {
-            if (textBox_id.Text == "パスワード")
+            if (flg == false)
             {
-                textBox_id.Text = "";
-                textBox_id.ForeColor = Color.Black;
+                logina.Visible = true;
+                logina.Text = "担当者IDまたはパスワードが違います";
+                lodinggif.Visible = false;
+                button_login.Visible = true;
             }
-        }
-
-        private void textBox_pass_Leave(object sender, EventArgs e)
-        {
-            if (textBox_id.Text == "")
-            {
-                textBox_id.Text = "パスワード";
-                textBox_id.ForeColor = Color.Silver;
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_Load(object sender, EventArgs e)
-        {
-
+            return;
         }
     }
 }
+
+
