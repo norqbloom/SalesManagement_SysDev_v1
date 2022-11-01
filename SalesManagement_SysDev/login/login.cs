@@ -58,12 +58,14 @@ namespace SalesManagement_SysDev
                              {
                                  t1.EmName,
                                  t2.PoName,
+                                 t2.PoID
                              };
                     foreach (var p in tb)
                     {
                         template.loginName = p.EmName;
                         template.loginPosition = p.PoName;
                         template.loginTime = DateTime.Now;
+                        template.PosID = p.PoID;
                     }
                     template.loginID = loginID;
 

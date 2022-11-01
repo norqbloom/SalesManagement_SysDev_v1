@@ -15,6 +15,7 @@ namespace SalesManagement_SysDev
     {
 
         internal static int loginID ;
+        internal static int PosID;
         internal static string loginName = "";
         internal static DateTime? loginTime = null;
         internal static string loginPosition = "";
@@ -25,6 +26,7 @@ namespace SalesManagement_SysDev
 
         private void template_Load(object sender, EventArgs e)
         {
+            visiblecnt();
             customizeDesing();
             label1.Text = loginID.ToString();
             label2.Text = loginName;
@@ -32,6 +34,22 @@ namespace SalesManagement_SysDev
             label4.Text = loginPosition;
 
             
+        }
+        private void visiblecnt()
+        {
+            btn_client.Visible = false;
+            Product_btn.Visible = false;
+            stock_btn.Visible = false;
+            emp_btn.Visible = false;
+            Earnings_btn.Visible = false;
+            received_btn.Visible = false;
+            order_btn.Visible = false;
+            instruct_btn.Visible = false;
+            warehousing_btn.Visible = false;
+            issue_btn.Visible = false;
+            Arrival_btn.Visible = false;
+            shipping_btn.Visible = false;
+            empadd_btn.Visible = false;
         }
 
         private void formresize()
