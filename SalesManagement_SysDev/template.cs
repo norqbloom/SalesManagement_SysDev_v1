@@ -27,6 +27,7 @@ namespace SalesManagement_SysDev
         private void template_Load(object sender, EventArgs e)
         {
             visiblecnt();
+            PosVisible();
             customizeDesing();
             label1.Text = loginID.ToString();
             label2.Text = loginName;
@@ -52,6 +53,45 @@ namespace SalesManagement_SysDev
             empadd_btn.Visible = false;
         }
 
+        private void PosVisible()
+        {
+            if (PosID == 1)
+            {
+                btn_client.Visible = true;
+                Product_btn.Visible = true;
+                stock_btn.Visible = true;
+                emp_btn.Visible = true;
+                Earnings_btn.Visible = true;
+                received_btn.Visible = true;
+                order_btn.Visible = true;
+                instruct_btn.Visible = true;
+                warehousing_btn.Visible = true;
+                issue_btn.Visible = true;
+                Arrival_btn.Visible = true;
+                shipping_btn.Visible = true;
+                empadd_btn.Visible = true;
+            }
+            if (PosID == 2)
+            {
+                btn_client.Visible = true;
+                stock_btn.Visible = true;
+                //社員管理
+                Earnings_btn.Visible = true;
+                received_btn.Visible = true;
+                shipping_btn.Visible = true;
+                Arrival_btn.Visible = true;
+            }
+            if (PosID == 3)
+            {
+                Product_btn.Visible = true;
+                stock_btn.Visible = true;
+                order_btn.Visible = true;
+                instruct_btn.Visible = true;
+                issue_btn.Visible = true;
+                warehousing_btn.Visible = true;
+
+            }
+        }
         private void formresize()
         {
             int size = 609 / 15;
