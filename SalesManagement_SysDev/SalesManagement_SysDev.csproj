@@ -184,6 +184,9 @@
     <Folder Include="Management_Syukko\" />
     <Folder Include="Management_Warehouse\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_FILL0_wght400_GRAD0_opsz48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

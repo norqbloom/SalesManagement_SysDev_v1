@@ -84,6 +84,7 @@ namespace SalesManagement_SysDev
             this.label2 = new System.Windows.Forms.Label();
             this.childsubmenu = new System.Windows.Forms.Panel();
             this.tilepanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -98,6 +99,8 @@ namespace SalesManagement_SysDev
             this.Productsubmenu.SuspendLayout();
             this.clientsubmenu.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tilepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidepanel
@@ -992,24 +995,37 @@ namespace SalesManagement_SysDev
             this.childsubmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.childsubmenu.Location = new System.Drawing.Point(349, 45);
+            this.childsubmenu.Location = new System.Drawing.Point(349, 97);
             this.childsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.childsubmenu.Name = "childsubmenu";
-            this.childsubmenu.Size = new System.Drawing.Size(1201, 770);
+            this.childsubmenu.Size = new System.Drawing.Size(1201, 718);
             this.childsubmenu.TabIndex = 1;
             this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
             // 
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.White;
+            this.tilepanel.Controls.Add(this.pictureBox1);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tilepanel.Location = new System.Drawing.Point(349, 0);
             this.tilepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tilepanel.Name = "tilepanel";
-            this.tilepanel.Size = new System.Drawing.Size(1202, 40);
+            this.tilepanel.Size = new System.Drawing.Size(1202, 93);
             this.tilepanel.TabIndex = 2;
             this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::SalesManagement_SysDev.Properties.Resources.close_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox1.Location = new System.Drawing.Point(1117, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // template
             // 
@@ -1019,6 +1035,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.childsubmenu);
             this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "template";
             this.Text = "b";
@@ -1040,6 +1057,8 @@ namespace SalesManagement_SysDev
             this.clientsubmenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tilepanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1095,11 +1114,12 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button order_serchbtn;
         private System.Windows.Forms.Button order_btn;
-        private System.Windows.Forms.Panel tilepanel;
         private System.Windows.Forms.Button empadd_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel tilepanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

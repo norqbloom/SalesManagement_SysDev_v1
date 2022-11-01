@@ -18,9 +18,6 @@ namespace SalesManagement_SysDev
 
         PasswordHash passwordHash = new PasswordHash();
 
-
-
-
         public login()
         {
             InitializeComponent();
