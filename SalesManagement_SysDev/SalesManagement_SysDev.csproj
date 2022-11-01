@@ -169,7 +169,9 @@
   <ItemGroup>
     <None Include="Resources\logout_FILL0_wght300_GRAD0_opsz48.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\close_FILL0_wght400_GRAD0_opsz481.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>

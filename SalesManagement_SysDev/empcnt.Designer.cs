@@ -204,7 +204,7 @@ namespace SalesManagement_SysDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 524);
+            this.ClientSize = new System.Drawing.Size(1183, 681);
             this.Controls.Add(this.EmCheck);
             this.Controls.Add(this.dateTimeHidden);
             this.Controls.Add(this.label6);
