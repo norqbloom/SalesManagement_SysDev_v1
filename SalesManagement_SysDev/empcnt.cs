@@ -227,6 +227,7 @@ namespace SalesManagement_SysDev
             string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
             return new M_Employee
             {
+
                 EmID=int.Parse(EmIDtxt.Text.Trim()),
                 EmName=EmNametxt.Text.Trim(),
                 SoID=int.Parse(SoIDtxt.Text.Trim()),
@@ -257,6 +258,11 @@ namespace SalesManagement_SysDev
                 MessageBox.Show("no");
             
            
+        }
+
+        private void EmIDtxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

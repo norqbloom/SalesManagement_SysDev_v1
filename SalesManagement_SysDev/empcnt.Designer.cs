@@ -65,6 +65,7 @@ namespace SalesManagement_SysDev
             this.EmIDtxt.Name = "EmIDtxt";
             this.EmIDtxt.Size = new System.Drawing.Size(100, 22);
             this.EmIDtxt.TabIndex = 1;
+            this.EmIDtxt.TextChanged += new System.EventHandler(this.EmIDtxt_TextChanged);
             // 
             // EmNametxt
             // 
