@@ -31,9 +31,9 @@ namespace SalesManagement_SysDev
             customizeDesing();
             label1.Text = loginID.ToString();
             label2.Text = loginName;
-            label3.Text = loginTime.ToString();
-            label4.Text = loginPosition;
-
+            label4.Text = loginTime.ToString();
+            label3.Text = loginPosition;
+            
             
         }
         private void visiblecnt()
