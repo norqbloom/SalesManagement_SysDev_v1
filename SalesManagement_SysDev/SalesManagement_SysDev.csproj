@@ -92,28 +92,6 @@
     <Compile Include="login\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Management_Arrival\Arrival_Dsp.cs" />
-    <Compile Include="Form\Management_Chumon\Chumon_Ser.cs" />
-    <Compile Include="Form\Management_Client\Client_Add.cs" />
-    <Compile Include="Form\Management_Client\Client_Ser.cs" />
-    <Compile Include="Form\Management_Client\Client_Upd.cs" />
-    <Compile Include="Form\Management_Employee\Employee_Add.cs" />
-    <Compile Include="Form\Management_Employee\Employee_Ser.cs" />
-    <Compile Include="Form\Management_Employee\Employee_Upd.cs" />
-    <Compile Include="Form\Management_Employee_add\Employee_Add.cs" />
-    <Compile Include="Form\Management_Hattyu\Hattyu_Add.cs" />
-    <Compile Include="Form\Management_Hattyu\Hattyu_Ser.cs" />
-    <Compile Include="Form\Management_Hattyu\Hattyu_Upd.cs" />
-    <Compile Include="Form\Management_Order\Order_Ser.cs" />
-    <Compile Include="Form\Management_Product\Product_Add.cs" />
-    <Compile Include="Form\Management_Product\Product_Ser.cs" />
-    <Compile Include="Form\Management_Product\Product_Upd.cs" />
-    <Compile Include="Form\Management_Sales\Sales_Ser.cs" />
-    <Compile Include="Form\Management_Shipment\Shipment_Dsp.cs" />
-    <Compile Include="Form\Management_Stock\Stock_Ser.cs" />
-    <Compile Include="Form\Management_Stock\Stock_Upd.cs" />
-    <Compile Include="Form\Management_Syukko\Syukko_Dsp.cs" />
-    <Compile Include="Form\Management_Warehousing\Warehousing_Dsp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\T_Arrival.cs" />
