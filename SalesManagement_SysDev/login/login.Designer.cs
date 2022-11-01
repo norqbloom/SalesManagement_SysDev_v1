@@ -150,7 +150,7 @@ namespace SalesManagement_SysDev
             this.MaximumSize = new System.Drawing.Size(527, 657);
             this.MinimumSize = new System.Drawing.Size(527, 657);
             this.Name = "login";
-            this.Text = "login";
+            this.Text = "ログイン";
             this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lodinggif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

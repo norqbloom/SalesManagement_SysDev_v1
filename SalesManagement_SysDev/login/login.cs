@@ -132,13 +132,14 @@ namespace SalesManagement_SysDev
                     {
                         template.loginName = p.EmName;
                         template.loginPosition = p.PoName;
-                        template.loginTime = DateTime.Now;
+                        DateTime dt = DateTime.Now;
+                        template.loginTime = dt.ToString("MM/dd HH;mm");
+                        
                         template.PosID = p.PoID;
                     }
                     template.loginID = loginID;
 
                     context.Dispose();
-                    //sthis.Close();
 
                 }
                 else
@@ -168,7 +169,12 @@ namespace SalesManagement_SysDev
             {
                 Form form = new template();
                 form.Show(this);
+                Opacity = 0;
+                logina.Visible = false;
+                lodinggif.Visible = false;
+                button_login.Visible = true;
             }
+
             if (flg == false)
             {
                 logina.Visible = true;

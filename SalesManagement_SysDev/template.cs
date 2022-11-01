@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev
         internal static int loginID ;
         internal static int PosID;
         internal static string loginName = "";
-        internal static DateTime? loginTime = null;
+        internal static string loginTime ;
         internal static string loginPosition = "";
         public template()
         {
@@ -248,7 +248,7 @@ namespace SalesManagement_SysDev
         }
         private void client_regbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new login());
+            
         }
 
 
