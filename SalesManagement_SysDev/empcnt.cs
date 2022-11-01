@@ -110,9 +110,9 @@ namespace SalesManagement_SysDev
                     return false;
                 }
                 //soid文字数チェック
-                if (EmIDtxt.TextLength > 2)
+                if (SoIDtxt.TextLength > 2)
                 {
-                    MessageBox.Show("IsoDは文字数は2文字");
+                    MessageBox.Show("SoIDは文字数は2文字");
                     SoIDtxt.Focus();
                     return false;
                 }
