@@ -1004,7 +1004,7 @@ namespace SalesManagement_SysDev
             // 
             // tilepanel
             // 
-            this.tilepanel.BackColor = System.Drawing.Color.White;
+            this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.tilepanel.Controls.Add(this.pictureBox1);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tilepanel.Location = new System.Drawing.Point(349, 0);
