@@ -302,7 +302,7 @@ namespace SalesManagement_SysDev
 
         private void childsubmenu_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

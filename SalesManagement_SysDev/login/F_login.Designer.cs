@@ -36,9 +36,10 @@
             // 
             // btn_CleateDabase
             // 
-            this.btn_CleateDabase.Location = new System.Drawing.Point(661, 389);
+            this.btn_CleateDabase.Location = new System.Drawing.Point(1102, 584);
+            this.btn_CleateDabase.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_CleateDabase.Name = "btn_CleateDabase";
-            this.btn_CleateDabase.Size = new System.Drawing.Size(106, 49);
+            this.btn_CleateDabase.Size = new System.Drawing.Size(177, 74);
             this.btn_CleateDabase.TabIndex = 0;
             this.btn_CleateDabase.Text = "データベース生成";
             this.btn_CleateDabase.UseVisualStyleBackColor = true;
@@ -46,10 +47,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(581, 419);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(968, 628);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 18);
+            this.button1.Size = new System.Drawing.Size(93, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "消すな";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,16 +60,16 @@
             this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 450);
+            this.panel1.Size = new System.Drawing.Size(313, 675);
             this.panel1.TabIndex = 3;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(418, 367);
+            this.button2.Location = new System.Drawing.Point(697, 550);
+            this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(125, 34);
             this.button2.TabIndex = 4;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -77,13 +77,14 @@
             // 
             // F_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1333, 675);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_CleateDabase);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "F_Login";
             this.Text = "販売管理システムログイン画面";
             this.ResumeLayout(false);
