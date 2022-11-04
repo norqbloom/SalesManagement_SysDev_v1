@@ -143,6 +143,16 @@ namespace SalesManagement_SysDev.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap logo_transparent {
+            get {
+                object obj = ResourceManager.GetObject("logo_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap logout_FILL0_wght300_GRAD0_opsz48 {
             get {
                 object obj = ResourceManager.GetObject("logout_FILL0_wght300_GRAD0_opsz48", resourceCulture);

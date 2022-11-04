@@ -135,9 +135,9 @@ namespace SalesManagement_SysDev
             this.sidepanel.Controls.Add(this.panel1);
             this.sidepanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidepanel.Location = new System.Drawing.Point(0, 0);
-            this.sidepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sidepanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.sidepanel.Name = "sidepanel";
-            this.sidepanel.Size = new System.Drawing.Size(349, 815);
+            this.sidepanel.Size = new System.Drawing.Size(436, 978);
             this.sidepanel.TabIndex = 0;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
             // 
@@ -149,11 +149,11 @@ namespace SalesManagement_SysDev
             this.empadd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.empadd_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.empadd_btn.ForeColor = System.Drawing.Color.White;
-            this.empadd_btn.Location = new System.Drawing.Point(0, 1864);
-            this.empadd_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.empadd_btn.Location = new System.Drawing.Point(0, 2240);
+            this.empadd_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.empadd_btn.Name = "empadd_btn";
-            this.empadd_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.empadd_btn.Size = new System.Drawing.Size(328, 68);
+            this.empadd_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.empadd_btn.Size = new System.Drawing.Size(410, 82);
             this.empadd_btn.TabIndex = 25;
             this.empadd_btn.Text = "社員追加";
             this.empadd_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,10 +165,10 @@ namespace SalesManagement_SysDev
             this.panel14.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel14.Controls.Add(this.shipping_display);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 1823);
-            this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel14.Location = new System.Drawing.Point(0, 2191);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(328, 41);
+            this.panel14.Size = new System.Drawing.Size(410, 49);
             this.panel14.TabIndex = 24;
             // 
             // shipping_display
@@ -180,10 +180,10 @@ namespace SalesManagement_SysDev
             this.shipping_display.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.shipping_display.ForeColor = System.Drawing.Color.White;
             this.shipping_display.Location = new System.Drawing.Point(0, 0);
-            this.shipping_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.shipping_display.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.shipping_display.Name = "shipping_display";
-            this.shipping_display.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.shipping_display.Size = new System.Drawing.Size(328, 39);
+            this.shipping_display.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.shipping_display.Size = new System.Drawing.Size(410, 47);
             this.shipping_display.TabIndex = 2;
             this.shipping_display.Text = "表示";
             this.shipping_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,11 +197,11 @@ namespace SalesManagement_SysDev
             this.shipping_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shipping_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.shipping_btn.ForeColor = System.Drawing.Color.White;
-            this.shipping_btn.Location = new System.Drawing.Point(0, 1755);
-            this.shipping_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.shipping_btn.Location = new System.Drawing.Point(0, 2109);
+            this.shipping_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.shipping_btn.Name = "shipping_btn";
-            this.shipping_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.shipping_btn.Size = new System.Drawing.Size(328, 68);
+            this.shipping_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.shipping_btn.Size = new System.Drawing.Size(410, 82);
             this.shipping_btn.TabIndex = 23;
             this.shipping_btn.Text = "出荷管理";
             this.shipping_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,10 +213,10 @@ namespace SalesManagement_SysDev
             this.panel13.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel13.Controls.Add(this.Arrival_display);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 1714);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel13.Location = new System.Drawing.Point(0, 2060);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(328, 41);
+            this.panel13.Size = new System.Drawing.Size(410, 49);
             this.panel13.TabIndex = 22;
             // 
             // Arrival_display
@@ -228,10 +228,10 @@ namespace SalesManagement_SysDev
             this.Arrival_display.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Arrival_display.ForeColor = System.Drawing.Color.White;
             this.Arrival_display.Location = new System.Drawing.Point(0, 0);
-            this.Arrival_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Arrival_display.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Arrival_display.Name = "Arrival_display";
-            this.Arrival_display.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Arrival_display.Size = new System.Drawing.Size(328, 39);
+            this.Arrival_display.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.Arrival_display.Size = new System.Drawing.Size(410, 47);
             this.Arrival_display.TabIndex = 2;
             this.Arrival_display.Text = "表示";
             this.Arrival_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,11 +245,11 @@ namespace SalesManagement_SysDev
             this.Arrival_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Arrival_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Arrival_btn.ForeColor = System.Drawing.Color.White;
-            this.Arrival_btn.Location = new System.Drawing.Point(0, 1646);
-            this.Arrival_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Arrival_btn.Location = new System.Drawing.Point(0, 1978);
+            this.Arrival_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Arrival_btn.Name = "Arrival_btn";
-            this.Arrival_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Arrival_btn.Size = new System.Drawing.Size(328, 68);
+            this.Arrival_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.Arrival_btn.Size = new System.Drawing.Size(410, 82);
             this.Arrival_btn.TabIndex = 21;
             this.Arrival_btn.Text = "入荷管理";
             this.Arrival_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,10 +261,10 @@ namespace SalesManagement_SysDev
             this.panel12.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel12.Controls.Add(this.issue_display);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 1605);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel12.Location = new System.Drawing.Point(0, 1929);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(328, 41);
+            this.panel12.Size = new System.Drawing.Size(410, 49);
             this.panel12.TabIndex = 20;
             // 
             // issue_display
@@ -276,10 +276,10 @@ namespace SalesManagement_SysDev
             this.issue_display.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.issue_display.ForeColor = System.Drawing.Color.White;
             this.issue_display.Location = new System.Drawing.Point(0, 0);
-            this.issue_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.issue_display.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.issue_display.Name = "issue_display";
-            this.issue_display.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.issue_display.Size = new System.Drawing.Size(328, 39);
+            this.issue_display.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.issue_display.Size = new System.Drawing.Size(410, 47);
             this.issue_display.TabIndex = 2;
             this.issue_display.Text = "表示";
             this.issue_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,11 +293,11 @@ namespace SalesManagement_SysDev
             this.issue_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.issue_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.issue_btn.ForeColor = System.Drawing.Color.White;
-            this.issue_btn.Location = new System.Drawing.Point(0, 1537);
-            this.issue_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.issue_btn.Location = new System.Drawing.Point(0, 1847);
+            this.issue_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.issue_btn.Name = "issue_btn";
-            this.issue_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.issue_btn.Size = new System.Drawing.Size(328, 68);
+            this.issue_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.issue_btn.Size = new System.Drawing.Size(410, 82);
             this.issue_btn.TabIndex = 19;
             this.issue_btn.Text = "出庫管理";
             this.issue_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -309,10 +309,10 @@ namespace SalesManagement_SysDev
             this.panel11.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel11.Controls.Add(this.warehousing_display);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 1496);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel11.Location = new System.Drawing.Point(0, 1798);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(328, 41);
+            this.panel11.Size = new System.Drawing.Size(410, 49);
             this.panel11.TabIndex = 18;
             // 
             // warehousing_display
@@ -324,10 +324,10 @@ namespace SalesManagement_SysDev
             this.warehousing_display.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.warehousing_display.ForeColor = System.Drawing.Color.White;
             this.warehousing_display.Location = new System.Drawing.Point(0, 0);
-            this.warehousing_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.warehousing_display.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.warehousing_display.Name = "warehousing_display";
-            this.warehousing_display.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.warehousing_display.Size = new System.Drawing.Size(328, 39);
+            this.warehousing_display.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.warehousing_display.Size = new System.Drawing.Size(410, 47);
             this.warehousing_display.TabIndex = 2;
             this.warehousing_display.Text = "表示";
             this.warehousing_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,11 +342,11 @@ namespace SalesManagement_SysDev
             this.warehousing_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.warehousing_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.warehousing_btn.ForeColor = System.Drawing.Color.White;
-            this.warehousing_btn.Location = new System.Drawing.Point(0, 1428);
-            this.warehousing_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.warehousing_btn.Location = new System.Drawing.Point(0, 1716);
+            this.warehousing_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.warehousing_btn.Name = "warehousing_btn";
-            this.warehousing_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.warehousing_btn.Size = new System.Drawing.Size(328, 68);
+            this.warehousing_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.warehousing_btn.Size = new System.Drawing.Size(410, 82);
             this.warehousing_btn.TabIndex = 17;
             this.warehousing_btn.Text = "入庫管理";
             this.warehousing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,10 +360,10 @@ namespace SalesManagement_SysDev
             this.instructsubmeun.Controls.Add(this.instruct_upbtn);
             this.instructsubmeun.Controls.Add(this.instruct_regbtn);
             this.instructsubmeun.Dock = System.Windows.Forms.DockStyle.Top;
-            this.instructsubmeun.Location = new System.Drawing.Point(0, 1303);
-            this.instructsubmeun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instructsubmeun.Location = new System.Drawing.Point(0, 1566);
+            this.instructsubmeun.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.instructsubmeun.Name = "instructsubmeun";
-            this.instructsubmeun.Size = new System.Drawing.Size(328, 125);
+            this.instructsubmeun.Size = new System.Drawing.Size(410, 150);
             this.instructsubmeun.TabIndex = 16;
             // 
             // instruct_serchbtn
@@ -374,11 +374,11 @@ namespace SalesManagement_SysDev
             this.instruct_serchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.instruct_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.instruct_serchbtn.ForeColor = System.Drawing.Color.White;
-            this.instruct_serchbtn.Location = new System.Drawing.Point(0, 80);
-            this.instruct_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instruct_serchbtn.Location = new System.Drawing.Point(0, 96);
+            this.instruct_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.instruct_serchbtn.Name = "instruct_serchbtn";
-            this.instruct_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.instruct_serchbtn.Size = new System.Drawing.Size(328, 39);
+            this.instruct_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.instruct_serchbtn.Size = new System.Drawing.Size(410, 47);
             this.instruct_serchbtn.TabIndex = 2;
             this.instruct_serchbtn.Text = "検索";
             this.instruct_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,11 +392,11 @@ namespace SalesManagement_SysDev
             this.instruct_upbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.instruct_upbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.instruct_upbtn.ForeColor = System.Drawing.Color.White;
-            this.instruct_upbtn.Location = new System.Drawing.Point(0, 40);
-            this.instruct_upbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instruct_upbtn.Location = new System.Drawing.Point(0, 48);
+            this.instruct_upbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.instruct_upbtn.Name = "instruct_upbtn";
-            this.instruct_upbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.instruct_upbtn.Size = new System.Drawing.Size(328, 40);
+            this.instruct_upbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.instruct_upbtn.Size = new System.Drawing.Size(410, 48);
             this.instruct_upbtn.TabIndex = 1;
             this.instruct_upbtn.Text = "更新";
             this.instruct_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -411,10 +411,10 @@ namespace SalesManagement_SysDev
             this.instruct_regbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.instruct_regbtn.ForeColor = System.Drawing.Color.White;
             this.instruct_regbtn.Location = new System.Drawing.Point(0, 0);
-            this.instruct_regbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instruct_regbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.instruct_regbtn.Name = "instruct_regbtn";
-            this.instruct_regbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.instruct_regbtn.Size = new System.Drawing.Size(328, 40);
+            this.instruct_regbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.instruct_regbtn.Size = new System.Drawing.Size(410, 48);
             this.instruct_regbtn.TabIndex = 0;
             this.instruct_regbtn.Text = "登録";
             this.instruct_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -428,11 +428,11 @@ namespace SalesManagement_SysDev
             this.instruct_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.instruct_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.instruct_btn.ForeColor = System.Drawing.Color.White;
-            this.instruct_btn.Location = new System.Drawing.Point(0, 1235);
-            this.instruct_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.instruct_btn.Location = new System.Drawing.Point(0, 1484);
+            this.instruct_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.instruct_btn.Name = "instruct_btn";
-            this.instruct_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.instruct_btn.Size = new System.Drawing.Size(328, 68);
+            this.instruct_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.instruct_btn.Size = new System.Drawing.Size(410, 82);
             this.instruct_btn.TabIndex = 15;
             this.instruct_btn.Text = "発注管理";
             this.instruct_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -444,10 +444,10 @@ namespace SalesManagement_SysDev
             this.panel9.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel9.Controls.Add(this.order_serchbtn);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 1194);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel9.Location = new System.Drawing.Point(0, 1435);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(328, 41);
+            this.panel9.Size = new System.Drawing.Size(410, 49);
             this.panel9.TabIndex = 14;
             // 
             // order_serchbtn
@@ -459,10 +459,10 @@ namespace SalesManagement_SysDev
             this.order_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.order_serchbtn.ForeColor = System.Drawing.Color.White;
             this.order_serchbtn.Location = new System.Drawing.Point(0, 0);
-            this.order_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.order_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.order_serchbtn.Name = "order_serchbtn";
-            this.order_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.order_serchbtn.Size = new System.Drawing.Size(328, 39);
+            this.order_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.order_serchbtn.Size = new System.Drawing.Size(410, 47);
             this.order_serchbtn.TabIndex = 2;
             this.order_serchbtn.Text = "検索";
             this.order_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -476,11 +476,11 @@ namespace SalesManagement_SysDev
             this.order_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.order_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.order_btn.ForeColor = System.Drawing.Color.White;
-            this.order_btn.Location = new System.Drawing.Point(0, 1126);
-            this.order_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.order_btn.Location = new System.Drawing.Point(0, 1353);
+            this.order_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.order_btn.Name = "order_btn";
-            this.order_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.order_btn.Size = new System.Drawing.Size(328, 68);
+            this.order_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.order_btn.Size = new System.Drawing.Size(410, 82);
             this.order_btn.TabIndex = 13;
             this.order_btn.Text = "注文管理";
             this.order_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -493,10 +493,10 @@ namespace SalesManagement_SysDev
             this.receivedsubmenu.Controls.Add(this.received_upbtn);
             this.receivedsubmenu.Controls.Add(this.received_regbtn);
             this.receivedsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.receivedsubmenu.Location = new System.Drawing.Point(0, 1044);
-            this.receivedsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.receivedsubmenu.Location = new System.Drawing.Point(0, 1255);
+            this.receivedsubmenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.receivedsubmenu.Name = "receivedsubmenu";
-            this.receivedsubmenu.Size = new System.Drawing.Size(328, 82);
+            this.receivedsubmenu.Size = new System.Drawing.Size(410, 98);
             this.receivedsubmenu.TabIndex = 12;
             // 
             // received_upbtn
@@ -507,11 +507,11 @@ namespace SalesManagement_SysDev
             this.received_upbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.received_upbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.received_upbtn.ForeColor = System.Drawing.Color.White;
-            this.received_upbtn.Location = new System.Drawing.Point(0, 40);
-            this.received_upbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.received_upbtn.Location = new System.Drawing.Point(0, 48);
+            this.received_upbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.received_upbtn.Name = "received_upbtn";
-            this.received_upbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.received_upbtn.Size = new System.Drawing.Size(328, 39);
+            this.received_upbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.received_upbtn.Size = new System.Drawing.Size(410, 47);
             this.received_upbtn.TabIndex = 2;
             this.received_upbtn.Text = "検索";
             this.received_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -526,10 +526,10 @@ namespace SalesManagement_SysDev
             this.received_regbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.received_regbtn.ForeColor = System.Drawing.Color.White;
             this.received_regbtn.Location = new System.Drawing.Point(0, 0);
-            this.received_regbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.received_regbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.received_regbtn.Name = "received_regbtn";
-            this.received_regbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.received_regbtn.Size = new System.Drawing.Size(328, 40);
+            this.received_regbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.received_regbtn.Size = new System.Drawing.Size(410, 48);
             this.received_regbtn.TabIndex = 0;
             this.received_regbtn.Text = "登録";
             this.received_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -544,11 +544,11 @@ namespace SalesManagement_SysDev
             this.received_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.received_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.received_btn.ForeColor = System.Drawing.Color.White;
-            this.received_btn.Location = new System.Drawing.Point(0, 976);
-            this.received_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.received_btn.Location = new System.Drawing.Point(0, 1173);
+            this.received_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.received_btn.Name = "received_btn";
-            this.received_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.received_btn.Size = new System.Drawing.Size(328, 68);
+            this.received_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.received_btn.Size = new System.Drawing.Size(410, 82);
             this.received_btn.TabIndex = 11;
             this.received_btn.Text = "受注管理";
             this.received_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -560,10 +560,10 @@ namespace SalesManagement_SysDev
             this.panel7.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel7.Controls.Add(this.Earnings_serchbtn);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 935);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Location = new System.Drawing.Point(0, 1124);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(328, 41);
+            this.panel7.Size = new System.Drawing.Size(410, 49);
             this.panel7.TabIndex = 10;
             // 
             // Earnings_serchbtn
@@ -575,10 +575,10 @@ namespace SalesManagement_SysDev
             this.Earnings_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Earnings_serchbtn.ForeColor = System.Drawing.Color.White;
             this.Earnings_serchbtn.Location = new System.Drawing.Point(0, 0);
-            this.Earnings_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Earnings_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Earnings_serchbtn.Name = "Earnings_serchbtn";
-            this.Earnings_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Earnings_serchbtn.Size = new System.Drawing.Size(328, 41);
+            this.Earnings_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.Earnings_serchbtn.Size = new System.Drawing.Size(410, 49);
             this.Earnings_serchbtn.TabIndex = 2;
             this.Earnings_serchbtn.Text = "検索";
             this.Earnings_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -592,11 +592,11 @@ namespace SalesManagement_SysDev
             this.Earnings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Earnings_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Earnings_btn.ForeColor = System.Drawing.Color.White;
-            this.Earnings_btn.Location = new System.Drawing.Point(0, 867);
-            this.Earnings_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Earnings_btn.Location = new System.Drawing.Point(0, 1042);
+            this.Earnings_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Earnings_btn.Name = "Earnings_btn";
-            this.Earnings_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Earnings_btn.Size = new System.Drawing.Size(328, 68);
+            this.Earnings_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.Earnings_btn.Size = new System.Drawing.Size(410, 82);
             this.Earnings_btn.TabIndex = 9;
             this.Earnings_btn.Text = "売上管理";
             this.Earnings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -610,10 +610,10 @@ namespace SalesManagement_SysDev
             this.empsubmenu.Controls.Add(this.emp_upbtn);
             this.empsubmenu.Controls.Add(this.emp_regbtn);
             this.empsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.empsubmenu.Location = new System.Drawing.Point(0, 742);
-            this.empsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.empsubmenu.Location = new System.Drawing.Point(0, 892);
+            this.empsubmenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.empsubmenu.Name = "empsubmenu";
-            this.empsubmenu.Size = new System.Drawing.Size(328, 125);
+            this.empsubmenu.Size = new System.Drawing.Size(410, 150);
             this.empsubmenu.TabIndex = 8;
             // 
             // emp_serchbtn
@@ -624,11 +624,11 @@ namespace SalesManagement_SysDev
             this.emp_serchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emp_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.emp_serchbtn.ForeColor = System.Drawing.Color.White;
-            this.emp_serchbtn.Location = new System.Drawing.Point(0, 80);
-            this.emp_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emp_serchbtn.Location = new System.Drawing.Point(0, 96);
+            this.emp_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.emp_serchbtn.Name = "emp_serchbtn";
-            this.emp_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.emp_serchbtn.Size = new System.Drawing.Size(328, 39);
+            this.emp_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.emp_serchbtn.Size = new System.Drawing.Size(410, 47);
             this.emp_serchbtn.TabIndex = 2;
             this.emp_serchbtn.Text = "検索";
             this.emp_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -642,11 +642,11 @@ namespace SalesManagement_SysDev
             this.emp_upbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emp_upbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.emp_upbtn.ForeColor = System.Drawing.Color.White;
-            this.emp_upbtn.Location = new System.Drawing.Point(0, 40);
-            this.emp_upbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emp_upbtn.Location = new System.Drawing.Point(0, 48);
+            this.emp_upbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.emp_upbtn.Name = "emp_upbtn";
-            this.emp_upbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.emp_upbtn.Size = new System.Drawing.Size(328, 40);
+            this.emp_upbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.emp_upbtn.Size = new System.Drawing.Size(410, 48);
             this.emp_upbtn.TabIndex = 1;
             this.emp_upbtn.Text = "更新";
             this.emp_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -661,10 +661,10 @@ namespace SalesManagement_SysDev
             this.emp_regbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.emp_regbtn.ForeColor = System.Drawing.Color.White;
             this.emp_regbtn.Location = new System.Drawing.Point(0, 0);
-            this.emp_regbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emp_regbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.emp_regbtn.Name = "emp_regbtn";
-            this.emp_regbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.emp_regbtn.Size = new System.Drawing.Size(328, 40);
+            this.emp_regbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.emp_regbtn.Size = new System.Drawing.Size(410, 48);
             this.emp_regbtn.TabIndex = 0;
             this.emp_regbtn.Text = "登録";
             this.emp_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -679,11 +679,11 @@ namespace SalesManagement_SysDev
             this.emp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emp_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.emp_btn.ForeColor = System.Drawing.Color.White;
-            this.emp_btn.Location = new System.Drawing.Point(0, 674);
-            this.emp_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emp_btn.Location = new System.Drawing.Point(0, 810);
+            this.emp_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.emp_btn.Name = "emp_btn";
-            this.emp_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.emp_btn.Size = new System.Drawing.Size(328, 68);
+            this.emp_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.emp_btn.Size = new System.Drawing.Size(410, 82);
             this.emp_btn.TabIndex = 7;
             this.emp_btn.Text = "社員管理";
             this.emp_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -696,10 +696,10 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.Controls.Add(this.stock_serchbtn);
             this.stocksubmenu.Controls.Add(this.stock_upbtn);
             this.stocksubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.stocksubmenu.Location = new System.Drawing.Point(0, 592);
-            this.stocksubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stocksubmenu.Location = new System.Drawing.Point(0, 712);
+            this.stocksubmenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.stocksubmenu.Name = "stocksubmenu";
-            this.stocksubmenu.Size = new System.Drawing.Size(328, 82);
+            this.stocksubmenu.Size = new System.Drawing.Size(410, 98);
             this.stocksubmenu.TabIndex = 6;
             // 
             // stock_serchbtn
@@ -710,11 +710,11 @@ namespace SalesManagement_SysDev
             this.stock_serchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stock_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.stock_serchbtn.ForeColor = System.Drawing.Color.White;
-            this.stock_serchbtn.Location = new System.Drawing.Point(0, 40);
-            this.stock_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stock_serchbtn.Location = new System.Drawing.Point(0, 48);
+            this.stock_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.stock_serchbtn.Name = "stock_serchbtn";
-            this.stock_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.stock_serchbtn.Size = new System.Drawing.Size(328, 39);
+            this.stock_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.stock_serchbtn.Size = new System.Drawing.Size(410, 47);
             this.stock_serchbtn.TabIndex = 2;
             this.stock_serchbtn.Text = "検索";
             this.stock_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -729,10 +729,10 @@ namespace SalesManagement_SysDev
             this.stock_upbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.stock_upbtn.ForeColor = System.Drawing.Color.White;
             this.stock_upbtn.Location = new System.Drawing.Point(0, 0);
-            this.stock_upbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stock_upbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.stock_upbtn.Name = "stock_upbtn";
-            this.stock_upbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.stock_upbtn.Size = new System.Drawing.Size(328, 40);
+            this.stock_upbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.stock_upbtn.Size = new System.Drawing.Size(410, 48);
             this.stock_upbtn.TabIndex = 1;
             this.stock_upbtn.Text = "更新";
             this.stock_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -746,11 +746,11 @@ namespace SalesManagement_SysDev
             this.stock_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stock_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.stock_btn.ForeColor = System.Drawing.Color.White;
-            this.stock_btn.Location = new System.Drawing.Point(0, 524);
-            this.stock_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stock_btn.Location = new System.Drawing.Point(0, 630);
+            this.stock_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.stock_btn.Name = "stock_btn";
-            this.stock_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.stock_btn.Size = new System.Drawing.Size(328, 68);
+            this.stock_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.stock_btn.Size = new System.Drawing.Size(410, 82);
             this.stock_btn.TabIndex = 5;
             this.stock_btn.Text = "在庫管理";
             this.stock_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -764,10 +764,10 @@ namespace SalesManagement_SysDev
             this.Productsubmenu.Controls.Add(this.Product_upbtn);
             this.Productsubmenu.Controls.Add(this.Product_regbtn);
             this.Productsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Productsubmenu.Location = new System.Drawing.Point(0, 399);
-            this.Productsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Productsubmenu.Location = new System.Drawing.Point(0, 480);
+            this.Productsubmenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Productsubmenu.Name = "Productsubmenu";
-            this.Productsubmenu.Size = new System.Drawing.Size(328, 125);
+            this.Productsubmenu.Size = new System.Drawing.Size(410, 150);
             this.Productsubmenu.TabIndex = 4;
             // 
             // Product_serchbtn
@@ -778,11 +778,11 @@ namespace SalesManagement_SysDev
             this.Product_serchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Product_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Product_serchbtn.ForeColor = System.Drawing.Color.White;
-            this.Product_serchbtn.Location = new System.Drawing.Point(0, 80);
-            this.Product_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Product_serchbtn.Location = new System.Drawing.Point(0, 96);
+            this.Product_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Product_serchbtn.Name = "Product_serchbtn";
-            this.Product_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Product_serchbtn.Size = new System.Drawing.Size(328, 39);
+            this.Product_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.Product_serchbtn.Size = new System.Drawing.Size(410, 47);
             this.Product_serchbtn.TabIndex = 2;
             this.Product_serchbtn.Text = "検索";
             this.Product_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -796,11 +796,11 @@ namespace SalesManagement_SysDev
             this.Product_upbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Product_upbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Product_upbtn.ForeColor = System.Drawing.Color.White;
-            this.Product_upbtn.Location = new System.Drawing.Point(0, 40);
-            this.Product_upbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Product_upbtn.Location = new System.Drawing.Point(0, 48);
+            this.Product_upbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Product_upbtn.Name = "Product_upbtn";
-            this.Product_upbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Product_upbtn.Size = new System.Drawing.Size(328, 40);
+            this.Product_upbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.Product_upbtn.Size = new System.Drawing.Size(410, 48);
             this.Product_upbtn.TabIndex = 1;
             this.Product_upbtn.Text = "更新";
             this.Product_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -815,10 +815,10 @@ namespace SalesManagement_SysDev
             this.Product_regbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Product_regbtn.ForeColor = System.Drawing.Color.White;
             this.Product_regbtn.Location = new System.Drawing.Point(0, 0);
-            this.Product_regbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Product_regbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Product_regbtn.Name = "Product_regbtn";
-            this.Product_regbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Product_regbtn.Size = new System.Drawing.Size(328, 40);
+            this.Product_regbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.Product_regbtn.Size = new System.Drawing.Size(410, 48);
             this.Product_regbtn.TabIndex = 0;
             this.Product_regbtn.Text = "登録";
             this.Product_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -834,11 +834,11 @@ namespace SalesManagement_SysDev
             this.Product_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Product_btn.ForeColor = System.Drawing.Color.White;
             this.Product_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Product_btn.Location = new System.Drawing.Point(0, 331);
-            this.Product_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Product_btn.Location = new System.Drawing.Point(0, 398);
+            this.Product_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Product_btn.Name = "Product_btn";
-            this.Product_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.Product_btn.Size = new System.Drawing.Size(328, 68);
+            this.Product_btn.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.Product_btn.Size = new System.Drawing.Size(410, 82);
             this.Product_btn.TabIndex = 3;
             this.Product_btn.Text = "商品管理";
             this.Product_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -852,10 +852,10 @@ namespace SalesManagement_SysDev
             this.clientsubmenu.Controls.Add(this.client_upbtn);
             this.clientsubmenu.Controls.Add(this.client_regbtn);
             this.clientsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.clientsubmenu.Location = new System.Drawing.Point(0, 206);
-            this.clientsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clientsubmenu.Location = new System.Drawing.Point(0, 248);
+            this.clientsubmenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.clientsubmenu.Name = "clientsubmenu";
-            this.clientsubmenu.Size = new System.Drawing.Size(328, 125);
+            this.clientsubmenu.Size = new System.Drawing.Size(410, 150);
             this.clientsubmenu.TabIndex = 2;
             // 
             // client_serchbtn
@@ -866,11 +866,11 @@ namespace SalesManagement_SysDev
             this.client_serchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.client_serchbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.client_serchbtn.ForeColor = System.Drawing.Color.White;
-            this.client_serchbtn.Location = new System.Drawing.Point(0, 80);
-            this.client_serchbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.client_serchbtn.Location = new System.Drawing.Point(0, 96);
+            this.client_serchbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.client_serchbtn.Name = "client_serchbtn";
-            this.client_serchbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.client_serchbtn.Size = new System.Drawing.Size(328, 40);
+            this.client_serchbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.client_serchbtn.Size = new System.Drawing.Size(410, 48);
             this.client_serchbtn.TabIndex = 2;
             this.client_serchbtn.Text = "検索";
             this.client_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -885,11 +885,11 @@ namespace SalesManagement_SysDev
             this.client_upbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.client_upbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.client_upbtn.ForeColor = System.Drawing.Color.White;
-            this.client_upbtn.Location = new System.Drawing.Point(0, 40);
-            this.client_upbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.client_upbtn.Location = new System.Drawing.Point(0, 48);
+            this.client_upbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.client_upbtn.Name = "client_upbtn";
-            this.client_upbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.client_upbtn.Size = new System.Drawing.Size(328, 40);
+            this.client_upbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.client_upbtn.Size = new System.Drawing.Size(410, 48);
             this.client_upbtn.TabIndex = 1;
             this.client_upbtn.Text = "更新";
             this.client_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -905,10 +905,10 @@ namespace SalesManagement_SysDev
             this.client_regbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.client_regbtn.ForeColor = System.Drawing.Color.White;
             this.client_regbtn.Location = new System.Drawing.Point(0, 0);
-            this.client_regbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.client_regbtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.client_regbtn.Name = "client_regbtn";
-            this.client_regbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.client_regbtn.Size = new System.Drawing.Size(328, 40);
+            this.client_regbtn.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.client_regbtn.Size = new System.Drawing.Size(410, 48);
             this.client_regbtn.TabIndex = 0;
             this.client_regbtn.Text = "登録";
             this.client_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -923,11 +923,11 @@ namespace SalesManagement_SysDev
             this.btn_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_client.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btn_client.ForeColor = System.Drawing.Color.White;
-            this.btn_client.Location = new System.Drawing.Point(0, 138);
-            this.btn_client.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_client.Location = new System.Drawing.Point(0, 166);
+            this.btn_client.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btn_client.Name = "btn_client";
-            this.btn_client.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btn_client.Size = new System.Drawing.Size(328, 68);
+            this.btn_client.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btn_client.Size = new System.Drawing.Size(410, 82);
             this.btn_client.TabIndex = 1;
             this.btn_client.Text = "顧客管理";
             this.btn_client.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -943,9 +943,9 @@ namespace SalesManagement_SysDev
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 138);
+            this.panel1.Size = new System.Drawing.Size(410, 166);
             this.panel1.TabIndex = 0;
             // 
             // label4
@@ -953,9 +953,10 @@ namespace SalesManagement_SysDev
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(30, 76);
+            this.label4.Location = new System.Drawing.Point(38, 91);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.Size = new System.Drawing.Size(73, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
             // 
@@ -964,9 +965,10 @@ namespace SalesManagement_SysDev
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(30, 9);
+            this.label1.Location = new System.Drawing.Point(38, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(73, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -975,9 +977,10 @@ namespace SalesManagement_SysDev
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(31, 112);
+            this.label3.Location = new System.Drawing.Point(39, 134);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.Size = new System.Drawing.Size(73, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
             // 
@@ -986,9 +989,10 @@ namespace SalesManagement_SysDev
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(30, 45);
+            this.label2.Location = new System.Drawing.Point(38, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(73, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
@@ -997,10 +1001,10 @@ namespace SalesManagement_SysDev
             this.childsubmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.childsubmenu.Location = new System.Drawing.Point(349, 87);
-            this.childsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.childsubmenu.Location = new System.Drawing.Point(436, 104);
+            this.childsubmenu.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.childsubmenu.Name = "childsubmenu";
-            this.childsubmenu.Size = new System.Drawing.Size(1201, 728);
+            this.childsubmenu.Size = new System.Drawing.Size(1501, 874);
             this.childsubmenu.TabIndex = 1;
             this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
             // 
@@ -1009,10 +1013,10 @@ namespace SalesManagement_SysDev
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.tilepanel.Controls.Add(this.pictureBox1);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tilepanel.Location = new System.Drawing.Point(349, 0);
-            this.tilepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tilepanel.Location = new System.Drawing.Point(436, 0);
+            this.tilepanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tilepanel.Name = "tilepanel";
-            this.tilepanel.Size = new System.Drawing.Size(1190, 96);
+            this.tilepanel.Size = new System.Drawing.Size(1488, 115);
             this.tilepanel.TabIndex = 2;
             this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
@@ -1020,10 +1024,10 @@ namespace SalesManagement_SysDev
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::SalesManagement_SysDev.Properties.Resources.close_FILL0_wght400_GRAD0_opsz481;
-            this.pictureBox1.Location = new System.Drawing.Point(1111, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(1389, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(69, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -1031,14 +1035,14 @@ namespace SalesManagement_SysDev
             // 
             // template
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1539, 815);
+            this.ClientSize = new System.Drawing.Size(1924, 978);
             this.Controls.Add(this.childsubmenu);
             this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "template";
             this.Text = "b";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
