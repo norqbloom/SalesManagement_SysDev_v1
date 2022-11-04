@@ -156,7 +156,7 @@ namespace SalesManagement_SysDev
         /// 
         /// </summary>
         /// <returns></returns>
-        /*
+        
         public List<M_Client> GetClientsData(M_Client selectCondition)
         {
             List<M_Client> clients = new List<M_Client>();
@@ -179,7 +179,7 @@ namespace SalesManagement_SysDev
             return clients;
 
         }
-        */
+        
         ///////////////////////////////
         //メソッド名：GetClientsDspData()
         //引　数   ：なし
