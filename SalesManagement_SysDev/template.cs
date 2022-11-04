@@ -260,7 +260,7 @@ namespace SalesManagement_SysDev
 
         private void client_serchbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new client_serch());
         }
 
         private void sidepanel_Paint(object sender, PaintEventArgs e)

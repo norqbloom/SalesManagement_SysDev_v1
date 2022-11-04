@@ -935,6 +935,7 @@ namespace SalesManagement_SysDev
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);

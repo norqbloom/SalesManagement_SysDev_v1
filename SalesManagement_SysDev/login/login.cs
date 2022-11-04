@@ -77,6 +77,8 @@ namespace SalesManagement_SysDev
 
         private void login_Load(object sender, EventArgs e)
         {
+            textBox_pass.PasswordChar = '*';
+
             logina.Visible = false;
             lodinggif.Visible = false;
             button_login.Visible = true;
@@ -189,6 +191,25 @@ namespace SalesManagement_SysDev
         {
             Form form = new empcnt();
             form.Show(this);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form form = new F_Login();
+            form.Show(this);
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                textBox_pass.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox_pass.PasswordChar = '*';
+            }
         }
     }
 }
