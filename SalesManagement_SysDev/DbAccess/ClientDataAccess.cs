@@ -157,28 +157,6 @@ namespace SalesManagement_SysDev
         /// </summary>
         /// <returns></returns>
         
-        public List<M_Client> GetClientsData(M_Client selectCondition)
-        {
-            List<M_Client> clients = new List<M_Client>();
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                clients = context.M_Clients.Where(x => x.ClID.ToString().CompareTo(selectCondition.ClID) &&
-                                                    x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                    x.ClName.Contains(selectCondition.ClName) &&
-                                                    x.ClAddress.Contains(selectCondition.ClAddress) &&
-                                                    x.ClPhone.Contains(selectCondition.ClPhone) &&
-                                                    x.ClFlag.CompareTo(selectCondition.ClFlag) &&
-                                                    x.ClPostal.Contains(selectCondition.ClPostal) &&
-                                                    x.ClFAX.Contains(selectCondition.ClFAX)).ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return clients;
-
-        }
         
         ///////////////////////////////
         //メソッド名：GetClientsDspData()
@@ -210,7 +188,7 @@ namespace SalesManagement_SysDev
         ///////////////////////////////
         
         public List<M_Client> GetClientdata(M_Client selectCondition)
-        {
+        {                 
             List<M_Client> client = new List<M_Client>();
 
             try

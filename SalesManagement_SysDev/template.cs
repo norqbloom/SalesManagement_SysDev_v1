@@ -314,5 +314,10 @@ namespace SalesManagement_SysDev
         {
             this.Close();
         }
+
+        private void Product_regbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

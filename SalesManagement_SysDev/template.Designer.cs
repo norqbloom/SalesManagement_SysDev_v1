@@ -823,6 +823,7 @@ namespace SalesManagement_SysDev
             this.Product_regbtn.Text = "登録";
             this.Product_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_regbtn.UseVisualStyleBackColor = false;
+            this.Product_regbtn.Click += new System.EventHandler(this.Product_regbtn_Click);
             // 
             // Product_btn
             // 
