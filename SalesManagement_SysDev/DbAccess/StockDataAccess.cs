@@ -1,31 +1,30 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev
+namespace SalesManagement_SysDev.DbAccess
 {
-    class ProductDataAccess
+    class StockDataAccess
     {
         ///////////////////////////////
-        //メソッド名：CheckPrIDExistence()
-        //引　数   ：商品ID
+        //メソッド名：CheckStIDExistence()
+        //引　数   ：在庫ID
         //戻り値   ：True or False
-        //機　能   ：一致する商品コードの有無を確認
+        //機　能   ：一致する在庫IDの有無を確認
         //          ：一致データありの場合True
         //          ：一致データなしの場合False
         ///////////////////////////////
-        public bool CheckPrIDExistence(string ProductID)
+        public bool CheckStIDExistence(string StockID)
         {
             bool flg = false;
             try
             {
                 var context = new SalesManagement_DevContext();
                 //商品IDで一致するデータが存在するか
-                flg = context.M_Products.Any(x => x.PrID.ToString() == ProductID);
+                flg = context.T_Stocks.Any(x => x.StID.ToString() == StockID);
                 context.Dispose();
             }
             catch (Exception ex)
@@ -36,19 +35,19 @@ namespace SalesManagement_SysDev
         }
 
         ///////////////////////////////
-        //メソッド名：AddItemData()
-        //引　数   ：商品データ
+        //メソッド名：AddStockData()
+        //引　数   ：在庫データ
         //戻り値   ：True or False
-        //機　能   ：商品データの登録
+        //機　能   ：在庫データの登録
         //          ：登録成功の場合True
         //          ：登録失敗の場合False
         ///////////////////////////////
-        public bool AddProductData(M_Product regProduct)
+        public bool AddStockData(T_Stock regStock)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                context.M_Products.Add(regProduct);
+                context.T_Stocks.Add(regStock);
                 context.SaveChanges();
                 context.Dispose();
                 return true;
@@ -61,33 +60,25 @@ namespace SalesManagement_SysDev
         }
 
         ///////////////////////////////
-        //メソッド名：UpdateProductData()
-        //引　数   ：商品データ
+        //メソッド名：UpdateStockData()
+        //引　数   ：在庫データ
         //戻り値   ：True or False
-        //機　能   ：商品データの更新
+        //機　能   ：在庫データの更新
         //          ：更新成功の場合True
         //          ：更新失敗の場合False
         ///////////////////////////////
-        public bool UpdateProductData(M_Product updProduct)
+        public bool UpdateStockData(T_Stock updStock)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                var product = context.M_Products.Single(x => x.PrID == updProduct.PrID);
+                var Stock = context.T_Stocks.Single(x => x.PrID == updStock.PrID);
 
-                product.PrID = updProduct.PrID;
-                product.MaID = updProduct.MaID;
-                product.PrName = updProduct.PrName;
-                product.Price = updProduct.Price;
-                product.PrJCode = updProduct.PrJCode;
-                product.PrSafetyStock = updProduct.PrSafetyStock;
-                product.ScID = updProduct.ScID;
-                product.PrModelNumber = updProduct.PrModelNumber;
-                product.PrColor = updProduct.PrColor;
-                product.PrReleaseDate = updProduct.PrReleaseDate;
-                product.PrFlag = updProduct.PrFlag;
-                product.PrHidden = updProduct.PrHidden;
-
+                Stock.StID = updStock.StID;
+                Stock.PrID = updStock.PrID;
+                Stock.StQuantity = updStock.StQuantity;
+                Stock.StFlag = updStock.StFlag;
+                
                 context.SaveChanges();
                 context.Dispose();
                 return true;
@@ -100,20 +91,20 @@ namespace SalesManagement_SysDev
         }
 
         ///////////////////////////////
-        //メソッド名：DeleteProductData()
-        //引　数   ：商品データ
+        //メソッド名：DeleteStockData()
+        //引　数   ：在庫データ
         //戻り値   ：True or False
-        //機　能   ：商品データの削除
+        //機　能   ：在庫データの削除
         //          ：削除成功の場合True
         //          ：削除失敗の場合False
         ///////////////////////////////
-        public bool DeleteProductData(string delProductID)
+        public bool DeleteStockData(string delStockID)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                var Product = context.M_Products.Single(x => x.PrID.ToString() == delProductID);
-                context.M_Products.Remove(Product);
+                var Stock = context.T_Stocks.Single(x => x.StID.ToString() == delStockID);
+                context.T_Stocks.Remove(Stock);
                 context.SaveChanges();
                 context.Dispose();
                 return true;
@@ -131,19 +122,16 @@ namespace SalesManagement_SysDev
         //機　能   ：条件一致商品顧客データの取得
         ///////////////////////////////
 
-        public List<M_Product> GetClientdata(M_Product selectCondition)
+        public List<T_Stock> GetStockdata(T_Stock selectCondition)
         {
-            List<M_Product> client = new List<M_Product>();
+            List<T_Stock> client = new List<T_Stock>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                var product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber.ToString()) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
+                var Stock = context.T_Stocks.Where(x => x.StID.ToString().Contains(selectCondition.StID.ToString()) &&
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.StQuantity.ToString().Contains(selectCondition.StQuantity.ToString())).ToList();
                 context.Dispose();
 
             }
@@ -155,5 +143,3 @@ namespace SalesManagement_SysDev
         }
     }
 }
-
-

@@ -45,9 +45,9 @@ namespace SalesManagement_SysDev
             if (!String.IsNullOrEmpty(EmIDtxt.Text.Trim()))
             {
                 //Emid半角英数字チェック
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(EmIDtxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(EmIDtxt.Text.Trim()))
                 {
-                    MessageBox.Show("IDは半角英数字のみ");
+                    MessageBox.Show("IDは半角数字のみ");
                     EmIDtxt.Focus();
                     return false;
                 }
@@ -78,13 +78,6 @@ namespace SalesManagement_SysDev
             //社員名の確認
             if (!String.IsNullOrEmpty(EmNametxt.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckFullWidth(EmNametxt.Text.Trim()))
-                {
-                    //名前は全角
-                    MessageBox.Show("全角で");
-                    EmNametxt.Focus();
-                    return false;
-                }
                 //名前文字数
                 if (EmNametxt.TextLength > 50)
                 {
@@ -103,9 +96,9 @@ namespace SalesManagement_SysDev
             if (!String.IsNullOrEmpty(SoIDtxt.Text.Trim()))
             {
                 //SOid型確認
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(SoIDtxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(SoIDtxt.Text.Trim()))
                 {
-                    MessageBox.Show("半角英数字やしw");
+                    MessageBox.Show("半角数字やしw");
                     SoIDtxt.Focus();
                     return false;
                 }
@@ -127,14 +120,14 @@ namespace SalesManagement_SysDev
             //PoID確認
             if (!String.IsNullOrEmpty(PoIDtxt.Text.Trim()))
             {
-                //SOid型確認
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(PoIDtxt.Text.Trim()))
+                //PoID型確認
+                if (!dataInputFormCheck.CheckNumeric(PoIDtxt.Text.Trim()))
                 {
-                    MessageBox.Show("半角英数字やしw");
+                    MessageBox.Show("半角数字やしw");
                     PoIDtxt.Focus();
                     return false;
                 }
-                //soid文字数チェック
+                //PoID文字数チェック
                 if (PoIDtxt.TextLength > 2)
                 {
                     MessageBox.Show("PoIDは文字数は2文字");
