@@ -26,6 +26,10 @@ namespace SalesManagement_SysDev
         {
 
         }
+        private void SetDataGridView()
+        {
+            
+        }
 
         private void serch_Click(object sender, EventArgs e)
         {
@@ -62,7 +66,7 @@ namespace SalesManagement_SysDev
             //Clphone確認
             if (!String.IsNullOrEmpty(ClPhonetxt.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckNumeric(ClPhonetxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckHalfChar(ClPhonetxt.Text.Trim()))
                 {
                     messageDsp.DspMsg("M1015");
                     ClPhonetxt.Focus();
@@ -76,16 +80,29 @@ namespace SalesManagement_SysDev
 
         private void GenerateDataAtSelect()
         {
-            M_Client selectCondition = new M_Client()
+            if (!String.IsNullOrEmpty(ClIDtxt.Text.Trim()))
             {
-                ClID=int.Parse(ClIDtxt.Text.Trim()),
-                SoID=int.Parse(SOIDtxt.Text.Trim()),
-                ClName=CLNametxt.Text.Trim(),
-                ClPhone=ClPhonetxt.Text.Trim()
-                
-            };
+                if (!String.IsNullOrEmpty(SOIDtxt.Text.Trim()))
+                {
+                    datedubblwget();
+                }
+                else
+                {
+                    dateClget();
+                }
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(SOIDtxt.Text.Trim()))
+                {
+                    dateSoget();
+                }
+                else
+                {
+                    datenolwget();
+                }
 
-            clients = clientDataAccess.GetClientdata(selectCondition);
+            }
         }
         private void SetSelectData()
         {
@@ -94,6 +111,50 @@ namespace SalesManagement_SysDev
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+        private void dateClget()
+        {
+            M_Client selectCondition = new M_Client()
+            {
+                ClID = int.Parse(ClIDtxt.Text.Trim()),
+                ClName = CLNametxt.Text.Trim(),
+                ClPhone = ClPhonetxt.Text.Trim(),
+            };
+            clients = clientDataAccess.GetClientdata(selectCondition);
+
+        }
+        private void dateSoget()
+        {
+            M_Client selectCondition = new M_Client()
+            {
+                SoID = int.Parse(SOIDtxt.Text.Trim()),
+                ClName = CLNametxt.Text.Trim(),
+                ClPhone = ClPhonetxt.Text.Trim(),
+            };
+            clients = clientDataAccess.GetClientdata(selectCondition);
+
+        }
+        private void datedubblwget()
+        {
+            M_Client selectCondition = new M_Client()
+            {
+                ClID = int.Parse(ClIDtxt.Text.Trim()),
+                SoID = int.Parse(SOIDtxt.Text.Trim()),
+                ClName = CLNametxt.Text.Trim(),
+                ClPhone = ClPhonetxt.Text.Trim(),
+            };
+            clients = clientDataAccess.GetClientdata(selectCondition);
+
+        }
+        private void datenolwget()
+        {
+            M_Client selectCondition = new M_Client()
+            {
+                ClName = CLNametxt.Text.Trim(),
+                ClPhone = ClPhonetxt.Text.Trim(),
+            };
+            clients = clientDataAccess.GetClientdata(selectCondition);
 
         }
     }
