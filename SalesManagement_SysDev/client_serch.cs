@@ -121,7 +121,7 @@ namespace SalesManagement_SysDev
                 ClName = CLNametxt.Text.Trim(),
                 ClPhone = ClPhonetxt.Text.Trim(),
             };
-            clients = clientDataAccess.GetClientdata(selectCondition);
+            clients = clientDataAccess.GetCldata(selectCondition);
 
         }
         private void dateSoget()
@@ -132,7 +132,7 @@ namespace SalesManagement_SysDev
                 ClName = CLNametxt.Text.Trim(),
                 ClPhone = ClPhonetxt.Text.Trim(),
             };
-            clients = clientDataAccess.GetClientdata(selectCondition);
+            clients = clientDataAccess.GetSodata(selectCondition);
 
         }
         private void datedubblwget()
@@ -144,7 +144,7 @@ namespace SalesManagement_SysDev
                 ClName = CLNametxt.Text.Trim(),
                 ClPhone = ClPhonetxt.Text.Trim(),
             };
-            clients = clientDataAccess.GetClientdata(selectCondition);
+            clients = clientDataAccess.Getdubblwdata(selectCondition);
 
         }
         private void datenolwget()
@@ -154,7 +154,7 @@ namespace SalesManagement_SysDev
                 ClName = CLNametxt.Text.Trim(),
                 ClPhone = ClPhonetxt.Text.Trim(),
             };
-            clients = clientDataAccess.GetClientdata(selectCondition);
+            clients = clientDataAccess.Getnodata(selectCondition);
 
         }
     }
