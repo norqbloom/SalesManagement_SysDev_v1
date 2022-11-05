@@ -198,7 +198,7 @@ namespace SalesManagement_SysDev
                 client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();         
                 context.Dispose();
                     
             }

@@ -16,6 +16,8 @@ namespace SalesManagement_SysDev
         MessageDsp messageDsp = new MessageDsp();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
+        private static List<M_Client> dataset;
+
 
         public client_serch()
         {
@@ -103,6 +105,7 @@ namespace SalesManagement_SysDev
                 }
 
             }
+
         }
         private void SetSelectData()
         {
