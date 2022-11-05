@@ -339,9 +339,6 @@
   <ItemGroup>
     <None Include="Resources\loading.gif" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\l1oading.gif" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
