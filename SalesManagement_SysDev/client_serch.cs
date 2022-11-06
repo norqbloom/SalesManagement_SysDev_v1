@@ -108,7 +108,7 @@ namespace SalesManagement_SysDev
 
         }
         private void SetSelectData()
-        {
+        {            
             dataGridView1.DataSource = clients;
         }
 
