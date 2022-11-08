@@ -131,15 +131,42 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        //public List<M_Product> GetProductData()
-        //{
-        //    List<M_Product> product = new List<M_Product>();
+        public List<M_Product> GetProductData()
+        {
+            List<M_Product> product = new List<M_Product>();
 
-        //    try
-        //    {
-        //        var context = new ();
-        //    }
-        //}
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var tb = from t1 in context.M_Products
+                         join t2 in context.M_Makers
+                         on t1.MaID equals t2.MaID
+                         join t3 in context.M_SmallClassifications
+                         on t1.ScID equals t3.ScID
+
+                         select new
+                         {
+                             t1.PrID,
+                             t2.MaID,
+                             t1.PrName,
+                             t1.Price,
+                             t1.PrSafetyStock,
+                             t3.ScID,
+                             t1.PrModelNumber,
+                             t1.PrColor,
+                             t1.PrReleaseDate,
+                             t1.PrFlag,
+                             t1.PrHidden
+                         };
+                foreach(var p in tb)
+                {
+                    product.Add(new M_ProductDsp()
+                    {
+
+                    });
+                }
+            }
+        }
 
     }
 }
