@@ -33,8 +33,6 @@ namespace SalesManagement_SysDev
             context.Dispose();
 
             MessageBox.Show("テーブル作成完了");
-            //テスト1回目
-            //テスト2回目
         }
 
         private void button1_Click(object sender, EventArgs e)

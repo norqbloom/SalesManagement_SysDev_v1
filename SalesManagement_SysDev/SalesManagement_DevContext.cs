@@ -12,7 +12,8 @@ namespace SalesManagement_SysDev
     class SalesManagement_DevContext : DbContext
     {
         public DbSet<M_Client> M_Clients { get; set; }
-        public DbSet<M_clhistory> M_Clhistories { get; set; }
+        public DbSet<M_clhistory> M_Clhistory { get; set; }
+
         public DbSet<M_Employee> M_Employees { get; set; }
         public DbSet<M_MajorCassification> M_MajorCassifications { get; set; }
         public DbSet<M_Maker> M_Makers { get; set; }

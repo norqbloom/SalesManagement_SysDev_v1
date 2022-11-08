@@ -12,6 +12,12 @@ namespace SalesManagement_SysDev.Management_Client
 {
     public partial class Client_Add : Form
     {
+        //メッセージ表示用クラスのインスタンス化
+        MessageDsp messageDsp = new MessageDsp();
+        //入力形式チェック用クラスのインスタンス化
+        DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+        ClientDataAccess clientDataAccess = new ClientDataAccess();
+
         public Client_Add()
         {
             InitializeComponent();
@@ -25,6 +31,80 @@ namespace SalesManagement_SysDev.Management_Client
         }
         private bool GetclientDataAtRegistration()
         {
+            //顧客ID
+            if (String.IsNullOrEmpty(ClID.Text.Trim()))
+            {
+                //入力チェック
+                if (!dataInputFormCheck.CheckNumeric(ClID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M2001");
+                    ClID.Focus();
+                    return false;
+                }
+                if(ClID.TextLength > 6)
+                {
+                    messageDsp.DspMsg("M2002");
+                    ClID.Focus();
+                    return false;
+                }
+                if (clientDataAccess.CheckClientCDExistence(int.Parse(ClID.Text.Trim())))
+                {
+                    messageDsp.DspMsg("M2003");
+                    ClID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M2004");
+                ClID.Focus();
+                return false;
+            }
+
+            //営業所ID
+            if (String.IsNullOrEmpty(SoID.Text.Trim()))
+            {
+                //入力チェック
+                if (!dataInputFormCheck.CheckNumeric(SoID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M2005");
+                    SoID.Focus();
+                    return false;
+                }
+                if (SoID.TextLength > 2)
+                {
+                    MessageBox.Show("営業所IDは2文字です");
+                    SoID.Focus();
+                    return false;
+                }
+                if (clientDataAccess.CheckClientCDExistence(int.Parse(SoID.Text.Trim())))
+                {
+                    messageDsp.DspMsg("M2007");
+                    SoID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M2008");
+                SoID.Focus();
+                return false;
+            }
+            //顧客名
+            if (!String.IsNullOrEmpty(ClName.Text.Trim()))
+            {
+
+            }
+            else
+            {
+                messageDsp.DspMsg("M2011");
+                ClName.Focus();
+                return false;
+            }
+
+
+
+            return true;
         }
     }
 }
