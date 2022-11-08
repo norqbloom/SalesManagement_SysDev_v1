@@ -117,11 +117,7 @@ namespace SalesManagement_SysDev.Management_Client
                 ClPostal.Focus();
                 return false;
             }
-
-
-
-
-            return true;
+          return true;
         }
     }
 }

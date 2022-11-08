@@ -50,8 +50,9 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
-                                                  && x.EmPassword.Contains(EmPass));
+                flg = context.M_Employees.Any(x => x.EmID.ToString() == EmID && x.EmPassword == EmPass);
+                //flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
+                //                                  && x.EmPassword.Contains(EmPass));
                 context.Dispose();
             }
             catch (Exception ex)

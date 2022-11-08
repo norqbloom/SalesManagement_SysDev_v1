@@ -15,7 +15,7 @@ namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
-        bool flg;
+        
         MessageDsp messageDsp = new MessageDsp();
 
         PasswordHash passwordHash = new PasswordHash();
@@ -97,6 +97,7 @@ namespace SalesManagement_SysDev
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            bool flg;
 
             //ログイン処理
             string logID = textBox_id.Text;
@@ -109,6 +110,7 @@ namespace SalesManagement_SysDev
             }
             try
             {
+
                 var pw = passwordHash.CreatePasswordHash(textBox_pass.Text.Trim());
                 //社員ID・パスワードチェック 
                 var context = new SalesManagement_DevContext();
@@ -141,6 +143,13 @@ namespace SalesManagement_SysDev
                     }
                     template.loginID = loginID;
 
+                    Form form = new template();
+                    form.Show(this);
+                    Opacity = 0;
+                    logina.Visible = false;
+                    lodinggif.Visible = false;
+                    button_login.Visible = true;
+
                     context.Dispose();
 
                 }
@@ -167,23 +176,12 @@ namespace SalesManagement_SysDev
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (flg == true)
-            {
-                Form form = new template();
-                form.Show(this);
-                Opacity = 0;
-                logina.Visible = false;
-                lodinggif.Visible = false;
-                button_login.Visible = true;
-            }
 
-            if (flg == false)
-            {
                 logina.Visible = true;
                 logina.Text = "担当者IDまたはパスワードが違います";
                 lodinggif.Visible = false;
                 button_login.Visible = true;
-            }
+            
             return;
         }
 
