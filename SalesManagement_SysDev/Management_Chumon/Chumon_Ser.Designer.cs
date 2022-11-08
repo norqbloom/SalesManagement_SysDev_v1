@@ -29,8 +29,8 @@ namespace SalesManagement_SysDev.Management_Chumon
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Chu_Con = new System.Windows.Forms.Button();
+            this.Chu_Ser = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -52,23 +52,23 @@ namespace SalesManagement_SysDev.Management_Chumon
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // Chu_Con
             // 
-            this.button2.Location = new System.Drawing.Point(1137, 364);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 116);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "確定";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Chu_Con.Location = new System.Drawing.Point(1137, 364);
+            this.Chu_Con.Name = "Chu_Con";
+            this.Chu_Con.Size = new System.Drawing.Size(195, 116);
+            this.Chu_Con.TabIndex = 40;
+            this.Chu_Con.Text = "確定";
+            this.Chu_Con.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Chu_Ser
             // 
-            this.button1.Location = new System.Drawing.Point(909, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 116);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "検索";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Chu_Ser.Location = new System.Drawing.Point(909, 364);
+            this.Chu_Ser.Name = "Chu_Ser";
+            this.Chu_Ser.Size = new System.Drawing.Size(195, 116);
+            this.Chu_Ser.TabIndex = 39;
+            this.Chu_Ser.Text = "検索";
+            this.Chu_Ser.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -228,8 +228,8 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 920);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Chu_Con);
+            this.Controls.Add(this.Chu_Ser);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -258,8 +258,8 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Chu_Con;
+        private System.Windows.Forms.Button Chu_Ser;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;

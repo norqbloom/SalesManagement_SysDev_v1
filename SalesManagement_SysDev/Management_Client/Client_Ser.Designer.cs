@@ -47,7 +47,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Cli_Upd = new System.Windows.Forms.Button();
+            this.Cli_Ser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,16 +199,16 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridView1.Size = new System.Drawing.Size(1358, 434);
             this.dataGridView1.TabIndex = 39;
             // 
-            // Cli_Upd
+            // Cli_Ser
             // 
-            this.Cli_Upd.Location = new System.Drawing.Point(1301, 290);
-            this.Cli_Upd.Name = "Cli_Upd";
-            this.Cli_Upd.Size = new System.Drawing.Size(174, 66);
-            this.Cli_Upd.TabIndex = 38;
-            this.Cli_Upd.Text = "検索";
-            this.Cli_Upd.UseVisualStyleBackColor = true;
+            this.Cli_Ser.Location = new System.Drawing.Point(1301, 290);
+            this.Cli_Ser.Name = "Cli_Ser";
+            this.Cli_Ser.Size = new System.Drawing.Size(174, 66);
+            this.Cli_Ser.TabIndex = 38;
+            this.Cli_Ser.Text = "検索";
+            this.Cli_Ser.UseVisualStyleBackColor = true;
             // 
-            // Clienr_Ser
+            // Client_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,8 +231,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Cli_Upd);
-            this.Name = "Clienr_Ser";
+            this.Controls.Add(this.Cli_Ser);
+            this.Name = "Client_Ser";
             this.Text = "Clienr_Ser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -260,6 +260,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Cli_Upd;
+        private System.Windows.Forms.Button Cli_Ser;
     }
 }

@@ -29,8 +29,8 @@ namespace SalesManagement_SysDev.Management_Order
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Ord_Con = new System.Windows.Forms.Button();
+            this.Ord_Add = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -52,23 +52,24 @@ namespace SalesManagement_SysDev.Management_Order
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // Ord_Con
             // 
-            this.button2.Location = new System.Drawing.Point(1040, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 116);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "確定";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Ord_Con.Location = new System.Drawing.Point(1040, 331);
+            this.Ord_Con.Name = "Ord_Con";
+            this.Ord_Con.Size = new System.Drawing.Size(195, 116);
+            this.Ord_Con.TabIndex = 60;
+            this.Ord_Con.Text = "確定";
+            this.Ord_Con.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Ord_Add
             // 
-            this.button1.Location = new System.Drawing.Point(812, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 116);
-            this.button1.TabIndex = 59;
-            this.button1.Text = "登録";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Ord_Add.Location = new System.Drawing.Point(812, 331);
+            this.Ord_Add.Name = "Ord_Add";
+            this.Ord_Add.Size = new System.Drawing.Size(195, 116);
+            this.Ord_Add.TabIndex = 59;
+            this.Ord_Add.Text = "登録";
+            this.Ord_Add.UseVisualStyleBackColor = true;
+            this.Ord_Add.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox2
             // 
@@ -228,8 +229,8 @@ namespace SalesManagement_SysDev.Management_Order
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1339, 855);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Ord_Con);
+            this.Controls.Add(this.Ord_Add);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -258,8 +259,8 @@ namespace SalesManagement_SysDev.Management_Order
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Ord_Con;
+        private System.Windows.Forms.Button Ord_Add;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;

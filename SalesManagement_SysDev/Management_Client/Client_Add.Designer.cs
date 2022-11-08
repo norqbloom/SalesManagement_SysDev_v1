@@ -47,7 +47,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Cli_Upd = new System.Windows.Forms.Button();
+            this.Cli_Add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,8 +217,9 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridView1.Size = new System.Drawing.Size(1086, 362);
             this.dataGridView1.TabIndex = 39;
             // 
-            // Cli_Upd
+            // Cli_Add
             // 
+<<<<<<< HEAD
             this.Cli_Upd.Location = new System.Drawing.Point(1041, 242);
             this.Cli_Upd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cli_Upd.Name = "Cli_Upd";
@@ -227,6 +228,14 @@ namespace SalesManagement_SysDev.Management_Client
             this.Cli_Upd.Text = "追加";
             this.Cli_Upd.UseVisualStyleBackColor = true;
             this.Cli_Upd.Click += new System.EventHandler(this.Cli_Upd_Click);
+=======
+            this.Cli_Add.Location = new System.Drawing.Point(1301, 290);
+            this.Cli_Add.Name = "Cli_Add";
+            this.Cli_Add.Size = new System.Drawing.Size(174, 66);
+            this.Cli_Add.TabIndex = 38;
+            this.Cli_Add.Text = "追加";
+            this.Cli_Add.UseVisualStyleBackColor = true;
+>>>>>>> a
             // 
             // Client_Add
             // 
@@ -251,8 +260,12 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
+<<<<<<< HEAD
             this.Controls.Add(this.Cli_Upd);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.Controls.Add(this.Cli_Add);
+>>>>>>> a
             this.Name = "Client_Add";
             this.Text = "Client_Add";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -281,6 +294,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Cli_Upd;
+        private System.Windows.Forms.Button Cli_Add;
     }
 }

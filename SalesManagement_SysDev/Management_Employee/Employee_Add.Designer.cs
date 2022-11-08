@@ -48,7 +48,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Emp_Add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,21 +209,21 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBox8.Size = new System.Drawing.Size(100, 25);
             this.textBox8.TabIndex = 18;
             // 
-            // button1
+            // Emp_Add
             // 
-            this.button1.Location = new System.Drawing.Point(1095, 337);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 88);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "追加";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Emp_Add.Location = new System.Drawing.Point(1095, 337);
+            this.Emp_Add.Name = "Emp_Add";
+            this.Emp_Add.Size = new System.Drawing.Size(169, 88);
+            this.Emp_Add.TabIndex = 19;
+            this.Emp_Add.Text = "追加";
+            this.Emp_Add.UseVisualStyleBackColor = true;
             // 
             // Employee_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1508, 799);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Emp_Add);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -272,6 +272,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Emp_Add;
     }
 }

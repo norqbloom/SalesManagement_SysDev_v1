@@ -29,7 +29,7 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Pro_Ser = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -57,14 +57,14 @@ namespace SalesManagement_SysDev.Management_Product
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Pro_Ser
             // 
-            this.button1.Location = new System.Drawing.Point(915, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(335, 140);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "検索";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Pro_Ser.Location = new System.Drawing.Point(915, 299);
+            this.Pro_Ser.Name = "Pro_Ser";
+            this.Pro_Ser.Size = new System.Drawing.Size(335, 140);
+            this.Pro_Ser.TabIndex = 49;
+            this.Pro_Ser.Text = "検索";
+            this.Pro_Ser.UseVisualStyleBackColor = true;
             // 
             // textBox11
             // 
@@ -267,7 +267,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1351, 864);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Pro_Ser);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -302,7 +302,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Pro_Ser;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
