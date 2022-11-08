@@ -160,7 +160,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // ClID
             // 
-            this.ClID.Location = new System.Drawing.Point(251, 58);
+            this.ClID.Location = new System.Drawing.Point(248, 61);
             this.ClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClID.Name = "ClID";
             this.ClID.Size = new System.Drawing.Size(81, 22);

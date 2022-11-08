@@ -93,7 +93,12 @@ namespace SalesManagement_SysDev.Management_Client
             //顧客名
             if (!String.IsNullOrEmpty(ClName.Text.Trim()))
             {
-                 
+                if (ClName.TextLength > 50)
+                {
+                    messageDsp.DspMsg("M2010");
+                    ClName.Focus();
+                    return false;
+                }
             }
             else
             {
@@ -101,6 +106,18 @@ namespace SalesManagement_SysDev.Management_Client
                 ClName.Focus();
                 return false;
             }
+            //郵便番号
+            if (!String.IsNullOrEmpty(ClPostal.Text.Trim()))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("郵便番号が入力されていません。");
+                ClPostal.Focus();
+                return false;
+            }
+
 
 
 

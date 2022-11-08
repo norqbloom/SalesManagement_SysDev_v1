@@ -248,7 +248,7 @@ namespace SalesManagement_SysDev
         }
         private void client_regbtn_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new Management_Client.Client_Add());
         }
 
 
