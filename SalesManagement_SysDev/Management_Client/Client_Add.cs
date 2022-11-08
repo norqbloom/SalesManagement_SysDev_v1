@@ -16,5 +16,10 @@ namespace SalesManagement_SysDev.Management_Client
         {
             InitializeComponent();
         }
+
+        private void Cli_Upd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

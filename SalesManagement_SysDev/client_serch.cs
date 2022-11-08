@@ -40,6 +40,7 @@ namespace SalesManagement_SysDev
                 return;
 
             GenerateDataAtSelect();
+
             SetSelectData();
         }
         private bool GetClientDataAtSelect()
