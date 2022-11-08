@@ -93,7 +93,7 @@ namespace SalesManagement_SysDev.Management_Client
             //顧客名
             if (!String.IsNullOrEmpty(ClName.Text.Trim()))
             {
-
+                 
             }
             else
             {
