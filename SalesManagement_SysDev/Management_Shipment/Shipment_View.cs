@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Management_Order
+namespace SalesManagement_SysDev.Management_Shipment
 {
-    public partial class Order_Add : Form
+    public partial class Shipment_View : Form
     {
-        public Order_Add()
+        public Shipment_View()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -53,7 +53,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Pro_Add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,21 +253,21 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBox11.Size = new System.Drawing.Size(100, 25);
             this.textBox11.TabIndex = 23;
             // 
-            // button1
+            // Pro_Add
             // 
-            this.button1.Location = new System.Drawing.Point(904, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(335, 140);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "追加";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Pro_Add.Location = new System.Drawing.Point(904, 321);
+            this.Pro_Add.Name = "Pro_Add";
+            this.Pro_Add.Size = new System.Drawing.Size(335, 140);
+            this.Pro_Add.TabIndex = 24;
+            this.Pro_Add.Text = "追加";
+            this.Pro_Add.UseVisualStyleBackColor = true;
             // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 860);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Pro_Add);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -326,6 +326,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Pro_Add;
     }
 }

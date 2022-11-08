@@ -29,7 +29,7 @@ namespace SalesManagement_SysDev.Management_Employee
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Emp_Ser = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -52,14 +52,14 @@ namespace SalesManagement_SysDev.Management_Employee
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Emp_Ser
             // 
-            this.button1.Location = new System.Drawing.Point(1118, 309);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 88);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "検索";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Emp_Ser.Location = new System.Drawing.Point(1118, 309);
+            this.Emp_Ser.Name = "Emp_Ser";
+            this.Emp_Ser.Size = new System.Drawing.Size(169, 88);
+            this.Emp_Ser.TabIndex = 39;
+            this.Emp_Ser.Text = "検索";
+            this.Emp_Ser.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
@@ -223,7 +223,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 795);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Emp_Ser);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -253,7 +253,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Emp_Ser;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;

@@ -25,7 +25,7 @@ namespace SalesManagement_SysDev.Management_Client
         }
         private bool GetclientDataAtRegistration()
         {
-            return false;
+            if(!string.IsNullOrEmpty())
         }
     }
 }
