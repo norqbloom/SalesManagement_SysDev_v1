@@ -93,6 +93,7 @@
     <Compile Include="DbAccess\EmployeeDataAccess.cs" />
     <Compile Include="DbAccess\OrderDateAccess.cs" />
     <Compile Include="DbAccess\ProductDataAccess.cs" />
+    <Compile Include="DbAccess\SaleDataAccess.cs" />
     <Compile Include="DbAccess\StockDataAccess.cs" />
     <Compile Include="empcnt.cs">
       <SubType>Form</SubType>
