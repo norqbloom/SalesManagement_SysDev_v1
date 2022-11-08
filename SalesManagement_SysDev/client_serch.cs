@@ -26,11 +26,6 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
-
-        }
-        private void SetDataGridView()
-        {
-            
         }
 
         private void serch_Click(object sender, EventArgs e)
@@ -161,5 +156,31 @@ namespace SalesManagement_SysDev
             clients = clientDataAccess.Getnodata(selectCondition);
 
         }
+        private void SetFormDataGridView()
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;
+            //dataGridViewのページサイズ指定
+            textBoxPageSize.Text = "10";
+            //dataGridViewのページ番号指定
+            textBoxPageNo.Text = "1";
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            SetDataGridView();
+
+        }
+        private void SetDataGridView()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            dataGridView1.Refresh();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetDataGridView();
+
+        }        
     }
 }

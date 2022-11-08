@@ -40,6 +40,9 @@ namespace SalesManagement_SysDev
             this.SOIDtxt = new System.Windows.Forms.TextBox();
             this.CLNametxt = new System.Windows.Forms.TextBox();
             this.ClPhonetxt = new System.Windows.Forms.TextBox();
+            this.textBoxPageSize = new System.Windows.Forms.TextBox();
+            this.textBoxPageNo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +55,7 @@ namespace SalesManagement_SysDev
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 441);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 429);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -144,11 +147,38 @@ namespace SalesManagement_SysDev
             this.ClPhonetxt.Size = new System.Drawing.Size(100, 22);
             this.ClPhonetxt.TabIndex = 10;
             // 
+            // textBoxPageSize
+            // 
+            this.textBoxPageSize.Location = new System.Drawing.Point(32, 647);
+            this.textBoxPageSize.Name = "textBoxPageSize";
+            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageSize.TabIndex = 11;
+            // 
+            // textBoxPageNo
+            // 
+            this.textBoxPageNo.Location = new System.Drawing.Point(158, 647);
+            this.textBoxPageNo.Name = "textBoxPageNo";
+            this.textBoxPageNo.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageNo.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(449, 651);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // client_serch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 681);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxPageNo);
+            this.Controls.Add(this.textBoxPageSize);
             this.Controls.Add(this.ClPhonetxt);
             this.Controls.Add(this.CLNametxt);
             this.Controls.Add(this.SOIDtxt);
@@ -182,5 +212,8 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.TextBox SOIDtxt;
         private System.Windows.Forms.TextBox CLNametxt;
         private System.Windows.Forms.TextBox ClPhonetxt;
+        private System.Windows.Forms.TextBox textBoxPageSize;
+        private System.Windows.Forms.TextBox textBoxPageNo;
+        private System.Windows.Forms.Button button1;
     }
 }

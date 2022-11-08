@@ -19,7 +19,13 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void Cli_Upd_Click(object sender, EventArgs e)
         {
-
+            // 8.2.1.1 妥当な役職データ取得
+            if (!GetくclientDataAtRegistration())
+                return;
+        }
+        private bool GetくclientDataAtRegistration()
+        {
+            return false;
         }
     }
 }
