@@ -29,10 +29,9 @@ namespace SalesManagement_SysDev.Management_Order
         /// </summary>
         private void InitializeComponent()
         {
-            this.Ord_Con = new System.Windows.Forms.Button();
-            this.Ord_Add = new System.Windows.Forms.Button();
+            this.Ord_Con_Button = new System.Windows.Forms.Button();
+            this.Ord_Add_Button = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -49,27 +48,29 @@ namespace SalesManagement_SysDev.Management_Order
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Ord_Del_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Ord_Con
+            // Ord_Con_Button
             // 
-            this.Ord_Con.Location = new System.Drawing.Point(1040, 331);
-            this.Ord_Con.Name = "Ord_Con";
-            this.Ord_Con.Size = new System.Drawing.Size(195, 116);
-            this.Ord_Con.TabIndex = 60;
-            this.Ord_Con.Text = "確定";
-            this.Ord_Con.UseVisualStyleBackColor = true;
+            this.Ord_Con_Button.Location = new System.Drawing.Point(1040, 331);
+            this.Ord_Con_Button.Name = "Ord_Con_Button";
+            this.Ord_Con_Button.Size = new System.Drawing.Size(195, 116);
+            this.Ord_Con_Button.TabIndex = 60;
+            this.Ord_Con_Button.Text = "確定";
+            this.Ord_Con_Button.UseVisualStyleBackColor = true;
             // 
-            // Ord_Add
+            // Ord_Add_Button
             // 
-            this.Ord_Add.Location = new System.Drawing.Point(812, 331);
-            this.Ord_Add.Name = "Ord_Add";
-            this.Ord_Add.Size = new System.Drawing.Size(195, 116);
-            this.Ord_Add.TabIndex = 59;
-            this.Ord_Add.Text = "登録";
-            this.Ord_Add.UseVisualStyleBackColor = true;
-            this.Ord_Add.Click += new System.EventHandler(this.button1_Click);
+            this.Ord_Add_Button.Location = new System.Drawing.Point(812, 331);
+            this.Ord_Add_Button.Name = "Ord_Add_Button";
+            this.Ord_Add_Button.Size = new System.Drawing.Size(195, 116);
+            this.Ord_Add_Button.TabIndex = 59;
+            this.Ord_Add_Button.Text = "登録";
+            this.Ord_Add_Button.UseVisualStyleBackColor = true;
+            this.Ord_Add_Button.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox2
             // 
@@ -81,16 +82,9 @@ namespace SalesManagement_SysDev.Management_Order
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(386, 399);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 25);
-            this.textBox7.TabIndex = 57;
-            // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(386, 264);
+            this.textBox6.Location = new System.Drawing.Point(386, 395);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 25);
             this.textBox6.TabIndex = 56;
@@ -201,7 +195,7 @@ namespace SalesManagement_SysDev.Management_Order
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 83);
+            this.label1.Location = new System.Drawing.Point(124, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 18);
             this.label1.TabIndex = 43;
@@ -224,15 +218,32 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridView1.Size = new System.Drawing.Size(1159, 296);
             this.dataGridView1.TabIndex = 41;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(386, 263);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.TabIndex = 61;
+            // 
+            // Ord_Del_Button
+            // 
+            this.Ord_Del_Button.Location = new System.Drawing.Point(591, 331);
+            this.Ord_Del_Button.Name = "Ord_Del_Button";
+            this.Ord_Del_Button.Size = new System.Drawing.Size(195, 116);
+            this.Ord_Del_Button.TabIndex = 62;
+            this.Ord_Del_Button.Text = "削除";
+            this.Ord_Del_Button.UseVisualStyleBackColor = true;
+            // 
             // Order_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1339, 855);
-            this.Controls.Add(this.Ord_Con);
-            this.Controls.Add(this.Ord_Add);
+            this.Controls.Add(this.Ord_Del_Button);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Ord_Con_Button);
+            this.Controls.Add(this.Ord_Add_Button);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -259,10 +270,9 @@ namespace SalesManagement_SysDev.Management_Order
 
         #endregion
 
-        private System.Windows.Forms.Button Ord_Con;
-        private System.Windows.Forms.Button Ord_Add;
+        private System.Windows.Forms.Button Ord_Con_Button;
+        private System.Windows.Forms.Button Ord_Add_Button;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
@@ -279,5 +289,7 @@ namespace SalesManagement_SysDev.Management_Order
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button Ord_Del_Button;
     }
 }

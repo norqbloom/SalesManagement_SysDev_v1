@@ -29,8 +29,7 @@ namespace SalesManagement_SysDev.Management_Employee
         /// </summary>
         private void InitializeComponent()
         {
-            this.Emp_Upd = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Emp_Upd_Button = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -49,42 +48,36 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Emp_Upd
+            // Emp_Upd_Button
             // 
-            this.Emp_Upd.Location = new System.Drawing.Point(1062, 308);
-            this.Emp_Upd.Name = "Emp_Upd";
-            this.Emp_Upd.Size = new System.Drawing.Size(169, 88);
-            this.Emp_Upd.TabIndex = 39;
-            this.Emp_Upd.Text = "更新";
-            this.Emp_Upd.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(575, 58);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 25);
-            this.textBox8.TabIndex = 38;
+            this.Emp_Upd_Button.Location = new System.Drawing.Point(1062, 308);
+            this.Emp_Upd_Button.Name = "Emp_Upd_Button";
+            this.Emp_Upd_Button.Size = new System.Drawing.Size(169, 88);
+            this.Emp_Upd_Button.TabIndex = 39;
+            this.Emp_Upd_Button.Text = "更新";
+            this.Emp_Upd_Button.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(212, 340);
+            this.textBox7.Location = new System.Drawing.Point(591, 61);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 25);
             this.textBox7.TabIndex = 37;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(212, 273);
+            this.textBox6.Location = new System.Drawing.Point(212, 337);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 25);
             this.textBox6.TabIndex = 36;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(212, 216);
+            this.textBox5.Location = new System.Drawing.Point(212, 270);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 25);
             this.textBox5.TabIndex = 35;
@@ -218,13 +211,20 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1.Size = new System.Drawing.Size(1438, 282);
             this.dataGridView1.TabIndex = 20;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(212, 216);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.TabIndex = 40;
+            // 
             // Employee_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1438, 793);
-            this.Controls.Add(this.Emp_Upd);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Emp_Upd_Button);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -253,8 +253,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
         #endregion
 
-        private System.Windows.Forms.Button Emp_Upd;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button Emp_Upd_Button;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -273,5 +272,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

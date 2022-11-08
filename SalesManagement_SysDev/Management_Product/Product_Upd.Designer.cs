@@ -29,7 +29,7 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.Pro_Upd = new System.Windows.Forms.Button();
+            this.Pro_Upd_Button = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -54,17 +54,18 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Pro_Del_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Pro_Upd
+            // Pro_Upd_Button
             // 
-            this.Pro_Upd.Location = new System.Drawing.Point(869, 266);
-            this.Pro_Upd.Name = "Pro_Upd";
-            this.Pro_Upd.Size = new System.Drawing.Size(335, 140);
-            this.Pro_Upd.TabIndex = 49;
-            this.Pro_Upd.Text = "更新";
-            this.Pro_Upd.UseVisualStyleBackColor = true;
+            this.Pro_Upd_Button.Location = new System.Drawing.Point(1055, 266);
+            this.Pro_Upd_Button.Name = "Pro_Upd_Button";
+            this.Pro_Upd_Button.Size = new System.Drawing.Size(149, 140);
+            this.Pro_Upd_Button.TabIndex = 49;
+            this.Pro_Upd_Button.Text = "更新";
+            this.Pro_Upd_Button.UseVisualStyleBackColor = true;
             // 
             // textBox11
             // 
@@ -262,12 +263,22 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBox1.Text = "商品管理フラグ";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // Pro_Del_Button
+            // 
+            this.Pro_Del_Button.Location = new System.Drawing.Point(857, 266);
+            this.Pro_Del_Button.Name = "Pro_Del_Button";
+            this.Pro_Del_Button.Size = new System.Drawing.Size(179, 140);
+            this.Pro_Del_Button.TabIndex = 51;
+            this.Pro_Del_Button.Text = "削除";
+            this.Pro_Del_Button.UseVisualStyleBackColor = true;
+            // 
             // Product_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 823);
-            this.Controls.Add(this.Pro_Upd);
+            this.Controls.Add(this.Pro_Del_Button);
+            this.Controls.Add(this.Pro_Upd_Button);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -302,7 +313,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         #endregion
 
-        private System.Windows.Forms.Button Pro_Upd;
+        private System.Windows.Forms.Button Pro_Upd_Button;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
@@ -327,5 +338,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button Pro_Del_Button;
     }
 }

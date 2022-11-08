@@ -47,8 +47,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.Emp_Add = new System.Windows.Forms.Button();
+            this.Emp_Add_Button = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,48 +183,48 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(245, 245);
+            this.textBox5.Location = new System.Drawing.Point(245, 302);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 25);
             this.textBox5.TabIndex = 15;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(245, 302);
+            this.textBox6.Location = new System.Drawing.Point(245, 369);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 25);
             this.textBox6.TabIndex = 16;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(245, 369);
+            this.textBox7.Location = new System.Drawing.Point(594, 90);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 25);
             this.textBox7.TabIndex = 17;
             // 
-            // textBox8
+            // Emp_Add_Button
             // 
-            this.textBox8.Location = new System.Drawing.Point(608, 87);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 25);
-            this.textBox8.TabIndex = 18;
+            this.Emp_Add_Button.Location = new System.Drawing.Point(1095, 337);
+            this.Emp_Add_Button.Name = "Emp_Add_Button";
+            this.Emp_Add_Button.Size = new System.Drawing.Size(169, 88);
+            this.Emp_Add_Button.TabIndex = 19;
+            this.Emp_Add_Button.Text = "追加";
+            this.Emp_Add_Button.UseVisualStyleBackColor = true;
             // 
-            // Emp_Add
+            // dateTimePicker1
             // 
-            this.Emp_Add.Location = new System.Drawing.Point(1095, 337);
-            this.Emp_Add.Name = "Emp_Add";
-            this.Emp_Add.Size = new System.Drawing.Size(169, 88);
-            this.Emp_Add.TabIndex = 19;
-            this.Emp_Add.Text = "追加";
-            this.Emp_Add.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 245);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.TabIndex = 20;
             // 
             // Employee_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1508, 799);
-            this.Controls.Add(this.Emp_Add);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Emp_Add_Button);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -271,7 +271,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button Emp_Add;
+        private System.Windows.Forms.Button Emp_Add_Button;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -53,7 +53,8 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.Pro_Add = new System.Windows.Forms.Button();
+            this.Pro_Add_Button = new System.Windows.Forms.Button();
+            this.Pro_Del_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,21 +254,31 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBox11.Size = new System.Drawing.Size(100, 25);
             this.textBox11.TabIndex = 23;
             // 
-            // Pro_Add
+            // Pro_Add_Button
             // 
-            this.Pro_Add.Location = new System.Drawing.Point(904, 321);
-            this.Pro_Add.Name = "Pro_Add";
-            this.Pro_Add.Size = new System.Drawing.Size(335, 140);
-            this.Pro_Add.TabIndex = 24;
-            this.Pro_Add.Text = "追加";
-            this.Pro_Add.UseVisualStyleBackColor = true;
+            this.Pro_Add_Button.Location = new System.Drawing.Point(1060, 321);
+            this.Pro_Add_Button.Name = "Pro_Add_Button";
+            this.Pro_Add_Button.Size = new System.Drawing.Size(179, 140);
+            this.Pro_Add_Button.TabIndex = 24;
+            this.Pro_Add_Button.Text = "追加";
+            this.Pro_Add_Button.UseVisualStyleBackColor = true;
+            // 
+            // Pro_Del_Button
+            // 
+            this.Pro_Del_Button.Location = new System.Drawing.Point(859, 321);
+            this.Pro_Del_Button.Name = "Pro_Del_Button";
+            this.Pro_Del_Button.Size = new System.Drawing.Size(179, 140);
+            this.Pro_Del_Button.TabIndex = 25;
+            this.Pro_Del_Button.Text = "削除";
+            this.Pro_Del_Button.UseVisualStyleBackColor = true;
             // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 860);
-            this.Controls.Add(this.Pro_Add);
+            this.Controls.Add(this.Pro_Del_Button);
+            this.Controls.Add(this.Pro_Add_Button);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -326,6 +337,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button Pro_Add;
+        private System.Windows.Forms.Button Pro_Add_Button;
+        private System.Windows.Forms.Button Pro_Del_Button;
     }
 }

@@ -29,8 +29,8 @@ namespace SalesManagement_SysDev.Management_Chumon
         /// </summary>
         private void InitializeComponent()
         {
-            this.Chu_Con = new System.Windows.Forms.Button();
-            this.Chu_Ser = new System.Windows.Forms.Button();
+            this.Chu_Con_Button = new System.Windows.Forms.Button();
+            this.Chu_Ser_Button = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -49,26 +49,27 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Chu_Del_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Chu_Con
+            // Chu_Con_Button
             // 
-            this.Chu_Con.Location = new System.Drawing.Point(1137, 364);
-            this.Chu_Con.Name = "Chu_Con";
-            this.Chu_Con.Size = new System.Drawing.Size(195, 116);
-            this.Chu_Con.TabIndex = 40;
-            this.Chu_Con.Text = "確定";
-            this.Chu_Con.UseVisualStyleBackColor = true;
+            this.Chu_Con_Button.Location = new System.Drawing.Point(1137, 364);
+            this.Chu_Con_Button.Name = "Chu_Con_Button";
+            this.Chu_Con_Button.Size = new System.Drawing.Size(195, 116);
+            this.Chu_Con_Button.TabIndex = 40;
+            this.Chu_Con_Button.Text = "確定";
+            this.Chu_Con_Button.UseVisualStyleBackColor = true;
             // 
-            // Chu_Ser
+            // Chu_Ser_Button
             // 
-            this.Chu_Ser.Location = new System.Drawing.Point(909, 364);
-            this.Chu_Ser.Name = "Chu_Ser";
-            this.Chu_Ser.Size = new System.Drawing.Size(195, 116);
-            this.Chu_Ser.TabIndex = 39;
-            this.Chu_Ser.Text = "検索";
-            this.Chu_Ser.UseVisualStyleBackColor = true;
+            this.Chu_Ser_Button.Location = new System.Drawing.Point(909, 364);
+            this.Chu_Ser_Button.Name = "Chu_Ser_Button";
+            this.Chu_Ser_Button.Size = new System.Drawing.Size(195, 116);
+            this.Chu_Ser_Button.TabIndex = 39;
+            this.Chu_Ser_Button.Text = "検索";
+            this.Chu_Ser_Button.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -223,13 +224,23 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.dataGridView1.Size = new System.Drawing.Size(1159, 296);
             this.dataGridView1.TabIndex = 21;
             // 
+            // Chu_Del_Button
+            // 
+            this.Chu_Del_Button.Location = new System.Drawing.Point(695, 364);
+            this.Chu_Del_Button.Name = "Chu_Del_Button";
+            this.Chu_Del_Button.Size = new System.Drawing.Size(195, 116);
+            this.Chu_Del_Button.TabIndex = 41;
+            this.Chu_Del_Button.Text = "削除";
+            this.Chu_Del_Button.UseVisualStyleBackColor = true;
+            // 
             // Chumon_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 920);
-            this.Controls.Add(this.Chu_Con);
-            this.Controls.Add(this.Chu_Ser);
+            this.Controls.Add(this.Chu_Del_Button);
+            this.Controls.Add(this.Chu_Con_Button);
+            this.Controls.Add(this.Chu_Ser_Button);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -258,8 +269,8 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         #endregion
 
-        private System.Windows.Forms.Button Chu_Con;
-        private System.Windows.Forms.Button Chu_Ser;
+        private System.Windows.Forms.Button Chu_Con_Button;
+        private System.Windows.Forms.Button Chu_Ser_Button;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -278,5 +289,6 @@ namespace SalesManagement_SysDev.Management_Chumon
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Chu_Del_Button;
     }
 }

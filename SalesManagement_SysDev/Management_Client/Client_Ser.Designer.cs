@@ -47,7 +47,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Cli_Ser = new System.Windows.Forms.Button();
+            this.Cli_Ser_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,14 +199,14 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridView1.Size = new System.Drawing.Size(1358, 434);
             this.dataGridView1.TabIndex = 39;
             // 
-            // Cli_Ser
+            // Cli_Ser_Button
             // 
-            this.Cli_Ser.Location = new System.Drawing.Point(1301, 290);
-            this.Cli_Ser.Name = "Cli_Ser";
-            this.Cli_Ser.Size = new System.Drawing.Size(174, 66);
-            this.Cli_Ser.TabIndex = 38;
-            this.Cli_Ser.Text = "検索";
-            this.Cli_Ser.UseVisualStyleBackColor = true;
+            this.Cli_Ser_Button.Location = new System.Drawing.Point(1301, 290);
+            this.Cli_Ser_Button.Name = "Cli_Ser_Button";
+            this.Cli_Ser_Button.Size = new System.Drawing.Size(174, 66);
+            this.Cli_Ser_Button.TabIndex = 38;
+            this.Cli_Ser_Button.Text = "検索";
+            this.Cli_Ser_Button.UseVisualStyleBackColor = true;
             // 
             // Client_Ser
             // 
@@ -231,7 +231,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Cli_Ser);
+            this.Controls.Add(this.Cli_Ser_Button);
             this.Name = "Client_Ser";
             this.Text = "Clienr_Ser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -260,6 +260,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Cli_Ser;
+        private System.Windows.Forms.Button Cli_Ser_Button;
     }
 }
