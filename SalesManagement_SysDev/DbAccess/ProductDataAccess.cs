@@ -124,35 +124,23 @@ namespace SalesManagement_SysDev
                 return false;
             }
         }
+
         ///////////////////////////////
-        //メソッド名：GetClientsData()　オーバーロード
-        //引　数   ：検索条件
-        //戻り値   ：条件一致顧客データ
-        //機　能   ：条件一致商品顧客データの取得
+        //メソッド名：GetProductData()
+        //引　数   ：なし
+        //戻り値   ：全商品データ
+        //機　能   ：全商品データの取得
         ///////////////////////////////
+        //public List<M_Product> GetProductData()
+        //{
+        //    List<M_Product> product = new List<M_Product>();
 
-        public List<M_Product> GetClientdata(M_Product selectCondition)
-        {
-            List<M_Product> client = new List<M_Product>();
+        //    try
+        //    {
+        //        var context = new ();
+        //    }
+        //}
 
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                var product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber.ToString()) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
-                context.Dispose();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return client;
-        }
     }
 }
 
