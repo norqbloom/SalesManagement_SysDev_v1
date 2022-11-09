@@ -124,35 +124,50 @@ namespace SalesManagement_SysDev
                 return false;
             }
         }
-        ///////////////////////////////
-        //メソッド名：GetClientsData()　オーバーロード
-        //引　数   ：検索条件
-        //戻り値   ：条件一致顧客データ
-        //機　能   ：条件一致商品顧客データの取得
-        ///////////////////////////////
 
-        public List<M_Product> GetClientdata(M_Product selectCondition)
+        ///////////////////////////////
+        //メソッド名：GetProductData()
+        //引　数   ：なし
+        //戻り値   ：全商品データ
+        //機　能   ：全商品データの取得
+        ///////////////////////////////
+        public List<M_Product> GetProductData()
         {
-            List<M_Product> client = new List<M_Product>();
+            List<M_Product> product = new List<M_Product>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                var product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber.ToString()) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
-                context.Dispose();
+                var tb = from t1 in context.M_Products
+                         join t2 in context.M_Makers
+                         on t1.MaID equals t2.MaID
+                         join t3 in context.M_SmallClassifications
+                         on t1.ScID equals t3.ScID
 
+                         select new
+                         {
+                             t1.PrID,
+                             t2.MaID,
+                             t1.PrName,
+                             t1.Price,
+                             t1.PrSafetyStock,
+                             t3.ScID,
+                             t1.PrModelNumber,
+                             t1.PrColor,
+                             t1.PrReleaseDate,
+                             t1.PrFlag,
+                             t1.PrHidden
+                         };
+                foreach(var p in tb)
+                {
+                    product.Add(new M_ProductDsp()
+                    {
+
+                    });
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return client;
         }
+
     }
 }
 
