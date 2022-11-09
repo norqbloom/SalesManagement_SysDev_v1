@@ -17,6 +17,7 @@ namespace SalesManagement_SysDev
     {
         
         MessageDsp messageDsp = new MessageDsp();
+        internal static bool flg;
 
         PasswordHash passwordHash = new PasswordHash();
 
@@ -97,7 +98,7 @@ namespace SalesManagement_SysDev
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            bool flg;
+            //bool flg;
 
             //ログイン処理
             string logID = textBox_id.Text;
@@ -143,15 +144,13 @@ namespace SalesManagement_SysDev
                     }
                     template.loginID = loginID;
 
-                    Form form = new template();
-                    form.Show(this);
-                    Opacity = 0;
-                    logina.Visible = false;
-                    lodinggif.Visible = false;
-                    button_login.Visible = true;
 
                     context.Dispose();
 
+
+                    
+
+                    
                 }
                 else
                 {
@@ -159,12 +158,13 @@ namespace SalesManagement_SysDev
 
                 }
 
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 
@@ -176,13 +176,23 @@ namespace SalesManagement_SysDev
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
+            if (flg == true)
+            {
+                Opacity = 0;
+                logina.Visible = false;
+                lodinggif.Visible = false;
+                button_login.Visible = true;
+                Form form = new template();
+                form.Show(this);
+            }
+            else
+            {
                 logina.Visible = true;
                 logina.Text = "担当者IDまたはパスワードが違います";
                 lodinggif.Visible = false;
                 button_login.Visible = true;
-            
-            return;
+                return;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

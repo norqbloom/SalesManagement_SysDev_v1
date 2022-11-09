@@ -190,7 +190,6 @@ namespace SalesManagement_SysDev
         public List<M_Client> Getdubblwdata(M_Client selectCondition)
         {                 
             List<M_Client> client = new List<M_Client>();
-
             
             try
             {
