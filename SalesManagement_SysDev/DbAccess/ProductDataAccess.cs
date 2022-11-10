@@ -160,12 +160,18 @@ namespace SalesManagement_SysDev
                          };
                 foreach(var p in tb)
                 {
-                    product.Add(new M_ProductDsp()
+                    /*product.Add(new M_ProductDsp()
                     {
 
-                    });
+                    });*/
                 }
+
             }
+            catch
+            {
+
+            }
+            
         }
 
     }
