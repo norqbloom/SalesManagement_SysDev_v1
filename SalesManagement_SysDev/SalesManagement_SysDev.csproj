@@ -101,6 +101,7 @@
     <Compile Include="empcnt.Designer.cs">
       <DependentUpon>empcnt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\loginHistory.cs" />
     <Compile Include="Entity\M_Clhistory.cs" />
     <Compile Include="Entity\M_MajorCassification.cs" />
     <Compile Include="Entity\M_Message.cs" />
