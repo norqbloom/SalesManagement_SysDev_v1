@@ -131,7 +131,7 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        public List<M_Product> GetProductData()
+        /*public List<M_Product> GetProductData()
         {
             List<M_Product> product = new List<M_Product>();
 
@@ -160,10 +160,10 @@ namespace SalesManagement_SysDev
                          };
                 foreach(var p in tb)
                 {
-                    /*product.Add(new M_ProductDsp()
+                    product.Add(new M_ProductDsp()
                     {
 
-                    });*/
+                    });
                 }
 
             }
@@ -173,6 +173,7 @@ namespace SalesManagement_SysDev
             }
             
         }
+        */
 
     }
 }
