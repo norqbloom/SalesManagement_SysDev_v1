@@ -127,9 +127,10 @@ namespace SalesManagement_SysDev
                              where t1.EmID == loginID && t1.EmPassword == pw
                              select new
                              {
+                                 t1.EmID,
                                  t1.EmName,
                                  t2.PoName,
-                                 t2.PoID
+                                 t2.PoID                                 
                              };
                     foreach (var p in tb)
                     {
@@ -137,8 +138,9 @@ namespace SalesManagement_SysDev
                         template.loginPosition = p.PoName;
                         DateTime dt = DateTime.Now;
                         template.loginTime = dt.ToString("MM/dd HH;mm");
-                        
+                        template.EmID = p.EmID;
                         template.PosID = p.PoID;
+ 
                     }
                     template.loginID = loginID;
 
@@ -176,8 +178,10 @@ namespace SalesManagement_SysDev
                 logina.Visible = false;
                 lodinggif.Visible = false;
                 button_login.Visible = true;
+                history();
                 Form form = new template();
                 form.Show(this);
+
             }
             else
             {
@@ -188,6 +192,39 @@ namespace SalesManagement_SysDev
                 return;
             }
         }
+
+        private void history()
+        {
+            var reghistory = GenerateDataAtRegistration();
+            Registrationhistory(reghistory);
+        }
+        private loginHistory GenerateDataAtRegistration()
+        {
+            return new loginHistory
+            {
+                EmID = template.EmID.ToString(),
+                EmName=template.loginName,
+                position = template.loginPosition,
+                loginTime=template.loginTime
+            };
+        }
+
+        private void Registrationhistory(loginHistory login)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.loginHistories.Add(login);
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

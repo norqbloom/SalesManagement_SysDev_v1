@@ -15,6 +15,7 @@ namespace SalesManagement_SysDev
     {
 
         internal static int loginID ;
+        internal static int EmID;
         internal static int PosID;
         internal static string loginName = "";
         internal static string loginTime ;

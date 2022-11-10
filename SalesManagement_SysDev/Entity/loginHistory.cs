@@ -13,14 +13,12 @@ namespace SalesManagement_SysDev
     {
         [Key]
         public int No { get; set; }
-        [Required]
         public string position { get; set; }
 
-        [Required]
         public string EmID { get; set; }
-        [Required]
         public string EmName { get; set; }
-        [Required]
-        public DateTime loginTime { get; set; }
+        public string loginTime { get; set; }
+        public string logoutTime { get; set; }
+
     }
 }
