@@ -231,8 +231,6 @@ namespace SalesManagement_SysDev
                 EmFlag=checkflg,
                 EmHidden=hiddentxt.Text.Trim()
                
-                 
-
 
             };
         }
