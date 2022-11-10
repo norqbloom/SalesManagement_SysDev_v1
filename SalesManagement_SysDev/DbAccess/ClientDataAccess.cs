@@ -196,6 +196,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0&&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.ClPhone.Contains(selectCondition.ClPhone)).ToList();         
                 context.Dispose();
@@ -217,6 +218,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0 &&
                                                  x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
                 context.Dispose();
 
@@ -237,6 +239,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0 &&
                                                  x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
                 context.Dispose();
 
@@ -257,6 +260,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => 
                                                  x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0 &&
                                                  x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
                 context.Dispose();
 

@@ -20,6 +20,8 @@ namespace SalesManagement_SysDev
         internal static string loginName = "";
         internal static string loginTime ;
         internal static string loginPosition = "";
+        internal static string soname = "";
+
         public template()
         {
             InitializeComponent();
@@ -33,7 +35,8 @@ namespace SalesManagement_SysDev
             label1.Text = loginID.ToString();
             label2.Text = loginName;
             label4.Text = loginTime.ToString();
-            label3.Text = loginPosition;          
+            label3.Text = loginPosition;
+            label5.Text = soname;
         }
         private void visiblecnt()
         {

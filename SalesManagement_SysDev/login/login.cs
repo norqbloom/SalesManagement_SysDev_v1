@@ -124,13 +124,16 @@ namespace SalesManagement_SysDev
                              on t1.PoID equals t2.PoID
                              /*join t3 in context.M_Authoritys
                              on t1.AuthorityCD equals t3.AuthorityCD*/
+                             join t3 in context.M_SalesOffices
+                             on t1.SoID equals t3.SoID
                              where t1.EmID == loginID && t1.EmPassword == pw
                              select new
                              {
                                  t1.EmID,
                                  t1.EmName,
                                  t2.PoName,
-                                 t2.PoID                                 
+                                 t2.PoID,
+                                 t3.SoName
                              };
                     foreach (var p in tb)
                     {
@@ -140,7 +143,7 @@ namespace SalesManagement_SysDev
                         template.loginTime = dt.ToString("MM/dd HH;mm");
                         template.EmID = p.EmID;
                         template.PosID = p.PoID;
- 
+                        template.soname = p.SoName;
                     }
                     template.loginID = loginID;
 
