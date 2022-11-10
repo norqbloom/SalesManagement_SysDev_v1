@@ -36,7 +36,6 @@ namespace SalesManagement_SysDev
             logina.Text = "ようこそ";
 
             this.backgroundWorker1.RunWorkerAsync();
-
         }
 
         private void logincheck()
@@ -98,8 +97,7 @@ namespace SalesManagement_SysDev
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            //bool flg;
-
+            
             //ログイン処理
             string logID = textBox_id.Text;
             string logPass = textBox_pass.Text;
@@ -146,10 +144,6 @@ namespace SalesManagement_SysDev
 
 
                     context.Dispose();
-
-
-                    
-
                     
                 }
                 else

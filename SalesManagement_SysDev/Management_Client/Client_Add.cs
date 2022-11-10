@@ -109,7 +109,18 @@ namespace SalesManagement_SysDev.Management_Client
             //郵便番号
             if (!String.IsNullOrEmpty(ClPostal.Text.Trim()))
             {
-
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(ClPostal.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1017");
+                    ClPostal.Focus();
+                    return false;
+                }
+                if (ClPostal.Text.Length > 7)
+                {
+                    messageDsp.DspMsg("M1018");
+                    ClPostal.Focus();
+                    return false;
+                }
             }
             else
             {
@@ -117,6 +128,9 @@ namespace SalesManagement_SysDev.Management_Client
                 ClPostal.Focus();
                 return false;
             }
+            //住所ここから誰か頼んだ！！！
+
+
           return true;
         }
     }
