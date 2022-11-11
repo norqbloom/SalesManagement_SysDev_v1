@@ -80,12 +80,95 @@ namespace SalesManagement_SysDev
                 context.Dispose();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
+        ///////////////////////////////
+        //メソッド名：UpdateEmpData()
+        //引　数   ：スタッフデータ
+        //戻り値   ：True or False
+        //機　能   ：スタッフデータの更新
+        //          ：更新成功の場合True
+        //          ：更新失敗の場合False
+        ///////////////////////////////
+        ///
+
+        public bool UpdateEmpData(M_Employee updEmp)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var Employee = context.M_Employees.Single(x => x.EmID == updEmp.EmID);
+
+                Employee.EmName = updEmp.EmName;
+                Employee.SoID = updEmp.SoID;
+                Employee.PoID = updEmp.PoID;
+                Employee.EmHiredate = updEmp.EmHiredate;
+                Employee.EmPassword = updEmp.EmPassword;
+                Employee.EmPhone = updEmp.EmPhone;
+                Employee.EmFlag = updEmp.EmFlag;
+                Employee.EmHidden = updEmp.EmHidden;             
+                //パスワード入力時のみ更新
+                if (!String.IsNullOrEmpty(updEmp.EmPassword))
+                    Employee.EmPassword = updEmp.EmPassword;
+
+                context.SaveChanges();
+                context.Dispose();
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
+
+        }
+        ///////////////////////////////
+        //メソッド名：DeleteEmpData()
+        //引　数   ：スタッフデータ
+        //戻り値   ：True or False
+        //機　能   ：スタッフデータの削除
+        //          ：削除成功の場合True
+        //          ：削除失敗の場合False
+        ///////////////////////////////
+
+        public bool DeleteEmpDate(string delEmID)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var Employee = context.M_Employees.Single(x => x.EmID.ToString() == delEmID);
+                context.M_Employees.Remove(Employee);
+                context.SaveChanges();
+                context.Dispose();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+                   
+            
+        }
+        public List<M_Employee>GetEmpDate()
+        {
+            var context = new SalesManagement_DevContext();
+            var tb = from t1 in context.M_Employees
+                     join t2 in context.M_
+        }
+        
 
     }
+    
+    
 }
