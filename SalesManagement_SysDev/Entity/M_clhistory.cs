@@ -12,18 +12,16 @@ namespace SalesManagement_SysDev
     class M_clhistory
     {
         [Key]
-        public int hisID { get; set; }
+        public int hisNo { get; set; }
 
-        [Required]
         public string ClID { get; set; }
 
-        [Required]
         public DateTime RegisteredDate { get; set; }
-
-        [Required]
+        public string regUserID { get; set; }
+        public string regUserName { get; set; }
         public DateTime UpDateTime { get; set; }
 
-        [Required]
-        public string LastupdatedUser { get; set; }
+        public string LastupdatedUserID { get; set; }
+        public string LastupdatedUserName { get; set; }
     }
 }
