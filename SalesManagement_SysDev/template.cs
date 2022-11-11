@@ -344,6 +344,7 @@ namespace SalesManagement_SysDev
         }
         private void logoutuser()
         {
+            outtimereg();
             loginID =-1;
             EmID = -1;
             PosID =-1;
@@ -354,6 +355,24 @@ namespace SalesManagement_SysDev
             Form form = new login();
             form.Show();
             this.Close();        
+        }
+        private void outtimereg()
+        {
+            DateTime dt = DateTime.Now;
+            string logouttime = dt.ToString("MM/dd HH;mm");
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var loginhistory = context.loginHistories.Single(x => x.loginTime == template.loginTime);
+                loginhistory.logoutTime = logouttime;
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "外部エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }
