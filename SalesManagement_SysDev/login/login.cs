@@ -78,7 +78,7 @@ namespace SalesManagement_SysDev
         private void login_Load(object sender, EventArgs e)
         {
             textBox_pass.PasswordChar = '*';
-
+            Opacity = 100 ;
             logina.Visible = false;
             lodinggif.Visible = false;
             button_login.Visible = true;
@@ -176,14 +176,14 @@ namespace SalesManagement_SysDev
         {
             if (flg == true)
             {
-                Opacity = 0;
+                this.Hide();
                 logina.Visible = false;
                 lodinggif.Visible = false;
                 button_login.Visible = true;
                 history();
                 Form form = new template();
                 form.Show(this);
-
+                flg = false;
             }
             else
             {

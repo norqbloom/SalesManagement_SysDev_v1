@@ -37,6 +37,9 @@ namespace SalesManagement_SysDev
             label4.Text = loginTime.ToString();
             label3.Text = loginPosition;
             label5.Text = soname;
+            this.Text= Application.ProductName;
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
         }
         private void visiblecnt()
         {
@@ -52,7 +55,7 @@ namespace SalesManagement_SysDev
             issue_btn.Visible = false;
             Arrival_btn.Visible = false;
             shipping_btn.Visible = false;
-            empadd_btn.Visible = false;
+            logout.Visible = false;
         }
 
         private void PosVisible()
@@ -71,7 +74,7 @@ namespace SalesManagement_SysDev
                 issue_btn.Visible = true;
                 Arrival_btn.Visible = true;
                 shipping_btn.Visible = true;
-                empadd_btn.Visible = true;
+                logout.Visible = true;
             }
             if (PosID == 2)
             {
@@ -294,12 +297,12 @@ namespace SalesManagement_SysDev
 
         private void empadd_btn_Click(object sender, EventArgs e)
         {
-            openChildForm(new empcnt());
+            logoutuser();
         }
 
         private void emp_regbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new empcnt());
         }
 
         private void childsubmenu_Paint(object sender, PaintEventArgs e)
@@ -321,5 +324,37 @@ namespace SalesManagement_SysDev
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer.Text= DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+            timer.Visible = true;
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Red;
+
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            Color color = Color.FromArgb(51, 153, 102);
+            pictureBox1.BackColor = color;
+        }
+        private void logoutuser()
+        {
+            loginID =-1;
+            EmID = -1;
+            PosID =-1;
+            loginName = null;
+            loginTime = null;
+            loginPosition = null;
+            soname = null;
+            Form form = new login();
+            form.Show();
+            this.Close();        
+        }
+
     }
 }
