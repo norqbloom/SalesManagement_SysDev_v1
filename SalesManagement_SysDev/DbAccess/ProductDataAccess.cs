@@ -209,14 +209,40 @@ namespace SalesManagement_SysDev
 
                          select new
                          {
-
+                            t1.PrID,
+                            t2.MaID,
+                            t1.PrName,
+                            t1.Price,
+                            t1.PrSafetyStock,
+                            t3.ScID,
+                            t1.PrModelNumber,
+                            t1.PrColor,
+                            t1.PrReleaseDate,
+                            t1.PrFlag,
+                            t1.PrHidden
                          };
-
-
+                foreach(var p in tb)
+                {
+                    product.Add(new M_ProductDsp()
+                    {
+                        PrID = p.PrID,
+                        MaID = p.MaID,
+                        PrName = p.PrName,
+                        Price = p.Price,
+                        PrSafetyStock = p.PrSafetyStock,
+                        ScID = p.ScID,
+                        PrModelNumber = p.PrModelNumber,
+                        PrColor = p.PrColor,
+                        PrReleaseDate = p.PrReleaseDate,
+                        PrFlag = p.PrFlag,
+                        PrHidden = p.PrHidden
+                    });  
+                }
+                context.Dispose();
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return product;
         }
