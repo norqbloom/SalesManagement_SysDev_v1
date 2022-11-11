@@ -128,9 +128,82 @@ namespace SalesManagement_SysDev.Management_Client
                 ClPostal.Focus();
                 return false;
             }
-            //住所ここから誰か頼んだ！！！
-
-
+            //住所
+            if (String.IsNullOrEmpty(ClAddress.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckFullWidth(ClAddress.Text.Trim()))
+                {
+                    MessageBox.Show("住所は全角入力です");
+                    ClAddress.Focus();
+                    return false;
+                }
+                if(ClAddress.Text.Length > 50)
+                {
+                    messageDsp.DspMsg("M1012");
+                    ClAddress.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("住所が入力されていません。");
+                ClPostal.Focus();
+                return false;
+            }
+            if (!String.IsNullOrEmpty(ClFAX.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(ClFAX.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1019");
+                    ClFAX.Focus();
+                    return false;
+                }
+                if(ClFAX.Text.Length > 13)
+                {
+                    messageDsp.DspMsg("M1020");
+                    ClFAX.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("FAXが入力されていません。")
+                ClFAX.Focus();
+                return false;
+            }
+            if (!String.IsNullOrEmpty(ClPhone.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(ClPhone.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1015");
+                    ClPhone.Focus();
+                    return false;
+                }
+                if(ClPhone.Text.Length > 13)
+                {
+                    messageDsp.DspMsg("M1016");
+                    ClPhone.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("電話番号が入力されていません");
+                ClPhone.Focus();
+                return false;
+            }
+            if (!dataInputFormCheck.CheckFullWidth(ClHidden.Text.Trim()))
+            {
+                MessageBox.Show("非表示理由は全角入力です");
+                ClHidden.Focus();
+                return false;
+            }
+            if(ClFLG.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("");
+                ClFLG.Focus();
+                return false;
+            }
           return true;
         }
     }
