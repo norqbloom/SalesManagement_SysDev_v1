@@ -131,9 +131,9 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        /*public List<M_Product> GetProductData()
+        public List<M_ProductDsp> GetProductData()
         {
-            List<M_Product> product = new List<M_Product>();
+            List<M_ProductDsp> product = new List<M_ProductDsp>();
 
             try
             {
@@ -162,18 +162,64 @@ namespace SalesManagement_SysDev
                 {
                     product.Add(new M_ProductDsp()
                     {
-
+                        PrID = p.PrID,
+                        MaID = p.MaID,
+                        PrName = p.PrName,
+                        Price = p.Price,
+                        PrSafetyStock = p.PrSafetyStock,
+                        ScID = p.ScID,
+                        PrModelNumber = p.PrModelNumber,
+                        PrColor = p.PrColor,
+                        PrReleaseDate = p.PrReleaseDate,
+                        PrFlag = p.PrFlag,
+                        PrHidden = p.PrHidden
                     });
                 }
+                context.Dispose();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
+        ///////////////////////////////
+        //メソッド名：GetItemData()　オーバーロード
+        //引　数   ：検索条件
+        //戻り値   ：条件一致商品データ
+        //機　能   ：条件一致商品データの取得
+        ///////////////////////////////
+        public List<M_ProductDsp> GetProductData(M_ProductDsp selectCondition)
+        {
+            List<M_ProductDsp> product = new List<M_ProductDsp>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var tb = from t1 in context.M_Products
+                         join t2 in context.M_Makers
+                         on t1.MaID equals t2.MaID
+                         join t3 in context.M_SmallClassifications
+                         on t1.ScID equals t3.ScID
+                         where t1.PrName.Contains(selectCondition.PrName) &&
+                               t1.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                               t1.PrColor.Contains(selectCondition.PrColor) &&
+                               t1.PrHidden.Contains(selectCondition.PrHidden)
+
+                         select new
+                         {
+
+                         };
+
 
             }
             catch
             {
 
             }
-            
+            return product;
         }
-        */
 
     }
 }
