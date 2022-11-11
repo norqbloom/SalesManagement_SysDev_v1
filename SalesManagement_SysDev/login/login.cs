@@ -15,8 +15,9 @@ namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
-        bool flg;
+        
         MessageDsp messageDsp = new MessageDsp();
+        internal static bool flg;
 
         PasswordHash passwordHash = new PasswordHash();
 
@@ -35,7 +36,6 @@ namespace SalesManagement_SysDev
             logina.Text = "ようこそ";
 
             this.backgroundWorker1.RunWorkerAsync();
-
         }
 
         private void logincheck()
@@ -77,6 +77,8 @@ namespace SalesManagement_SysDev
 
         private void login_Load(object sender, EventArgs e)
         {
+            textBox_pass.PasswordChar = '*';
+            Opacity = 100 ;
             logina.Visible = false;
             lodinggif.Visible = false;
             button_login.Visible = true;
@@ -95,7 +97,7 @@ namespace SalesManagement_SysDev
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            
             //ログイン処理
             string logID = textBox_id.Text;
             string logPass = textBox_pass.Text;
@@ -107,6 +109,7 @@ namespace SalesManagement_SysDev
             }
             try
             {
+
                 var pw = passwordHash.CreatePasswordHash(textBox_pass.Text.Trim());
                 //社員ID・パスワードチェック 
                 var context = new SalesManagement_DevContext();
@@ -121,12 +124,16 @@ namespace SalesManagement_SysDev
                              on t1.PoID equals t2.PoID
                              /*join t3 in context.M_Authoritys
                              on t1.AuthorityCD equals t3.AuthorityCD*/
+                             join t3 in context.M_SalesOffices
+                             on t1.SoID equals t3.SoID
                              where t1.EmID == loginID && t1.EmPassword == pw
                              select new
                              {
+                                 t1.EmID,
                                  t1.EmName,
                                  t2.PoName,
-                                 t2.PoID
+                                 t2.PoID,
+                                 t3.SoName
                              };
                     foreach (var p in tb)
                     {
@@ -134,13 +141,15 @@ namespace SalesManagement_SysDev
                         template.loginPosition = p.PoName;
                         DateTime dt = DateTime.Now;
                         template.loginTime = dt.ToString("MM/dd HH;mm");
-                        
+                        template.EmID = p.EmID;
                         template.PosID = p.PoID;
+                        template.soname = p.SoName;
                     }
                     template.loginID = loginID;
 
-                    context.Dispose();
 
+                    context.Dispose();
+                    
                 }
                 else
                 {
@@ -148,12 +157,12 @@ namespace SalesManagement_SysDev
 
                 }
 
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 
@@ -167,28 +176,81 @@ namespace SalesManagement_SysDev
         {
             if (flg == true)
             {
-                Form form = new template();
-                form.Show(this);
-                Opacity = 0;
+                this.Hide();
                 logina.Visible = false;
                 lodinggif.Visible = false;
                 button_login.Visible = true;
+                history();
+                Form form = new template();
+                form.Show(this);
+                flg = false;
             }
-
-            if (flg == false)
+            else
             {
                 logina.Visible = true;
                 logina.Text = "担当者IDまたはパスワードが違います";
                 lodinggif.Visible = false;
                 button_login.Visible = true;
+                return;
             }
-            return;
         }
+
+        private void history()
+        {
+            var reghistory = GenerateDataAtRegistration();
+            Registrationhistory(reghistory);
+        }
+        private loginHistory GenerateDataAtRegistration()
+        {
+            return new loginHistory
+            {
+                EmID = template.EmID.ToString(),
+                EmName=template.loginName,
+                position = template.loginPosition,
+                loginTime=template.loginTime
+            };
+        }
+
+        private void Registrationhistory(loginHistory login)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.loginHistories.Add(login);
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form form = new empcnt();
             form.Show(this);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form form = new F_Login();
+            form.Show(this);
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                textBox_pass.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox_pass.PasswordChar = '*';
+            }
         }
     }
 }

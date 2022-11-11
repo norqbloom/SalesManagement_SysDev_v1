@@ -156,30 +156,8 @@ namespace SalesManagement_SysDev
         /// 
         /// </summary>
         /// <returns></returns>
-        /*
-        public List<M_Client> GetClientsData(M_Client selectCondition)
-        {
-            List<M_Client> clients = new List<M_Client>();
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                clients = context.M_Clients.Where(x => x.ClID.ToString().CompareTo(selectCondition.ClID) &&
-                                                    x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                    x.ClName.Contains(selectCondition.ClName) &&
-                                                    x.ClAddress.Contains(selectCondition.ClAddress) &&
-                                                    x.ClPhone.Contains(selectCondition.ClPhone) &&
-                                                    x.ClFlag.CompareTo(selectCondition.ClFlag) &&
-                                                    x.ClPostal.Contains(selectCondition.ClPostal) &&
-                                                    x.ClFAX.Contains(selectCondition.ClFAX)).ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return clients;
-
-        }
-        */
+        
+        
         ///////////////////////////////
         //メソッド名：GetClientsDspData()
         //引　数   ：なし
@@ -200,6 +178,98 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Client;
+        }
+
+        ///////////////////////////////
+        //メソッド名：GetClientsData()　オーバーロード
+        //引　数   ：検索条件
+        //戻り値   ：条件一致顧客データ
+        //機　能   ：条件一致商品顧客データの取得
+        ///////////////////////////////
+        
+        public List<M_Client> Getdubblwdata(M_Client selectCondition)
+        {                 
+            List<M_Client> client = new List<M_Client>();
+            
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0&&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();         
+                context.Dispose();
+                    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return client;
+        }
+        public List<M_Client> GetCldata(M_Client selectCondition)
+        {
+            List<M_Client> client = new List<M_Client>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0 &&
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return client;
+        }
+        public List<M_Client> GetSodata(M_Client selectCondition)
+        {
+            List<M_Client> client = new List<M_Client>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                client = context.M_Clients.Where(x => x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0 &&
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return client;
+        }
+        public List<M_Client> Getnodata(M_Client selectCondition)
+        {
+            List<M_Client> client = new List<M_Client>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                client = context.M_Clients.Where(x => 
+                                                 x.ClName.Contains(selectCondition.ClName) &&
+                                                 x.ClFlag == 0 &&
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return client;
         }
     }
 }

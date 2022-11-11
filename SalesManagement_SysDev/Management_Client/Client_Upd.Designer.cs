@@ -47,7 +47,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Cli_Upd = new System.Windows.Forms.Button();
+            this.Cli_Upd_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,14 +199,14 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridView1.Size = new System.Drawing.Size(1358, 434);
             this.dataGridView1.TabIndex = 20;
             // 
-            // Cli_Upd
+            // Cli_Upd_Button
             // 
-            this.Cli_Upd.Location = new System.Drawing.Point(1309, 281);
-            this.Cli_Upd.Name = "Cli_Upd";
-            this.Cli_Upd.Size = new System.Drawing.Size(174, 66);
-            this.Cli_Upd.TabIndex = 19;
-            this.Cli_Upd.Text = "更新";
-            this.Cli_Upd.UseVisualStyleBackColor = true;
+            this.Cli_Upd_Button.Location = new System.Drawing.Point(1309, 281);
+            this.Cli_Upd_Button.Name = "Cli_Upd_Button";
+            this.Cli_Upd_Button.Size = new System.Drawing.Size(174, 66);
+            this.Cli_Upd_Button.TabIndex = 19;
+            this.Cli_Upd_Button.Text = "更新";
+            this.Cli_Upd_Button.UseVisualStyleBackColor = true;
             // 
             // Client_Upd
             // 
@@ -231,7 +231,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Cli_Upd);
+            this.Controls.Add(this.Cli_Upd_Button);
             this.Name = "Client_Upd";
             this.Text = "Client_Upd";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -260,6 +260,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Cli_Upd;
+        private System.Windows.Forms.Button Cli_Upd_Button;
     }
 }

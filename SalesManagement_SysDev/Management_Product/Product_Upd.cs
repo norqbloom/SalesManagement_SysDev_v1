@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev
+namespace SalesManagement_SysDev.Management_Product
 {
-    public partial class UserControl1 : UserControl
+    public partial class Product_Upd : Form
     {
-        public UserControl1()
+        public Product_Upd()
         {
             InitializeComponent();
         }

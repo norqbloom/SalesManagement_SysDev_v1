@@ -113,6 +113,16 @@ namespace SalesManagement_SysDev.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap close_FILL0_wght400_GRAD0_opsz482 {
+            get {
+                object obj = ResourceManager.GetObject("close_FILL0_wght400_GRAD0_opsz482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap group_FILL0_wght400_GRAD0_opsz48 {
             get {
                 object obj = ResourceManager.GetObject("group_FILL0_wght400_GRAD0_opsz48", resourceCulture);

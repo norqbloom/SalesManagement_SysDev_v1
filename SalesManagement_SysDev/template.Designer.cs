@@ -29,8 +29,9 @@ namespace SalesManagement_SysDev
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.sidepanel = new System.Windows.Forms.Panel();
-            this.empadd_btn = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.shipping_display = new System.Windows.Forms.Button();
             this.shipping_btn = new System.Windows.Forms.Button();
@@ -78,13 +79,18 @@ namespace SalesManagement_SysDev
             this.client_regbtn = new System.Windows.Forms.Button();
             this.btn_client = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.login = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.childsubmenu = new System.Windows.Forms.Panel();
             this.tilepanel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -107,7 +113,7 @@ namespace SalesManagement_SysDev
             // 
             this.sidepanel.AutoScroll = true;
             this.sidepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
-            this.sidepanel.Controls.Add(this.empadd_btn);
+            this.sidepanel.Controls.Add(this.logout);
             this.sidepanel.Controls.Add(this.panel14);
             this.sidepanel.Controls.Add(this.shipping_btn);
             this.sidepanel.Controls.Add(this.panel13);
@@ -141,24 +147,24 @@ namespace SalesManagement_SysDev
             this.sidepanel.TabIndex = 0;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
             // 
-            // empadd_btn
+            // logout
             // 
-            this.empadd_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
-            this.empadd_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.empadd_btn.FlatAppearance.BorderSize = 0;
-            this.empadd_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empadd_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.empadd_btn.ForeColor = System.Drawing.Color.White;
-            this.empadd_btn.Location = new System.Drawing.Point(0, 1864);
-            this.empadd_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.empadd_btn.Name = "empadd_btn";
-            this.empadd_btn.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.empadd_btn.Size = new System.Drawing.Size(328, 68);
-            this.empadd_btn.TabIndex = 25;
-            this.empadd_btn.Text = "社員追加";
-            this.empadd_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.empadd_btn.UseVisualStyleBackColor = false;
-            this.empadd_btn.Click += new System.EventHandler(this.empadd_btn_Click);
+            this.logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.logout.ForeColor = System.Drawing.Color.White;
+            this.logout.Location = new System.Drawing.Point(0, 1864);
+            this.logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logout.Name = "logout";
+            this.logout.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.logout.Size = new System.Drawing.Size(328, 68);
+            this.logout.TabIndex = 25;
+            this.logout.Text = "ログアウト";
+            this.logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.UseVisualStyleBackColor = false;
+            this.logout.Click += new System.EventHandler(this.empadd_btn_Click);
             // 
             // panel14
             // 
@@ -823,6 +829,7 @@ namespace SalesManagement_SysDev
             this.Product_regbtn.Text = "登録";
             this.Product_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_regbtn.UseVisualStyleBackColor = false;
+            this.Product_regbtn.Click += new System.EventHandler(this.Product_regbtn_Click);
             // 
             // Product_btn
             // 
@@ -935,10 +942,10 @@ namespace SalesManagement_SysDev
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Controls.Add(this.login);
+            this.panel1.Controls.Add(this.timer);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -946,23 +953,58 @@ namespace SalesManagement_SysDev
             this.panel1.Size = new System.Drawing.Size(328, 138);
             this.panel1.TabIndex = 0;
             // 
+            // login
+            // 
+            this.login.AutoSize = true;
+            this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.login.ForeColor = System.Drawing.Color.Black;
+            this.login.Location = new System.Drawing.Point(30, 116);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(113, 20);
+            this.login.TabIndex = 5;
+            this.login.Text = "ログイン時間";
+            // 
+            // timer
+            // 
+            this.timer.AutoSize = true;
+            this.timer.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.timer.Location = new System.Drawing.Point(37, 23);
+            this.timer.Name = "timer";
+            this.timer.Size = new System.Drawing.Size(225, 80);
+            this.timer.TabIndex = 4;
+            this.timer.Text = "Timer";
+            this.timer.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(30, 76);
+            this.label4.Location = new System.Drawing.Point(170, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(928, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "label5";
+            // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(30, 9);
+            this.label1.Location = new System.Drawing.Point(748, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 0;
@@ -970,10 +1012,11 @@ namespace SalesManagement_SysDev
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(31, 112);
+            this.label3.Location = new System.Drawing.Point(928, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 2;
@@ -981,10 +1024,11 @@ namespace SalesManagement_SysDev
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(30, 45);
+            this.label2.Location = new System.Drawing.Point(748, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 1;
@@ -995,37 +1039,60 @@ namespace SalesManagement_SysDev
             this.childsubmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.childsubmenu.Location = new System.Drawing.Point(349, 87);
+            this.childsubmenu.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.childsubmenu.Location = new System.Drawing.Point(349, 138);
             this.childsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.childsubmenu.Name = "childsubmenu";
-            this.childsubmenu.Size = new System.Drawing.Size(1201, 728);
+            this.childsubmenu.Size = new System.Drawing.Size(1201, 677);
             this.childsubmenu.TabIndex = 1;
             this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
             // 
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.tilepanel.Controls.Add(this.label6);
+            this.tilepanel.Controls.Add(this.label5);
             this.tilepanel.Controls.Add(this.pictureBox1);
+            this.tilepanel.Controls.Add(this.label1);
+            this.tilepanel.Controls.Add(this.label3);
+            this.tilepanel.Controls.Add(this.label2);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tilepanel.Location = new System.Drawing.Point(349, 0);
             this.tilepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tilepanel.Name = "tilepanel";
-            this.tilepanel.Size = new System.Drawing.Size(1190, 96);
+            this.tilepanel.Size = new System.Drawing.Size(1190, 138);
             this.tilepanel.TabIndex = 2;
             this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(614, 80);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "販売管理システム";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::SalesManagement_SysDev.Properties.Resources.close_FILL0_wght400_GRAD0_opsz481;
-            this.pictureBox1.Location = new System.Drawing.Point(1111, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(1092, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(72, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // template
             // 
@@ -1058,6 +1125,7 @@ namespace SalesManagement_SysDev
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tilepanel.ResumeLayout(false);
+            this.tilepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1115,11 +1183,16 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button order_serchbtn;
         private System.Windows.Forms.Button order_btn;
         private System.Windows.Forms.Panel tilepanel;
-        private System.Windows.Forms.Button empadd_btn;
+        private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label timer;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label login;
     }
 }
