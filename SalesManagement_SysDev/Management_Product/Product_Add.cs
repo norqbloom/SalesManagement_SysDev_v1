@@ -196,10 +196,5 @@ namespace SalesManagement_SysDev.Management_Product
         {
 
         }
-
-        private void Pro_Add_Button_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
