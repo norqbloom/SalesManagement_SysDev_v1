@@ -167,7 +167,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("FAXが入力されていません。")
+                MessageBox.Show("FAXが入力されていません。");
                 ClFAX.Focus();
                 return false;
             }
