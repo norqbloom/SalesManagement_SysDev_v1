@@ -28,46 +28,50 @@ namespace SalesManagement_SysDev.Management_Client
             // 8.2.1.1 妥当な役職データ取得
             if (!GetclientDataAtRegistration())
                 return;
+            var regCl = GenerateDataAtRegistration();
+            RegistrationClient(regCl);
+            var reghis = GeneratehistoryDataAtRegistration();
+            RegistrationClhistory(reghis);
         }
         private bool GetclientDataAtRegistration()
         {
             //顧客ID
-            if (String.IsNullOrEmpty(ClID.Text.Trim()))
+            if (!String.IsNullOrEmpty(ClID.Text.Trim()))
             {
                 //入力チェック
                 if (!dataInputFormCheck.CheckNumeric(ClID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M2001");
+                    messageDsp.DspMsg("M1001");
                     ClID.Focus();
                     return false;
                 }
                 if(ClID.TextLength > 6)
                 {
-                    messageDsp.DspMsg("M2002");
+                    messageDsp.DspMsg("M1002");
                     ClID.Focus();
                     return false;
                 }
                 if (clientDataAccess.CheckClientCDExistence(int.Parse(ClID.Text.Trim())))
                 {
-                    messageDsp.DspMsg("M2003");
+                    messageDsp.DspMsg("M1003");
                     ClID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M2004");
+                messageDsp.DspMsg("M1004");
                 ClID.Focus();
                 return false;
             }
 
             //営業所ID
-            if (String.IsNullOrEmpty(SoID.Text.Trim()))
+            if (!String.IsNullOrEmpty(SoID.Text.Trim()))
             {
                 //入力チェック
                 if (!dataInputFormCheck.CheckNumeric(SoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M2005");
+                    messageDsp.DspMsg("M1005");
                     SoID.Focus();
                     return false;
                 }
@@ -79,14 +83,14 @@ namespace SalesManagement_SysDev.Management_Client
                 }
                 if (clientDataAccess.CheckClientCDExistence(int.Parse(SoID.Text.Trim())))
                 {
-                    messageDsp.DspMsg("M2007");
+                    messageDsp.DspMsg("M1007");
                     SoID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M2008");
+                messageDsp.DspMsg("M1008");
                 SoID.Focus();
                 return false;
             }
@@ -95,14 +99,14 @@ namespace SalesManagement_SysDev.Management_Client
             {
                 if (ClName.TextLength > 50)
                 {
-                    messageDsp.DspMsg("M2010");
+                    messageDsp.DspMsg("M1010");
                     ClName.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M2011");
+                messageDsp.DspMsg("M1011");
                 ClName.Focus();
                 return false;
             }
@@ -129,7 +133,7 @@ namespace SalesManagement_SysDev.Management_Client
                 return false;
             }
             //住所
-            if (String.IsNullOrEmpty(ClAddress.Text.Trim()))
+            if (!String.IsNullOrEmpty(ClAddress.Text.Trim()))
             {
                 if (!dataInputFormCheck.CheckFullWidth(ClAddress.Text.Trim()))
                 {
@@ -206,5 +210,74 @@ namespace SalesManagement_SysDev.Management_Client
             }
           return true;
         }
+        private M_Client GenerateDataAtRegistration()
+        {
+            int checkflg;
+            if (ClFLG.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+            return new M_Client
+            {
+                ClID = int.Parse(ClID.Text),
+                SoID = int.Parse(SoID.Text),
+                ClName = ClName.Text,
+                ClAddress = ClAddress.Text,
+                ClPhone = ClPhone.Text,
+                ClPostal = ClPostal.Text,
+                ClFAX = ClFAX.Text,
+                ClFlag = checkflg,
+                ClHidden = ClHidden.Text
+            };
+        }
+        private void RegistrationClient(M_Client regClient)
+        {
+            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+                return;
+            bool flg = clientDataAccess.AddClientData(regClient);
+            if (flg == true)
+                messageDsp.DspMsg("M1022");
+            else
+                messageDsp.DspMsg("M1023");
+
+        }
+        private M_clhistory GeneratehistoryDataAtRegistration()
+        {
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+
+            return new M_clhistory
+            {
+                ClID = ClID.Text,
+                RegisteredDate=regtime,
+                regUserID=template.EmID.ToString(),
+                regUserName=template.loginName,
+                UpDateTime=regtime,
+                LastupdatedUserID= template.EmID.ToString(),
+                LastupdatedUserName= template.loginName
+
+            };
+        }
+        private void RegistrationClhistory(M_clhistory reghistory)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.M_Clhistory.Add(reghistory);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
     }
 }

@@ -43,6 +43,7 @@ namespace SalesManagement_SysDev
             this.textBoxPageSize = new System.Windows.Forms.TextBox();
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@ namespace SalesManagement_SysDev
             this.dataGridView1.Size = new System.Drawing.Size(763, 215);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // panel1
             // 
@@ -175,11 +177,21 @@ namespace SalesManagement_SysDev
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(187, 298);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "label5";
+            // 
             // client_serch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 681);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxPageNo);
             this.Controls.Add(this.textBoxPageSize);
@@ -219,5 +231,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.TextBox textBoxPageSize;
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

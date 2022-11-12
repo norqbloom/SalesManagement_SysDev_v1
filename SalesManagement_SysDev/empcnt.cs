@@ -209,11 +209,11 @@ namespace SalesManagement_SysDev
             int checkflg;
             if (EmCheck.Checked == true)
             {
-                checkflg = 0;
+                checkflg = 1;
             }
             else
             {
-                checkflg = 1;
+                checkflg = 0;
             }
 
 
