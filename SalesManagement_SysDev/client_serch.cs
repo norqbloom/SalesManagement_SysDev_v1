@@ -180,6 +180,13 @@ namespace SalesManagement_SysDev
         private void button1_Click(object sender, EventArgs e)
         {
             SetDataGridView();
-        }        
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            label5.Text = number.ToString();
+        }
     }
 }

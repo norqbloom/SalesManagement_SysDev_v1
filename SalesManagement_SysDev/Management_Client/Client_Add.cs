@@ -30,6 +30,8 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             var regCl = GenerateDataAtRegistration();
             RegistrationClient(regCl);
+            var reghis = GeneratehistoryDataAtRegistration();
+            RegistrationClhistory(reghis);
         }
         private bool GetclientDataAtRegistration()
         {
@@ -244,5 +246,38 @@ namespace SalesManagement_SysDev.Management_Client
                 messageDsp.DspMsg("M1023");
 
         }
+        private M_clhistory GeneratehistoryDataAtRegistration()
+        {
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+
+            return new M_clhistory
+            {
+                ClID = ClID.Text,
+                RegisteredDate=regtime,
+                regUserID=template.EmID.ToString(),
+                regUserName=template.loginName,
+                UpDateTime=regtime,
+                LastupdatedUserID= template.EmID.ToString(),
+                LastupdatedUserName= template.loginName
+
+            };
+        }
+        private void RegistrationClhistory(M_clhistory reghistory)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.M_Clhistory.Add(reghistory);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
     }
 }
