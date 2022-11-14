@@ -254,12 +254,12 @@ namespace SalesManagement_SysDev.Management_Client
             return new M_clhistory
             {
                 ClID = ClID.Text,
-                RegisteredDate=regtime,
-                regUserID=template.EmID.ToString(),
-                regUserName=template.loginName,
-                UpDateTime=regtime,
-                LastupdatedUserID= template.EmID.ToString(),
-                LastupdatedUserName= template.loginName
+                RegisteredDate = regtime,
+                regUserID = template.EmID.ToString(),
+                regUserName = template.loginName,
+                UpDateTime = "なし",
+                LastupdatedUserID = "なし",
+                LastupdatedUserName = "なし"
 
             };
         }
