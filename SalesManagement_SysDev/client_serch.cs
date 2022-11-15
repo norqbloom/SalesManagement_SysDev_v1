@@ -16,12 +16,32 @@ namespace SalesManagement_SysDev
         MessageDsp messageDsp = new MessageDsp();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
-        private static List<M_Client> dataset;
+        private static List<M_clhistory> history;
 
 
         public client_serch()
         {
             InitializeComponent();
+        }
+        private void invcnt()
+        {
+            IDtxt.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+        }
+        private void incntok()
+        {
+            IDtxt.Visible = true;
+            datetime.Visible = true;
+            userid.Visible = true;
+            username.Visible = true;
+            uptime.Visible = true;
+            upuserid.Visible = true;
+            upusername.Visible = true;
         }
 
         private void client_serch_Load(object sender, EventArgs e)
@@ -187,6 +207,52 @@ namespace SalesManagement_SysDev
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             label5.Text = number.ToString();
+
+            serchdateset(number);
+            setdatedetail();            
         }
+
+        private void serchdateset(int number)
+        {
+
+            M_clhistory selectCondition = new M_clhistory
+            {
+                ClID = number.ToString()                
+            };
+            history = clientDataAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            var x = history.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
+
+            IDtxt.Text = x.ClID;
+            datetime.Text = x.RegisteredDate;
+            userid.Text = x.regUserID;
+            username.Text = x.regUserName;
+            uptime.Text = x.UpDateTime;
+            upuserid.Text = x.LastupdatedUserID;
+            upusername.Text = x.LastupdatedUserName;
+            incntok();
+            
+
+        }
+        private void label9_Click(object sender, EventArgs e)
+        {
+            /*
+            ClIDtxt.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+             */
+        }
+
     }
 }
