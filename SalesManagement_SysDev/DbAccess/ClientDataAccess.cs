@@ -271,5 +271,20 @@ namespace SalesManagement_SysDev
             }
             return client;
         }
+        public List<M_clhistory> getdetail(M_clhistory selectCondition)
+        {
+            List<M_clhistory> history = new List<M_clhistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                history = context.M_Clhistory.Where(x => x.ClID.Contains(selectCondition.ClID)).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return history;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace SalesManagement_SysDev
         MessageDsp messageDsp = new MessageDsp();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
-        private static List<M_Client> dataset;
+        private static List<M_clhistory> history;
 
 
         public client_serch()
@@ -187,6 +187,29 @@ namespace SalesManagement_SysDev
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             label5.Text = number.ToString();
+            serchdateset(number);
+            setdatedetail();            
         }
+
+        private void serchdateset(int number)
+        {
+
+            M_clhistory selectCondition = new M_clhistory
+            {
+                ClID = number.ToString()                
+            };
+            history = clientDataAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            MessageBox.Show(history.ToString());
+            //IDtxt.Text = history[1].ToString();
+
+        }
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

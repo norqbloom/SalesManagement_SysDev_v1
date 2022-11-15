@@ -91,6 +91,7 @@ namespace SalesManagement_SysDev
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -107,6 +108,7 @@ namespace SalesManagement_SysDev
             this.panel1.SuspendLayout();
             this.tilepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // sidepanel
@@ -1040,6 +1042,7 @@ namespace SalesManagement_SysDev
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.childsubmenu.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.childsubmenu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.childsubmenu.Location = new System.Drawing.Point(349, 138);
             this.childsubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.childsubmenu.Name = "childsubmenu";
@@ -1050,6 +1053,7 @@ namespace SalesManagement_SysDev
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.tilepanel.Controls.Add(this.pictureBox2);
             this.tilepanel.Controls.Add(this.label6);
             this.tilepanel.Controls.Add(this.label5);
             this.tilepanel.Controls.Add(this.pictureBox1);
@@ -1094,6 +1098,18 @@ namespace SalesManagement_SysDev
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::SalesManagement_SysDev.Properties.Resources._15642961;
+            this.pictureBox2.Location = new System.Drawing.Point(997, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(72, 68);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1127,6 +1143,7 @@ namespace SalesManagement_SysDev
             this.tilepanel.ResumeLayout(false);
             this.tilepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1194,5 +1211,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label timer;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label login;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
