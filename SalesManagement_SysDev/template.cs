@@ -185,11 +185,14 @@ namespace SalesManagement_SysDev
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        //時間表示
+        /*
         private void tilepanel_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        */
         private void template_Resize(object sender, EventArgs e)
         {
             Size size = childsubmenu.Size;
