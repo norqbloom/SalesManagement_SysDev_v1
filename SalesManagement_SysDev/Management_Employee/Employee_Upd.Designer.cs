@@ -55,17 +55,18 @@ namespace SalesManagement_SysDev.Management_Employee
             // Emp_Upd_Button
             // 
             this.Emp_Upd_Button.Location = new System.Drawing.Point(850, 257);
-            this.Emp_Upd_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Emp_Upd_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Emp_Upd_Button.Name = "Emp_Upd_Button";
             this.Emp_Upd_Button.Size = new System.Drawing.Size(135, 73);
             this.Emp_Upd_Button.TabIndex = 39;
             this.Emp_Upd_Button.Text = "更新";
             this.Emp_Upd_Button.UseVisualStyleBackColor = true;
+            this.Emp_Upd_Button.Click += new System.EventHandler(this.Emp_Upd_Button_Click);
             // 
             // EmHidden
             // 
             this.EmHidden.Location = new System.Drawing.Point(473, 51);
-            this.EmHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmHidden.Margin = new System.Windows.Forms.Padding(2);
             this.EmHidden.Name = "EmHidden";
             this.EmHidden.Size = new System.Drawing.Size(81, 22);
             this.EmHidden.TabIndex = 37;
@@ -73,7 +74,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // EmPhone
             // 
             this.EmPhone.Location = new System.Drawing.Point(170, 281);
-            this.EmPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmPhone.Margin = new System.Windows.Forms.Padding(2);
             this.EmPhone.Name = "EmPhone";
             this.EmPhone.Size = new System.Drawing.Size(81, 22);
             this.EmPhone.TabIndex = 36;
@@ -81,7 +82,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // EmPassword
             // 
             this.EmPassword.Location = new System.Drawing.Point(170, 225);
-            this.EmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.EmPassword.Name = "EmPassword";
             this.EmPassword.Size = new System.Drawing.Size(81, 22);
             this.EmPassword.TabIndex = 35;
@@ -89,7 +90,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // PoID
             // 
             this.PoID.Location = new System.Drawing.Point(170, 145);
-            this.PoID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PoID.Margin = new System.Windows.Forms.Padding(2);
             this.PoID.Name = "PoID";
             this.PoID.Size = new System.Drawing.Size(81, 22);
             this.PoID.TabIndex = 34;
@@ -97,7 +98,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // SoID
             // 
             this.SoID.Location = new System.Drawing.Point(170, 104);
-            this.SoID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SoID.Margin = new System.Windows.Forms.Padding(2);
             this.SoID.Name = "SoID";
             this.SoID.Size = new System.Drawing.Size(81, 22);
             this.SoID.TabIndex = 33;
@@ -105,7 +106,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // EmName
             // 
             this.EmName.Location = new System.Drawing.Point(170, 78);
-            this.EmName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmName.Margin = new System.Windows.Forms.Padding(2);
             this.EmName.Name = "EmName";
             this.EmName.Size = new System.Drawing.Size(81, 22);
             this.EmName.TabIndex = 32;
@@ -193,7 +194,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // EmID
             // 
             this.EmID.Location = new System.Drawing.Point(170, 42);
-            this.EmID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmID.Margin = new System.Windows.Forms.Padding(2);
             this.EmID.Name = "EmID";
             this.EmID.Size = new System.Drawing.Size(81, 22);
             this.EmID.TabIndex = 23;
@@ -212,7 +213,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.EmFlag.AutoSize = true;
             this.EmFlag.Location = new System.Drawing.Point(189, 338);
-            this.EmFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmFlag.Margin = new System.Windows.Forms.Padding(2);
             this.EmFlag.Name = "EmFlag";
             this.EmFlag.Size = new System.Drawing.Size(34, 19);
             this.EmFlag.TabIndex = 21;
@@ -223,7 +224,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 383);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -233,7 +234,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // EmHiredate
             // 
             this.EmHiredate.Location = new System.Drawing.Point(170, 180);
-            this.EmHiredate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmHiredate.Margin = new System.Windows.Forms.Padding(2);
             this.EmHiredate.Name = "EmHiredate";
             this.EmHiredate.Size = new System.Drawing.Size(161, 22);
             this.EmHiredate.TabIndex = 40;
@@ -263,7 +264,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EmFlag);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee_Upd";
             this.Text = "Employee_Upd";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
