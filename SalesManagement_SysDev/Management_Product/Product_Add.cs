@@ -15,6 +15,7 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+        private static List<M_ProductDsp> Product;
 
         public Product_Add()
         {
@@ -181,20 +182,222 @@ namespace SalesManagement_SysDev.Management_Product
                 return false;
             }
             //型番の適否
+            if (!String.IsNullOrEmpty(PrModelNumber.Text.Trim()))
+            {
+                //文字数
+                if(PrModelNumber.TextLength > 20)
+                {
+                    messageDsp.DspMsg("M2022");//型番は20文字以下です
+                    PrModelNumber.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M2021");//型番が入力されていません
+                PrModelNumber.Focus();
+                return false;
+            }
+            //色の適否
+            if (!String.IsNullOrEmpty(PrColor.Text.Trim()))
+            {
+                //文字数
+                if(PrColor.TextLength > 20)
+                {
+                    messageDsp.DspMsg("M2025");//色は20文字以下です
+                    PrColor.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M2026");//色は入力されていません
+                PrColor.Focus();
+                return false;
+            }
+            //商品管理フラグ
+            if(PrFlag.CheckState == CheckState.Indeterminate)
+            {
+                messageDsp.DspMsg("");
+                PrFlag.Focus();
+                return false;
+            }
+            //非表示理由
+            if(PrFlag.Checked == true)
+            {
+                if (!String.IsNullOrEmpty(PrHidden.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M");
+                    PrFlag.Focus();
+                    return false;
+                }
+            }
             return true;
         }
-
+ 
         private M_Product GenerateDataAtRegistration()
         {
+            //フラグが選択されている場合
+            int checkflg;
+            if (PrFlag.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+
+            //登録情報のセット
             return new M_Product
             {
-
+                PrID = int.Parse(PrID.Text.Trim()),
+                MaID = int.Parse(MaID.Text.Trim()),
+                PrName = PrName.Text.Trim(),
+                Price = int.Parse(Price.Text.Trim()),
+                PrSafetyStock = int.Parse(PrSafetyStock.Text.Trim()),
+                ScID = int.Parse(ScID.Text.Trim()),
+                PrModelNumber = PrModelNumber.Text.Trim(),
+                PrColor = PrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(PrReleaseDate.Text.Trim()),
+                PrFlag =  checkflg,
+                PrHidden = PrHidden.Text.Trim()
             }; 
         }
 
         private void RegistrationProduct(M_Product regProduct)
         {
+            //登録確認メッセージ
+            DialogResult result = messageDsp.DspMsg("M2029");//商品データを登録してよろしいですか？
+            if(result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            //商品情報の登録
+            bool flg = productDataAccess.AddProductData(regProduct);
+            if(flg == true)
+            {
+                messageDsp.DspMsg("M2030");//商品データを登録しました
+            }
+            else
+            {
+                messageDsp.DspMsg("M2031");//商品データ登録に失敗しました
+            }
+            PrID.Focus();
+
+            //入力エリアのクリア
+            //ClearInput();
+            //画面更新
+            GetDataGridView();
+            
+        }
+
+        private void ClearInput()
+        {
+            PrID.Text = "";
+            MaID.Text = "";
+            PrName.Text = "";
+            Price.Text = "";
+            PrSafetyStock.Text = "";
+            ScID.Text = "";
+            PrModelNumber.Text = "";
+            PrColor.Text = "";
+            PrReleaseDate.Value = DateTime.Now;
+            PrFlag.Checked = false;
+            PrHidden.Text = "";
+        }
+
+        private void GetDataGridView()
+        {
+            //商品データの取得
+            Product = productDataAccess.GetProductData();
+
+            SetDataGridView();
+        }
+
+        private void SetDataGridView()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridViewDsp.DataSource = Product.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            //各列幅の指定
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 130;
+            dataGridViewDsp.Columns[2].Width = 130;
+            dataGridViewDsp.Columns[3].Width = 70;
+            dataGridViewDsp.Columns[3].Visible = false;
+            dataGridViewDsp.Columns[4].Width = 130;
+            dataGridViewDsp.Columns[4].Visible = false;
+            dataGridViewDsp.Columns[5].Width = 130;
+            dataGridViewDsp.Columns[5].Visible = false;
+            dataGridViewDsp.Columns[6].Width = 130;
+            dataGridViewDsp.Columns[6].Visible = false;
+            dataGridViewDsp.Columns[7].Width = 130;
+            dataGridViewDsp.Columns[7].Visible = false;
+            dataGridViewDsp.Columns[8].Width = 130;
+            dataGridViewDsp.Columns[8].Visible = false;
+            dataGridViewDsp.Columns[9].Width = 130;
+            dataGridViewDsp.Columns[9].Visible = false;
+            dataGridViewDsp.Columns[10].Width = 130;
+            dataGridViewDsp.Columns[10].Visible = false;
+            //dataGridViewDsp.Columns[11].Width = 50;
+            //dataGridViewDsp.Columns[11].Visible = false;
+            //dataGridViewDsp.Columns[12].Width = 100;
+            //dataGridViewDsp.Columns[13].Width = 50;
+            //dataGridViewDsp.Columns[13].Visible = false;
+            //dataGridViewDsp.Columns[14].Width = 100;
+            //dataGridViewDsp.Columns[15].Width = 50;
+            //dataGridViewDsp.Columns[15].Visible = false;
+            //dataGridViewDsp.Columns[16].Width = 100;
+            //dataGridViewDsp.Columns[17].Width = 50;
+            //dataGridViewDsp.Columns[17].Visible = false;
+            //dataGridViewDsp.Columns[18].Width = 100;
+            //dataGridViewDsp.Columns[19].Width = 100;
+            //dataGridViewDsp.Columns[20].Width = 130;
+            //dataGridViewDsp.Columns[20].Visible = false;
+            //dataGridViewDsp.Columns[21].Width = 80;
+            //dataGridViewDsp.Columns[22].Width = 250;
+
+            //各列の文字位置の指定
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            //dataGridViewの総ページ数
+            labelPage.Text = "/" + ((int)Math.Ceiling(Product.Count / (double)pageSize)) + "ページ";
+
+            dataGridViewDsp.Refresh();
 
         }
+
+        private void SetFormDataGridView()
+        {
+            //dataGridViewのページサイズ指定
+            textBoxPageSize.Text = "10";
+            //dataGridViewのページ番号指定
+            textBoxPageNo.Text = "1";
+            //読み取り専用に指定
+            dataGridViewDsp.ReadOnly = true;
+            //行内をクリックすることで行を選択
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //ヘッダー位置の指定
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //データグリッドビューのデータ取得
+            GetDataGridView();
+        }
+
+        private void Product_Add_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+        }
     }
+
 }

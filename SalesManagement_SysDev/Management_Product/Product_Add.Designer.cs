@@ -32,7 +32,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.PrFlag = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PrID = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,17 +49,20 @@ namespace SalesManagement_SysDev.Management_Product
             this.ScID = new System.Windows.Forms.TextBox();
             this.PrModelNumber = new System.Windows.Forms.TextBox();
             this.PrColor = new System.Windows.Forms.TextBox();
-            this.PrReleaseDate = new System.Windows.Forms.TextBox();
             this.PrHidden = new System.Windows.Forms.TextBox();
             this.Pro_Add_Button = new System.Windows.Forms.Button();
             this.Pro_Del_Button = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.PrReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPageSize = new System.Windows.Forms.TextBox();
+            this.textBoxPageNo = new System.Windows.Forms.TextBox();
+            this.labelPage = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.SuspendLayout();
             // 
             // PrFlag
             // 
             this.PrFlag.AutoSize = true;
-            this.PrFlag.Location = new System.Drawing.Point(367, 338);
+            this.PrFlag.Location = new System.Drawing.Point(368, 318);
             this.PrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PrFlag.Name = "PrFlag";
             this.PrFlag.Size = new System.Drawing.Size(121, 19);
@@ -84,16 +87,16 @@ namespace SalesManagement_SysDev.Management_Product
             this.PrID.Size = new System.Drawing.Size(81, 22);
             this.PrID.TabIndex = 2;
             // 
-            // dataGridView1
+            // dataGridViewDsp
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 409);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 259);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDsp.Location = new System.Drawing.Point(15, 409);
+            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowHeadersWidth = 62;
+            this.dataGridViewDsp.RowTemplate.Height = 27;
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1476, 456);
+            this.dataGridViewDsp.TabIndex = 3;
             // 
             // label2
             // 
@@ -232,14 +235,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.PrColor.Size = new System.Drawing.Size(81, 22);
             this.PrColor.TabIndex = 21;
             // 
-            // PrReleaseDate
-            // 
-            this.PrReleaseDate.Location = new System.Drawing.Point(463, 268);
-            this.PrReleaseDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PrReleaseDate.Name = "PrReleaseDate";
-            this.PrReleaseDate.Size = new System.Drawing.Size(81, 22);
-            this.PrReleaseDate.TabIndex = 22;
-            // 
             // PrHidden
             // 
             this.PrHidden.Location = new System.Drawing.Point(704, 96);
@@ -269,15 +264,48 @@ namespace SalesManagement_SysDev.Management_Product
             this.Pro_Del_Button.Text = "削除";
             this.Pro_Del_Button.UseVisualStyleBackColor = true;
             // 
+            // PrReleaseDate
+            // 
+            this.PrReleaseDate.Location = new System.Drawing.Point(463, 270);
+            this.PrReleaseDate.Name = "PrReleaseDate";
+            this.PrReleaseDate.Size = new System.Drawing.Size(200, 22);
+            this.PrReleaseDate.TabIndex = 26;
+            // 
+            // textBoxPageSize
+            // 
+            this.textBoxPageSize.Location = new System.Drawing.Point(92, 361);
+            this.textBoxPageSize.Name = "textBoxPageSize";
+            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageSize.TabIndex = 27;
+            // 
+            // textBoxPageNo
+            // 
+            this.textBoxPageNo.Location = new System.Drawing.Point(217, 361);
+            this.textBoxPageNo.Name = "textBoxPageNo";
+            this.textBoxPageNo.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageNo.TabIndex = 28;
+            // 
+            // labelPage
+            // 
+            this.labelPage.AutoSize = true;
+            this.labelPage.Location = new System.Drawing.Point(324, 367);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(43, 15);
+            this.labelPage.TabIndex = 29;
+            this.labelPage.Text = "label5";
+            // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 716);
+            this.ClientSize = new System.Drawing.Size(1726, 925);
+            this.Controls.Add(this.labelPage);
+            this.Controls.Add(this.textBoxPageNo);
+            this.Controls.Add(this.textBoxPageSize);
+            this.Controls.Add(this.PrReleaseDate);
             this.Controls.Add(this.Pro_Del_Button);
             this.Controls.Add(this.Pro_Add_Button);
             this.Controls.Add(this.PrHidden);
-            this.Controls.Add(this.PrReleaseDate);
             this.Controls.Add(this.PrColor);
             this.Controls.Add(this.PrModelNumber);
             this.Controls.Add(this.ScID);
@@ -294,14 +322,15 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.PrID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PrFlag);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Product_Add";
             this.Text = "Product_Add";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Product_Add_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,7 +341,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.CheckBox PrFlag;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox PrID;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -329,9 +358,12 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox ScID;
         private System.Windows.Forms.TextBox PrModelNumber;
         private System.Windows.Forms.TextBox PrColor;
-        private System.Windows.Forms.TextBox PrReleaseDate;
         private System.Windows.Forms.TextBox PrHidden;
         private System.Windows.Forms.Button Pro_Add_Button;
         private System.Windows.Forms.Button Pro_Del_Button;
+        private System.Windows.Forms.DateTimePicker PrReleaseDate;
+        private System.Windows.Forms.TextBox textBoxPageSize;
+        private System.Windows.Forms.TextBox textBoxPageNo;
+        private System.Windows.Forms.Label labelPage;
     }
 }
