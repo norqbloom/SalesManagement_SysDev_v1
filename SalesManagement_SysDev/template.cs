@@ -334,14 +334,14 @@ namespace SalesManagement_SysDev
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            pictureBox1.BackColor = Color.Red;
+            close.BackColor = Color.Red;
 
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             Color color = Color.FromArgb(51, 153, 102);
-            pictureBox1.BackColor = color;
+            close.BackColor = color;
         }
         private void logoutuser()
         {
@@ -376,5 +376,10 @@ namespace SalesManagement_SysDev
             }
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new setting());
+
+        }
     }
 }

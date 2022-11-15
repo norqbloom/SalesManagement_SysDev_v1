@@ -187,6 +187,7 @@ namespace SalesManagement_SysDev
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             label5.Text = number.ToString();
+
             serchdateset(number);
             setdatedetail();            
         }
@@ -202,9 +203,16 @@ namespace SalesManagement_SysDev
         }
         private void setdatedetail()
         {
-            MessageBox.Show(history.ToString());
-            //IDtxt.Text = history[1].ToString();
+            var x = history.FirstOrDefault();
+            if (x == null)
+            {
+                return;
+            }
 
+            IDtxt.Text = x.ClID;
+
+            MessageBox.Show(x.ToString());
+            //IDtxt.Text = history[1].ToString();
         }
         private void label9_Click(object sender, EventArgs e)
         {

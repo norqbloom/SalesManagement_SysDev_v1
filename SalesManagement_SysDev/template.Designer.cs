@@ -89,9 +89,10 @@ namespace SalesManagement_SysDev
             this.childsubmenu = new System.Windows.Forms.Panel();
             this.tilepanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.setting = new System.Windows.Forms.PictureBox();
+            this.close = new System.Windows.Forms.PictureBox();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -107,8 +108,9 @@ namespace SalesManagement_SysDev
             this.clientsubmenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tilepanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.setting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             this.SuspendLayout();
             // 
             // sidepanel
@@ -994,7 +996,7 @@ namespace SalesManagement_SysDev
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(928, 83);
+            this.label5.Location = new System.Drawing.Point(169, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 4;
@@ -1006,7 +1008,7 @@ namespace SalesManagement_SysDev
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(748, 35);
+            this.label1.Location = new System.Drawing.Point(13, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 0;
@@ -1018,7 +1020,7 @@ namespace SalesManagement_SysDev
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(928, 35);
+            this.label3.Location = new System.Drawing.Point(169, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 2;
@@ -1030,7 +1032,7 @@ namespace SalesManagement_SysDev
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(748, 83);
+            this.label2.Location = new System.Drawing.Point(13, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 1;
@@ -1053,13 +1055,8 @@ namespace SalesManagement_SysDev
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
-            this.tilepanel.Controls.Add(this.pictureBox2);
+            this.tilepanel.Controls.Add(this.panel2);
             this.tilepanel.Controls.Add(this.label6);
-            this.tilepanel.Controls.Add(this.label5);
-            this.tilepanel.Controls.Add(this.pictureBox1);
-            this.tilepanel.Controls.Add(this.label1);
-            this.tilepanel.Controls.Add(this.label3);
-            this.tilepanel.Controls.Add(this.label2);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tilepanel.Location = new System.Drawing.Point(349, 0);
             this.tilepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1079,36 +1076,51 @@ namespace SalesManagement_SysDev
             this.label6.TabIndex = 5;
             this.label6.Text = "販売管理システム";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::SalesManagement_SysDev.Properties.Resources.close_FILL0_wght400_GRAD0_opsz481;
-            this.pictureBox1.Location = new System.Drawing.Point(1092, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 68);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox2
+            // panel2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::SalesManagement_SysDev.Properties.Resources._15642961;
-            this.pictureBox2.Location = new System.Drawing.Point(997, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(72, 68);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.setting);
+            this.panel2.Controls.Add(this.close);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Location = new System.Drawing.Point(626, 23);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(552, 100);
+            this.panel2.TabIndex = 7;
+            // 
+            // setting
+            // 
+            this.setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.setting.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.setting.Image = global::SalesManagement_SysDev.Properties.Resources.settings_FILL0_wght400_GRAD0_opsz48;
+            this.setting.Location = new System.Drawing.Point(351, 12);
+            this.setting.Name = "setting";
+            this.setting.Size = new System.Drawing.Size(72, 68);
+            this.setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.setting.TabIndex = 6;
+            this.setting.TabStop = false;
+            this.setting.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // close
+            // 
+            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.close.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.close.Image = global::SalesManagement_SysDev.Properties.Resources.close_FILL0_wght400_GRAD0_opsz481;
+            this.close.Location = new System.Drawing.Point(448, 12);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(72, 68);
+            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.close.TabIndex = 0;
+            this.close.TabStop = false;
+            this.close.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.close.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.close.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
             // template
             // 
@@ -1142,8 +1154,10 @@ namespace SalesManagement_SysDev
             this.panel1.PerformLayout();
             this.tilepanel.ResumeLayout(false);
             this.tilepanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.setting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1205,12 +1219,13 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox close;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label timer;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label login;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox setting;
+        private System.Windows.Forms.Panel panel2;
     }
 }

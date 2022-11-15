@@ -277,7 +277,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                history = context.M_Clhistory.Where(x => x.ClID.Contains(selectCondition.ClID)).ToList();
+                history = context.M_Clhistory.Where(x => x.ClID == selectCondition.ClID).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
