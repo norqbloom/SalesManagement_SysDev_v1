@@ -23,6 +23,26 @@ namespace SalesManagement_SysDev
         {
             InitializeComponent();
         }
+        private void invcnt()
+        {
+            IDtxt.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+        }
+        private void incntok()
+        {
+            IDtxt.Visible = true;
+            datetime.Visible = true;
+            userid.Visible = true;
+            username.Visible = true;
+            uptime.Visible = true;
+            upuserid.Visible = true;
+            upusername.Visible = true;
+        }
 
         private void client_serch_Load(object sender, EventArgs e)
         {
@@ -206,18 +226,33 @@ namespace SalesManagement_SysDev
             var x = history.FirstOrDefault();
             if (x == null)
             {
+                invcnt();
                 return;
             }
 
             IDtxt.Text = x.ClID;
+            datetime.Text = x.RegisteredDate;
+            userid.Text = x.regUserID;
+            username.Text = x.regUserName;
+            uptime.Text = x.UpDateTime;
+            upuserid.Text = x.LastupdatedUserID;
+            upusername.Text = x.LastupdatedUserName;
+            incntok();
+            
 
-            MessageBox.Show(x.ToString());
-            //IDtxt.Text = history[1].ToString();
         }
         private void label9_Click(object sender, EventArgs e)
         {
-
+            /*
+            ClIDtxt.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+             */
         }
-        
+
     }
 }

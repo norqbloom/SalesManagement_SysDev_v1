@@ -31,6 +31,12 @@ namespace SalesManagement_SysDev
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.upusername = new System.Windows.Forms.Label();
+            this.upuserid = new System.Windows.Forms.Label();
+            this.uptime = new System.Windows.Forms.Label();
+            this.userid = new System.Windows.Forms.Label();
+            this.datetime = new System.Windows.Forms.Label();
+            this.IDtxt = new System.Windows.Forms.Label();
             this.serch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,13 +50,7 @@ namespace SalesManagement_SysDev
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.IDtxt = new System.Windows.Forms.Label();
-            this.datetime = new System.Windows.Forms.Label();
-            this.userid = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.Label();
-            this.uptime = new System.Windows.Forms.Label();
-            this.upuserid = new System.Windows.Forms.Label();
-            this.upusername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,72 @@ namespace SalesManagement_SysDev
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(357, 681);
             this.panel1.TabIndex = 1;
+            // 
+            // upusername
+            // 
+            this.upusername.AutoSize = true;
+            this.upusername.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.upusername.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.upusername.Location = new System.Drawing.Point(195, 377);
+            this.upusername.Name = "upusername";
+            this.upusername.Size = new System.Drawing.Size(74, 20);
+            this.upusername.TabIndex = 6;
+            this.upusername.Text = "label12";
+            // 
+            // upuserid
+            // 
+            this.upuserid.AutoSize = true;
+            this.upuserid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.upuserid.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.upuserid.Location = new System.Drawing.Point(38, 377);
+            this.upuserid.Name = "upuserid";
+            this.upuserid.Size = new System.Drawing.Size(74, 20);
+            this.upuserid.TabIndex = 5;
+            this.upuserid.Text = "label11";
+            // 
+            // uptime
+            // 
+            this.uptime.AutoSize = true;
+            this.uptime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.uptime.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uptime.Location = new System.Drawing.Point(38, 268);
+            this.uptime.Name = "uptime";
+            this.uptime.Size = new System.Drawing.Size(74, 20);
+            this.uptime.TabIndex = 4;
+            this.uptime.Text = "label10";
+            // 
+            // userid
+            // 
+            this.userid.AutoSize = true;
+            this.userid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.userid.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.userid.Location = new System.Drawing.Point(38, 137);
+            this.userid.Name = "userid";
+            this.userid.Size = new System.Drawing.Size(63, 20);
+            this.userid.TabIndex = 2;
+            this.userid.Text = "label8";
+            // 
+            // datetime
+            // 
+            this.datetime.AutoSize = true;
+            this.datetime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.datetime.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.datetime.Location = new System.Drawing.Point(195, 59);
+            this.datetime.Name = "datetime";
+            this.datetime.Size = new System.Drawing.Size(63, 20);
+            this.datetime.TabIndex = 1;
+            this.datetime.Text = "label7";
+            // 
+            // IDtxt
+            // 
+            this.IDtxt.AutoSize = true;
+            this.IDtxt.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IDtxt.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.IDtxt.Location = new System.Drawing.Point(38, 59);
+            this.IDtxt.Name = "IDtxt";
+            this.IDtxt.Size = new System.Drawing.Size(63, 20);
+            this.IDtxt.TabIndex = 0;
+            this.IDtxt.Text = "label6";
             // 
             // serch
             // 
@@ -201,39 +267,6 @@ namespace SalesManagement_SysDev
             this.label5.TabIndex = 14;
             this.label5.Text = "label5";
             // 
-            // IDtxt
-            // 
-            this.IDtxt.AutoSize = true;
-            this.IDtxt.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IDtxt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.IDtxt.Location = new System.Drawing.Point(38, 59);
-            this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(63, 20);
-            this.IDtxt.TabIndex = 0;
-            this.IDtxt.Text = "label6";
-            // 
-            // datetime
-            // 
-            this.datetime.AutoSize = true;
-            this.datetime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.datetime.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.datetime.Location = new System.Drawing.Point(195, 59);
-            this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(63, 20);
-            this.datetime.TabIndex = 1;
-            this.datetime.Text = "label7";
-            // 
-            // userid
-            // 
-            this.userid.AutoSize = true;
-            this.userid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.userid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.userid.Location = new System.Drawing.Point(38, 137);
-            this.userid.Name = "userid";
-            this.userid.Size = new System.Drawing.Size(63, 20);
-            this.userid.TabIndex = 2;
-            this.userid.Text = "label8";
-            // 
             // username
             // 
             this.username.AutoSize = true;
@@ -245,39 +278,6 @@ namespace SalesManagement_SysDev
             this.username.TabIndex = 3;
             this.username.Text = "label9";
             this.username.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // uptime
-            // 
-            this.uptime.AutoSize = true;
-            this.uptime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.uptime.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uptime.Location = new System.Drawing.Point(38, 268);
-            this.uptime.Name = "uptime";
-            this.uptime.Size = new System.Drawing.Size(74, 20);
-            this.uptime.TabIndex = 4;
-            this.uptime.Text = "label10";
-            // 
-            // upuserid
-            // 
-            this.upuserid.AutoSize = true;
-            this.upuserid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.upuserid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.upuserid.Location = new System.Drawing.Point(38, 377);
-            this.upuserid.Name = "upuserid";
-            this.upuserid.Size = new System.Drawing.Size(74, 20);
-            this.upuserid.TabIndex = 5;
-            this.upuserid.Text = "label11";
-            // 
-            // upusername
-            // 
-            this.upusername.AutoSize = true;
-            this.upusername.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.upusername.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.upusername.Location = new System.Drawing.Point(195, 377);
-            this.upusername.Name = "upusername";
-            this.upusername.Size = new System.Drawing.Size(74, 20);
-            this.upusername.TabIndex = 6;
-            this.upusername.Text = "label12";
             // 
             // client_serch
             // 
@@ -330,10 +330,10 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label IDtxt;
         private System.Windows.Forms.Label datetime;
-        private System.Windows.Forms.Label username;
         private System.Windows.Forms.Label userid;
         private System.Windows.Forms.Label upusername;
         private System.Windows.Forms.Label upuserid;
         private System.Windows.Forms.Label uptime;
+        private System.Windows.Forms.Label username;
     }
 }
