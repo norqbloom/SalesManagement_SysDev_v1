@@ -139,14 +139,14 @@ namespace SalesManagement_SysDev
                     {
                         template.loginName = p.EmName;
                         template.loginPosition = p.PoName;
-                        DateTime dt = DateTime.Now;
-                        template.loginTime = dt.ToString("MM/dd HH;mm");
                         template.EmID = p.EmID;
                         template.PosID = p.PoID;
                         template.soname = p.SoName;
                     }
                     template.loginID = loginID;
 
+                    DateTime dt = DateTime.Now;
+                    template.loginTime = dt.ToString("MM/dd HH;mm");
 
                     context.Dispose();
                     
