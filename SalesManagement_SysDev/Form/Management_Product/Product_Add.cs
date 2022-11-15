@@ -181,6 +181,7 @@ namespace SalesManagement_SysDev.Management_Product
                 return false;
             }
             //型番の適否
+
             return true;
         }
 
