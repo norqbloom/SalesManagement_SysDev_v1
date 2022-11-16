@@ -56,6 +56,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageSize = new System.Windows.Forms.TextBox();
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,8 +96,9 @@ namespace SalesManagement_SysDev.Management_Product
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 62;
             this.dataGridViewDsp.RowTemplate.Height = 27;
-            this.dataGridViewDsp.Size = new System.Drawing.Size(1476, 456);
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1699, 456);
             this.dataGridViewDsp.TabIndex = 3;
+            this.dataGridViewDsp.SelectionChanged += new System.EventHandler(this.dataGridViewDsp_SelectionChanged);
             // 
             // label2
             // 
@@ -294,11 +296,21 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelPage.TabIndex = 29;
             this.labelPage.Text = "label5";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(373, 368);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "label5";
+            // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1726, 925);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.labelPage);
             this.Controls.Add(this.textBoxPageNo);
             this.Controls.Add(this.textBoxPageSize);
@@ -365,5 +377,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxPageSize;
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
+        private System.Windows.Forms.Label label5;
     }
 }

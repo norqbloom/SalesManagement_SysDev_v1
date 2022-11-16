@@ -22,6 +22,11 @@ namespace SalesManagement_SysDev.Management_Product
             InitializeComponent();
         }
 
+        private void Product_Add_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+        }
+
         private void Pro_Add_Button_Click(object sender, EventArgs e)
         {
             //商品データ取得
@@ -293,6 +298,43 @@ namespace SalesManagement_SysDev.Management_Product
             
         }
 
+        //データグリッドビューに表示するデータの取得
+        private void SetFormDataGridView()
+        {
+            //dataGridViewのページサイズ指定
+            textBoxPageSize.Text = "10";
+            //dataGridViewのページ番号指定
+            textBoxPageNo.Text = "1";
+            //読み取り専用に指定
+            dataGridViewDsp.ReadOnly = true;
+            //行内をクリックすることで行を選択
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //ヘッダー位置の指定
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //データグリッドビューのデータ取得
+            SetDataGridView();
+        }
+
+        //データグリッドビューに表示するデータの取得
+        private void GetDataGridView()
+        {
+            //商品データの取得
+            Product = productDataAccess.GetProductData();
+
+            SetDataGridView();
+        }
+
+        //データグリッドビューへの表示
+        private void SetDataGridView()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridViewDsp.DataSource = Product.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.Refresh();
+
+        }
+
+        //入力エリアをクリア
         private void ClearInput()
         {
             PrID.Text = "";
@@ -308,96 +350,17 @@ namespace SalesManagement_SysDev.Management_Product
             PrHidden.Text = "";
         }
 
-        private void GetDataGridView()
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
-            //商品データの取得
-            Product = productDataAccess.GetProductData();
+            int number;
+            int PrIDtxt;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            label5.Text = PrIDtxt.ToString();
 
-            SetDataGridView();
+           
         }
 
-        private void SetDataGridView()
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = Product.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            //各列幅の指定
-            dataGridViewDsp.Columns[0].Width = 80;
-            dataGridViewDsp.Columns[1].Width = 130;
-            dataGridViewDsp.Columns[2].Width = 130;
-            dataGridViewDsp.Columns[3].Width = 70;
-            dataGridViewDsp.Columns[3].Visible = false;
-            dataGridViewDsp.Columns[4].Width = 130;
-            dataGridViewDsp.Columns[4].Visible = false;
-            dataGridViewDsp.Columns[5].Width = 130;
-            dataGridViewDsp.Columns[5].Visible = false;
-            dataGridViewDsp.Columns[6].Width = 130;
-            dataGridViewDsp.Columns[6].Visible = false;
-            dataGridViewDsp.Columns[7].Width = 130;
-            dataGridViewDsp.Columns[7].Visible = false;
-            dataGridViewDsp.Columns[8].Width = 130;
-            dataGridViewDsp.Columns[8].Visible = false;
-            dataGridViewDsp.Columns[9].Width = 130;
-            dataGridViewDsp.Columns[9].Visible = false;
-            dataGridViewDsp.Columns[10].Width = 130;
-            dataGridViewDsp.Columns[10].Visible = false;
-            //dataGridViewDsp.Columns[11].Width = 50;
-            //dataGridViewDsp.Columns[11].Visible = false;
-            //dataGridViewDsp.Columns[12].Width = 100;
-            //dataGridViewDsp.Columns[13].Width = 50;
-            //dataGridViewDsp.Columns[13].Visible = false;
-            //dataGridViewDsp.Columns[14].Width = 100;
-            //dataGridViewDsp.Columns[15].Width = 50;
-            //dataGridViewDsp.Columns[15].Visible = false;
-            //dataGridViewDsp.Columns[16].Width = 100;
-            //dataGridViewDsp.Columns[17].Width = 50;
-            //dataGridViewDsp.Columns[17].Visible = false;
-            //dataGridViewDsp.Columns[18].Width = 100;
-            //dataGridViewDsp.Columns[19].Width = 100;
-            //dataGridViewDsp.Columns[20].Width = 130;
-            //dataGridViewDsp.Columns[20].Visible = false;
-            //dataGridViewDsp.Columns[21].Width = 80;
-            //dataGridViewDsp.Columns[22].Width = 250;
-
-            //各列の文字位置の指定
-            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(Product.Count / (double)pageSize)) + "ページ";
-
-            dataGridViewDsp.Refresh();
-
-        }
-
-        private void SetFormDataGridView()
-        {
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
-            //dataGridViewのページ番号指定
-            textBoxPageNo.Text = "1";
-            //読み取り専用に指定
-            dataGridViewDsp.ReadOnly = true;
-            //行内をクリックすることで行を選択
-            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            //ヘッダー位置の指定
-            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //データグリッドビューのデータ取得
-            GetDataGridView();
-        }
-
-        private void Product_Add_Load(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-        }
     }
 
 }
