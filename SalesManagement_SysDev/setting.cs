@@ -12,6 +12,7 @@ namespace SalesManagement_SysDev
 {
     public partial class setting : Form
     {
+
         public setting()
         {
             InitializeComponent();
@@ -22,10 +23,14 @@ namespace SalesManagement_SysDev
             if (comboBox1.SelectedIndex == 0)
             {
                 //緑
+                //51, 153, 102
+                //MediumSeaGreen
             }
             else if(comboBox1.SelectedIndex == 1)
             {
                 //青
+                //CornflowerBlue
+      
             }
             else if (comboBox1.SelectedIndex == 2)
             {
