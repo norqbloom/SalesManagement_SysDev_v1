@@ -25,6 +25,7 @@ namespace SalesManagement_SysDev
         }
         private void invcnt()
         {
+            label5.Visible = false;
             IDtxt.Visible = false;
             datetime.Visible = false;
             userid.Visible = false;
@@ -35,6 +36,7 @@ namespace SalesManagement_SysDev
         }
         private void incntok()
         {
+            label5.Visible=true;
             IDtxt.Visible = true;
             datetime.Visible = true;
             userid.Visible = true;
@@ -46,6 +48,7 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
+            invcnt();
         }
 
         private void serch_Click(object sender, EventArgs e)
@@ -205,8 +208,10 @@ namespace SalesManagement_SysDev
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int number;
+            int ClIDtxt;
             number = (int)dataGridView1.CurrentRow.Cells[1].Value;
-            label5.Text = number.ToString();
+            ClIDtxt= (int)dataGridView1.CurrentRow.Cells[0].Value;
+            label5.Text = ClIDtxt.ToString();
 
             serchdateset(number);
             setdatedetail();            
@@ -254,6 +259,5 @@ namespace SalesManagement_SysDev
             upusername.Visible = false;
              */
         }
-
     }
 }

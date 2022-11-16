@@ -384,5 +384,16 @@ namespace SalesManagement_SysDev
             openChildForm(new setting());
 
         }
+
+        private void setting_MouseEnter(object sender, EventArgs e)
+        {
+            setting.BackColor = Color.Red;
+        }
+
+        private void setting_MouseLeave(object sender, EventArgs e)
+        {
+            Color color = Color.FromArgb(51, 153, 102);
+            setting.BackColor = color;
+        }
     }
 }

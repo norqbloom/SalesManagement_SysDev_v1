@@ -88,11 +88,11 @@ namespace SalesManagement_SysDev
             this.label2 = new System.Windows.Forms.Label();
             this.childsubmenu = new System.Windows.Forms.Panel();
             this.tilepanel = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.setting = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -1066,20 +1066,6 @@ namespace SalesManagement_SysDev
             this.tilepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tilepanel_Paint);
             this.tilepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tilepanel_MouseDown);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(6, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(614, 80);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "販売管理システム";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1106,6 +1092,8 @@ namespace SalesManagement_SysDev
             this.setting.TabIndex = 6;
             this.setting.TabStop = false;
             this.setting.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.setting.MouseEnter += new System.EventHandler(this.setting_MouseEnter);
+            this.setting.MouseLeave += new System.EventHandler(this.setting_MouseLeave);
             // 
             // close
             // 
@@ -1121,6 +1109,20 @@ namespace SalesManagement_SysDev
             this.close.Click += new System.EventHandler(this.pictureBox1_Click_1);
             this.close.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.close.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(614, 80);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "販売管理システム";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // template
             // 

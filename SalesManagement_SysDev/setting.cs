@@ -16,5 +16,30 @@ namespace SalesManagement_SysDev
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                //緑
+            }
+            else if(comboBox1.SelectedIndex == 1)
+            {
+                //青
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                //黒
+            }
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                //オレンジ
+            }
+            else if (comboBox1.SelectedIndex == 4)
+            {
+                //赤
+            }
+
+        }
     }
 }

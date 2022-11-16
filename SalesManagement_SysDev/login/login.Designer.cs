@@ -54,7 +54,7 @@ namespace SalesManagement_SysDev
             this.button_login.Margin = new System.Windows.Forms.Padding(4);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(269, 52);
-            this.button_login.TabIndex = 0;
+            this.button_login.TabIndex = 2;
             this.button_login.Text = "ログイン";
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
@@ -68,7 +68,7 @@ namespace SalesManagement_SysDev
             this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(355, 37);
-            this.textBox_id.TabIndex = 3;
+            this.textBox_id.TabIndex = 0;
             this.textBox_id.Text = "担当者ID";
             this.textBox_id.Enter += new System.EventHandler(this.textBox_id_Enter);
             this.textBox_id.Leave += new System.EventHandler(this.groupBox1_Enter);
@@ -82,7 +82,7 @@ namespace SalesManagement_SysDev
             this.textBox_pass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(355, 37);
-            this.textBox_pass.TabIndex = 4;
+            this.textBox_pass.TabIndex = 1;
             this.textBox_pass.Text = "パスワード";
             this.textBox_pass.TextChanged += new System.EventHandler(this.textBox_pass_TextChanged);
             this.textBox_pass.Enter += new System.EventHandler(this.textBox_pass_Enter);
