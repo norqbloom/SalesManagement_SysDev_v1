@@ -205,7 +205,7 @@ namespace SalesManagement_SysDev
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int number;
-            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
             label5.Text = number.ToString();
 
             serchdateset(number);
@@ -217,7 +217,8 @@ namespace SalesManagement_SysDev
 
             M_clhistory selectCondition = new M_clhistory
             {
-                ClID = number.ToString()                
+                ClID = number.ToString(),
+                
             };
             history = clientDataAccess.getdetail(selectCondition);
         }

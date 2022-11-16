@@ -253,7 +253,7 @@ namespace SalesManagement_SysDev.Management_Client
 
             return new M_clhistory
             {
-                ClID = ClID.Text,
+                ClID = SoID.Text,
                 RegisteredDate = regtime,
                 regUserID = template.EmID.ToString(),
                 regUserName = template.loginName,

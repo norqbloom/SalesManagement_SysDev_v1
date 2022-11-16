@@ -41,6 +41,7 @@ namespace SalesManagement_SysDev
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lodinggif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@ namespace SalesManagement_SysDev
             this.button_login.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button_login.AutoSize = true;
             this.button_login.Location = new System.Drawing.Point(128, 515);
-            this.button_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_login.Margin = new System.Windows.Forms.Padding(4);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(269, 52);
             this.button_login.TabIndex = 0;
@@ -64,7 +65,7 @@ namespace SalesManagement_SysDev
             this.textBox_id.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox_id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_id.Location = new System.Drawing.Point(89, 331);
-            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(355, 37);
             this.textBox_id.TabIndex = 3;
@@ -78,7 +79,7 @@ namespace SalesManagement_SysDev
             this.textBox_pass.Font = new System.Drawing.Font("MS UI Gothic", 18F);
             this.textBox_pass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_pass.Location = new System.Drawing.Point(89, 432);
-            this.textBox_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_pass.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(355, 37);
             this.textBox_pass.TabIndex = 4;
@@ -168,12 +169,23 @@ namespace SalesManagement_SysDev
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(17, 268);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(138, 23);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "ログインスキップ";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(508, 608);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
@@ -185,7 +197,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_pass);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(526, 655);
             this.MinimumSize = new System.Drawing.Size(526, 655);
             this.Name = "login";
@@ -211,5 +223,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
