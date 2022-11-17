@@ -79,9 +79,9 @@ namespace SalesManagement_SysDev
             this.client_regbtn = new System.Windows.Forms.Button();
             this.btn_client = new System.Windows.Forms.Button();
             this.subtitlepanel = new System.Windows.Forms.Panel();
-            this.login = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.login = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -664,6 +664,7 @@ namespace SalesManagement_SysDev
             this.emp_upbtn.Text = "更新";
             this.emp_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emp_upbtn.UseVisualStyleBackColor = false;
+            this.emp_upbtn.Click += new System.EventHandler(this.emp_upbtn_Click);
             // 
             // emp_regbtn
             // 
@@ -732,6 +733,7 @@ namespace SalesManagement_SysDev
             this.stock_serchbtn.Text = "検索";
             this.stock_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stock_serchbtn.UseVisualStyleBackColor = false;
+            this.stock_serchbtn.Click += new System.EventHandler(this.stock_serchbtn_Click);
             // 
             // stock_upbtn
             // 
@@ -750,6 +752,7 @@ namespace SalesManagement_SysDev
             this.stock_upbtn.Text = "更新";
             this.stock_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stock_upbtn.UseVisualStyleBackColor = false;
+            this.stock_upbtn.Click += new System.EventHandler(this.stock_upbtn_Click);
             // 
             // stock_btn
             // 
@@ -800,6 +803,7 @@ namespace SalesManagement_SysDev
             this.Product_serchbtn.Text = "検索";
             this.Product_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_serchbtn.UseVisualStyleBackColor = false;
+            this.Product_serchbtn.Click += new System.EventHandler(this.Product_serchbtn_Click);
             // 
             // Product_upbtn
             // 
@@ -818,6 +822,7 @@ namespace SalesManagement_SysDev
             this.Product_upbtn.Text = "更新";
             this.Product_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_upbtn.UseVisualStyleBackColor = false;
+            this.Product_upbtn.Click += new System.EventHandler(this.Product_upbtn_Click);
             // 
             // Product_regbtn
             // 
@@ -961,17 +966,6 @@ namespace SalesManagement_SysDev
             this.subtitlepanel.Size = new System.Drawing.Size(328, 138);
             this.subtitlepanel.TabIndex = 0;
             // 
-            // login
-            // 
-            this.login.AutoSize = true;
-            this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.login.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.login.Location = new System.Drawing.Point(30, 116);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(113, 20);
-            this.login.TabIndex = 5;
-            this.login.Text = "ログイン時間";
-            // 
             // timer
             // 
             this.timer.AutoSize = true;
@@ -994,6 +988,17 @@ namespace SalesManagement_SysDev
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // login
+            // 
+            this.login.AutoSize = true;
+            this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.login.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.login.Location = new System.Drawing.Point(30, 116);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(113, 20);
+            this.login.TabIndex = 5;
+            this.login.Text = "ログイン時間";
             // 
             // label5
             // 

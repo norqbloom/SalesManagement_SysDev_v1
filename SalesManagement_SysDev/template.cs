@@ -302,7 +302,7 @@ namespace SalesManagement_SysDev
 
         private void client_upbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Management_Client.Client_Upd());
         }
 
         private void client_serchbtn_Click(object sender, EventArgs e)
@@ -479,6 +479,31 @@ namespace SalesManagement_SysDev
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Product_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Upd());
+        }
+
+        private void Product_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Ser());
+        }
+
+        private void stock_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Stock.Stock_Upd());
+        }
+
+        private void stock_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Stock.Stock_Ser());
+        }
+
+        private void emp_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Employee.Employee_Upd());
         }
     }
 }
