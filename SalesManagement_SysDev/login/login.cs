@@ -15,8 +15,6 @@ namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
-
-
         MessageDsp messageDsp = new MessageDsp();
         internal static bool flg;
 

@@ -43,6 +43,7 @@ namespace SalesManagement_SysDev
             this.Text= Application.ProductName;
             timer1.Interval = 1000;
             timer1.Enabled = true;
+            
         }
         private void visiblecnt()
         {
@@ -461,6 +462,7 @@ namespace SalesManagement_SysDev
             else if (colorcomboBox.SelectedIndex == 2)
             {
                 //黒
+                
             }
             else if (colorcomboBox.SelectedIndex == 3)
             {
@@ -474,5 +476,9 @@ namespace SalesManagement_SysDev
 
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

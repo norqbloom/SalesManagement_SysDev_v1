@@ -950,10 +950,11 @@ namespace SalesManagement_SysDev
             // subtitlepanel
             // 
             this.subtitlepanel.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.subtitlepanel.Controls.Add(this.login);
             this.subtitlepanel.Controls.Add(this.timer);
             this.subtitlepanel.Controls.Add(this.label4);
+            this.subtitlepanel.Controls.Add(this.login);
             this.subtitlepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.subtitlepanel.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.subtitlepanel.Location = new System.Drawing.Point(0, 0);
             this.subtitlepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.subtitlepanel.Name = "subtitlepanel";
@@ -964,7 +965,7 @@ namespace SalesManagement_SysDev
             // 
             this.login.AutoSize = true;
             this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.login.ForeColor = System.Drawing.Color.Black;
+            this.login.ForeColor = System.Drawing.SystemColors.ControlText;
             this.login.Location = new System.Drawing.Point(30, 116);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(113, 20);
@@ -975,7 +976,7 @@ namespace SalesManagement_SysDev
             // 
             this.timer.AutoSize = true;
             this.timer.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.timer.Location = new System.Drawing.Point(37, 23);
+            this.timer.Location = new System.Drawing.Point(51, 22);
             this.timer.Name = "timer";
             this.timer.Size = new System.Drawing.Size(225, 80);
             this.timer.TabIndex = 4;
@@ -986,12 +987,13 @@ namespace SalesManagement_SysDev
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(170, 116);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(180, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -1071,9 +1073,7 @@ namespace SalesManagement_SysDev
             this.colorcomboBox.Items.AddRange(new object[] {
             "緑(デフォルト)",
             "青",
-            "黒",
-            "オレンジ",
-            "赤"});
+            "黒"});
             this.colorcomboBox.Location = new System.Drawing.Point(553, 187);
             this.colorcomboBox.Name = "colorcomboBox";
             this.colorcomboBox.Size = new System.Drawing.Size(145, 23);
@@ -1102,7 +1102,8 @@ namespace SalesManagement_SysDev
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(626, 23);
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Location = new System.Drawing.Point(626, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(552, 100);
             this.panel2.TabIndex = 7;
@@ -1141,7 +1142,7 @@ namespace SalesManagement_SysDev
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Location = new System.Drawing.Point(6, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(614, 80);
             this.label6.TabIndex = 5;

@@ -962,7 +962,7 @@ namespace SalesManagement_SysDev
             this.login.AutoSize = true;
             this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.login.ForeColor = System.Drawing.Color.Black;
-            this.login.Location = new System.Drawing.Point(30, 116);
+            this.login.Location = new System.Drawing.Point(47, 116);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(113, 20);
             this.login.TabIndex = 5;
@@ -1054,10 +1054,11 @@ namespace SalesManagement_SysDev
             // 
             // tilepanel
             // 
-            this.tilepanel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tilepanel.Controls.Add(this.panel2);
             this.tilepanel.Controls.Add(this.label6);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tilepanel.ForeColor = System.Drawing.Color.White;
             this.tilepanel.Location = new System.Drawing.Point(349, 0);
             this.tilepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tilepanel.Name = "tilepanel";
@@ -1132,6 +1133,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.childsubmenu);
             this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
+            this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "template2";
