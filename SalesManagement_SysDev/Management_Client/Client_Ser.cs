@@ -16,10 +16,5 @@ namespace SalesManagement_SysDev.Management_Client
         {
             InitializeComponent();
         }
-
-        private void Cli_Ser_Button_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
