@@ -596,6 +596,7 @@ namespace SalesManagement_SysDev
             this.Earnings_serchbtn.Text = "検索";
             this.Earnings_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Earnings_serchbtn.UseVisualStyleBackColor = false;
+            this.Earnings_serchbtn.Click += new System.EventHandler(this.Earnings_serchbtn_Click);
             // 
             // Earnings_btn
             // 
@@ -646,6 +647,7 @@ namespace SalesManagement_SysDev
             this.emp_serchbtn.Text = "検索";
             this.emp_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emp_serchbtn.UseVisualStyleBackColor = false;
+            this.emp_serchbtn.Click += new System.EventHandler(this.emp_serchbtn_Click);
             // 
             // emp_upbtn
             // 

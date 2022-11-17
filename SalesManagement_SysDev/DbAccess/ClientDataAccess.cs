@@ -94,6 +94,26 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
+        public bool UpdclhistoryData(M_clhistory updclhistory)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var clhistorys = context.M_Clients.Single(x => x.ClID == updclhistory.SoID);
+                clhistorys.UpDateTime = updclhistory.UpDateTime;
+                clhistorys.LastupdatedUserID = updclhistory.LastupdatedUserID;
+                clhistorys.LastupdatedUserName = updclhistory.LastupdatedUserName;
+                
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+        }
         //SeaClientData
         ///////////////////////////////
         //メソッド名：DeleteClientsData()

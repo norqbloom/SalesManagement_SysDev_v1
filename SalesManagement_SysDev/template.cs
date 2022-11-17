@@ -505,5 +505,15 @@ namespace SalesManagement_SysDev
         {
             openChildForm(new Management_Employee.Employee_Upd());
         }
+
+        private void emp_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Employee.Employee_Ser());
+        }
+
+        private void Earnings_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new T_Sale.s());
+        }
     }
 }

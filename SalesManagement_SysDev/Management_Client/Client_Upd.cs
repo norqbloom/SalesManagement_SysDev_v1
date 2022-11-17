@@ -34,9 +34,11 @@ namespace SalesManagement_SysDev.Management_Client
             //役職情報作成
             var updItem = GenerateDataAtUpdate();
 
+            var uphistory = GenerateDataAtUpdatehistory();
+            Updateuphistory(uphistory);
             //役職情報更新
             UpdateItem(updItem);
-            var uphistory = GenerateDataAtUpdatehistory();
+            
         }
         private bool GetValidDataAtUpdate()
         {
@@ -262,6 +264,10 @@ namespace SalesManagement_SysDev.Management_Client
                 LastupdatedUserID = template.EmID.ToString(),
                 LastupdatedUserName = template.loginName
             };
+        }
+        private void Updateuphistory(M_clhistory uphistory)
+        {
+            bool flg = clientDataAccess.UpdclhistoryData(uphistory);
         }
 
     }
