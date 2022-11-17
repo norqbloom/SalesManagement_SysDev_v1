@@ -51,8 +51,8 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 flg = context.M_Employees.Any(x => x.EmID.ToString() == EmID && x.EmPassword == EmPass);
-                //flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
-                //                                  && x.EmPassword.Contains(EmPass));
+                flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
+                                                  && x.EmPassword.Contains(EmPass));
                 context.Dispose();
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace SalesManagement_SysDev
                 Employee.EmPassword = updEmp.EmPassword;
                 Employee.EmPhone = updEmp.EmPhone;
                 Employee.EmFlag = updEmp.EmFlag;
-                Employee.EmHidden = updEmp.EmHidden;             
+                Employee.EmHidden = updEmp.EmHidden;
                 //パスワード入力時のみ更新
                 if (!String.IsNullOrEmpty(updEmp.EmPassword))
                     Employee.EmPassword = updEmp.EmPassword;
@@ -158,18 +158,29 @@ namespace SalesManagement_SysDev
                 return false;
             }
 
-                   
-            
+
+
         }
-        public List<M_Employee>GetEmpDate()
+        public List<M_Employee> GetEmployeeDate()
         {
-            var context = new SalesManagement_DevContext();
-            var tb = from t1 in context.M_Employees
-                     join t2 in context.M_
+            List<M_Employee> Employee = new List<M_Employee>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                Employee = context.M_Employees.ToList();
+                context.Dispose();
+
+                return Employee;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Employee;
         }
-        
+
 
     }
-    
-    
+
+
 }

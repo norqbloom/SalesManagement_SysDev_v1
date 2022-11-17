@@ -51,12 +51,13 @@ namespace SalesManagement_SysDev
                 context.M_Clients.Add(regClient);
                 context.SaveChanges();
                 context.Dispose();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return true;
+            return false;
 
         }
 
@@ -86,15 +87,16 @@ namespace SalesManagement_SysDev
 
                 context.SaveChanges();
                 context.Dispose();
+                return true;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return true;
+            return false;
         }
-        //SeaClientData
+        
         ///////////////////////////////
         //メソッド名：DeleteClientsData()
         //引　数   ：顧客データ
@@ -113,12 +115,13 @@ namespace SalesManagement_SysDev
                 context.M_Clients.Remove(clients);
                 context.SaveChanges();
                 context.Dispose();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return true;
+            return false;
         }
 
         ///////////////////////////////
