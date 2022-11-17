@@ -41,7 +41,7 @@ namespace SalesManagement_SysDev.DbAccess
         //          ：登録成功の場合True
         //          ：登録失敗の場合False
         ///////////////////////////////
-        public bool AddorderData(T_Order regOreder)
+        public bool AddOrderData(T_Order regOreder)
         {
             try
             {
