@@ -58,7 +58,7 @@ namespace SalesManagement_SysDev.Management_Client
                     ClID.Focus();
                     return false;
                 }
-                if (clientDataAccess.CheckClientCDExistence(int.Parse(ClID.Text.Trim())))
+                if (!clientDataAccess.CheckClientCDExistence(int.Parse(ClID.Text.Trim())))
                 {
                     messageDsp.DspMsg("M1003");
                     ClID.Focus();
@@ -269,6 +269,7 @@ namespace SalesManagement_SysDev.Management_Client
         {
             bool flg = clientDataAccess.UpdclhistoryData(uphistory);
         }
+
 
     }
 
