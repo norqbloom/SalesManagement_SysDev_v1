@@ -56,8 +56,9 @@ namespace SalesManagement_SysDev
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return false;
+
 
         }
 
@@ -93,10 +94,11 @@ namespace SalesManagement_SysDev
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return false;
         }
-        
+
+
         ///////////////////////////////
         //メソッド名：DeleteClientsData()
         //引　数   ：顧客データ
@@ -120,8 +122,8 @@ namespace SalesManagement_SysDev
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return false;
         }
 
         ///////////////////////////////
@@ -159,8 +161,8 @@ namespace SalesManagement_SysDev
         /// 
         /// </summary>
         /// <returns></returns>
-        
-        
+
+
         ///////////////////////////////
         //メソッド名：GetClientsDspData()
         //引　数   ：なし
@@ -189,21 +191,21 @@ namespace SalesManagement_SysDev
         //戻り値   ：条件一致顧客データ
         //機　能   ：条件一致商品顧客データの取得
         ///////////////////////////////
-        
+
         public List<M_Client> Getdubblwdata(M_Client selectCondition)
-        {                 
+        {
             List<M_Client> client = new List<M_Client>();
-            
+
             try
             {
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
-                                                 x.ClFlag == 0&&
+                                                 x.ClFlag == 0 &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();         
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
                 context.Dispose();
-                    
+
             }
             catch (Exception ex)
             {
@@ -261,7 +263,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                client = context.M_Clients.Where(x => 
+                client = context.M_Clients.Where(x =>
                                                  x.ClName.Contains(selectCondition.ClName) &&
                                                  x.ClFlag == 0 &&
                                                  x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
