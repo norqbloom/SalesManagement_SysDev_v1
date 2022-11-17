@@ -78,21 +78,24 @@ namespace SalesManagement_SysDev
             this.client_upbtn = new System.Windows.Forms.Button();
             this.client_regbtn = new System.Windows.Forms.Button();
             this.btn_client = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.login = new System.Windows.Forms.Label();
+            this.subtitlepanel = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.login = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.childsubmenu = new System.Windows.Forms.Panel();
+            this.colorlabel = new System.Windows.Forms.Label();
+            this.colorcomboBox = new System.Windows.Forms.ComboBox();
             this.tilepanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.setting = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.comitbtn = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -106,7 +109,7 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.SuspendLayout();
             this.Productsubmenu.SuspendLayout();
             this.clientsubmenu.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.subtitlepanel.SuspendLayout();
             this.tilepanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting)).BeginInit();
@@ -142,7 +145,7 @@ namespace SalesManagement_SysDev
             this.sidepanel.Controls.Add(this.Product_btn);
             this.sidepanel.Controls.Add(this.clientsubmenu);
             this.sidepanel.Controls.Add(this.btn_client);
-            this.sidepanel.Controls.Add(this.panel1);
+            this.sidepanel.Controls.Add(this.subtitlepanel);
             this.sidepanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidepanel.Location = new System.Drawing.Point(0, 0);
             this.sidepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -661,6 +664,7 @@ namespace SalesManagement_SysDev
             this.emp_upbtn.Text = "更新";
             this.emp_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emp_upbtn.UseVisualStyleBackColor = false;
+            this.emp_upbtn.Click += new System.EventHandler(this.emp_upbtn_Click);
             // 
             // emp_regbtn
             // 
@@ -729,6 +733,7 @@ namespace SalesManagement_SysDev
             this.stock_serchbtn.Text = "検索";
             this.stock_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stock_serchbtn.UseVisualStyleBackColor = false;
+            this.stock_serchbtn.Click += new System.EventHandler(this.stock_serchbtn_Click);
             // 
             // stock_upbtn
             // 
@@ -747,6 +752,7 @@ namespace SalesManagement_SysDev
             this.stock_upbtn.Text = "更新";
             this.stock_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stock_upbtn.UseVisualStyleBackColor = false;
+            this.stock_upbtn.Click += new System.EventHandler(this.stock_upbtn_Click);
             // 
             // stock_btn
             // 
@@ -797,6 +803,7 @@ namespace SalesManagement_SysDev
             this.Product_serchbtn.Text = "検索";
             this.Product_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_serchbtn.UseVisualStyleBackColor = false;
+            this.Product_serchbtn.Click += new System.EventHandler(this.Product_serchbtn_Click);
             // 
             // Product_upbtn
             // 
@@ -945,35 +952,25 @@ namespace SalesManagement_SysDev
             this.btn_client.UseVisualStyleBackColor = false;
             this.btn_client.Click += new System.EventHandler(this.btn_client_Click);
             // 
-            // panel1
+            // subtitlepanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Controls.Add(this.login);
-            this.panel1.Controls.Add(this.timer);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 138);
-            this.panel1.TabIndex = 0;
-            // 
-            // login
-            // 
-            this.login.AutoSize = true;
-            this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.login.ForeColor = System.Drawing.Color.Black;
-            this.login.Location = new System.Drawing.Point(30, 116);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(113, 20);
-            this.login.TabIndex = 5;
-            this.login.Text = "ログイン時間";
+            this.subtitlepanel.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.subtitlepanel.Controls.Add(this.timer);
+            this.subtitlepanel.Controls.Add(this.label4);
+            this.subtitlepanel.Controls.Add(this.login);
+            this.subtitlepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.subtitlepanel.Font = new System.Drawing.Font("MS UI Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.subtitlepanel.Location = new System.Drawing.Point(0, 0);
+            this.subtitlepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.subtitlepanel.Name = "subtitlepanel";
+            this.subtitlepanel.Size = new System.Drawing.Size(328, 138);
+            this.subtitlepanel.TabIndex = 0;
             // 
             // timer
             // 
             this.timer.AutoSize = true;
             this.timer.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.timer.Location = new System.Drawing.Point(37, 23);
+            this.timer.Location = new System.Drawing.Point(51, 22);
             this.timer.Name = "timer";
             this.timer.Size = new System.Drawing.Size(225, 80);
             this.timer.TabIndex = 4;
@@ -984,12 +981,24 @@ namespace SalesManagement_SysDev
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(170, 116);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(180, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // login
+            // 
+            this.login.AutoSize = true;
+            this.login.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.login.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.login.Location = new System.Drawing.Point(30, 116);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(113, 20);
+            this.login.TabIndex = 5;
+            this.login.Text = "ログイン時間";
             // 
             // label5
             // 
@@ -1053,6 +1062,28 @@ namespace SalesManagement_SysDev
             this.childsubmenu.TabIndex = 1;
             this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
             // 
+            // colorlabel
+            // 
+            this.colorlabel.AutoSize = true;
+            this.colorlabel.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.colorlabel.Location = new System.Drawing.Point(380, 186);
+            this.colorlabel.Name = "colorlabel";
+            this.colorlabel.Size = new System.Drawing.Size(105, 20);
+            this.colorlabel.TabIndex = 3;
+            this.colorlabel.Text = "カラーテーマ";
+            // 
+            // colorcomboBox
+            // 
+            this.colorcomboBox.FormattingEnabled = true;
+            this.colorcomboBox.Items.AddRange(new object[] {
+            "緑(デフォルト)",
+            "青",
+            "黒"});
+            this.colorcomboBox.Location = new System.Drawing.Point(553, 187);
+            this.colorcomboBox.Name = "colorcomboBox";
+            this.colorcomboBox.Size = new System.Drawing.Size(145, 23);
+            this.colorcomboBox.TabIndex = 2;
+            // 
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
@@ -1076,7 +1107,8 @@ namespace SalesManagement_SysDev
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(626, 23);
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Location = new System.Drawing.Point(626, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(552, 100);
             this.panel2.TabIndex = 7;
@@ -1115,7 +1147,7 @@ namespace SalesManagement_SysDev
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Location = new System.Drawing.Point(6, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(614, 80);
             this.label6.TabIndex = 5;
@@ -1125,11 +1157,24 @@ namespace SalesManagement_SysDev
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // comitbtn
+            // 
+            this.comitbtn.Location = new System.Drawing.Point(588, 233);
+            this.comitbtn.Name = "comitbtn";
+            this.comitbtn.Size = new System.Drawing.Size(75, 23);
+            this.comitbtn.TabIndex = 4;
+            this.comitbtn.Text = "button1";
+            this.comitbtn.UseVisualStyleBackColor = true;
+            this.comitbtn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 815);
+            this.Controls.Add(this.comitbtn);
+            this.Controls.Add(this.colorlabel);
+            this.Controls.Add(this.colorcomboBox);
             this.Controls.Add(this.childsubmenu);
             this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
@@ -1153,8 +1198,8 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.ResumeLayout(false);
             this.Productsubmenu.ResumeLayout(false);
             this.clientsubmenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.subtitlepanel.ResumeLayout(false);
+            this.subtitlepanel.PerformLayout();
             this.tilepanel.ResumeLayout(false);
             this.tilepanel.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1162,6 +1207,7 @@ namespace SalesManagement_SysDev
             ((System.ComponentModel.ISupportInitialize)(this.setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1192,7 +1238,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button Earnings_serchbtn;
         private System.Windows.Forms.Button Earnings_btn;
         private System.Windows.Forms.Button received_btn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel subtitlepanel;
         private System.Windows.Forms.Panel receivedsubmenu;
         private System.Windows.Forms.Button received_upbtn;
         private System.Windows.Forms.Button received_regbtn;
@@ -1230,5 +1276,8 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label login;
         private System.Windows.Forms.PictureBox setting;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label colorlabel;
+        public System.Windows.Forms.ComboBox colorcomboBox;
+        private System.Windows.Forms.Button comitbtn;
     }
 }

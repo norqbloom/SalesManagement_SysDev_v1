@@ -13,7 +13,6 @@ namespace SalesManagement_SysDev
 {
     public partial class template : Form
     {
-
         internal static int loginID ;
         internal static int EmID;
         internal static int PosID;
@@ -21,6 +20,9 @@ namespace SalesManagement_SysDev
         internal static string loginTime ;
         internal static string loginPosition = "";
         internal static string soname = "";
+        internal static Color maincolor = Color.FromArgb(51, 153, 102);
+        internal static Color subcolor= Color.MediumSeaGreen;
+
 
         public template()
         {
@@ -29,6 +31,7 @@ namespace SalesManagement_SysDev
 
         private void template_Load(object sender, EventArgs e)
         {
+            colorchange();
             visiblecnt();
             PosVisible();
             customizeDesing();
@@ -40,9 +43,13 @@ namespace SalesManagement_SysDev
             this.Text= Application.ProductName;
             timer1.Interval = 1000;
             timer1.Enabled = true;
+            
         }
         private void visiblecnt()
         {
+            colorcomboBox.Visible = false;
+            colorlabel.Visible = false;
+            comitbtn.Visible = false;
             btn_client.Visible = false;
             Product_btn.Visible = false;
             stock_btn.Visible = false;
@@ -97,11 +104,7 @@ namespace SalesManagement_SysDev
 
             }
         }
-        private void formresize()
-        {
-            int size = 609 / 15;
-            tilepanel.Height = size;
-        }
+
 
         private void customizeDesing()
         {
@@ -167,6 +170,10 @@ namespace SalesManagement_SysDev
         private Form activeForm = null;
         private void openChildForm(Form chidform)
         {
+            childsubmenu.Visible = true;
+            colorcomboBox.Visible = false;
+            colorlabel.Visible = false;
+            comitbtn.Visible = false;
             if (activeForm != null)
                 activeForm.Close();
             activeForm = chidform;
@@ -178,7 +185,40 @@ namespace SalesManagement_SysDev
             chidform.BringToFront();
             chidform.Show();
         }
+        private void colorchange()
+        {
+            setting.BackColor = maincolor;
+            close.BackColor = maincolor;
+            sidepanel.BackColor = maincolor;
+            tilepanel.BackColor = maincolor;
+            btn_client.BackColor = maincolor;
+            Product_btn.BackColor = maincolor;
+            stock_btn.BackColor = maincolor;
+            emp_btn.BackColor = maincolor;
+            Earnings_btn.BackColor = maincolor;
+            received_btn.BackColor = maincolor;
+            order_btn.BackColor = maincolor;
+            instruct_btn.BackColor = maincolor;
+            warehousing_btn.BackColor = maincolor;
+            issue_btn.BackColor = maincolor;
+            Arrival_btn.BackColor = maincolor;
+            shipping_btn.BackColor = maincolor;
+            logout.BackColor = maincolor;
+            subtitlepanel.BackColor = subcolor;
+            clientsubmenu.BackColor = subcolor;
+            Productsubmenu.BackColor = subcolor;
+            stocksubmenu.BackColor = subcolor;
+            empsubmenu.BackColor = subcolor;
+            panel7.BackColor = subcolor;
 
+            receivedsubmenu.BackColor = subcolor;
+            panel9.BackColor = subcolor;
+            instructsubmeun.BackColor = subcolor;
+            panel11.BackColor = subcolor;
+            panel12.BackColor = subcolor;
+            panel13.BackColor = subcolor;
+            panel14.BackColor = subcolor;
+        }
         //フォームドラッグ
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -262,7 +302,7 @@ namespace SalesManagement_SysDev
 
         private void client_upbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Management_Client.Client_Upd());
         }
 
         private void client_serchbtn_Click(object sender, EventArgs e)
@@ -320,7 +360,7 @@ namespace SalesManagement_SysDev
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             logoutuser();
-            this.Close();
+            Application.Exit();
         }
 
         private void Product_regbtn_Click(object sender, EventArgs e)
@@ -343,8 +383,7 @@ namespace SalesManagement_SysDev
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            Color color = Color.FromArgb(51, 153, 102);
-            close.BackColor = color;
+            close.BackColor = maincolor;
         }
         private void logoutuser()
         {
@@ -381,7 +420,11 @@ namespace SalesManagement_SysDev
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            openChildForm(new setting());
+            childsubmenu.Visible = false;
+            colorcomboBox.Visible = true;
+            colorlabel.Visible = true;
+            comitbtn.Visible = true;
+
 
         }
 
@@ -392,8 +435,75 @@ namespace SalesManagement_SysDev
 
         private void setting_MouseLeave(object sender, EventArgs e)
         {
-            Color color = Color.FromArgb(51, 153, 102);
-            setting.BackColor = color;
+            
+            setting.BackColor = maincolor;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (colorcomboBox.SelectedIndex == 0)
+            {
+                //緑
+                template.maincolor = Color.FromArgb(51, 153, 102);
+                template.subcolor = Color.MediumSeaGreen;
+            }
+            else if (colorcomboBox.SelectedIndex == 1)
+            {
+                //青
+                template.maincolor = Color.CornflowerBlue;
+                template.subcolor = Color.DodgerBlue;
+
+            }
+            else if (colorcomboBox.SelectedIndex == 2)
+            {
+                //黒
+                
+            }
+            else if (colorcomboBox.SelectedIndex == 3)
+            {
+                //オレンジ
+            }
+            else if (colorcomboBox.SelectedIndex == 4)
+            {
+                //赤
+            }
+            colorchange();
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Product_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Upd());
+        }
+
+        private void Product_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Ser());
+        }
+
+        private void stock_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Stock.Stock_Upd());
+        }
+
+        private void stock_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Stock.Stock_Ser());
+        }
+
+        private void emp_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Employee.Employee_Upd());
         }
 
         private void Product_upbtn_Click(object sender, EventArgs e)

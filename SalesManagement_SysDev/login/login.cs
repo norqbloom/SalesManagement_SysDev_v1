@@ -15,7 +15,6 @@ namespace SalesManagement_SysDev
 {
     public partial class login : Form
     {
-        
         MessageDsp messageDsp = new MessageDsp();
         internal static bool flg;
 
@@ -38,10 +37,7 @@ namespace SalesManagement_SysDev
             this.backgroundWorker1.RunWorkerAsync();
         }
 
-        private void logincheck()
-        {
 
-        }
 
         private void textBox_id_Enter(object sender, EventArgs e)
         {
@@ -181,8 +177,7 @@ namespace SalesManagement_SysDev
                 lodinggif.Visible = false;
                 button_login.Visible = true;
                 history();
-                Form form = new template();
-                form.Show(this);
+                setting.form.Show(this);
                 flg = false;
             }
             else
@@ -269,8 +264,7 @@ namespace SalesManagement_SysDev
             template.loginID = 116;
             DateTime dt = DateTime.Now;
             template.loginTime = dt.ToString("MM/dd HH;mm");
-            Form form = new template();
-            form.Show(this);
+            setting.form.Show(this);
         }
     }
 }

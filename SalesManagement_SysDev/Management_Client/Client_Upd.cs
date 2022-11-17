@@ -36,6 +36,7 @@ namespace SalesManagement_SysDev.Management_Client
 
             //役職情報更新
             UpdateItem(updItem);
+            var uphistory = GenerateDataAtUpdatehistory();
         }
         private bool GetValidDataAtUpdate()
         {
@@ -55,7 +56,7 @@ namespace SalesManagement_SysDev.Management_Client
                     ClID.Focus();
                     return false;
                 }
-                if (clientDataAccess.CheckClientCDExistence(int.Parse(ClID.Text.Trim())))
+                if (!clientDataAccess.CheckClientCDExistence(int.Parse(ClID.Text.Trim())))
                 {
                     messageDsp.DspMsg("M1003");
                     ClID.Focus();
@@ -243,12 +244,27 @@ namespace SalesManagement_SysDev.Management_Client
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
                 return;
-            bool flg = clientDataAccess.AddClientData(updItem);
+            bool flg = clientDataAccess.UpdClientData(updItem);
             if (flg == true)
                 messageDsp.DspMsg("");
             else
                 messageDsp.DspMsg("");
         }
+        private M_clhistory GenerateDataAtUpdatehistory()
+        {
+            var context = new SalesManagement_DevContext();
+            var clhistorie = context.M_Clhistory.Single(x => x.ClID == SoID.Text);
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+            return new M_clhistory
+            {
+                UpDateTime = regtime,
+                LastupdatedUserID = template.EmID.ToString(),
+                LastupdatedUserName = template.loginName
+            };
+        }
+
+
     }
-    
+
 }
