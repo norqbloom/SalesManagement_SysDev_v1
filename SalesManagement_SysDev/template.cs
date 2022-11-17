@@ -505,10 +505,5 @@ namespace SalesManagement_SysDev
         {
             openChildForm(new Management_Employee.Employee_Upd());
         }
-
-        private void Product_upbtn_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Management_Product.Product_Upd());
-        }
     }
 }
