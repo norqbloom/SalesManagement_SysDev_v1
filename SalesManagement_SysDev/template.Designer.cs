@@ -78,7 +78,7 @@ namespace SalesManagement_SysDev
             this.client_upbtn = new System.Windows.Forms.Button();
             this.client_regbtn = new System.Windows.Forms.Button();
             this.btn_client = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.subtitlepanel = new System.Windows.Forms.Panel();
             this.login = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,12 +87,15 @@ namespace SalesManagement_SysDev
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.childsubmenu = new System.Windows.Forms.Panel();
+            this.colorlabel = new System.Windows.Forms.Label();
+            this.colorcomboBox = new System.Windows.Forms.ComboBox();
             this.tilepanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.setting = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.comitbtn = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -106,7 +109,7 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.SuspendLayout();
             this.Productsubmenu.SuspendLayout();
             this.clientsubmenu.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.subtitlepanel.SuspendLayout();
             this.tilepanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting)).BeginInit();
@@ -142,7 +145,7 @@ namespace SalesManagement_SysDev
             this.sidepanel.Controls.Add(this.Product_btn);
             this.sidepanel.Controls.Add(this.clientsubmenu);
             this.sidepanel.Controls.Add(this.btn_client);
-            this.sidepanel.Controls.Add(this.panel1);
+            this.sidepanel.Controls.Add(this.subtitlepanel);
             this.sidepanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidepanel.Location = new System.Drawing.Point(0, 0);
             this.sidepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -944,18 +947,18 @@ namespace SalesManagement_SysDev
             this.btn_client.UseVisualStyleBackColor = false;
             this.btn_client.Click += new System.EventHandler(this.btn_client_Click);
             // 
-            // panel1
+            // subtitlepanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Controls.Add(this.login);
-            this.panel1.Controls.Add(this.timer);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 138);
-            this.panel1.TabIndex = 0;
+            this.subtitlepanel.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.subtitlepanel.Controls.Add(this.login);
+            this.subtitlepanel.Controls.Add(this.timer);
+            this.subtitlepanel.Controls.Add(this.label4);
+            this.subtitlepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.subtitlepanel.Location = new System.Drawing.Point(0, 0);
+            this.subtitlepanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.subtitlepanel.Name = "subtitlepanel";
+            this.subtitlepanel.Size = new System.Drawing.Size(328, 138);
+            this.subtitlepanel.TabIndex = 0;
             // 
             // login
             // 
@@ -1052,6 +1055,30 @@ namespace SalesManagement_SysDev
             this.childsubmenu.TabIndex = 1;
             this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
             // 
+            // colorlabel
+            // 
+            this.colorlabel.AutoSize = true;
+            this.colorlabel.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.colorlabel.Location = new System.Drawing.Point(380, 186);
+            this.colorlabel.Name = "colorlabel";
+            this.colorlabel.Size = new System.Drawing.Size(105, 20);
+            this.colorlabel.TabIndex = 3;
+            this.colorlabel.Text = "カラーテーマ";
+            // 
+            // colorcomboBox
+            // 
+            this.colorcomboBox.FormattingEnabled = true;
+            this.colorcomboBox.Items.AddRange(new object[] {
+            "緑(デフォルト)",
+            "青",
+            "黒",
+            "オレンジ",
+            "赤"});
+            this.colorcomboBox.Location = new System.Drawing.Point(553, 187);
+            this.colorcomboBox.Name = "colorcomboBox";
+            this.colorcomboBox.Size = new System.Drawing.Size(145, 23);
+            this.colorcomboBox.TabIndex = 2;
+            // 
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
@@ -1124,11 +1151,24 @@ namespace SalesManagement_SysDev
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // comitbtn
+            // 
+            this.comitbtn.Location = new System.Drawing.Point(588, 233);
+            this.comitbtn.Name = "comitbtn";
+            this.comitbtn.Size = new System.Drawing.Size(75, 23);
+            this.comitbtn.TabIndex = 4;
+            this.comitbtn.Text = "button1";
+            this.comitbtn.UseVisualStyleBackColor = true;
+            this.comitbtn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 815);
+            this.Controls.Add(this.comitbtn);
+            this.Controls.Add(this.colorlabel);
+            this.Controls.Add(this.colorcomboBox);
             this.Controls.Add(this.childsubmenu);
             this.Controls.Add(this.tilepanel);
             this.Controls.Add(this.sidepanel);
@@ -1152,8 +1192,8 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.ResumeLayout(false);
             this.Productsubmenu.ResumeLayout(false);
             this.clientsubmenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.subtitlepanel.ResumeLayout(false);
+            this.subtitlepanel.PerformLayout();
             this.tilepanel.ResumeLayout(false);
             this.tilepanel.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1161,6 +1201,7 @@ namespace SalesManagement_SysDev
             ((System.ComponentModel.ISupportInitialize)(this.setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1191,7 +1232,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button Earnings_serchbtn;
         private System.Windows.Forms.Button Earnings_btn;
         private System.Windows.Forms.Button received_btn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel subtitlepanel;
         private System.Windows.Forms.Panel receivedsubmenu;
         private System.Windows.Forms.Button received_upbtn;
         private System.Windows.Forms.Button received_regbtn;
@@ -1229,5 +1270,8 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label login;
         private System.Windows.Forms.PictureBox setting;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label colorlabel;
+        public System.Windows.Forms.ComboBox colorcomboBox;
+        private System.Windows.Forms.Button comitbtn;
     }
 }

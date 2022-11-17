@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace SalesManagement_SysDev
 {
+
     public partial class setting : Form
     {
+        internal static Form form = new template();
 
         public setting()
         {
@@ -20,17 +22,29 @@ namespace SalesManagement_SysDev
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void setting_Load(object sender, EventArgs e)
+        {
+            //main = new template();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             if (comboBox1.SelectedIndex == 0)
             {
                 //緑
-                //51, 153, 102
-                //MediumSeaGreen
+                template.maincolor = Color.FromArgb(51, 153, 102);
+                template.subcolor = Color.MediumSeaGreen;
             }
-            else if(comboBox1.SelectedIndex == 1)
+            else if (comboBox1.SelectedIndex == 1)
             {
                 //青
-                //CornflowerBlue
-      
+                template.maincolor = Color.CornflowerBlue;
+                template.subcolor = Color.DodgerBlue;
+
             }
             else if (comboBox1.SelectedIndex == 2)
             {
@@ -44,7 +58,7 @@ namespace SalesManagement_SysDev
             {
                 //赤
             }
-
+            form.Close();
         }
     }
 }

@@ -927,7 +927,7 @@ namespace SalesManagement_SysDev
             // 
             // btn_client
             // 
-            this.btn_client.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_client.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_client.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_client.FlatAppearance.BorderSize = 0;
             this.btn_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -946,7 +946,7 @@ namespace SalesManagement_SysDev
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel1.Controls.Add(this.login);
             this.panel1.Controls.Add(this.timer);
             this.panel1.Controls.Add(this.label4);
