@@ -56,7 +56,7 @@ namespace SalesManagement_SysDev.Management_Order
             // Ord_Con_Button
             // 
             this.Ord_Con_Button.Location = new System.Drawing.Point(832, 276);
-            this.Ord_Con_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ord_Con_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ord_Con_Button.Name = "Ord_Con_Button";
             this.Ord_Con_Button.Size = new System.Drawing.Size(156, 97);
             this.Ord_Con_Button.TabIndex = 60;
@@ -66,7 +66,7 @@ namespace SalesManagement_SysDev.Management_Order
             // Ord_Add_Button
             // 
             this.Ord_Add_Button.Location = new System.Drawing.Point(650, 276);
-            this.Ord_Add_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ord_Add_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ord_Add_Button.Name = "Ord_Add_Button";
             this.Ord_Add_Button.Size = new System.Drawing.Size(156, 97);
             this.Ord_Add_Button.TabIndex = 59;
@@ -78,7 +78,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.OrFlag.AutoSize = true;
             this.OrFlag.Location = new System.Drawing.Point(309, 295);
-            this.OrFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrFlag.Margin = new System.Windows.Forms.Padding(2);
             this.OrFlag.Name = "OrFlag";
             this.OrFlag.Size = new System.Drawing.Size(34, 19);
             this.OrFlag.TabIndex = 58;
@@ -88,7 +88,7 @@ namespace SalesManagement_SysDev.Management_Order
             // OrHidden
             // 
             this.OrHidden.Location = new System.Drawing.Point(309, 329);
-            this.OrHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrHidden.Margin = new System.Windows.Forms.Padding(2);
             this.OrHidden.Name = "OrHidden";
             this.OrHidden.Size = new System.Drawing.Size(81, 22);
             this.OrHidden.TabIndex = 56;
@@ -96,7 +96,7 @@ namespace SalesManagement_SysDev.Management_Order
             // ClID
             // 
             this.ClID.Location = new System.Drawing.Point(309, 180);
-            this.ClID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClID.Margin = new System.Windows.Forms.Padding(2);
             this.ClID.Name = "ClID";
             this.ClID.Size = new System.Drawing.Size(81, 22);
             this.ClID.TabIndex = 55;
@@ -104,7 +104,7 @@ namespace SalesManagement_SysDev.Management_Order
             // EmID
             // 
             this.EmID.Location = new System.Drawing.Point(309, 138);
-            this.EmID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmID.Margin = new System.Windows.Forms.Padding(2);
             this.EmID.Name = "EmID";
             this.EmID.Size = new System.Drawing.Size(81, 22);
             this.EmID.TabIndex = 54;
@@ -112,7 +112,7 @@ namespace SalesManagement_SysDev.Management_Order
             // SoID
             // 
             this.SoID.Location = new System.Drawing.Point(309, 102);
-            this.SoID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SoID.Margin = new System.Windows.Forms.Padding(2);
             this.SoID.Name = "SoID";
             this.SoID.Size = new System.Drawing.Size(81, 22);
             this.SoID.TabIndex = 53;
@@ -201,7 +201,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.OrStateFlag.AutoSize = true;
             this.OrStateFlag.Location = new System.Drawing.Point(309, 261);
-            this.OrStateFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrStateFlag.Margin = new System.Windows.Forms.Padding(2);
             this.OrStateFlag.Name = "OrStateFlag";
             this.OrStateFlag.Size = new System.Drawing.Size(34, 19);
             this.OrStateFlag.TabIndex = 44;
@@ -221,7 +221,7 @@ namespace SalesManagement_SysDev.Management_Order
             // OrID
             // 
             this.OrID.Location = new System.Drawing.Point(309, 67);
-            this.OrID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrID.Margin = new System.Windows.Forms.Padding(2);
             this.OrID.Name = "OrID";
             this.OrID.Size = new System.Drawing.Size(81, 22);
             this.OrID.TabIndex = 42;
@@ -230,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(72, 399);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -240,7 +240,7 @@ namespace SalesManagement_SysDev.Management_Order
             // OrDate
             // 
             this.OrDate.Location = new System.Drawing.Point(309, 219);
-            this.OrDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OrDate.Margin = new System.Windows.Forms.Padding(2);
             this.OrDate.Name = "OrDate";
             this.OrDate.Size = new System.Drawing.Size(161, 22);
             this.OrDate.TabIndex = 61;
@@ -248,7 +248,7 @@ namespace SalesManagement_SysDev.Management_Order
             // Ord_Del_Button
             // 
             this.Ord_Del_Button.Location = new System.Drawing.Point(473, 276);
-            this.Ord_Del_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ord_Del_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Ord_Del_Button.Name = "Ord_Del_Button";
             this.Ord_Del_Button.Size = new System.Drawing.Size(156, 97);
             this.Ord_Del_Button.TabIndex = 62;
@@ -281,7 +281,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.Controls.Add(this.label1);
             this.Controls.Add(this.OrID);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Order_Add";
             this.Text = "Order_Add";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -205,6 +205,7 @@ namespace SalesManagement_SysDev
             SetDataGridView();
         }
 
+        //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int number;

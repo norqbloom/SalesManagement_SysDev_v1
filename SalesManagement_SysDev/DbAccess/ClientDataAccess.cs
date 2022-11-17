@@ -99,7 +99,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                var clhistorys = context.M_Clients.Single(x => x.ClID == updclhistory.SoID);
+                var clhistorys = context.M_Clhistory.Single(x => x.ClID.ToString() == updclhistory.ClID);
                 clhistorys.UpDateTime = updclhistory.UpDateTime;
                 clhistorys.LastupdatedUserID = updclhistory.LastupdatedUserID;
                 clhistorys.LastupdatedUserName = updclhistory.LastupdatedUserName;

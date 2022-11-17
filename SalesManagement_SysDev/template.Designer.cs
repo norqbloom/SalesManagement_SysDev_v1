@@ -972,7 +972,7 @@ namespace SalesManagement_SysDev
             // 
             this.timer.AutoSize = true;
             this.timer.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.timer.Location = new System.Drawing.Point(51, 22);
+            this.timer.Location = new System.Drawing.Point(37, 22);
             this.timer.Name = "timer";
             this.timer.Size = new System.Drawing.Size(225, 80);
             this.timer.TabIndex = 4;

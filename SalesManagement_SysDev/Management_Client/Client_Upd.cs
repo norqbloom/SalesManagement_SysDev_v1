@@ -25,7 +25,7 @@ namespace SalesManagement_SysDev.Management_Client
         private void Cli_Upd_Button_Click(object sender, EventArgs e)
         {
             //妥当な役職データ取得
-            if (GetValidDataAtUpdate())
+            if (!GetValidDataAtUpdate())
             {
                 
                 return;
@@ -248,9 +248,9 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             bool flg = clientDataAccess.UpdClientData(updItem);
             if (flg == true)
-                messageDsp.DspMsg("");
+                MessageBox.Show("ok");
             else
-                messageDsp.DspMsg("");
+                MessageBox.Show("no");
         }
         private M_clhistory GenerateDataAtUpdatehistory()
         {
@@ -260,6 +260,7 @@ namespace SalesManagement_SysDev.Management_Client
             string regtime = dt.ToString("MM/dd HH;mm");
             return new M_clhistory
             {
+                ClID= SoID.Text,
                 UpDateTime = regtime,
                 LastupdatedUserID = template.EmID.ToString(),
                 LastupdatedUserName = template.loginName

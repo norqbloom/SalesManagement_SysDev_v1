@@ -513,7 +513,6 @@ namespace SalesManagement_SysDev
 
         private void Earnings_serchbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new T_Sale.s());
         }
     }
 }
