@@ -395,5 +395,10 @@ namespace SalesManagement_SysDev
             Color color = Color.FromArgb(51, 153, 102);
             setting.BackColor = color;
         }
+
+        private void Product_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Upd());
+        }
     }
 }

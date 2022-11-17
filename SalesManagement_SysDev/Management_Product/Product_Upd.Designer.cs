@@ -29,16 +29,15 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.Pro_Upd_Button = new System.Windows.Forms.Button();
-            this.PrHidden = new System.Windows.Forms.TextBox();
-            this.PrReleaseDate = new System.Windows.Forms.TextBox();
-            this.PrColor = new System.Windows.Forms.TextBox();
-            this.PrModelNumber = new System.Windows.Forms.TextBox();
-            this.ScID = new System.Windows.Forms.TextBox();
-            this.PrSafetyStock = new System.Windows.Forms.TextBox();
-            this.Price = new System.Windows.Forms.TextBox();
-            this.PrName = new System.Windows.Forms.TextBox();
-            this.MaID = new System.Windows.Forms.TextBox();
+            this.ButtonUpd = new System.Windows.Forms.Button();
+            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
+            this.textBoxPrColor = new System.Windows.Forms.TextBox();
+            this.textBoxPrModelNumber = new System.Windows.Forms.TextBox();
+            this.textBoxScID = new System.Windows.Forms.TextBox();
+            this.textBoxPrSafetyStock = new System.Windows.Forms.TextBox();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.textBoxPrName = new System.Windows.Forms.TextBox();
+            this.textBoxMaID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -49,94 +48,88 @@ namespace SalesManagement_SysDev.Management_Product
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.PrID = new System.Windows.Forms.TextBox();
+            this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.PrFlag = new System.Windows.Forms.CheckBox();
-            this.Pro_Del_Button = new System.Windows.Forms.Button();
+            this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
+            this.ButtonDel = new System.Windows.Forms.Button();
+            this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Pro_Upd_Button
+            // ButtonUpd
             // 
-            this.Pro_Upd_Button.Location = new System.Drawing.Point(844, 222);
-            this.Pro_Upd_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Pro_Upd_Button.Name = "Pro_Upd_Button";
-            this.Pro_Upd_Button.Size = new System.Drawing.Size(119, 117);
-            this.Pro_Upd_Button.TabIndex = 49;
-            this.Pro_Upd_Button.Text = "更新";
-            this.Pro_Upd_Button.UseVisualStyleBackColor = true;
+            this.ButtonUpd.Location = new System.Drawing.Point(844, 222);
+            this.ButtonUpd.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonUpd.Name = "ButtonUpd";
+            this.ButtonUpd.Size = new System.Drawing.Size(119, 117);
+            this.ButtonUpd.TabIndex = 49;
+            this.ButtonUpd.Text = "更新";
+            this.ButtonUpd.UseVisualStyleBackColor = true;
+            this.ButtonUpd.Click += new System.EventHandler(this.ButtonUpd_Click);
             // 
-            // PrHidden
+            // textBoxPrHidden
             // 
-            this.PrHidden.Location = new System.Drawing.Point(676, 51);
-            this.PrHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrHidden.Name = "PrHidden";
-            this.PrHidden.Size = new System.Drawing.Size(81, 22);
-            this.PrHidden.TabIndex = 48;
+            this.textBoxPrHidden.Location = new System.Drawing.Point(676, 51);
+            this.textBoxPrHidden.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrHidden.Name = "textBoxPrHidden";
+            this.textBoxPrHidden.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrHidden.TabIndex = 48;
             // 
-            // PrReleaseDate
+            // textBoxPrColor
             // 
-            this.PrReleaseDate.Location = new System.Drawing.Point(435, 222);
-            this.PrReleaseDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrReleaseDate.Name = "PrReleaseDate";
-            this.PrReleaseDate.Size = new System.Drawing.Size(81, 22);
-            this.PrReleaseDate.TabIndex = 47;
+            this.textBoxPrColor.Location = new System.Drawing.Point(435, 171);
+            this.textBoxPrColor.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrColor.Name = "textBoxPrColor";
+            this.textBoxPrColor.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrColor.TabIndex = 46;
             // 
-            // PrColor
+            // textBoxPrModelNumber
             // 
-            this.PrColor.Location = new System.Drawing.Point(435, 171);
-            this.PrColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrColor.Name = "PrColor";
-            this.PrColor.Size = new System.Drawing.Size(81, 22);
-            this.PrColor.TabIndex = 46;
+            this.textBoxPrModelNumber.Location = new System.Drawing.Point(435, 100);
+            this.textBoxPrModelNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
+            this.textBoxPrModelNumber.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrModelNumber.TabIndex = 45;
             // 
-            // PrModelNumber
+            // textBoxScID
             // 
-            this.PrModelNumber.Location = new System.Drawing.Point(435, 100);
-            this.PrModelNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrModelNumber.Name = "PrModelNumber";
-            this.PrModelNumber.Size = new System.Drawing.Size(81, 22);
-            this.PrModelNumber.TabIndex = 45;
+            this.textBoxScID.Location = new System.Drawing.Point(435, 48);
+            this.textBoxScID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxScID.Name = "textBoxScID";
+            this.textBoxScID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxScID.TabIndex = 44;
             // 
-            // ScID
+            // textBoxPrSafetyStock
             // 
-            this.ScID.Location = new System.Drawing.Point(435, 48);
-            this.ScID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ScID.Name = "ScID";
-            this.ScID.Size = new System.Drawing.Size(81, 22);
-            this.ScID.TabIndex = 44;
+            this.textBoxPrSafetyStock.Location = new System.Drawing.Point(166, 272);
+            this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
+            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrSafetyStock.TabIndex = 43;
             // 
-            // PrSafetyStock
+            // textBoxPrice
             // 
-            this.PrSafetyStock.Location = new System.Drawing.Point(166, 272);
-            this.PrSafetyStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrSafetyStock.Name = "PrSafetyStock";
-            this.PrSafetyStock.Size = new System.Drawing.Size(81, 22);
-            this.PrSafetyStock.TabIndex = 43;
+            this.textBoxPrice.Location = new System.Drawing.Point(158, 189);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrice.TabIndex = 41;
             // 
-            // Price
+            // textBoxPrName
             // 
-            this.Price.Location = new System.Drawing.Point(158, 189);
-            this.Price.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(81, 22);
-            this.Price.TabIndex = 41;
+            this.textBoxPrName.Location = new System.Drawing.Point(148, 151);
+            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrName.Name = "textBoxPrName";
+            this.textBoxPrName.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrName.TabIndex = 40;
             // 
-            // PrName
+            // textBoxMaID
             // 
-            this.PrName.Location = new System.Drawing.Point(148, 151);
-            this.PrName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrName.Name = "PrName";
-            this.PrName.Size = new System.Drawing.Size(81, 22);
-            this.PrName.TabIndex = 40;
-            // 
-            // MaID
-            // 
-            this.MaID.Location = new System.Drawing.Point(138, 102);
-            this.MaID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaID.Name = "MaID";
-            this.MaID.Size = new System.Drawing.Size(81, 22);
-            this.MaID.TabIndex = 39;
+            this.textBoxMaID.Location = new System.Drawing.Point(138, 102);
+            this.textBoxMaID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMaID.Name = "textBoxMaID";
+            this.textBoxMaID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxMaID.TabIndex = 39;
             // 
             // label11
             // 
@@ -232,20 +225,20 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(-14, 363);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1034, 259);
             this.dataGridView1.TabIndex = 28;
             // 
-            // PrID
+            // textBoxPrID
             // 
-            this.PrID.Location = new System.Drawing.Point(148, 43);
-            this.PrID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrID.Name = "PrID";
-            this.PrID.Size = new System.Drawing.Size(81, 22);
-            this.PrID.TabIndex = 27;
+            this.textBoxPrID.Location = new System.Drawing.Point(148, 43);
+            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPrID.Name = "textBoxPrID";
+            this.textBoxPrID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrID.TabIndex = 27;
             // 
             // label1
             // 
@@ -257,43 +250,50 @@ namespace SalesManagement_SysDev.Management_Product
             this.label1.TabIndex = 26;
             this.label1.Text = "商品ID";
             // 
-            // PrFlag
+            // checkBoxPrFlag
             // 
-            this.PrFlag.AutoSize = true;
-            this.PrFlag.Location = new System.Drawing.Point(339, 292);
-            this.PrFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrFlag.Name = "PrFlag";
-            this.PrFlag.Size = new System.Drawing.Size(121, 19);
-            this.PrFlag.TabIndex = 25;
-            this.PrFlag.Text = "商品管理フラグ";
-            this.PrFlag.UseVisualStyleBackColor = true;
+            this.checkBoxPrFlag.AutoSize = true;
+            this.checkBoxPrFlag.Location = new System.Drawing.Point(339, 292);
+            this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxPrFlag.Name = "checkBoxPrFlag";
+            this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
+            this.checkBoxPrFlag.TabIndex = 25;
+            this.checkBoxPrFlag.Text = "商品管理フラグ";
+            this.checkBoxPrFlag.UseVisualStyleBackColor = true;
             // 
-            // Pro_Del_Button
+            // ButtonDel
             // 
-            this.Pro_Del_Button.Location = new System.Drawing.Point(686, 222);
-            this.Pro_Del_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Pro_Del_Button.Name = "Pro_Del_Button";
-            this.Pro_Del_Button.Size = new System.Drawing.Size(143, 117);
-            this.Pro_Del_Button.TabIndex = 51;
-            this.Pro_Del_Button.Text = "削除";
-            this.Pro_Del_Button.UseVisualStyleBackColor = true;
+            this.ButtonDel.Location = new System.Drawing.Point(686, 222);
+            this.ButtonDel.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonDel.Name = "ButtonDel";
+            this.ButtonDel.Size = new System.Drawing.Size(143, 117);
+            this.ButtonDel.TabIndex = 51;
+            this.ButtonDel.Text = "削除";
+            this.ButtonDel.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerPrReleaseDate
+            // 
+            this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(435, 224);
+            this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
+            this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerPrReleaseDate.TabIndex = 52;
             // 
             // Product_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 686);
-            this.Controls.Add(this.Pro_Del_Button);
-            this.Controls.Add(this.Pro_Upd_Button);
-            this.Controls.Add(this.PrHidden);
-            this.Controls.Add(this.PrReleaseDate);
-            this.Controls.Add(this.PrColor);
-            this.Controls.Add(this.PrModelNumber);
-            this.Controls.Add(this.ScID);
-            this.Controls.Add(this.PrSafetyStock);
-            this.Controls.Add(this.Price);
-            this.Controls.Add(this.PrName);
-            this.Controls.Add(this.MaID);
+            this.ClientSize = new System.Drawing.Size(1170, 686);
+            this.Controls.Add(this.dateTimePickerPrReleaseDate);
+            this.Controls.Add(this.ButtonDel);
+            this.Controls.Add(this.ButtonUpd);
+            this.Controls.Add(this.textBoxPrHidden);
+            this.Controls.Add(this.textBoxPrColor);
+            this.Controls.Add(this.textBoxPrModelNumber);
+            this.Controls.Add(this.textBoxScID);
+            this.Controls.Add(this.textBoxPrSafetyStock);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.textBoxPrName);
+            this.Controls.Add(this.textBoxMaID);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -304,10 +304,10 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.PrID);
+            this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.PrFlag);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.checkBoxPrFlag);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Product_Upd";
             this.Text = "Product_Upd";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -318,16 +318,15 @@ namespace SalesManagement_SysDev.Management_Product
 
         #endregion
 
-        private System.Windows.Forms.Button Pro_Upd_Button;
-        private System.Windows.Forms.TextBox PrHidden;
-        private System.Windows.Forms.TextBox PrReleaseDate;
-        private System.Windows.Forms.TextBox PrColor;
-        private System.Windows.Forms.TextBox PrModelNumber;
-        private System.Windows.Forms.TextBox ScID;
-        private System.Windows.Forms.TextBox PrSafetyStock;
-        private System.Windows.Forms.TextBox Price;
-        private System.Windows.Forms.TextBox PrName;
-        private System.Windows.Forms.TextBox MaID;
+        private System.Windows.Forms.Button ButtonUpd;
+        private System.Windows.Forms.TextBox textBoxPrHidden;
+        private System.Windows.Forms.TextBox textBoxPrColor;
+        private System.Windows.Forms.TextBox textBoxPrModelNumber;
+        private System.Windows.Forms.TextBox textBoxScID;
+        private System.Windows.Forms.TextBox textBoxPrSafetyStock;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.TextBox textBoxPrName;
+        private System.Windows.Forms.TextBox textBoxMaID;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -338,9 +337,10 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox PrID;
+        private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox PrFlag;
-        private System.Windows.Forms.Button Pro_Del_Button;
+        private System.Windows.Forms.CheckBox checkBoxPrFlag;
+        private System.Windows.Forms.Button ButtonDel;
+        private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
     }
 }

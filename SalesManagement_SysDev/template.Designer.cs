@@ -815,6 +815,7 @@ namespace SalesManagement_SysDev
             this.Product_upbtn.Text = "更新";
             this.Product_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Product_upbtn.UseVisualStyleBackColor = false;
+            this.Product_upbtn.Click += new System.EventHandler(this.Product_upbtn_Click);
             // 
             // Product_regbtn
             // 
