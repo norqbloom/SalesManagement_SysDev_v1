@@ -30,12 +30,12 @@ namespace SalesManagement_SysDev.Management_Employee
         private void InitializeComponent()
         {
             this.Emp_Ser_Button = new System.Windows.Forms.Button();
-            this.EmHidden = new System.Windows.Forms.TextBox();
-            this.EmPhone = new System.Windows.Forms.TextBox();
-            this.EmPassWord = new System.Windows.Forms.TextBox();
-            this.PoID = new System.Windows.Forms.TextBox();
-            this.SoID = new System.Windows.Forms.TextBox();
-            this.EmName = new System.Windows.Forms.TextBox();
+            this.textBoxEmHidden = new System.Windows.Forms.TextBox();
+            this.textBoxEmPhone = new System.Windows.Forms.TextBox();
+            this.textBoxEmPassWord = new System.Windows.Forms.TextBox();
+            this.textBoxPoID = new System.Windows.Forms.TextBox();
+            this.textBoxSoID = new System.Windows.Forms.TextBox();
+            this.textBoxEmName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,71 +44,71 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.EmID = new System.Windows.Forms.TextBox();
+            this.textBoxEmID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.EmFlag = new System.Windows.Forms.CheckBox();
+            this.checkBoxEmFlag = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EmHiredate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Emp_Ser_Button
             // 
             this.Emp_Ser_Button.Location = new System.Drawing.Point(894, 257);
-            this.Emp_Ser_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Emp_Ser_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Emp_Ser_Button.Name = "Emp_Ser_Button";
             this.Emp_Ser_Button.Size = new System.Drawing.Size(135, 73);
             this.Emp_Ser_Button.TabIndex = 39;
             this.Emp_Ser_Button.Text = "検索";
             this.Emp_Ser_Button.UseVisualStyleBackColor = true;
             // 
-            // EmHidden
+            // textBoxEmHidden
             // 
-            this.EmHidden.Location = new System.Drawing.Point(475, 52);
-            this.EmHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmHidden.Name = "EmHidden";
-            this.EmHidden.Size = new System.Drawing.Size(81, 22);
-            this.EmHidden.TabIndex = 37;
+            this.textBoxEmHidden.Location = new System.Drawing.Point(475, 52);
+            this.textBoxEmHidden.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmHidden.Name = "textBoxEmHidden";
+            this.textBoxEmHidden.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmHidden.TabIndex = 37;
             // 
-            // EmPhone
+            // textBoxEmPhone
             // 
-            this.EmPhone.Location = new System.Drawing.Point(184, 282);
-            this.EmPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmPhone.Name = "EmPhone";
-            this.EmPhone.Size = new System.Drawing.Size(81, 22);
-            this.EmPhone.TabIndex = 36;
+            this.textBoxEmPhone.Location = new System.Drawing.Point(184, 282);
+            this.textBoxEmPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmPhone.Name = "textBoxEmPhone";
+            this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmPhone.TabIndex = 36;
             // 
-            // EmPassWord
+            // textBoxEmPassWord
             // 
-            this.EmPassWord.Location = new System.Drawing.Point(184, 222);
-            this.EmPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmPassWord.Name = "EmPassWord";
-            this.EmPassWord.Size = new System.Drawing.Size(81, 22);
-            this.EmPassWord.TabIndex = 35;
+            this.textBoxEmPassWord.Location = new System.Drawing.Point(184, 222);
+            this.textBoxEmPassWord.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmPassWord.Name = "textBoxEmPassWord";
+            this.textBoxEmPassWord.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmPassWord.TabIndex = 35;
             // 
-            // PoID
+            // textBoxPoID
             // 
-            this.PoID.Location = new System.Drawing.Point(184, 146);
-            this.PoID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PoID.Name = "PoID";
-            this.PoID.Size = new System.Drawing.Size(81, 22);
-            this.PoID.TabIndex = 34;
+            this.textBoxPoID.Location = new System.Drawing.Point(184, 146);
+            this.textBoxPoID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPoID.Name = "textBoxPoID";
+            this.textBoxPoID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPoID.TabIndex = 34;
             // 
-            // SoID
+            // textBoxSoID
             // 
-            this.SoID.Location = new System.Drawing.Point(184, 105);
-            this.SoID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.SoID.Name = "SoID";
-            this.SoID.Size = new System.Drawing.Size(81, 22);
-            this.SoID.TabIndex = 33;
+            this.textBoxSoID.Location = new System.Drawing.Point(184, 105);
+            this.textBoxSoID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSoID.Name = "textBoxSoID";
+            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxSoID.TabIndex = 33;
             // 
-            // EmName
+            // textBoxEmName
             // 
-            this.EmName.Location = new System.Drawing.Point(184, 79);
-            this.EmName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmName.Name = "EmName";
-            this.EmName.Size = new System.Drawing.Size(81, 22);
-            this.EmName.TabIndex = 32;
+            this.textBoxEmName.Location = new System.Drawing.Point(184, 79);
+            this.textBoxEmName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmName.Name = "textBoxEmName";
+            this.textBoxEmName.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmName.TabIndex = 32;
             // 
             // label9
             // 
@@ -190,13 +190,13 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label2.TabIndex = 24;
             this.label2.Text = "社員名";
             // 
-            // EmID
+            // textBoxEmID
             // 
-            this.EmID.Location = new System.Drawing.Point(184, 42);
-            this.EmID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmID.Name = "EmID";
-            this.EmID.Size = new System.Drawing.Size(81, 22);
-            this.EmID.TabIndex = 23;
+            this.textBoxEmID.Location = new System.Drawing.Point(184, 42);
+            this.textBoxEmID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmID.Name = "textBoxEmID";
+            this.textBoxEmID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmID.TabIndex = 23;
             // 
             // label1
             // 
@@ -208,49 +208,49 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label1.TabIndex = 22;
             this.label1.Text = "社員ID";
             // 
-            // EmFlag
+            // checkBoxEmFlag
             // 
-            this.EmFlag.AutoSize = true;
-            this.EmFlag.Location = new System.Drawing.Point(203, 339);
-            this.EmFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmFlag.Name = "EmFlag";
-            this.EmFlag.Size = new System.Drawing.Size(34, 19);
-            this.EmFlag.TabIndex = 21;
-            this.EmFlag.Text = " ";
-            this.EmFlag.UseVisualStyleBackColor = true;
+            this.checkBoxEmFlag.AutoSize = true;
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(203, 339);
+            this.checkBoxEmFlag.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxEmFlag.Name = "checkBoxEmFlag";
+            this.checkBoxEmFlag.Size = new System.Drawing.Size(34, 19);
+            this.checkBoxEmFlag.TabIndex = 21;
+            this.checkBoxEmFlag.Text = " ";
+            this.checkBoxEmFlag.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(14, 384);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1150, 235);
             this.dataGridView1.TabIndex = 20;
             // 
-            // EmHiredate
+            // dateTimePickerEmHiredate
             // 
-            this.EmHiredate.Location = new System.Drawing.Point(184, 174);
-            this.EmHiredate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.EmHiredate.Name = "EmHiredate";
-            this.EmHiredate.Size = new System.Drawing.Size(161, 22);
-            this.EmHiredate.TabIndex = 40;
+            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(184, 174);
+            this.dateTimePickerEmHiredate.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
+            this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(161, 22);
+            this.dateTimePickerEmHiredate.TabIndex = 40;
             // 
             // Employee_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 662);
-            this.Controls.Add(this.EmHiredate);
+            this.Controls.Add(this.dateTimePickerEmHiredate);
             this.Controls.Add(this.Emp_Ser_Button);
-            this.Controls.Add(this.EmHidden);
-            this.Controls.Add(this.EmPhone);
-            this.Controls.Add(this.EmPassWord);
-            this.Controls.Add(this.PoID);
-            this.Controls.Add(this.SoID);
-            this.Controls.Add(this.EmName);
+            this.Controls.Add(this.textBoxEmHidden);
+            this.Controls.Add(this.textBoxEmPhone);
+            this.Controls.Add(this.textBoxEmPassWord);
+            this.Controls.Add(this.textBoxPoID);
+            this.Controls.Add(this.textBoxSoID);
+            this.Controls.Add(this.textBoxEmName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -259,11 +259,11 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.EmID);
+            this.Controls.Add(this.textBoxEmID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.EmFlag);
+            this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Employee_Ser";
             this.Text = "Employee_Ser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -275,12 +275,12 @@ namespace SalesManagement_SysDev.Management_Employee
         #endregion
 
         private System.Windows.Forms.Button Emp_Ser_Button;
-        private System.Windows.Forms.TextBox EmHidden;
-        private System.Windows.Forms.TextBox EmPhone;
-        private System.Windows.Forms.TextBox EmPassWord;
-        private System.Windows.Forms.TextBox PoID;
-        private System.Windows.Forms.TextBox SoID;
-        private System.Windows.Forms.TextBox EmName;
+        private System.Windows.Forms.TextBox textBoxEmHidden;
+        private System.Windows.Forms.TextBox textBoxEmPhone;
+        private System.Windows.Forms.TextBox textBoxEmPassWord;
+        private System.Windows.Forms.TextBox textBoxPoID;
+        private System.Windows.Forms.TextBox textBoxSoID;
+        private System.Windows.Forms.TextBox textBoxEmName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -289,10 +289,10 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox EmID;
+        private System.Windows.Forms.TextBox textBoxEmID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox EmFlag;
+        private System.Windows.Forms.CheckBox checkBoxEmFlag;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker EmHiredate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
     }
 }
