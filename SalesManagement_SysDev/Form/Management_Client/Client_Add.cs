@@ -10,37 +10,30 @@ using System.Windows.Forms;
 
 namespace SalesManagement_SysDev.Management_Client
 {
-    public partial class Client_Upd : Form
+    public partial class Client_Add : Form
     {
         //メッセージ表示用クラスのインスタンス化
         MessageDsp messageDsp = new MessageDsp();
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
-        public Client_Upd()
+
+        public Client_Add()
         {
             InitializeComponent();
         }
 
-        private void Cli_Upd_Button_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //妥当な役職データ取得
-            if (!GetValidDataAtUpdate())
-            {
-                
+            // 8.2.1.1 妥当な役職データ取得
+            if (!GetclientDataAtRegistration())
                 return;
-            }
-
-            //役職情報作成
-            var updItem = GenerateDataAtUpdate();
-
-            var uphistory = GenerateDataAtUpdatehistory();
-            Updateuphistory(uphistory);
-            //役職情報更新
-            UpdateItem(updItem);
-            
+            var regCl = GenerateDataAtRegistration();
+            RegistrationClient(regCl);
+            var reghis = GeneratehistoryDataAtRegistration();
+            RegistrationClhistory(reghis);
         }
-        private bool GetValidDataAtUpdate()
+        private bool GetclientDataAtRegistration()
         {
             //顧客ID
             if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
@@ -52,13 +45,13 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxClID.Focus();
                     return false;
                 }
-                if (textBoxClID.TextLength > 6)
+                if(textBoxClID.TextLength > 6)
                 {
                     messageDsp.DspMsg("M1002");
                     textBoxClID.Focus();
                     return false;
                 }
-                if (!clientDataAccess.CheckClientCDExistence(int.Parse(textBoxClID.Text.Trim())))
+                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxClID.Text.Trim())))
                 {
                     messageDsp.DspMsg("M1003");
                     textBoxClID.Focus();
@@ -148,7 +141,7 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxClAddress.Focus();
                     return false;
                 }
-                if (textBoxClAddress.Text.Length > 50)
+                if(textBoxClAddress.Text.Length > 50)
                 {
                     messageDsp.DspMsg("M1012");
                     textBoxClAddress.Focus();
@@ -169,7 +162,7 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxClFAX.Focus();
                     return false;
                 }
-                if (textBoxClFAX.Text.Length > 13)
+                if(textBoxClFAX.Text.Length > 13)
                 {
                     messageDsp.DspMsg("M1020");
                     textBoxClFAX.Focus();
@@ -182,25 +175,25 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClFAX.Focus();
                 return false;
             }
-            if (!String.IsNullOrEmpty(textBoxClPostal.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxClPhone.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckNumeric(textBoxClPostal.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxClPhone.Text.Trim()))
                 {
                     messageDsp.DspMsg("M1015");
-                    textBoxClPostal.Focus();
+                    textBoxClPhone.Focus();
                     return false;
                 }
-                if (textBoxClPostal.Text.Length > 13)
+                if(textBoxClPhone.Text.Length > 13)
                 {
                     messageDsp.DspMsg("M1016");
-                    textBoxClPostal.Focus();
+                    textBoxClPhone.Focus();
                     return false;
                 }
             }
             else
             {
                 MessageBox.Show("電話番号が入力されていません");
-                textBoxClPostal.Focus();
+                textBoxClPhone.Focus();
                 return false;
             }
             if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
@@ -209,18 +202,18 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClHidden.Focus();
                 return false;
             }
-            if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
+            if(checkBoxClFLG.CheckState == CheckState.Indeterminate)
             {
                 MessageBox.Show("");
-                checkBoxClFlag.Focus();
+                checkBoxClFLG.Focus();
                 return false;
             }
-            return true;
+          return true;
         }
-        private M_Client GenerateDataAtUpdate()
+        private M_Client GenerateDataAtRegistration()
         {
             int checkflg;
-            if (checkBoxClFlag.Checked == true)
+            if (checkBoxClFLG.Checked == true)
             {
                 checkflg = 1;
             }
@@ -234,44 +227,57 @@ namespace SalesManagement_SysDev.Management_Client
                 SoID = int.Parse(textBoxSoID.Text),
                 ClName = textBoxClName.Text,
                 ClAddress = textBoxClAddress.Text,
-                ClPhone = textBoxClPostal.Text,
+                ClPhone = textBoxClPhone.Text,
                 ClPostal = textBoxClPostal.Text,
                 ClFAX = textBoxClFAX.Text,
                 ClFlag = checkflg,
                 ClHidden = textBoxClHidden.Text
             };
         }
-        private void UpdateItem(M_Client updItem)
+        private void RegistrationClient(M_Client regClient)
         {
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
                 return;
-            bool flg = clientDataAccess.UpdClientData(updItem);
+            bool flg = clientDataAccess.AddClientData(regClient);
             if (flg == true)
-                MessageBox.Show("ok");
+                messageDsp.DspMsg("M1022");
             else
-                MessageBox.Show("no");
+                messageDsp.DspMsg("M1023");
+
         }
-        private M_clhistory GenerateDataAtUpdatehistory()
+        private M_clhistory GeneratehistoryDataAtRegistration()
         {
-            var context = new SalesManagement_DevContext();
-            var clhistorie = context.M_Clhistory.Single(x => x.ClID == textBoxSoID.Text);
             DateTime dt = DateTime.Now;
             string regtime = dt.ToString("MM/dd HH;mm");
+
             return new M_clhistory
             {
-                ClID= textBoxSoID.Text,
-                UpDateTime = regtime,
-                LastupdatedUserID = template.EmID.ToString(),
-                LastupdatedUserName = template.loginName
+                ClID = textBoxSoID.Text,
+                RegisteredDate = regtime,
+                regUserID = template.EmID.ToString(),
+                regUserName = template.loginName,
+                UpDateTime = "なし",
+                LastupdatedUserID = "なし",
+                LastupdatedUserName = "なし"
+
             };
         }
-        private void Updateuphistory(M_clhistory uphistory)
+        private void RegistrationClhistory(M_clhistory reghistory)
         {
-            bool flg = clientDataAccess.UpdclhistoryData(uphistory);
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.M_Clhistory.Add(reghistory);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
-
     }
-
 }

@@ -89,12 +89,12 @@
     <Compile Include="Common\DataInputFormCheck.cs" />
     <Compile Include="Common\MessageDsp.cs" />
     <Compile Include="Common\PasswordHash.cs" />
-    <Compile Include="DbAccess\ClientDataAccess.cs" />
-    <Compile Include="DbAccess\EmployeeDataAccess.cs" />
-    <Compile Include="DbAccess\OrderDateAccess.cs" />
-    <Compile Include="DbAccess\ProductDataAccess.cs" />
-    <Compile Include="DbAccess\SaleDataAccess.cs" />
-    <Compile Include="DbAccess\StockDataAccess.cs" />
+    <Compile Include="Form\DbAccess\ClientDataAccess.cs" />
+    <Compile Include="Form\DbAccess\EmployeeDataAccess.cs" />
+    <Compile Include="Form\DbAccess\OrderDateAccess.cs" />
+    <Compile Include="Form\DbAccess\ProductDataAccess.cs" />
+    <Compile Include="Form\DbAccess\SaleDataAccess.cs" />
+    <Compile Include="Form\DbAccess\StockDataAccess.cs" />
     <Compile Include="empcnt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,10 +107,10 @@
     <Compile Include="Entity\M_Message.cs" />
     <Compile Include="Entity\M_Product.cs" />
     <Compile Include="Entity\M_Prohistory.cs" />
-    <Compile Include="login\F_login.cs">
+    <Compile Include="Form\login\F_login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login\F_login.Designer.cs">
+    <Compile Include="Form\login\F_login.Designer.cs">
       <DependentUpon>F_login.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\M_Client.cs" />
@@ -119,142 +119,142 @@
     <Compile Include="Entity\M_Position.cs" />
     <Compile Include="Entity\M_SalesOffice.cs" />
     <Compile Include="Entity\M_SmallClassification.cs" />
-    <Compile Include="login\login.cs">
+    <Compile Include="Form\login\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login\login.Designer.cs">
+    <Compile Include="Form\login\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Arrival\Arrival_View.cs">
+    <Compile Include="Form\Management_Arrival\Arrival_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Arrival\Arrival_View.Designer.cs">
+    <Compile Include="Form\Management_Arrival\Arrival_View.Designer.cs">
       <DependentUpon>Arrival_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Chumon\Chumon_Ser.cs">
+    <Compile Include="Form\Management_Chumon\Chumon_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Chumon\Chumon_Ser.Designer.cs">
+    <Compile Include="Form\Management_Chumon\Chumon_Ser.Designer.cs">
       <DependentUpon>Chumon_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Client\Client_Ser.cs">
+    <Compile Include="Form\Management_Client\Client_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Client\Client_Ser.Designer.cs">
+    <Compile Include="Form\Management_Client\Client_Ser.Designer.cs">
       <DependentUpon>Client_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Client\Client_Add.cs">
+    <Compile Include="Form\Management_Client\Client_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Client\Client_Add.Designer.cs">
+    <Compile Include="Form\Management_Client\Client_Add.Designer.cs">
       <DependentUpon>Client_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Client\Client_Upd.cs">
+    <Compile Include="Form\Management_Client\Client_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Client\Client_Upd.Designer.cs">
+    <Compile Include="Form\Management_Client\Client_Upd.Designer.cs">
       <DependentUpon>Client_Upd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Employee\Employee_Add.cs">
+    <Compile Include="Form\Management_Employee\Employee_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Employee\Employee_Add.Designer.cs">
+    <Compile Include="Form\Management_Employee\Employee_Add.Designer.cs">
       <DependentUpon>Employee_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Employee\Employee_Ser.cs">
+    <Compile Include="Form\Management_Employee\Employee_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Employee\Employee_Ser.Designer.cs">
+    <Compile Include="Form\Management_Employee\Employee_Ser.Designer.cs">
       <DependentUpon>Employee_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Employee\Employee_Upd.cs">
+    <Compile Include="Form\Management_Employee\Employee_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Employee\Employee_Upd.Designer.cs">
+    <Compile Include="Form\Management_Employee\Employee_Upd.Designer.cs">
       <DependentUpon>Employee_Upd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Hattyu\Hattyu_Add.cs">
+    <Compile Include="Form\Management_Hattyu\Hattyu_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Hattyu\Hattyu_Add.Designer.cs">
+    <Compile Include="Form\Management_Hattyu\Hattyu_Add.Designer.cs">
       <DependentUpon>Hattyu_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Hattyu\Hattyu_Ser.cs">
+    <Compile Include="Form\Management_Hattyu\Hattyu_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Hattyu\Hattyu_Ser.Designer.cs">
+    <Compile Include="Form\Management_Hattyu\Hattyu_Ser.Designer.cs">
       <DependentUpon>Hattyu_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Hattyu\Hattyu_Upd.cs">
+    <Compile Include="Form\Management_Hattyu\Hattyu_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Hattyu\Hattyu_Upd.Designer.cs">
+    <Compile Include="Form\Management_Hattyu\Hattyu_Upd.Designer.cs">
       <DependentUpon>Hattyu_Upd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Order\Order_Add.cs">
+    <Compile Include="Form\Management_Order\Order_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Order\Order_Add.Designer.cs">
+    <Compile Include="Form\Management_Order\Order_Add.Designer.cs">
       <DependentUpon>Order_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Order\Order_Ser.cs">
+    <Compile Include="Form\Management_Order\Order_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Order\Order_Ser.Designer.cs">
+    <Compile Include="Form\Management_Order\Order_Ser.Designer.cs">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Product\Product_Add.cs">
+    <Compile Include="Form\Management_Product\Product_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Product\Product_Add.Designer.cs">
+    <Compile Include="Form\Management_Product\Product_Add.Designer.cs">
       <DependentUpon>Product_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Product\Product_Ser.cs">
+    <Compile Include="Form\Management_Product\Product_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Product\Product_Ser.Designer.cs">
+    <Compile Include="Form\Management_Product\Product_Ser.Designer.cs">
       <DependentUpon>Product_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Product\Product_Upd.cs">
+    <Compile Include="Form\Management_Product\Product_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Product\Product_Upd.Designer.cs">
+    <Compile Include="Form\Management_Product\Product_Upd.Designer.cs">
       <DependentUpon>Product_Upd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Sales\Sales_Ser.cs">
+    <Compile Include="Form\Management_Sales\Sales_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Sales\Sales_Ser.Designer.cs">
+    <Compile Include="Form\Management_Sales\Sales_Ser.Designer.cs">
       <DependentUpon>Sales_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Shipment\Shipment_View.cs">
+    <Compile Include="Form\Management_Shipment\Shipment_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Shipment\Shipment_View.Designer.cs">
+    <Compile Include="Form\Management_Shipment\Shipment_View.Designer.cs">
       <DependentUpon>Shipment_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Stock\Stock_Ser.cs">
+    <Compile Include="Form\Management_Stock\Stock_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Stock\Stock_Ser.Designer.cs">
+    <Compile Include="Form\Management_Stock\Stock_Ser.Designer.cs">
       <DependentUpon>Stock_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Stock\Stock_Upd.cs">
+    <Compile Include="Form\Management_Stock\Stock_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Stock\Stock_Upd.Designer.cs">
+    <Compile Include="Form\Management_Stock\Stock_Upd.Designer.cs">
       <DependentUpon>Stock_Upd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Syukko\Syukko_View.cs">
+    <Compile Include="Form\Management_Syukko\Syukko_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Syukko\Syukko_View.Designer.cs">
+    <Compile Include="Form\Management_Syukko\Syukko_View.Designer.cs">
       <DependentUpon>Syukko_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management_Warehousing\Warehousing_View.cs">
+    <Compile Include="Form\Management_Warehousing\Warehousing_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management_Warehousing\Warehousing_View.Designer.cs">
+    <Compile Include="Form\Management_Warehousing\Warehousing_View.Designer.cs">
       <DependentUpon>Warehousing_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -279,10 +279,10 @@
     <Compile Include="Entity\T_Warehousing.cs" />
     <Compile Include="Entity\T_WarehousingDetail.cs" />
     <Compile Include="SalesManagement_DevContext.cs" />
-    <Compile Include="setting.cs">
+    <Compile Include="Form\setting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="setting.Designer.cs">
+    <Compile Include="Form\setting.Designer.cs">
       <DependentUpon>setting.cs</DependentUpon>
     </Compile>
     <Compile Include="template - コピー.cs">
@@ -303,76 +303,76 @@
     <EmbeddedResource Include="empcnt.resx">
       <DependentUpon>empcnt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login\F_login.resx">
+    <EmbeddedResource Include="Form\login\F_login.resx">
       <DependentUpon>F_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login\login.resx">
+    <EmbeddedResource Include="Form\login\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Arrival\Arrival_View.resx">
+    <EmbeddedResource Include="Form\Management_Arrival\Arrival_View.resx">
       <DependentUpon>Arrival_View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Chumon\Chumon_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Chumon\Chumon_Ser.resx">
       <DependentUpon>Chumon_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Client\Client_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Client\Client_Ser.resx">
       <DependentUpon>Client_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Client\Client_Add.resx">
+    <EmbeddedResource Include="Form\Management_Client\Client_Add.resx">
       <DependentUpon>Client_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Client\Client_Upd.resx">
+    <EmbeddedResource Include="Form\Management_Client\Client_Upd.resx">
       <DependentUpon>Client_Upd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Employee\Employee_Add.resx">
+    <EmbeddedResource Include="Form\Management_Employee\Employee_Add.resx">
       <DependentUpon>Employee_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Employee\Employee_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Employee\Employee_Ser.resx">
       <DependentUpon>Employee_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Employee\Employee_Upd.resx">
+    <EmbeddedResource Include="Form\Management_Employee\Employee_Upd.resx">
       <DependentUpon>Employee_Upd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Hattyu\Hattyu_Add.resx">
+    <EmbeddedResource Include="Form\Management_Hattyu\Hattyu_Add.resx">
       <DependentUpon>Hattyu_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Hattyu\Hattyu_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Hattyu\Hattyu_Ser.resx">
       <DependentUpon>Hattyu_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Hattyu\Hattyu_Upd.resx">
+    <EmbeddedResource Include="Form\Management_Hattyu\Hattyu_Upd.resx">
       <DependentUpon>Hattyu_Upd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Order\Order_Add.resx">
+    <EmbeddedResource Include="Form\Management_Order\Order_Add.resx">
       <DependentUpon>Order_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Order\Order_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Order\Order_Ser.resx">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Product\Product_Add.resx">
+    <EmbeddedResource Include="Form\Management_Product\Product_Add.resx">
       <DependentUpon>Product_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Product\Product_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Product\Product_Ser.resx">
       <DependentUpon>Product_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Product\Product_Upd.resx">
+    <EmbeddedResource Include="Form\Management_Product\Product_Upd.resx">
       <DependentUpon>Product_Upd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Sales\Sales_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Sales\Sales_Ser.resx">
       <DependentUpon>Sales_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Shipment\Shipment_View.resx">
+    <EmbeddedResource Include="Form\Management_Shipment\Shipment_View.resx">
       <DependentUpon>Shipment_View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Stock\Stock_Ser.resx">
+    <EmbeddedResource Include="Form\Management_Stock\Stock_Ser.resx">
       <DependentUpon>Stock_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Stock\Stock_Upd.resx">
+    <EmbeddedResource Include="Form\Management_Stock\Stock_Upd.resx">
       <DependentUpon>Stock_Upd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Syukko\Syukko_View.resx">
+    <EmbeddedResource Include="Form\Management_Syukko\Syukko_View.resx">
       <DependentUpon>Syukko_View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management_Warehousing\Warehousing_View.resx">
+    <EmbeddedResource Include="Form\Management_Warehousing\Warehousing_View.resx">
       <DependentUpon>Warehousing_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -385,7 +385,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="setting.resx">
+    <EmbeddedResource Include="Form\setting.resx">
       <DependentUpon>setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="template - コピー.resx">

@@ -22,7 +22,7 @@ namespace SalesManagement_SysDev.Management_Employee
             InitializeComponent();
         }
 
-        private void Emp_Upd_Button_Click(object sender, EventArgs e)
+        private void buttonUpd_Click(object sender, EventArgs e)
         {
             // 5.3.2.1 妥当な商品データ取得
             if (!GetValidDataAtUpdate())

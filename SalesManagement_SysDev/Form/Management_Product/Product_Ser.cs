@@ -16,7 +16,6 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         ProductDataAccess productDataAccess = new ProductDataAccess();
-        private static List<M_Client> clients;
         private static List<M_Product> products;
         private static List<M_clhistory> history;
 
