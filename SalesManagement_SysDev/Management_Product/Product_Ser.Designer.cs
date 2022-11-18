@@ -47,6 +47,16 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.ButtonDel = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPageSize = new System.Windows.Forms.TextBox();
+            this.textBoxPageNo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.upusername = new System.Windows.Forms.Label();
+            this.upuserid = new System.Windows.Forms.Label();
+            this.uptime = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.Label();
+            this.userid = new System.Windows.Forms.Label();
+            this.datetime = new System.Windows.Forms.Label();
+            this.IDtxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,11 +228,107 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerPrReleaseDate.TabIndex = 51;
             // 
+            // textBoxPageSize
+            // 
+            this.textBoxPageSize.Location = new System.Drawing.Point(795, 62);
+            this.textBoxPageSize.Name = "textBoxPageSize";
+            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageSize.TabIndex = 52;
+            // 
+            // textBoxPageNo
+            // 
+            this.textBoxPageNo.Location = new System.Drawing.Point(786, 120);
+            this.textBoxPageNo.Name = "textBoxPageNo";
+            this.textBoxPageNo.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageNo.TabIndex = 53;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1117, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 15);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "label5";
+            // 
+            // upusername
+            // 
+            this.upusername.AutoSize = true;
+            this.upusername.Location = new System.Drawing.Point(1117, 451);
+            this.upusername.Name = "upusername";
+            this.upusername.Size = new System.Drawing.Size(43, 15);
+            this.upusername.TabIndex = 55;
+            this.upusername.Text = "label4";
+            // 
+            // upuserid
+            // 
+            this.upuserid.AutoSize = true;
+            this.upuserid.Location = new System.Drawing.Point(1117, 417);
+            this.upuserid.Name = "upuserid";
+            this.upuserid.Size = new System.Drawing.Size(43, 15);
+            this.upuserid.TabIndex = 56;
+            this.upuserid.Text = "label6";
+            // 
+            // uptime
+            // 
+            this.uptime.AutoSize = true;
+            this.uptime.Location = new System.Drawing.Point(1117, 387);
+            this.uptime.Name = "uptime";
+            this.uptime.Size = new System.Drawing.Size(51, 15);
+            this.uptime.TabIndex = 57;
+            this.uptime.Text = "label11";
+            // 
+            // username
+            // 
+            this.username.AutoSize = true;
+            this.username.Location = new System.Drawing.Point(1117, 356);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(51, 15);
+            this.username.TabIndex = 58;
+            this.username.Text = "label12";
+            // 
+            // userid
+            // 
+            this.userid.AutoSize = true;
+            this.userid.Location = new System.Drawing.Point(1117, 318);
+            this.userid.Name = "userid";
+            this.userid.Size = new System.Drawing.Size(51, 15);
+            this.userid.TabIndex = 59;
+            this.userid.Text = "label13";
+            // 
+            // datetime
+            // 
+            this.datetime.AutoSize = true;
+            this.datetime.Location = new System.Drawing.Point(1117, 284);
+            this.datetime.Name = "datetime";
+            this.datetime.Size = new System.Drawing.Size(51, 15);
+            this.datetime.TabIndex = 60;
+            this.datetime.Text = "label14";
+            // 
+            // IDtxt
+            // 
+            this.IDtxt.AutoSize = true;
+            this.IDtxt.Location = new System.Drawing.Point(1117, 249);
+            this.IDtxt.Name = "IDtxt";
+            this.IDtxt.Size = new System.Drawing.Size(51, 15);
+            this.IDtxt.TabIndex = 61;
+            this.IDtxt.Text = "label15";
+            // 
             // Product_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 720);
+            this.ClientSize = new System.Drawing.Size(1938, 788);
+            this.Controls.Add(this.IDtxt);
+            this.Controls.Add(this.datetime);
+            this.Controls.Add(this.userid);
+            this.Controls.Add(this.username);
+            this.Controls.Add(this.uptime);
+            this.Controls.Add(this.upuserid);
+            this.Controls.Add(this.upusername);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxPageNo);
+            this.Controls.Add(this.textBoxPageSize);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.ButtonDel);
             this.Controls.Add(this.ButtonSer);
@@ -270,5 +376,15 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.CheckBox checkBoxPrFlag;
         private System.Windows.Forms.Button ButtonDel;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
+        private System.Windows.Forms.TextBox textBoxPageSize;
+        private System.Windows.Forms.TextBox textBoxPageNo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label upusername;
+        private System.Windows.Forms.Label upuserid;
+        private System.Windows.Forms.Label uptime;
+        private System.Windows.Forms.Label username;
+        private System.Windows.Forms.Label userid;
+        private System.Windows.Forms.Label datetime;
+        private System.Windows.Forms.Label IDtxt;
     }
 }
