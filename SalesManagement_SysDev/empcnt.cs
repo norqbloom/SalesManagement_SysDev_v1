@@ -42,28 +42,28 @@ namespace SalesManagement_SysDev
         private bool GetEmpDataReg()
         {
             //EmIDの確認
-            if (!String.IsNullOrEmpty(EmIDtxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
             {
                 //Emid半角英数字チェック
-                if (!dataInputFormCheck.CheckNumeric(EmIDtxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
                     MessageBox.Show("IDは半角数字のみ");
-                    EmIDtxt.Focus();
+                    textBoxEmID.Focus();
                     return false;
                 }
                 //Emid文字数チェック
-                if(EmIDtxt.TextLength > 6)
+                if(textBoxEmID.TextLength > 6)
                 {
                     MessageBox.Show("IDは文字数は6文字");
-                    EmIDtxt.Focus();
+                    textBoxEmID.Focus();
                     return false;
                 }
 
-                int  EmpID = int.Parse(EmIDtxt.Text.Trim());
+                int  EmpID = int.Parse(textBoxEmID.Text.Trim());
                 if (employeeDataAccess.CheckEmployeesCDExistence(EmpID))
                 {
                     MessageBox.Show("重複");
-                    EmIDtxt.Focus();
+                    textBoxEmID.Focus();
                     return false;
                 }
 
@@ -71,92 +71,92 @@ namespace SalesManagement_SysDev
             else
             {
                 MessageBox.Show("IDが入力されていません");
-                EmIDtxt.Focus();
+                textBoxEmID.Focus();
                 return false;
             }
 
             //社員名の確認
-            if (!String.IsNullOrEmpty(EmNametxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxEmName.Text.Trim()))
             {
                 //名前文字数
-                if (EmNametxt.TextLength > 50)
+                if (textBoxEmName.TextLength > 50)
                 {
                     MessageBox.Show("50文字以下");
-                    EmNametxt.Focus();
+                    textBoxEmName.Focus();
                     return false;
                 }
             }
             else
             {
                 MessageBox.Show("名前入力しろよ。");
-                EmNametxt.Focus();
+                textBoxEmName.Focus();
                 return false;
             }
             //SoID確認
-            if (!String.IsNullOrEmpty(SoIDtxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
             {
                 //SOid型確認
-                if (!dataInputFormCheck.CheckNumeric(SoIDtxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
                     MessageBox.Show("半角数字やしw");
-                    SoIDtxt.Focus();
+                    textBoxSoID.Focus();
                     return false;
                 }
                 //soid文字数チェック
-                if (SoIDtxt.TextLength > 2)
+                if (textBoxSoID.TextLength > 2)
                 {
                     MessageBox.Show("SoIDは文字数は2文字");
-                    SoIDtxt.Focus();
+                    textBoxSoID.Focus();
                     return false;
                 }
             }
             else
             {
                 MessageBox.Show("SoID入力せい");
-                SoIDtxt.Focus();
+                textBoxSoID.Focus();
                 return false;
             }
 
             //PoID確認
-            if (!String.IsNullOrEmpty(PoIDtxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
             {
                 //PoID型確認
-                if (!dataInputFormCheck.CheckNumeric(PoIDtxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
                     MessageBox.Show("半角数字やしw");
-                    PoIDtxt.Focus();
+                    textBoxPoID.Focus();
                     return false;
                 }
                 //PoID文字数チェック
-                if (PoIDtxt.TextLength > 2)
+                if (textBoxPoID.TextLength > 2)
                 {
                     MessageBox.Show("PoIDは文字数は2文字");
-                    PoIDtxt.Focus();
+                    textBoxPoID.Focus();
                     return false;
                 }
             }
             else
             {
                 MessageBox.Show("PoID入力せい");
-                PoIDtxt.Focus();
+                textBoxPoID.Focus();
                 return false;
             }
 
             //パスワードの確認
-            if (!String.IsNullOrEmpty(EmPassWord.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxEmPassword.Text.Trim()))
             {
                 //文字型
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(EmPassWord.Text.Trim()))
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPassword.Text.Trim()))
                 {
                     MessageBox.Show("半角英数字やしw");
-                    EmPassWord.Focus();
+                    textBoxEmPassword.Focus();
                     return false;
                 }
                 //soid文字数チェック
-                if (EmPassWord.TextLength > 10)
+                if (textBoxEmPassword.TextLength > 10)
                 {
                     MessageBox.Show("パスワードは文字数は10文字");
-                    EmPassWord.Focus();
+                    textBoxEmPassword.Focus();
                     return false;
                 }
 
@@ -164,40 +164,40 @@ namespace SalesManagement_SysDev
             else
             {
                 MessageBox.Show("パスワード入力せい");
-                EmPassWord.Focus();
+                textBoxEmPassword.Focus();
                 return false;
             }
 
             //電話番号確認
-            if (!String.IsNullOrEmpty(Emphonetxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxEmPhone.Text.Trim()))
             {
                 //文字型
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(Emphonetxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPhone.Text.Trim()))
                 {
                     MessageBox.Show("半角英数字やしw");
                     Emphone.Focus();
                     return false;
                 }
                 //soid文字数チェック
-                if (Emphonetxt.TextLength > 10)
+                if (textBoxEmPhone.TextLength > 10)
                 {
                     MessageBox.Show("パスワードは文字数は10文字");
-                    Emphonetxt.Focus();
+                    textBoxEmPhone.Focus();
                     return false;
                 }
             }
             else
             {
                 MessageBox.Show("電話番号入力せい");
-                Emphonetxt.Focus();
+                textBoxEmPhone.Focus();
                 return false;
             }
 
-            if (EmCheck.CheckState == CheckState.Indeterminate)
+            if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
             {
 
                 MessageBox.Show("不確定な状況");
-                EmCheck.Focus();
+                checkBoxEmFlag.Focus();
                 return false;
             }
             
@@ -207,7 +207,7 @@ namespace SalesManagement_SysDev
         private M_Employee GenerateDataAtRegistration()
         {
             int checkflg;
-            if (EmCheck.Checked == true)
+            if (checkBoxEmFlag.Checked == true)
             {
                 checkflg = 1;
             }
@@ -217,19 +217,19 @@ namespace SalesManagement_SysDev
             }
 
 
-            string pw = passwordHash.CreatePasswordHash(EmPassWord.Text.Trim());
+            string pw = passwordHash.CreatePasswordHash(textBoxEmPassword.Text.Trim());
             return new M_Employee
             {
 
-                EmID=int.Parse(EmIDtxt.Text.Trim()),
-                EmName=EmNametxt.Text.Trim(),
-                SoID=int.Parse(SoIDtxt.Text.Trim()),
-                PoID=int.Parse(PoIDtxt.Text.Trim()),
+                EmID=int.Parse(textBoxEmID.Text.Trim()),
+                EmName=textBoxEmName.Text.Trim(),
+                SoID=int.Parse(textBoxSoID.Text.Trim()),
+                PoID=int.Parse(textBoxPoID.Text.Trim()),
                 EmHiredate=dateTimeHidden.Value,
                 EmPassword=pw,
-                EmPhone=Emphonetxt.Text.Trim(),
+                EmPhone=textBoxEmPhone.Text.Trim(),
                 EmFlag=checkflg,
-                EmHidden=hiddentxt.Text.Trim()
+                EmHidden=textBoxEmHidden.Text.Trim()
                
 
             };
