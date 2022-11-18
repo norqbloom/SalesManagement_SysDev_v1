@@ -48,6 +48,7 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
+            SetFormDataGridView();
             invcnt();
         }
 
@@ -192,9 +193,8 @@ namespace SalesManagement_SysDev
             //dataGridViewのページサイズ指定
             textBoxPageSize.Text = "10";
             //dataGridViewのページ番号指定
-            //textBoxPageNo.Text = "1";
+            textBoxPageNo.Text = "1";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            SetDataGridView();
 
         }
         private void SetDataGridView()
@@ -229,6 +229,7 @@ namespace SalesManagement_SysDev
             serchdateset(number);
             setdatedetail();            
         }
+
 
         private void serchdateset(int number)
         {
