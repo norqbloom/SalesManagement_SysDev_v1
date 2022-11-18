@@ -254,6 +254,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.Ord_Del_Button.TabIndex = 62;
             this.Ord_Del_Button.Text = "削除";
             this.Ord_Del_Button.UseVisualStyleBackColor = true;
+            this.Ord_Del_Button.Click += new System.EventHandler(this.Ord_Del_Button_Click);
             // 
             // Order_Add
             // 

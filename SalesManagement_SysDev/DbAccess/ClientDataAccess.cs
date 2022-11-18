@@ -210,15 +210,22 @@ namespace SalesManagement_SysDev
         public List<M_Client> Getdubblwdata(M_Client selectCondition)
         {                 
             List<M_Client> client = new List<M_Client>();
-            
+            /*
+                ClAddress = addresstxt.Text.Trim(),
+                ClFAX = ClPostaltxt.Text.Trim(),
+                ClPostal = ClFaxtxt.Text.Trim()
+             */
             try
             {
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
-                                                 x.ClFlag == 0&&
+                                                 x.ClFlag == 0 &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();         
+                                                 x.ClPhone.Contains(selectCondition.ClPhone) &&
+                                                 x.ClAddress.Contains(selectCondition.ClAddress) &&
+                                                 x.ClFAX.Contains(selectCondition.ClFAX) &&
+                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();                                                    
                 context.Dispose();
                     
             }
@@ -239,7 +246,10 @@ namespace SalesManagement_SysDev
                 client = context.M_Clients.Where(x => x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
                                                  x.ClFlag == 0 &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)&&
+                                                 x.ClAddress.Contains(selectCondition.ClAddress) &&
+                                                 x.ClFAX.Contains(selectCondition.ClFAX) &&
+                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
                 context.Dispose();
 
             }
@@ -260,7 +270,10 @@ namespace SalesManagement_SysDev
                 client = context.M_Clients.Where(x => x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.ClName.Contains(selectCondition.ClName) &&
                                                  x.ClFlag == 0 &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)&&
+                                                 x.ClAddress.Contains(selectCondition.ClAddress) &&
+                                                 x.ClFAX.Contains(selectCondition.ClFAX) &&
+                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
                 context.Dispose();
 
             }
@@ -281,7 +294,10 @@ namespace SalesManagement_SysDev
                 client = context.M_Clients.Where(x => 
                                                  x.ClName.Contains(selectCondition.ClName) &&
                                                  x.ClFlag == 0 &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone)).ToList();
+                                                 x.ClPhone.Contains(selectCondition.ClPhone)&&
+                                                 x.ClAddress.Contains(selectCondition.ClAddress) &&
+                                                 x.ClFAX.Contains(selectCondition.ClFAX) &&
+                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
                 context.Dispose();
 
             }

@@ -30,5 +30,9 @@ namespace SalesManagement_SysDev.Management_Order
             //OrHidden
         }
 
+        private void Ord_Del_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
