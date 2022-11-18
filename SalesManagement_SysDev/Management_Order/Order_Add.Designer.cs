@@ -31,11 +31,11 @@ namespace SalesManagement_SysDev.Management_Order
         {
             this.Ord_Con_Button = new System.Windows.Forms.Button();
             this.Ord_Add_Button = new System.Windows.Forms.Button();
-            this.OrFlag = new System.Windows.Forms.CheckBox();
-            this.OrHidden = new System.Windows.Forms.TextBox();
-            this.ClID = new System.Windows.Forms.TextBox();
-            this.EmID = new System.Windows.Forms.TextBox();
-            this.SoID = new System.Windows.Forms.TextBox();
+            this.checkBoxOrFlag = new System.Windows.Forms.CheckBox();
+            this.textBoxOrHidden = new System.Windows.Forms.TextBox();
+            this.textBoxClID = new System.Windows.Forms.TextBox();
+            this.textBoxEmID = new System.Windows.Forms.TextBox();
+            this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,12 +44,13 @@ namespace SalesManagement_SysDev.Management_Order
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.OrStateFlag = new System.Windows.Forms.CheckBox();
+            this.checkBoxOrStateFlag = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.OrID = new System.Windows.Forms.TextBox();
+            this.textBoxOrID = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OrDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerOrDate = new System.Windows.Forms.DateTimePicker();
             this.Ord_Del_Button = new System.Windows.Forms.Button();
+            this.textBoxClChange = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,48 +75,48 @@ namespace SalesManagement_SysDev.Management_Order
             this.Ord_Add_Button.UseVisualStyleBackColor = true;
             this.Ord_Add_Button.Click += new System.EventHandler(this.button1_Click);
             // 
-            // OrFlag
+            // checkBoxOrFlag
             // 
-            this.OrFlag.AutoSize = true;
-            this.OrFlag.Location = new System.Drawing.Point(309, 295);
-            this.OrFlag.Margin = new System.Windows.Forms.Padding(2);
-            this.OrFlag.Name = "OrFlag";
-            this.OrFlag.Size = new System.Drawing.Size(34, 19);
-            this.OrFlag.TabIndex = 58;
-            this.OrFlag.Text = " ";
-            this.OrFlag.UseVisualStyleBackColor = true;
+            this.checkBoxOrFlag.AutoSize = true;
+            this.checkBoxOrFlag.Location = new System.Drawing.Point(309, 295);
+            this.checkBoxOrFlag.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxOrFlag.Name = "checkBoxOrFlag";
+            this.checkBoxOrFlag.Size = new System.Drawing.Size(34, 19);
+            this.checkBoxOrFlag.TabIndex = 58;
+            this.checkBoxOrFlag.Text = " ";
+            this.checkBoxOrFlag.UseVisualStyleBackColor = true;
             // 
-            // OrHidden
+            // textBoxOrHidden
             // 
-            this.OrHidden.Location = new System.Drawing.Point(309, 329);
-            this.OrHidden.Margin = new System.Windows.Forms.Padding(2);
-            this.OrHidden.Name = "OrHidden";
-            this.OrHidden.Size = new System.Drawing.Size(81, 22);
-            this.OrHidden.TabIndex = 56;
+            this.textBoxOrHidden.Location = new System.Drawing.Point(309, 329);
+            this.textBoxOrHidden.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxOrHidden.Name = "textBoxOrHidden";
+            this.textBoxOrHidden.Size = new System.Drawing.Size(81, 22);
+            this.textBoxOrHidden.TabIndex = 56;
             // 
-            // ClID
+            // textBoxClID
             // 
-            this.ClID.Location = new System.Drawing.Point(309, 180);
-            this.ClID.Margin = new System.Windows.Forms.Padding(2);
-            this.ClID.Name = "ClID";
-            this.ClID.Size = new System.Drawing.Size(81, 22);
-            this.ClID.TabIndex = 55;
+            this.textBoxClID.Location = new System.Drawing.Point(309, 165);
+            this.textBoxClID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxClID.Name = "textBoxClID";
+            this.textBoxClID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClID.TabIndex = 55;
             // 
-            // EmID
+            // textBoxEmID
             // 
-            this.EmID.Location = new System.Drawing.Point(309, 138);
-            this.EmID.Margin = new System.Windows.Forms.Padding(2);
-            this.EmID.Name = "EmID";
-            this.EmID.Size = new System.Drawing.Size(81, 22);
-            this.EmID.TabIndex = 54;
+            this.textBoxEmID.Location = new System.Drawing.Point(309, 117);
+            this.textBoxEmID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmID.Name = "textBoxEmID";
+            this.textBoxEmID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmID.TabIndex = 54;
             // 
-            // SoID
+            // textBoxSoID
             // 
-            this.SoID.Location = new System.Drawing.Point(309, 102);
-            this.SoID.Margin = new System.Windows.Forms.Padding(2);
-            this.SoID.Name = "SoID";
-            this.SoID.Size = new System.Drawing.Size(81, 22);
-            this.SoID.TabIndex = 53;
+            this.textBoxSoID.Location = new System.Drawing.Point(309, 69);
+            this.textBoxSoID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSoID.Name = "textBoxSoID";
+            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxSoID.TabIndex = 53;
             // 
             // label9
             // 
@@ -197,16 +198,16 @@ namespace SalesManagement_SysDev.Management_Order
             this.label2.TabIndex = 45;
             this.label2.Text = "営業所ID";
             // 
-            // OrStateFlag
+            // checkBoxOrStateFlag
             // 
-            this.OrStateFlag.AutoSize = true;
-            this.OrStateFlag.Location = new System.Drawing.Point(309, 261);
-            this.OrStateFlag.Margin = new System.Windows.Forms.Padding(2);
-            this.OrStateFlag.Name = "OrStateFlag";
-            this.OrStateFlag.Size = new System.Drawing.Size(34, 19);
-            this.OrStateFlag.TabIndex = 44;
-            this.OrStateFlag.Text = " ";
-            this.OrStateFlag.UseVisualStyleBackColor = true;
+            this.checkBoxOrStateFlag.AutoSize = true;
+            this.checkBoxOrStateFlag.Location = new System.Drawing.Point(309, 261);
+            this.checkBoxOrStateFlag.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxOrStateFlag.Name = "checkBoxOrStateFlag";
+            this.checkBoxOrStateFlag.Size = new System.Drawing.Size(34, 19);
+            this.checkBoxOrStateFlag.TabIndex = 44;
+            this.checkBoxOrStateFlag.Text = " ";
+            this.checkBoxOrStateFlag.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -218,13 +219,13 @@ namespace SalesManagement_SysDev.Management_Order
             this.label1.TabIndex = 43;
             this.label1.Text = "受注ID";
             // 
-            // OrID
+            // textBoxOrID
             // 
-            this.OrID.Location = new System.Drawing.Point(309, 67);
-            this.OrID.Margin = new System.Windows.Forms.Padding(2);
-            this.OrID.Name = "OrID";
-            this.OrID.Size = new System.Drawing.Size(81, 22);
-            this.OrID.TabIndex = 42;
+            this.textBoxOrID.Location = new System.Drawing.Point(309, 34);
+            this.textBoxOrID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxOrID.Name = "textBoxOrID";
+            this.textBoxOrID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxOrID.TabIndex = 42;
             // 
             // dataGridView1
             // 
@@ -237,13 +238,13 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridView1.Size = new System.Drawing.Size(927, 247);
             this.dataGridView1.TabIndex = 41;
             // 
-            // OrDate
+            // dateTimePickerOrDate
             // 
-            this.OrDate.Location = new System.Drawing.Point(309, 219);
-            this.OrDate.Margin = new System.Windows.Forms.Padding(2);
-            this.OrDate.Name = "OrDate";
-            this.OrDate.Size = new System.Drawing.Size(161, 22);
-            this.OrDate.TabIndex = 61;
+            this.dateTimePickerOrDate.Location = new System.Drawing.Point(309, 219);
+            this.dateTimePickerOrDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerOrDate.Name = "dateTimePickerOrDate";
+            this.dateTimePickerOrDate.Size = new System.Drawing.Size(161, 22);
+            this.dateTimePickerOrDate.TabIndex = 61;
             // 
             // Ord_Del_Button
             // 
@@ -256,20 +257,28 @@ namespace SalesManagement_SysDev.Management_Order
             this.Ord_Del_Button.UseVisualStyleBackColor = true;
             this.Ord_Del_Button.Click += new System.EventHandler(this.Ord_Del_Button_Click);
             // 
+            // textBoxClChange
+            // 
+            this.textBoxClChange.Location = new System.Drawing.Point(309, 195);
+            this.textBoxClChange.Name = "textBoxClChange";
+            this.textBoxClChange.Size = new System.Drawing.Size(100, 22);
+            this.textBoxClChange.TabIndex = 63;
+            // 
             // Order_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 712);
+            this.Controls.Add(this.textBoxClChange);
             this.Controls.Add(this.Ord_Del_Button);
-            this.Controls.Add(this.OrDate);
+            this.Controls.Add(this.dateTimePickerOrDate);
             this.Controls.Add(this.Ord_Con_Button);
             this.Controls.Add(this.Ord_Add_Button);
-            this.Controls.Add(this.OrFlag);
-            this.Controls.Add(this.OrHidden);
-            this.Controls.Add(this.ClID);
-            this.Controls.Add(this.EmID);
-            this.Controls.Add(this.SoID);
+            this.Controls.Add(this.checkBoxOrFlag);
+            this.Controls.Add(this.textBoxOrHidden);
+            this.Controls.Add(this.textBoxClID);
+            this.Controls.Add(this.textBoxEmID);
+            this.Controls.Add(this.textBoxSoID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -278,9 +287,9 @@ namespace SalesManagement_SysDev.Management_Order
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.OrStateFlag);
+            this.Controls.Add(this.checkBoxOrStateFlag);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.OrID);
+            this.Controls.Add(this.textBoxOrID);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Order_Add";
@@ -295,11 +304,11 @@ namespace SalesManagement_SysDev.Management_Order
 
         private System.Windows.Forms.Button Ord_Con_Button;
         private System.Windows.Forms.Button Ord_Add_Button;
-        private System.Windows.Forms.CheckBox OrFlag;
-        private System.Windows.Forms.TextBox OrHidden;
-        private System.Windows.Forms.TextBox ClID;
-        private System.Windows.Forms.TextBox EmID;
-        private System.Windows.Forms.TextBox SoID;
+        private System.Windows.Forms.CheckBox checkBoxOrFlag;
+        private System.Windows.Forms.TextBox textBoxOrHidden;
+        private System.Windows.Forms.TextBox textBoxClID;
+        private System.Windows.Forms.TextBox textBoxEmID;
+        private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -308,11 +317,12 @@ namespace SalesManagement_SysDev.Management_Order
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox OrStateFlag;
+        private System.Windows.Forms.CheckBox checkBoxOrStateFlag;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox OrID;
+        private System.Windows.Forms.TextBox textBoxOrID;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker OrDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOrDate;
         private System.Windows.Forms.Button Ord_Del_Button;
+        private System.Windows.Forms.TextBox textBoxClChange;
     }
 }
