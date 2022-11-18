@@ -29,14 +29,14 @@ namespace SalesManagement_SysDev.Management_Chumon
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCon = new System.Windows.Forms.Button();
-            this.buttonSer = new System.Windows.Forms.Button();
-            this.ChFlag = new System.Windows.Forms.CheckBox();
-            this.ChHidden = new System.Windows.Forms.TextBox();
-            this.ShDate = new System.Windows.Forms.TextBox();
-            this.ClID = new System.Windows.Forms.TextBox();
-            this.EmID = new System.Windows.Forms.TextBox();
-            this.SoID = new System.Windows.Forms.TextBox();
+            this.Chu_Con_Button = new System.Windows.Forms.Button();
+            this.Chu_Ser_Button = new System.Windows.Forms.Button();
+            this.checkBoxChFlg = new System.Windows.Forms.CheckBox();
+            this.textBoxChHidden = new System.Windows.Forms.TextBox();
+            this.textBoxOrID = new System.Windows.Forms.TextBox();
+            this.textBoxClID = new System.Windows.Forms.TextBox();
+            this.textBoxEmID = new System.Windows.Forms.TextBox();
+            this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,229 +45,238 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ChStateFlag = new System.Windows.Forms.CheckBox();
+            this.checkBoxChStateFlag = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ChID = new System.Windows.Forms.TextBox();
+            this.textBoxChID = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonDel = new System.Windows.Forms.Button();
+            this.Chu_Del_Button = new System.Windows.Forms.Button();
+            this.dateTimePickerChDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonCon
+            // Chu_Con_Button
             // 
-            this.buttonCon.Location = new System.Drawing.Point(682, 242);
-            this.buttonCon.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCon.Name = "buttonCon";
-            this.buttonCon.Size = new System.Drawing.Size(117, 78);
-            this.buttonCon.TabIndex = 40;
-            this.buttonCon.Text = "確定";
-            this.buttonCon.UseVisualStyleBackColor = true;
+            this.Chu_Con_Button.Location = new System.Drawing.Point(910, 303);
+            this.Chu_Con_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Chu_Con_Button.Name = "Chu_Con_Button";
+            this.Chu_Con_Button.Size = new System.Drawing.Size(156, 97);
+            this.Chu_Con_Button.TabIndex = 40;
+            this.Chu_Con_Button.Text = "確定";
+            this.Chu_Con_Button.UseVisualStyleBackColor = true;
             // 
-            // buttonSer
+            // Chu_Ser_Button
             // 
-            this.buttonSer.Location = new System.Drawing.Point(545, 242);
-            this.buttonSer.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSer.Name = "buttonSer";
-            this.buttonSer.Size = new System.Drawing.Size(117, 78);
-            this.buttonSer.TabIndex = 39;
-            this.buttonSer.Text = "検索";
-            this.buttonSer.UseVisualStyleBackColor = true;
+            this.Chu_Ser_Button.Location = new System.Drawing.Point(727, 303);
+            this.Chu_Ser_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Chu_Ser_Button.Name = "Chu_Ser_Button";
+            this.Chu_Ser_Button.Size = new System.Drawing.Size(156, 97);
+            this.Chu_Ser_Button.TabIndex = 39;
+            this.Chu_Ser_Button.Text = "検索";
+            this.Chu_Ser_Button.UseVisualStyleBackColor = true;
             // 
-            // ChFlag
+            // checkBoxChFlg
             // 
-            this.ChFlag.AutoSize = true;
-            this.ChFlag.Location = new System.Drawing.Point(290, 258);
-            this.ChFlag.Margin = new System.Windows.Forms.Padding(2);
-            this.ChFlag.Name = "ChFlag";
-            this.ChFlag.Size = new System.Drawing.Size(28, 16);
-            this.ChFlag.TabIndex = 38;
-            this.ChFlag.Text = " ";
-            this.ChFlag.UseVisualStyleBackColor = true;
+            this.checkBoxChFlg.AutoSize = true;
+            this.checkBoxChFlg.Location = new System.Drawing.Point(386, 322);
+            this.checkBoxChFlg.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxChFlg.Name = "checkBoxChFlg";
+            this.checkBoxChFlg.Size = new System.Drawing.Size(34, 19);
+            this.checkBoxChFlg.TabIndex = 38;
+            this.checkBoxChFlg.Text = " ";
+            this.checkBoxChFlg.UseVisualStyleBackColor = true;
             // 
-            // ChHidden
+            // textBoxChHidden
             // 
-            this.ChHidden.Location = new System.Drawing.Point(290, 288);
-            this.ChHidden.Margin = new System.Windows.Forms.Padding(2);
-            this.ChHidden.Name = "ChHidden";
-            this.ChHidden.Size = new System.Drawing.Size(62, 19);
-            this.ChHidden.TabIndex = 37;
+            this.textBoxChHidden.Location = new System.Drawing.Point(386, 360);
+            this.textBoxChHidden.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxChHidden.Name = "textBoxChHidden";
+            this.textBoxChHidden.Size = new System.Drawing.Size(81, 22);
+            this.textBoxChHidden.TabIndex = 37;
             // 
-            // ShDate
+            // textBoxOrID
             // 
-            this.ShDate.Location = new System.Drawing.Point(290, 198);
-            this.ShDate.Margin = new System.Windows.Forms.Padding(2);
-            this.ShDate.Name = "ShDate";
-            this.ShDate.Size = new System.Drawing.Size(62, 19);
-            this.ShDate.TabIndex = 36;
+            this.textBoxOrID.Location = new System.Drawing.Point(386, 201);
+            this.textBoxOrID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxOrID.Name = "textBoxOrID";
+            this.textBoxOrID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxOrID.TabIndex = 36;
             // 
-            // ClID
+            // textBoxClID
             // 
-            this.ClID.Location = new System.Drawing.Point(290, 166);
-            this.ClID.Margin = new System.Windows.Forms.Padding(2);
-            this.ClID.Name = "ClID";
-            this.ClID.Size = new System.Drawing.Size(62, 19);
-            this.ClID.TabIndex = 35;
+            this.textBoxClID.Location = new System.Drawing.Point(386, 175);
+            this.textBoxClID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxClID.Name = "textBoxClID";
+            this.textBoxClID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClID.TabIndex = 35;
             // 
-            // EmID
+            // textBoxEmID
             // 
-            this.EmID.Location = new System.Drawing.Point(290, 133);
-            this.EmID.Margin = new System.Windows.Forms.Padding(2);
-            this.EmID.Name = "EmID";
-            this.EmID.Size = new System.Drawing.Size(62, 19);
-            this.EmID.TabIndex = 34;
+            this.textBoxEmID.Location = new System.Drawing.Point(386, 149);
+            this.textBoxEmID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEmID.Name = "textBoxEmID";
+            this.textBoxEmID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmID.TabIndex = 34;
             // 
-            // SoID
+            // textBoxSoID
             // 
-            this.SoID.Location = new System.Drawing.Point(290, 104);
-            this.SoID.Margin = new System.Windows.Forms.Padding(2);
-            this.SoID.Name = "SoID";
-            this.SoID.Size = new System.Drawing.Size(62, 19);
-            this.SoID.TabIndex = 33;
+            this.textBoxSoID.Location = new System.Drawing.Point(386, 112);
+            this.textBoxSoID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSoID.Name = "textBoxSoID";
+            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxSoID.TabIndex = 33;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(130, 290);
+            this.label9.Location = new System.Drawing.Point(173, 362);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.Size = new System.Drawing.Size(82, 15);
             this.label9.TabIndex = 32;
             this.label9.Text = "非表示理由";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(133, 258);
+            this.label8.Location = new System.Drawing.Point(177, 322);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 12);
+            this.label8.Size = new System.Drawing.Size(99, 15);
             this.label8.TabIndex = 31;
             this.label8.Text = "注文管理フラグ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(133, 234);
+            this.label7.Location = new System.Drawing.Point(177, 292);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 12);
+            this.label7.Size = new System.Drawing.Size(99, 15);
             this.label7.TabIndex = 30;
             this.label7.Text = "注文状態フラグ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(130, 202);
+            this.label6.Location = new System.Drawing.Point(173, 253);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.Size = new System.Drawing.Size(82, 15);
             this.label6.TabIndex = 29;
             this.label6.Text = "注文年月日";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 178);
+            this.label5.Location = new System.Drawing.Point(177, 222);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 12);
+            this.label5.Size = new System.Drawing.Size(51, 15);
             this.label5.TabIndex = 28;
             this.label5.Text = "受注ID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(133, 159);
+            this.label4.Location = new System.Drawing.Point(177, 199);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 12);
+            this.label4.Size = new System.Drawing.Size(51, 15);
             this.label4.TabIndex = 27;
             this.label4.Text = "顧客ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(133, 133);
+            this.label3.Location = new System.Drawing.Point(177, 166);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 12);
+            this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 26;
             this.label3.Text = "社員ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(133, 104);
+            this.label2.Location = new System.Drawing.Point(177, 130);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 12);
+            this.label2.Size = new System.Drawing.Size(66, 15);
             this.label2.TabIndex = 25;
             this.label2.Text = "営業所ID";
             // 
-            // ChStateFlag
+            // checkBoxChStateFlag
             // 
-            this.ChStateFlag.AutoSize = true;
-            this.ChStateFlag.Location = new System.Drawing.Point(290, 230);
-            this.ChStateFlag.Margin = new System.Windows.Forms.Padding(2);
-            this.ChStateFlag.Name = "ChStateFlag";
-            this.ChStateFlag.Size = new System.Drawing.Size(28, 16);
-            this.ChStateFlag.TabIndex = 24;
-            this.ChStateFlag.Text = " ";
-            this.ChStateFlag.UseVisualStyleBackColor = true;
+            this.checkBoxChStateFlag.AutoSize = true;
+            this.checkBoxChStateFlag.Location = new System.Drawing.Point(386, 288);
+            this.checkBoxChStateFlag.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxChStateFlag.Name = "checkBoxChStateFlag";
+            this.checkBoxChStateFlag.Size = new System.Drawing.Size(34, 19);
+            this.checkBoxChStateFlag.TabIndex = 24;
+            this.checkBoxChStateFlag.Text = " ";
+            this.checkBoxChStateFlag.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 78);
+            this.label1.Location = new System.Drawing.Point(173, 97);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 12);
+            this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 23;
             this.label1.Text = "注文ID";
             // 
-            // ChID
+            // textBoxChID
             // 
-            this.ChID.Location = new System.Drawing.Point(290, 75);
-            this.ChID.Margin = new System.Windows.Forms.Padding(2);
-            this.ChID.Name = "ChID";
-            this.ChID.Size = new System.Drawing.Size(62, 19);
-            this.ChID.TabIndex = 22;
+            this.textBoxChID.Location = new System.Drawing.Point(386, 77);
+            this.textBoxChID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxChID.Name = "textBoxChID";
+            this.textBoxChID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxChID.TabIndex = 22;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(112, 342);
+            this.dataGridView1.Location = new System.Drawing.Point(150, 427);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(695, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(927, 247);
             this.dataGridView1.TabIndex = 21;
             // 
-            // buttonDel
+            // Chu_Del_Button
             // 
-            this.buttonDel.Location = new System.Drawing.Point(417, 242);
-            this.buttonDel.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(117, 78);
-            this.buttonDel.TabIndex = 41;
-            this.buttonDel.Text = "削除";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.Chu_Del_Button.Location = new System.Drawing.Point(556, 303);
+            this.Chu_Del_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Chu_Del_Button.Name = "Chu_Del_Button";
+            this.Chu_Del_Button.Size = new System.Drawing.Size(156, 97);
+            this.Chu_Del_Button.TabIndex = 41;
+            this.Chu_Del_Button.Text = "削除";
+            this.Chu_Del_Button.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerChDate
+            // 
+            this.dateTimePickerChDate.Location = new System.Drawing.Point(375, 247);
+            this.dateTimePickerChDate.Name = "dateTimePickerChDate";
+            this.dateTimePickerChDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerChDate.TabIndex = 42;
             // 
             // Chumon_Ser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 614);
-            this.Controls.Add(this.buttonDel);
-            this.Controls.Add(this.buttonCon);
-            this.Controls.Add(this.buttonSer);
-            this.Controls.Add(this.ChFlag);
-            this.Controls.Add(this.ChHidden);
-            this.Controls.Add(this.ShDate);
-            this.Controls.Add(this.ClID);
-            this.Controls.Add(this.EmID);
-            this.Controls.Add(this.SoID);
+            this.ClientSize = new System.Drawing.Size(1226, 767);
+            this.Controls.Add(this.dateTimePickerChDate);
+            this.Controls.Add(this.Chu_Del_Button);
+            this.Controls.Add(this.Chu_Con_Button);
+            this.Controls.Add(this.Chu_Ser_Button);
+            this.Controls.Add(this.checkBoxChFlg);
+            this.Controls.Add(this.textBoxChHidden);
+            this.Controls.Add(this.textBoxOrID);
+            this.Controls.Add(this.textBoxClID);
+            this.Controls.Add(this.textBoxEmID);
+            this.Controls.Add(this.textBoxSoID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -276,9 +285,9 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ChStateFlag);
+            this.Controls.Add(this.checkBoxChStateFlag);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ChID);
+            this.Controls.Add(this.textBoxChID);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Chumon_Ser";
@@ -291,14 +300,14 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCon;
-        private System.Windows.Forms.Button buttonSer;
-        private System.Windows.Forms.CheckBox ChFlag;
-        private System.Windows.Forms.TextBox ChHidden;
-        private System.Windows.Forms.TextBox ShDate;
-        private System.Windows.Forms.TextBox ClID;
-        private System.Windows.Forms.TextBox EmID;
-        private System.Windows.Forms.TextBox SoID;
+        private System.Windows.Forms.Button Chu_Con_Button;
+        private System.Windows.Forms.Button Chu_Ser_Button;
+        private System.Windows.Forms.CheckBox checkBoxChFlg;
+        private System.Windows.Forms.TextBox textBoxChHidden;
+        private System.Windows.Forms.TextBox textBoxOrID;
+        private System.Windows.Forms.TextBox textBoxClID;
+        private System.Windows.Forms.TextBox textBoxEmID;
+        private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -307,10 +316,11 @@ namespace SalesManagement_SysDev.Management_Chumon
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox ChStateFlag;
+        private System.Windows.Forms.CheckBox checkBoxChStateFlag;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ChID;
+        private System.Windows.Forms.TextBox textBoxChID;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.Button Chu_Del_Button;
+        private System.Windows.Forms.DateTimePicker dateTimePickerChDate;
     }
 }

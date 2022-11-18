@@ -32,18 +32,18 @@ namespace SalesManagement_SysDev.Management_Order
             //OrStateFlag(checkbox)
             //OrFlag(checkbox)
             //OrHidden
-            if (String.IsNullOrEmpty(OrID.Text.Trim()))
+            if (String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
             {
-                if (OrID.Text.Length >= 6)
+                if (textBoxOrID.Text.Length >= 6)
                 {
                     MessageBox.Show("6文字いない");
-                    OrID.Focus();
+                    textBoxOrID.Focus();
                     return;
                 }
-                if (!dataInputFormCheck.CheckNumeric(OrID.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxOrID.Text.Trim()))
                 {
                     MessageBox.Show("suutinomi");
-                    OrID.Focus();
+                    textBoxOrID.Focus();
                     return;
                 }
             }
