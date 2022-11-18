@@ -30,13 +30,13 @@ namespace SalesManagement_SysDev
         private void InitializeComponent()
         {
             this.add_btn = new System.Windows.Forms.Button();
-            this.EmIDtxt = new System.Windows.Forms.TextBox();
-            this.EmNametxt = new System.Windows.Forms.TextBox();
-            this.SoIDtxt = new System.Windows.Forms.TextBox();
-            this.PoIDtxt = new System.Windows.Forms.TextBox();
-            this.EmPassWord = new System.Windows.Forms.TextBox();
-            this.Emphonetxt = new System.Windows.Forms.TextBox();
-            this.hiddentxt = new System.Windows.Forms.TextBox();
+            this.textBoxEmID = new System.Windows.Forms.TextBox();
+            this.textBoxEmName = new System.Windows.Forms.TextBox();
+            this.textBoxSoID = new System.Windows.Forms.TextBox();
+            this.textBoxPoID = new System.Windows.Forms.TextBox();
+            this.textBoxEmPassword = new System.Windows.Forms.TextBox();
+            this.textBoxEmPhone = new System.Windows.Forms.TextBox();
+            this.textBoxEmHidden = new System.Windows.Forms.TextBox();
             this.IDtxt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace SalesManagement_SysDev
             this.Emphone = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimeHidden = new System.Windows.Forms.DateTimePicker();
-            this.EmCheck = new System.Windows.Forms.CheckBox();
+            this.checkBoxEmFlag = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // add_btn
@@ -59,56 +59,56 @@ namespace SalesManagement_SysDev
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
-            // EmIDtxt
+            // textBoxEmID
             // 
-            this.EmIDtxt.Location = new System.Drawing.Point(35, 130);
-            this.EmIDtxt.Name = "EmIDtxt";
-            this.EmIDtxt.Size = new System.Drawing.Size(100, 22);
-            this.EmIDtxt.TabIndex = 1;
-            this.EmIDtxt.TextChanged += new System.EventHandler(this.EmIDtxt_TextChanged);
+            this.textBoxEmID.Location = new System.Drawing.Point(35, 130);
+            this.textBoxEmID.Name = "textBoxEmID";
+            this.textBoxEmID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxEmID.TabIndex = 1;
+            this.textBoxEmID.TextChanged += new System.EventHandler(this.EmIDtxt_TextChanged);
             // 
-            // EmNametxt
+            // textBoxEmName
             // 
-            this.EmNametxt.Location = new System.Drawing.Point(219, 130);
-            this.EmNametxt.Name = "EmNametxt";
-            this.EmNametxt.Size = new System.Drawing.Size(100, 22);
-            this.EmNametxt.TabIndex = 2;
+            this.textBoxEmName.Location = new System.Drawing.Point(219, 130);
+            this.textBoxEmName.Name = "textBoxEmName";
+            this.textBoxEmName.Size = new System.Drawing.Size(100, 22);
+            this.textBoxEmName.TabIndex = 2;
             // 
-            // SoIDtxt
+            // textBoxSoID
             // 
-            this.SoIDtxt.Location = new System.Drawing.Point(393, 130);
-            this.SoIDtxt.Name = "SoIDtxt";
-            this.SoIDtxt.Size = new System.Drawing.Size(100, 22);
-            this.SoIDtxt.TabIndex = 3;
+            this.textBoxSoID.Location = new System.Drawing.Point(393, 130);
+            this.textBoxSoID.Name = "textBoxSoID";
+            this.textBoxSoID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxSoID.TabIndex = 3;
             // 
-            // PoIDtxt
+            // textBoxPoID
             // 
-            this.PoIDtxt.Location = new System.Drawing.Point(561, 130);
-            this.PoIDtxt.Name = "PoIDtxt";
-            this.PoIDtxt.Size = new System.Drawing.Size(100, 22);
-            this.PoIDtxt.TabIndex = 4;
+            this.textBoxPoID.Location = new System.Drawing.Point(561, 130);
+            this.textBoxPoID.Name = "textBoxPoID";
+            this.textBoxPoID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPoID.TabIndex = 4;
             // 
-            // EmPassWord
+            // textBoxEmPassword
             // 
-            this.EmPassWord.Location = new System.Drawing.Point(35, 295);
-            this.EmPassWord.Name = "EmPassWord";
-            this.EmPassWord.Size = new System.Drawing.Size(100, 22);
-            this.EmPassWord.TabIndex = 6;
+            this.textBoxEmPassword.Location = new System.Drawing.Point(35, 295);
+            this.textBoxEmPassword.Name = "textBoxEmPassword";
+            this.textBoxEmPassword.Size = new System.Drawing.Size(100, 22);
+            this.textBoxEmPassword.TabIndex = 6;
             // 
-            // Emphonetxt
+            // textBoxEmPhone
             // 
-            this.Emphonetxt.Location = new System.Drawing.Point(219, 295);
-            this.Emphonetxt.Name = "Emphonetxt";
-            this.Emphonetxt.Size = new System.Drawing.Size(100, 22);
-            this.Emphonetxt.TabIndex = 7;
+            this.textBoxEmPhone.Location = new System.Drawing.Point(219, 295);
+            this.textBoxEmPhone.Name = "textBoxEmPhone";
+            this.textBoxEmPhone.Size = new System.Drawing.Size(100, 22);
+            this.textBoxEmPhone.TabIndex = 7;
             // 
-            // hiddentxt
+            // textBoxEmHidden
             // 
-            this.hiddentxt.Location = new System.Drawing.Point(561, 295);
-            this.hiddentxt.Name = "hiddentxt";
-            this.hiddentxt.Size = new System.Drawing.Size(100, 22);
-            this.hiddentxt.TabIndex = 8;
-            this.hiddentxt.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBoxEmHidden.Location = new System.Drawing.Point(561, 295);
+            this.textBoxEmHidden.Name = "textBoxEmHidden";
+            this.textBoxEmHidden.Size = new System.Drawing.Size(100, 22);
+            this.textBoxEmHidden.TabIndex = 8;
+            this.textBoxEmHidden.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // IDtxt
             // 
@@ -189,23 +189,23 @@ namespace SalesManagement_SysDev
             this.dateTimeHidden.Size = new System.Drawing.Size(200, 22);
             this.dateTimeHidden.TabIndex = 19;
             // 
-            // EmCheck
+            // checkBoxEmFlag
             // 
-            this.EmCheck.AutoSize = true;
-            this.EmCheck.Location = new System.Drawing.Point(393, 298);
-            this.EmCheck.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.EmCheck.Name = "EmCheck";
-            this.EmCheck.Size = new System.Drawing.Size(69, 19);
-            this.EmCheck.TabIndex = 20;
-            this.EmCheck.Text = "チェック";
-            this.EmCheck.UseVisualStyleBackColor = true;
+            this.checkBoxEmFlag.AutoSize = true;
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(393, 298);
+            this.checkBoxEmFlag.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.checkBoxEmFlag.Name = "checkBoxEmFlag";
+            this.checkBoxEmFlag.Size = new System.Drawing.Size(69, 19);
+            this.checkBoxEmFlag.TabIndex = 20;
+            this.checkBoxEmFlag.Text = "チェック";
+            this.checkBoxEmFlag.UseVisualStyleBackColor = true;
             // 
             // empcnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 681);
-            this.Controls.Add(this.EmCheck);
+            this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dateTimeHidden);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Emphone);
@@ -215,13 +215,13 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.IDtxt);
-            this.Controls.Add(this.hiddentxt);
-            this.Controls.Add(this.Emphonetxt);
-            this.Controls.Add(this.EmPassWord);
-            this.Controls.Add(this.PoIDtxt);
-            this.Controls.Add(this.SoIDtxt);
-            this.Controls.Add(this.EmNametxt);
-            this.Controls.Add(this.EmIDtxt);
+            this.Controls.Add(this.textBoxEmHidden);
+            this.Controls.Add(this.textBoxEmPhone);
+            this.Controls.Add(this.textBoxEmPassword);
+            this.Controls.Add(this.textBoxPoID);
+            this.Controls.Add(this.textBoxSoID);
+            this.Controls.Add(this.textBoxEmName);
+            this.Controls.Add(this.textBoxEmID);
             this.Controls.Add(this.add_btn);
             this.Name = "empcnt";
             this.Text = "empcnt";
@@ -233,13 +233,13 @@ namespace SalesManagement_SysDev
         #endregion
 
         private System.Windows.Forms.Button add_btn;
-        private System.Windows.Forms.TextBox EmIDtxt;
-        private System.Windows.Forms.TextBox EmNametxt;
-        private System.Windows.Forms.TextBox SoIDtxt;
-        private System.Windows.Forms.TextBox PoIDtxt;
-        private System.Windows.Forms.TextBox EmPassWord;
-        private System.Windows.Forms.TextBox Emphonetxt;
-        private System.Windows.Forms.TextBox hiddentxt;
+        private System.Windows.Forms.TextBox textBoxEmID;
+        private System.Windows.Forms.TextBox textBoxEmName;
+        private System.Windows.Forms.TextBox textBoxSoID;
+        private System.Windows.Forms.TextBox textBoxPoID;
+        private System.Windows.Forms.TextBox textBoxEmPassword;
+        private System.Windows.Forms.TextBox textBoxEmPhone;
+        private System.Windows.Forms.TextBox textBoxEmHidden;
         private System.Windows.Forms.Label IDtxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -249,6 +249,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label Emphone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimeHidden;
-        private System.Windows.Forms.CheckBox EmCheck;
+        private System.Windows.Forms.CheckBox checkBoxEmFlag;
     }
 }

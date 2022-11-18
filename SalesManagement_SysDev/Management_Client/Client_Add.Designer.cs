@@ -30,8 +30,8 @@ namespace SalesManagement_SysDev.Management_Client
         private void InitializeComponent()
         {
             this.label8 = new System.Windows.Forms.Label();
-            this.ClPostal = new System.Windows.Forms.TextBox();
-            this.ClFLG = new System.Windows.Forms.CheckBox();
+            this.textBoxClPostal = new System.Windows.Forms.TextBox();
+            this.checkBoxClFLG = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,13 +39,13 @@ namespace SalesManagement_SysDev.Management_Client
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ClFAX = new System.Windows.Forms.TextBox();
-            this.SoID = new System.Windows.Forms.TextBox();
-            this.ClID = new System.Windows.Forms.TextBox();
-            this.ClName = new System.Windows.Forms.TextBox();
-            this.ClHidden = new System.Windows.Forms.TextBox();
-            this.ClPhone = new System.Windows.Forms.TextBox();
-            this.ClAddress = new System.Windows.Forms.TextBox();
+            this.textBoxClFAX = new System.Windows.Forms.TextBox();
+            this.textBoxSoID = new System.Windows.Forms.TextBox();
+            this.textBoxClID = new System.Windows.Forms.TextBox();
+            this.textBoxClName = new System.Windows.Forms.TextBox();
+            this.textBoxClHidden = new System.Windows.Forms.TextBox();
+            this.textBoxClPhone = new System.Windows.Forms.TextBox();
+            this.textBoxClAddress = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Cli_Add_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,24 +60,24 @@ namespace SalesManagement_SysDev.Management_Client
             this.label8.TabIndex = 56;
             this.label8.Text = "非表示理由";
             // 
-            // ClPostal
+            // textBoxClPostal
             // 
-            this.ClPostal.Location = new System.Drawing.Point(549, 112);
-            this.ClPostal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClPostal.Name = "ClPostal";
-            this.ClPostal.Size = new System.Drawing.Size(81, 22);
-            this.ClPostal.TabIndex = 3;
+            this.textBoxClPostal.Location = new System.Drawing.Point(549, 112);
+            this.textBoxClPostal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClPostal.Name = "textBoxClPostal";
+            this.textBoxClPostal.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClPostal.TabIndex = 3;
             // 
-            // ClFLG
+            // checkBoxClFLG
             // 
-            this.ClFLG.AutoSize = true;
-            this.ClFLG.Location = new System.Drawing.Point(811, 116);
-            this.ClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClFLG.Name = "ClFLG";
-            this.ClFLG.Size = new System.Drawing.Size(121, 19);
-            this.ClFLG.TabIndex = 54;
-            this.ClFLG.Text = "顧客管理フラグ";
-            this.ClFLG.UseVisualStyleBackColor = true;
+            this.checkBoxClFLG.AutoSize = true;
+            this.checkBoxClFLG.Location = new System.Drawing.Point(811, 116);
+            this.checkBoxClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxClFLG.Name = "checkBoxClFLG";
+            this.checkBoxClFLG.Size = new System.Drawing.Size(121, 19);
+            this.checkBoxClFLG.TabIndex = 54;
+            this.checkBoxClFLG.Text = "顧客管理フラグ";
+            this.checkBoxClFLG.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -142,61 +142,61 @@ namespace SalesManagement_SysDev.Management_Client
             this.label1.TabIndex = 47;
             this.label1.Text = "顧客ID";
             // 
-            // ClFAX
+            // textBoxClFAX
             // 
-            this.ClFAX.Location = new System.Drawing.Point(549, 215);
-            this.ClFAX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClFAX.Name = "ClFAX";
-            this.ClFAX.Size = new System.Drawing.Size(81, 22);
-            this.ClFAX.TabIndex = 5;
+            this.textBoxClFAX.Location = new System.Drawing.Point(549, 215);
+            this.textBoxClFAX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClFAX.Name = "textBoxClFAX";
+            this.textBoxClFAX.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClFAX.TabIndex = 5;
             // 
-            // SoID
+            // textBoxSoID
             // 
-            this.SoID.Location = new System.Drawing.Point(251, 112);
-            this.SoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SoID.Name = "SoID";
-            this.SoID.Size = new System.Drawing.Size(81, 22);
-            this.SoID.TabIndex = 1;
+            this.textBoxSoID.Location = new System.Drawing.Point(251, 112);
+            this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxSoID.Name = "textBoxSoID";
+            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxSoID.TabIndex = 1;
             // 
-            // ClID
+            // textBoxClID
             // 
-            this.ClID.Location = new System.Drawing.Point(248, 61);
-            this.ClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClID.Name = "ClID";
-            this.ClID.Size = new System.Drawing.Size(81, 22);
-            this.ClID.TabIndex = 0;
+            this.textBoxClID.Location = new System.Drawing.Point(248, 61);
+            this.textBoxClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClID.Name = "textBoxClID";
+            this.textBoxClID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClID.TabIndex = 0;
             // 
-            // ClName
+            // textBoxClName
             // 
-            this.ClName.Location = new System.Drawing.Point(549, 60);
-            this.ClName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClName.Name = "ClName";
-            this.ClName.Size = new System.Drawing.Size(81, 22);
-            this.ClName.TabIndex = 2;
+            this.textBoxClName.Location = new System.Drawing.Point(549, 60);
+            this.textBoxClName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClName.Name = "textBoxClName";
+            this.textBoxClName.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClName.TabIndex = 2;
             // 
-            // ClHidden
+            // textBoxClHidden
             // 
-            this.ClHidden.Location = new System.Drawing.Point(931, 62);
-            this.ClHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClHidden.Name = "ClHidden";
-            this.ClHidden.Size = new System.Drawing.Size(81, 22);
-            this.ClHidden.TabIndex = 7;
+            this.textBoxClHidden.Location = new System.Drawing.Point(931, 62);
+            this.textBoxClHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClHidden.Name = "textBoxClHidden";
+            this.textBoxClHidden.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClHidden.TabIndex = 7;
             // 
-            // ClPhone
+            // textBoxClPhone
             // 
-            this.ClPhone.Location = new System.Drawing.Point(549, 259);
-            this.ClPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClPhone.Name = "ClPhone";
-            this.ClPhone.Size = new System.Drawing.Size(81, 22);
-            this.ClPhone.TabIndex = 6;
+            this.textBoxClPhone.Location = new System.Drawing.Point(549, 259);
+            this.textBoxClPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClPhone.Name = "textBoxClPhone";
+            this.textBoxClPhone.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClPhone.TabIndex = 6;
             // 
-            // ClAddress
+            // textBoxClAddress
             // 
-            this.ClAddress.Location = new System.Drawing.Point(549, 156);
-            this.ClAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClAddress.Name = "ClAddress";
-            this.ClAddress.Size = new System.Drawing.Size(81, 22);
-            this.ClAddress.TabIndex = 4;
+            this.textBoxClAddress.Location = new System.Drawing.Point(549, 156);
+            this.textBoxClAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClAddress.Name = "textBoxClAddress";
+            this.textBoxClAddress.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClAddress.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -226,8 +226,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 768);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.ClPostal);
-            this.Controls.Add(this.ClFLG);
+            this.Controls.Add(this.textBoxClPostal);
+            this.Controls.Add(this.checkBoxClFLG);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -235,13 +235,13 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ClFAX);
-            this.Controls.Add(this.SoID);
-            this.Controls.Add(this.ClID);
-            this.Controls.Add(this.ClName);
-            this.Controls.Add(this.ClHidden);
-            this.Controls.Add(this.ClPhone);
-            this.Controls.Add(this.ClAddress);
+            this.Controls.Add(this.textBoxClFAX);
+            this.Controls.Add(this.textBoxSoID);
+            this.Controls.Add(this.textBoxClID);
+            this.Controls.Add(this.textBoxClName);
+            this.Controls.Add(this.textBoxClHidden);
+            this.Controls.Add(this.textBoxClPhone);
+            this.Controls.Add(this.textBoxClAddress);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cli_Add_Button);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -256,8 +256,8 @@ namespace SalesManagement_SysDev.Management_Client
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox ClPostal;
-        private System.Windows.Forms.CheckBox ClFLG;
+        private System.Windows.Forms.TextBox textBoxClPostal;
+        private System.Windows.Forms.CheckBox checkBoxClFLG;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -265,13 +265,13 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ClFAX;
-        private System.Windows.Forms.TextBox SoID;
-        private System.Windows.Forms.TextBox ClID;
-        private System.Windows.Forms.TextBox ClName;
-        private System.Windows.Forms.TextBox ClHidden;
-        private System.Windows.Forms.TextBox ClPhone;
-        private System.Windows.Forms.TextBox ClAddress;
+        private System.Windows.Forms.TextBox textBoxClFAX;
+        private System.Windows.Forms.TextBox textBoxSoID;
+        private System.Windows.Forms.TextBox textBoxClID;
+        private System.Windows.Forms.TextBox textBoxClName;
+        private System.Windows.Forms.TextBox textBoxClHidden;
+        private System.Windows.Forms.TextBox textBoxClPhone;
+        private System.Windows.Forms.TextBox textBoxClAddress;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Cli_Add_Button;
     }

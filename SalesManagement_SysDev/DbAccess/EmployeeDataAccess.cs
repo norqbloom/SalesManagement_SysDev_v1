@@ -87,6 +87,32 @@ namespace SalesManagement_SysDev
                 return false;
             }
         }
+        public bool UpdEmployeeData(M_Employee updEmp)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var Emps = context.M_Employees.Single(x => x.EmID == updEmp.EmID);
+                Emps.EmID = updEmp.EmID;
+                Emps.EmName = updEmp.EmName;
+                Emps.SoID = updEmp.SoID;
+                Emps.PoID = updEmp.PoID;
+                Emps.EmHiredate = updEmp.EmHiredate;
+                Emps.EmPassword = updEmp.EmPassword;
+                Emps.EmPhone = updEmp.EmPhone;
+                Emps.EmFlag = updEmp.EmFlag;
+                Emps.EmHidden = updEmp.EmHidden;
+
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+        }
 
     }
 }

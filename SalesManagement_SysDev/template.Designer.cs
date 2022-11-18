@@ -201,6 +201,7 @@ namespace SalesManagement_SysDev
             this.shipping_display.Text = "表示";
             this.shipping_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.shipping_display.UseVisualStyleBackColor = false;
+            this.shipping_display.Click += new System.EventHandler(this.shipping_display_Click);
             // 
             // shipping_btn
             // 
@@ -249,6 +250,7 @@ namespace SalesManagement_SysDev
             this.Arrival_display.Text = "表示";
             this.Arrival_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Arrival_display.UseVisualStyleBackColor = false;
+            this.Arrival_display.Click += new System.EventHandler(this.Arrival_display_Click);
             // 
             // Arrival_btn
             // 
@@ -297,6 +299,7 @@ namespace SalesManagement_SysDev
             this.issue_display.Text = "表示";
             this.issue_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.issue_display.UseVisualStyleBackColor = false;
+            this.issue_display.Click += new System.EventHandler(this.issue_display_Click);
             // 
             // issue_btn
             // 
@@ -396,6 +399,7 @@ namespace SalesManagement_SysDev
             this.instruct_serchbtn.Text = "検索";
             this.instruct_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.instruct_serchbtn.UseVisualStyleBackColor = false;
+            this.instruct_serchbtn.Click += new System.EventHandler(this.instruct_serchbtn_Click);
             // 
             // instruct_upbtn
             // 
@@ -414,6 +418,7 @@ namespace SalesManagement_SysDev
             this.instruct_upbtn.Text = "更新";
             this.instruct_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.instruct_upbtn.UseVisualStyleBackColor = false;
+            this.instruct_upbtn.Click += new System.EventHandler(this.instruct_upbtn_Click);
             // 
             // instruct_regbtn
             // 
@@ -432,6 +437,7 @@ namespace SalesManagement_SysDev
             this.instruct_regbtn.Text = "登録";
             this.instruct_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.instruct_regbtn.UseVisualStyleBackColor = false;
+            this.instruct_regbtn.Click += new System.EventHandler(this.instruct_regbtn_Click);
             // 
             // instruct_btn
             // 
@@ -480,6 +486,7 @@ namespace SalesManagement_SysDev
             this.order_serchbtn.Text = "検索";
             this.order_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.order_serchbtn.UseVisualStyleBackColor = false;
+            this.order_serchbtn.Click += new System.EventHandler(this.order_serchbtn_Click);
             // 
             // order_btn
             // 
@@ -529,6 +536,7 @@ namespace SalesManagement_SysDev
             this.received_upbtn.Text = "検索";
             this.received_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.received_upbtn.UseVisualStyleBackColor = false;
+            this.received_upbtn.Click += new System.EventHandler(this.received_upbtn_Click);
             // 
             // received_regbtn
             // 
@@ -1165,7 +1173,7 @@ namespace SalesManagement_SysDev
             this.comitbtn.Name = "comitbtn";
             this.comitbtn.Size = new System.Drawing.Size(75, 23);
             this.comitbtn.TabIndex = 4;
-            this.comitbtn.Text = "button1";
+            this.comitbtn.Text = "適用";
             this.comitbtn.UseVisualStyleBackColor = true;
             this.comitbtn.Click += new System.EventHandler(this.button1_Click);
             // 

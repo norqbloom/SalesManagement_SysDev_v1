@@ -1076,7 +1076,7 @@ namespace SalesManagement_SysDev
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(626, 23);
+            this.panel2.Location = new System.Drawing.Point(615, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(552, 100);
             this.panel2.TabIndex = 7;
