@@ -12,6 +12,10 @@ namespace SalesManagement_SysDev.Management_Order
 {
     public partial class Order_Add : Form
     {
+        //メッセージ表示用クラスのインスタンス化
+        MessageDsp messageDsp = new MessageDsp();
+        //入力形式チェック用クラスのインスタンス化
+        DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         public Order_Add()
         {
             InitializeComponent();
@@ -28,6 +32,21 @@ namespace SalesManagement_SysDev.Management_Order
             //OrStateFlag(checkbox)
             //OrFlag(checkbox)
             //OrHidden
+            if (String.IsNullOrEmpty(OrID.Text.Trim()))
+            {
+                if (OrID.Text.Length >= 6)
+                {
+                    MessageBox.Show("6文字いない");
+                    OrID.Focus();
+                    return;
+                }
+                if (!dataInputFormCheck.CheckNumeric(OrID.Text.Trim()))
+                {
+                    MessageBox.Show("suutinomi")
+                    OrID.Focus();
+                    return;
+                }
+            }
         }
 
     }
