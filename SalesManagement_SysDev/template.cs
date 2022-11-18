@@ -324,12 +324,12 @@ namespace SalesManagement_SysDev
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-
+            openChildForm(new Management_Order.Order_Add());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Management_Warehousing.Warehousing_View());
         }
 
         private void tilepanel_Paint(object sender, PaintEventArgs e)
@@ -513,6 +513,47 @@ namespace SalesManagement_SysDev
 
         private void Earnings_serchbtn_Click(object sender, EventArgs e)
         {
+            openChildForm(new Management_Sales.Sales_Ser());
+        }
+
+        private void received_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Order.Order_Ser());
+        }
+
+        private void order_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Chumon.Chumon_Ser());
+        }
+
+        private void instruct_regbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Hattyu.Hattyu_Add());
+        }
+
+        private void instruct_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Hattyu.Hattyu_Upd());
+        }
+
+        private void instruct_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Hattyu.Hattyu_Ser());
+        }
+
+        private void issue_display_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Syukko.Syukko_View());
+        }
+
+        private void Arrival_display_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Arrival.Arrival_View());
+        }
+
+        private void shipping_display_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Shipment.Shipment_View());
         }
     }
 }
