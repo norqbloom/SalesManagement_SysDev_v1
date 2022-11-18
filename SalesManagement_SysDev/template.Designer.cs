@@ -1165,7 +1165,7 @@ namespace SalesManagement_SysDev
             this.comitbtn.Name = "comitbtn";
             this.comitbtn.Size = new System.Drawing.Size(75, 23);
             this.comitbtn.TabIndex = 4;
-            this.comitbtn.Text = "button1";
+            this.comitbtn.Text = "適用";
             this.comitbtn.UseVisualStyleBackColor = true;
             this.comitbtn.Click += new System.EventHandler(this.button1_Click);
             // 
