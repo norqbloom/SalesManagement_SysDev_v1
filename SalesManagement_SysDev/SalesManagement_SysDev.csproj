@@ -106,6 +106,7 @@
     <Compile Include="Entity\M_MajorCassification.cs" />
     <Compile Include="Entity\M_Message.cs" />
     <Compile Include="Entity\M_Product.cs" />
+    <Compile Include="Entity\M_Prohistory.cs" />
     <Compile Include="login\F_login.cs">
       <SubType>Form</SubType>
     </Compile>

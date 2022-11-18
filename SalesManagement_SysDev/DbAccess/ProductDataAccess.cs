@@ -131,9 +131,9 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        public List<M_ProductDsp> GetProductData()
+        public List<M_Product> GetProductData()
         {
-            List<M_ProductDsp> product = new List<M_ProductDsp>();
+            List<M_Product> product = new List<M_Product>();
 
             try
             {
@@ -160,7 +160,7 @@ namespace SalesManagement_SysDev
                          };
                 foreach(var p in tb)
                 {
-                    product.Add(new M_ProductDsp()
+                    product.Add(new M_Product()
                     {
                         PrID = p.PrID,
                         MaID = p.MaID,
@@ -190,9 +190,9 @@ namespace SalesManagement_SysDev
         //戻り値   ：条件一致商品データ
         //機　能   ：条件一致商品データの取得
         ///////////////////////////////
-        public List<M_ProductDsp> GetProductData(M_ProductDsp selectCondition)
+        public List<M_Product> GetProductData(M_Product selectCondition)
         {
-            List<M_ProductDsp> product = new List<M_ProductDsp>();
+            List<M_Product> product = new List<M_Product>();
 
             try
             {
@@ -223,7 +223,7 @@ namespace SalesManagement_SysDev
                          };
                 foreach(var p in tb)
                 {
-                    product.Add(new M_ProductDsp()
+                    product.Add(new M_Product()
                     {
                         PrID = p.PrID,
                         MaID = p.MaID,
@@ -247,6 +247,129 @@ namespace SalesManagement_SysDev
             return product;
         }
 
+        ///////////////////////////////
+        //メソッド名：GetClientsDspData()
+        //引　数   ：なし
+        //戻り値   ：表示用顧客データ
+        //機　能   ：表示用顧客データの取得
+        ///////////////////////////////
+        public List<M_Product> GetClientDspData()
+        {
+            List<M_Product> Client = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                Client = context.M_Products.Where(x => x.PrFlag == 0).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Client;
+        }
+
+        ///////////////////////////////
+        //メソッド名：GetClientsData()　オーバーロード
+        //引　数   ：検索条件
+        //戻り値   ：条件一致顧客データ
+        //機　能   ：条件一致商品顧客データの取得
+        ///////////////////////////////
+
+        public List<M_Product> Getdubblwdata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrFlag == 0 &&
+                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString())).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> GetCldata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrFlag == 0).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> GetSodata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrFlag == 0 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> Getnodata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrFlag == 0 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Prohistory> getdetail(M_Prohistory selectCondition)
+        {
+            List<M_Prohistory> history = new List<M_Prohistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                history = context.M_Prohistory.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return history;
+        }
     }
 }
 
