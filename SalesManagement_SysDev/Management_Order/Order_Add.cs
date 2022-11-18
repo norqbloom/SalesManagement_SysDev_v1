@@ -42,7 +42,7 @@ namespace SalesManagement_SysDev.Management_Order
                 }
                 if (!dataInputFormCheck.CheckNumeric(OrID.Text.Trim()))
                 {
-                    MessageBox.Show("suutinomi")
+                    MessageBox.Show("suutinomi");
                     OrID.Focus();
                     return;
                 }
