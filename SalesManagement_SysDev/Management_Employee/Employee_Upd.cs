@@ -12,6 +12,8 @@ namespace SalesManagement_SysDev.Management_Employee
 {
     public partial class Employee_Upd : Form
     {
+        MessageDsp messageDsp = new MessageDsp();
+
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         PasswordHash passwordHash = new PasswordHash();
@@ -23,7 +25,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private void Emp_Upd_Button_Click(object sender, EventArgs e)
         {
             // 5.3.2.1 妥当な商品データ取得
-            if (GetValidDataAtUpdate())
+            if (!GetValidDataAtUpdate())
             {
                 return;
             }
@@ -53,15 +55,12 @@ namespace SalesManagement_SysDev.Management_Employee
                     EmID.Focus();
                     return false;
                 }
-
-                int EmpID = int.Parse(EmID.Text.Trim());
-                if (employeeDataAccess.CheckEmployeesCDExistence(EmpID))
+                if (!employeeDataAccess.CheckEmployeesCDExistence(int.Parse(EmID.Text.Trim())))
                 {
-                    MessageBox.Show("重複");
+                    messageDsp.DspMsg("M1003");
                     EmID.Focus();
                     return false;
                 }
-
             }
             else
             {
@@ -235,7 +234,7 @@ namespace SalesManagement_SysDev.Management_Employee
             if (result == DialogResult.Cancel)
                 return;
             //登録
-            bool flg = employeeDataAccess.AddEmpData(updemp);
+            bool flg = employeeDataAccess.UpdEmployeeData(updemp);
             if (flg == true)
                 MessageBox.Show("ok");
             else
