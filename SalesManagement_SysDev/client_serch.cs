@@ -130,11 +130,6 @@ namespace SalesManagement_SysDev
         {            
             dataGridView1.DataSource = clients;
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private void dateClget()
         {
             M_Client selectCondition = new M_Client()

@@ -64,7 +64,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(550, 113);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(81, 22);
             this.textBox8.TabIndex = 55;
@@ -73,7 +73,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(810, 116);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(121, 19);
             this.checkBox1.TabIndex = 54;
@@ -153,7 +153,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(550, 215);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(81, 22);
             this.textBox7.TabIndex = 46;
@@ -161,7 +161,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(251, 113);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(81, 22);
             this.textBox6.TabIndex = 45;
@@ -169,7 +169,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(251, 57);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(81, 22);
             this.textBox5.TabIndex = 44;
@@ -177,7 +177,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(550, 60);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(81, 22);
             this.textBox4.TabIndex = 43;
@@ -185,7 +185,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(930, 63);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(81, 22);
             this.textBox3.TabIndex = 42;
@@ -193,7 +193,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(550, 259);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(81, 22);
             this.textBox2.TabIndex = 41;
@@ -201,7 +201,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(550, 156);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(81, 22);
             this.textBox1.TabIndex = 40;
@@ -210,7 +210,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(113, 349);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -220,13 +220,12 @@ namespace SalesManagement_SysDev.Management_Client
             // Cli_Ser_Button
             // 
             this.Cli_Ser_Button.Location = new System.Drawing.Point(1041, 242);
-            this.Cli_Ser_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cli_Ser_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Cli_Ser_Button.Name = "Cli_Ser_Button";
             this.Cli_Ser_Button.Size = new System.Drawing.Size(139, 55);
             this.Cli_Ser_Button.TabIndex = 38;
             this.Cli_Ser_Button.Text = "検索";
             this.Cli_Ser_Button.UseVisualStyleBackColor = true;
-            this.Cli_Ser_Button.Click += new System.EventHandler(this.Cli_Ser_Button_Click);
             // 
             // Client_Ser
             // 
@@ -252,7 +251,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cli_Ser_Button);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Client_Ser";
             this.Text = "Clienr_Ser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
