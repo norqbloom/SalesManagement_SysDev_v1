@@ -334,28 +334,28 @@ namespace SalesManagement_SysDev
             this.ClIDtxt.Location = new System.Drawing.Point(62, 122);
             this.ClIDtxt.Name = "ClIDtxt";
             this.ClIDtxt.Size = new System.Drawing.Size(100, 22);
-            this.ClIDtxt.TabIndex = 7;
+            this.ClIDtxt.TabIndex = 0;
             // 
             // SOIDtxt
             // 
             this.SOIDtxt.Location = new System.Drawing.Point(193, 122);
             this.SOIDtxt.Name = "SOIDtxt";
             this.SOIDtxt.Size = new System.Drawing.Size(100, 22);
-            this.SOIDtxt.TabIndex = 8;
+            this.SOIDtxt.TabIndex = 1;
             // 
             // CLNametxt
             // 
             this.CLNametxt.Location = new System.Drawing.Point(307, 122);
             this.CLNametxt.Name = "CLNametxt";
             this.CLNametxt.Size = new System.Drawing.Size(100, 22);
-            this.CLNametxt.TabIndex = 9;
+            this.CLNametxt.TabIndex = 2;
             // 
             // ClPhonetxt
             // 
             this.ClPhonetxt.Location = new System.Drawing.Point(449, 122);
             this.ClPhonetxt.Name = "ClPhonetxt";
             this.ClPhonetxt.Size = new System.Drawing.Size(100, 22);
-            this.ClPhonetxt.TabIndex = 10;
+            this.ClPhonetxt.TabIndex = 3;
             // 
             // textBoxPageSize
             // 

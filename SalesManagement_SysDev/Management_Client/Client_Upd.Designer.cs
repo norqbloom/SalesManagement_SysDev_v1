@@ -67,7 +67,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClPostal.Margin = new System.Windows.Forms.Padding(2);
             this.ClPostal.Name = "ClPostal";
             this.ClPostal.Size = new System.Drawing.Size(81, 22);
-            this.ClPostal.TabIndex = 36;
+            this.ClPostal.TabIndex = 3;
             // 
             // ClFlag
             // 
@@ -156,7 +156,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClFAX.Margin = new System.Windows.Forms.Padding(2);
             this.ClFAX.Name = "ClFAX";
             this.ClFAX.Size = new System.Drawing.Size(81, 22);
-            this.ClFAX.TabIndex = 27;
+            this.ClFAX.TabIndex = 5;
             // 
             // SoID
             // 
@@ -164,7 +164,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.SoID.Margin = new System.Windows.Forms.Padding(2);
             this.SoID.Name = "SoID";
             this.SoID.Size = new System.Drawing.Size(81, 22);
-            this.SoID.TabIndex = 26;
+            this.SoID.TabIndex = 1;
             // 
             // ClID
             // 
@@ -172,7 +172,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClID.Margin = new System.Windows.Forms.Padding(2);
             this.ClID.Name = "ClID";
             this.ClID.Size = new System.Drawing.Size(81, 22);
-            this.ClID.TabIndex = 25;
+            this.ClID.TabIndex = 0;
             // 
             // ClName
             // 
@@ -180,7 +180,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClName.Margin = new System.Windows.Forms.Padding(2);
             this.ClName.Name = "ClName";
             this.ClName.Size = new System.Drawing.Size(81, 22);
-            this.ClName.TabIndex = 24;
+            this.ClName.TabIndex = 2;
             // 
             // ClHidden
             // 
@@ -188,7 +188,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClHidden.Margin = new System.Windows.Forms.Padding(2);
             this.ClHidden.Name = "ClHidden";
             this.ClHidden.Size = new System.Drawing.Size(81, 22);
-            this.ClHidden.TabIndex = 23;
+            this.ClHidden.TabIndex = 7;
             // 
             // ClPhone
             // 
@@ -196,7 +196,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClPhone.Margin = new System.Windows.Forms.Padding(2);
             this.ClPhone.Name = "ClPhone";
             this.ClPhone.Size = new System.Drawing.Size(81, 22);
-            this.ClPhone.TabIndex = 22;
+            this.ClPhone.TabIndex = 6;
             // 
             // ClAddress
             // 
@@ -204,7 +204,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.ClAddress.Margin = new System.Windows.Forms.Padding(2);
             this.ClAddress.Name = "ClAddress";
             this.ClAddress.Size = new System.Drawing.Size(81, 22);
-            this.ClAddress.TabIndex = 21;
+            this.ClAddress.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -223,7 +223,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Cli_Upd_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Cli_Upd_Button.Name = "Cli_Upd_Button";
             this.Cli_Upd_Button.Size = new System.Drawing.Size(139, 55);
-            this.Cli_Upd_Button.TabIndex = 19;
+            this.Cli_Upd_Button.TabIndex = 8;
             this.Cli_Upd_Button.Text = "更新";
             this.Cli_Upd_Button.UseVisualStyleBackColor = true;
             this.Cli_Upd_Button.Click += new System.EventHandler(this.Cli_Upd_Button_Click);
