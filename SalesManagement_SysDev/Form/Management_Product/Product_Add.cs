@@ -303,5 +303,10 @@ namespace SalesManagement_SysDev.Management_Product
             checkBoxPrFlag.Checked = false;
             textBoxPrHidden.Text = "";
         }
+
+        private void ButtonDel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
