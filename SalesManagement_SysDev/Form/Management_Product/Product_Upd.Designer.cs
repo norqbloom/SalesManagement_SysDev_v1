@@ -53,7 +53,18 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.ButtonDel = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.change = new System.Windows.Forms.Button();
+            this.buttonLastPage = new System.Windows.Forms.Button();
+            this.buttonNextPage = new System.Windows.Forms.Button();
+            this.buttonPreviousPage = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxPageSize = new System.Windows.Forms.TextBox();
+            this.textBoxPageNo = new System.Windows.Forms.TextBox();
+            this.labelPage = new System.Windows.Forms.Label();
+            this.buttonFirstPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonUpd
@@ -223,6 +234,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(-14, 363);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -278,11 +290,131 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerPrReleaseDate.TabIndex = 52;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel2.Controls.Add(this.change);
+            this.panel2.Controls.Add(this.buttonLastPage);
+            this.panel2.Controls.Add(this.buttonNextPage);
+            this.panel2.Controls.Add(this.buttonPreviousPage);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.textBoxPageSize);
+            this.panel2.Controls.Add(this.textBoxPageNo);
+            this.panel2.Controls.Add(this.labelPage);
+            this.panel2.Controls.Add(this.buttonFirstPage);
+            this.panel2.Location = new System.Drawing.Point(81, 721);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(805, 36);
+            this.panel2.TabIndex = 53;
+            // 
+            // change
+            // 
+            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.change.Location = new System.Drawing.Point(220, 9);
+            this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.change.Name = "change";
+            this.change.Size = new System.Drawing.Size(75, 22);
+            this.change.TabIndex = 21;
+            this.change.Text = "行数変更";
+            this.change.UseVisualStyleBackColor = true;
+            // 
+            // buttonLastPage
+            // 
+            this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLastPage.Location = new System.Drawing.Point(775, 9);
+            this.buttonLastPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonLastPage.Name = "buttonLastPage";
+            this.buttonLastPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonLastPage.TabIndex = 24;
+            this.buttonLastPage.Text = "▶|";
+            this.buttonLastPage.UseVisualStyleBackColor = true;
+            // 
+            // buttonNextPage
+            // 
+            this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNextPage.Location = new System.Drawing.Point(745, 9);
+            this.buttonNextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonNextPage.Name = "buttonNextPage";
+            this.buttonNextPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonNextPage.TabIndex = 25;
+            this.buttonNextPage.Text = "▶";
+            this.buttonNextPage.UseVisualStyleBackColor = true;
+            // 
+            // buttonPreviousPage
+            // 
+            this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPreviousPage.Location = new System.Drawing.Point(711, 9);
+            this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPreviousPage.Name = "buttonPreviousPage";
+            this.buttonPreviousPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonPreviousPage.TabIndex = 26;
+            this.buttonPreviousPage.Text = "◀";
+            this.buttonPreviousPage.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 15);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "1ページ行数";
+            // 
+            // textBoxPageSize
+            // 
+            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
+            this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPageSize.Name = "textBoxPageSize";
+            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageSize.TabIndex = 11;
+            // 
+            // textBoxPageNo
+            // 
+            this.textBoxPageNo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textBoxPageNo.Location = new System.Drawing.Point(532, 8);
+            this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPageNo.Name = "textBoxPageNo";
+            this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
+            this.textBoxPageNo.TabIndex = 22;
+            // 
+            // labelPage
+            // 
+            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPage.AutoSize = true;
+            this.labelPage.Location = new System.Drawing.Point(591, 10);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(43, 15);
+            this.labelPage.TabIndex = 23;
+            this.labelPage.Text = "ページ";
+            // 
+            // buttonFirstPage
+            // 
+            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
+            this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFirstPage.Name = "buttonFirstPage";
+            this.buttonFirstPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonFirstPage.TabIndex = 13;
+            this.buttonFirstPage.Text = "|◀";
+            this.buttonFirstPage.UseVisualStyleBackColor = true;
+            // 
             // Product_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 686);
+            this.ClientSize = new System.Drawing.Size(1309, 768);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.ButtonDel);
             this.Controls.Add(this.ButtonUpd);
@@ -311,6 +443,8 @@ namespace SalesManagement_SysDev.Management_Product
             this.Name = "Product_Upd";
             this.Text = "Product_Upd";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,5 +476,15 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.CheckBox checkBoxPrFlag;
         private System.Windows.Forms.Button ButtonDel;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button change;
+        private System.Windows.Forms.Button buttonLastPage;
+        private System.Windows.Forms.Button buttonNextPage;
+        private System.Windows.Forms.Button buttonPreviousPage;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxPageSize;
+        private System.Windows.Forms.TextBox textBoxPageNo;
+        private System.Windows.Forms.Label labelPage;
+        private System.Windows.Forms.Button buttonFirstPage;
     }
 }

@@ -29,7 +29,7 @@ namespace SalesManagement_SysDev.Management_Product
             label5.Visible = false;
             IDtxt.Visible = false;
             datetime.Visible = false;
-            userid.Visible = false;
+            upusername.Visible = false;
             username.Visible = false;
             uptime.Visible = false;
             upuserid.Visible = false;
@@ -40,7 +40,7 @@ namespace SalesManagement_SysDev.Management_Product
             label5.Visible = true;
             IDtxt.Visible = true;
             datetime.Visible = true;
-            userid.Visible = true;
+            upusername.Visible = true;
             username.Visible = true;
             uptime.Visible = true;
             upuserid.Visible = true;
@@ -302,7 +302,7 @@ namespace SalesManagement_SysDev.Management_Product
 
             IDtxt.Text = x.PrID;
             datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
+            upusername.Text = x.regUserID;
             username.Text = x.regUserName;
             uptime.Text = x.UpDateTime;
             upuserid.Text = x.LastupdatedUserID;

@@ -52,7 +52,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.upuserid = new System.Windows.Forms.Label();
             this.uptime = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.Label();
-            this.userid = new System.Windows.Forms.Label();
+            this.upusername = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.Label();
             this.IDtxt = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonPreviousPage = new System.Windows.Forms.Button();
             this.buttonFirstPage = new System.Windows.Forms.Button();
             this.change = new System.Windows.Forms.Button();
-            this.label = new System.Windows.Forms.Label();
+            this.labelPage = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel1.SuspendLayout();
@@ -298,15 +298,15 @@ namespace SalesManagement_SysDev.Management_Product
             this.username.TabIndex = 58;
             this.username.Text = "label12";
             // 
-            // userid
+            // upusername
             // 
-            this.userid.AutoSize = true;
-            this.userid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.userid.Location = new System.Drawing.Point(148, 191);
-            this.userid.Name = "userid";
-            this.userid.Size = new System.Drawing.Size(74, 20);
-            this.userid.TabIndex = 59;
-            this.userid.Text = "label13";
+            this.upusername.AutoSize = true;
+            this.upusername.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.upusername.Location = new System.Drawing.Point(148, 191);
+            this.upusername.Name = "upusername";
+            this.upusername.Size = new System.Drawing.Size(74, 20);
+            this.upusername.TabIndex = 59;
+            this.upusername.Text = "label13";
             // 
             // datetime
             // 
@@ -354,7 +354,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel1.Controls.Add(this.upuserid);
             this.panel1.Controls.Add(this.uptime);
             this.panel1.Controls.Add(this.username);
-            this.panel1.Controls.Add(this.userid);
+            this.panel1.Controls.Add(this.upusername);
             this.panel1.Controls.Add(this.datetime);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(952, 0);
@@ -440,7 +440,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel2.Controls.Add(this.buttonPreviousPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
             this.panel2.Controls.Add(this.change);
-            this.panel2.Controls.Add(this.label);
+            this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.textBoxPageSize);
             this.panel2.Controls.Add(this.textBoxPageNo);
@@ -509,16 +509,16 @@ namespace SalesManagement_SysDev.Management_Product
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
             // 
-            // label
+            // labelPage
             // 
-            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(591, 10);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(43, 15);
-            this.label.TabIndex = 55;
-            this.label.Text = "ページ";
+            this.labelPage.AutoSize = true;
+            this.labelPage.Location = new System.Drawing.Point(591, 10);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(43, 15);
+            this.labelPage.TabIndex = 55;
+            this.labelPage.Text = "ページ";
             // 
             // label4
             // 
@@ -593,7 +593,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label upuserid;
         private System.Windows.Forms.Label uptime;
         private System.Windows.Forms.Label username;
-        private System.Windows.Forms.Label userid;
+        private System.Windows.Forms.Label upusername;
         private System.Windows.Forms.Label datetime;
         private System.Windows.Forms.Label IDtxt;
         private System.Windows.Forms.Button button1;
@@ -611,7 +611,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Button buttonPreviousPage;
         private System.Windows.Forms.Button buttonFirstPage;
         private System.Windows.Forms.Button change;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Label label4;
     }
 }
