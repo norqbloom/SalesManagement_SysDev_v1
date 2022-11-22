@@ -158,7 +158,51 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void GenerateDataAtSelect()
         {
+            //ここから
             if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+            {
+                if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
+                {
+                    if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+                    {
+                        //全て入力されている
+                    }
+                    else
+                    {
+                        //商品・メーカーのみ
+                    }
+                }
+                else
+                {
+                    if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+                    {
+                       　//商品・小分類のみ
+                    }
+                }
+            }
+            else if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
+            {
+                if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+                {
+                    //メーカー・小分類のみ
+                }
+                else
+                {
+                    //メーカーのみ
+                }
+            }
+            else if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+            {
+                //小分類のみ
+            }
+            else
+            {
+                //何も入力されていない
+            }
+
+
+
+                if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
                 if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
