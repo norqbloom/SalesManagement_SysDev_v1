@@ -277,5 +277,10 @@ namespace SalesManagement_SysDev.Management_Client
         {
 
         }
+
+        private void buttonSer_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

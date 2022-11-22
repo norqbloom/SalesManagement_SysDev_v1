@@ -60,7 +60,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.checkBoxPrFlag.AutoSize = true;
             this.checkBoxPrFlag.Location = new System.Drawing.Point(276, 254);
-            this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
             this.checkBoxPrFlag.Size = new System.Drawing.Size(97, 16);
             this.checkBoxPrFlag.TabIndex = 0;
@@ -80,7 +80,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrID
             // 
             this.textBoxPrID.Location = new System.Drawing.Point(132, 71);
-            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrID.TabIndex = 2;
@@ -89,7 +89,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDsp.Location = new System.Drawing.Point(11, 327);
-            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 62;
             this.dataGridViewDsp.RowTemplate.Height = 27;
@@ -189,7 +189,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxMaID
             // 
             this.textBoxMaID.Location = new System.Drawing.Point(132, 119);
-            this.textBoxMaID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMaID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(62, 19);
             this.textBoxMaID.TabIndex = 14;
@@ -197,7 +197,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrName
             // 
             this.textBoxPrName.Location = new System.Drawing.Point(132, 157);
-            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrName.TabIndex = 15;
@@ -205,7 +205,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrice
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(139, 188);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrice.TabIndex = 16;
@@ -213,7 +213,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrSafetyStock
             // 
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(139, 230);
-            this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
             this.textBoxPrSafetyStock.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrSafetyStock.TabIndex = 18;
@@ -221,7 +221,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxScID
             // 
             this.textBoxScID.Location = new System.Drawing.Point(347, 75);
-            this.textBoxScID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxScID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(62, 19);
             this.textBoxScID.TabIndex = 19;
@@ -229,7 +229,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrModelNumber
             // 
             this.textBoxPrModelNumber.Location = new System.Drawing.Point(347, 117);
-            this.textBoxPrModelNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrModelNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrModelNumber.TabIndex = 20;
@@ -237,7 +237,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrColor
             // 
             this.textBoxPrColor.Location = new System.Drawing.Point(347, 173);
-            this.textBoxPrColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrColor.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrColor.TabIndex = 21;
@@ -245,7 +245,7 @@ namespace SalesManagement_SysDev.Management_Product
             // textBoxPrHidden
             // 
             this.textBoxPrHidden.Location = new System.Drawing.Point(528, 77);
-            this.textBoxPrHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrHidden.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrHidden.Name = "textBoxPrHidden";
             this.textBoxPrHidden.Size = new System.Drawing.Size(62, 19);
             this.textBoxPrHidden.TabIndex = 23;
@@ -253,7 +253,7 @@ namespace SalesManagement_SysDev.Management_Product
             // ButtonAdd
             // 
             this.ButtonAdd.Location = new System.Drawing.Point(636, 214);
-            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(107, 93);
             this.ButtonAdd.TabIndex = 24;
@@ -264,17 +264,18 @@ namespace SalesManagement_SysDev.Management_Product
             // ButtonDel
             // 
             this.ButtonDel.Location = new System.Drawing.Point(515, 214);
-            this.ButtonDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonDel.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonDel.Name = "ButtonDel";
             this.ButtonDel.Size = new System.Drawing.Size(107, 93);
             this.ButtonDel.TabIndex = 25;
             this.ButtonDel.Text = "削除";
             this.ButtonDel.UseVisualStyleBackColor = true;
+            this.ButtonDel.Click += new System.EventHandler(this.ButtonDel_Click);
             // 
             // dateTimePickerPrReleaseDate
             // 
             this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(347, 216);
-            this.dateTimePickerPrReleaseDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerPrReleaseDate.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(151, 19);
             this.dateTimePickerPrReleaseDate.TabIndex = 26;
@@ -308,7 +309,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxPrFlag);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Product_Add";
             this.Text = "Product_Add";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
