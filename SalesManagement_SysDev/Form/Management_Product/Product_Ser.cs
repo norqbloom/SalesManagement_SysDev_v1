@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Product
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
-        private static List<M_clhistory> history;
+        private static List<M_Prohistory> history;
 
 
         public Product_Ser()
@@ -49,55 +49,109 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void Product_Ser_Load(object sender, EventArgs e)
         {
+            SetFormDataGridView();
             invcnt();
         }
 
         private void ButtonSer_Click(object sender, EventArgs e)
         {
             //入力データ確認
-            if (!GetClientDataAtSelect())
+            if (!GetProductDataAtSelect())
                 return;
 
             GenerateDataAtSelect();
 
             SetSelectData();
         }
-        private bool GetClientDataAtSelect()
+        private bool GetProductDataAtSelect()
         {
-            //PrID確認
+            //商品データの適否
             if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
-                //数字チェック
+                //文字種
                 if (!dataInputFormCheck.CheckNumeric(textBoxPrID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    messageDsp.DspMsg("M2001");//商品IDは半角数字入力です
+                    textBoxPrID.Focus();
+                    return false;
+                }
+                //文字数　
+                if (textBoxPrID.TextLength > 6)
+                {
+                    messageDsp.DspMsg("M2002");//商品IDは6文字です
                     textBoxPrID.Focus();
                     return false;
                 }
             }
-            //MaID確認
+            //メーカIDの適否
             if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
             {
-                //数字チェック
+                //文字種
                 if (!dataInputFormCheck.CheckNumeric(textBoxMaID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1005");
+                    messageDsp.DspMsg("M2005");//メーカIDは半角数字入力です
+                    textBoxMaID.Focus();
+                    return false;
+                }
+                //文字数　
+                if (textBoxPrID.TextLength != 6)
+                {
+                    messageDsp.DspMsg("M2006");//メーカIDは4文字です
                     textBoxMaID.Focus();
                     return false;
                 }
             }
-            ////Clphone確認
-            //if (!String.IsNullOrEmpty(ClPhonetxt.Text.Trim()))
-            //{
-            //    if (!dataInputFormCheck.CheckHalfChar(ClPhonetxt.Text.Trim()))
-            //    {
-            //        messageDsp.DspMsg("M1015");
-            //        ClPhonetxt.Focus();
-            //        return false;
-
-            //    }
-
-            //}
+            //商品名の適否
+            if (!String.IsNullOrEmpty(textBoxPrName.Text.Trim()))
+            {
+                //文字数
+                if (textBoxPrName.TextLength > 50)
+                {
+                    messageDsp.DspMsg("M2010");//商品名は50文字以下です
+                    textBoxPrName.Focus();
+                    return false;
+                }
+            }
+            //小分類IDの適否
+            if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+            {
+                //文字種
+                if (!dataInputFormCheck.CheckNumeric(textBoxScID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M2020");//小分類IDは半角数字入力です
+                    textBoxScID.Focus();
+                    return false;
+                }
+                //文字数
+                if (textBoxScID.TextLength > 2)
+                {
+                    messageDsp.DspMsg("M2019");//小分類IDは2文字以下です
+                    textBoxScID.Focus();
+                    return false;
+                }
+            }
+            //型番の適否
+            if (!String.IsNullOrEmpty(textBoxPrModelNumber.Text.Trim()))
+            {
+                //文字数
+                if (textBoxPrModelNumber.TextLength > 20)
+                {
+                    messageDsp.DspMsg("M2022");//型番は20文字以下です
+                    textBoxPrModelNumber.Focus();
+                    return false;
+                }
+            }
+            //色の適否
+            if (!String.IsNullOrEmpty(textBoxPrColor.Text.Trim()))
+            {
+                //文字数
+                if (textBoxPrColor.TextLength > 20)
+                {
+                    messageDsp.DspMsg("M2025");//色は20文字以下です
+                    textBoxPrColor.Focus();
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -137,7 +191,12 @@ namespace SalesManagement_SysDev.Management_Product
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
+                MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
                 
             };
             products = productDataAccess.GetProductData(selectCondition);
@@ -148,8 +207,12 @@ namespace SalesManagement_SysDev.Management_Product
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
+                MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
-               
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
             };
             products = productDataAccess.GetProductData(selectCondition);
 
@@ -161,6 +224,10 @@ namespace SalesManagement_SysDev.Management_Product
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
             };
             products = productDataAccess.Getdubblwdata(selectCondition);
 
@@ -169,7 +236,13 @@ namespace SalesManagement_SysDev.Management_Product
         {
             M_Product selectCondition = new M_Product()
             {
-                PrName = textBoxPrID.Text.Trim()
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                MaID = int.Parse(textBoxMaID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
             };
             products = productDataAccess.Getnodata(selectCondition);
 
@@ -183,7 +256,6 @@ namespace SalesManagement_SysDev.Management_Product
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            SetDataGridView();
 
         }
         private void SetDataGridView()
@@ -191,13 +263,9 @@ namespace SalesManagement_SysDev.Management_Product
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
 
             dataGridViewDsp.Refresh();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
         }
 
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
@@ -216,12 +284,12 @@ namespace SalesManagement_SysDev.Management_Product
         private void serchdateset(int number)
         {
 
-            M_clhistory selectCondition = new M_clhistory
+            M_Prohistory selectCondition = new M_Prohistory
             {
-                ClID = number.ToString(),
+                PrID = number.ToString(),
 
             };
-            history = clientDataAccess.getdetail(selectCondition);
+            history = productDataAccess.getdetail(selectCondition);
         }
         private void setdatedetail()
         {
@@ -232,7 +300,7 @@ namespace SalesManagement_SysDev.Management_Product
                 return;
             }
 
-            IDtxt.Text = x.ClID;
+            IDtxt.Text = x.PrID;
             datetime.Text = x.RegisteredDate;
             userid.Text = x.regUserID;
             username.Text = x.regUserName;
