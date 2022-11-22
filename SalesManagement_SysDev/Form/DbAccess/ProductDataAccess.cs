@@ -283,7 +283,8 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x => 
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
                                                  x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
                                                  x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
@@ -301,7 +302,7 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
-        public List<M_Product> GetCldata(M_Product selectCondition)
+        public List<M_Product> GetPrdata(M_Product selectCondition)
         {
             List<M_Product> product = new List<M_Product>();
 
@@ -310,10 +311,9 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
                                                  x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
                                                  x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
@@ -327,7 +327,7 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
-        public List<M_Product> GetSodata(M_Product selectCondition)
+        public List<M_Product> GetMadata(M_Product selectCondition)
         {
             List<M_Product> product = new List<M_Product>();
 
@@ -335,11 +335,35 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x => 
-                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
                                                  x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> GetScdata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
                                                  x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
                                                  x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
@@ -362,10 +386,8 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 product = context.M_Products.Where(x => 
-                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                 x.PrFlag == 0&&
                                                  x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
                                                  x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())

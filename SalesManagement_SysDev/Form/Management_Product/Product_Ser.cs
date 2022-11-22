@@ -63,6 +63,7 @@ namespace SalesManagement_SysDev.Management_Product
 
             SetSelectData();
         }
+
         private bool GetProductDataAtSelect()
         {
             //商品データの適否
@@ -157,7 +158,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void GenerateDataAtSelect()
         {
-            if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
                 if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
@@ -165,14 +166,14 @@ namespace SalesManagement_SysDev.Management_Product
                 }
                 else
                 {
-                    dateClget();
+                    datePrget();
                 }
             }
             else
             {
                 if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
-                    dateSoget();
+                    dateMaget();
                 }
                 else
                 {
@@ -186,35 +187,30 @@ namespace SalesManagement_SysDev.Management_Product
         {
             dataGridViewDsp.DataSource = products;
         }
-        private void dateClget()
+        private void datePrget()
         {
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
-                MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
-                ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
                 
             };
-            products = productDataAccess.GetProductData(selectCondition);
+            products = productDataAccess.GetPrdata(selectCondition);
 
         }
-        private void dateSoget()
+        private void dateMaget()
         {
             M_Product selectCondition = new M_Product()
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
             };
-            products = productDataAccess.GetProductData(selectCondition);
+            products = productDataAccess.GetMadata(selectCondition);
 
         }
         private void datedubblwget()
@@ -232,14 +228,24 @@ namespace SalesManagement_SysDev.Management_Product
             products = productDataAccess.Getdubblwdata(selectCondition);
 
         }
+        private void dateScget()
+        {
+            M_Product selectCondition = new M_Product()
+            {
+                PrName = textBoxPrName.Text.Trim(),
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
+            };
+            products = productDataAccess.GetScdata(selectCondition);
+
+        }
         private void datenolwget()
         {
             M_Product selectCondition = new M_Product()
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
-                ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
@@ -322,11 +328,6 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Visible = false;
             upusername.Visible = false;
              */
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

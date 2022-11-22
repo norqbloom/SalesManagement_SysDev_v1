@@ -55,7 +55,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.upusername = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.Label();
             this.IDtxt = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonSer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -328,16 +328,16 @@ namespace SalesManagement_SysDev.Management_Product
             this.IDtxt.TabIndex = 61;
             this.IDtxt.Text = "label15";
             // 
-            // button1
+            // ButtonSer
             // 
-            this.button1.Location = new System.Drawing.Point(621, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 46);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "検索";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.ButtonSer.Location = new System.Drawing.Point(621, 378);
+            this.ButtonSer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonSer.Name = "ButtonSer";
+            this.ButtonSer.Size = new System.Drawing.Size(148, 46);
+            this.ButtonSer.TabIndex = 49;
+            this.ButtonSer.Text = "検索";
+            this.ButtonSer.UseVisualStyleBackColor = true;
+            this.ButtonSer.Click += new System.EventHandler(this.ButtonSer_Click);
             // 
             // panel1
             // 
@@ -540,7 +540,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.ButtonDel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ButtonSer);
             this.Controls.Add(this.textBoxPrColor);
             this.Controls.Add(this.textBoxPrModelNumber);
             this.Controls.Add(this.textBoxScID);
@@ -596,7 +596,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label upusername;
         private System.Windows.Forms.Label datetime;
         private System.Windows.Forms.Label IDtxt;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonSer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label16;

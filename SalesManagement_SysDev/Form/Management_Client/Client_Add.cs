@@ -81,12 +81,6 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxSoID.Focus();
                     return false;
                 }
-                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
-                {
-                    messageDsp.DspMsg("M1007");
-                    textBoxSoID.Focus();
-                    return false;
-                }
             }
             else
             {
