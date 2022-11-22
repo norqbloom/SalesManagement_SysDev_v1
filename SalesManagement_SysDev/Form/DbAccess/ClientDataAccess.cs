@@ -322,5 +322,50 @@ namespace SalesManagement_SysDev
             }
             return history;
         }
+
+
+        ///////////////////////////////
+        //メソッド名：GetClientsIDData()　オーバーロード
+        //引　数   ：検索条件
+        //戻り値   ：条件一致顧客データ
+        //機　能   ：条件一致商品顧客データの取得
+        ///////////////////////////////
+        public List<M_Client> GetClientsIDData(M_Client selectCondition)
+        {
+            List<M_Client> client = new List<M_Client>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                client = context.M_Clients.Where(x => x.ClID == selectCondition.ClID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return client;
+        }
+        public List<M_Client> GetClientstextData(M_Client selectCondition)
+        {
+            List<M_Client> client = new List<M_Client>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                client = context.M_Clients.Where(x => x.SoID == selectCondition.SoID ||
+                                                      x.ClPhone==selectCondition.ClPhone ||
+                                                      x.ClAddress==selectCondition.ClAddress ||
+                                                      x.ClPostal==selectCondition.ClPostal ||
+                                                      x.ClFAX==selectCondition.ClFAX).ToList();
+
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return client;
+        }
     }
 }

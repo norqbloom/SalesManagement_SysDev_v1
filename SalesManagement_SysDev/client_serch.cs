@@ -327,5 +327,160 @@ namespace SalesManagement_SysDev
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+
+        private void ClIDtxt_TextChanged(object sender, EventArgs e)
+        {
+            int SuClID;
+            if (!String.IsNullOrEmpty(ClIDtxt.Text.Trim()))
+            {
+                SuClID = int.Parse(ClIDtxt.Text.Trim());
+            }
+            else
+            {
+                SuClID = -1;
+            }
+
+            M_Client selectCondition = new M_Client()
+            {
+                ClID=SuClID
+            };
+            clients = clientDataAccess.GetClientsIDData(selectCondition);
+            var x = clients.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
+            CLNametxt.Text = x.ClName;
+        }
+
+        private void SOIDtxt_TextChanged(object sender, EventArgs e)
+        {
+            int Sudate;
+            if (!String.IsNullOrEmpty(SOIDtxt.Text.Trim()))
+            {
+                Sudate = int.Parse(SOIDtxt.Text.Trim());
+            }
+            else
+            {
+                Sudate = -1;
+            }
+
+            M_Client selectCondition = new M_Client()
+            {
+                SoID = Sudate
+            };
+            clients = clientDataAccess.GetClientstextData(selectCondition);
+            gettextdate();
+        }
+
+
+        private void ClPhonetxt_TextChanged(object sender, EventArgs e)
+        {
+            string Sudate;
+            if (!String.IsNullOrEmpty(ClPhonetxt.Text.Trim()))
+            {
+                Sudate = ClPhonetxt.Text.Trim();
+            }
+            else
+            {
+                Sudate ="";
+            }
+
+            M_Client selectCondition = new M_Client()
+            {
+                ClPhone = Sudate
+            };
+            clients = clientDataAccess.GetClientstextData(selectCondition);
+
+            gettextdate();
+        }
+        private void gettextdate()
+        {
+            var x = clients.FirstOrDefault();
+            if (x == null)
+            {
+                return;
+            }
+            SOIDtxt.Text = x.SoID.ToString();
+            ClPhonetxt.Text = x.ClPhone;
+            addresstxt.Text = x.ClAddress;
+            ClPostaltxt.Text = x.ClPostal;
+            ClFaxtxt.Text = x.ClFAX;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            ClIDtxt.Text = "";
+            CLNametxt.Text = "";
+            SOIDtxt.Text = "";
+            ClPhonetxt.Text ="";
+            addresstxt.Text = "";
+            ClPostaltxt.Text = "";
+            ClFaxtxt.Text = "";
+        }
+
+        private void addresstxt_TextChanged(object sender, EventArgs e)
+        {
+            string Sudate;
+            if (!String.IsNullOrEmpty(addresstxt.Text.Trim()))
+            {
+                Sudate = addresstxt.Text.Trim();
+            }
+            else
+            {
+                Sudate = "";
+            }
+
+            M_Client selectCondition = new M_Client()
+            {
+                ClAddress = Sudate
+            };
+            clients = clientDataAccess.GetClientstextData(selectCondition);
+
+            gettextdate();
+        }
+
+        private void ClPostaltxt_TextChanged(object sender, EventArgs e)
+        {
+            string Sudate;
+            if (!String.IsNullOrEmpty(ClPostaltxt.Text.Trim()))
+            {
+                Sudate = ClPostaltxt.Text.Trim();
+            }
+            else
+            {
+                Sudate = "";
+            }
+
+            M_Client selectCondition = new M_Client()
+            {
+                ClPostal = Sudate
+            };
+            clients = clientDataAccess.GetClientstextData(selectCondition);
+
+            gettextdate();
+        }
+
+        private void ClFaxtxt_TextChanged(object sender, EventArgs e)
+        {
+            string Sudate;
+            if (!String.IsNullOrEmpty(ClFaxtxt.Text.Trim()))
+            {
+                Sudate = ClFaxtxt.Text.Trim();
+            }
+            else
+            {
+                Sudate = "";
+            }
+
+            M_Client selectCondition = new M_Client()
+            {
+                ClFAX = Sudate
+            };
+            clients = clientDataAccess.GetClientstextData(selectCondition);
+
+            gettextdate();
+        }
     }
 }
