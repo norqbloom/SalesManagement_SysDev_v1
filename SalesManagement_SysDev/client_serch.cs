@@ -153,11 +153,10 @@ namespace SalesManagement_SysDev
                 ClName = CLNametxt.Text.Trim(),
                 ClPhone = ClPhonetxt.Text.Trim(),
                 ClAddress = addresstxt.Text.Trim(),
-                ClFAX = ClPostaltxt.Text.Trim(),
-                ClPostal = ClFaxtxt.Text.Trim()
-            };
-            clients = clientDataAccess.GetSodata(selectCondition);
-
+                ClFAX = ClFaxtxt.Text.Trim(),
+                ClPostal = ClPostaltxt.Text.Trim()
+            }; 
+             clients = clientDataAccess.GetSodata(selectCondition);
         }
         private void datedubblwget()
         {
