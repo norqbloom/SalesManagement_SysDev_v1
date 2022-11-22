@@ -279,5 +279,9 @@ namespace SalesManagement_SysDev.Management_Client
             
         }
 
+        private void change_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
