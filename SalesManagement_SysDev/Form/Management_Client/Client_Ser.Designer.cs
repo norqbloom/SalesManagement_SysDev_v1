@@ -294,6 +294,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonSer.TabIndex = 33;
             this.buttonSer.Text = "検索";
             this.buttonSer.UseVisualStyleBackColor = true;
+            this.buttonSer.Click += new System.EventHandler(this.buttonSer_Click_1);
             // 
             // panel1
             // 
