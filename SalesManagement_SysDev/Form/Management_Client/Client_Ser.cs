@@ -216,7 +216,14 @@ namespace SalesManagement_SysDev.Management_Client
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            int number;
+            int ClIDtxt;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            label5.Text = ClIDtxt.ToString();
 
+            serchdateset(number);
+            setdatedetail();
         }
 
 

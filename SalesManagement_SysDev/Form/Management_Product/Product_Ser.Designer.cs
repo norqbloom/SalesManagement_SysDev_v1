@@ -32,7 +32,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.ButtonSer = new System.Windows.Forms.Button();
             this.textBoxPrColor = new System.Windows.Forms.TextBox();
             this.textBoxPrModelNumber = new System.Windows.Forms.TextBox();
-            this.textBoxScID = new System.Windows.Forms.TextBox();
             this.textBoxPrName = new System.Windows.Forms.TextBox();
             this.textBoxMaID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.ButtonDel = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.textBoxPageSize = new System.Windows.Forms.TextBox();
@@ -57,6 +55,8 @@ namespace SalesManagement_SysDev.Management_Product
             this.userid = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.Label();
             this.IDtxt = new System.Windows.Forms.Label();
+            this.textBoxScID = new System.Windows.Forms.TextBox();
+            this.labelPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,14 +86,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrModelNumber.TabIndex = 45;
-            // 
-            // textBoxScID
-            // 
-            this.textBoxScID.Location = new System.Drawing.Point(472, 76);
-            this.textBoxScID.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxScID.Name = "textBoxScID";
-            this.textBoxScID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxScID.TabIndex = 44;
             // 
             // textBoxPrName
             // 
@@ -200,17 +192,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.label1.TabIndex = 26;
             this.label1.Text = "商品ID";
             // 
-            // checkBoxPrFlag
-            // 
-            this.checkBoxPrFlag.AutoSize = true;
-            this.checkBoxPrFlag.Location = new System.Drawing.Point(377, 304);
-            this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
-            this.checkBoxPrFlag.TabIndex = 25;
-            this.checkBoxPrFlag.Text = "商品管理フラグ";
-            this.checkBoxPrFlag.UseVisualStyleBackColor = true;
-            // 
             // ButtonDel
             // 
             this.ButtonDel.Location = new System.Drawing.Point(697, 254);
@@ -314,11 +295,29 @@ namespace SalesManagement_SysDev.Management_Product
             this.IDtxt.TabIndex = 61;
             this.IDtxt.Text = "label15";
             // 
+            // textBoxScID
+            // 
+            this.textBoxScID.Location = new System.Drawing.Point(472, 76);
+            this.textBoxScID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxScID.Name = "textBoxScID";
+            this.textBoxScID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxScID.TabIndex = 44;
+            // 
+            // labelPage
+            // 
+            this.labelPage.AutoSize = true;
+            this.labelPage.Location = new System.Drawing.Point(174, 318);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(43, 15);
+            this.labelPage.TabIndex = 62;
+            this.labelPage.Text = "label4";
+            // 
             // Product_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1938, 788);
+            this.Controls.Add(this.labelPage);
             this.Controls.Add(this.IDtxt);
             this.Controls.Add(this.datetime);
             this.Controls.Add(this.userid);
@@ -346,7 +345,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBoxPrFlag);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Product_Ser";
             this.Text = "Product_Ser";
@@ -361,7 +359,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Button ButtonSer;
         private System.Windows.Forms.TextBox textBoxPrColor;
         private System.Windows.Forms.TextBox textBoxPrModelNumber;
-        private System.Windows.Forms.TextBox textBoxScID;
         private System.Windows.Forms.TextBox textBoxPrName;
         private System.Windows.Forms.TextBox textBoxMaID;
         private System.Windows.Forms.Label label10;
@@ -373,7 +370,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBoxPrFlag;
         private System.Windows.Forms.Button ButtonDel;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
         private System.Windows.Forms.TextBox textBoxPageSize;
@@ -386,5 +382,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label userid;
         private System.Windows.Forms.Label datetime;
         private System.Windows.Forms.Label IDtxt;
+        private System.Windows.Forms.TextBox textBoxScID;
+        private System.Windows.Forms.Label labelPage;
     }
 }

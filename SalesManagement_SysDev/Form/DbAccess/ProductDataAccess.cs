@@ -283,10 +283,15 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                product = context.M_Products.Where(x => 
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrFlag == 0 &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString())).ToList();
+                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
                 context.Dispose();
 
             }
@@ -304,9 +309,15 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                product = context.M_Products.Where(x =>
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrFlag == 0).ToList();
+                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
                 context.Dispose();
 
             }
@@ -324,9 +335,15 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x => x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                product = context.M_Products.Where(x => 
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrFlag == 0 ).ToList();
+                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
                 context.Dispose();
 
             }
@@ -344,8 +361,15 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x =>x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrFlag == 0 ).ToList();
+                product = context.M_Products.Where(x => 
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
                 context.Dispose();
 
             }
