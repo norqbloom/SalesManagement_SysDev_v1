@@ -193,6 +193,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dataGridViewDsp.RowTemplate.Height = 27;
             this.dataGridViewDsp.Size = new System.Drawing.Size(763, 198);
             this.dataGridViewDsp.TabIndex = 28;
+            this.dataGridViewDsp.SelectionChanged += new System.EventHandler(this.dataGridViewDsp_SelectionChanged);
             // 
             // textBoxPrID
             // 
@@ -218,7 +219,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag.Location = new System.Drawing.Point(407, 288);
             this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
+            this.checkBoxPrFlag.Size = new System.Drawing.Size(118, 19);
             this.checkBoxPrFlag.TabIndex = 25;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
@@ -264,7 +265,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(148, 42);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 54;
             this.label5.Text = "label5";
             // 
@@ -274,7 +275,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.upuserid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.upuserid.Location = new System.Drawing.Point(137, 352);
             this.upuserid.Name = "upuserid";
-            this.upuserid.Size = new System.Drawing.Size(63, 20);
+            this.upuserid.Size = new System.Drawing.Size(52, 16);
             this.upuserid.TabIndex = 56;
             this.upuserid.Text = "label6";
             // 
@@ -284,7 +285,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.uptime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.uptime.Location = new System.Drawing.Point(137, 302);
             this.uptime.Name = "uptime";
-            this.uptime.Size = new System.Drawing.Size(74, 20);
+            this.uptime.Size = new System.Drawing.Size(61, 16);
             this.uptime.TabIndex = 57;
             this.uptime.Text = "label11";
             // 
@@ -294,7 +295,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.username.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.username.Location = new System.Drawing.Point(148, 243);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(74, 20);
+            this.username.Size = new System.Drawing.Size(61, 16);
             this.username.TabIndex = 58;
             this.username.Text = "label12";
             // 
@@ -304,7 +305,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.upusername.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.upusername.Location = new System.Drawing.Point(148, 191);
             this.upusername.Name = "upusername";
-            this.upusername.Size = new System.Drawing.Size(74, 20);
+            this.upusername.Size = new System.Drawing.Size(61, 16);
             this.upusername.TabIndex = 59;
             this.upusername.Text = "label13";
             // 
@@ -314,7 +315,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.datetime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.datetime.Location = new System.Drawing.Point(148, 139);
             this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(74, 20);
+            this.datetime.Size = new System.Drawing.Size(61, 16);
             this.datetime.TabIndex = 60;
             this.datetime.Text = "label14";
             // 
@@ -324,7 +325,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.IDtxt.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.IDtxt.Location = new System.Drawing.Point(148, 91);
             this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(74, 20);
+            this.IDtxt.Size = new System.Drawing.Size(61, 16);
             this.IDtxt.TabIndex = 61;
             this.IDtxt.Text = "label15";
             // 
@@ -368,7 +369,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label16.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(31, 352);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 20);
+            this.label16.Size = new System.Drawing.Size(59, 16);
             this.label16.TabIndex = 68;
             this.label16.Text = "発売日";
             // 
@@ -378,7 +379,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label15.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label15.Location = new System.Drawing.Point(34, 302);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(30, 20);
+            this.label15.Size = new System.Drawing.Size(25, 16);
             this.label15.TabIndex = 67;
             this.label15.Text = "色";
             // 
@@ -388,7 +389,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label14.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label14.Location = new System.Drawing.Point(31, 243);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 20);
+            this.label14.Size = new System.Drawing.Size(75, 16);
             this.label14.TabIndex = 66;
             this.label14.Text = "小分類ID";
             // 
@@ -398,7 +399,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label13.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(34, 190);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 20);
+            this.label13.Size = new System.Drawing.Size(62, 16);
             this.label13.TabIndex = 65;
             this.label13.Text = "メーカID";
             // 
@@ -408,7 +409,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label12.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(33, 139);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 20);
+            this.label12.Size = new System.Drawing.Size(42, 16);
             this.label12.TabIndex = 64;
             this.label12.Text = "型番";
             // 
@@ -418,7 +419,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label11.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.Location = new System.Drawing.Point(32, 91);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 20);
+            this.label11.Size = new System.Drawing.Size(59, 16);
             this.label11.TabIndex = 63;
             this.label11.Text = "商品名";
             // 
@@ -428,7 +429,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(31, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 62;
             this.label6.Text = "商品ID";
             // 
@@ -461,6 +462,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonLastPage.TabIndex = 60;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
+            this.buttonLastPage.Click += new System.EventHandler(this.buttonLastPage_Click);
             // 
             // buttonNextPage
             // 
@@ -473,6 +475,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonNextPage.TabIndex = 59;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
             // 
             // buttonPreviousPage
             // 
@@ -484,6 +487,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonPreviousPage.TabIndex = 58;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
+            this.buttonPreviousPage.Click += new System.EventHandler(this.buttonPreviousPage_Click);
             // 
             // buttonFirstPage
             // 
@@ -496,6 +500,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonFirstPage.TabIndex = 57;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
+            this.buttonFirstPage.Click += new System.EventHandler(this.buttonFirstPage_Click);
             // 
             // change
             // 
@@ -508,6 +513,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.change.TabIndex = 56;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // labelPage
             // 
@@ -559,6 +565,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Product_Ser";
             this.Text = "Product_Ser";
+            this.Load += new System.EventHandler(this.Product_Ser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

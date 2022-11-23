@@ -14,7 +14,6 @@ namespace SalesManagement_SysDev.Management_Product
     {
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
-        ClientDataAccess clientDataAccess = new ClientDataAccess();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
         private static List<M_Prohistory> history;
@@ -46,7 +45,6 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Visible = true;
             upusername.Visible = true;
         }
-
         private void Product_Ser_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
@@ -76,13 +74,6 @@ namespace SalesManagement_SysDev.Management_Product
                     textBoxPrID.Focus();
                     return false;
                 }
-                //文字数　
-                if (textBoxPrID.TextLength > 6)
-                {
-                    messageDsp.DspMsg("M2002");//商品IDは6文字です
-                    textBoxPrID.Focus();
-                    return false;
-                }
             }
             //メーカIDの適否
             if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
@@ -92,24 +83,6 @@ namespace SalesManagement_SysDev.Management_Product
                 {
                     messageDsp.DspMsg("M2005");//メーカIDは半角数字入力です
                     textBoxMaID.Focus();
-                    return false;
-                }
-                //文字数　
-                if (textBoxPrID.TextLength != 6)
-                {
-                    messageDsp.DspMsg("M2006");//メーカIDは4文字です
-                    textBoxMaID.Focus();
-                    return false;
-                }
-            }
-            //商品名の適否
-            if (!String.IsNullOrEmpty(textBoxPrName.Text.Trim()))
-            {
-                //文字数
-                if (textBoxPrName.TextLength > 50)
-                {
-                    messageDsp.DspMsg("M2010");//商品名は50文字以下です
-                    textBoxPrName.Focus();
                     return false;
                 }
             }
@@ -123,36 +96,7 @@ namespace SalesManagement_SysDev.Management_Product
                     textBoxScID.Focus();
                     return false;
                 }
-                //文字数
-                if (textBoxScID.TextLength > 2)
-                {
-                    messageDsp.DspMsg("M2019");//小分類IDは2文字以下です
-                    textBoxScID.Focus();
-                    return false;
-                }
-            }
-            //型番の適否
-            if (!String.IsNullOrEmpty(textBoxPrModelNumber.Text.Trim()))
-            {
-                //文字数
-                if (textBoxPrModelNumber.TextLength > 20)
-                {
-                    messageDsp.DspMsg("M2022");//型番は20文字以下です
-                    textBoxPrModelNumber.Focus();
-                    return false;
-                }
-            }
-            //色の適否
-            if (!String.IsNullOrEmpty(textBoxPrColor.Text.Trim()))
-            {
-                //文字数
-                if (textBoxPrColor.TextLength > 20)
-                {
-                    messageDsp.DspMsg("M2025");//色は20文字以下です
-                    textBoxPrColor.Focus();
-                    return false;
-                }
-            }
+            }  
             return true;
         }
 
@@ -166,10 +110,12 @@ namespace SalesManagement_SysDev.Management_Product
                     if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
                     {
                         //全て入力されている
+                        datedubblwget();
                     }
                     else
                     {
                         //商品・メーカーのみ
+                        datePrMaget();
                     }
                 }
                 else
@@ -177,6 +123,7 @@ namespace SalesManagement_SysDev.Management_Product
                     if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
                     {
                        　//商品・小分類のみ
+                        datePrScget();
                     }
                 }
             }
@@ -185,24 +132,26 @@ namespace SalesManagement_SysDev.Management_Product
                 if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
                 {
                     //メーカー・小分類のみ
+                    dateMaScget();
                 }
                 else
                 {
                     //メーカーのみ
+                    dateMaget();
                 }
             }
             else if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
             {
                 //小分類のみ
+                dateScget();
             }
             else
             {
                 //何も入力されていない
+                datenolwget();
             }
 
-
-
-                if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
                 if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
@@ -297,6 +246,48 @@ namespace SalesManagement_SysDev.Management_Product
             products = productDataAccess.Getnodata(selectCondition);
 
         }
+        private void datePrMaget()
+        {
+            M_Product selectCondition = new M_Product()
+            {
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                MaID = int.Parse(textBoxMaID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+            };
+            products = productDataAccess.GetPrMadata(selectCondition);
+
+        }
+        private void datePrScget()
+        {
+            M_Product selectCondition = new M_Product()
+            {
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+            };
+            products = productDataAccess.GetPrScdata(selectCondition);
+
+        }
+        private void dateMaScget()
+        {
+            M_Product selectCondition = new M_Product()
+            {
+                ScID = int.Parse(textBoxScID.Text.Trim()),
+                MaID = int.Parse(textBoxMaID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+            };
+            products = productDataAccess.GetMaScdata(selectCondition);
+
+        }
         private void SetFormDataGridView()
         {
             dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -319,7 +310,8 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int ClIDtxt;
@@ -330,7 +322,6 @@ namespace SalesManagement_SysDev.Management_Product
             serchdateset(number);
             setdatedetail();
         }
-
         private void serchdateset(int number)
         {
 
@@ -358,8 +349,6 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
-
-
         }
         private void label9_Click(object sender, EventArgs e)
         {
@@ -373,5 +362,69 @@ namespace SalesManagement_SysDev.Management_Product
             upusername.Visible = false;
              */
         }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+            SetDataGridView();
+        }
+
+        private void buttonFirstPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            dataGridViewDsp.DataSource = products.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void buttonPreviousPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void buttonNextPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(products.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void buttonLastPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        
     }
-}
+    }

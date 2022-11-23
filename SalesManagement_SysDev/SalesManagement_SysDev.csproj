@@ -80,10 +80,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="client_serch.cs">
+    <Compile Include="Form\Management_Client\client_serch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="client_serch.Designer.cs">
+    <Compile Include="Form\Management_Client\client_serch.Designer.cs">
       <DependentUpon>client_serch.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\DataInputFormCheck.cs" />
@@ -136,12 +136,6 @@
     </Compile>
     <Compile Include="Form\Management_Chumon\Chumon_Ser.Designer.cs">
       <DependentUpon>Chumon_Ser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Management_Client\Client_Ser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Management_Client\Client_Ser.Designer.cs">
-      <DependentUpon>Client_Ser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Client\Client_Add.cs">
       <SubType>Form</SubType>
@@ -297,7 +291,7 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="client_serch.resx">
+    <EmbeddedResource Include="Form\Management_Client\client_serch.resx">
       <DependentUpon>client_serch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="empcnt.resx">
@@ -314,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Chumon\Chumon_Ser.resx">
       <DependentUpon>Chumon_Ser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Management_Client\Client_Ser.resx">
-      <DependentUpon>Client_Ser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Client\Client_Add.resx">
       <DependentUpon>Client_Add.cs</DependentUpon>

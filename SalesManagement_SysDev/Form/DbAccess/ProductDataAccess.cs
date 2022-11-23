@@ -253,20 +253,20 @@ namespace SalesManagement_SysDev
         //戻り値   ：表示用顧客データ
         //機　能   ：表示用顧客データの取得
         ///////////////////////////////
-        public List<M_Product> GetClientDspData()
+        public List<M_Product> GetProductDspData()
         {
-            List<M_Product> Client = new List<M_Product>();
+            List<M_Product> Product = new List<M_Product>();
             try
             {
                 var context = new SalesManagement_DevContext();
-                Client = context.M_Products.Where(x => x.PrFlag == 0).ToList();
+                Product = context.M_Products.Where(x => x.PrFlag == 0).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return Client;
+            return Product;
         }
 
         ///////////////////////////////
@@ -387,6 +387,84 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 product = context.M_Products.Where(x => 
                                                  x.PrFlag == 0&&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> GetPrMadata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                 x.PrFlag == 0 &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> GetPrScdata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrFlag == 0 &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        public List<M_Product> GetMaScdata(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrFlag == 0 &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
