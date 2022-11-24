@@ -111,11 +111,13 @@ namespace SalesManagement_SysDev.Management_Product
                     {
                         //全て入力されている
                         datedubblwget();
+                        return;
                     }
                     else
                     {
                         //商品・メーカーのみ
                         datePrMaget();
+                        return;
                     }
                 }
                 else
@@ -124,6 +126,7 @@ namespace SalesManagement_SysDev.Management_Product
                     {
                        　//商品・小分類のみ
                         datePrScget();
+                        return;
                     }
                 }
             }
@@ -133,22 +136,26 @@ namespace SalesManagement_SysDev.Management_Product
                 {
                     //メーカー・小分類のみ
                     dateMaScget();
+                    return;
                 }
                 else
                 {
                     //メーカーのみ
                     dateMaget();
+                    return;
                 }
             }
             else if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
             {
                 //小分類のみ
                 dateScget();
+                return;
             }
             else
             {
                 //何も入力されていない
                 datenolwget();
+                return;
             }
 
             if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))

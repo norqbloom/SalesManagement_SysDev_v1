@@ -31,7 +31,7 @@ namespace SalesManagement_SysDev.Management_Order
             if (!GetclientDataAtRegistration())
                 return;
             var regCl = GenerateDataAtRegistration();
-            RegistrationOrder(regOr);
+            RegistrationClient(regCl);
         }
 
         private bool GetclientDataAtRegistration()
@@ -145,14 +145,15 @@ namespace SalesManagement_SysDev.Management_Order
         }
         private void RegistrationClient(T_Order regClient)
         {
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            /*DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
                 return;
-            bool flg = orderDataAccess.AddClientData(regClient);
+            bool flg = OrderDateAccess.AddClientData(regClient);
             if (flg == true)
                 messageDsp.DspMsg("M1022");
             else
                 messageDsp.DspMsg("M1023");
+            */
 
         }
         private void Ord_Del_Button_Click(object sender, EventArgs e)
