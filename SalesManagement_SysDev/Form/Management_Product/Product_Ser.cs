@@ -182,14 +182,15 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void datePrget()
         {
+            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
+
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
-                
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim()).Date
             };
             products = productDataAccess.GetPrdata(selectCondition);
 
@@ -236,6 +237,8 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void datenolwget()
         {
+            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
+
             M_Product selectCondition = new M_Product()
             {
                 PrName = textBoxPrName.Text.Trim(),
@@ -243,11 +246,13 @@ namespace SalesManagement_SysDev.Management_Product
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
             };
+            MessageBox.Show(Dt.ToString("yyyy/MM/dd"));
             products = productDataAccess.Getnodata(selectCondition);
 
         }
         private void datePrMaget()
         {
+            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
@@ -255,7 +260,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+                PrReleaseDate = DateTime.Parse(Dt.ToString("yyyy/mm/dd"))
             };
             products = productDataAccess.GetPrMadata(selectCondition);
 
