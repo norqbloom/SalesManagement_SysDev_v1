@@ -16,6 +16,7 @@ namespace SalesManagement_SysDev.Management_Order
         MessageDsp messageDsp = new MessageDsp();
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+        OrderDateAccess orderDateAccess = new OrderDateAccess();
         public Order_Add()
         {
             InitializeComponent();
@@ -29,7 +30,8 @@ namespace SalesManagement_SysDev.Management_Order
             //登録
             if (!GetclientDataAtRegistration())
                 return;
-
+            var regCl = GenerateDataAtRegistration();
+            RegistrationOrder(regOr);
         }
 
         private bool GetclientDataAtRegistration()
@@ -117,11 +119,50 @@ namespace SalesManagement_SysDev.Management_Order
             }
             return true;
         }
+        private T_Order GenerateDataAtRegistration()
+        {
+            int checkflg;
+            if(checkBoxOrFlag.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+            return new T_Order
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+                OrStateFlag = int.Parse(checkBoxOrStateFlag.Text),
+                OrFlag = checkflg,
+                OrHidden = textBoxOrHidden.Text
+            };
+        }
+        private void RegistrationClient(T_Order regClient)
+        {
+            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+                return;
+            bool flg = orderDataAccess.AddClientData(regClient);
+            if (flg == true)
+                messageDsp.DspMsg("M1022");
+            else
+                messageDsp.DspMsg("M1023");
+
+        }
         private void Ord_Del_Button_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void checkBoxOrStateFlag_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
