@@ -389,8 +389,7 @@ namespace SalesManagement_SysDev
                                                  x.PrFlag == 0&&
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 x.PrColor.Contains(selectCondition.PrColor) 
                                                  ).ToList();
                 context.Dispose();
 
