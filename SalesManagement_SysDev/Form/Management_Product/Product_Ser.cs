@@ -158,7 +158,7 @@ namespace SalesManagement_SysDev.Management_Product
                 return;
             }
 
-            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+            /*if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
                 if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
@@ -182,6 +182,7 @@ namespace SalesManagement_SysDev.Management_Product
 
             }
 
+            */
         }
         private void SetSelectData()
         {
@@ -244,7 +245,6 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void datenolwget()
         {
-            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
 
             M_Product selectCondition = new M_Product()
             {
@@ -252,8 +252,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
-            };
-            MessageBox.Show(Dt.ToString("yyyy/MM/dd"));
+        };
             products = productDataAccess.Getnodata(selectCondition);
 
         }
@@ -267,7 +266,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(Dt.ToString("yyyy/mm/dd"))
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
             };
             products = productDataAccess.GetPrMadata(selectCondition);
 

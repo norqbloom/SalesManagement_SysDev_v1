@@ -466,7 +466,7 @@ namespace SalesManagement_SysDev
             // 
             // CLNametxt
             // 
-            this.CLNametxt.Location = new System.Drawing.Point(304, 82);
+            this.CLNametxt.Location = new System.Drawing.Point(215, 82);
             this.CLNametxt.Margin = new System.Windows.Forms.Padding(2);
             this.CLNametxt.Name = "CLNametxt";
             this.CLNametxt.Size = new System.Drawing.Size(115, 19);
@@ -475,7 +475,7 @@ namespace SalesManagement_SysDev
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 58);
+            this.label3.Location = new System.Drawing.Point(213, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
@@ -485,7 +485,7 @@ namespace SalesManagement_SysDev
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 131);
+            this.label2.Location = new System.Drawing.Point(213, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
@@ -504,7 +504,7 @@ namespace SalesManagement_SysDev
             // 
             // ClPhonetxt
             // 
-            this.ClPhonetxt.Location = new System.Drawing.Point(304, 154);
+            this.ClPhonetxt.Location = new System.Drawing.Point(215, 155);
             this.ClPhonetxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClPhonetxt.Name = "ClPhonetxt";
             this.ClPhonetxt.Size = new System.Drawing.Size(115, 19);
@@ -516,7 +516,7 @@ namespace SalesManagement_SysDev
             this.addresstxt.Location = new System.Drawing.Point(46, 228);
             this.addresstxt.Margin = new System.Windows.Forms.Padding(2);
             this.addresstxt.Name = "addresstxt";
-            this.addresstxt.Size = new System.Drawing.Size(184, 19);
+            this.addresstxt.Size = new System.Drawing.Size(115, 19);
             this.addresstxt.TabIndex = 15;
             this.addresstxt.TextChanged += new System.EventHandler(this.addresstxt_TextChanged);
             // 
@@ -532,7 +532,7 @@ namespace SalesManagement_SysDev
             // 
             // ClPostaltxt
             // 
-            this.ClPostaltxt.Location = new System.Drawing.Point(304, 228);
+            this.ClPostaltxt.Location = new System.Drawing.Point(215, 228);
             this.ClPostaltxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClPostaltxt.Name = "ClPostaltxt";
             this.ClPostaltxt.Size = new System.Drawing.Size(115, 19);
@@ -544,7 +544,7 @@ namespace SalesManagement_SysDev
             this.SOIDtxt.Location = new System.Drawing.Point(46, 153);
             this.SOIDtxt.Margin = new System.Windows.Forms.Padding(2);
             this.SOIDtxt.Name = "SOIDtxt";
-            this.SOIDtxt.Size = new System.Drawing.Size(184, 19);
+            this.SOIDtxt.Size = new System.Drawing.Size(115, 19);
             this.SOIDtxt.TabIndex = 1;
             this.SOIDtxt.TextChanged += new System.EventHandler(this.SOIDtxt_TextChanged);
             // 
@@ -560,7 +560,7 @@ namespace SalesManagement_SysDev
             // 
             // ClFaxtxt
             // 
-            this.ClFaxtxt.Location = new System.Drawing.Point(481, 228);
+            this.ClFaxtxt.Location = new System.Drawing.Point(362, 228);
             this.ClFaxtxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClFaxtxt.Name = "ClFaxtxt";
             this.ClFaxtxt.Size = new System.Drawing.Size(115, 19);
@@ -570,7 +570,7 @@ namespace SalesManagement_SysDev
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(302, 207);
+            this.label16.Location = new System.Drawing.Point(213, 207);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
@@ -580,7 +580,7 @@ namespace SalesManagement_SysDev
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(493, 207);
+            this.label15.Location = new System.Drawing.Point(360, 207);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(27, 12);
@@ -592,7 +592,7 @@ namespace SalesManagement_SysDev
             this.ClIDtxt.Location = new System.Drawing.Point(46, 82);
             this.ClIDtxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClIDtxt.Name = "ClIDtxt";
-            this.ClIDtxt.Size = new System.Drawing.Size(184, 19);
+            this.ClIDtxt.Size = new System.Drawing.Size(115, 19);
             this.ClIDtxt.TabIndex = 0;
             this.ClIDtxt.TextChanged += new System.EventHandler(this.ClIDtxt_TextChanged);
             // 
