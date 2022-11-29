@@ -558,7 +558,7 @@ namespace SalesManagement_SysDev
 
         private void RegPasswordbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new regPassword());
         }
     }
 }

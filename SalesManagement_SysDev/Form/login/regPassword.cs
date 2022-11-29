@@ -13,6 +13,10 @@ namespace SalesManagement_SysDev
     public partial class regPassword : Form
     {
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
+        DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+        PasswordHash passwordHash = new PasswordHash();
+
+
         public regPassword()
         {
             InitializeComponent();
@@ -46,6 +50,20 @@ namespace SalesManagement_SysDev
             //パスワード
             if (!String.IsNullOrEmpty(passtxt.Text.Trim()))
             {
+                //文字型
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(passtxt.Text.Trim()))
+                {
+                    MessageBox.Show("パスワードは半角英数字");
+                    passtxt.Focus();
+                    return false;
+                }
+                //soid文字数チェック
+                if (passtxt.TextLength > 10)
+                {
+                    MessageBox.Show("パスワードは文字数は10文字");
+                    passtxt.Focus();
+                    return false;
+                }
                 if (!String.IsNullOrEmpty(passcontxt.Text.Trim()))
                 {
                     if (passtxt == passcontxt)
@@ -66,15 +84,18 @@ namespace SalesManagement_SysDev
                 return false;
             }
 
+
             return true;
         }
         private M_Employee uppasswors()
         {
             var context = new SalesManagement_DevContext();
+            string pw = passwordHash.CreatePasswordHash(passtxt.Text.Trim());
+
             return new M_Employee
             {
                 EmID=int.Parse(EmpIDtxt.Text.Trim()),
-                EmPassword = passtxt.Text.Trim()
+                EmPassword = pw
             };
 
         }
