@@ -555,5 +555,10 @@ namespace SalesManagement_SysDev
         {
             openChildForm(new Management_Shipment.Shipment_View());
         }
+
+        private void RegPasswordbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

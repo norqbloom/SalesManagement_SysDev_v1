@@ -31,6 +31,10 @@ namespace SalesManagement_SysDev
         {
             this.components = new System.ComponentModel.Container();
             this.sidepanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.RegPasswordbtn = new System.Windows.Forms.Button();
+            this.loginhistorybtn = new System.Windows.Forms.Button();
+            this.loginbtn = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.shipping_display = new System.Windows.Forms.Button();
@@ -96,11 +100,8 @@ namespace SalesManagement_SysDev
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.comitbtn = new System.Windows.Forms.Button();
-            this.loginbtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.RegPasswordbtn = new System.Windows.Forms.Button();
-            this.loginhistorybtn = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -118,7 +119,6 @@ namespace SalesManagement_SysDev
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidepanel
@@ -160,6 +160,73 @@ namespace SalesManagement_SysDev
             this.sidepanel.Size = new System.Drawing.Size(262, 652);
             this.sidepanel.TabIndex = 0;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Controls.Add(this.RegPasswordbtn);
+            this.panel1.Controls.Add(this.loginhistorybtn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 1542);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(241, 68);
+            this.panel1.TabIndex = 27;
+            // 
+            // RegPasswordbtn
+            // 
+            this.RegPasswordbtn.BackColor = System.Drawing.Color.Transparent;
+            this.RegPasswordbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RegPasswordbtn.FlatAppearance.BorderSize = 0;
+            this.RegPasswordbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegPasswordbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.RegPasswordbtn.ForeColor = System.Drawing.Color.White;
+            this.RegPasswordbtn.Location = new System.Drawing.Point(0, 32);
+            this.RegPasswordbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.RegPasswordbtn.Name = "RegPasswordbtn";
+            this.RegPasswordbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.RegPasswordbtn.Size = new System.Drawing.Size(241, 31);
+            this.RegPasswordbtn.TabIndex = 2;
+            this.RegPasswordbtn.Text = "パスワード登録";
+            this.RegPasswordbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegPasswordbtn.UseVisualStyleBackColor = false;
+            this.RegPasswordbtn.Click += new System.EventHandler(this.RegPasswordbtn_Click);
+            // 
+            // loginhistorybtn
+            // 
+            this.loginhistorybtn.BackColor = System.Drawing.Color.Transparent;
+            this.loginhistorybtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.loginhistorybtn.FlatAppearance.BorderSize = 0;
+            this.loginhistorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginhistorybtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.loginhistorybtn.ForeColor = System.Drawing.Color.White;
+            this.loginhistorybtn.Location = new System.Drawing.Point(0, 0);
+            this.loginhistorybtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loginhistorybtn.Name = "loginhistorybtn";
+            this.loginhistorybtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.loginhistorybtn.Size = new System.Drawing.Size(241, 32);
+            this.loginhistorybtn.TabIndex = 1;
+            this.loginhistorybtn.Text = "ログイン履歴";
+            this.loginhistorybtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loginhistorybtn.UseVisualStyleBackColor = false;
+            // 
+            // loginbtn
+            // 
+            this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.loginbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.loginbtn.FlatAppearance.BorderSize = 0;
+            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbtn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.loginbtn.ForeColor = System.Drawing.Color.White;
+            this.loginbtn.Location = new System.Drawing.Point(0, 1488);
+            this.loginbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.loginbtn.Size = new System.Drawing.Size(241, 54);
+            this.loginbtn.TabIndex = 26;
+            this.loginbtn.Text = "ログイン管理";
+            this.loginbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loginbtn.UseVisualStyleBackColor = false;
             // 
             // logout
             // 
@@ -1189,72 +1256,6 @@ namespace SalesManagement_SysDev
             this.comitbtn.UseVisualStyleBackColor = true;
             this.comitbtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // loginbtn
-            // 
-            this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
-            this.loginbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.loginbtn.FlatAppearance.BorderSize = 0;
-            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginbtn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(0, 1488);
-            this.loginbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.loginbtn.Size = new System.Drawing.Size(241, 54);
-            this.loginbtn.TabIndex = 26;
-            this.loginbtn.Text = "ログイン管理";
-            this.loginbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginbtn.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Controls.Add(this.RegPasswordbtn);
-            this.panel1.Controls.Add(this.loginhistorybtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 1542);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(241, 68);
-            this.panel1.TabIndex = 27;
-            // 
-            // RegPasswordbtn
-            // 
-            this.RegPasswordbtn.BackColor = System.Drawing.Color.Transparent;
-            this.RegPasswordbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RegPasswordbtn.FlatAppearance.BorderSize = 0;
-            this.RegPasswordbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegPasswordbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.RegPasswordbtn.ForeColor = System.Drawing.Color.White;
-            this.RegPasswordbtn.Location = new System.Drawing.Point(0, 32);
-            this.RegPasswordbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.RegPasswordbtn.Name = "RegPasswordbtn";
-            this.RegPasswordbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.RegPasswordbtn.Size = new System.Drawing.Size(241, 31);
-            this.RegPasswordbtn.TabIndex = 2;
-            this.RegPasswordbtn.Text = "パスワード登録";
-            this.RegPasswordbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegPasswordbtn.UseVisualStyleBackColor = false;
-            // 
-            // loginhistorybtn
-            // 
-            this.loginhistorybtn.BackColor = System.Drawing.Color.Transparent;
-            this.loginhistorybtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.loginhistorybtn.FlatAppearance.BorderSize = 0;
-            this.loginhistorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginhistorybtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.loginhistorybtn.ForeColor = System.Drawing.Color.White;
-            this.loginhistorybtn.Location = new System.Drawing.Point(0, 0);
-            this.loginhistorybtn.Margin = new System.Windows.Forms.Padding(2);
-            this.loginhistorybtn.Name = "loginhistorybtn";
-            this.loginhistorybtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.loginhistorybtn.Size = new System.Drawing.Size(241, 32);
-            this.loginhistorybtn.TabIndex = 1;
-            this.loginhistorybtn.Text = "ログイン履歴";
-            this.loginhistorybtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginhistorybtn.UseVisualStyleBackColor = false;
-            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1274,6 +1275,7 @@ namespace SalesManagement_SysDev
             this.Load += new System.EventHandler(this.template_Load);
             this.Resize += new System.EventHandler(this.template_Resize);
             this.sidepanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
@@ -1294,7 +1296,6 @@ namespace SalesManagement_SysDev
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

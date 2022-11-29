@@ -259,7 +259,7 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim()),
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim(),
                 PrFlag = checkflg,
                 PrHidden = textBoxPrHidden.Text.Trim()
             };

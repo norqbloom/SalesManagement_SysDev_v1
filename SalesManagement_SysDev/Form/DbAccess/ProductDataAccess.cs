@@ -381,7 +381,6 @@ namespace SalesManagement_SysDev
         {
             List<M_Product> product = new List<M_Product>();
 
-            string dt = selectCondition.PrReleaseDate.ToString("yyyy/MM//dd");
             //MessageBox.Show(selectCondition.PrReleaseDate.ToString());
             try
             {
@@ -391,7 +390,7 @@ namespace SalesManagement_SysDev
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(dt)
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate)
                                                  ).ToList();
                 context.Dispose();
 

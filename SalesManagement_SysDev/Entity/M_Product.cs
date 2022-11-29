@@ -28,9 +28,7 @@ namespace SalesManagement_SysDev
         [MaxLength(20)]
         [Required]
         public String PrColor { get; set; }         //色		
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public DateTime PrReleaseDate { get; set; } //発売日		
+        public String PrReleaseDate { get; set; } //発売日		
         public int PrFlag { get; set; }             //商品管理フラグ
         public String PrHidden { get; set; }	    //非表示理由		
     } 

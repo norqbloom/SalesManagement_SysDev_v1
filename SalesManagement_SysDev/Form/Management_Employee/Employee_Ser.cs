@@ -28,7 +28,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
             GenerateDataAtSelect();
 
-            SetSelectData();
+            //SetSelectData();
         }
         private bool GetClientDataAtSelect()
         {
