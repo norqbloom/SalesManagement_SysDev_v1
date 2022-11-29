@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Emphistory.cs" />
     <Compile Include="Form\Management_Client\client_serch.cs">
       <SubType>Form</SubType>
     </Compile>

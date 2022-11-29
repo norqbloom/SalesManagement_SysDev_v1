@@ -48,6 +48,7 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
+            
             SetFormDataGridView();
             invcnt();
         }
@@ -197,7 +198,7 @@ namespace SalesManagement_SysDev
 
         }
         private void SetDataGridView()
-        {
+        {         
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
