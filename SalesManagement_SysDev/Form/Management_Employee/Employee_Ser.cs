@@ -14,6 +14,7 @@ namespace SalesManagement_SysDev.Management_Employee
     {
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
+        private static List<M_Employee> employees;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         public Employee_Ser()
         {
@@ -26,9 +27,9 @@ namespace SalesManagement_SysDev.Management_Employee
             if (!GetClientDataAtSelect())
                 return;
 
-            //GenerateDataAtSelect();
+            GenerateDataAtSelect();
 
-           //SetSelectData();
+            SetSelectData();
         }
         private bool GetClientDataAtSelect()
         {
@@ -42,6 +43,169 @@ namespace SalesManagement_SysDev.Management_Employee
                     return false;
                 }
             }
+            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            {
+                //数字チェック
+                if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1001");
+                    textBoxSoID.Focus();
+                    return false;
+                }
+            }
+            if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+            {
+                //数字チェック
+                if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1001");
+                    textBoxPoID.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+        private void GenerateDataAtSelect()
+        {
+            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            {
+                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                {
+                    if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                    {
+                        //全て入力されている
+                        datedubblwget();
+                        return;
+                    }
+                    else
+                    {
+                        //Em・Soのみ
+                        datePrMaget();
+                        return;
+                    }
+                }
+                else
+                {
+                    if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                    {
+                       　//Em・Poのみ
+                        datePrScget();
+                        return;
+                    }
+                }
+            }
+            else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            {
+                if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                {
+                    //So・Poのみ
+                    dateMaScget();
+                    return;
+                }
+                else
+                {
+                    //Soのみ
+                    dateMaget();
+                    return;
+                }
+            }
+            else if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+            {
+                //Poのみ
+                dateScget();
+                return;
+            }
+            else
+            {
+                //何も入力されていない
+                datenolwget();
+                return;
+            }
+        }
+        private void SetSelectData()
+        {
+            dataGridView1.DataSource = employees;
+        }
+        private void datedubblwget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                PoID = int.Parse(textBoxPoID.Text.Trim()),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.Getdubblwdata(selectCondition);
+        }
+        private void datePrMaget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.GetPrMaget(selectCondition);
+        }
+        private void datePrScget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                PoID = int.Parse(textBoxPoID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.GetPrScget(selectCondition);
+        }
+        private void dateMaScget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                PoID = int.Parse(textBoxPoID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.GetMaScget(selectCondition);
+        }
+        private void dateMaget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.GetMaget(selectCondition);
+        }
+        private void dateScget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                PoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.GetScget(selectCondition);
+        }
+        private void datenolwget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.Getnolwget(selectCondition);
         }
     }
 }
