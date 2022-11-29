@@ -23,7 +23,7 @@ namespace SalesManagement_SysDev.Management_Client
             InitializeComponent();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void Cli_Upd_Click(object sender, EventArgs e)
         {
             // 8.2.1.1 妥当な役職データ取得
             if (!GetclientDataAtRegistration())
@@ -64,7 +64,7 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClID.Focus();
                 return false;
             }
-
+           
             //営業所ID
             if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
             {
@@ -73,11 +73,17 @@ namespace SalesManagement_SysDev.Management_Client
                 {
                     messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
-                    return false;
+                    return false; 
                 }
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("営業所IDは2文字です");
+                    messageDsp.DspMsg("M1006");
+                    textBoxSoID.Focus();
+                    return false;
+                }
+                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
+                {
+                    messageDsp.DspMsg("M1007");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -122,7 +128,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("郵便番号が入力されていません。");
+                MessageBox.Show("郵便番号が入力されていません。"); //messageDsp.DspMsg("M1031");
                 textBoxClPostal.Focus();
                 return false;
             }
@@ -131,7 +137,7 @@ namespace SalesManagement_SysDev.Management_Client
             {
                 if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
                 {
-                    MessageBox.Show("住所は全角入力です");
+                    MessageBox.Show("住所は全角入力です"); //messageDsp.DspMsg("M1032");
                     textBoxClAddress.Focus();
                     return false;
                 }
@@ -144,10 +150,11 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("住所が入力されていません。");
+                MessageBox.Show("住所が入力されていません。"); //messageDsp.DspMsg("M1033");
                 textBoxClPostal.Focus();
                 return false;
             }
+            //FAX
             if (!String.IsNullOrEmpty(textBoxClFAX.Text.Trim()))
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxClFAX.Text.Trim()))
@@ -165,10 +172,11 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("FAXが入力されていません。");
+                MessageBox.Show("FAXが入力されていません。"); //messageDsp.DspMsg("M1034");
                 textBoxClFAX.Focus();
                 return false;
             }
+            //電話番号
             if (!String.IsNullOrEmpty(textBoxClPhone.Text.Trim()))
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxClPhone.Text.Trim()))
@@ -273,9 +281,5 @@ namespace SalesManagement_SysDev.Management_Client
             
         }
 
-        private void change_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
