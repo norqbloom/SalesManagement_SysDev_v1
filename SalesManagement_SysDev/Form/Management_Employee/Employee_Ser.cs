@@ -42,6 +42,11 @@ namespace SalesManagement_SysDev.Management_Employee
                     return false;
                 }
             }
+            return true;
+        }
+        private void GenerateDataAtSelect()
+        {
+
         }
     }
 }
