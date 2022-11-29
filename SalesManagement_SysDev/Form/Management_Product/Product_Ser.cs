@@ -198,7 +198,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim()).Date
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrdata(selectCondition);
 
@@ -210,7 +210,7 @@ namespace SalesManagement_SysDev.Management_Product
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetMadata(selectCondition);
 
@@ -225,7 +225,7 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.Getdubblwdata(selectCondition);
 
@@ -238,7 +238,7 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetScdata(selectCondition);
 
@@ -251,7 +251,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+                PrReleaseDate =dateTimePickerPrReleaseDate.Text.Trim()
         };
             products = productDataAccess.Getnodata(selectCondition);
 
@@ -266,7 +266,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrMadata(selectCondition);
 
@@ -280,7 +280,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrScdata(selectCondition);
 
@@ -294,7 +294,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
+                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetMaScdata(selectCondition);
 

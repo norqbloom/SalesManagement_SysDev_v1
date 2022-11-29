@@ -153,11 +153,21 @@ namespace SalesManagement_SysDev.Management_Order
             //    messageDsp.DspMsg("M1022");
             //else
             //    messageDsp.DspMsg("M1023");
+            
 
         }
         private void Ord_Del_Button_Click(object sender, EventArgs e)
         {
+            DialogResult result;
+            if (String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
+            {
+                MessageBox.Show("M4015", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxOrID.Focus();
+                return;
 
+            }
+            result = MessageBox.Show("M4011");
+            
         }
 
         private void checkBoxOrStateFlag_CheckedChanged(object sender, EventArgs e)

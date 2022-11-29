@@ -31,6 +31,10 @@ namespace SalesManagement_SysDev
         {
             this.components = new System.ComponentModel.Container();
             this.sidepanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.RegPasswordbtn = new System.Windows.Forms.Button();
+            this.loginhistorybtn = new System.Windows.Forms.Button();
+            this.loginbtn = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.shipping_display = new System.Windows.Forms.Button();
@@ -97,6 +101,7 @@ namespace SalesManagement_SysDev
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.comitbtn = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -120,6 +125,8 @@ namespace SalesManagement_SysDev
             // 
             this.sidepanel.AutoScroll = true;
             this.sidepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.sidepanel.Controls.Add(this.panel1);
+            this.sidepanel.Controls.Add(this.loginbtn);
             this.sidepanel.Controls.Add(this.logout);
             this.sidepanel.Controls.Add(this.panel14);
             this.sidepanel.Controls.Add(this.shipping_btn);
@@ -154,6 +161,73 @@ namespace SalesManagement_SysDev
             this.sidepanel.TabIndex = 0;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Controls.Add(this.RegPasswordbtn);
+            this.panel1.Controls.Add(this.loginhistorybtn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 1542);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(241, 68);
+            this.panel1.TabIndex = 27;
+            // 
+            // RegPasswordbtn
+            // 
+            this.RegPasswordbtn.BackColor = System.Drawing.Color.Transparent;
+            this.RegPasswordbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RegPasswordbtn.FlatAppearance.BorderSize = 0;
+            this.RegPasswordbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegPasswordbtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.RegPasswordbtn.ForeColor = System.Drawing.Color.White;
+            this.RegPasswordbtn.Location = new System.Drawing.Point(0, 32);
+            this.RegPasswordbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.RegPasswordbtn.Name = "RegPasswordbtn";
+            this.RegPasswordbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.RegPasswordbtn.Size = new System.Drawing.Size(241, 31);
+            this.RegPasswordbtn.TabIndex = 2;
+            this.RegPasswordbtn.Text = "パスワード登録";
+            this.RegPasswordbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegPasswordbtn.UseVisualStyleBackColor = false;
+            this.RegPasswordbtn.Click += new System.EventHandler(this.RegPasswordbtn_Click);
+            // 
+            // loginhistorybtn
+            // 
+            this.loginhistorybtn.BackColor = System.Drawing.Color.Transparent;
+            this.loginhistorybtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.loginhistorybtn.FlatAppearance.BorderSize = 0;
+            this.loginhistorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginhistorybtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.loginhistorybtn.ForeColor = System.Drawing.Color.White;
+            this.loginhistorybtn.Location = new System.Drawing.Point(0, 0);
+            this.loginhistorybtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loginhistorybtn.Name = "loginhistorybtn";
+            this.loginhistorybtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.loginhistorybtn.Size = new System.Drawing.Size(241, 32);
+            this.loginhistorybtn.TabIndex = 1;
+            this.loginhistorybtn.Text = "ログイン履歴";
+            this.loginhistorybtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loginhistorybtn.UseVisualStyleBackColor = false;
+            // 
+            // loginbtn
+            // 
+            this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.loginbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.loginbtn.FlatAppearance.BorderSize = 0;
+            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbtn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.loginbtn.ForeColor = System.Drawing.Color.White;
+            this.loginbtn.Location = new System.Drawing.Point(0, 1488);
+            this.loginbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.loginbtn.Size = new System.Drawing.Size(241, 54);
+            this.loginbtn.TabIndex = 26;
+            this.loginbtn.Text = "ログイン管理";
+            this.loginbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loginbtn.UseVisualStyleBackColor = false;
+            // 
             // logout
             // 
             this.logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
@@ -162,11 +236,11 @@ namespace SalesManagement_SysDev
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.logout.ForeColor = System.Drawing.Color.White;
-            this.logout.Location = new System.Drawing.Point(0, 1488);
+            this.logout.Location = new System.Drawing.Point(0, 1610);
             this.logout.Margin = new System.Windows.Forms.Padding(2);
             this.logout.Name = "logout";
             this.logout.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.logout.Size = new System.Drawing.Size(245, 54);
+            this.logout.Size = new System.Drawing.Size(241, 54);
             this.logout.TabIndex = 25;
             this.logout.Text = "ログアウト";
             this.logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +255,7 @@ namespace SalesManagement_SysDev
             this.panel14.Location = new System.Drawing.Point(0, 1455);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(245, 33);
+            this.panel14.Size = new System.Drawing.Size(241, 33);
             this.panel14.TabIndex = 24;
             // 
             // shipping_display
@@ -196,7 +270,7 @@ namespace SalesManagement_SysDev
             this.shipping_display.Margin = new System.Windows.Forms.Padding(2);
             this.shipping_display.Name = "shipping_display";
             this.shipping_display.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.shipping_display.Size = new System.Drawing.Size(245, 31);
+            this.shipping_display.Size = new System.Drawing.Size(241, 31);
             this.shipping_display.TabIndex = 2;
             this.shipping_display.Text = "表示";
             this.shipping_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,7 +289,7 @@ namespace SalesManagement_SysDev
             this.shipping_btn.Margin = new System.Windows.Forms.Padding(2);
             this.shipping_btn.Name = "shipping_btn";
             this.shipping_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.shipping_btn.Size = new System.Drawing.Size(245, 54);
+            this.shipping_btn.Size = new System.Drawing.Size(241, 54);
             this.shipping_btn.TabIndex = 23;
             this.shipping_btn.Text = "出荷管理";
             this.shipping_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,7 +304,7 @@ namespace SalesManagement_SysDev
             this.panel13.Location = new System.Drawing.Point(0, 1368);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(245, 33);
+            this.panel13.Size = new System.Drawing.Size(241, 33);
             this.panel13.TabIndex = 22;
             // 
             // Arrival_display
@@ -245,7 +319,7 @@ namespace SalesManagement_SysDev
             this.Arrival_display.Margin = new System.Windows.Forms.Padding(2);
             this.Arrival_display.Name = "Arrival_display";
             this.Arrival_display.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.Arrival_display.Size = new System.Drawing.Size(245, 31);
+            this.Arrival_display.Size = new System.Drawing.Size(241, 31);
             this.Arrival_display.TabIndex = 2;
             this.Arrival_display.Text = "表示";
             this.Arrival_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,7 +338,7 @@ namespace SalesManagement_SysDev
             this.Arrival_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Arrival_btn.Name = "Arrival_btn";
             this.Arrival_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Arrival_btn.Size = new System.Drawing.Size(245, 54);
+            this.Arrival_btn.Size = new System.Drawing.Size(241, 54);
             this.Arrival_btn.TabIndex = 21;
             this.Arrival_btn.Text = "入荷管理";
             this.Arrival_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,7 +353,7 @@ namespace SalesManagement_SysDev
             this.panel12.Location = new System.Drawing.Point(0, 1281);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(245, 33);
+            this.panel12.Size = new System.Drawing.Size(241, 33);
             this.panel12.TabIndex = 20;
             // 
             // issue_display
@@ -294,7 +368,7 @@ namespace SalesManagement_SysDev
             this.issue_display.Margin = new System.Windows.Forms.Padding(2);
             this.issue_display.Name = "issue_display";
             this.issue_display.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.issue_display.Size = new System.Drawing.Size(245, 31);
+            this.issue_display.Size = new System.Drawing.Size(241, 31);
             this.issue_display.TabIndex = 2;
             this.issue_display.Text = "表示";
             this.issue_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,7 +387,7 @@ namespace SalesManagement_SysDev
             this.issue_btn.Margin = new System.Windows.Forms.Padding(2);
             this.issue_btn.Name = "issue_btn";
             this.issue_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.issue_btn.Size = new System.Drawing.Size(245, 54);
+            this.issue_btn.Size = new System.Drawing.Size(241, 54);
             this.issue_btn.TabIndex = 19;
             this.issue_btn.Text = "出庫管理";
             this.issue_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,7 +402,7 @@ namespace SalesManagement_SysDev
             this.panel11.Location = new System.Drawing.Point(0, 1194);
             this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(245, 33);
+            this.panel11.Size = new System.Drawing.Size(241, 33);
             this.panel11.TabIndex = 18;
             // 
             // warehousing_display
@@ -343,7 +417,7 @@ namespace SalesManagement_SysDev
             this.warehousing_display.Margin = new System.Windows.Forms.Padding(2);
             this.warehousing_display.Name = "warehousing_display";
             this.warehousing_display.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.warehousing_display.Size = new System.Drawing.Size(245, 31);
+            this.warehousing_display.Size = new System.Drawing.Size(241, 31);
             this.warehousing_display.TabIndex = 2;
             this.warehousing_display.Text = "表示";
             this.warehousing_display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -362,7 +436,7 @@ namespace SalesManagement_SysDev
             this.warehousing_btn.Margin = new System.Windows.Forms.Padding(2);
             this.warehousing_btn.Name = "warehousing_btn";
             this.warehousing_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.warehousing_btn.Size = new System.Drawing.Size(245, 54);
+            this.warehousing_btn.Size = new System.Drawing.Size(241, 54);
             this.warehousing_btn.TabIndex = 17;
             this.warehousing_btn.Text = "入庫管理";
             this.warehousing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,7 +453,7 @@ namespace SalesManagement_SysDev
             this.instructsubmeun.Location = new System.Drawing.Point(0, 1040);
             this.instructsubmeun.Margin = new System.Windows.Forms.Padding(2);
             this.instructsubmeun.Name = "instructsubmeun";
-            this.instructsubmeun.Size = new System.Drawing.Size(245, 100);
+            this.instructsubmeun.Size = new System.Drawing.Size(241, 100);
             this.instructsubmeun.TabIndex = 16;
             // 
             // instruct_serchbtn
@@ -394,7 +468,7 @@ namespace SalesManagement_SysDev
             this.instruct_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.instruct_serchbtn.Name = "instruct_serchbtn";
             this.instruct_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.instruct_serchbtn.Size = new System.Drawing.Size(245, 31);
+            this.instruct_serchbtn.Size = new System.Drawing.Size(241, 31);
             this.instruct_serchbtn.TabIndex = 2;
             this.instruct_serchbtn.Text = "検索";
             this.instruct_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,7 +487,7 @@ namespace SalesManagement_SysDev
             this.instruct_upbtn.Margin = new System.Windows.Forms.Padding(2);
             this.instruct_upbtn.Name = "instruct_upbtn";
             this.instruct_upbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.instruct_upbtn.Size = new System.Drawing.Size(245, 32);
+            this.instruct_upbtn.Size = new System.Drawing.Size(241, 32);
             this.instruct_upbtn.TabIndex = 1;
             this.instruct_upbtn.Text = "更新";
             this.instruct_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -432,7 +506,7 @@ namespace SalesManagement_SysDev
             this.instruct_regbtn.Margin = new System.Windows.Forms.Padding(2);
             this.instruct_regbtn.Name = "instruct_regbtn";
             this.instruct_regbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.instruct_regbtn.Size = new System.Drawing.Size(245, 32);
+            this.instruct_regbtn.Size = new System.Drawing.Size(241, 32);
             this.instruct_regbtn.TabIndex = 0;
             this.instruct_regbtn.Text = "登録";
             this.instruct_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -451,7 +525,7 @@ namespace SalesManagement_SysDev
             this.instruct_btn.Margin = new System.Windows.Forms.Padding(2);
             this.instruct_btn.Name = "instruct_btn";
             this.instruct_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.instruct_btn.Size = new System.Drawing.Size(245, 54);
+            this.instruct_btn.Size = new System.Drawing.Size(241, 54);
             this.instruct_btn.TabIndex = 15;
             this.instruct_btn.Text = "発注管理";
             this.instruct_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -466,7 +540,7 @@ namespace SalesManagement_SysDev
             this.panel9.Location = new System.Drawing.Point(0, 953);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(245, 33);
+            this.panel9.Size = new System.Drawing.Size(241, 33);
             this.panel9.TabIndex = 14;
             // 
             // order_serchbtn
@@ -481,7 +555,7 @@ namespace SalesManagement_SysDev
             this.order_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.order_serchbtn.Name = "order_serchbtn";
             this.order_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.order_serchbtn.Size = new System.Drawing.Size(245, 31);
+            this.order_serchbtn.Size = new System.Drawing.Size(241, 31);
             this.order_serchbtn.TabIndex = 2;
             this.order_serchbtn.Text = "検索";
             this.order_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -500,7 +574,7 @@ namespace SalesManagement_SysDev
             this.order_btn.Margin = new System.Windows.Forms.Padding(2);
             this.order_btn.Name = "order_btn";
             this.order_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.order_btn.Size = new System.Drawing.Size(245, 54);
+            this.order_btn.Size = new System.Drawing.Size(241, 54);
             this.order_btn.TabIndex = 13;
             this.order_btn.Text = "注文管理";
             this.order_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,7 +590,7 @@ namespace SalesManagement_SysDev
             this.receivedsubmenu.Location = new System.Drawing.Point(0, 833);
             this.receivedsubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.receivedsubmenu.Name = "receivedsubmenu";
-            this.receivedsubmenu.Size = new System.Drawing.Size(245, 66);
+            this.receivedsubmenu.Size = new System.Drawing.Size(241, 66);
             this.receivedsubmenu.TabIndex = 12;
             // 
             // received_upbtn
@@ -531,7 +605,7 @@ namespace SalesManagement_SysDev
             this.received_upbtn.Margin = new System.Windows.Forms.Padding(2);
             this.received_upbtn.Name = "received_upbtn";
             this.received_upbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.received_upbtn.Size = new System.Drawing.Size(245, 31);
+            this.received_upbtn.Size = new System.Drawing.Size(241, 31);
             this.received_upbtn.TabIndex = 2;
             this.received_upbtn.Text = "検索";
             this.received_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -550,7 +624,7 @@ namespace SalesManagement_SysDev
             this.received_regbtn.Margin = new System.Windows.Forms.Padding(2);
             this.received_regbtn.Name = "received_regbtn";
             this.received_regbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.received_regbtn.Size = new System.Drawing.Size(245, 32);
+            this.received_regbtn.Size = new System.Drawing.Size(241, 32);
             this.received_regbtn.TabIndex = 0;
             this.received_regbtn.Text = "登録";
             this.received_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -569,7 +643,7 @@ namespace SalesManagement_SysDev
             this.received_btn.Margin = new System.Windows.Forms.Padding(2);
             this.received_btn.Name = "received_btn";
             this.received_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.received_btn.Size = new System.Drawing.Size(245, 54);
+            this.received_btn.Size = new System.Drawing.Size(241, 54);
             this.received_btn.TabIndex = 11;
             this.received_btn.Text = "受注管理";
             this.received_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -584,7 +658,7 @@ namespace SalesManagement_SysDev
             this.panel7.Location = new System.Drawing.Point(0, 746);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(245, 33);
+            this.panel7.Size = new System.Drawing.Size(241, 33);
             this.panel7.TabIndex = 10;
             // 
             // Earnings_serchbtn
@@ -599,7 +673,7 @@ namespace SalesManagement_SysDev
             this.Earnings_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Earnings_serchbtn.Name = "Earnings_serchbtn";
             this.Earnings_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.Earnings_serchbtn.Size = new System.Drawing.Size(245, 33);
+            this.Earnings_serchbtn.Size = new System.Drawing.Size(241, 33);
             this.Earnings_serchbtn.TabIndex = 2;
             this.Earnings_serchbtn.Text = "検索";
             this.Earnings_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -618,7 +692,7 @@ namespace SalesManagement_SysDev
             this.Earnings_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Earnings_btn.Name = "Earnings_btn";
             this.Earnings_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Earnings_btn.Size = new System.Drawing.Size(245, 54);
+            this.Earnings_btn.Size = new System.Drawing.Size(241, 54);
             this.Earnings_btn.TabIndex = 9;
             this.Earnings_btn.Text = "売上管理";
             this.Earnings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -635,7 +709,7 @@ namespace SalesManagement_SysDev
             this.empsubmenu.Location = new System.Drawing.Point(0, 592);
             this.empsubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.empsubmenu.Name = "empsubmenu";
-            this.empsubmenu.Size = new System.Drawing.Size(245, 100);
+            this.empsubmenu.Size = new System.Drawing.Size(241, 100);
             this.empsubmenu.TabIndex = 8;
             // 
             // emp_serchbtn
@@ -650,7 +724,7 @@ namespace SalesManagement_SysDev
             this.emp_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.emp_serchbtn.Name = "emp_serchbtn";
             this.emp_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.emp_serchbtn.Size = new System.Drawing.Size(245, 31);
+            this.emp_serchbtn.Size = new System.Drawing.Size(241, 31);
             this.emp_serchbtn.TabIndex = 2;
             this.emp_serchbtn.Text = "検索";
             this.emp_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -669,7 +743,7 @@ namespace SalesManagement_SysDev
             this.emp_upbtn.Margin = new System.Windows.Forms.Padding(2);
             this.emp_upbtn.Name = "emp_upbtn";
             this.emp_upbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.emp_upbtn.Size = new System.Drawing.Size(245, 32);
+            this.emp_upbtn.Size = new System.Drawing.Size(241, 32);
             this.emp_upbtn.TabIndex = 1;
             this.emp_upbtn.Text = "更新";
             this.emp_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -688,7 +762,7 @@ namespace SalesManagement_SysDev
             this.emp_regbtn.Margin = new System.Windows.Forms.Padding(2);
             this.emp_regbtn.Name = "emp_regbtn";
             this.emp_regbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.emp_regbtn.Size = new System.Drawing.Size(245, 32);
+            this.emp_regbtn.Size = new System.Drawing.Size(241, 32);
             this.emp_regbtn.TabIndex = 0;
             this.emp_regbtn.Text = "登録";
             this.emp_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -707,7 +781,7 @@ namespace SalesManagement_SysDev
             this.emp_btn.Margin = new System.Windows.Forms.Padding(2);
             this.emp_btn.Name = "emp_btn";
             this.emp_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.emp_btn.Size = new System.Drawing.Size(245, 54);
+            this.emp_btn.Size = new System.Drawing.Size(241, 54);
             this.emp_btn.TabIndex = 7;
             this.emp_btn.Text = "社員管理";
             this.emp_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -723,7 +797,7 @@ namespace SalesManagement_SysDev
             this.stocksubmenu.Location = new System.Drawing.Point(0, 472);
             this.stocksubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.stocksubmenu.Name = "stocksubmenu";
-            this.stocksubmenu.Size = new System.Drawing.Size(245, 66);
+            this.stocksubmenu.Size = new System.Drawing.Size(241, 66);
             this.stocksubmenu.TabIndex = 6;
             // 
             // stock_serchbtn
@@ -738,7 +812,7 @@ namespace SalesManagement_SysDev
             this.stock_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.stock_serchbtn.Name = "stock_serchbtn";
             this.stock_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.stock_serchbtn.Size = new System.Drawing.Size(245, 31);
+            this.stock_serchbtn.Size = new System.Drawing.Size(241, 31);
             this.stock_serchbtn.TabIndex = 2;
             this.stock_serchbtn.Text = "検索";
             this.stock_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -757,7 +831,7 @@ namespace SalesManagement_SysDev
             this.stock_upbtn.Margin = new System.Windows.Forms.Padding(2);
             this.stock_upbtn.Name = "stock_upbtn";
             this.stock_upbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.stock_upbtn.Size = new System.Drawing.Size(245, 32);
+            this.stock_upbtn.Size = new System.Drawing.Size(241, 32);
             this.stock_upbtn.TabIndex = 1;
             this.stock_upbtn.Text = "更新";
             this.stock_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -776,7 +850,7 @@ namespace SalesManagement_SysDev
             this.stock_btn.Margin = new System.Windows.Forms.Padding(2);
             this.stock_btn.Name = "stock_btn";
             this.stock_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.stock_btn.Size = new System.Drawing.Size(245, 54);
+            this.stock_btn.Size = new System.Drawing.Size(241, 54);
             this.stock_btn.TabIndex = 5;
             this.stock_btn.Text = "在庫管理";
             this.stock_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -793,7 +867,7 @@ namespace SalesManagement_SysDev
             this.Productsubmenu.Location = new System.Drawing.Point(0, 318);
             this.Productsubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.Productsubmenu.Name = "Productsubmenu";
-            this.Productsubmenu.Size = new System.Drawing.Size(245, 100);
+            this.Productsubmenu.Size = new System.Drawing.Size(241, 100);
             this.Productsubmenu.TabIndex = 4;
             // 
             // Product_serchbtn
@@ -808,7 +882,7 @@ namespace SalesManagement_SysDev
             this.Product_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Product_serchbtn.Name = "Product_serchbtn";
             this.Product_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.Product_serchbtn.Size = new System.Drawing.Size(245, 31);
+            this.Product_serchbtn.Size = new System.Drawing.Size(241, 31);
             this.Product_serchbtn.TabIndex = 2;
             this.Product_serchbtn.Text = "検索";
             this.Product_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -827,7 +901,7 @@ namespace SalesManagement_SysDev
             this.Product_upbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Product_upbtn.Name = "Product_upbtn";
             this.Product_upbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.Product_upbtn.Size = new System.Drawing.Size(245, 32);
+            this.Product_upbtn.Size = new System.Drawing.Size(241, 32);
             this.Product_upbtn.TabIndex = 1;
             this.Product_upbtn.Text = "更新";
             this.Product_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -846,7 +920,7 @@ namespace SalesManagement_SysDev
             this.Product_regbtn.Margin = new System.Windows.Forms.Padding(2);
             this.Product_regbtn.Name = "Product_regbtn";
             this.Product_regbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.Product_regbtn.Size = new System.Drawing.Size(245, 32);
+            this.Product_regbtn.Size = new System.Drawing.Size(241, 32);
             this.Product_regbtn.TabIndex = 0;
             this.Product_regbtn.Text = "登録";
             this.Product_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -866,7 +940,7 @@ namespace SalesManagement_SysDev
             this.Product_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Product_btn.Name = "Product_btn";
             this.Product_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.Product_btn.Size = new System.Drawing.Size(245, 54);
+            this.Product_btn.Size = new System.Drawing.Size(241, 54);
             this.Product_btn.TabIndex = 3;
             this.Product_btn.Text = "商品管理";
             this.Product_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -883,7 +957,7 @@ namespace SalesManagement_SysDev
             this.clientsubmenu.Location = new System.Drawing.Point(0, 164);
             this.clientsubmenu.Margin = new System.Windows.Forms.Padding(2);
             this.clientsubmenu.Name = "clientsubmenu";
-            this.clientsubmenu.Size = new System.Drawing.Size(245, 100);
+            this.clientsubmenu.Size = new System.Drawing.Size(241, 100);
             this.clientsubmenu.TabIndex = 2;
             // 
             // client_serchbtn
@@ -898,7 +972,7 @@ namespace SalesManagement_SysDev
             this.client_serchbtn.Margin = new System.Windows.Forms.Padding(2);
             this.client_serchbtn.Name = "client_serchbtn";
             this.client_serchbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.client_serchbtn.Size = new System.Drawing.Size(245, 32);
+            this.client_serchbtn.Size = new System.Drawing.Size(241, 32);
             this.client_serchbtn.TabIndex = 2;
             this.client_serchbtn.Text = "検索";
             this.client_serchbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -917,7 +991,7 @@ namespace SalesManagement_SysDev
             this.client_upbtn.Margin = new System.Windows.Forms.Padding(2);
             this.client_upbtn.Name = "client_upbtn";
             this.client_upbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.client_upbtn.Size = new System.Drawing.Size(245, 32);
+            this.client_upbtn.Size = new System.Drawing.Size(241, 32);
             this.client_upbtn.TabIndex = 1;
             this.client_upbtn.Text = "更新";
             this.client_upbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -936,7 +1010,7 @@ namespace SalesManagement_SysDev
             this.client_regbtn.Margin = new System.Windows.Forms.Padding(2);
             this.client_regbtn.Name = "client_regbtn";
             this.client_regbtn.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.client_regbtn.Size = new System.Drawing.Size(245, 32);
+            this.client_regbtn.Size = new System.Drawing.Size(241, 32);
             this.client_regbtn.TabIndex = 0;
             this.client_regbtn.Text = "登録";
             this.client_regbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -955,7 +1029,7 @@ namespace SalesManagement_SysDev
             this.btn_client.Margin = new System.Windows.Forms.Padding(2);
             this.btn_client.Name = "btn_client";
             this.btn_client.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_client.Size = new System.Drawing.Size(245, 54);
+            this.btn_client.Size = new System.Drawing.Size(241, 54);
             this.btn_client.TabIndex = 1;
             this.btn_client.Text = "顧客管理";
             this.btn_client.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -973,7 +1047,7 @@ namespace SalesManagement_SysDev
             this.subtitlepanel.Location = new System.Drawing.Point(0, 0);
             this.subtitlepanel.Margin = new System.Windows.Forms.Padding(2);
             this.subtitlepanel.Name = "subtitlepanel";
-            this.subtitlepanel.Size = new System.Drawing.Size(245, 110);
+            this.subtitlepanel.Size = new System.Drawing.Size(241, 110);
             this.subtitlepanel.TabIndex = 0;
             // 
             // timer
@@ -983,7 +1057,7 @@ namespace SalesManagement_SysDev
             this.timer.Location = new System.Drawing.Point(28, 18);
             this.timer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(181, 64);
+            this.timer.Size = new System.Drawing.Size(225, 80);
             this.timer.TabIndex = 4;
             this.timer.Text = "Timer";
             this.timer.Visible = false;
@@ -996,7 +1070,7 @@ namespace SalesManagement_SysDev
             this.label4.Location = new System.Drawing.Point(135, 93);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -1009,7 +1083,7 @@ namespace SalesManagement_SysDev
             this.login.Location = new System.Drawing.Point(22, 93);
             this.login.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(94, 16);
+            this.login.Size = new System.Drawing.Size(113, 20);
             this.login.TabIndex = 5;
             this.login.Text = "ログイン時間";
             // 
@@ -1034,7 +1108,7 @@ namespace SalesManagement_SysDev
             this.colorlabel.Location = new System.Drawing.Point(285, 149);
             this.colorlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.colorlabel.Name = "colorlabel";
-            this.colorlabel.Size = new System.Drawing.Size(86, 16);
+            this.colorlabel.Size = new System.Drawing.Size(105, 20);
             this.colorlabel.TabIndex = 3;
             this.colorlabel.Text = "カラーテーマ";
             // 
@@ -1088,7 +1162,7 @@ namespace SalesManagement_SysDev
             this.label5.Location = new System.Drawing.Point(127, 48);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "label10";
             // 
@@ -1099,7 +1173,7 @@ namespace SalesManagement_SysDev
             this.label2.Location = new System.Drawing.Point(10, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "label9";
             // 
@@ -1110,7 +1184,7 @@ namespace SalesManagement_SysDev
             this.label3.Location = new System.Drawing.Point(127, 10);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "label8";
             // 
@@ -1121,7 +1195,7 @@ namespace SalesManagement_SysDev
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "label7";
             // 
@@ -1163,7 +1237,7 @@ namespace SalesManagement_SysDev
             this.label6.Location = new System.Drawing.Point(4, 28);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(494, 64);
+            this.label6.Size = new System.Drawing.Size(614, 80);
             this.label6.TabIndex = 5;
             this.label6.Text = "販売管理システム";
             // 
@@ -1201,6 +1275,7 @@ namespace SalesManagement_SysDev
             this.Load += new System.EventHandler(this.template_Load);
             this.Resize += new System.EventHandler(this.template_Resize);
             this.sidepanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
@@ -1294,5 +1369,9 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button loginbtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button RegPasswordbtn;
+        private System.Windows.Forms.Button loginhistorybtn;
     }
 }

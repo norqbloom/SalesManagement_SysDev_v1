@@ -8,18 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Management_Order
+namespace SalesManagement_SysDev
 {
-    public partial class Order_Ser : Form
+    public partial class loginhistory : Form
     {
-        public Order_Ser()
+        public loginhistory()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void serchlogin_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(EmpIDtxt.Text))
+            {
+                
+            }
+            
 
+            
         }
     }
 }

@@ -113,6 +113,193 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
+        public List<M_Employee> Getdubblwdata(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
 
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetPrMaget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetPrScget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetMaScget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetMaget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetScget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> Getnolwget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        ///////////////////////////////
+        //メソッド名：UpPass
+        //引　数   ：パスワード
+        //戻り値   ：True or False
+        //機　能   ：パスワードの更新
+        ///////////////////////////////
+
+        public bool UpPass(M_Employee updpass)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var Emps = context.M_Employees.Single(x => x.EmID == updpass.EmID);
+                Emps.EmPassword = updpass.EmPassword;
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+        }
     }
 }
