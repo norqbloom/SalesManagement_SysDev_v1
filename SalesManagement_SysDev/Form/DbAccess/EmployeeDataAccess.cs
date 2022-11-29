@@ -113,28 +113,6 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        ///////////////////////////////
-        //メソッド名：UpPass
-        //引　数   ：パスワード
-        //戻り値   ：True or False
-        //機　能   ：パスワードの更新
-        ///////////////////////////////
-        
-        public bool UpPass(M_Employee updpass)
-        {
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                var Emps = context.M_Employees.Single(x => x.EmID == updpass.EmID);
-                Emps.EmPassword = updpass.EmPassword;
-                context.SaveChanges();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return true;
-        }
+
     }
 }
