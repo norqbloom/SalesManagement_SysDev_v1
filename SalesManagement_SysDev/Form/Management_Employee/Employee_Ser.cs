@@ -15,6 +15,7 @@ namespace SalesManagement_SysDev.Management_Employee
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         private static List<M_Employee> employees;
+        private static List<Emphistory> history;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         public Employee_Ser()
         {
@@ -206,6 +207,11 @@ namespace SalesManagement_SysDev.Management_Employee
                 //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
             };
             employees = EmployeeDataAccess.Getnolwget(selectCondition);
+        }
+
+        private void Employee_Ser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
