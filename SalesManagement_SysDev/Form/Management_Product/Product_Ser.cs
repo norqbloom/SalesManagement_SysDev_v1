@@ -111,11 +111,13 @@ namespace SalesManagement_SysDev.Management_Product
                     {
                         //全て入力されている
                         datedubblwget();
+                        return;
                     }
                     else
                     {
                         //商品・メーカーのみ
                         datePrMaget();
+                        return;
                     }
                 }
                 else
@@ -124,6 +126,7 @@ namespace SalesManagement_SysDev.Management_Product
                     {
                        　//商品・小分類のみ
                         datePrScget();
+                        return;
                     }
                 }
             }
@@ -133,25 +136,29 @@ namespace SalesManagement_SysDev.Management_Product
                 {
                     //メーカー・小分類のみ
                     dateMaScget();
+                    return;
                 }
                 else
                 {
                     //メーカーのみ
                     dateMaget();
+                    return;
                 }
             }
             else if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
             {
                 //小分類のみ
                 dateScget();
+                return;
             }
             else
             {
                 //何も入力されていない
                 datenolwget();
+                return;
             }
 
-            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+            /*if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
                 if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
@@ -175,6 +182,7 @@ namespace SalesManagement_SysDev.Management_Product
 
             }
 
+            */
         }
         private void SetSelectData()
         {
@@ -182,14 +190,15 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void datePrget()
         {
+            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
+
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text)
-                
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim()).Date
             };
             products = productDataAccess.GetPrdata(selectCondition);
 
@@ -236,18 +245,20 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void datenolwget()
         {
+
             M_Product selectCondition = new M_Product()
             {
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
-            };
+        };
             products = productDataAccess.Getnodata(selectCondition);
 
         }
         private void datePrMaget()
         {
+            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),

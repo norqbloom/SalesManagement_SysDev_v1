@@ -230,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonAdd.TabIndex = 38;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAdd.Click += new System.EventHandler(this.Cli_Upd_Click);
             // 
             // panel2
             // 
@@ -261,7 +261,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
-            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // buttonLastPage
             // 
