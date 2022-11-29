@@ -316,7 +316,7 @@ namespace SalesManagement_SysDev
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 x.PrReleaseDate.ToString("yyyy/MM/dd").Contains(selectCondition.PrReleaseDate.ToString("yyyy/MM/dd"))
                                                  ).ToList();
                 context.Dispose();
 
@@ -377,7 +377,15 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
-        public List<M_Product> Getnodata(M_Product selectCondition)
+        public List<M_Product> Getnodata(M_Product selectCondition)er) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString("yyyy").Contains(selectCondition.PrReleaseDate.ToString("yyyy"))
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
         {
             List<M_Product> product = new List<M_Product>();
 
@@ -388,14 +396,7 @@ namespace SalesManagement_SysDev
                 product = context.M_Products.Where(x => 
                                                  x.PrFlag == 0&&
                                                  x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) 
-                                                 ).ToList();
-                context.Dispose();
-
-            }
-            catch (Exception ex)
-            {
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumb
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return product;

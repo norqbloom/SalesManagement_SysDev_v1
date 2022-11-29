@@ -197,7 +197,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim()).Date
+                PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
             };
             products = productDataAccess.GetPrdata(selectCondition);
 
@@ -253,7 +253,6 @@ namespace SalesManagement_SysDev.Management_Product
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim())
             };
-            MessageBox.Show(Dt.ToString("yyyy/MM/dd"));
             products = productDataAccess.Getnodata(selectCondition);
 
         }
