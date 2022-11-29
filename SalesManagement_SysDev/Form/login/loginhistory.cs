@@ -19,13 +19,19 @@ namespace SalesManagement_SysDev
 
         private void serchlogin_Click(object sender, EventArgs e)
         {
+            GenerateDataAtSelect();
+
+
+
+        }
+        private void GenerateDataAtSelect()
+        {
             if (!String.IsNullOrEmpty(EmpIDtxt.Text))
             {
-                
+                    
             }
-            
 
-            
         }
+
     }
 }
