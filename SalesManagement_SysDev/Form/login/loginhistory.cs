@@ -19,6 +19,12 @@ namespace SalesManagement_SysDev
 
         private void serchlogin_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(EmpIDtxt.Text))
+            {
+                
+            }
+            
+
             
         }
     }
