@@ -440,8 +440,6 @@ namespace SalesManagement_SysDev
         {
             List<M_Product> product = new List<M_Product>();
 
-            //string dt = selectCondition.PrReleaseDate.ToString("yyyy/MM//dd");
-            //MessageBox.Show(selectCondition.PrReleaseDate.ToString());
             try
             {
                 var context = new SalesManagement_DevContext();
