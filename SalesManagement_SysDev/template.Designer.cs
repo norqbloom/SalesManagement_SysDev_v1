@@ -1176,7 +1176,7 @@ namespace SalesManagement_SysDev
             this.comitbtn.Location = new System.Drawing.Point(441, 186);
             this.comitbtn.Margin = new System.Windows.Forms.Padding(2);
             this.comitbtn.Name = "comitbtn";
-            this.comitbtn.Size = new System.Drawing.Size(56, 18);
+            this.comitbtn.Size = new System.Drawing.Size(56, 23);
             this.comitbtn.TabIndex = 4;
             this.comitbtn.Text = "適用";
             this.comitbtn.UseVisualStyleBackColor = true;

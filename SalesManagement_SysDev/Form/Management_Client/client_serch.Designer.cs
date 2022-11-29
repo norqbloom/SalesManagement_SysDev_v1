@@ -92,7 +92,7 @@ namespace SalesManagement_SysDev
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(572, 158);
+            this.dataGridView1.Size = new System.Drawing.Size(561, 116);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -117,10 +117,10 @@ namespace SalesManagement_SysDev
             this.panel1.Controls.Add(this.IDtxt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.panel1.Location = new System.Drawing.Point(619, 0);
+            this.panel1.Location = new System.Drawing.Point(608, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 545);
+            this.panel1.Size = new System.Drawing.Size(268, 503);
             this.panel1.TabIndex = 1;
             // 
             // label5
@@ -366,10 +366,10 @@ namespace SalesManagement_SysDev
             // 
             this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.change.Location = new System.Drawing.Point(165, 7);
+            this.change.Location = new System.Drawing.Point(170, 5);
             this.change.Margin = new System.Windows.Forms.Padding(2);
             this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(56, 18);
+            this.change.Size = new System.Drawing.Size(56, 22);
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
@@ -447,7 +447,7 @@ namespace SalesManagement_SysDev
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(9, 506);
+            this.panel2.Location = new System.Drawing.Point(4, 464);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(604, 29);
@@ -466,7 +466,7 @@ namespace SalesManagement_SysDev
             // 
             // CLNametxt
             // 
-            this.CLNametxt.Location = new System.Drawing.Point(215, 82);
+            this.CLNametxt.Location = new System.Drawing.Point(304, 82);
             this.CLNametxt.Margin = new System.Windows.Forms.Padding(2);
             this.CLNametxt.Name = "CLNametxt";
             this.CLNametxt.Size = new System.Drawing.Size(115, 19);
@@ -475,7 +475,7 @@ namespace SalesManagement_SysDev
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(213, 58);
+            this.label3.Location = new System.Drawing.Point(302, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
@@ -485,7 +485,7 @@ namespace SalesManagement_SysDev
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 131);
+            this.label2.Location = new System.Drawing.Point(302, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
@@ -504,7 +504,7 @@ namespace SalesManagement_SysDev
             // 
             // ClPhonetxt
             // 
-            this.ClPhonetxt.Location = new System.Drawing.Point(215, 155);
+            this.ClPhonetxt.Location = new System.Drawing.Point(304, 154);
             this.ClPhonetxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClPhonetxt.Name = "ClPhonetxt";
             this.ClPhonetxt.Size = new System.Drawing.Size(115, 19);
@@ -516,7 +516,7 @@ namespace SalesManagement_SysDev
             this.addresstxt.Location = new System.Drawing.Point(46, 228);
             this.addresstxt.Margin = new System.Windows.Forms.Padding(2);
             this.addresstxt.Name = "addresstxt";
-            this.addresstxt.Size = new System.Drawing.Size(115, 19);
+            this.addresstxt.Size = new System.Drawing.Size(184, 19);
             this.addresstxt.TabIndex = 15;
             this.addresstxt.TextChanged += new System.EventHandler(this.addresstxt_TextChanged);
             // 
@@ -532,7 +532,7 @@ namespace SalesManagement_SysDev
             // 
             // ClPostaltxt
             // 
-            this.ClPostaltxt.Location = new System.Drawing.Point(215, 228);
+            this.ClPostaltxt.Location = new System.Drawing.Point(304, 228);
             this.ClPostaltxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClPostaltxt.Name = "ClPostaltxt";
             this.ClPostaltxt.Size = new System.Drawing.Size(115, 19);
@@ -544,7 +544,7 @@ namespace SalesManagement_SysDev
             this.SOIDtxt.Location = new System.Drawing.Point(46, 153);
             this.SOIDtxt.Margin = new System.Windows.Forms.Padding(2);
             this.SOIDtxt.Name = "SOIDtxt";
-            this.SOIDtxt.Size = new System.Drawing.Size(115, 19);
+            this.SOIDtxt.Size = new System.Drawing.Size(184, 19);
             this.SOIDtxt.TabIndex = 1;
             this.SOIDtxt.TextChanged += new System.EventHandler(this.SOIDtxt_TextChanged);
             // 
@@ -560,7 +560,7 @@ namespace SalesManagement_SysDev
             // 
             // ClFaxtxt
             // 
-            this.ClFaxtxt.Location = new System.Drawing.Point(362, 228);
+            this.ClFaxtxt.Location = new System.Drawing.Point(491, 228);
             this.ClFaxtxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClFaxtxt.Name = "ClFaxtxt";
             this.ClFaxtxt.Size = new System.Drawing.Size(115, 19);
@@ -570,7 +570,7 @@ namespace SalesManagement_SysDev
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(213, 207);
+            this.label16.Location = new System.Drawing.Point(302, 207);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
@@ -580,7 +580,7 @@ namespace SalesManagement_SysDev
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(360, 207);
+            this.label15.Location = new System.Drawing.Point(493, 207);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(27, 12);
@@ -592,7 +592,7 @@ namespace SalesManagement_SysDev
             this.ClIDtxt.Location = new System.Drawing.Point(46, 82);
             this.ClIDtxt.Margin = new System.Windows.Forms.Padding(2);
             this.ClIDtxt.Name = "ClIDtxt";
-            this.ClIDtxt.Size = new System.Drawing.Size(115, 19);
+            this.ClIDtxt.Size = new System.Drawing.Size(184, 19);
             this.ClIDtxt.TabIndex = 0;
             this.ClIDtxt.TextChanged += new System.EventHandler(this.ClIDtxt_TextChanged);
             // 
@@ -600,7 +600,7 @@ namespace SalesManagement_SysDev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 545);
+            this.ClientSize = new System.Drawing.Size(876, 503);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
