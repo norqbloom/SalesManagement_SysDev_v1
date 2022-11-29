@@ -50,7 +50,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelEm = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.username = new System.Windows.Forms.Label();
             this.userid = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.Label();
-            this.IDtxt = new System.Windows.Forms.Label();
+            this.labelSo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.change = new System.Windows.Forms.Button();
             this.buttonLastPage = new System.Windows.Forms.Button();
@@ -76,6 +76,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.labelPo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -262,7 +264,9 @@ namespace SalesManagement_SysDev.Management_Employee
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.labelPo);
+            this.panel1.Controls.Add(this.labelEm);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
@@ -277,7 +281,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Controls.Add(this.username);
             this.panel1.Controls.Add(this.userid);
             this.panel1.Controls.Add(this.datetime);
-            this.panel1.Controls.Add(this.IDtxt);
+            this.panel1.Controls.Add(this.labelSo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.panel1.Location = new System.Drawing.Point(823, 0);
@@ -286,16 +290,16 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Size = new System.Drawing.Size(357, 662);
             this.panel1.TabIndex = 41;
             // 
-            // label10
+            // labelEm
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(133, 42);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 20);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "label10";
+            this.labelEm.AutoSize = true;
+            this.labelEm.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.labelEm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelEm.Location = new System.Drawing.Point(133, 42);
+            this.labelEm.Name = "labelEm";
+            this.labelEm.Size = new System.Drawing.Size(74, 20);
+            this.labelEm.TabIndex = 14;
+            this.labelEm.Text = "label10";
             // 
             // label13
             // 
@@ -346,7 +350,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(31, 242);
+            this.label15.Location = new System.Drawing.Point(28, 279);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(98, 20);
             this.label15.TabIndex = 10;
@@ -357,7 +361,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label16.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label16.Location = new System.Drawing.Point(29, 192);
+            this.label16.Location = new System.Drawing.Point(32, 228);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(97, 20);
             this.label16.TabIndex = 9;
@@ -368,7 +372,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label17.Location = new System.Drawing.Point(29, 141);
+            this.label17.Location = new System.Drawing.Point(32, 174);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 20);
             this.label17.TabIndex = 8;
@@ -423,7 +427,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.username.AutoSize = true;
             this.username.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.username.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.username.Location = new System.Drawing.Point(133, 242);
+            this.username.Location = new System.Drawing.Point(132, 279);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(63, 20);
             this.username.TabIndex = 3;
@@ -434,7 +438,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.userid.AutoSize = true;
             this.userid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.userid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.userid.Location = new System.Drawing.Point(133, 192);
+            this.userid.Location = new System.Drawing.Point(132, 228);
             this.userid.Name = "userid";
             this.userid.Size = new System.Drawing.Size(63, 20);
             this.userid.TabIndex = 2;
@@ -445,22 +449,22 @@ namespace SalesManagement_SysDev.Management_Employee
             this.datetime.AutoSize = true;
             this.datetime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.datetime.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.datetime.Location = new System.Drawing.Point(133, 141);
+            this.datetime.Location = new System.Drawing.Point(133, 174);
             this.datetime.Name = "datetime";
             this.datetime.Size = new System.Drawing.Size(63, 20);
             this.datetime.TabIndex = 1;
             this.datetime.Text = "label7";
             // 
-            // IDtxt
+            // labelSo
             // 
-            this.IDtxt.AutoSize = true;
-            this.IDtxt.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.IDtxt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.IDtxt.Location = new System.Drawing.Point(133, 91);
-            this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(63, 20);
-            this.IDtxt.TabIndex = 0;
-            this.IDtxt.Text = "label6";
+            this.labelSo.AutoSize = true;
+            this.labelSo.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelSo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelSo.Location = new System.Drawing.Point(133, 91);
+            this.labelSo.Name = "labelSo";
+            this.labelSo.Size = new System.Drawing.Size(63, 20);
+            this.labelSo.TabIndex = 0;
+            this.labelSo.Text = "label6";
             // 
             // panel2
             // 
@@ -581,6 +585,24 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(33, 134);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 15);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "役職ID";
+            // 
+            // labelPo
+            // 
+            this.labelPo.AutoSize = true;
+            this.labelPo.Location = new System.Drawing.Point(133, 134);
+            this.labelPo.Name = "labelPo";
+            this.labelPo.Size = new System.Drawing.Size(51, 15);
+            this.labelPo.TabIndex = 44;
+            this.labelPo.Text = "label21";
+            // 
             // Employee_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -611,6 +633,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Employee_Ser";
             this.Text = "Employee_Ser";
+            this.Load += new System.EventHandler(this.Employee_Ser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -644,7 +667,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelEm;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -659,7 +682,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Label userid;
         private System.Windows.Forms.Label datetime;
-        private System.Windows.Forms.Label IDtxt;
+        private System.Windows.Forms.Label labelSo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button change;
         private System.Windows.Forms.Button buttonLastPage;
@@ -670,5 +693,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button buttonFirstPage;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label labelPo;
     }
 }

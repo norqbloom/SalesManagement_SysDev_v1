@@ -29,6 +29,7 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPrID = new System.Windows.Forms.TextBox();
@@ -70,10 +71,10 @@ namespace SalesManagement_SysDev.Management_Product
             // checkBoxPrFlag
             // 
             this.checkBoxPrFlag.AutoSize = true;
-            this.checkBoxPrFlag.Location = new System.Drawing.Point(276, 254);
-            this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxPrFlag.Location = new System.Drawing.Point(368, 318);
+            this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(109, 17);
+            this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
             this.checkBoxPrFlag.TabIndex = 0;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
@@ -81,193 +82,191 @@ namespace SalesManagement_SysDev.Management_Product
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(89, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "商品ID";
             // 
             // textBoxPrID
             // 
-            this.textBoxPrID.Location = new System.Drawing.Point(132, 71);
-            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrID.Location = new System.Drawing.Point(176, 89);
+            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrID.Name = "textBoxPrID";
-            this.textBoxPrID.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrID.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrID.TabIndex = 2;
             // 
             // dataGridViewDsp
             // 
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDsp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(9, 310);
-            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(12, 388);
+            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 62;
             this.dataGridViewDsp.RowTemplate.Height = 27;
-            this.dataGridViewDsp.Size = new System.Drawing.Size(1274, 215);
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1699, 495);
             this.dataGridViewDsp.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 116);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(89, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "メーカID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 157);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(89, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "商品名";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 193);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(89, 241);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "価格";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 237);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(89, 296);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.Size = new System.Drawing.Size(82, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "安全在庫数";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(274, 73);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(365, 91);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.Size = new System.Drawing.Size(66, 15);
             this.label7.TabIndex = 9;
             this.label7.Text = "小分類ID";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(274, 119);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(365, 149);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.Size = new System.Drawing.Size(37, 15);
             this.label8.TabIndex = 10;
             this.label8.Text = "型番";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(274, 175);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(365, 219);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 13);
+            this.label9.Size = new System.Drawing.Size(22, 15);
             this.label9.TabIndex = 11;
             this.label9.Text = "色";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(274, 216);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(365, 270);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.Size = new System.Drawing.Size(52, 15);
             this.label10.TabIndex = 12;
             this.label10.Text = "発売日";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(454, 77);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(605, 96);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.Size = new System.Drawing.Size(82, 15);
             this.label11.TabIndex = 13;
             this.label11.Text = "非表示理由";
             // 
             // textBoxMaID
             // 
-            this.textBoxMaID.Location = new System.Drawing.Point(132, 119);
-            this.textBoxMaID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMaID.Location = new System.Drawing.Point(176, 149);
+            this.textBoxMaID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMaID.Name = "textBoxMaID";
-            this.textBoxMaID.Size = new System.Drawing.Size(62, 19);
+            this.textBoxMaID.Size = new System.Drawing.Size(81, 22);
             this.textBoxMaID.TabIndex = 14;
             // 
             // textBoxPrName
             // 
-            this.textBoxPrName.Location = new System.Drawing.Point(132, 157);
-            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrName.Location = new System.Drawing.Point(176, 196);
+            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrName.Name = "textBoxPrName";
-            this.textBoxPrName.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrName.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrName.TabIndex = 15;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(139, 188);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrice.Location = new System.Drawing.Point(185, 235);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrice.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrice.TabIndex = 16;
             // 
             // textBoxPrSafetyStock
             // 
-            this.textBoxPrSafetyStock.Location = new System.Drawing.Point(139, 230);
-            this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrSafetyStock.Location = new System.Drawing.Point(185, 288);
+            this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
-            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrSafetyStock.TabIndex = 18;
             // 
             // textBoxScID
             // 
-            this.textBoxScID.Location = new System.Drawing.Point(347, 75);
-            this.textBoxScID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxScID.Location = new System.Drawing.Point(463, 94);
+            this.textBoxScID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxScID.Name = "textBoxScID";
-            this.textBoxScID.Size = new System.Drawing.Size(62, 19);
+            this.textBoxScID.Size = new System.Drawing.Size(81, 22);
             this.textBoxScID.TabIndex = 19;
             // 
             // textBoxPrModelNumber
             // 
-            this.textBoxPrModelNumber.Location = new System.Drawing.Point(347, 117);
-            this.textBoxPrModelNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrModelNumber.Location = new System.Drawing.Point(463, 146);
+            this.textBoxPrModelNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
-            this.textBoxPrModelNumber.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrModelNumber.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrModelNumber.TabIndex = 20;
             // 
             // textBoxPrColor
             // 
-            this.textBoxPrColor.Location = new System.Drawing.Point(347, 173);
-            this.textBoxPrColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrColor.Location = new System.Drawing.Point(463, 216);
+            this.textBoxPrColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrColor.Name = "textBoxPrColor";
-            this.textBoxPrColor.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrColor.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrColor.TabIndex = 21;
             // 
             // textBoxPrHidden
             // 
-            this.textBoxPrHidden.Location = new System.Drawing.Point(528, 77);
-            this.textBoxPrHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrHidden.Location = new System.Drawing.Point(704, 96);
+            this.textBoxPrHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrHidden.Name = "textBoxPrHidden";
-            this.textBoxPrHidden.Size = new System.Drawing.Size(62, 19);
+            this.textBoxPrHidden.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrHidden.TabIndex = 23;
             // 
             // ButtonAdd
             // 
-            this.ButtonAdd.Location = new System.Drawing.Point(636, 214);
-            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonAdd.Location = new System.Drawing.Point(848, 268);
+            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(107, 93);
+            this.ButtonAdd.Size = new System.Drawing.Size(143, 116);
             this.ButtonAdd.TabIndex = 24;
             this.ButtonAdd.Text = "登録";
             this.ButtonAdd.UseVisualStyleBackColor = true;
@@ -275,10 +274,10 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // ButtonDel
             // 
-            this.ButtonDel.Location = new System.Drawing.Point(515, 214);
-            this.ButtonDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonDel.Location = new System.Drawing.Point(687, 268);
+            this.ButtonDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonDel.Name = "ButtonDel";
-            this.ButtonDel.Size = new System.Drawing.Size(107, 93);
+            this.ButtonDel.Size = new System.Drawing.Size(143, 116);
             this.ButtonDel.TabIndex = 25;
             this.ButtonDel.Text = "削除";
             this.ButtonDel.UseVisualStyleBackColor = true;
@@ -286,11 +285,12 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // dateTimePickerPrReleaseDate
             // 
-            this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(347, 216);
-            this.dateTimePickerPrReleaseDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(463, 270);
+            this.dateTimePickerPrReleaseDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
-            this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(151, 19);
+            this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerPrReleaseDate.TabIndex = 26;
+            this.dateTimePickerPrReleaseDate.Value = new System.DateTime(2022, 11, 29, 0, 0, 0, 0);
             // 
             // panel2
             // 
@@ -304,10 +304,10 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(19, 538);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(420, 1061);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(604, 29);
+            this.panel2.Size = new System.Drawing.Size(805, 36);
             this.panel2.TabIndex = 46;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -315,10 +315,10 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.change.Location = new System.Drawing.Point(165, 7);
-            this.change.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.change.Location = new System.Drawing.Point(220, 9);
+            this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(56, 18);
+            this.change.Size = new System.Drawing.Size(75, 22);
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
@@ -327,10 +327,10 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLastPage.Location = new System.Drawing.Point(581, 7);
-            this.buttonLastPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLastPage.Location = new System.Drawing.Point(775, 9);
+            this.buttonLastPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLastPage.Name = "buttonLastPage";
-            this.buttonLastPage.Size = new System.Drawing.Size(21, 18);
+            this.buttonLastPage.Size = new System.Drawing.Size(28, 22);
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
@@ -339,10 +339,10 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNextPage.Location = new System.Drawing.Point(559, 7);
-            this.buttonNextPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNextPage.Location = new System.Drawing.Point(745, 9);
+            this.buttonNextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNextPage.Name = "buttonNextPage";
-            this.buttonNextPage.Size = new System.Drawing.Size(21, 18);
+            this.buttonNextPage.Size = new System.Drawing.Size(28, 22);
             this.buttonNextPage.TabIndex = 25;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
@@ -351,10 +351,10 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPreviousPage.Location = new System.Drawing.Point(533, 7);
-            this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPreviousPage.Location = new System.Drawing.Point(711, 9);
+            this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPreviousPage.Name = "buttonPreviousPage";
-            this.buttonPreviousPage.Size = new System.Drawing.Size(21, 18);
+            this.buttonPreviousPage.Size = new System.Drawing.Size(28, 22);
             this.buttonPreviousPage.TabIndex = 26;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
@@ -364,10 +364,9 @@ namespace SalesManagement_SysDev.Management_Product
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(2, 9);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Location = new System.Drawing.Point(3, 11);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 13);
+            this.label17.Size = new System.Drawing.Size(81, 15);
             this.label17.TabIndex = 20;
             this.label17.Text = "1ページ行数";
             // 
@@ -375,19 +374,19 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPageSize.Location = new System.Drawing.Point(76, 7);
-            this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
+            this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageSize.Name = "textBoxPageSize";
-            this.textBoxPageSize.Size = new System.Drawing.Size(76, 19);
+            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
             this.textBoxPageSize.TabIndex = 11;
             // 
             // textBoxPageNo
             // 
             this.textBoxPageNo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBoxPageNo.Location = new System.Drawing.Point(399, 6);
-            this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPageNo.Location = new System.Drawing.Point(532, 8);
+            this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageNo.Name = "textBoxPageNo";
-            this.textBoxPageNo.Size = new System.Drawing.Size(41, 19);
+            this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
             // 
             // labelPage
@@ -395,10 +394,9 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPage.AutoSize = true;
-            this.labelPage.Location = new System.Drawing.Point(443, 8);
-            this.labelPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPage.Location = new System.Drawing.Point(591, 10);
             this.labelPage.Name = "labelPage";
-            this.labelPage.Size = new System.Drawing.Size(40, 13);
+            this.labelPage.Size = new System.Drawing.Size(43, 15);
             this.labelPage.TabIndex = 23;
             this.labelPage.Text = "ページ";
             // 
@@ -406,19 +404,19 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFirstPage.Location = new System.Drawing.Point(508, 7);
-            this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
+            this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFirstPage.Name = "buttonFirstPage";
-            this.buttonFirstPage.Size = new System.Drawing.Size(21, 18);
+            this.buttonFirstPage.Size = new System.Drawing.Size(28, 22);
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
             // 
             // Product_Add
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 614);
+            this.ClientSize = new System.Drawing.Size(2098, 1156);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.ButtonDel);
@@ -444,9 +442,10 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxPrFlag);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Product_Add";
             this.Text = "Product_Add";
+            this.Load += new System.EventHandler(this.Product_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
