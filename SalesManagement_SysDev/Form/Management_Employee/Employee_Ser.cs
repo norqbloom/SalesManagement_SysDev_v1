@@ -26,9 +26,9 @@ namespace SalesManagement_SysDev.Management_Employee
             if (!GetClientDataAtSelect())
                 return;
 
-            //GenerateDataAtSelect();
+            GenerateDataAtSelect();
 
-           //SetSelectData();
+            SetSelectData();
         }
         private bool GetClientDataAtSelect()
         {
@@ -43,6 +43,10 @@ namespace SalesManagement_SysDev.Management_Employee
                 }
             }
             return true;
+        }
+        private void GenerateDataAtSelect()
+        {
+
         }
     }
 }
