@@ -29,6 +29,7 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPrID = new System.Windows.Forms.TextBox();
@@ -98,13 +99,21 @@ namespace SalesManagement_SysDev.Management_Product
             // dataGridViewDsp
             // 
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDsp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDsp.Location = new System.Drawing.Point(12, 388);
             this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 62;
             this.dataGridViewDsp.RowTemplate.Height = 27;
-            this.dataGridViewDsp.Size = new System.Drawing.Size(1699, 269);
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1699, 495);
             this.dataGridViewDsp.TabIndex = 3;
             // 
             // label2
@@ -281,6 +290,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerPrReleaseDate.TabIndex = 26;
+            this.dateTimePickerPrReleaseDate.Value = new System.DateTime(2022, 11, 29, 0, 0, 0, 0);
             // 
             // panel2
             // 
@@ -294,7 +304,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(25, 673);
+            this.panel2.Location = new System.Drawing.Point(420, 1061);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 36);
@@ -406,7 +416,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1309, 768);
+            this.ClientSize = new System.Drawing.Size(2098, 1156);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.ButtonDel);
@@ -435,6 +445,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Product_Add";
             this.Text = "Product_Add";
+            this.Load += new System.EventHandler(this.Product_Add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

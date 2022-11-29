@@ -29,9 +29,45 @@ namespace SalesManagement_SysDev
         [Required]
         public String PrColor { get; set; }         //色		
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{yyyy/MM/dd}", ApplyFormatInEditMode = false)]
         public DateTime PrReleaseDate { get; set; } //発売日		
         public int PrFlag { get; set; }             //商品管理フラグ
         public String PrHidden { get; set; }	    //非表示理由		
     } 
+
+    class M_ProductDsp
+    {
+        [DisplayName("商品ID")]
+        public int PrID { get; set; }
+
+        [DisplayName("メーカID")]
+        public int MaID { get; set; }
+
+        [DisplayName("商品名")]
+        public string PrName { get; set; }
+
+        [DisplayName("価格")]
+        public int Price { get; set; }
+
+        [DisplayName("安全在庫数")]
+        public int PrSafetyStock { get; set; }
+
+        [DisplayName("小分類ID")]
+        public int ScID { get; set; }
+
+        [DisplayName("型番")]
+        public string PrModelNumber { get; set; }
+
+        [DisplayName("色")]
+        public string PrColor { get; set; }
+
+        [DisplayName("発売日")]
+        public DateTime PrReleaseDate { get; set; }
+
+        [DisplayName("商品管理フラグ")]
+        public int PrFlag { get; set; }
+
+        [DisplayName("非表示理由")]
+        public string PrHidden { get; set; }
+    }
 }
