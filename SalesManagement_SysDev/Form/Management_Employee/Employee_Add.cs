@@ -191,7 +191,7 @@ namespace SalesManagement_SysDev.Management_Employee
             if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
             {
 
-                MessageBox.Show("不確定な状況");
+                MessageBox.Show("不確定な状況"); //messageDsp.DspMsg("M6027");
                 checkBoxEmFlag.Focus();
                 return false;
             }
