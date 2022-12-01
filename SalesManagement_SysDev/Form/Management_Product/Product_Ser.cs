@@ -60,6 +60,8 @@ namespace SalesManagement_SysDev.Management_Product
             GenerateDataAtSelect();
 
             SetSelectData();
+            //データグリッドビューの再ロード
+            SetFormDataGridView();
         }
 
         private bool GetProductDataAtSelect()
@@ -299,26 +301,98 @@ namespace SalesManagement_SysDev.Management_Product
             products = productDataAccess.GetMaScdata(selectCondition);
 
         }
+
+        //データグリッドビュー用のプロダクトデータ
+        private static List<M_ProductDsp> Product2;
+        ///////////////////////////////
+        //メソッド名：SetFormDataGridView()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：データグリッドビューの設定
+        ///////////////////////////////
         private void SetFormDataGridView()
         {
-            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewDsp.ReadOnly = true;
             //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
+            textBoxPageSize.Text = "20";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
+            //読み取り専用に指定
+            dataGridViewDsp.ReadOnly = true;
+            //行内をクリックすることで行を選択
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //ヘッダー位置の指定
             dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            //データグリッドビューのデータ取得
+            GetDataGridView();
         }
+        ///////////////////////////////
+        //メソッド名：GetDataGridView()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：データグリッドビューに表示するデータの取得
+        ///////////////////////////////
+        private void GetDataGridView()
+        {
+
+            // 商品データの取得
+            Product2 = productDataAccess.GetProductData2();
+
+            // DataGridViewに表示するデータを指定
+            SetDataGridView();
+        }
+        ///////////////////////////////
+        //メソッド名：SetDataGridView()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：データグリッドビューへの表示
+        ///////////////////////////////
         private void SetDataGridView()
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
+            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            //列名の中央揃え
+            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            //各列幅の指定
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 200;
+            dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[9].Width = 100;
+            dataGridViewDsp.Columns[10].Width = 200;
+
+            //各列の文字位置の指定
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //dataGridViewの総ページ数
+            labelPage.Text = "/" + ((int)Math.Ceiling(Product2.Count / (double)pageSize)) + "ページ";
 
             dataGridViewDsp.Refresh();
+
         }
+
+
 
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
@@ -435,6 +509,7 @@ namespace SalesManagement_SysDev.Management_Product
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+
 
         
     }

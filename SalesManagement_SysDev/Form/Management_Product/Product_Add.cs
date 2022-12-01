@@ -18,6 +18,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         //データグリッドビュー用のプロダクトデータ
         private static List<M_ProductDsp> Product2;
+        private static List<M_ProductDsp> Product3;
 
         public Product_Add()
         {
@@ -35,6 +36,8 @@ namespace SalesManagement_SysDev.Management_Product
             var regProduct = GenerateDataAtRegistration();
             //商品情報登録
             RegistrationProduct(regProduct);
+            //データグリッドビューの再ロード
+            SetFormDataGridView();
         }
 
         private bool GetValidDataAtRegistration()
@@ -342,7 +345,7 @@ namespace SalesManagement_SysDev.Management_Product
             dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             //ヘッダー位置の指定
-            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //データグリッドビューのデータ取得
             GetDataGridView();
@@ -357,7 +360,14 @@ namespace SalesManagement_SysDev.Management_Product
         {
 
             // 商品データの取得
-            Product2 = productDataAccess.GetProductData2();
+            if(checkBoxPrFlag.Checked == true)
+            {
+                Product2 = productDataAccess.GetProductData2();
+            }
+            else
+            {
+                Product3 = productDataAccess.GetProductData3();
+            }
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -412,5 +422,6 @@ namespace SalesManagement_SysDev.Management_Product
 
         }
 
+        
     }
 }

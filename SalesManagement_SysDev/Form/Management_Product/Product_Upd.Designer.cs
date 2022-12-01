@@ -47,7 +47,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
@@ -63,7 +63,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,17 +232,17 @@ namespace SalesManagement_SysDev.Management_Product
             this.label2.TabIndex = 29;
             this.label2.Text = "メーカID";
             // 
-            // dataGridView1
+            // dataGridViewDsp
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-14, 363);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1034, 259);
-            this.dataGridView1.TabIndex = 28;
+            this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDsp.Location = new System.Drawing.Point(-14, 363);
+            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowHeadersWidth = 62;
+            this.dataGridViewDsp.RowTemplate.Height = 27;
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1034, 259);
+            this.dataGridViewDsp.TabIndex = 28;
             // 
             // textBoxPrID
             // 
@@ -435,14 +435,15 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxPrFlag);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Product_Upd";
             this.Text = "Product_Upd";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Product_Upd_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -470,7 +471,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxPrFlag;
