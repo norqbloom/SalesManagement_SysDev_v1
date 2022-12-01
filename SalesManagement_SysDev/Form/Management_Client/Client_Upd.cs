@@ -248,9 +248,9 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             bool flg = clientDataAccess.UpdClientData(updItem);
             if (flg == true)
-                MessageBox.Show("ok");
+                MessageBox.Show("ok"); //messageDsp.DspMsg("M1026");
             else
-                MessageBox.Show("no");
+                MessageBox.Show("no"); //messageDsp.DspMsg("M1027");
         }
         private M_clhistory GenerateDataAtUpdatehistory()
         {
