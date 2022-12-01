@@ -84,7 +84,7 @@ namespace SalesManagement_SysDev.Management_Client
                 }
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("営業所IDは2文字です");
+                    MessageBox.Show("営業所IDは2文字です"); //messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -135,7 +135,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("郵便番号が入力されていません。");
+                MessageBox.Show("郵便番号が入力されていません。"); //messageDsp.DspMsg("M1031");
                 textBoxClPostal.Focus();
                 return false;
             }
@@ -144,7 +144,7 @@ namespace SalesManagement_SysDev.Management_Client
             {
                 if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
                 {
-                    MessageBox.Show("住所は全角入力です");
+                    MessageBox.Show("住所は全角入力です"); //messageDsp.DspMsg("M1032");
                     textBoxClAddress.Focus();
                     return false;
                 }
@@ -157,7 +157,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("住所が入力されていません。");
+                MessageBox.Show("住所が入力されていません。"); //messageDsp.DspMsg("M1033");
                 textBoxClPostal.Focus();
                 return false;
             }
@@ -178,7 +178,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("FAXが入力されていません。");
+                MessageBox.Show("FAXが入力されていません。"); //messageDsp.DspMsg("M1034");
                 textBoxClFAX.Focus();
                 return false;
             }
@@ -199,13 +199,13 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("電話番号が入力されていません");
+                MessageBox.Show("電話番号が入力されていません"); //messageDsp.DspMsg("M1035");
                 textBoxClPostal.Focus();
                 return false;
             }
             if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
             {
-                MessageBox.Show("非表示理由は全角入力です");
+                MessageBox.Show("非表示理由は全角入力です"); //messageDsp.DspMsg("M2037");
                 textBoxClHidden.Focus();
                 return false;
             }
@@ -248,9 +248,9 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             bool flg = clientDataAccess.UpdClientData(updItem);
             if (flg == true)
-                MessageBox.Show("ok");
+                MessageBox.Show("ok"); //messageDsp.DspMsg("M1026");
             else
-                MessageBox.Show("no");
+                MessageBox.Show("no"); //messageDsp.DspMsg("M1027");
         }
         private M_clhistory GenerateDataAtUpdatehistory()
         {
