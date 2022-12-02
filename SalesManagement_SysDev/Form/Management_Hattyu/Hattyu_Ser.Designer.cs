@@ -52,12 +52,13 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // Hattyu_Ser_Button
             // 
             this.Hattyu_Ser_Button.Location = new System.Drawing.Point(879, 241);
-            this.Hattyu_Ser_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Hattyu_Ser_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Hattyu_Ser_Button.Name = "Hattyu_Ser_Button";
             this.Hattyu_Ser_Button.Size = new System.Drawing.Size(134, 110);
             this.Hattyu_Ser_Button.TabIndex = 0;
             this.Hattyu_Ser_Button.Text = "検索";
             this.Hattyu_Ser_Button.UseVisualStyleBackColor = true;
+            this.Hattyu_Ser_Button.Click += new System.EventHandler(this.Hattyu_Ser_Button_Click);
             // 
             // label1
             // 
@@ -72,7 +73,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // HaID
             // 
             this.HaID.Location = new System.Drawing.Point(304, 48);
-            this.HaID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HaID.Margin = new System.Windows.Forms.Padding(2);
             this.HaID.Name = "HaID";
             this.HaID.Size = new System.Drawing.Size(81, 22);
             this.HaID.TabIndex = 2;
@@ -80,7 +81,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // MaID
             // 
             this.MaID.Location = new System.Drawing.Point(304, 100);
-            this.MaID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaID.Margin = new System.Windows.Forms.Padding(2);
             this.MaID.Name = "MaID";
             this.MaID.Size = new System.Drawing.Size(81, 22);
             this.MaID.TabIndex = 4;
@@ -98,7 +99,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // EmID
             // 
             this.EmID.Location = new System.Drawing.Point(304, 152);
-            this.EmID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmID.Margin = new System.Windows.Forms.Padding(2);
             this.EmID.Name = "EmID";
             this.EmID.Size = new System.Drawing.Size(81, 22);
             this.EmID.TabIndex = 6;
@@ -116,7 +117,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // HaHidden
             // 
             this.HaHidden.Location = new System.Drawing.Point(858, 48);
-            this.HaHidden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HaHidden.Margin = new System.Windows.Forms.Padding(2);
             this.HaHidden.Name = "HaHidden";
             this.HaHidden.Size = new System.Drawing.Size(81, 22);
             this.HaHidden.TabIndex = 8;
@@ -165,7 +166,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(91, 379);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -175,7 +176,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // Hattyu_Del_Button
             // 
             this.Hattyu_Del_Button.Location = new System.Drawing.Point(720, 241);
-            this.Hattyu_Del_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Hattyu_Del_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Hattyu_Del_Button.Name = "Hattyu_Del_Button";
             this.Hattyu_Del_Button.Size = new System.Drawing.Size(134, 110);
             this.Hattyu_Del_Button.TabIndex = 16;
@@ -185,7 +186,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // HaDate
             // 
             this.HaDate.Location = new System.Drawing.Point(570, 48);
-            this.HaDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HaDate.Margin = new System.Windows.Forms.Padding(2);
             this.HaDate.Name = "HaDate";
             this.HaDate.Size = new System.Drawing.Size(161, 22);
             this.HaDate.TabIndex = 17;
@@ -194,7 +195,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             this.WaWarehouseFlag.AutoSize = true;
             this.WaWarehouseFlag.Location = new System.Drawing.Point(570, 90);
-            this.WaWarehouseFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WaWarehouseFlag.Margin = new System.Windows.Forms.Padding(2);
             this.WaWarehouseFlag.Name = "WaWarehouseFlag";
             this.WaWarehouseFlag.Size = new System.Drawing.Size(34, 19);
             this.WaWarehouseFlag.TabIndex = 18;
@@ -205,7 +206,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             this.HaFlag.AutoSize = true;
             this.HaFlag.Location = new System.Drawing.Point(570, 133);
-            this.HaFlag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HaFlag.Margin = new System.Windows.Forms.Padding(2);
             this.HaFlag.Name = "HaFlag";
             this.HaFlag.Size = new System.Drawing.Size(34, 19);
             this.HaFlag.TabIndex = 19;
@@ -234,7 +235,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             this.Controls.Add(this.HaID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Hattyu_Ser_Button);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Hattyu_Ser";
             this.Text = "Hattyu_Ser";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

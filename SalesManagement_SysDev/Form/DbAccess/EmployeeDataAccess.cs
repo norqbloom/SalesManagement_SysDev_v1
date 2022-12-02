@@ -115,6 +115,12 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
+
+        internal static bool CheckPrCDExistence(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<M_Employee> Getdubblwdata(M_Employee selectCondition)
         {
             List<M_Employee> employee = new List<M_Employee>();
