@@ -43,7 +43,12 @@ namespace SalesManagement_SysDev
             }else if(checkBox1.Checked == true)
             {
                 //日付のみ
-
+                serchdate();
+            }
+            else
+            {
+                //なし
+                nodate();
             }
         }
         private void Allserchdate()
@@ -65,6 +70,17 @@ namespace SalesManagement_SysDev
             };
             histories = loginhistoryDataAccess.loginEmIDhistory(selectCondition);
             dataGridViewhistory.DataSource = histories;
+        }
+        private void serchdate()
+        {
+            histories = loginhistoryDataAccess.logindatehistory(dateTimePicker1.Value, dateTimePicker2.Value);
+            dataGridViewhistory.DataSource = histories;
+        }
+        private void nodate()
+        {
+            histories = loginhistoryDataAccess.nodatehistory();
+            dataGridViewhistory.DataSource = histories;
+
         }
 
         private void SetSelectData()
