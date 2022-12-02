@@ -368,8 +368,8 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                var loginhistory = context.loginHistories.Single(x => x.loginTime == template.loginTime);
-                loginhistory.logoutTime = logouttime;
+                //var loginhistory = context.loginHistories.Single(x => x.loginTime == template.loginTime);
+                //loginhistory.logoutTime = logouttime;
                 context.SaveChanges();
                 context.Dispose();
             }

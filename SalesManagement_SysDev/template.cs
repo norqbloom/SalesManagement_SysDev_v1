@@ -402,13 +402,13 @@ namespace SalesManagement_SysDev
         private void outtimereg()
         {
             DateTime dt = DateTime.Now;
-            string logouttime = dt.ToString("MM/dd HH;mm");
-
+            string logouttime = dt.ToString();
+            DateTime logintime = DateTime.Parse(template.loginTime);
             try
             {
                 var context = new SalesManagement_DevContext();
-                var loginhistory = context.loginHistories.Single(x => x.loginTime == template.loginTime);
-                loginhistory.logoutTime = logouttime;
+                var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
+                loginhistory.logoutTime = DateTime.Parse(logouttime);
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -559,6 +559,11 @@ namespace SalesManagement_SysDev
         private void RegPasswordbtn_Click(object sender, EventArgs e)
         {
             openChildForm(new regPassword());
+        }
+
+        private void loginhistorybtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new loginhistory());
         }
     }
 }

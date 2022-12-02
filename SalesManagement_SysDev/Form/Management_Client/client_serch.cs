@@ -482,5 +482,10 @@ namespace SalesManagement_SysDev
 
             gettextdate();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
