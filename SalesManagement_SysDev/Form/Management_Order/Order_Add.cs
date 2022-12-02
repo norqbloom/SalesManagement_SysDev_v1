@@ -96,6 +96,8 @@ namespace SalesManagement_SysDev.Management_Order
                     return false;
                 }
             }
+
+            //顧客担当者名
             if (!String.IsNullOrEmpty(textBoxClChange.Text.Trim()))
             {
                 if (textBoxClChange.Text.Length >= 50)

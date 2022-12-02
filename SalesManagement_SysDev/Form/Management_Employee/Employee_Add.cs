@@ -12,6 +12,8 @@ namespace SalesManagement_SysDev.Management_Employee
 {
     public partial class Employee_Add : Form
     {
+        
+        MessageDsp messageDsp = new MessageDsp();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         PasswordHash passwordHash = new PasswordHash();
@@ -36,20 +38,20 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private bool GetEmpDataReg()
         {
-            //EmIDの確認
+            //EmIDの確認 社員
             if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
             {
                 //Emid半角英数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    MessageBox.Show("IDは半角数字のみ");　//messageDsp.DspMsg("M6001");
+                    messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }
                 //Emid文字数チェック
                 if (textBoxEmID.TextLength > 6)
                 {
-                    MessageBox.Show("IDは文字数は6文字");　//messageDsp.DspMsg("M6002");
+                    messageDsp.DspMsg("M6002");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -57,7 +59,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 int EmpID = int.Parse(textBoxEmID.Text.Trim());
                 if (employeeDataAccess.CheckEmployeesCDExistence(EmpID))
                 {
-                    MessageBox.Show("重複");　//messageDsp.DspMsg("M6003");
+                    messageDsp.DspMsg("M6003");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -65,7 +67,7 @@ namespace SalesManagement_SysDev.Management_Employee
             }
             else
             {
-                MessageBox.Show("IDが入力されていません");　//messageDsp.DspMsg("M6004");
+                messageDsp.DspMsg("M6004");
                 textBoxEmID.Focus();
                 return false;
             }
@@ -76,14 +78,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 //名前文字数
                 if (textBoxEmName.TextLength > 50)
                 {
-                    MessageBox.Show("50文字以下"); //messageDsp.DspMsg("M6006");
+                    messageDsp.DspMsg("M6006");
                     textBoxEmName.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("名前入力しろよ。"); //messageDsp.DspMsg("M6007");
+                messageDsp.DspMsg("M6007");
                 textBoxEmName.Focus();
                 return false;
             }
@@ -93,21 +95,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //SOid型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    MessageBox.Show("半角数字やしw"); //messageDsp.DspMsg("M1005");
+                    messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
                     return false;
                 }
                 //soid文字数チェック
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("SoIDは文字数は2文字"); //messageDsp.DspMsg("M1006");
+                    messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("SoID入力せい"); //messageDsp.DspMsg("M1008");
+                messageDsp.DspMsg("M1008");
                 textBoxSoID.Focus();
                 return false;
             }
@@ -169,14 +171,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 //文字型
                 if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPhone.Text.Trim()))
                 {
-                    MessageBox.Show("半角英数字やしw"); //messageDsp.DspMsg("M1015");
+                    messageDsp.DspMsg("M1015");
                     textBoxEmPhone.Focus();
                     return false;
                 }
                 //電話番号文字数チェック
                 if (textBoxEmPhone.TextLength > 13)
                 {
-                    MessageBox.Show("電話番号は13"); //messageDsp.DspMsg("M1016");
+                    messageDsp.DspMsg("M1016");
                     textBoxEmPhone.Focus();
                     return false;
                 }
