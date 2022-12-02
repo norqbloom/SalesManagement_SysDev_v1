@@ -40,43 +40,43 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (textBoxOrID.Text.Length >= 6)
                 {
-                    MessageBox.Show("6文字いない");
+                    MessageBox.Show("6文字いない");　//messageDsp.DspMsg("M4022");
                     textBoxOrID.Focus();
                     return false;
                 }
                 if (!dataInputFormCheck.CheckNumeric(textBoxOrID.Text.Trim()))
                 {
-                    MessageBox.Show("数値のみ");
+                    MessageBox.Show("数値のみ");　//messageDsp.DspMsg("M4023");
                     textBoxOrID.Focus();
                     return false;
                 }
             }
-            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim())) //営業所
             {
                 if (textBoxSoID.Text.Length >= 2)
                 {
-                    MessageBox.Show("2文字いない");
+                    messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    MessageBox.Show("数値のみ");
+                   messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
                     return false;
                 }
             }
-            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))　//社員
             {
                 if (textBoxEmID.Text.Length >= 6)
                 {
-                    MessageBox.Show("6文字いない");
+                    messageDsp.DspMsg("M6002");
                     textBoxEmID.Focus();
                     return false;
                 }
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    MessageBox.Show("数値のみ");
+                   messageDsp.DspMsg("M6002");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -85,22 +85,24 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (textBoxClID.Text.Length >= 6)
                 {
-                    MessageBox.Show("6文字いない");
+                    messageDsp.DspMsg("M1002");
                     textBoxClID.Focus();
                     return false;
                 }
                 if (!dataInputFormCheck.CheckNumeric(textBoxClID.Text.Trim()))
                 {
-                    MessageBox.Show("数値のみ");
+                    messageDsp.DspMsg("M1001");
                     textBoxClID.Focus();
                     return false;
                 }
             }
+
+            //顧客担当者名
             if (!String.IsNullOrEmpty(textBoxClChange.Text.Trim()))
             {
                 if (textBoxClChange.Text.Length >= 50)
                 {
-                    MessageBox.Show("50文字いない");
+                    MessageBox.Show("50文字いない"); //messageDsp.DspMsg("M6029");
                     textBoxClChange.Focus();
                     return false;
                 }

@@ -179,7 +179,7 @@ namespace SalesManagement_SysDev.Management_Client
             //電話番号
             if (!String.IsNullOrEmpty(textBoxClPhone.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckNumeric(textBoxClPhone.Text.Trim()))
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxClPhone.Text.Trim()))
                 {
                     messageDsp.DspMsg("M1015");
                     textBoxClPhone.Focus();
