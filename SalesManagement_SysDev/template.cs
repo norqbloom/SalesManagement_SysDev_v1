@@ -367,7 +367,6 @@ namespace SalesManagement_SysDev
         private void Product_regbtn_Click(object sender, EventArgs e)
         {
             openChildForm(new Management_Product.Product_Add());
-            template.Globalint = 0;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

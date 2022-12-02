@@ -558,6 +558,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.radioButton1.TabIndex = 64;
             this.radioButton1.Text = "表示";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Product_Ser
             // 
