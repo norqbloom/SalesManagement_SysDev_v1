@@ -301,5 +301,20 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
+        public List<Emphistory> getdetail(Emphistory selectCondition)
+        {
+            List<Emphistory> emphistory = new List<Emphistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                emphistory = context.emphistories.Where(x => x.EmID == selectCondition.EmID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return emphistory;
+        }
     }
 }

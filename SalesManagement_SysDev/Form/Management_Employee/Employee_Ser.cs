@@ -263,11 +263,18 @@ namespace SalesManagement_SysDev.Management_Employee
             int number;
             int ClIDtxt;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            label5.Text = ClIDtxt.ToString();
-
-            //serchdateset(number);
+            serchdateset(number);
             setdatedetail();
+        }
+        private void serchdateset(int number)
+        {
+         
+            Emphistory selectCondition = new Emphistory
+            {
+                EmID = number.ToString(),
+
+            };
+            emphistories = EmployeeDataAccess.getdetail(selectCondition);
         }
     }
 }
