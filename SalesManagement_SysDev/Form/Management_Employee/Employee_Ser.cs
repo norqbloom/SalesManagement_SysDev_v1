@@ -15,7 +15,7 @@ namespace SalesManagement_SysDev.Management_Employee
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         private static List<M_Employee> employees;
-        private static List<Emphistory> history;
+        private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         public Employee_Ser()
         {
@@ -211,7 +211,63 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void Employee_Ser_Load(object sender, EventArgs e)
         {
+            invcnt();
+        }
+        private void invcnt()
+        {
+            labelEm.Visible = false;
+            labelSo.Visible = false;
+            labelPo.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+        }
+        private void incntok()
+        {
+            labelEm.Visible = true;
+            labelSo.Visible = true;
+            labelPo.Visible = true;
+            datetime.Visible = true;
+            userid.Visible = true;
+            username.Visible = true;
+            uptime.Visible = true;
+            upuserid.Visible = true;
+            upusername.Visible = true;
+        }
+        private void setdatedetail()
+        {
+            var x = emphistories.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
 
+            labelEm.Text = x.hisNo;
+            labelSo.Text = x.EmID;
+            labelPo.Text = x.SoID;
+            datetime.Text = x.RegisteredDate;
+            upusername.Text = x.regUserID;
+            username.Text = x.regUserName;
+            uptime.Text = x.UpDateTime;
+            upuserid.Text = x.LastupdatedUserID;
+            upusername.Text = x.LastupdatedUserName;
+            incntok();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int number;
+            int ClIDtxt;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            label5.Text = ClIDtxt.ToString();
+
+            serchdateset(number);
+            setdatedetail();
         }
     }
 }
