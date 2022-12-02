@@ -13,7 +13,6 @@ namespace SalesManagement_SysDev.Management_Employee
     public partial class Employee_Upd : Form
     {
         MessageDsp messageDsp = new MessageDsp();
-
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         PasswordHash passwordHash = new PasswordHash();
@@ -44,7 +43,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //Emid半角英数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                   messageDsp.DspMsg("M6001");
+                    messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }

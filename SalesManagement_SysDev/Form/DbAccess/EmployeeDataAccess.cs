@@ -27,6 +27,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 flg = context.M_Employees.Any(x => x.EmID == EmID);
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -53,6 +54,7 @@ namespace SalesManagement_SysDev
                 flg = context.M_Employees.Any(x => x.EmID.ToString() == EmID && x.EmPassword == EmPass);
                 //flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
                 //                                  && x.EmPassword.Contains(EmPass));
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -129,6 +131,8 @@ namespace SalesManagement_SysDev
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -153,6 +157,8 @@ namespace SalesManagement_SysDev
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -177,6 +183,8 @@ namespace SalesManagement_SysDev
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -201,6 +209,8 @@ namespace SalesManagement_SysDev
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -224,6 +234,8 @@ namespace SalesManagement_SysDev
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -246,7 +258,10 @@ namespace SalesManagement_SysDev
                                                  x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
-                                                 ).ToList();
+                                                 ).ToList();                context.SaveChanges();
+
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -269,6 +284,8 @@ namespace SalesManagement_SysDev
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
+                context.SaveChanges();
+
                 context.Dispose();
 
             }
@@ -300,6 +317,21 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return true;
+        }
+        public List<Emphistory> getdetail(Emphistory selectCondition)
+        {
+            List<Emphistory> emphistory = new List<Emphistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                emphistory = context.emphistories.Where(x => x.EmID == selectCondition.EmID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return emphistory;
         }
     }
 }

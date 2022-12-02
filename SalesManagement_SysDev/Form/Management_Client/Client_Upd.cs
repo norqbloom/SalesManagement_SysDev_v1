@@ -84,7 +84,7 @@ namespace SalesManagement_SysDev.Management_Client
                 }
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("営業所IDは2文字です"); //messageDsp.DspMsg("M1006");
+                    messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
