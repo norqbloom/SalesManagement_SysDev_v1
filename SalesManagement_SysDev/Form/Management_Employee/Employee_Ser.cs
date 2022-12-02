@@ -266,7 +266,7 @@ namespace SalesManagement_SysDev.Management_Employee
             ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
             label5.Text = ClIDtxt.ToString();
 
-            serchdateset(number);
+            //serchdateset(number);
             setdatedetail();
         }
     }
