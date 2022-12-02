@@ -22,6 +22,7 @@ namespace SalesManagement_SysDev
         internal static string soname = "";
         internal static Color maincolor = Color.FromArgb(51, 153, 102);
         internal static Color subcolor= Color.MediumSeaGreen;
+        internal static int Globalint = 0;
 
 
         public template()
@@ -43,7 +44,7 @@ namespace SalesManagement_SysDev
             this.Text= Application.ProductName;
             timer1.Interval = 1000;
             timer1.Enabled = true;
-            
+
         }
         private void visiblecnt()
         {
@@ -366,8 +367,9 @@ namespace SalesManagement_SysDev
         private void Product_regbtn_Click(object sender, EventArgs e)
         {
             openChildForm(new Management_Product.Product_Add());
+            template.Globalint = 0;
         }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer.Text= DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
@@ -402,13 +404,13 @@ namespace SalesManagement_SysDev
         private void outtimereg()
         {
             DateTime dt = DateTime.Now;
-            string logouttime = dt.ToString("MM/dd HH;mm");
-
+            string logouttime = dt.ToString();
+            DateTime logintime = DateTime.Parse(template.loginTime);
             try
             {
                 var context = new SalesManagement_DevContext();
-                var loginhistory = context.loginHistories.Single(x => x.loginTime == template.loginTime);
-                loginhistory.logoutTime = logouttime;
+                var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
+                loginhistory.logoutTime = DateTime.Parse(logouttime);
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -484,6 +486,7 @@ namespace SalesManagement_SysDev
         private void Product_upbtn_Click(object sender, EventArgs e)
         {
             openChildForm(new Management_Product.Product_Upd());
+            template.Globalint = 0;
         }
 
         private void Product_serchbtn_Click(object sender, EventArgs e)
@@ -559,6 +562,11 @@ namespace SalesManagement_SysDev
         private void RegPasswordbtn_Click(object sender, EventArgs e)
         {
             openChildForm(new regPassword());
+        }
+
+        private void loginhistorybtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new loginhistory());
         }
     }
 }

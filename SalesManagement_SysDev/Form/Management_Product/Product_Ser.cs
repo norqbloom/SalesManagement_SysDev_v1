@@ -17,6 +17,8 @@ namespace SalesManagement_SysDev.Management_Product
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
         private static List<M_Prohistory> history;
+   
+
 
 
         public Product_Ser()
@@ -160,31 +162,9 @@ namespace SalesManagement_SysDev.Management_Product
                 return;
             }
 
-            /*if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
-            {
-                if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
-                {
-                    datedubblwget();
-                }
-                else
-                {
-                    datePrget();
-                }
-            }
-            else
-            {
-                if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
-                {
-                    dateMaget();
-                }
-                else
-                {
-                    datenolwget();
-                }
+            
 
-            }
-
-            */
+        
         }
         private void SetSelectData()
         {

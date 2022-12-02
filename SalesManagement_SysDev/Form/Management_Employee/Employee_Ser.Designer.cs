@@ -50,6 +50,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.labelPo = new System.Windows.Forms.Label();
             this.labelEm = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.labelPo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -252,6 +252,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(707, 190);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dateTimePickerEmHiredate
             // 
@@ -289,6 +290,28 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(357, 662);
             this.panel1.TabIndex = 41;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Cursor = System.Windows.Forms.Cursors.No;
+            this.label20.Location = new System.Drawing.Point(33, 134);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 15);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "役職ID";
+            // 
+            // labelPo
+            // 
+            this.labelPo.AutoSize = true;
+            this.labelPo.Location = new System.Drawing.Point(133, 134);
+            this.labelPo.Name = "labelPo";
+            this.labelPo.Size = new System.Drawing.Size(51, 15);
+            this.labelPo.TabIndex = 44;
+            this.labelPo.Text = "label21";
             // 
             // labelEm
             // 
@@ -584,24 +607,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(33, 134);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 15);
-            this.label20.TabIndex = 43;
-            this.label20.Text = "役職ID";
-            // 
-            // labelPo
-            // 
-            this.labelPo.AutoSize = true;
-            this.labelPo.Location = new System.Drawing.Point(133, 134);
-            this.labelPo.Name = "labelPo";
-            this.labelPo.Size = new System.Drawing.Size(51, 15);
-            this.labelPo.TabIndex = 44;
-            this.labelPo.Text = "label21";
             // 
             // Employee_Ser
             // 

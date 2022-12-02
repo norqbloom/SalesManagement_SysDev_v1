@@ -25,6 +25,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 flg = context.M_Clients.Any(x => x.ClID == ClID);
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -155,6 +156,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 Client = context.M_Clients.ToList();
+                context.SaveChanges();
                 context.Dispose();
 
                 return Client;
@@ -191,6 +193,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 Client = context.M_Clients.Where(x => x.ClFlag == 0).ToList();
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -225,7 +228,8 @@ namespace SalesManagement_SysDev
                                                  x.ClPhone.Contains(selectCondition.ClPhone) &&
                                                  x.ClAddress.Contains(selectCondition.ClAddress) &&
                                                  x.ClFAX.Contains(selectCondition.ClFAX) &&
-                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();                                                    
+                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
+                context.SaveChanges();
                 context.Dispose();
                     
             }
@@ -250,6 +254,7 @@ namespace SalesManagement_SysDev
                                                  x.ClAddress.Contains(selectCondition.ClAddress) &&
                                                  x.ClFAX.Contains(selectCondition.ClFAX) &&
                                                  x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
+                context.SaveChanges();
                 context.Dispose();
 
             }
@@ -274,6 +279,7 @@ namespace SalesManagement_SysDev
                                                  x.ClAddress.Contains(selectCondition.ClAddress) &&
                                                  x.ClFAX.Contains(selectCondition.ClFAX) &&
                                                  x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
+                context.SaveChanges();
                 context.Dispose();
 
             }
@@ -298,6 +304,7 @@ namespace SalesManagement_SysDev
                                                  x.ClAddress.Contains(selectCondition.ClAddress) &&
                                                  x.ClFAX.Contains(selectCondition.ClFAX) &&
                                                  x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
+                context.SaveChanges();
                 context.Dispose();
 
             }
@@ -314,6 +321,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 history = context.M_Clhistory.Where(x => x.ClID == selectCondition.ClID).ToList();
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -338,6 +346,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 client = context.M_Clients.Where(x => x.ClID == selectCondition.ClID).ToList();
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -358,6 +367,7 @@ namespace SalesManagement_SysDev
                                                       x.ClAddress==selectCondition.ClAddress ||
                                                       x.ClPostal==selectCondition.ClPostal ||
                                                       x.ClFAX==selectCondition.ClFAX).ToList();
+                context.SaveChanges();
 
                 context.Dispose();
             }

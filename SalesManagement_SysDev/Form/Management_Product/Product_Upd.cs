@@ -15,6 +15,8 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+      
+
 
         public Product_Upd()
         {
@@ -398,7 +400,6 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void Product_Upd_Load(object sender, EventArgs e)
         {
-            SetFormDataGridView();
-        }
+            SetFormDataGridView();        }
     }
 }
