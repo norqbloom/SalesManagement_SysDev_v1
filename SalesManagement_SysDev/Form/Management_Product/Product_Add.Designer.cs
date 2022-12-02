@@ -64,6 +64,8 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +77,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
             this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
-            this.checkBoxPrFlag.TabIndex = 0;
+            this.checkBoxPrFlag.TabIndex = 14;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
             // 
@@ -85,7 +87,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label1.Location = new System.Drawing.Point(89, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "商品ID";
             // 
             // textBoxPrID
@@ -94,7 +96,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrID.TabIndex = 2;
+            this.textBoxPrID.TabIndex = 5;
             // 
             // dataGridViewDsp
             // 
@@ -108,13 +110,14 @@ namespace SalesManagement_SysDev.Management_Product
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDsp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(12, 388);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(12, 398);
             this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 62;
             this.dataGridViewDsp.RowTemplate.Height = 27;
             this.dataGridViewDsp.Size = new System.Drawing.Size(1699, 495);
-            this.dataGridViewDsp.TabIndex = 3;
+            this.dataGridViewDsp.TabIndex = 2;
+            this.dataGridViewDsp.TabStop = false;
             // 
             // label2
             // 
@@ -122,7 +125,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label2.Location = new System.Drawing.Point(89, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 1;
             this.label2.Text = "メーカID";
             // 
             // label3
@@ -131,7 +134,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label3.Location = new System.Drawing.Point(89, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 2;
             this.label3.Text = "商品名";
             // 
             // label4
@@ -140,7 +143,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label4.Location = new System.Drawing.Point(89, 241);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 3;
             this.label4.Text = "価格";
             // 
             // label6
@@ -149,7 +152,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label6.Location = new System.Drawing.Point(89, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 15);
-            this.label6.TabIndex = 8;
+            this.label6.TabIndex = 4;
             this.label6.Text = "安全在庫数";
             // 
             // label7
@@ -158,7 +161,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label7.Location = new System.Drawing.Point(365, 91);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 15);
-            this.label7.TabIndex = 9;
+            this.label7.TabIndex = 10;
             this.label7.Text = "小分類ID";
             // 
             // label8
@@ -167,7 +170,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label8.Location = new System.Drawing.Point(365, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 15);
-            this.label8.TabIndex = 10;
+            this.label8.TabIndex = 11;
             this.label8.Text = "型番";
             // 
             // label9
@@ -176,7 +179,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label9.Location = new System.Drawing.Point(365, 219);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(22, 15);
-            this.label9.TabIndex = 11;
+            this.label9.TabIndex = 12;
             this.label9.Text = "色";
             // 
             // label10
@@ -185,7 +188,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label10.Location = new System.Drawing.Point(365, 270);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 15);
-            this.label10.TabIndex = 12;
+            this.label10.TabIndex = 13;
             this.label10.Text = "発売日";
             // 
             // label11
@@ -194,7 +197,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label11.Location = new System.Drawing.Point(605, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 15);
-            this.label11.TabIndex = 13;
+            this.label11.TabIndex = 19;
             this.label11.Text = "非表示理由";
             // 
             // textBoxMaID
@@ -203,7 +206,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxMaID.TabIndex = 14;
+            this.textBoxMaID.TabIndex = 6;
             // 
             // textBoxPrName
             // 
@@ -211,7 +214,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrName.TabIndex = 15;
+            this.textBoxPrName.TabIndex = 7;
             // 
             // textBoxPrice
             // 
@@ -219,7 +222,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrice.TabIndex = 16;
+            this.textBoxPrice.TabIndex = 8;
             // 
             // textBoxPrSafetyStock
             // 
@@ -227,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
             this.textBoxPrSafetyStock.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrSafetyStock.TabIndex = 18;
+            this.textBoxPrSafetyStock.TabIndex = 9;
             // 
             // textBoxScID
             // 
@@ -235,7 +238,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxScID.TabIndex = 19;
+            this.textBoxScID.TabIndex = 15;
             // 
             // textBoxPrModelNumber
             // 
@@ -243,7 +246,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrModelNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrModelNumber.TabIndex = 20;
+            this.textBoxPrModelNumber.TabIndex = 16;
             // 
             // textBoxPrColor
             // 
@@ -251,7 +254,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrColor.TabIndex = 21;
+            this.textBoxPrColor.TabIndex = 17;
             // 
             // textBoxPrHidden
             // 
@@ -259,7 +262,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrHidden.Name = "textBoxPrHidden";
             this.textBoxPrHidden.Size = new System.Drawing.Size(81, 22);
-            this.textBoxPrHidden.TabIndex = 23;
+            this.textBoxPrHidden.TabIndex = 20;
             // 
             // ButtonAdd
             // 
@@ -267,7 +270,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.ButtonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(143, 116);
-            this.ButtonAdd.TabIndex = 24;
+            this.ButtonAdd.TabIndex = 22;
             this.ButtonAdd.Text = "登録";
             this.ButtonAdd.UseVisualStyleBackColor = true;
             this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
@@ -278,10 +281,9 @@ namespace SalesManagement_SysDev.Management_Product
             this.ButtonDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonDel.Name = "ButtonDel";
             this.ButtonDel.Size = new System.Drawing.Size(143, 116);
-            this.ButtonDel.TabIndex = 25;
+            this.ButtonDel.TabIndex = 21;
             this.ButtonDel.Text = "削除";
             this.ButtonDel.UseVisualStyleBackColor = true;
-            this.ButtonDel.Click += new System.EventHandler(this.ButtonDel_Click);
             // 
             // dateTimePickerPrReleaseDate
             // 
@@ -289,7 +291,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerPrReleaseDate.TabIndex = 26;
+            this.dateTimePickerPrReleaseDate.TabIndex = 18;
             this.dateTimePickerPrReleaseDate.Value = new System.DateTime(2022, 11, 29, 0, 0, 0, 0);
             // 
             // panel2
@@ -309,7 +311,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 36);
             this.panel2.TabIndex = 46;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // change
             // 
@@ -412,11 +413,36 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(1517, 317);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(58, 19);
+            this.radioButton1.TabIndex = 47;
+            this.radioButton1.Text = "表示";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(1517, 342);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(73, 19);
+            this.radioButton2.TabIndex = 49;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "非表示";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2098, 1156);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.ButtonDel);
@@ -490,5 +516,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button buttonFirstPage;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
