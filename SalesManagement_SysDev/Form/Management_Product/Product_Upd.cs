@@ -342,8 +342,17 @@ namespace SalesManagement_SysDev.Management_Product
         private void GetDataGridView()
         {
 
+            int radioint = 0;
+            if (radioButton1.Checked == true)
+            {
+                radioint = 2;
+            }
+            else
+            {
+                radioint = 0;
+            }
             // 商品データの取得
-            Product2 = productDataAccess.GetProductData2();
+            Product2 = productDataAccess.GetProductData2(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -401,5 +410,19 @@ namespace SalesManagement_SysDev.Management_Product
         private void Product_Upd_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            int Localint;
+            if (radioButton1.Checked == true)
+            {
+                Localint = 2;
+            }
+            else
+            {
+                Localint = 0;
+            }
+            GetDataGridView();
+        }
     }
 }

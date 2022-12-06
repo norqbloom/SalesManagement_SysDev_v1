@@ -190,7 +190,7 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        public List<M_ProductDsp> GetProductData2()
+        public List<M_ProductDsp> GetProductData2(int radioint)
         {
             List<M_ProductDsp> product = new List<M_ProductDsp>();
 
@@ -203,7 +203,7 @@ namespace SalesManagement_SysDev
                          on t1.MaID equals t2.MaID
                          join t3 in context.M_SmallClassifications
                          on t1.ScID equals t3.ScID
-                         where t1.PrFlag == template.Globalint               
+                         where t1.PrFlag == radioint              
                          select new
                          {
                              t1.PrID,
