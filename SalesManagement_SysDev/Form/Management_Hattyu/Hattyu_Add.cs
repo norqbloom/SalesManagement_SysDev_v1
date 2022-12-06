@@ -16,7 +16,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
         MessageDsp messageDsp = new MessageDsp();
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
-        // OrderDateAccess HattyuDateAccess = new OrderDateAccess();
+        //HattyuDateAccess HattyuDateAccess = new HattyuDateAccess();
+        //private static List<M_Employee> employees;
+        //private static List<M_Maker> emphistories;
 
         public Hattyu_Add()
         {
@@ -111,14 +113,24 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 EmID.Focus();
                 return false;
             }
-            return true;
+            
             //発注年月日　適否
-
+            //HaDate
 
             //入庫済フラグ
-
+            if (WaWarehouseFlag.Checked)
+            {
+                return true;
+            }
             //発注管理フラグ
-            // if(HaFlag.CheckState.Indeterminate)
+            if (HaFlag.CheckState == CheckState.Indeterminate)
+            {
+
+                MessageBox.Show(""); //messageDsp.DspMsg("M6027");
+                HaFlag.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }
