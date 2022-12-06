@@ -28,8 +28,6 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
         
-        
-
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             //商品データ取得
