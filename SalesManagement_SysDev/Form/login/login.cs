@@ -142,7 +142,7 @@ namespace SalesManagement_SysDev
                     template.loginID = loginID;
 
                     DateTime dt = DateTime.Now;
-                    template.loginTime = dt.ToString("MM/dd HH;mm");
+                    template.loginTime = dt.ToString();
 
                     context.Dispose();
                     
@@ -199,10 +199,12 @@ namespace SalesManagement_SysDev
         {
             return new loginHistory
             {
+               
                 EmID = template.EmID.ToString(),
-                EmName=template.loginName,
+                EmName = template.loginName,
                 position = template.loginPosition,
-                loginTime=template.loginTime
+                loginTime = DateTime.Parse(template.loginTime) ,
+                logoutTime= DateTime.Parse(template.loginTime)
             };
         }
 

@@ -12,18 +12,23 @@ namespace SalesManagement_SysDev.Management_Product
 {
     public partial class Product_Add : Form
     {
+      
+        
+        
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
 
         //データグリッドビュー用のプロダクトデータ
         private static List<M_ProductDsp> Product2;
-        private static List<M_ProductDsp> Product3;
 
         public Product_Add()
         {
             InitializeComponent();
         }
+
+        
+        
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
@@ -310,22 +315,10 @@ namespace SalesManagement_SysDev.Management_Product
             textBoxPrHidden.Text = "";
         }
 
-        private void ButtonDel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Product_Add_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
         }
-
-
 
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
@@ -358,16 +351,17 @@ namespace SalesManagement_SysDev.Management_Product
         ///////////////////////////////
         private void GetDataGridView()
         {
-
-            // 商品データの取得
-            if(checkBoxPrFlag.Checked == true)
+            int radioint = 0;
+            if(radioButton1.Checked == true)
             {
-                Product2 = productDataAccess.GetProductData2();
+                radioint = 2;
             }
             else
             {
-                Product3 = productDataAccess.GetProductData3();
+                radioint = 0;
             }
+            // 商品データの取得
+            Product2 = productDataAccess.GetProductData2(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -382,6 +376,7 @@ namespace SalesManagement_SysDev.Management_Product
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            
             dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
@@ -422,6 +417,18 @@ namespace SalesManagement_SysDev.Management_Product
 
         }
 
-        
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            int Localint;
+                if (radioButton1.Checked == true)
+                {
+                    Localint = 2;
+                }
+                else
+                {
+                    Localint = 0;
+                }
+            GetDataGridView();
+        }
     }
 }

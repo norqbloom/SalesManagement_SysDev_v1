@@ -10,6 +10,7 @@ namespace SalesManagement_SysDev
 {
     class ProductDataAccess
     {
+        
         ///////////////////////////////
         //メソッド名：CheckPrIDExistence()
         //引　数   ：商品ID
@@ -189,19 +190,20 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        public List<M_ProductDsp> GetProductData2()
+        public List<M_ProductDsp> GetProductData2(int radioint)
         {
             List<M_ProductDsp> product = new List<M_ProductDsp>();
 
             try
             {
+               
                 var context = new SalesManagement_DevContext();
                 var tb = from t1 in context.M_Products
                          join t2 in context.M_Makers
                          on t1.MaID equals t2.MaID
                          join t3 in context.M_SmallClassifications
                          on t1.ScID equals t3.ScID
-
+                         where t1.PrFlag == radioint              
                          select new
                          {
                              t1.PrID,
@@ -216,6 +218,7 @@ namespace SalesManagement_SysDev
                              t1.PrFlag,
                              t1.PrHidden
                          };
+               
                 foreach (var p in tb)
                 {
                     product.Add(new M_ProductDsp()
@@ -242,58 +245,7 @@ namespace SalesManagement_SysDev
             return product;
         }
 
-        public List<M_ProductDsp> GetProductData3()
-        {
-            List<M_ProductDsp> product = new List<M_ProductDsp>();
-
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                var tb = from t1 in context.M_Products
-                         join t2 in context.M_Makers
-                         on t1.MaID equals t2.MaID
-                         join t3 in context.M_SmallClassifications
-                         on t1.ScID equals t3.ScID
-
-                         select new
-                         {
-                             t1.PrID,
-                             t2.MaID,
-                             t1.PrName,
-                             t1.Price,
-                             t1.PrSafetyStock,
-                             t3.ScID,
-                             t1.PrModelNumber,
-                             t1.PrColor,
-                             t1.PrReleaseDate,
-                             t1.PrFlag,
-                             t1.PrHidden
-                         };
-                foreach (var p in tb)
-                {
-                    product.Add(new M_ProductDsp()
-                    {
-                        PrID = p.PrID,
-                        MaID = p.MaID,
-                        PrName = p.PrName,
-                        Price = p.Price,
-                        PrSafetyStock = p.PrSafetyStock,
-                        ScID = p.ScID,
-                        PrModelNumber = p.PrModelNumber,
-                        PrColor = p.PrColor,
-                        PrReleaseDate = p.PrReleaseDate,
-                        PrFlag = p.PrFlag,
-                        PrHidden = p.PrHidden
-                    });
-                }
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return product;
-        }
+        
 
         ///////////////////////////////
         //メソッド名：GetItemData()　オーバーロード
@@ -317,6 +269,7 @@ namespace SalesManagement_SysDev
                                t1.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                t1.PrColor.Contains(selectCondition.PrColor) &&
                                t1.PrHidden.Contains(selectCondition.PrHidden)
+                               
 
                          select new
                          {
@@ -512,6 +465,29 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        public List<M_Product> Getnodata2(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
         public List<M_Product> GetPrMadata(M_Product selectCondition)
         {
             List<M_Product> product = new List<M_Product>();
@@ -604,7 +580,9 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return history;
+            
         }
+
     }
 }
 
