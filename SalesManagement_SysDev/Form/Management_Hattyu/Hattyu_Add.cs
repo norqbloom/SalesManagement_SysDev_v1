@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -136,6 +137,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
             return true;
         }
+
         private T_Hattyu GetDateat
         {
             int checkflg;
@@ -162,3 +164,4 @@ namespace SalesManagement_SysDev.Management_Hattyu
 }
 
 
+*/

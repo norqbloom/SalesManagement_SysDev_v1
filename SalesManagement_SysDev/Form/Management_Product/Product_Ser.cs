@@ -132,6 +132,12 @@ namespace SalesManagement_SysDev.Management_Product
                         datePrScget();
                         return;
                     }
+                    else
+                    {
+                        //商品のみ
+                        MessageBox.Show("aaa");
+                        return;
+                    }
                 }
             }
             else if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
