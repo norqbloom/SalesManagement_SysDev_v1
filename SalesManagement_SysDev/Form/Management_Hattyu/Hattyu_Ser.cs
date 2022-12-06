@@ -12,12 +12,12 @@ namespace SalesManagement_SysDev.Management_Hattyu
 {
     public partial class Hattyu_Ser : Form
     {
-        EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
+        //EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
-        //HattyuDataAccess DataAccess = new HattyuDataAccess();
-        private static List<T_Hattyu> products;
-        private static List<M_Prohistory> history;
+        HattyuDataAccess HattyuDataAccess = new HattyuDataAccess();
+       private static List<T_Hattyu> products;
+       private static List<M_Prohistory> history;
 
         public Hattyu_Ser()
         {
@@ -30,9 +30,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
             if (!GetHattyuDataAtSelect())
                 return;
 
-            //GenerateDataAtSelect();
+            GenerateDataAtSelect();
 
-            // SetSelectData();
+            SetSelectData();
         }
         private bool GetHattyuDataAtSelect()
         {
@@ -59,13 +59,13 @@ namespace SalesManagement_SysDev.Management_Hattyu
                     MaID.Focus();
                     return false;
                 }
-            }
-            //文字数
-            if (MaID.TextLength > 6)
-            {
-                messageDsp.DspMsg("2006");
-                MaID.Focus();
-                return false;
+                //文字数
+                if (MaID.TextLength > 6)
+                {
+                    messageDsp.DspMsg("2006");
+                    MaID.Focus();
+                    return false;
+                }
             }
             else
             {
@@ -73,39 +73,42 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 MaID.Focus();
                 return false;
             }
-            //到達不可
+            
 
-            ///EmIDの確認 社員
-            //if (!String.IsNullOrEmpty(EmID.Text.Trim()))
-            //{
-            //    //Emid半角英数字チェック
-            //    if (!dataInputFormCheck.CheckNumeric(EmID.Text.Trim()))
-            //    {
-            //        messageDsp.DspMsg("M6001");
-            //        EmID.Focus();
-            //        return false;
-            //    }
-            //    //Emid文字数チェック
-            //    if (EmID.TextLength > 6)
-            //    {
-            //        messageDsp.DspMsg("M6002");
-            //       EmID.Focus();
-            //        return false;
-            //    }
-            //    int EmpID = int.Parse(EmID.Text.Trim());
-            //    if (EmployeeDataAccess.CheckEmployeesCDExistence(int.Parse(EmID.Text.Trim())))
-            //    {
-            //        messageDsp.DspMsg("M6003");
-            //        EmID.Focus();
-            //        return false;
-            //    }
+            // EmIDの確認 社員
+            if (!String.IsNullOrEmpty(EmID.Text.Trim()))
 
-            //}
-            //else
-            //{
-            //    messageDsp.DspMsg("M6004");
-            //    EmID.Focus();
-            //    return false;
+            {
+                //Emid半角英数字チェック
+                if (!dataInputFormCheck.CheckNumeric(EmID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M6001");
+                    EmID.Focus();
+                    return false;
+                }
+                //Emid文字数チェック
+                if (EmID.TextLength > 6)
+                {
+                    messageDsp.DspMsg("M6002");
+                    EmID.Focus();
+                    return false;
+                }
+                //int EmpID = int.Parse(EmID.Text.Trim());
+                if (EmployeeDataAccess.CheckPrCDExistence(int.Parse(EmID.Text.Trim())))
+                {
+                    messageDsp.DspMsg("M6003");
+                    EmID.Focus();
+                    return false;
+                }
+            
+            }
+            else
+            {
+                messageDsp.DspMsg("M6004");
+                EmID.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -65,7 +65,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(808, 66);
+            this.label8.Location = new System.Drawing.Point(936, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 15);
             this.label8.TabIndex = 56;
@@ -73,16 +73,16 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxClPostal
             // 
-            this.textBoxClPostal.Location = new System.Drawing.Point(549, 112);
+            this.textBoxClPostal.Location = new System.Drawing.Point(634, 116);
             this.textBoxClPostal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClPostal.Name = "textBoxClPostal";
-            this.textBoxClPostal.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClPostal.Size = new System.Drawing.Size(244, 22);
             this.textBoxClPostal.TabIndex = 3;
             // 
             // checkBoxClFLG
             // 
             this.checkBoxClFLG.AutoSize = true;
-            this.checkBoxClFLG.Location = new System.Drawing.Point(811, 116);
+            this.checkBoxClFLG.Location = new System.Drawing.Point(939, 114);
             this.checkBoxClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxClFLG.Name = "checkBoxClFLG";
             this.checkBoxClFLG.Size = new System.Drawing.Size(121, 19);
@@ -93,7 +93,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(421, 208);
+            this.label7.Location = new System.Drawing.Point(561, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 15);
             this.label7.TabIndex = 53;
@@ -102,7 +102,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(419, 116);
+            this.label6.Location = new System.Drawing.Point(546, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 15);
             this.label6.TabIndex = 52;
@@ -111,7 +111,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(419, 259);
+            this.label5.Location = new System.Drawing.Point(546, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 51;
@@ -120,7 +120,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(421, 158);
+            this.label4.Location = new System.Drawing.Point(561, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 50;
@@ -129,7 +129,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(419, 62);
+            this.label3.Location = new System.Drawing.Point(546, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 49;
@@ -155,10 +155,10 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxClFAX
             // 
-            this.textBoxClFAX.Location = new System.Drawing.Point(549, 215);
+            this.textBoxClFAX.Location = new System.Drawing.Point(634, 205);
             this.textBoxClFAX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClFAX.Name = "textBoxClFAX";
-            this.textBoxClFAX.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClFAX.Size = new System.Drawing.Size(244, 22);
             this.textBoxClFAX.TabIndex = 5;
             // 
             // textBoxSoID
@@ -166,7 +166,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxSoID.Location = new System.Drawing.Point(251, 112);
             this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSoID.Name = "textBoxSoID";
-            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxSoID.Size = new System.Drawing.Size(244, 22);
             this.textBoxSoID.TabIndex = 1;
             // 
             // textBoxClID
@@ -174,43 +174,46 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClID.Location = new System.Drawing.Point(248, 61);
             this.textBoxClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClID.Name = "textBoxClID";
-            this.textBoxClID.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClID.Size = new System.Drawing.Size(244, 22);
             this.textBoxClID.TabIndex = 0;
             // 
             // textBoxClName
             // 
-            this.textBoxClName.Location = new System.Drawing.Point(549, 60);
+            this.textBoxClName.Location = new System.Drawing.Point(634, 58);
             this.textBoxClName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClName.Name = "textBoxClName";
-            this.textBoxClName.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClName.Size = new System.Drawing.Size(244, 22);
             this.textBoxClName.TabIndex = 2;
             // 
             // textBoxClHidden
             // 
-            this.textBoxClHidden.Location = new System.Drawing.Point(931, 62);
+            this.textBoxClHidden.Location = new System.Drawing.Point(1043, 61);
             this.textBoxClHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClHidden.Name = "textBoxClHidden";
-            this.textBoxClHidden.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClHidden.Size = new System.Drawing.Size(244, 22);
             this.textBoxClHidden.TabIndex = 7;
             // 
             // textBoxClPhone
             // 
-            this.textBoxClPhone.Location = new System.Drawing.Point(549, 259);
+            this.textBoxClPhone.Location = new System.Drawing.Point(634, 256);
             this.textBoxClPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClPhone.Name = "textBoxClPhone";
-            this.textBoxClPhone.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClPhone.Size = new System.Drawing.Size(244, 22);
             this.textBoxClPhone.TabIndex = 6;
             // 
             // textBoxClAddress
             // 
-            this.textBoxClAddress.Location = new System.Drawing.Point(549, 156);
+            this.textBoxClAddress.Location = new System.Drawing.Point(634, 155);
             this.textBoxClAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClAddress.Name = "textBoxClAddress";
-            this.textBoxClAddress.Size = new System.Drawing.Size(81, 22);
+            this.textBoxClAddress.Size = new System.Drawing.Size(244, 22);
             this.textBoxClAddress.TabIndex = 4;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(112, 323);
@@ -223,10 +226,10 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(1041, 242);
+            this.buttonAdd.Location = new System.Drawing.Point(1018, 229);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(139, 55);
+            this.buttonAdd.Size = new System.Drawing.Size(179, 75);
             this.buttonAdd.TabIndex = 38;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -235,6 +238,7 @@ namespace SalesManagement_SysDev.Management_Client
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.Controls.Add(this.change);
             this.panel2.Controls.Add(this.buttonLastPage);
             this.panel2.Controls.Add(this.buttonNextPage);
@@ -244,17 +248,17 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(59, 721);
+            this.panel2.Location = new System.Drawing.Point(279, 729);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 36);
+            this.panel2.Size = new System.Drawing.Size(805, 28);
             this.panel2.TabIndex = 57;
             // 
             // change
             // 
             this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.change.Location = new System.Drawing.Point(220, 9);
+            this.change.Location = new System.Drawing.Point(220, 1);
             this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.change.Name = "change";
             this.change.Size = new System.Drawing.Size(75, 22);
@@ -266,7 +270,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLastPage.Location = new System.Drawing.Point(775, 9);
+            this.buttonLastPage.Location = new System.Drawing.Point(775, 1);
             this.buttonLastPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLastPage.Name = "buttonLastPage";
             this.buttonLastPage.Size = new System.Drawing.Size(28, 22);
@@ -278,7 +282,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNextPage.Location = new System.Drawing.Point(745, 9);
+            this.buttonNextPage.Location = new System.Drawing.Point(745, 1);
             this.buttonNextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNextPage.Name = "buttonNextPage";
             this.buttonNextPage.Size = new System.Drawing.Size(28, 22);
@@ -290,7 +294,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPreviousPage.Location = new System.Drawing.Point(711, 9);
+            this.buttonPreviousPage.Location = new System.Drawing.Point(711, 1);
             this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPreviousPage.Name = "buttonPreviousPage";
             this.buttonPreviousPage.Size = new System.Drawing.Size(28, 22);
@@ -303,7 +307,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 11);
+            this.label17.Location = new System.Drawing.Point(3, 3);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(81, 15);
             this.label17.TabIndex = 20;
@@ -313,7 +317,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
+            this.textBoxPageSize.Location = new System.Drawing.Point(101, 1);
             this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageSize.Name = "textBoxPageSize";
             this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
@@ -322,7 +326,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxPageNo
             // 
             this.textBoxPageNo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBoxPageNo.Location = new System.Drawing.Point(532, 8);
+            this.textBoxPageNo.Location = new System.Drawing.Point(532, 0);
             this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
@@ -333,7 +337,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPage.AutoSize = true;
-            this.labelPage.Location = new System.Drawing.Point(591, 10);
+            this.labelPage.Location = new System.Drawing.Point(591, 2);
             this.labelPage.Name = "labelPage";
             this.labelPage.Size = new System.Drawing.Size(43, 15);
             this.labelPage.TabIndex = 23;
@@ -343,7 +347,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
+            this.buttonFirstPage.Location = new System.Drawing.Point(677, 1);
             this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFirstPage.Name = "buttonFirstPage";
             this.buttonFirstPage.Size = new System.Drawing.Size(28, 22);
@@ -378,7 +382,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.buttonAdd);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Client_Add";
-            this.Text = "Client_Add";
+            this.Text = "顧客追加";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
