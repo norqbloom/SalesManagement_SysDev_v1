@@ -16,5 +16,10 @@ namespace SalesManagement_SysDev.Management_Warehousing
         {
             InitializeComponent();
         }
+
+        private void Syu_Con_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

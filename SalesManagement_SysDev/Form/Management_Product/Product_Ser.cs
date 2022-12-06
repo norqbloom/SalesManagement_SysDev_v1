@@ -180,13 +180,20 @@ namespace SalesManagement_SysDev.Management_Product
         {
             DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
 
+            string dateserch = null;
+            if (checkBoxdate.Checked == true)
+            {
+
+                dateserch = dateTimePickerPrReleaseDate.Value.ToString();
+            }
+
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrReleaseDate = dateserch
             };
             products = productDataAccess.GetPrdata(selectCondition);
 
@@ -275,6 +282,7 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void priddate()
         {
+
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
