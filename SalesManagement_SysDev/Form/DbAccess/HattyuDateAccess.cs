@@ -245,7 +245,7 @@ namespace SalesManagement_SysDev
             }
             return hattyus;
         }
-        public List<T_> GetSodata(M_Client selectCondition)
+        /*public List<T_> GetSodata(M_Client selectCondition)
         {
             List<M_Client> client = new List<M_Client>();
 
@@ -270,6 +270,7 @@ namespace SalesManagement_SysDev
             }
             return client;
         }
+        */
         public List<M_Client> Getnodata(M_Client selectCondition)
         {
             List<M_Client> client = new List<M_Client>();

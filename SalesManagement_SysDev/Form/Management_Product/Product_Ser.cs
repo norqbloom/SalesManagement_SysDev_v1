@@ -135,7 +135,7 @@ namespace SalesManagement_SysDev.Management_Product
                     else
                     {
                         //商品のみ
-                        MessageBox.Show("aaa");
+                        priddate();
                         return;
                     }
                 }
@@ -271,6 +271,19 @@ namespace SalesManagement_SysDev.Management_Product
                 PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrScdata(selectCondition);
+
+        }
+        private void priddate()
+        {
+            M_Product selectCondition = new M_Product()
+            {
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                //PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+            };
+            products = productDataAccess.GetPronlydata(selectCondition);
 
         }
         private void dateMaScget()
@@ -518,5 +531,6 @@ namespace SalesManagement_SysDev.Management_Product
             }
             GetDataGridView();
         }
+        
     }
     }
