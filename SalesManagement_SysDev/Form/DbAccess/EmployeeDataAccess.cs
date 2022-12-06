@@ -116,6 +116,11 @@ namespace SalesManagement_SysDev
             return true;
         }
 
+        internal static bool CheckemployeeCDExistence(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         internal static bool CheckPrCDExistence(int v)
         {
             throw new NotImplementedException();
