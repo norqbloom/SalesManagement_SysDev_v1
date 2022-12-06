@@ -113,6 +113,7 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
+
         public List<M_Employee> Getdubblwdata(M_Employee selectCondition)
         {
             List<M_Employee> employee = new List<M_Employee>();
@@ -122,10 +123,10 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
-                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmID==selectCondition.EmID &&
+                                                 x.SoID==selectCondition.SoID &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
-                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 x.PoID==selectCondition.PoID &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
@@ -147,8 +148,31 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
-                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmID==selectCondition.EmID&&
+                                                 x.SoID == selectCondition.SoID &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> Getdateemget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmID==selectCondition.EmID &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
@@ -171,9 +195,9 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
-                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.EmID == selectCondition.EmID &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
-                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 x.PoID == selectCondition.PoID &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
@@ -195,9 +219,9 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
-                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.SoID == selectCondition.SoID &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
-                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 x.PoID == selectCondition.PoID &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();
@@ -219,7 +243,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
-                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.SoID == selectCondition.SoID &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
@@ -243,7 +267,7 @@ namespace SalesManagement_SysDev
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
-                                                 x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                 x.PoID == selectCondition.PoID &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
                                                  ).ToList();

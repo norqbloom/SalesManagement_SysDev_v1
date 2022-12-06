@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev
         public int PoID { get; set; }               //役職ID
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public DateTime EmHiredate { get; set; }    //入社年月日
+        public String EmHiredate { get; set; }    //入社年月日
         [MaxLength(100)]
         [Required]
         public String EmPassword { get; set; }      //パスワード

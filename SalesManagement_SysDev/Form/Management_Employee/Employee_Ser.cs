@@ -30,7 +30,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
             GenerateDataAtSelect();
 
-            //SetSelectData();
+            SetSelectData();
         }
         private bool GetClientDataAtSelect()
         {
@@ -78,12 +78,13 @@ namespace SalesManagement_SysDev.Management_Employee
                         datedubblwget();
                         return;
                     }
-                    else
+                    else 
                     {
                         //Em・Soのみ
                         datePrMaget();
                         return;
                     }
+
                 }
                 else
                 {
@@ -91,6 +92,12 @@ namespace SalesManagement_SysDev.Management_Employee
                     {
                        　//Em・Poのみ
                         datePrScget();
+                        return;
+                    }
+                    else
+                    {
+                        //emのみ
+                        dateemget();
                         return;
                     }
                 }
@@ -138,7 +145,18 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
             };
-            employees = EmployeeDataAccess.Getdubblwdata(selectCondition);
+            employees = EmployeeDataAccess.G(selectCondition);
+        }
+        private void dateemget()
+        {
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                EmName = textBoxEmName.Text.Trim(),
+                EmPhone = textBoxEmPhone.Text.Trim(),
+                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+            };
+            employees = EmployeeDataAccess.Getdateemget(selectCondition);
         }
         private void datePrMaget()
         {
@@ -261,7 +279,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int number;
-            int ClIDtxt;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             serchdateset(number);
             setdatedetail();
