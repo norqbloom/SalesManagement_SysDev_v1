@@ -138,6 +138,61 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
+        
+        public List<M_ProductDsp> GetProductData2(int radioint)
+        {
+            List<M_ProductDsp> product = new List<M_ProductDsp>();
+
+            try
+            {
+
+                var context = new SalesManagement_DevContext();
+                var tb = from t1 in context.M_Products
+                         join t2 in context.M_Makers
+                         on t1.MaID equals t2.MaID
+                         join t3 in context.M_SmallClassifications
+                         on t1.ScID equals t3.ScID
+                         where t1.PrFlag == radioint
+                         select new
+                         {
+                             t1.PrID,
+                             t2.MaID,
+                             t1.PrName,
+                             t1.Price,
+                             t1.PrSafetyStock,
+                             t3.ScID,
+                             t1.PrModelNumber,
+                             t1.PrColor,
+                             t1.PrReleaseDate,
+                             t1.PrFlag,
+                             t1.PrHidden
+                         };
+
+                foreach (var p in tb)
+                {
+                    product.Add(new M_ProductDsp()
+                    {
+                        PrID = p.PrID,
+                        MaID = p.MaID,
+                        PrName = p.PrName,
+                        Price = p.Price,
+                        PrSafetyStock = p.PrSafetyStock,
+                        ScID = p.ScID,
+                        PrModelNumber = p.PrModelNumber,
+                        PrColor = p.PrColor,
+                        PrReleaseDate = p.PrReleaseDate,
+                        PrFlag = p.PrFlag,
+                        PrHidden = p.PrHidden
+                    });
+                }
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
     }
 }
     

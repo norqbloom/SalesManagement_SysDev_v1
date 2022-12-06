@@ -168,7 +168,7 @@ namespace SalesManagement_SysDev.Management_Order
         private T_Order GenerateDel_Ord()
         {
             int number;
-            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             return new T_Order
             {
                 OrID = number
@@ -232,9 +232,17 @@ namespace SalesManagement_SysDev.Management_Order
         ///////////////////////////////
         private void GetDataGridView()
         {
-
+            int radioint = 0;
+            if (radioButton1.Checked == true)
+            {
+                radioint = 2;
+            }
+            else
+            {
+                radioint = 0;
+            }
             // 商品データの取得
-            Product2 = productDataAccess.GetProductData2();
+            Product2 = orderDateAccess.GetProductData2(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
