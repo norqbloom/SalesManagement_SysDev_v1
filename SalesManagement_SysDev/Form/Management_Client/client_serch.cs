@@ -356,44 +356,13 @@ namespace SalesManagement_SysDev
 
         private void SOIDtxt_TextChanged(object sender, EventArgs e)
         {
-            int Sudate;
-            if (!String.IsNullOrEmpty(SOIDtxt.Text.Trim()))
-            {
-                Sudate = int.Parse(SOIDtxt.Text.Trim());
-            }
-            else
-            {
-                Sudate = -1;
-            }
 
-            M_Client selectCondition = new M_Client()
-            {
-                SoID = Sudate
-            };
-            clients = clientDataAccess.GetClientstextData(selectCondition);
-            gettextdate();
         }
 
 
         private void ClPhonetxt_TextChanged(object sender, EventArgs e)
         {
-            string Sudate;
-            if (!String.IsNullOrEmpty(ClPhonetxt.Text.Trim()))
-            {
-                Sudate = ClPhonetxt.Text.Trim();
-            }
-            else
-            {
-                Sudate ="";
-            }
 
-            M_Client selectCondition = new M_Client()
-            {
-                ClPhone = Sudate
-            };
-            clients = clientDataAccess.GetClientstextData(selectCondition);
-
-            gettextdate();
         }
         private void gettextdate()
         {
@@ -422,65 +391,17 @@ namespace SalesManagement_SysDev
 
         private void addresstxt_TextChanged(object sender, EventArgs e)
         {
-            string Sudate;
-            if (!String.IsNullOrEmpty(addresstxt.Text.Trim()))
-            {
-                Sudate = addresstxt.Text.Trim();
-            }
-            else
-            {
-                Sudate = "";
-            }
 
-            M_Client selectCondition = new M_Client()
-            {
-                ClAddress = Sudate
-            };
-            clients = clientDataAccess.GetClientstextData(selectCondition);
-
-            gettextdate();
         }
 
         private void ClPostaltxt_TextChanged(object sender, EventArgs e)
         {
-            string Sudate;
-            if (!String.IsNullOrEmpty(ClPostaltxt.Text.Trim()))
-            {
-                Sudate = ClPostaltxt.Text.Trim();
-            }
-            else
-            {
-                Sudate = "";
-            }
 
-            M_Client selectCondition = new M_Client()
-            {
-                ClPostal = Sudate
-            };
-            clients = clientDataAccess.GetClientstextData(selectCondition);
-
-            gettextdate();
         }
 
         private void ClFaxtxt_TextChanged(object sender, EventArgs e)
         {
-            string Sudate;
-            if (!String.IsNullOrEmpty(ClFaxtxt.Text.Trim()))
-            {
-                Sudate = ClFaxtxt.Text.Trim();
-            }
-            else
-            {
-                Sudate = "";
-            }
 
-            M_Client selectCondition = new M_Client()
-            {
-                ClFAX = Sudate
-            };
-            clients = clientDataAccess.GetClientstextData(selectCondition);
-
-            gettextdate();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
