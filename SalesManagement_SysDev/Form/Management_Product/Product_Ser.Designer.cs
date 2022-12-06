@@ -74,6 +74,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label4 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.checkBoxdate = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -211,7 +212,7 @@ namespace SalesManagement_SysDev.Management_Product
             // checkBoxPrFlag
             // 
             this.checkBoxPrFlag.AutoSize = true;
-            this.checkBoxPrFlag.Location = new System.Drawing.Point(407, 288);
+            this.checkBoxPrFlag.Location = new System.Drawing.Point(438, 288);
             this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
             this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
@@ -560,11 +561,23 @@ namespace SalesManagement_SysDev.Management_Product
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // checkBoxdate
+            // 
+            this.checkBoxdate.AutoSize = true;
+            this.checkBoxdate.Location = new System.Drawing.Point(296, 285);
+            this.checkBoxdate.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxdate.Name = "checkBoxdate";
+            this.checkBoxdate.Size = new System.Drawing.Size(89, 19);
+            this.checkBoxdate.TabIndex = 66;
+            this.checkBoxdate.Text = "日付検索";
+            this.checkBoxdate.UseVisualStyleBackColor = true;
+            // 
             // Product_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 768);
+            this.Controls.Add(this.checkBoxdate);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel2);
@@ -647,5 +660,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox checkBoxdate;
     }
 }
