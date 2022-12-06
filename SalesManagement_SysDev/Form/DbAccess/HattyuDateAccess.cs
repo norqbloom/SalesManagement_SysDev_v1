@@ -113,9 +113,9 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        //SeaClientData
+        //SeaHattyuData
         ///////////////////////////////
-        //メソッド名：DeleteClientsData()
+        //メソッド名：DeleteHattyusData()
         //引　数   ：顧客データ
         //戻り値   ：True or False
         //機　能   ：顧客データの削除
@@ -123,13 +123,13 @@ namespace SalesManagement_SysDev
         //          ：削除失敗の場合False
         ///////////////////////////////
 
-        public bool DeleteClientData(int delClientID)
+        public bool DeleteHattyuData(int delHattyuID)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                var clients = context.M_Clients.Single(x => x.ClID == delClientID);
-                context.M_Clients.Remove(clients);
+                var hattyus = context.T_Hattyus.Single(x => x.HaID == delHattyuID);
+                context.T_Hattyus.Remove(hattyus);
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -173,7 +173,7 @@ namespace SalesManagement_SysDev
         //戻り値   ：表示用発注データ
         //機　能   ：表示用発注データの取得
         ///////////////////////////////
-        public List<T_Hattyu> GetClientDspData()
+        public List<T_Hattyu> GetHattyuDspData()
         {
             List<T_Hattyu> Hattyu = new List<T_Hattyu>();
             try
@@ -245,21 +245,18 @@ namespace SalesManagement_SysDev
             }
             return hattyus;
         }
-        /*public List<T_> GetSodata(M_Client selectCondition)
+        public List<T_Hattyu> GetSodata(T_Hattyu selectCondition)
         {
-            List<M_Client> client = new List<M_Client>();
+            List<T_Hattyu> hattyus = new List<T_Hattyu>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                client = context.M_Clients.Where(x => x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.ClName.Contains(selectCondition.ClName) &&
-                                                 x.ClFlag == 0 &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone) &&
-                                                 x.ClAddress.Contains(selectCondition.ClAddress) &&
-                                                 x.ClFAX.Contains(selectCondition.ClFAX) &&
-                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
+                hattyus = context.T_Hattyus.Where(x => x.HaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.HaDate.ToString().Contains(selectCondition.HaDate.ToString())).ToList();
                 context.SaveChanges();
                 context.Dispose();
 
@@ -268,24 +265,21 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return client;
+            return hattyus;
         }
-        */
-        public List<M_Client> Getnodata(M_Client selectCondition)
+        public List<T_Hattyu> Getnodata(T_Hattyu selectCondition)
         {
-            List<M_Client> client = new List<M_Client>();
+            List<T_Hattyu> hattyus = new List<T_Hattyu>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                client = context.M_Clients.Where(x =>
-                                                 x.ClName.Contains(selectCondition.ClName) &&
-                                                 x.ClFlag == 0 &&
-                                                 x.ClPhone.Contains(selectCondition.ClPhone) &&
-                                                 x.ClAddress.Contains(selectCondition.ClAddress) &&
-                                                 x.ClFAX.Contains(selectCondition.ClFAX) &&
-                                                 x.ClPostal.Contains(selectCondition.ClPostal)).ToList();
+                hattyus = context.T_Hattyus.Where(x => x.HaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.HaDate.ToString().Contains(selectCondition.HaDate.ToString())).ToList();
+
                 context.SaveChanges();
                 context.Dispose();
 
@@ -294,40 +288,40 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return client;
+            return hattyus;
         }
-        public List<M_clhistory> getdetail(M_clhistory selectCondition)
-        {
-            List<M_clhistory> history = new List<M_clhistory>();
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                history = context.M_Clhistory.Where(x => x.ClID == selectCondition.ClID).ToList();
-                context.SaveChanges();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return history;
-        }
+        //public List<M_clhistory> getdetail(M_clhistory selectCondition)
+        //{
+        //    List<M_clhistory> history = new List<M_clhistory>();
+        //    try
+        //    {
+        //        var context = new SalesManagement_DevContext();
+        //        history = context.M_Clhistory.Where(x => x.ClID == selectCondition.ClID).ToList();
+        //        context.SaveChanges();
+        //        context.Dispose();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    return history;
+        //}
 
 
         ///////////////////////////////
-        //メソッド名：GetClientsIDData()　オーバーロード
+        //メソッド名：GetHattyusIDData()　オーバーロード
         //引　数   ：検索条件
         //戻り値   ：条件一致顧客データ
         //機　能   ：条件一致商品顧客データの取得
         ///////////////////////////////
-        public List<M_Client> GetClientsIDData(M_Client selectCondition)
+        public List<T_Hattyu> GetHattyusIDData(T_Hattyu selectCondition)
         {
-            List<M_Client> client = new List<M_Client>();
+            List<T_Hattyu> hattyus = new List<T_Hattyu>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                client = context.M_Clients.Where(x => x.ClID == selectCondition.ClID).ToList();
+                hattyus = context.T_Hattyus.Where(x => x.HaID == selectCondition.HaID).ToList();
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -335,20 +329,19 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return client;
+            return hattyus;
         }
-        public List<M_Client> GetClientstextData(M_Client selectCondition)
+        public List<T_Hattyu> GetHattyustextData(T_Hattyu selectCondition)
         {
-            List<M_Client> client = new List<M_Client>();
+            List<T_Hattyu> hattyus = new List<T_Hattyu>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                client = context.M_Clients.Where(x => x.SoID == selectCondition.SoID ||
-                                                      x.ClPhone == selectCondition.ClPhone ||
-                                                      x.ClAddress == selectCondition.ClAddress ||
-                                                      x.ClPostal == selectCondition.ClPostal ||
-                                                      x.ClFAX == selectCondition.ClFAX).ToList();
+                hattyus = context.T_Hattyus.Where(x => x.HaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.HaDate.ToString().Contains(selectCondition.HaDate.ToString())).ToList();
                 context.SaveChanges();
 
                 context.Dispose();
@@ -357,7 +350,7 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return client;
+            return hattyus;
         }
     }
 }
