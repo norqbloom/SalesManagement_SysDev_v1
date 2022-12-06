@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         HattyuDataAccess HattyuDateAccess = new HattyuDataAccess();
-        private static List<M_Employee> employees;
+       
         
 
         public Hattyu_Add()
