@@ -102,7 +102,7 @@ namespace SalesManagement_SysDev
         //          ：削除成功の場合True
         //          ：削除失敗の場合False
         ///////////////////////////////
-        public bool DeleteOrderData(string delOrderID)
+       /* public bool DeleteOrderData(string delOrderID)
         {
             try
             {
@@ -118,6 +118,25 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }*/
+        public bool DeleteOrderData(T_Order selectionCondition)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var orders = context.T_Orders.Single(x => x.OrID == selectionCondition.OrID);
+                orders.OrFlag = 2;
+
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }
