@@ -16,7 +16,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
         MessageDsp messageDsp = new MessageDsp();
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
-        // OrderDateAccess HattyuDateAccess = new OrderDateAccess();
+        HattyuDataAccess HattyuDateAccess = new HattyuDataAccess();
+       
+        
 
         public Hattyu_Add()
         {
@@ -97,8 +99,8 @@ namespace SalesManagement_SysDev.Management_Hattyu
                     EmID.Focus();
                     return false;
                 }
-
-                if (EmployeeDataAccess.CheckPrCDExistence(int.Parse(EmID.Text.Trim())))
+                //Emid重複チェック　
+                if (EmployeeDataAccess.CheckemployeeCDExistence(int.Parse(EmID.Text.Trim())))
                 {
                     messageDsp.DspMsg("M6003");
                     EmID.Focus();
@@ -111,14 +113,50 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 EmID.Focus();
                 return false;
             }
-            return true;
-            //発注年月日　適否
 
+            //発注年月日　
+            //HaDate
 
             //入庫済フラグ
 
+
             //発注管理フラグ
-            // if(HaFlag.CheckState.Indeterminate)
+            if (HaFlag.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("発注フラグが不確定な状態です"); //messageDsp.DspMsg("M4028");
+                HaFlag.Focus();
+                return false;
+            }
+            //非表示理由
+            if (!dataInputFormCheck.CheckFullWidth(HaHidden.Text.Trim()))
+            {
+                MessageBox.Show("非表示理由は全角入力です");
+                HaHidden.Focus();
+                return false;
+            }
+            return true;
+        }
+        private T_Hattyu GenerateDataAtRegistration()
+        {
+            int checkflg;
+            if (HaFlag.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+            return new T_Hattyu
+            {
+                HaID = int.Parse(HaID.Text),
+                MaID = int.Parse(MaID.Text),
+                EmID = int.Parse(EmID.Text),
+                // HaDate = HaDate,
+                WaWarehouseFlag = checkflg,
+                HaFlag = checkflg,
+                HaHidden = HaHidden.Text
+            };
         }
     }
 }

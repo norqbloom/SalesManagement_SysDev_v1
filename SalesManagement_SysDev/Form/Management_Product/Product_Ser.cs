@@ -132,6 +132,12 @@ namespace SalesManagement_SysDev.Management_Product
                         datePrScget();
                         return;
                     }
+                    else
+                    {
+                        //商品のみ
+                        priddate();
+                        return;
+                    }
                 }
             }
             else if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
@@ -174,13 +180,20 @@ namespace SalesManagement_SysDev.Management_Product
         {
             DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
 
+            string dateserch = null;
+            if (checkBoxdate.Checked == true)
+            {
+
+                dateserch = dateTimePickerPrReleaseDate.Value.ToString();
+            }
+
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrReleaseDate = dateserch
             };
             products = productDataAccess.GetPrdata(selectCondition);
 
@@ -265,6 +278,20 @@ namespace SalesManagement_SysDev.Management_Product
                 PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrScdata(selectCondition);
+
+        }
+        private void priddate()
+        {
+
+            M_Product selectCondition = new M_Product()
+            {
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
+                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                PrColor = textBoxPrColor.Text.Trim(),
+                //PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+            };
+            products = productDataAccess.GetPronlydata(selectCondition);
 
         }
         private void dateMaScget()
@@ -491,5 +518,6 @@ namespace SalesManagement_SysDev.Management_Product
         {
             SetFormDataGridView();
         }
+        
     }
 }

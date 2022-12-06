@@ -56,7 +56,7 @@ namespace SalesManagement_SysDev
             this.dataGridViewhistory.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewhistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewhistory.Location = new System.Drawing.Point(16, 262);
-            this.dataGridViewhistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewhistory.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewhistory.Name = "dataGridViewhistory";
             this.dataGridViewhistory.RowHeadersWidth = 51;
             this.dataGridViewhistory.RowTemplate.Height = 21;
@@ -66,7 +66,7 @@ namespace SalesManagement_SysDev
             // serchlogin
             // 
             this.serchlogin.Location = new System.Drawing.Point(972, 194);
-            this.serchlogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.serchlogin.Margin = new System.Windows.Forms.Padding(4);
             this.serchlogin.Name = "serchlogin";
             this.serchlogin.Size = new System.Drawing.Size(140, 61);
             this.serchlogin.TabIndex = 1;
@@ -206,7 +206,7 @@ namespace SalesManagement_SysDev
             // EmpIDtxt
             // 
             this.EmpIDtxt.Location = new System.Drawing.Point(159, 45);
-            this.EmpIDtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmpIDtxt.Margin = new System.Windows.Forms.Padding(4);
             this.EmpIDtxt.Name = "EmpIDtxt";
             this.EmpIDtxt.Size = new System.Drawing.Size(132, 22);
             this.EmpIDtxt.TabIndex = 30;
@@ -214,7 +214,7 @@ namespace SalesManagement_SysDev
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(44, 144);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(160, 22);
             this.dateTimePicker1.TabIndex = 31;
@@ -222,7 +222,7 @@ namespace SalesManagement_SysDev
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(257, 144);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(160, 22);
             this.dateTimePicker2.TabIndex = 32;
@@ -241,7 +241,7 @@ namespace SalesManagement_SysDev
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(449, 144);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(89, 19);
             this.checkBox1.TabIndex = 34;
@@ -262,7 +262,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.serchlogin);
             this.Controls.Add(this.dataGridViewhistory);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "loginhistory";
             this.Text = "ログイン履歴";
             this.Load += new System.EventHandler(this.loginhistory_Load);
