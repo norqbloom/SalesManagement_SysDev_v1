@@ -505,6 +505,7 @@ namespace SalesManagement_SysDev
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
                                                  x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
                                                  ).ToList();
+                
                 context.Dispose();
 
             }

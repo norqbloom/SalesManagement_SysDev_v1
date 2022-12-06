@@ -136,6 +136,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void datedubblwget()
         {
+            //全て入力されている
             M_Employee selectCondition = new M_Employee()
             {
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
@@ -145,10 +146,12 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
             };
-            employees = EmployeeDataAccess.G(selectCondition);
-        }
+            employees = EmployeeDataAccess.GetMaScget(selectCondition);
+         }
+
         private void dateemget()
         {
+            //emのみ
             M_Employee selectCondition = new M_Employee()
             {
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
@@ -160,6 +163,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void datePrMaget()
         {
+            //Em・Soのみ
             M_Employee selectCondition = new M_Employee()
             {
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
@@ -172,6 +176,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void datePrScget()
         {
+            //Em・Poのみ
             M_Employee selectCondition = new M_Employee()
             {
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
@@ -184,6 +189,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void dateMaScget()
         {
+            //So・Poのみ
             M_Employee selectCondition = new M_Employee()
             {
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
@@ -196,6 +202,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void dateMaget()
         {
+            //Soのみ
             M_Employee selectCondition = new M_Employee()
             {
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
@@ -207,6 +214,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void dateScget()
         {
+            //Poのみ
             M_Employee selectCondition = new M_Employee()
             {
                 PoID = int.Parse(textBoxSoID.Text.Trim()),
@@ -218,6 +226,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void datenolwget()
         {
+            //何も入力されていない
             M_Employee selectCondition = new M_Employee()
             {
                 EmName = textBoxEmName.Text.Trim(),

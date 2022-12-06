@@ -20,13 +20,13 @@ namespace SalesManagement_SysDev
         //          ：一致データなしの場合False
         ///////////////////////////////
         ///
-        public bool CheckEmployeesCDExistence(int EmID)
+        public bool CheckEmployeesCDExistence(int EmpID)
         {
             bool flg = false;
             try
             {
                 var context = new SalesManagement_DevContext();
-                flg = context.M_Employees.Any(x => x.EmID == EmID);
+                flg = context.M_Employees.Any(x => x.EmID == EmpID);
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -45,13 +45,13 @@ namespace SalesManagement_SysDev
         //          ：部分一致データありの場合True
         //          ：部分一致データなしの場合False
         ///////////////////////////////
-        public bool SelectEmployeeExistenceCheck(string EmID, string EmPass)
+        public bool SelectEmployeeExistenceCheck(string EmpID, string EmPass)
         {
             bool flg = false;
             try
             {
                 var context = new SalesManagement_DevContext();
-                flg = context.M_Employees.Any(x => x.EmID.ToString() == EmID && x.EmPassword == EmPass);
+                flg = context.M_Employees.Any(x => x.EmID.ToString() == EmpID && x.EmPassword == EmPass);
                 //flg = context.M_Employees.Any(x => x.EmID.ToString().Contains(EmID)
                 //                                  && x.EmPassword.Contains(EmPass));
                 context.SaveChanges();
@@ -124,6 +124,7 @@ namespace SalesManagement_SysDev
         public List<M_Employee> Getdubblwdata(M_Employee selectCondition)
         {
             List<M_Employee> employee = new List<M_Employee>();
+
 
             try
             {
@@ -236,6 +237,31 @@ namespace SalesManagement_SysDev
                 employee = context.M_Employees.Where(x =>
                                                  x.EmFlag == 0 &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmName.Contains(selectCondition.EmName) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 ).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> Getdateemget(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
