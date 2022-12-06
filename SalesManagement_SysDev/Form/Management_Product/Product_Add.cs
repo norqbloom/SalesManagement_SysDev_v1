@@ -417,15 +417,6 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            int Localint;
-                if (radioButton1.Checked == true)
-                {
-                    Localint = 2;
-                }
-                else
-                {
-                    Localint = 0;
-                }
             GetDataGridView();
         }
     }

@@ -145,7 +145,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
             };
-            employees = EmployeeDataAccess.G(selectCondition);
+            //employees = EmployeeDataAccess.G(selectCondition);
         }
         private void dateemget()
         {
@@ -156,7 +156,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
             };
-            employees = EmployeeDataAccess.Getdateemget(selectCondition);
+            //employees = EmployeeDataAccess.Getdateemget(selectCondition);
         }
         private void datePrMaget()
         {
