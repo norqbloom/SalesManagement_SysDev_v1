@@ -136,7 +136,7 @@ namespace SalesManagement_SysDev
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();
                 context.SaveChanges();
 
@@ -162,7 +162,7 @@ namespace SalesManagement_SysDev
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();
                 context.SaveChanges();
 
@@ -188,7 +188,7 @@ namespace SalesManagement_SysDev
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();
                 context.SaveChanges();
 
@@ -214,7 +214,7 @@ namespace SalesManagement_SysDev
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();
                 context.SaveChanges();
 
@@ -239,7 +239,7 @@ namespace SalesManagement_SysDev
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();
                 context.SaveChanges();
 
@@ -260,12 +260,12 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 employee = context.M_Employees.Where(x =>
-                                                 x.EmFlag == 0 &&
-                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.EmName.Contains(selectCondition.EmName) &&
-                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
-                                                 ).ToList();
+                                                     x.EmFlag == 0 &&
+                                                     x.EmID==selectCondition.EmID &&
+                                                     x.EmName.Contains(selectCondition.EmName) &&
+                                                     //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                     x.EmPhone.Contains(selectCondition.EmPhone)
+                                                     ).ToList();
                 context.SaveChanges();
 
                 context.Dispose();
@@ -289,7 +289,7 @@ namespace SalesManagement_SysDev
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();                context.SaveChanges();
 
                 context.SaveChanges();
@@ -314,7 +314,7 @@ namespace SalesManagement_SysDev
                                                  x.EmFlag == 0 &&
                                                  x.EmName.Contains(selectCondition.EmName) &&
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 x.EmPhone.ToString().Contains(selectCondition.EmPhone.ToString())
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
                                                  ).ToList();
                 context.SaveChanges();
 
