@@ -16,7 +16,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         MessageDsp messageDsp = new MessageDsp();
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
-        HattyuDateAccess HattyuDateAccess = new HattyuDateAccess();
+        HattyuDataAccess HattyuDateAccess = new HattyuDataAccess();
         private static List<M_Employee> employees;
         
 
@@ -136,8 +136,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
             return true;
         }
-
-        private T_Hattyu GetDateat
+        private T_Hattyu GenerateDataAtRegistration()
         {
             int checkflg;
             if (HaFlag.Checked == true)
