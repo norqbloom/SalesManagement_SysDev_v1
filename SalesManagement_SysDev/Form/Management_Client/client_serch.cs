@@ -227,8 +227,10 @@ namespace SalesManagement_SysDev
             label5.Text = ClIDtxt.ToString();
 
             serchdateset(number);
-            setdatedetail();            
+            setdatedetail();
+
         }
+        
 
 
         private void serchdateset(int number)
