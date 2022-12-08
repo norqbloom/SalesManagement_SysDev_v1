@@ -238,6 +238,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void Employee_Ser_Load(object sender, EventArgs e)
         {
+            SetFormDataGridView();
             invcnt();
         }
         private void invcnt()
@@ -264,6 +265,49 @@ namespace SalesManagement_SysDev.Management_Employee
             upuserid.Visible = true;
             upusername.Visible = true;
         }
+        
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            serchdateset(number);
+            setdatedetail();
+        }
+        
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            textBoxEmID.Text = "";
+            textBoxEmName.Text = "";
+            textBoxSoID.Text = "";
+            textBoxPoID.Text = "";
+            textBoxEmPhone.Text = "";
+            textBoxEmHidden.Text = "";
+        }
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            labelEm.Text = textBoxEmID.ToString();
+            labelSo.Text = textBoxSoID.ToString();
+            labelPo.Text = textBoxPoID.ToString();
+
+            serchdateset(number);
+            setdatedetail();
+        }
+
+
+        private void serchdateset(int number)
+        {
+
+            Emphistory selectCondition = new Emphistory
+            {
+                EmID = number.ToString(),
+
+            };
+            emphistories = EmployeeDataAccess.getdetail(selectCondition);
+        }
         private void setdatedetail()
         {
             var x = emphistories.FirstOrDefault();
@@ -273,34 +317,18 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
 
-            labelEm.Text = x.hisNo;
-            labelSo.Text = x.EmID;
-            labelPo.Text = x.SoID;
+            labelEm.Text = x.EmID;
+            labelSo.Text = x.SoID;
+            labelPo.Text = x.PoID;
             datetime.Text = x.RegisteredDate;
-            upusername.Text = x.regUserID;
+            userid.Text = x.regUserID;
             username.Text = x.regUserName;
             uptime.Text = x.UpDateTime;
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int number;
-            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            serchdateset(number);
-            setdatedetail();
-        }
-        private void serchdateset(int number)
-        {
-         
-            Emphistory selectCondition = new Emphistory
-            {
-                EmID = number.ToString(),
 
-            };
-            emphistories = EmployeeDataAccess.getdetail(selectCondition);
         }
     }
 }
