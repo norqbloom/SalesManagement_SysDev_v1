@@ -238,8 +238,28 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void Employee_Ser_Load(object sender, EventArgs e)
         {
-           // SetFormDataGridView();
+            SetFormDataGridView();
             invcnt();
+        }
+        private void SetFormDataGridView()
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;
+            //dataGridViewのページサイズ指定
+            textBoxPageSize.Text = "10";
+            //dataGridViewのページ番号指定
+            textBoxPageNo.Text = "1";
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+        private void SetDataGridView()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            labelPage.Text = "/" + ((int)Math.Ceiling(employees.Count / (double)pageSize)) + "ページ";
+
+            dataGridView1.Refresh();
         }
         private void invcnt()
         {
