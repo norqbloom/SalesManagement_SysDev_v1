@@ -15,7 +15,7 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
-      
+
 
 
         public Product_Upd()
@@ -274,13 +274,13 @@ namespace SalesManagement_SysDev.Management_Product
         {
             //更新確認メッセージ
             DialogResult result = messageDsp.DspMsg("M2033");//商品データを更新してよろしいですか？
-            if(result == DialogResult.Cancel)
+            if (result == DialogResult.Cancel)
             {
                 return;
             }
             //商品情報の更新   
             bool flg = productDataAccess.UpdateProductData(updProduct);
-            if(flg == true)
+            if (flg == true)
             {
                 messageDsp.DspMsg("M2034");//商品データを更新しました
             }
@@ -409,20 +409,45 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void Product_Upd_Load(object sender, EventArgs e)
         {
-            SetFormDataGridView();        }
+            SetFormDataGridView();
+        }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int Localint;
-            if (radioButton1.Checked == true)
+            //データグリッドビューからクリックされたデータを各入力エリアへ
+            textBoxPrID.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[0].Value.ToString();
+            textBoxMaID.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[1].Value.ToString();
+            textBoxPrName.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[2].Value.ToString();
+            textBoxPrice.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[3].Value.ToString();
+            textBoxPrSafetyStock.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[4].Value.ToString();
+            textBoxScID.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[5].Value.ToString();
+            textBoxPrModelNumber.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[6].Value.ToString();
+            textBoxPrColor.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[7].Value.ToString();
+            dateTimePickerPrReleaseDate.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[8].Value.ToString();
+            //チェックボックスの状態を判断
+            if ((int)dataGridViewDsp.CurrentRow.Cells[9].Value == 0)
             {
-                Localint = 2;
+                checkBoxPrFlag.Checked = false;
             }
             else
             {
-                Localint = 0;
+                checkBoxPrFlag.Checked = true;
             }
+            //非表示理由の状態を判断
+            if (dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[10].Value == null)
+            {
+                textBoxPrHidden.Text = "";
+            }
+            else
+            {
+                textBoxPrHidden.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[10].Value.ToString();
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
             GetDataGridView();
         }
+
     }
 }

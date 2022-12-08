@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Management_Warehousing
+namespace SalesManagement_SysDev
 {
-    public partial class Warehousing_View : Form
+    public partial class 待避所2 : Form
     {
-        public Warehousing_View()
+        public 待避所2()
         {
             InitializeComponent();
-        }
-
-        private void Syu_Con_Button_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
