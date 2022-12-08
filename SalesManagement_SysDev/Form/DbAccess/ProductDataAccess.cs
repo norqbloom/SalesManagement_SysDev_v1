@@ -195,8 +195,7 @@ namespace SalesManagement_SysDev
             List<M_ProductDsp> product = new List<M_ProductDsp>();
 
             try
-            {
-               
+            {   
                 var context = new SalesManagement_DevContext();
                 var tb = from t1 in context.M_Products
                          join t2 in context.M_Makers
@@ -244,8 +243,6 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
-
-        
 
         ///////////////////////////////
         //メソッド名：GetItemData()　オーバーロード
