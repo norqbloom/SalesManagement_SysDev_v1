@@ -30,9 +30,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
             if (!GetHattyuDataAtSelect())
                 return;
 
-            GenerateDataAtSelect();
+            //GenerateDataAtSelect();
 
-            SetSelectData();
+            //SetSelectData();
         }
         private bool GetHattyuDataAtSelect()
         {
