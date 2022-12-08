@@ -81,9 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Emphistory.cs" />
+    <Compile Include="Form\DbAccess\ArrivalDataAccess.cs" />
     <Compile Include="Form\DbAccess\HattyuDateAccess.cs" />
     <Compile Include="Form\DbAccess\loginDataAccess.cs" />
     <Compile Include="Form\DbAccess\loginhistoryDataAccess.cs" />
+    <Compile Include="Form\DbAccess\SyukkoDataaccess.cs" />
     <Compile Include="Form\Management_Client\client_serch.cs">
       <SubType>Form</SubType>
     </Compile>
