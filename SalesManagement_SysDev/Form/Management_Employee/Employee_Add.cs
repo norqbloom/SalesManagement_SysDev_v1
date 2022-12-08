@@ -34,6 +34,8 @@ namespace SalesManagement_SysDev.Management_Employee
 
             //社員情報登録
             RegistrationStaff(regEmp);
+            var reghis = GeneratehistoryDataAtRegistration();
+            RegistrationClhistory(reghis);
         }
 
         private bool GetEmpDataReg()
@@ -245,6 +247,40 @@ namespace SalesManagement_SysDev.Management_Employee
             else
                 MessageBox.Show("no");　//messageDsp.DspMsg("M6013");
 
+
+        }
+        private Emphistory GeneratehistoryDataAtRegistration()
+        {
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+
+            return new Emphistory
+            {
+                EmID = textBoxEmID.Text,
+                SoID = textBoxSoID.Text,
+                PoID = textBoxPoID.Text,
+                RegisteredDate = regtime,
+                regUserID = template.EmID.ToString(),
+                regUserName = template.loginName,
+                UpDateTime = "なし",
+                LastupdatedUserID = "なし",
+                LastupdatedUserName = "なし"
+
+            };
+        }
+        private void RegistrationClhistory(Emphistory reghis)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.emphistories.Add(reghis);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
