@@ -238,7 +238,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void Employee_Ser_Load(object sender, EventArgs e)
         {
-            SetFormDataGridView();
+           // SetFormDataGridView();
             invcnt();
         }
         private void invcnt()
