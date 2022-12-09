@@ -27,10 +27,11 @@ namespace SalesManagement_SysDev.Management_Hattyu
 
         private void Hattyu_Add_Button_Click(object sender, EventArgs e)
         {
-            //登録
+            //データ登録
             if (!GetHattyuDateRegistration())
                 return;
-            //var regHa = GenerateDataAtRegistration();
+            var regHa = GenerateDataAtRegistration();
+            RegistrationHattyu(regHa);
         }
         private bool GetHattyuDateRegistration()
         {
