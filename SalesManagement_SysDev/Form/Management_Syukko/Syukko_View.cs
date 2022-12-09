@@ -12,6 +12,11 @@ namespace SalesManagement_SysDev.Management_Syukko
 {
     public partial class Syukko_View : Form
     {
+        private static List<T_Syukko> syukkos;
+        private static List<T_Syukko> listdata;
+        private static List<T_Syukko> commitdata;
+
+
         SyukkoDataaccess syukkoDataaccess = new SyukkoDataaccess();
         public Syukko_View()
         {
@@ -20,7 +25,9 @@ namespace SalesManagement_SysDev.Management_Syukko
 
         private void Syukko_View_Load(object sender, EventArgs e)
         {
-            List<T_Syukko> syukkos = new List<T_Syukko>();
+
+        List<T_Syukko> syukkos = new List<T_Syukko>();
+            List<T_Syukko> commitdata = new List<T_Syukko>();
             syukkos = syukkoDataaccess.getSyukko();
             dataGridView1.DataSource = syukkos;
         }
@@ -55,15 +62,22 @@ namespace SalesManagement_SysDev.Management_Syukko
             }
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            
-            foreach (DataGridViewRow item in dataGridView1.SelectedRows)
+            List<T_Syukko> syukkos = (List<T_Syukko>)dataGridView1.DataSource;
+            dataGridView1.DataSource = null;
+            syukkos.Remove(syukkos.Single(x => x.SyID == number));
+            dataGridView1.DataSource = syukkos;
+            setcommitdata(number);
+        }
+        private void setcommitdata(int number)
+        {
+            T_Syukko selectCondition = new T_Syukko()
             {
-                if (!item.IsNewRow)
-                {
-                    dataGridView1.Rows.Remove(item);
-                }
-            }
-            MessageBox.Show(number.ToString());
+                SyID=number
+            };
+            listdata = syukkoDataaccess.getsyID(selectCondition);
+            commitdata.AddRange(listdata);
+            dataGridView2.DataSource = commitdata;
+            
         }
     }
 }
