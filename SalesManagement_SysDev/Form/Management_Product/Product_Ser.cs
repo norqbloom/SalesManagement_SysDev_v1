@@ -510,9 +510,21 @@ namespace SalesManagement_SysDev.Management_Product
             incntok();
         }
 
+        private void ClearInput()
+        {
+            textBoxPrID.Text = "";
+            textBoxMaID.Text = "";
+            textBoxPrName.Text = "";
+            textBoxScID.Text = "";
+            textBoxPrModelNumber.Text = "";
+            textBoxPrColor.Text = "";
+            dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            checkBoxPrFlag.Checked = false;
+        }
+
         private void ButtonCle_Click(object sender, EventArgs e)
         {
-
+            ClearInput();
         }
     }
 }

@@ -154,50 +154,49 @@ namespace SalesManagement_SysDev
             return true;
 
         }
-        public List<T_Order> GetOrderDataDsp(int radioint)
+        public List<T_Order> GetOrderDataDsp(int StateFlg,int Flg)
         {
-            List<T_Order> product = new List<T_Order>();
+            List<T_Order> orders = new List<T_Order>();
 
             try
             {
 
                 var context = new SalesManagement_DevContext();
-                var tb = from t1 in context.M_Products
-                         join t2 in context.M_Makers
-                         on t1.MaID equals t2.MaID
-                         join t3 in context.M_SmallClassifications
-                         on t1.ScID equals t3.ScID
-                         where t1.PrFlag == radioint
+                var tb = from t1 in context.T_Orders
+                         join t2 in context.M_SalesOffices
+                         on t1.SoID equals t2.SoID
+                         join t3 in context.M_Employees
+                         on t1.EmID equals t3.EmID
+                         join t4 in context.M_Clients
+                         on t1.ClID equals t4.ClID
+                         where t1.OrStateFlag == StateFlg
+                         where t1.OrFlag == Flg
                          select new
                          {
-                             t1.PrID,
-                             t2.MaID,
-                             t1.PrName,
-                             t1.Price,
-                             t1.PrSafetyStock,
-                             t3.ScID,
-                             t1.PrModelNumber,
-                             t1.PrColor,
-                             t1.PrReleaseDate,
-                             t1.PrFlag,
-                             t1.PrHidden
+                             t1.OrID,
+                             t2.SoID,
+                             t3.EmID,
+                             t4.ClID,
+                             t1.ClCharge,
+                             t1.OrDate,
+                             t1.OrStateFlag,
+                             t1.OrFlag,
+                             t1.OrHidden
                          };
 
                 foreach (var p in tb)
                 {
-                    product.Add(new M_ProductDsp()
+                    orders.Add(new T_Order()
                     {
-                        PrID = p.PrID,
-                        MaID = p.MaID,
-                        PrName = p.PrName,
-                        Price = p.Price,
-                        PrSafetyStock = p.PrSafetyStock,
-                        ScID = p.ScID,
-                        PrModelNumber = p.PrModelNumber,
-                        PrColor = p.PrColor,
-                        PrReleaseDate = p.PrReleaseDate,
-                        PrFlag = p.PrFlag,
-                        PrHidden = p.PrHidden
+                        OrID = p.OrID,
+                        SoID = p.SoID,
+                        EmID = p.EmID,
+                        ClID = p.ClID,
+                        ClCharge = p.ClCharge,
+                        OrDate = p.OrDate,
+                        OrStateFlag = p.OrStateFlag,
+                        OrFlag = p.OrFlag,
+                        OrHidden = p.OrHidden
                     });
                 }
                 context.Dispose();
@@ -206,7 +205,7 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return product;
+            return orders;
         }
     }
 }
