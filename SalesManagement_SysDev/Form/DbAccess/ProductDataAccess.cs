@@ -206,11 +206,9 @@ namespace SalesManagement_SysDev
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                 x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
                 context.Dispose();
-
             }
             catch (Exception ex)
             {
@@ -232,10 +230,9 @@ namespace SalesManagement_SysDev
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
+                context.SaveChanges();
                 context.Dispose();
-
             }
             catch (Exception ex)
             {
@@ -280,9 +277,9 @@ namespace SalesManagement_SysDev
                                                  x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                 x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                
+                context.SaveChanges();
                 context.Dispose();
 
             }
@@ -303,9 +300,8 @@ namespace SalesManagement_SysDev
                                                  x.PrFlag == 0 &&
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                 x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
                 context.Dispose();
 
             }
@@ -327,8 +323,8 @@ namespace SalesManagement_SysDev
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
+                context.SaveChanges();
                 context.Dispose();
 
             }
@@ -349,15 +345,12 @@ namespace SalesManagement_SysDev
                 product = context.M_Products.Where(x =>
                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
-                                                 x.PrFlag == 0 &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
-                
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
                 context.Dispose();
-
             }
             catch (Exception ex)
             {
@@ -376,14 +369,12 @@ namespace SalesManagement_SysDev
                 product = context.M_Products.Where(x =>
                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
-                                                 x.PrFlag == 0 &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
                 context.Dispose();
-
             }
             catch (Exception ex)
             {
@@ -402,14 +393,12 @@ namespace SalesManagement_SysDev
                 product = context.M_Products.Where(x =>
                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
-                                                 x.PrFlag == 0 &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
                 context.Dispose();
-
             }
             catch (Exception ex)
             {

@@ -174,28 +174,28 @@ namespace SalesManagement_SysDev.Management_Product
         {
             dataGridViewDsp.DataSource = products;
         }
-        private void datePrget()
-        {
-            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
+        //private void datePrget()
+        //{
+        //    DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
 
-            string dateserch = null;
-            if (checkBoxdate.Checked == true)
-            {
+        //    string dateserch = null;
+        //    if (checkBoxdate.Checked == true)
+        //    {
 
-                dateserch = dateTimePickerPrReleaseDate.Value.ToString();
-            }
+        //        dateserch = dateTimePickerPrReleaseDate.Value.ToString();
+        //    }
 
-            M_Product selectCondition = new M_Product()
-            {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateserch
-            };
-            products = productDataAccess.GetPrdata(selectCondition);
+        //    M_Product selectCondition = new M_Product()
+        //    {
+        //        PrID = int.Parse(textBoxPrID.Text.Trim()),
+        //        PrName = textBoxPrName.Text.Trim(),
+        //        PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+        //        PrColor = textBoxPrColor.Text.Trim(),
+        //        PrReleaseDate = dateserch
+        //    };
+        //    products = productDataAccess.GetPrdata(selectCondition);
 
-        }
+        //}
         private void dateMaget()
         {
             M_Product selectCondition = new M_Product()
@@ -204,7 +204,6 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                //PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetMadata(selectCondition);
 
@@ -219,7 +218,6 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.Getdubblwdata(selectCondition);
 
@@ -232,7 +230,6 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetScdata(selectCondition);
 
@@ -244,15 +241,14 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate =dateTimePickerPrReleaseDate.Text.Trim()
-        };
+                PrColor = textBoxPrColor.Text.Trim()
+            };
             products = productDataAccess.Getnodata(selectCondition);
 
         }
         private void datePrMaget()
         {
-            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
+            //DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
@@ -260,7 +256,6 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrMadata(selectCondition);
 
@@ -273,8 +268,7 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrColor = textBoxPrColor.Text.Trim()
             };
             products = productDataAccess.GetPrScdata(selectCondition);
 
@@ -287,8 +281,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                //PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrColor = textBoxPrColor.Text.Trim()
             };
             products = productDataAccess.GetPronlydata(selectCondition);
 
@@ -301,8 +294,7 @@ namespace SalesManagement_SysDev.Management_Product
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrColor = textBoxPrColor.Text.Trim()
             };
             products = productDataAccess.GetMaScdata(selectCondition);
 
@@ -516,6 +508,11 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
+        }
+
+        private void ButtonCle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
