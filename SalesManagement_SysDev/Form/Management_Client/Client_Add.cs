@@ -280,5 +280,11 @@ namespace SalesManagement_SysDev.Management_Client
             }
             
         }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+
+        } 
     }
 }

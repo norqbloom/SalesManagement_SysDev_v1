@@ -119,13 +119,13 @@ namespace SalesManagement_SysDev.Management_Hattyu
                     if (!String.IsNullOrEmpty(EmID.Text.Trim()))
                     {
                         //全て入力されている
-                        datedubblwget(); 
+                        datedubblwget();
                         return;
                     }
                     else
                     {
                         //Ma・Emのみ
-                        dateHaget(); 
+                        dateHaget();
                         return;
                     }
 
@@ -175,7 +175,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             {
                 HaID = int.Parse(HaID.Text.Trim()),
                 MaID = int.Parse(MaID.Text.Trim()),
-                EmID = int.Parse(EmID.Text.Trim()),               
+                EmID = int.Parse(EmID.Text.Trim()),
             };
             Hattyus = HattyuDataAccess.Getdubblwdata(selectCondition);
         }

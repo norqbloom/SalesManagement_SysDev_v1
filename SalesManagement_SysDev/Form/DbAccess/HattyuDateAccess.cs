@@ -271,7 +271,7 @@ namespace SalesManagement_SysDev
 
         }
 
-            public List<T_Hattyu> GetEmdata(T_Hattyu selectCondition)
+        public List<T_Hattyu> GetEmdata(T_Hattyu selectCondition)
         {
             List<T_Hattyu> hattyus = new List<T_Hattyu>();
 

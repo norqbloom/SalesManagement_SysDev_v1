@@ -227,8 +227,10 @@ namespace SalesManagement_SysDev
             label5.Text = ClIDtxt.ToString();
 
             serchdateset(number);
-            setdatedetail();            
+            setdatedetail();
+
         }
+        
 
 
         private void serchdateset(int number)
@@ -405,6 +407,16 @@ namespace SalesManagement_SysDev
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPageSize_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -345,7 +345,7 @@ namespace SalesManagement_SysDev
 
         private void emp_regbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new empcnt());
+            openChildForm(new Management_Employee.Employee_Add());
         }
 
         private void childsubmenu_Paint(object sender, PaintEventArgs e)
@@ -404,12 +404,12 @@ namespace SalesManagement_SysDev
         {
             DateTime dt = DateTime.Now;
             string logouttime = dt.ToString();
-            DateTime logintime = DateTime.Parse(template.loginTime);
+            //DateTime logintime = DateTime.Parse(template.loginTime);
             try
             {
                 var context = new SalesManagement_DevContext();
-                var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
-                loginhistory.logoutTime = DateTime.Parse(logouttime);
+                //var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
+                //loginhistory.logoutTime = DateTime.Parse(logouttime);
                 context.SaveChanges();
                 context.Dispose();
             }

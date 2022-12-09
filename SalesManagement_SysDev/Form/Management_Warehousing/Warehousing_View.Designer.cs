@@ -53,7 +53,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(495, 128);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(101, 19);
             this.checkBox1.TabIndex = 41;
@@ -63,12 +63,13 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // Syu_Con_Button
             // 
             this.Syu_Con_Button.Location = new System.Drawing.Point(856, 244);
-            this.Syu_Con_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Syu_Con_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Syu_Con_Button.Name = "Syu_Con_Button";
             this.Syu_Con_Button.Size = new System.Drawing.Size(202, 96);
             this.Syu_Con_Button.TabIndex = 39;
             this.Syu_Con_Button.Text = "確定";
             this.Syu_Con_Button.UseVisualStyleBackColor = true;
+            this.Syu_Con_Button.Click += new System.EventHandler(this.Syu_Con_Button_Click);
             // 
             // label7
             // 
@@ -103,7 +104,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(495, 103);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(81, 22);
             this.textBox4.TabIndex = 31;
@@ -121,7 +122,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(273, 167);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(81, 22);
             this.textBox3.TabIndex = 29;
@@ -139,7 +140,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(274, 137);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(81, 22);
             this.textBox2.TabIndex = 27;
@@ -157,7 +158,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(273, 100);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(81, 22);
             this.textBox1.TabIndex = 25;
@@ -177,7 +178,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(161, 360);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
@@ -188,7 +189,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(815, 102);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(101, 19);
             this.checkBox2.TabIndex = 42;
@@ -198,7 +199,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(495, 162);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(81, 22);
             this.textBox5.TabIndex = 43;
@@ -206,7 +207,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             // Syu_Del_Button
             // 
             this.Syu_Del_Button.Location = new System.Drawing.Point(630, 244);
-            this.Syu_Del_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Syu_Del_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Syu_Del_Button.Name = "Syu_Del_Button";
             this.Syu_Del_Button.Size = new System.Drawing.Size(202, 96);
             this.Syu_Del_Button.TabIndex = 44;
@@ -235,9 +236,10 @@ namespace SalesManagement_SysDev.Management_Warehousing
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Warehousing_View";
             this.Text = "Warehousing_View";
+            this.Load += new System.EventHandler(this.Warehousing_View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

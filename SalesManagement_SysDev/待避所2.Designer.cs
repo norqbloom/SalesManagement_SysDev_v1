@@ -1,7 +1,7 @@
 ﻿
 namespace SalesManagement_SysDev
 {
-    partial class client_serch
+    partial class 待避所2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@ namespace SalesManagement_SysDev
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,82 +47,37 @@ namespace SalesManagement_SysDev
             this.userid = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.Label();
             this.IDtxt = new System.Windows.Forms.Label();
-            this.serch = new System.Windows.Forms.Button();
-            this.textBoxPageSize = new System.Windows.Forms.TextBox();
-            this.buttonFirstPage = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.change = new System.Windows.Forms.Button();
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
+            this.buttonFirstPage = new System.Windows.Forms.Button();
             this.buttonLastPage = new System.Windows.Forms.Button();
+            this.textBoxPageSize = new System.Windows.Forms.TextBox();
             this.buttonNextPage = new System.Windows.Forms.Button();
             this.buttonPreviousPage = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Clear = new System.Windows.Forms.Button();
-            this.CLNametxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.ClPhonetxt = new System.Windows.Forms.TextBox();
-            this.addresstxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ClPostaltxt = new System.Windows.Forms.TextBox();
-            this.SOIDtxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ClFaxtxt = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.ClIDtxt = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.change = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewDsp
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 429);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 145);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.upusername);
-            this.panel1.Controls.Add(this.upuserid);
-            this.panel1.Controls.Add(this.uptime);
-            this.panel1.Controls.Add(this.username);
-            this.panel1.Controls.Add(this.userid);
-            this.panel1.Controls.Add(this.datetime);
-            this.panel1.Controls.Add(this.IDtxt);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.panel1.Location = new System.Drawing.Point(838, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 629);
-            this.panel1.TabIndex = 1;
+            this.dataGridViewDsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDsp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDsp.Location = new System.Drawing.Point(29, 429);
+            this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowHeadersWidth = 51;
+            this.dataGridViewDsp.RowTemplate.Height = 24;
+            this.dataGridViewDsp.Size = new System.Drawing.Size(748, 145);
+            this.dataGridViewDsp.TabIndex = 47;
             // 
             // label5
             // 
@@ -145,6 +100,33 @@ namespace SalesManagement_SysDev
             this.label13.Size = new System.Drawing.Size(76, 20);
             this.label13.TabIndex = 14;
             this.label13.Text = "顧客ID:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.upusername);
+            this.panel1.Controls.Add(this.upuserid);
+            this.panel1.Controls.Add(this.uptime);
+            this.panel1.Controls.Add(this.username);
+            this.panel1.Controls.Add(this.userid);
+            this.panel1.Controls.Add(this.datetime);
+            this.panel1.Controls.Add(this.IDtxt);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.panel1.Location = new System.Drawing.Point(811, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(357, 629);
+            this.panel1.TabIndex = 48;
             // 
             // label12
             // 
@@ -266,7 +248,6 @@ namespace SalesManagement_SysDev
             this.username.Size = new System.Drawing.Size(63, 20);
             this.username.TabIndex = 3;
             this.username.Text = "label9";
-            this.username.Click += new System.EventHandler(this.label9_Click);
             // 
             // userid
             // 
@@ -301,65 +282,6 @@ namespace SalesManagement_SysDev
             this.IDtxt.TabIndex = 0;
             this.IDtxt.Text = "label6";
             // 
-            // serch
-            // 
-            this.serch.Location = new System.Drawing.Point(627, 378);
-            this.serch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.serch.Name = "serch";
-            this.serch.Size = new System.Drawing.Size(148, 46);
-            this.serch.TabIndex = 2;
-            this.serch.Text = "検索";
-            this.serch.UseVisualStyleBackColor = true;
-            this.serch.Click += new System.EventHandler(this.serch_Click);
-            // 
-            // textBoxPageSize
-            // 
-            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
-            this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPageSize.Name = "textBoxPageSize";
-            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
-            this.textBoxPageSize.TabIndex = 11;
-            this.textBoxPageSize.TextChanged += new System.EventHandler(this.textBoxPageSize_TextChanged);
-            // 
-            // buttonFirstPage
-            // 
-            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
-            this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonFirstPage.Name = "buttonFirstPage";
-            this.buttonFirstPage.Size = new System.Drawing.Size(28, 22);
-            this.buttonFirstPage.TabIndex = 13;
-            this.buttonFirstPage.Text = "|◀";
-            this.buttonFirstPage.UseVisualStyleBackColor = true;
-            this.buttonFirstPage.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 11);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 15);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "1ページ行数";
-            // 
-            // change
-            // 
-            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.change.Location = new System.Drawing.Point(227, 6);
-            this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(75, 28);
-            this.change.TabIndex = 21;
-            this.change.Text = "行数変更";
-            this.change.UseVisualStyleBackColor = true;
-            this.change.Click += new System.EventHandler(this.change_Click);
-            // 
             // textBoxPageNo
             // 
             this.textBoxPageNo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -368,7 +290,6 @@ namespace SalesManagement_SysDev
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
-            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -381,6 +302,18 @@ namespace SalesManagement_SysDev
             this.labelPage.TabIndex = 23;
             this.labelPage.Text = "ページ";
             // 
+            // buttonFirstPage
+            // 
+            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
+            this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFirstPage.Name = "buttonFirstPage";
+            this.buttonFirstPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonFirstPage.TabIndex = 13;
+            this.buttonFirstPage.Text = "|◀";
+            this.buttonFirstPage.UseVisualStyleBackColor = true;
+            // 
             // buttonLastPage
             // 
             this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -392,7 +325,16 @@ namespace SalesManagement_SysDev
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
-            this.buttonLastPage.Click += new System.EventHandler(this.buttonLastPage_Click);
+            // 
+            // textBoxPageSize
+            // 
+            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
+            this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPageSize.Name = "textBoxPageSize";
+            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPageSize.TabIndex = 11;
             // 
             // buttonNextPage
             // 
@@ -405,7 +347,6 @@ namespace SalesManagement_SysDev
             this.buttonNextPage.TabIndex = 25;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
-            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
             // 
             // buttonPreviousPage
             // 
@@ -418,7 +359,6 @@ namespace SalesManagement_SysDev
             this.buttonPreviousPage.TabIndex = 26;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
-            this.buttonPreviousPage.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
@@ -432,232 +372,83 @@ namespace SalesManagement_SysDev
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(19, 580);
+            this.panel2.Location = new System.Drawing.Point(2, 580);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 36);
-            this.panel2.TabIndex = 27;
+            this.panel2.TabIndex = 49;
             // 
-            // Clear
+            // change
             // 
-            this.Clear.Location = new System.Drawing.Point(451, 378);
-            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(148, 46);
-            this.Clear.TabIndex = 28;
-            this.Clear.Text = "クリア";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.change.Location = new System.Drawing.Point(227, 6);
+            this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.change.Name = "change";
+            this.change.Size = new System.Drawing.Size(75, 28);
+            this.change.TabIndex = 21;
+            this.change.Text = "行数変更";
+            this.change.UseVisualStyleBackColor = true;
             // 
-            // CLNametxt
+            // label17
             // 
-            this.CLNametxt.Location = new System.Drawing.Point(405, 102);
-            this.CLNametxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CLNametxt.Name = "CLNametxt";
-            this.CLNametxt.Size = new System.Drawing.Size(152, 22);
-            this.CLNametxt.TabIndex = 2;
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 15);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "1ページ行数";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(403, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "顧客名";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(403, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "電話番号";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(59, 248);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 15);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "住所";
-            // 
-            // ClPhonetxt
-            // 
-            this.ClPhonetxt.Location = new System.Drawing.Point(405, 192);
-            this.ClPhonetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClPhonetxt.Name = "ClPhonetxt";
-            this.ClPhonetxt.Size = new System.Drawing.Size(152, 22);
-            this.ClPhonetxt.TabIndex = 3;
-            this.ClPhonetxt.TextChanged += new System.EventHandler(this.ClPhonetxt_TextChanged);
-            // 
-            // addresstxt
-            // 
-            this.addresstxt.Location = new System.Drawing.Point(61, 285);
-            this.addresstxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addresstxt.Name = "addresstxt";
-            this.addresstxt.Size = new System.Drawing.Size(244, 22);
-            this.addresstxt.TabIndex = 15;
-            this.addresstxt.TextChanged += new System.EventHandler(this.addresstxt_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "営業所ID";
-            // 
-            // ClPostaltxt
-            // 
-            this.ClPostaltxt.Location = new System.Drawing.Point(405, 285);
-            this.ClPostaltxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClPostaltxt.Name = "ClPostaltxt";
-            this.ClPostaltxt.Size = new System.Drawing.Size(152, 22);
-            this.ClPostaltxt.TabIndex = 17;
-            this.ClPostaltxt.TextChanged += new System.EventHandler(this.ClPostaltxt_TextChanged);
-            // 
-            // SOIDtxt
-            // 
-            this.SOIDtxt.Location = new System.Drawing.Point(61, 191);
-            this.SOIDtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SOIDtxt.Name = "SOIDtxt";
-            this.SOIDtxt.Size = new System.Drawing.Size(244, 22);
-            this.SOIDtxt.TabIndex = 1;
-            this.SOIDtxt.TextChanged += new System.EventHandler(this.SOIDtxt_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "顧客ID";
-            // 
-            // ClFaxtxt
-            // 
-            this.ClFaxtxt.Location = new System.Drawing.Point(655, 285);
-            this.ClFaxtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClFaxtxt.Name = "ClFaxtxt";
-            this.ClFaxtxt.Size = new System.Drawing.Size(152, 22);
-            this.ClFaxtxt.TabIndex = 16;
-            this.ClFaxtxt.TextChanged += new System.EventHandler(this.ClFaxtxt_TextChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(403, 259);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 15);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "郵便番号";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(657, 259);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 15);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "FAX";
-            // 
-            // ClIDtxt
-            // 
-            this.ClIDtxt.Location = new System.Drawing.Point(61, 102);
-            this.ClIDtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClIDtxt.Name = "ClIDtxt";
-            this.ClIDtxt.Size = new System.Drawing.Size(244, 22);
-            this.ClIDtxt.TabIndex = 0;
-            this.ClIDtxt.TextChanged += new System.EventHandler(this.ClIDtxt_TextChanged);
-            // 
-            // client_serch
+            // 待避所2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 629);
-            this.Controls.Add(this.Clear);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.ClPostaltxt);
-            this.Controls.Add(this.ClFaxtxt);
-            this.Controls.Add(this.addresstxt);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.ClPhonetxt);
-            this.Controls.Add(this.CLNametxt);
-            this.Controls.Add(this.SOIDtxt);
-            this.Controls.Add(this.ClIDtxt);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.serch);
+            this.ClientSize = new System.Drawing.Size(1168, 629);
+            this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "client_serch";
-            this.Text = "顧客検索";
-            this.Load += new System.EventHandler(this.client_serch_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "待避所2";
+            this.Text = "待避所2";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button serch;
-        private System.Windows.Forms.TextBox textBoxPageSize;
-        private System.Windows.Forms.Button buttonFirstPage;
+        private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label IDtxt;
-        private System.Windows.Forms.Label datetime;
-        private System.Windows.Forms.Label userid;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label upusername;
         private System.Windows.Forms.Label upuserid;
         private System.Windows.Forms.Label uptime;
         private System.Windows.Forms.Label username;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button change;
+        private System.Windows.Forms.Label userid;
+        private System.Windows.Forms.Label datetime;
+        private System.Windows.Forms.Label IDtxt;
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
+        private System.Windows.Forms.Button buttonFirstPage;
         private System.Windows.Forms.Button buttonLastPage;
+        private System.Windows.Forms.TextBox textBoxPageSize;
         private System.Windows.Forms.Button buttonNextPage;
         private System.Windows.Forms.Button buttonPreviousPage;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.TextBox CLNametxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox ClPhonetxt;
-        private System.Windows.Forms.TextBox addresstxt;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ClPostaltxt;
-        private System.Windows.Forms.TextBox SOIDtxt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ClFaxtxt;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox ClIDtxt;
+        private System.Windows.Forms.Button change;
+        private System.Windows.Forms.Label label17;
     }
 }
