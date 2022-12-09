@@ -13,7 +13,7 @@ namespace SalesManagement_SysDev
     class Emphistory
     {
     [Key]
-    public string hisNo { get; set; }
+    public int hisNo { get; set; }
 
     public string EmID { get; set; }
     public string SoID { get; set; }

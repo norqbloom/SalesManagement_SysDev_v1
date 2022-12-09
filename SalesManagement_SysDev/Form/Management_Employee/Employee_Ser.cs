@@ -308,7 +308,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int number;
-            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
             labelEm.Text = textBoxEmID.ToString();
             labelSo.Text = textBoxSoID.ToString();
             labelPo.Text = textBoxPoID.ToString();

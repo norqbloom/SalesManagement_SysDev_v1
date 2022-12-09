@@ -43,15 +43,20 @@ namespace SalesManagement_SysDev.Management_Syukko
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string s1 = $"ダブルクリックされた位置 {e.RowIndex}列目 {e.ColumnIndex}行目";
+            
             if (e.RowIndex == -1)
             {
                 return;
             }
+            
             if (e.ColumnIndex == -1)
             {
                 return;
             }
-            MessageBox.Show(e.RowIndex.ToString(),e.ColumnIndex.ToString());
+            MessageBox.Show(e.RowIndex.ToString(),MessageBoxButtons.OK.ToString());
+            MessageBox.Show(e.ColumnIndex.ToString(), MessageBoxButtons.YesNo.ToString());
+
+
 
 
         }
