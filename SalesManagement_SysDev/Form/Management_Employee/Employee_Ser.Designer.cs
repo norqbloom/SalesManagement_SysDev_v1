@@ -32,14 +32,12 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonSer = new System.Windows.Forms.Button();
             this.textBoxEmHidden = new System.Windows.Forms.TextBox();
             this.textBoxEmPhone = new System.Windows.Forms.TextBox();
-            this.textBoxEmPassWord = new System.Windows.Forms.TextBox();
             this.textBoxPoID = new System.Windows.Forms.TextBox();
             this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.textBoxEmName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,6 +76,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,10 +84,10 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // buttonSer
             // 
-            this.buttonSer.Location = new System.Drawing.Point(383, 269);
+            this.buttonSer.Location = new System.Drawing.Point(569, 280);
             this.buttonSer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSer.Name = "buttonSer";
-            this.buttonSer.Size = new System.Drawing.Size(135, 72);
+            this.buttonSer.Size = new System.Drawing.Size(148, 72);
             this.buttonSer.TabIndex = 39;
             this.buttonSer.Text = "検索";
             this.buttonSer.UseVisualStyleBackColor = true;
@@ -104,19 +103,11 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmPhone
             // 
-            this.textBoxEmPhone.Location = new System.Drawing.Point(184, 282);
+            this.textBoxEmPhone.Location = new System.Drawing.Point(184, 221);
             this.textBoxEmPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
             this.textBoxEmPhone.TabIndex = 36;
-            // 
-            // textBoxEmPassWord
-            // 
-            this.textBoxEmPassWord.Location = new System.Drawing.Point(184, 222);
-            this.textBoxEmPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxEmPassWord.Name = "textBoxEmPassWord";
-            this.textBoxEmPassWord.Size = new System.Drawing.Size(81, 22);
-            this.textBoxEmPassWord.TabIndex = 35;
             // 
             // textBoxPoID
             // 
@@ -154,7 +145,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(91, 339);
+            this.label8.Location = new System.Drawing.Point(91, 266);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 15);
             this.label8.TabIndex = 30;
@@ -163,20 +154,11 @@ namespace SalesManagement_SysDev.Management_Employee
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(91, 284);
+            this.label7.Location = new System.Drawing.Point(91, 228);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 15);
             this.label7.TabIndex = 29;
             this.label7.Text = "電話番号";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(91, 228);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 15);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "パスワード";
             // 
             // label5
             // 
@@ -234,7 +216,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // checkBoxEmFlag
             // 
             this.checkBoxEmFlag.AutoSize = true;
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(203, 339);
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(196, 262);
             this.checkBoxEmFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxEmFlag.Name = "checkBoxEmFlag";
             this.checkBoxEmFlag.Size = new System.Drawing.Size(34, 19);
@@ -518,6 +500,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // buttonLastPage
             // 
@@ -530,6 +513,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
+            this.buttonLastPage.Click += new System.EventHandler(this.buttonLastPage_Click);
             // 
             // buttonNextPage
             // 
@@ -542,6 +526,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonNextPage.TabIndex = 25;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
             // 
             // buttonPreviousPage
             // 
@@ -554,6 +539,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonPreviousPage.TabIndex = 26;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
+            this.buttonPreviousPage.Click += new System.EventHandler(this.buttonPreviousPage_Click);
             // 
             // label19
             // 
@@ -584,6 +570,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
+            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -607,26 +594,37 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
+            this.buttonFirstPage.Click += new System.EventHandler(this.buttonFirstPage_Click);
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(397, 282);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.TabIndex = 43;
+            this.Clear.Text = "クリア";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Employee_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 662);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerEmHiredate);
             this.Controls.Add(this.buttonSer);
             this.Controls.Add(this.textBoxEmHidden);
             this.Controls.Add(this.textBoxEmPhone);
-            this.Controls.Add(this.textBoxEmPassWord);
             this.Controls.Add(this.textBoxPoID);
             this.Controls.Add(this.textBoxSoID);
             this.Controls.Add(this.textBoxEmName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -654,14 +652,12 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Button buttonSer;
         private System.Windows.Forms.TextBox textBoxEmHidden;
         private System.Windows.Forms.TextBox textBoxEmPhone;
-        private System.Windows.Forms.TextBox textBoxEmPassWord;
         private System.Windows.Forms.TextBox textBoxPoID;
         private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.TextBox textBoxEmName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -700,5 +696,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Button buttonFirstPage;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label labelPo;
+        private System.Windows.Forms.Button Clear;
     }
 }

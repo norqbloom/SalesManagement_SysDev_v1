@@ -17,8 +17,8 @@ namespace SalesManagement_SysDev.Management_Hattyu
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         HattyuDataAccess HattyuDateAccess = new HattyuDataAccess();
-       
-        
+
+
 
         public Hattyu_Add()
         {
@@ -40,21 +40,21 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 //HaID半角英数字チェック
                 if (!dataInputFormCheck.CheckNumeric(HaID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M"); //発注ID数値のみ;
+                    messageDsp.DspMsg("M4023"); //発注ID数値のみ;
                     HaID.Focus();
                     return false;
                 }
                 //Haid文字数チェック
                 if (HaID.TextLength > 6)
                 {
-                    messageDsp.DspMsg("M"); //発注ID6文字以内
+                    messageDsp.DspMsg("M4022"); //発注ID6文字以内
                     HaID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M"); //発注ID入力してない
+                messageDsp.DspMsg("M4024"); //発注ID入力してない
                 HaID.Focus();
                 return false;
             }
@@ -115,11 +115,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
 
             //発注年月日　
-            //HaDate
+            //HaDate ???
 
-            //入庫済フラグ
-
-
+           
             //発注管理フラグ
             if (HaFlag.CheckState == CheckState.Indeterminate)
             {
@@ -127,10 +125,19 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 HaFlag.Focus();
                 return false;
             }
+
+            //入庫済フラグ
+            if (WaWarehouseFlag.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("入庫済フラグが不確定な状態です"); //messageDsp.DspMsg("M4029");
+                HaFlag.Focus();
+                return false;
+            }
+
             //非表示理由
             if (!dataInputFormCheck.CheckFullWidth(HaHidden.Text.Trim()))
             {
-                MessageBox.Show("非表示理由は全角入力です");
+                MessageBox.Show("非表示理由は全角入力です"); //messageDsp.DspMsg("M2036");
                 HaHidden.Focus();
                 return false;
             }
@@ -157,6 +164,18 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 HaFlag = checkflg,
                 HaHidden = HaHidden.Text
             };
+        }
+        private void RegistrationHattyu(T_Hattyu regHattyu)
+        {
+            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+                return;
+            bool flg = HattyuDateAccess.AddHattyuData(regHattyu);
+            if (flg == true)
+                messageDsp.DspMsg("M1022");
+            else
+                messageDsp.DspMsg("M1023");
+
         }
     }
 }

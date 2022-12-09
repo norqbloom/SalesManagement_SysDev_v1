@@ -345,7 +345,7 @@ namespace SalesManagement_SysDev
 
         private void emp_regbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new empcnt());
+            openChildForm(new Management_Employee.Employee_Add());
         }
 
         private void childsubmenu_Paint(object sender, PaintEventArgs e)

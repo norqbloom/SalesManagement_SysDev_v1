@@ -16,8 +16,8 @@ namespace SalesManagement_SysDev.Management_Hattyu
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         HattyuDataAccess HattyuDataAccess = new HattyuDataAccess();
-       private static List<T_Hattyu> products;
-       private static List<M_Prohistory> history;
+       //private static List<T_Hattyu> products;
+       //private static List<M_Prohistory> history;
 
         public Hattyu_Ser()
         {
@@ -30,9 +30,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
             if (!GetHattyuDataAtSelect())
                 return;
 
-            GenerateDataAtSelect();
+            //GenerateDataAtSelect();
 
-            SetSelectData();
+            //SetSelectData();
         }
         private bool GetHattyuDataAtSelect()
         {

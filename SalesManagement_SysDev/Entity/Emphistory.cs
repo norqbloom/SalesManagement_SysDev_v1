@@ -13,10 +13,11 @@ namespace SalesManagement_SysDev
     class Emphistory
     {
     [Key]
-    public string hisNo { get; set; }
+    public int hisNo { get; set; }
 
     public string EmID { get; set; }
     public string SoID { get; set; }
+    public string PoID { get; set; }
 
     public string RegisteredDate { get; set; }
     public string regUserID { get; set; }

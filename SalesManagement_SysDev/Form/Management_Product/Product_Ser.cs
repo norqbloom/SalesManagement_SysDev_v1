@@ -451,18 +451,6 @@ namespace SalesManagement_SysDev.Management_Product
             upusername.Text = x.LastupdatedUserName;
             incntok();
         }
-        private void label9_Click(object sender, EventArgs e)
-        {
-            /*
-            ClIDtxt.Visible = false;
-            datetime.Visible = false;
-            userid.Visible = false;
-            username.Visible = false;
-            uptime.Visible = false;
-            upuserid.Visible = false;
-            upusername.Visible = false;
-             */
-        }
 
         private void change_Click(object sender, EventArgs e)
         {
@@ -528,17 +516,8 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            int Localint;
-            if (radioButton1.Checked == true)
-            {
-                Localint = 2;
-            }
-            else
-            {
-                Localint = 0;
-            }
-            GetDataGridView();
+            SetFormDataGridView();
         }
         
     }
-    }
+}

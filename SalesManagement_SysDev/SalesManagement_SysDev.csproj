@@ -81,9 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Emphistory.cs" />
+    <Compile Include="Form\DbAccess\ArrivalDataAccess.cs" />
     <Compile Include="Form\DbAccess\HattyuDateAccess.cs" />
     <Compile Include="Form\DbAccess\loginDataAccess.cs" />
     <Compile Include="Form\DbAccess\loginhistoryDataAccess.cs" />
+    <Compile Include="Form\DbAccess\SyukkoDataaccess.cs" />
     <Compile Include="Form\Management_Client\client_serch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +309,18 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
+    <Compile Include="待避所.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="待避所.Designer.cs">
+      <DependentUpon>待避所.cs</DependentUpon>
+    </Compile>
+    <Compile Include="待避所2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="待避所2.Designer.cs">
+      <DependentUpon>待避所2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form\login\loginhistory.resx">
       <DependentUpon>loginhistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +420,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="待避所.resx">
+      <DependentUpon>待避所.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="待避所2.resx">
+      <DependentUpon>待避所2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
