@@ -135,7 +135,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             return new T_Order
             {
-                //OrID = int.Parse(textBoxOrID.Text.Trim()),
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
@@ -151,11 +151,11 @@ namespace SalesManagement_SysDev.Management_Order
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
                 return;
-            //bool flg = orderDataAccess.AddClientData(regClient);
-            //if (flg == true)
-            //    messageDsp.DspMsg("M1022");
-            //else
-            //    messageDsp.DspMsg("M1023");
+            bool flg = orderDateAccess.AddClientData(regClient);
+            if (flg == true)
+                messageDsp.DspMsg("M1022");
+            else
+                messageDsp.DspMsg("M1023");
             
 
         }
