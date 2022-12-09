@@ -154,9 +154,9 @@ namespace SalesManagement_SysDev
             return true;
 
         }
-        public List<M_ProductDsp> GetProductData2(int radioint)
+        public List<M_Product> GetProductData2(int radioint)
         {
-            List<M_ProductDsp> product = new List<M_ProductDsp>();
+            List<M_Product> product = new List<M_Product>();
 
             try
             {
@@ -185,7 +185,7 @@ namespace SalesManagement_SysDev
 
                 foreach (var p in tb)
                 {
-                    product.Add(new M_ProductDsp()
+                    product.Add(new M_Product()
                     {
                         PrID = p.PrID,
                         MaID = p.MaID,

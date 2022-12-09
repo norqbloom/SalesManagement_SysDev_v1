@@ -242,7 +242,7 @@ namespace SalesManagement_SysDev.Management_Order
                 radioint = 0;
             }
             // 商品データの取得
-           products = orderDateAccess.GetProductDataDsp(radioint);
+           products = orderDateAccess.GetProductData2(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();

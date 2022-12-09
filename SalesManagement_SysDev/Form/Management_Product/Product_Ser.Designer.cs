@@ -44,7 +44,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
-            this.ButtonDel = new System.Windows.Forms.Button();
+            this.ButtonCle = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.textBoxPageSize = new System.Windows.Forms.TextBox();
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
@@ -220,15 +220,16 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
             // 
-            // ButtonDel
+            // ButtonCle
             // 
-            this.ButtonDel.Location = new System.Drawing.Point(417, 378);
-            this.ButtonDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ButtonDel.Name = "ButtonDel";
-            this.ButtonDel.Size = new System.Drawing.Size(148, 46);
-            this.ButtonDel.TabIndex = 50;
-            this.ButtonDel.Text = "削除";
-            this.ButtonDel.UseVisualStyleBackColor = true;
+            this.ButtonCle.Location = new System.Drawing.Point(417, 378);
+            this.ButtonCle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonCle.Name = "ButtonCle";
+            this.ButtonCle.Size = new System.Drawing.Size(148, 46);
+            this.ButtonCle.TabIndex = 50;
+            this.ButtonCle.Text = "クリア";
+            this.ButtonCle.UseVisualStyleBackColor = true;
+            this.ButtonCle.Click += new System.EventHandler(this.ButtonCle_Click);
             // 
             // dateTimePickerPrReleaseDate
             // 
@@ -583,7 +584,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
-            this.Controls.Add(this.ButtonDel);
+            this.Controls.Add(this.ButtonCle);
             this.Controls.Add(this.ButtonSer);
             this.Controls.Add(this.textBoxPrColor);
             this.Controls.Add(this.textBoxPrModelNumber);
@@ -630,7 +631,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxPrFlag;
-        private System.Windows.Forms.Button ButtonDel;
+        private System.Windows.Forms.Button ButtonCle;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
         private System.Windows.Forms.TextBox textBoxPageSize;
         private System.Windows.Forms.TextBox textBoxPageNo;
