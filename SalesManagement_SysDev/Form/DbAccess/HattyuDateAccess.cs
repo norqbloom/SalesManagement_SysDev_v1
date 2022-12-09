@@ -17,7 +17,9 @@ namespace SalesManagement_SysDev
         //          ：一致データありの場合True
         //          ：一致データなしの場合False
         ///////////////////////////////
+        
 
+       
         public bool CheckHattyuCDExistence(int HaID)
         {
             bool flg = false;
