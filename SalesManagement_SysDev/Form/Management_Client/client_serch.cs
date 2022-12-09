@@ -410,5 +410,15 @@ namespace SalesManagement_SysDev
         {
 
         }
+
+        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPageSize_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

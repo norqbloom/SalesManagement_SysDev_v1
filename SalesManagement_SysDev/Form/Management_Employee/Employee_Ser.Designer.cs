@@ -500,6 +500,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // buttonLastPage
             // 
@@ -512,6 +513,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
+            this.buttonLastPage.Click += new System.EventHandler(this.buttonLastPage_Click);
             // 
             // buttonNextPage
             // 
@@ -524,6 +526,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonNextPage.TabIndex = 25;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
             // 
             // buttonPreviousPage
             // 
@@ -536,6 +539,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonPreviousPage.TabIndex = 26;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
+            this.buttonPreviousPage.Click += new System.EventHandler(this.buttonPreviousPage_Click);
             // 
             // label19
             // 
@@ -566,6 +570,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
+            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -589,6 +594,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
+            this.buttonFirstPage.Click += new System.EventHandler(this.buttonFirstPage_Click);
             // 
             // Clear
             // 
