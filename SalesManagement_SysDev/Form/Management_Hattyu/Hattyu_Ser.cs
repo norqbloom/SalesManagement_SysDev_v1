@@ -16,8 +16,8 @@ namespace SalesManagement_SysDev.Management_Hattyu
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         HattyuDataAccess HattyuDataAccess = new HattyuDataAccess();
-       //private static List<T_Hattyu> products;
-       //private static List<M_Prohistory> history;
+        private static List<T_Hattyu> Hattyus;
+        //private static List<M_Prohistory> history;
 
         public Hattyu_Ser()
         {
@@ -30,9 +30,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
             if (!GetHattyuDataAtSelect())
                 return;
 
-            //GenerateDataAtSelect();
+            GenerateDataAtSelect();
 
-            //SetSelectData();
+            SetSelectData();
         }
         private bool GetHattyuDataAtSelect()
         {
@@ -73,7 +73,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 MaID.Focus();
                 return false;
             }
-            
+
 
             // EmIDの確認 社員
             if (!String.IsNullOrEmpty(EmID.Text.Trim()))
@@ -100,7 +100,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
                     EmID.Focus();
                     return false;
                 }
-            
+
             }
             else
             {
@@ -110,6 +110,128 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
             return true;
         }
+        private void GenerateDataAtSelect()
+        {
+            if (!String.IsNullOrEmpty(HaID.Text.Trim()))
+            {
+                if (!String.IsNullOrEmpty(MaID.Text.Trim()))
+                {
+                    if (!String.IsNullOrEmpty(EmID.Text.Trim()))
+                    {
+                        //全て入力されている
+                        datedubblwget();
+                        return;
+                    }
+                    else
+                    {
+                        //Ma・Emのみ
+                        dateHaget();
+                        return;
+                    }
+
+
+                }
+                else
+                {
+                    if (!String.IsNullOrEmpty(EmID.Text.Trim()))
+                    {
+                       　//Em・Poのみ
+                        dateEmget();
+                        return;
+                    }
+                    // else
+                    // {
+
+                    // dateemget();
+                    // return;
+                    //  }
+                }
+            }
+            else if (!String.IsNullOrEmpty(MaID.Text.Trim()))
+            {
+                if (!String.IsNullOrEmpty(EmID.Text.Trim()))
+                {
+                    //のみ
+                    dateMaget();
+                    return;
+                }
+                else
+                {
+                    //何も入力されていない
+                    datenolwget();
+                    return;
+                }
+            }
+        }
+
+        private void SetSelectData()
+        {
+            dataGridView1.DataSource = Hattyus;
+        }
+        private void datedubblwget()
+        {
+            //全て入力されている
+            T_Hattyu selectCondition = new T_Hattyu()
+            {
+                HaID = int.Parse(HaID.Text.Trim()),
+                MaID = int.Parse(MaID.Text.Trim()),
+                EmID = int.Parse(EmID.Text.Trim()),
+            };
+            Hattyus = HattyuDataAccess.Getdubblwdata(selectCondition);
+        }
+
+        private void dateHaget()
+        { // 12/8
+            DateTime Dt = DateTime.Parse(HaDate.Text.Trim());
+            T_Hattyu selectCondition = new T_Hattyu()
+            {
+                HaID = int.Parse(HaID.Text.Trim()),
+                MaID = int.Parse(MaID.Text.Trim()),
+                HaDate = HaDate.Value
+            };
+            Hattyus = HattyuDataAccess.GetHadata(selectCondition);
+
+        }
+        private void dateEmget()
+        {
+            //Em・Poのみ
+            T_Hattyu selectCondition = new T_Hattyu()
+            {
+                EmID = int.Parse(EmID.Text.Trim()),
+                HaID = int.Parse(HaID.Text.Trim()),
+                //HaDate = HaDate.Value
+
+            };
+            Hattyus = HattyuDataAccess.GetEmdata(selectCondition);
+        }
+        private void dateMaget()
+        {
+            //
+            T_Hattyu selectCondition = new T_Hattyu()
+            {
+                EmID = int.Parse(EmID.Text.Trim()),
+                HaID = int.Parse(HaID.Text.Trim()),
+
+                //HaDate = HaDate.Value
+            };
+            Hattyus = HattyuDataAccess.GetMadata(selectCondition);
+        }
+        private void datenolwget()
+        {
+            //何も入力されていない
+            T_Hattyu selectCondition = new T_Hattyu()
+            {
+                EmID = int.Parse(EmID.Text.Trim()),
+                HaID = int.Parse(HaID.Text.Trim()),
+
+                //HaDate = HaDate.Value
+            };
+            Hattyus = HattyuDataAccess.Getnolwget(selectCondition);
+        }
+
     }
 }
+
+
+
 
