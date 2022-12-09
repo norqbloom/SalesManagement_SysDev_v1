@@ -48,6 +48,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPo = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.labelEm = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelPo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -272,6 +272,28 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(357, 662);
             this.panel1.TabIndex = 41;
+            // 
+            // labelPo
+            // 
+            this.labelPo.AutoSize = true;
+            this.labelPo.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelPo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelPo.Location = new System.Drawing.Point(132, 130);
+            this.labelPo.Name = "labelPo";
+            this.labelPo.Size = new System.Drawing.Size(63, 20);
+            this.labelPo.TabIndex = 46;
+            this.labelPo.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(32, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "役職ID:";
             // 
             // labelEm
             // 
@@ -584,28 +606,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Clear.Text = "クリア";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(32, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "役職ID:";
-            // 
-            // labelPo
-            // 
-            this.labelPo.AutoSize = true;
-            this.labelPo.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelPo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelPo.Location = new System.Drawing.Point(132, 130);
-            this.labelPo.Name = "labelPo";
-            this.labelPo.Size = new System.Drawing.Size(63, 20);
-            this.labelPo.TabIndex = 46;
-            this.labelPo.Text = "label7";
             // 
             // Employee_Ser
             // 
