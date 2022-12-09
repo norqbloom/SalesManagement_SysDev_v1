@@ -48,7 +48,6 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
-            
             SetFormDataGridView();
             invcnt();
         }
@@ -129,8 +128,7 @@ namespace SalesManagement_SysDev
 
         }
         private void SetSelectData()
-        {            
-
+        {
             dataGridView1.DataSource = clients;
         }
         private void dateClget()

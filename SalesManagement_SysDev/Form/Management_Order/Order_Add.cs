@@ -200,7 +200,7 @@ namespace SalesManagement_SysDev.Management_Order
       
 
         //データグリッドビュー用のプロダクトデータ
-        private static List<M_ProductDsp> Product2;
+        private static List<M_Product> products;
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
         //引　数   ：なし
@@ -242,7 +242,7 @@ namespace SalesManagement_SysDev.Management_Order
                 radioint = 0;
             }
             // 商品データの取得
-            Product2 = orderDateAccess.GetProductData2(radioint);
+           products = orderDateAccess.GetProductDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -257,7 +257,7 @@ namespace SalesManagement_SysDev.Management_Order
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
@@ -291,7 +291,7 @@ namespace SalesManagement_SysDev.Management_Order
             dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(Product2.Count / (double)pageSize)) + "ページ";
+            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
 
             dataGridViewDsp.Refresh();
 
