@@ -26,13 +26,13 @@ namespace SalesManagement_SysDev.Management_Order
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Ord_Add_Button_Click(object sender, EventArgs e)
         {
             //登録
             if (!GetclientDataAtRegistration())
                 return;
             var regCl = GenerateDataAtRegistration();
-            //RegistrationOrder(regOr);
+            RegistrationClient(regCl);
         }
 
         private bool GetclientDataAtRegistration()
@@ -135,7 +135,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             return new T_Order
             {
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                //OrID = int.Parse(textBoxOrID.Text.Trim()),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),

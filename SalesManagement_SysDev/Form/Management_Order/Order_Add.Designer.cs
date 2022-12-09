@@ -86,7 +86,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.Ord_Add_Button.TabIndex = 59;
             this.Ord_Add_Button.Text = "登録";
             this.Ord_Add_Button.UseVisualStyleBackColor = true;
-            this.Ord_Add_Button.Click += new System.EventHandler(this.button1_Click);
+            this.Ord_Add_Button.Click += new System.EventHandler(this.Ord_Add_Button_Click);
             // 
             // checkBoxOrFlag
             // 
