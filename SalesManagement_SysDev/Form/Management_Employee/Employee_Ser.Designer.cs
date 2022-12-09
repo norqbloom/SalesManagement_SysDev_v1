@@ -48,8 +48,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
             this.labelPo = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.labelEm = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -247,8 +247,8 @@ namespace SalesManagement_SysDev.Management_Employee
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.labelPo);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.labelEm);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
@@ -273,27 +273,27 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Size = new System.Drawing.Size(357, 662);
             this.panel1.TabIndex = 41;
             // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Cursor = System.Windows.Forms.Cursors.No;
-            this.label20.Location = new System.Drawing.Point(33, 134);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 15);
-            this.label20.TabIndex = 43;
-            this.label20.Text = "役職ID";
-            // 
             // labelPo
             // 
             this.labelPo.AutoSize = true;
-            this.labelPo.Location = new System.Drawing.Point(133, 134);
+            this.labelPo.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelPo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelPo.Location = new System.Drawing.Point(132, 130);
             this.labelPo.Name = "labelPo";
-            this.labelPo.Size = new System.Drawing.Size(51, 15);
-            this.labelPo.TabIndex = 44;
-            this.labelPo.Text = "label21";
+            this.labelPo.Size = new System.Drawing.Size(63, 20);
+            this.labelPo.TabIndex = 46;
+            this.labelPo.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(32, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "役職ID:";
             // 
             // labelEm
             // 
@@ -614,7 +614,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.ClientSize = new System.Drawing.Size(1180, 662);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerEmHiredate);
             this.Controls.Add(this.buttonSer);
             this.Controls.Add(this.textBoxEmHidden);
@@ -633,6 +632,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Employee_Ser";
             this.Text = "Employee_Ser";
@@ -694,8 +694,8 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button buttonFirstPage;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label labelPo;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Label labelPo;
+        private System.Windows.Forms.Label label6;
     }
 }

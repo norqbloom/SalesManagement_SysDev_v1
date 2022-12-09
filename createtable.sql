@@ -508,6 +508,13 @@ VALUES (N'M9006',N'出庫状態を更新してもよろしいですか？',N'更
 INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)
 VALUES (N'M9007',N'出庫状態を更新しました',N'更新確認',0,0)
 
+/*出庫テーブル*/
+SET IDENTITY_INSERT T_syukko ON
+INSERT INTO T_syukko(SyID,EmID,ClID,SoID,OrID,SyDate,SyStateFlag,SyFlag,SyHidden)
+VALUES(1,1,2,1,1,N'2022/12/08',0,0,null)
+SET IDENTITY_INSERT T_syukko OFF
+
+
 /*テンプレ*/
 /*SET IDENTITY_INSERT  ON
 INSERT INTO ()

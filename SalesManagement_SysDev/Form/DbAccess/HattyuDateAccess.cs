@@ -17,9 +17,7 @@ namespace SalesManagement_SysDev
         //          ：一致データありの場合True
         //          ：一致データなしの場合False
         ///////////////////////////////
-        
 
-       
         public bool CheckHattyuCDExistence(int HaID)
         {
             bool flg = false;
@@ -155,11 +153,36 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                Hattyu = context.T_Hattyus.ToList();
-                context.SaveChanges();
-                context.Dispose();
+                var tb = from t1 in context.T_Hattyus
+                         join t2 in context.M_Makers
+                         on t1.MaID equals t2.MaID
 
-                return Hattyu;
+
+                         select new
+                         {
+                             t1.HaID,
+                             t2.MaID,
+                             t1.HaDate,
+                             t1.HaFlag,
+                             t1.EmID,
+                             t1.WaWarehouseFlag,
+                             t1.HaHidden
+                         };
+                foreach (var h in tb)
+                {
+                    Hattyu.Add(new T_Hattyu()
+                    {
+                        HaID = h.HaID,
+                        MaID = h.MaID,
+                        HaDate = h.HaDate,
+                        HaFlag = h.HaFlag,
+                        EmID = h.EmID,
+                        WaWarehouseFlag = h.WaWarehouseFlag,
+                        HaHidden = h.HaHidden
+
+                    });
+                }
+                context.Dispose();
             }
             catch (Exception ex)
             {
@@ -225,7 +248,30 @@ namespace SalesManagement_SysDev
             }
             return hattyus;
         }
-        public List<T_Hattyu> GetCldata(T_Hattyu selectCondition)
+        public List<T_Hattyu> GetHadata(T_Hattyu selectCondition)
+        {
+            List<T_Hattyu> hattyus = new List<T_Hattyu>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                hattyus = context.T_Hattyus.Where(x => x.HaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.HaDate.ToString().Contains(selectCondition.HaDate.ToString())).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return hattyus;
+
+        }
+
+        public List<T_Hattyu> GetEmdata(T_Hattyu selectCondition)
         {
             List<T_Hattyu> hattyus = new List<T_Hattyu>();
 
@@ -247,7 +293,7 @@ namespace SalesManagement_SysDev
             }
             return hattyus;
         }
-        public List<T_Hattyu> GetSodata(T_Hattyu selectCondition)
+        public List<T_Hattyu> GetMadata(T_Hattyu selectCondition)
         {
             List<T_Hattyu> hattyus = new List<T_Hattyu>();
 
@@ -347,6 +393,28 @@ namespace SalesManagement_SysDev
                 context.SaveChanges();
 
                 context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return hattyus;
+        }
+        public List<T_Hattyu> Getnolwget(T_Hattyu selectCondition)
+        {
+            List<T_Hattyu> hattyus = new List<T_Hattyu>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                hattyus = context.T_Hattyus.Where(x => x.HaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.HaID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.HaDate.ToString().Contains(selectCondition.HaDate.ToString())).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
             }
             catch (Exception ex)
             {

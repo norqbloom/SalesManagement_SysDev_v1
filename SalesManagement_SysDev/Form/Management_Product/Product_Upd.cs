@@ -309,7 +309,7 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
         //データグリッドビュー用のプロダクトデータ
-        private static List<M_ProductDsp> Product2;
+        private static List<M_Product> products;
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
         //引　数   ：なし
@@ -341,7 +341,6 @@ namespace SalesManagement_SysDev.Management_Product
         ///////////////////////////////
         private void GetDataGridView()
         {
-
             int radioint = 0;
             if (radioButton1.Checked == true)
             {
@@ -352,7 +351,7 @@ namespace SalesManagement_SysDev.Management_Product
                 radioint = 0;
             }
             // 商品データの取得
-            Product2 = productDataAccess.GetProductData2(radioint);
+            products = productDataAccess.GetProductDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -367,7 +366,7 @@ namespace SalesManagement_SysDev.Management_Product
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
@@ -375,33 +374,34 @@ namespace SalesManagement_SysDev.Management_Product
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridViewDsp.Columns[0].Width = 80;
-            dataGridViewDsp.Columns[1].Width = 80;
-            dataGridViewDsp.Columns[2].Width = 200;
-            dataGridViewDsp.Columns[3].Width = 200;
-            dataGridViewDsp.Columns[4].Width = 200;
-            dataGridViewDsp.Columns[5].Width = 80;
-            dataGridViewDsp.Columns[6].Width = 80;
-            dataGridViewDsp.Columns[7].Width = 200;
-            dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 100;
+            dataGridViewDsp.Columns[1].Width = 100;
+            dataGridViewDsp.Columns[2].Width = 100;
+            dataGridViewDsp.Columns[3].Width = 100;
+            dataGridViewDsp.Columns[4].Visible = false;
+            dataGridViewDsp.Columns[5].Width = 100;
+            dataGridViewDsp.Columns[6].Width = 100;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 100;
             dataGridViewDsp.Columns[9].Width = 100;
-            dataGridViewDsp.Columns[10].Width = 200;
+            dataGridViewDsp.Columns[10].Width = 100;
+            dataGridViewDsp.Columns[11].Width = 200;
 
             //各列の文字位置の指定
             dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(Product2.Count / (double)pageSize)) + "ページ";
+            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
 
             dataGridViewDsp.Refresh();
 
@@ -415,17 +415,17 @@ namespace SalesManagement_SysDev.Management_Product
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //データグリッドビューからクリックされたデータを各入力エリアへ
-            textBoxPrID.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[0].Value.ToString();
-            textBoxMaID.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[1].Value.ToString();
-            textBoxPrName.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[2].Value.ToString();
-            textBoxPrice.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[3].Value.ToString();
-            textBoxPrSafetyStock.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[4].Value.ToString();
-            textBoxScID.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[5].Value.ToString();
-            textBoxPrModelNumber.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[6].Value.ToString();
-            textBoxPrColor.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[7].Value.ToString();
-            dateTimePickerPrReleaseDate.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[8].Value.ToString();
+            textBoxPrID.Text = dataGridViewDsp.CurrentRow.Cells[0].Value.ToString();
+            textBoxMaID.Text = dataGridViewDsp.CurrentRow.Cells[1].Value.ToString();
+            textBoxPrName.Text = dataGridViewDsp.CurrentRow.Cells[2].Value.ToString();
+            textBoxPrice.Text = dataGridViewDsp.CurrentRow.Cells[3].Value.ToString();
+            textBoxPrSafetyStock.Text = dataGridViewDsp.CurrentRow.Cells[5].Value.ToString();
+            textBoxScID.Text = dataGridViewDsp.CurrentRow.Cells[6].Value.ToString();
+            textBoxPrModelNumber.Text = dataGridViewDsp.CurrentRow.Cells[7].Value.ToString();
+            textBoxPrColor.Text = dataGridViewDsp.CurrentRow.Cells[8].Value.ToString();
+            dateTimePickerPrReleaseDate.Text = dataGridViewDsp.CurrentRow.Cells[9].Value.ToString();
             //チェックボックスの状態を判断
-            if ((int)dataGridViewDsp.CurrentRow.Cells[9].Value == 0)
+            if ((int)dataGridViewDsp.CurrentRow.Cells[10].Value == 0)
             {
                 checkBoxPrFlag.Checked = false;
             }
@@ -434,13 +434,13 @@ namespace SalesManagement_SysDev.Management_Product
                 checkBoxPrFlag.Checked = true;
             }
             //非表示理由の状態を判断
-            if (dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[10].Value == null)
+            if (dataGridViewDsp.CurrentRow.Cells[11].Value == null)
             {
-                textBoxPrHidden.Text = "";
+                textBoxPrHidden.Text = null;
             }
             else
             {
-                textBoxPrHidden.Text = dataGridViewDsp.Rows[dataGridViewDsp.CurrentRow.Index].Cells[10].Value.ToString();
+                textBoxPrHidden.Text = dataGridViewDsp.CurrentRow.Cells[11].Value.ToString();
             }
         }
 
@@ -449,5 +449,66 @@ namespace SalesManagement_SysDev.Management_Product
             GetDataGridView();
         }
 
+        private void change_Click(object sender, EventArgs e)
+        {
+            SetDataGridView();
+        }
+
+        private void buttonFirstPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            dataGridViewDsp.DataSource = products.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void buttonLastPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void buttonPreviousPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void buttonNextPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(products.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
     }
 }
