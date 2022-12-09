@@ -53,12 +53,17 @@ namespace SalesManagement_SysDev.Management_Syukko
             {
                 return;
             }
-            MessageBox.Show(e.RowIndex.ToString(),MessageBoxButtons.OK.ToString());
-            MessageBox.Show(e.ColumnIndex.ToString(), MessageBoxButtons.YesNo.ToString());
-
-
-
-
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            
+            foreach (DataGridViewRow item in dataGridView1.SelectedRows)
+            {
+                if (!item.IsNewRow)
+                {
+                    dataGridView1.Rows.Remove(item);
+                }
+            }
+            MessageBox.Show(number.ToString());
         }
     }
 }

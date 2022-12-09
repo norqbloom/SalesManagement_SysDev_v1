@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         HattyuDataAccess HattyuDateAccess = new HattyuDataAccess();
-
+       //EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
 
 
         public Hattyu_Add()
@@ -100,13 +100,13 @@ namespace SalesManagement_SysDev.Management_Hattyu
                     EmID.Focus();
                     return false;
                 }
-                //Emid重複チェック　
-                if (EmployeeDataAccess.CheckemployeeCDExistence(int.Parse(EmID.Text.Trim())))
-                {
-                    messageDsp.DspMsg("M6003");
-                    EmID.Focus();
-                    return false;
-                }
+                ////Emid重複チェック
+                //if (EmployeeDataAccess.CheckemployeeCDExistence(int.Parse(EmID.Text.Trim())))
+                //{
+                //    messageDsp.DspMsg("M6003");
+                //    EmID.Focus();
+                //    return false;
+                //}
             }
             else
             {
@@ -118,7 +118,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             //発注年月日　
             //HaDate ???
 
-           
+
             //発注管理フラグ
             if (HaFlag.CheckState == CheckState.Indeterminate)
             {
@@ -160,13 +160,13 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 HaID = int.Parse(HaID.Text),
                 MaID = int.Parse(MaID.Text),
                 EmID = int.Parse(EmID.Text),
-                // HaDate = HaDate,
+                HaDate = HaDate.Value,
                 WaWarehouseFlag = checkflg,
                 HaFlag = checkflg,
                 HaHidden = HaHidden.Text
             };
         }
-        private void RegistrationHattyu(T_Hattyu regHattyu)
+       private void RegistrationHattyu(T_Hattyu regHattyu)
         {
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)

@@ -138,7 +138,22 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        
+        public bool AddClientData(T_Order regClient)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.T_Orders.Add(regClient);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+
+        }
         public List<M_ProductDsp> GetProductData2(int radioint)
         {
             List<M_ProductDsp> product = new List<M_ProductDsp>();
