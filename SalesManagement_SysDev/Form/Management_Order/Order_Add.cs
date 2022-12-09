@@ -24,7 +24,7 @@ namespace SalesManagement_SysDev.Management_Order
         private void Order_Add_Load(object sender, EventArgs e)
         {
             // DataGridViewに表示するデータを指定
-            SetDataGridView();
+            //SetDataGridView();
         }
         private void Ord_Add_Button_Click(object sender, EventArgs e)
         {
