@@ -100,13 +100,13 @@ namespace SalesManagement_SysDev.Management_Hattyu
                     EmID.Focus();
                     return false;
                 }
-                //Emid重複チェック　
-                if (EmployeeDataAccess.CheckemployeeCDExistence(int.Parse(EmID.Text.Trim())))
-                {
-                    messageDsp.DspMsg("M6003");
-                    EmID.Focus();
-                    return false;
-                }
+                //Emid重複チェック
+                //if (EmployeeDataAccess.CheckemployeeCDExistence(int.Parse(EmID.Text.Trim())))
+                //{
+                //    messageDsp.DspMsg("M6003");
+                //    EmID.Focus();
+                //    return false;
+                //}
             }
             else
             {
@@ -118,7 +118,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             //発注年月日　
             //HaDate ???
 
-           
+
             //発注管理フラグ
             if (HaFlag.CheckState == CheckState.Indeterminate)
             {
@@ -166,7 +166,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 HaHidden = HaHidden.Text
             };
         }
-        private void RegistrationHattyu(T_Hattyu regHattyu)
+       private void RegistrationHattyu(T_Hattyu regHattyu)
         {
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)

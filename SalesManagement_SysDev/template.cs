@@ -404,12 +404,12 @@ namespace SalesManagement_SysDev
         {
             DateTime dt = DateTime.Now;
             string logouttime = dt.ToString();
-            DateTime logintime = DateTime.Parse(template.loginTime);
+            //DateTime logintime = DateTime.Parse(template.loginTime);
             try
             {
                 var context = new SalesManagement_DevContext();
-                var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
-                loginhistory.logoutTime = DateTime.Parse(logouttime);
+                //var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
+                //loginhistory.logoutTime = DateTime.Parse(logouttime);
                 context.SaveChanges();
                 context.Dispose();
             }
