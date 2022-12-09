@@ -12,61 +12,47 @@ namespace SalesManagement_SysDev
     class M_Product
     {
         [Key]
-        public int PrID { get; set; }               //商品ID		
-        public int MaID { get; set; }               //メーカID	
-        [MaxLength(50)]
-        [Required]
-        public String PrName { get; set; }           //商品名		
-        public int Price { get; set; }              //価格	
-        [MaxLength(13)]
-        public String PrJCode { get; set; }         //JANコード		
-        public int PrSafetyStock { get; set; }      //安全在庫数		
-        public int ScID { get; set; }               //小分類ID	                                                
-        [MaxLength(20)]
-        [Required]
-        public String PrModelNumber { get; set; }      //型番
-        [MaxLength(20)]
-        [Required]
-        public String PrColor { get; set; }         //色		
-        public String PrReleaseDate { get; set; } //発売日		
-        public int PrFlag { get; set; }             //商品管理フラグ
-        public String PrHidden { get; set; }	    //非表示理由		
-    }
-
-    //データグリッド表示用
-    class M_ProductDsp
-    {
         [DisplayName("商品ID")]
-        public int PrID { get; set; }
+        public int PrID { get; set; }               //商品ID		
 
         [DisplayName("メーカID")]
-        public int MaID { get; set; }
+        public int MaID { get; set; }               //メーカID	
 
+        [MaxLength(50)]
+        [Required]
         [DisplayName("商品名")]
-        public string PrName { get; set; }
-
+        public String PrName { get; set; }           //商品名
+        
         [DisplayName("価格")]
-        public int Price { get; set; }
+        public int Price { get; set; }              //価格	
+
+        [MaxLength(13)]
+        public String PrJCode { get; set; }         //JANコード	
 
         [DisplayName("安全在庫数")]
-        public int PrSafetyStock { get; set; }
+        public int PrSafetyStock { get; set; }      //安全在庫数	
 
         [DisplayName("小分類ID")]
-        public int ScID { get; set; }
-
+        public int ScID { get; set; }               //小分類ID	
+       
+        [MaxLength(20)]
+        [Required]
         [DisplayName("型番")]
-        public string PrModelNumber { get; set; }
-
+        public String PrModelNumber { get; set; }      //型番
+        
+        [MaxLength(20)]
+        [Required]
         [DisplayName("色")]
-        public string PrColor { get; set; }
+        public String PrColor { get; set; }         //色		
 
         [DisplayName("発売日")]
-        public string PrReleaseDate { get; set; }
+        public String PrReleaseDate { get; set; } //発売日		
 
         [DisplayName("商品管理フラグ")]
-        public int PrFlag { get; set; }
+        public int PrFlag { get; set; }             //商品管理フラグ
 
         [DisplayName("非表示理由")]
-        public string PrHidden { get; set; }
+        public String PrHidden { get; set; }	    //非表示理由		
+
     }
 }

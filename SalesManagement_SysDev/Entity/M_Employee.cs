@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SalesManagement_SysDev
 {
@@ -30,5 +32,36 @@ namespace SalesManagement_SysDev
         // public String EmBarcode { get; set; }    //社員バーコード		
         public int EmFlag { get; set; }             //社員管理フラグ
         public String EmHidden { get; set; }	    //非表示理由		
+    }
+    class M_EmployeeDsp
+    {
+        [DisplayName("社員ID")]
+        public int EmID { get; set; }
+
+        [DisplayName("社員名")]
+        public String EmName { get; set; }
+
+        [DisplayName("営業所ID")]
+        public int SoID { get; set; }
+
+        [DisplayName("役職ID")]
+        public int PoID { get; set; }
+
+        [DisplayName("入社年月日")]
+        public String EmHiredate { get; set; }
+
+        [DisplayName("パスワード")]
+        public String EmPassword { get; set; }
+
+        [DisplayName("電話番号")]
+        public String EmPhone { get; set; }
+
+        [DisplayName("社員管理フラグ")]
+        public int EmFlag { get; set; }
+
+        [DisplayName("非表示理由")]
+        public String EmHidden { get; set; }
+
+        
     }
 }

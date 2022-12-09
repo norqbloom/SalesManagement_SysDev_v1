@@ -106,7 +106,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(133, 42);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 14;
             this.label5.Text = "label5";
             // 
@@ -117,7 +117,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label13.Location = new System.Drawing.Point(31, 42);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 20);
+            this.label13.Size = new System.Drawing.Size(62, 16);
             this.label13.TabIndex = 14;
             this.label13.Text = "顧客ID:";
             // 
@@ -132,6 +132,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
+            this.buttonLastPage.Click += new System.EventHandler(this.buttonLastPage_Click);
             // 
             // label12
             // 
@@ -140,7 +141,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label12.Location = new System.Drawing.Point(29, 441);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 20);
+            this.label12.Size = new System.Drawing.Size(80, 16);
             this.label12.TabIndex = 13;
             this.label12.Text = "更新者名:";
             // 
@@ -151,7 +152,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label11.Location = new System.Drawing.Point(31, 389);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 20);
+            this.label11.Size = new System.Drawing.Size(79, 16);
             this.label11.TabIndex = 12;
             this.label11.Text = "更新者ID:";
             // 
@@ -162,7 +163,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label10.Location = new System.Drawing.Point(31, 338);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 20);
+            this.label10.Size = new System.Drawing.Size(80, 16);
             this.label10.TabIndex = 11;
             this.label10.Text = "更新日時:";
             // 
@@ -173,7 +174,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label9.Location = new System.Drawing.Point(31, 242);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 20);
+            this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 10;
             this.label9.Text = "作成者名:";
             // 
@@ -184,7 +185,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label8.Location = new System.Drawing.Point(29, 192);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 20);
+            this.label8.Size = new System.Drawing.Size(79, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "作成者ID:";
             // 
@@ -199,6 +200,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonNextPage.TabIndex = 25;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
             // 
             // buttonPreviousPage
             // 
@@ -211,6 +213,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonPreviousPage.TabIndex = 26;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
+            this.buttonPreviousPage.Click += new System.EventHandler(this.buttonPreviousPage_Click);
             // 
             // textBoxPageSize
             // 
@@ -229,7 +232,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label7.Location = new System.Drawing.Point(29, 141);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 20);
+            this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 8;
             this.label7.Text = "作成日時:";
             // 
@@ -240,7 +243,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(32, 91);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 20);
+            this.label6.Size = new System.Drawing.Size(79, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "営業所ID:";
             // 
@@ -251,7 +254,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.upusername.ForeColor = System.Drawing.SystemColors.ControlText;
             this.upusername.Location = new System.Drawing.Point(133, 441);
             this.upusername.Name = "upusername";
-            this.upusername.Size = new System.Drawing.Size(74, 20);
+            this.upusername.Size = new System.Drawing.Size(61, 16);
             this.upusername.TabIndex = 6;
             this.upusername.Text = "label12";
             // 
@@ -266,6 +269,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
+            this.buttonFirstPage.Click += new System.EventHandler(this.buttonFirstPage_Click);
             // 
             // panel2
             // 
@@ -296,6 +300,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // label17
             // 
@@ -324,7 +329,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.upuserid.ForeColor = System.Drawing.SystemColors.ControlText;
             this.upuserid.Location = new System.Drawing.Point(133, 389);
             this.upuserid.Name = "upuserid";
-            this.upuserid.Size = new System.Drawing.Size(74, 20);
+            this.upuserid.Size = new System.Drawing.Size(61, 16);
             this.upuserid.TabIndex = 5;
             this.upuserid.Text = "label11";
             // 
@@ -335,7 +340,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.uptime.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uptime.Location = new System.Drawing.Point(133, 338);
             this.uptime.Name = "uptime";
-            this.uptime.Size = new System.Drawing.Size(74, 20);
+            this.uptime.Size = new System.Drawing.Size(61, 16);
             this.uptime.TabIndex = 4;
             this.uptime.Text = "label10";
             // 
@@ -346,7 +351,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.username.ForeColor = System.Drawing.SystemColors.ControlText;
             this.username.Location = new System.Drawing.Point(133, 242);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(63, 20);
+            this.username.Size = new System.Drawing.Size(52, 16);
             this.username.TabIndex = 3;
             this.username.Text = "label9";
             // 
@@ -357,7 +362,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.userid.ForeColor = System.Drawing.SystemColors.ControlText;
             this.userid.Location = new System.Drawing.Point(133, 192);
             this.userid.Name = "userid";
-            this.userid.Size = new System.Drawing.Size(63, 20);
+            this.userid.Size = new System.Drawing.Size(52, 16);
             this.userid.TabIndex = 2;
             this.userid.Text = "label8";
             // 
@@ -368,7 +373,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.datetime.ForeColor = System.Drawing.SystemColors.ControlText;
             this.datetime.Location = new System.Drawing.Point(133, 141);
             this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(63, 20);
+            this.datetime.Size = new System.Drawing.Size(52, 16);
             this.datetime.TabIndex = 1;
             this.datetime.Text = "label7";
             // 
@@ -379,7 +384,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.IDtxt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IDtxt.Location = new System.Drawing.Point(133, 91);
             this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(63, 20);
+            this.IDtxt.Size = new System.Drawing.Size(52, 16);
             this.IDtxt.TabIndex = 0;
             this.IDtxt.Text = "label6";
             // 
@@ -412,11 +417,11 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // dataGridViewDsp
             // 
+            this.dataGridViewDsp.AllowUserToResizeColumns = false;
+            this.dataGridViewDsp.AllowUserToResizeRows = false;
             this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewDsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewDsp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDsp.Location = new System.Drawing.Point(28, 429);
@@ -455,7 +460,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(694, 228);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 19);
+            this.radioButton2.Size = new System.Drawing.Size(70, 19);
             this.radioButton2.TabIndex = 127;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
@@ -466,7 +471,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(694, 203);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 19);
+            this.radioButton1.Size = new System.Drawing.Size(55, 19);
             this.radioButton1.TabIndex = 126;
             this.radioButton1.Text = "表示";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -518,7 +523,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(124, 256);
             this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
-            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(81, 22);
+            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(135, 22);
             this.textBoxPrSafetyStock.TabIndex = 112;
             // 
             // textBoxPrice
@@ -649,7 +654,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag.Location = new System.Drawing.Point(307, 286);
             this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
+            this.checkBoxPrFlag.Size = new System.Drawing.Size(118, 19);
             this.checkBoxPrFlag.TabIndex = 117;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;

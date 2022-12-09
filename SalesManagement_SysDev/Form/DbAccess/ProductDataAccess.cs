@@ -80,7 +80,6 @@ namespace SalesManagement_SysDev
                 product.MaID = updProduct.MaID;
                 product.PrName = updProduct.PrName;
                 product.Price = updProduct.Price;
-                product.PrJCode = updProduct.PrJCode;
                 product.PrSafetyStock = updProduct.PrSafetyStock;
                 product.ScID = updProduct.ScID;
                 product.PrModelNumber = updProduct.PrModelNumber;
@@ -132,67 +131,9 @@ namespace SalesManagement_SysDev
         //戻り値   ：全商品データ
         //機　能   ：全商品データの取得
         ///////////////////////////////
-        public List<M_Product> GetProductData()
+        public List<M_Product> GetProductDataDsp(int radioint)
         {
             List<M_Product> product = new List<M_Product>();
-
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                var tb = from t1 in context.M_Products
-                         join t2 in context.M_Makers
-                         on t1.MaID equals t2.MaID
-                         join t3 in context.M_SmallClassifications
-                         on t1.ScID equals t3.ScID
-
-                         select new
-                         {
-                             t1.PrID,
-                             t2.MaID,
-                             t1.PrName,
-                             t1.Price,
-                             t1.PrSafetyStock,
-                             t3.ScID,
-                             t1.PrModelNumber,
-                             t1.PrColor,
-                             t1.PrReleaseDate,
-                             t1.PrFlag,
-                             t1.PrHidden
-                         };
-                foreach(var p in tb)
-                {
-                    product.Add(new M_Product()
-                    {
-                        PrID = p.PrID,
-                        MaID = p.MaID,
-                        PrName = p.PrName,
-                        Price = p.Price,
-                        PrSafetyStock = p.PrSafetyStock,
-                        ScID = p.ScID,
-                        PrModelNumber = p.PrModelNumber,
-                        PrColor = p.PrColor,
-                        PrReleaseDate = p.PrReleaseDate,
-                        PrFlag = p.PrFlag,
-                        PrHidden = p.PrHidden
-                    });
-                }
-                context.Dispose();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return product;
-        }
-        ///////////////////////////////
-        //メソッド名：GetProductData()
-        //引　数   ：なし
-        //戻り値   ：全商品データ
-        //機　能   ：全商品データの取得
-        ///////////////////////////////
-        public List<M_ProductDsp> GetProductData2(int radioint)
-        {
-            List<M_ProductDsp> product = new List<M_ProductDsp>();
 
             try
             {   
@@ -220,7 +161,7 @@ namespace SalesManagement_SysDev
                
                 foreach (var p in tb)
                 {
-                    product.Add(new M_ProductDsp()
+                    product.Add(new M_Product()
                     {
                         PrID = p.PrID,
                         MaID = p.MaID,
@@ -242,93 +183,6 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return product;
-        }
-
-        ///////////////////////////////
-        //メソッド名：GetItemData()　オーバーロード
-        //引　数   ：検索条件
-        //戻り値   ：条件一致商品データ
-        //機　能   ：条件一致商品データの取得
-        ///////////////////////////////
-        public List<M_Product> GetProductData(M_Product selectCondition)
-        {
-            List<M_Product> product = new List<M_Product>();
-
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                var tb = from t1 in context.M_Products
-                         join t2 in context.M_Makers
-                         on t1.MaID equals t2.MaID
-                         join t3 in context.M_SmallClassifications
-                         on t1.ScID equals t3.ScID
-                         where t1.PrName.Contains(selectCondition.PrName) &&
-                               t1.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                               t1.PrColor.Contains(selectCondition.PrColor) &&
-                               t1.PrHidden.Contains(selectCondition.PrHidden)
-                               
-
-                         select new
-                         {
-                            t1.PrID,
-                            t2.MaID,
-                            t1.PrName,
-                            t1.Price,
-                            t1.PrSafetyStock,
-                            t3.ScID,
-                            t1.PrModelNumber,
-                            t1.PrColor,
-                            t1.PrReleaseDate,
-                            t1.PrFlag,
-                            t1.PrHidden
-                         };
-                foreach(var p in tb)
-                {
-                    product.Add(new M_Product()
-                    {
-                        PrID = p.PrID,
-                        MaID = p.MaID,
-                        PrName = p.PrName,
-                        Price = p.Price,
-                        PrSafetyStock = p.PrSafetyStock,
-                        ScID = p.ScID,
-                        PrModelNumber = p.PrModelNumber,
-                        PrColor = p.PrColor,
-                        PrReleaseDate = p.PrReleaseDate,
-                        PrFlag = p.PrFlag,
-                        PrHidden = p.PrHidden
-                    });  
-                }
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return product;
-        }
-       
-
-        ///////////////////////////////
-        //メソッド名：GetClientsDspData()
-        //引　数   ：なし
-        //戻り値   ：表示用顧客データ
-        //機　能   ：表示用顧客データの取得
-        ///////////////////////////////
-        public List<M_Product> GetProductDspData()
-        {
-            List<M_Product> Product = new List<M_Product>();
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                Product = context.M_Products.Where(x => x.PrFlag == 0).ToList();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return Product;
         }
 
         ///////////////////////////////
@@ -398,13 +252,12 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 product = context.M_Products.Where(x =>
-                                                 x.PrFlag == 0 &&
-                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
-                                                 x.PrName.Contains(selectCondition.PrName) &&
-                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
-                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())
-                                                 ).ToList();
+                                                x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrColor.Contains(selectCondition.PrColor) &&
+                                                x.PrFlag == 0).ToList();
+                context.SaveChanges();                                 
                 context.Dispose();
 
             }
