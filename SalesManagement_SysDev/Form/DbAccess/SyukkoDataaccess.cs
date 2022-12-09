@@ -25,5 +25,21 @@ namespace SalesManagement_SysDev
             }
             return syukkos;
         }
+        public List<T_Syukko> getsyID(T_Syukko number)
+        {
+            List<T_Syukko> syukkos = new List<T_Syukko>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                syukkos = context.T_Syukkos.Where(x => x.SyFlag == 0&&
+                                                       x.SyID==number.SyID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return syukkos;
+        }
     }
 }
