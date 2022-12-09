@@ -209,7 +209,7 @@ namespace SalesManagement_SysDev.Management_Order
       
 
         //データグリッドビュー用のプロダクトデータ
-        private static List<M_Product> products;
+        private static List<T_Order> orders;
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
         //引　数   ：なし
@@ -251,7 +251,7 @@ namespace SalesManagement_SysDev.Management_Order
                 radioint = 0;
             }
             // 商品データの取得
-           products = orderDateAccess.GetProductDataDsp(radioint);
+           orders = orderDateAccess.GetOrderDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();

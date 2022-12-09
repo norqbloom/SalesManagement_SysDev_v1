@@ -154,9 +154,9 @@ namespace SalesManagement_SysDev
             return true;
 
         }
-        public List<M_ProductDsp> GetProductData2(int radioint)
+        public List<T_Order> GetOrderDataDsp(int radioint)
         {
-            List<M_ProductDsp> product = new List<M_ProductDsp>();
+            List<T_Order> product = new List<T_Order>();
 
             try
             {
