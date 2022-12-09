@@ -24,15 +24,15 @@ namespace SalesManagement_SysDev.Management_Order
         private void Order_Add_Load(object sender, EventArgs e)
         {
             // DataGridViewに表示するデータを指定
-            SetDataGridView();
+            //SetDataGridView();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Ord_Add_Button_Click(object sender, EventArgs e)
         {
             //登録
             if (!GetclientDataAtRegistration())
                 return;
             var regCl = GenerateDataAtRegistration();
-            //RegistrationOrder(regOr);
+            RegistrationClient(regCl);
         }
 
         private bool GetclientDataAtRegistration()
@@ -151,11 +151,11 @@ namespace SalesManagement_SysDev.Management_Order
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
                 return;
-            //bool flg = orderDataAccess.AddClientData(regClient);
-            //if (flg == true)
-            //    messageDsp.DspMsg("M1022");
-            //else
-            //    messageDsp.DspMsg("M1023");
+            bool flg = orderDateAccess.AddClientData(regClient);
+            if (flg == true)
+                messageDsp.DspMsg("M1022");
+            else
+                messageDsp.DspMsg("M1023");
             
 
         }

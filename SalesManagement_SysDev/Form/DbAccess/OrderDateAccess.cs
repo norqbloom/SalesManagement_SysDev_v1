@@ -138,10 +138,25 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        
-        public List<M_Product> GetProductDataDsp(int radioint)
+        public bool AddClientData(T_Order regClient)
         {
-            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.T_Orders.Add(regClient);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+
+        }
+        public List<M_ProductDsp> GetProductData2(int radioint)
+        {
+            List<M_ProductDsp> product = new List<M_ProductDsp>();
 
             try
             {
@@ -170,7 +185,7 @@ namespace SalesManagement_SysDev
 
                 foreach (var p in tb)
                 {
-                    product.Add(new M_Product()
+                    product.Add(new M_ProductDsp()
                     {
                         PrID = p.PrID,
                         MaID = p.MaID,

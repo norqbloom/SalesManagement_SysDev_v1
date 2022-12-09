@@ -239,6 +239,7 @@ namespace SalesManagement_SysDev.Management_Warehousing
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Warehousing_View";
             this.Text = "Warehousing_View";
+            this.Load += new System.EventHandler(this.Warehousing_View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
