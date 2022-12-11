@@ -23,7 +23,18 @@ namespace SalesManagement_SysDev.Management_Product
             InitializeComponent();
         }
 
-        
+        ///////////////////////////////
+        //メソッド名：SetFormDateTimePiker()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：デートタイムピッカの初期設定
+        ///////////////////////////////
+        private void SetFormDateTimePiker()
+        {
+            dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            dateTimePickerPrReleaseDate.Checked = true;
+        }
+
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             //商品データ取得
@@ -312,6 +323,9 @@ namespace SalesManagement_SysDev.Management_Product
         private void Product_Add_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
+
+            //デートタイムピッカーの設定
+            SetFormDateTimePiker();
         }
 
         ///////////////////////////////
@@ -480,6 +494,11 @@ namespace SalesManagement_SysDev.Management_Product
             dataGridViewDsp.Refresh();
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void ButtonCle_Click(object sender, EventArgs e)
+        {
+            ClearInput();
         }
     }
 }

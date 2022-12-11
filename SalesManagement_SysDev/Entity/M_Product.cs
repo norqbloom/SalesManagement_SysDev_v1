@@ -45,6 +45,7 @@ namespace SalesManagement_SysDev
         [DisplayName("色")]
         public String PrColor { get; set; }         //色		
 
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("発売日")]
         public String PrReleaseDate { get; set; } //発売日		
 

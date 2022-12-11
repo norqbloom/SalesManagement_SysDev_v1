@@ -21,7 +21,7 @@ namespace SalesManagement_SysDev
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime OrDate { get; set; }    //受注年月日
-        public int? OrStateFlag { get; set; }    //受注状態フラグ
+        public int OrStateFlag { get; set; }    //受注状態フラグ
         public int OrFlag { get; set; } //受注管理フラグ
         public String OrHidden { get; set; }    //非表示理由
 

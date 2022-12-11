@@ -442,6 +442,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.ButtonCle.TabIndex = 102;
             this.ButtonCle.Text = "クリア";
             this.ButtonCle.UseVisualStyleBackColor = true;
+            this.ButtonCle.Click += new System.EventHandler(this.ButtonCle_Click);
             // 
             // ButtonUpd
             // 

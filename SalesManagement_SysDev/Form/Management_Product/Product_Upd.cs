@@ -510,5 +510,10 @@ namespace SalesManagement_SysDev.Management_Product
             else
                 textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+
+        private void ButtonCle_Click(object sender, EventArgs e)
+        {
+            ClearInput();
+        }
     }
 }

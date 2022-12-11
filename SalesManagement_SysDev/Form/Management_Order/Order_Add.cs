@@ -133,6 +133,15 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 checkflg = 0;
             }
+            int checkStateFlg;
+            if (checkBoxOrStateFlag.Checked == true)
+            {
+                checkStateFlg = 1;
+            }
+            else
+            {
+                checkStateFlg = 0;
+            }
             return new T_Order
             {
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
@@ -141,7 +150,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
                 OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
-                OrStateFlag = int.Parse(checkBoxOrStateFlag.Text),
+                OrStateFlag = checkStateFlg,
                 OrFlag = checkflg,
                 OrHidden = textBoxOrHidden.Text
             };
@@ -200,7 +209,7 @@ namespace SalesManagement_SysDev.Management_Order
       
 
         //データグリッドビュー用のプロダクトデータ
-        private static List<M_Product> products;
+        private static List<T_Order> orders;
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
         //引　数   ：なし
@@ -232,17 +241,27 @@ namespace SalesManagement_SysDev.Management_Order
         ///////////////////////////////
         private void GetDataGridView()
         {
-            int radioint = 0;
+            int StateFlg = 0;
+            int Flg = 0;
             if (radioButton1.Checked == true)
             {
-                radioint = 2;
+                StateFlg = 2;
             }
             else
             {
-                radioint = 0;
+                StateFlg = 0;
+            }
+
+            if (radioButton1.Checked == true)
+            {
+                Flg = 2;
+            }
+            else
+            {
+                Flg = 0;
             }
             // 商品データの取得
-           products = orderDateAccess.GetProductDataDsp(radioint);
+            orders = orderDateAccess.GetOrderDataDsp(StateFlg,Flg);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -257,7 +276,7 @@ namespace SalesManagement_SysDev.Management_Order
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
@@ -291,9 +310,54 @@ namespace SalesManagement_SysDev.Management_Order
             dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
+            labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
 
             dataGridViewDsp.Refresh();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridViewDsp.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            //列名の中央揃え
+            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            //各列幅の指定
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 200;
+            dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[9].Width = 100;
+            dataGridViewDsp.Columns[10].Width = 200;
+
+            //各列の文字位置の指定
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //dataGridViewの総ページ数
+            labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
+
+            dataGridViewDsp.Refresh();
+
 
         }
     }

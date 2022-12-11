@@ -456,6 +456,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // dateTimePickerPrReleaseDate
             // 
+            this.dateTimePickerPrReleaseDate.CustomFormat = "";
             this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(393, 270);
             this.dateTimePickerPrReleaseDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
@@ -472,6 +473,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.ButtonCle.TabIndex = 96;
             this.ButtonCle.Text = "クリア";
             this.ButtonCle.UseVisualStyleBackColor = true;
+            this.ButtonCle.Click += new System.EventHandler(this.ButtonCle_Click);
             // 
             // ButtonAdd
             // 

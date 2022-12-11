@@ -316,13 +316,6 @@ namespace SalesManagement_SysDev
 
         }
 
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click_1(object sender, EventArgs e)
         {
             openChildForm(new Management_Order.Order_Add());
