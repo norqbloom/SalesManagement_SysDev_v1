@@ -154,6 +154,7 @@ namespace SalesManagement_SysDev
             return true;
 
         }
+        /*
         public List<M_ProductDsp> GetProductData2(int radioint)
         {
             List<T_Order> orders = new List<T_Order>();
@@ -207,6 +208,7 @@ namespace SalesManagement_SysDev
             }
             return orders;
         }
+        */
     }
 }
     
