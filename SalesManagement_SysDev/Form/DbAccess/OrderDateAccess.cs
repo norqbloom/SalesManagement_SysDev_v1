@@ -154,6 +154,7 @@ namespace SalesManagement_SysDev
             return true;
 
         }
+        
         public List<M_ProductDsp> GetProductData2(int radioint)
         {
             List<M_ProductDsp> product = new List<M_ProductDsp>();
