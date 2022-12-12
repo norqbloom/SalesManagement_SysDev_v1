@@ -261,7 +261,7 @@ namespace SalesManagement_SysDev.Management_Order
                 Flg = 0;
             }
             // 商品データの取得
-            orders = orderDateAccess.GetOrderDataDsp(StateFlg,Flg);
+            //orders = orderDateAccess.GetOrderDataDsp(StateFlg,Flg);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
