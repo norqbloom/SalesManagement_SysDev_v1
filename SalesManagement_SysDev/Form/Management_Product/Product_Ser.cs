@@ -174,28 +174,7 @@ namespace SalesManagement_SysDev.Management_Product
         {
             dataGridViewDsp.DataSource = products;
         }
-        //private void datePrget()
-        //{
-        //    DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
 
-        //    string dateserch = null;
-        //    if (checkBoxdate.Checked == true)
-        //    {
-
-        //        dateserch = dateTimePickerPrReleaseDate.Value.ToString();
-        //    }
-
-        //    M_Product selectCondition = new M_Product()
-        //    {
-        //        PrID = int.Parse(textBoxPrID.Text.Trim()),
-        //        PrName = textBoxPrName.Text.Trim(),
-        //        PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-        //        PrColor = textBoxPrColor.Text.Trim(),
-        //        PrReleaseDate = dateserch
-        //    };
-        //    products = productDataAccess.GetPrdata(selectCondition);
-
-        //}
         private void dateMaget()
         {
             M_Product selectCondition = new M_Product()
@@ -248,7 +227,6 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void datePrMaget()
         {
-            //DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
@@ -308,7 +286,7 @@ namespace SalesManagement_SysDev.Management_Product
         private void SetFormDataGridView()
         {
             //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "20";
+            textBoxPageSize.Text = "10";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
@@ -466,6 +444,21 @@ namespace SalesManagement_SysDev.Management_Product
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+        private void ButtonCle_Click(object sender, EventArgs e)
+        {
+            ClearInput();
+        }
+        private void ClearInput()
+        {
+            textBoxPrID.Text = "";
+            textBoxMaID.Text = "";
+            textBoxPrName.Text = "";
+            textBoxScID.Text = "";
+            textBoxPrModelNumber.Text = "";
+            textBoxPrColor.Text = "";
+            dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            checkBoxPrFlag.Checked = false;
+        }
 
 
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
@@ -508,23 +501,6 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
-        }
-
-        private void ClearInput()
-        {
-            textBoxPrID.Text = "";
-            textBoxMaID.Text = "";
-            textBoxPrName.Text = "";
-            textBoxScID.Text = "";
-            textBoxPrModelNumber.Text = "";
-            textBoxPrColor.Text = "";
-            dateTimePickerPrReleaseDate.Value = DateTime.Now;
-            checkBoxPrFlag.Checked = false;
-        }
-
-        private void ButtonCle_Click(object sender, EventArgs e)
-        {
-            ClearInput();
         }
     }
 }
