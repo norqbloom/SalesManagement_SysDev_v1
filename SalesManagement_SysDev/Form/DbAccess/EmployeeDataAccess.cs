@@ -415,5 +415,28 @@ namespace SalesManagement_SysDev
             }
             return employee;
         }
+        public List<M_Employee> GetEmIDdate(M_Employee selectCondition)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                 x.EmFlag == 0 &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) 
+                                                 ).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+
     }
 }
