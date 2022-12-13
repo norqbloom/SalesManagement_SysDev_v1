@@ -13,7 +13,7 @@ namespace SalesManagement_SysDev
         public DialogResult DspMsg(string msgCD)
         {
             
-            DialogResult result = DialogResult.None;
+             DialogResult result = DialogResult.None;
             try
             {
                 var context = new SalesManagement_DevContext();

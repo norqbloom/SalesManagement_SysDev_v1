@@ -514,6 +514,10 @@ INSERT INTO T_syukko(SyID,EmID,ClID,SoID,OrID,SyDate,SyStateFlag,SyFlag,SyHidden
 VALUES(1,1,2,1,1,N'2022/12/08',0,0,null)
 SET IDENTITY_INSERT T_syukko OFF
 
+SET IDENTITY_INSERT T_Order ON
+INSERT INTO T_Order(OrID,SoID,EmID,ClID,ClCharge,OrDate,OrStateFlag,OrFlag,OrHidden)
+VALUES(1,1,310,2,N'萬田銀次郎',N'2020/12/10',0,0,null)
+SET IDENTITY_INSERT T_Order OFF
 
 /*テンプレ*/
 /*SET IDENTITY_INSERT  ON

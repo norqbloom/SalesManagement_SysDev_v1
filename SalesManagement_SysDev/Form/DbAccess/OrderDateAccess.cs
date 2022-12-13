@@ -41,12 +41,12 @@ namespace SalesManagement_SysDev
         //          ：登録成功の場合True
         //          ：登録失敗の場合False
         ///////////////////////////////
-        public bool AddorderData(T_Order regOreder)
+        public bool AddorderData(T_Order regOrder)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                context.T_Orders.Add(regOreder);
+                context.T_Orders.Add(regOrder);
                 context.SaveChanges();
                 context.Dispose();
                 return true;
@@ -154,8 +154,8 @@ namespace SalesManagement_SysDev
             return true;
 
         }
-        /*
-        public List<M_ProductDsp> GetProductData2(int radioint)
+
+        public List<T_Order> GetOrderDataDsp(int radioint)
         {
             List<T_Order> orders = new List<T_Order>();
 
@@ -170,8 +170,8 @@ namespace SalesManagement_SysDev
                          on t1.EmID equals t3.EmID
                          join t4 in context.M_Clients
                          on t1.ClID equals t4.ClID
-                         where t1.OrStateFlag == StateFlg
-                         where t1.OrFlag == Flg
+                         //where t1.OrStateFlag == StateFlg
+                         where t1.OrFlag == radioint
                          select new
                          {
                              t1.OrID,
@@ -208,7 +208,7 @@ namespace SalesManagement_SysDev
             }
             return orders;
         }
-        */
+
     }
 }
     

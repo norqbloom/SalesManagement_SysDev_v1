@@ -268,6 +268,12 @@ namespace SalesManagement_SysDev
             template.loginTime = dt.ToString("MM/dd HH;mm");
             setting.form.Show(this);
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form form = new テスト();
+            form.Show(this);
+        }
     }
 }
 
