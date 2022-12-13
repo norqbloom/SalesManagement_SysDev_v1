@@ -17,13 +17,13 @@ namespace SalesManagement_SysDev
         //          ：一致データありの場合True
         //          ：一致データなしの場合False
         ///////////////////////////////
-        public bool CheckOrIDExistence(int OrderID)
+        public bool CheckOrIDExistence(String OrderID)
         {
             bool flg = false;
             try
             {
                 var context = new SalesManagement_DevContext();
-                flg = context.T_Orders.Any(x => x.OrID == OrderID);
+                flg = context.T_Orders.Any(x => x.OrID.ToString() == OrderID);
                 context.Dispose();
             }
             catch (Exception ex)
