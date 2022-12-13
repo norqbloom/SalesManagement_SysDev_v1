@@ -48,6 +48,10 @@ namespace SalesManagement_SysDev
         {
             ClearInput();
         }
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            GetDataGridView();
+        }
 
         private void ClearInput()
         {
@@ -365,5 +369,7 @@ namespace SalesManagement_SysDev
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
+
+        
     }
 }
