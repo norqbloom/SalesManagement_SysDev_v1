@@ -228,7 +228,86 @@ namespace SalesManagement_SysDev.Management_Hattyu
             };
             Hattyus = HattyuDataAccess.Getnolwget(selectCondition);
         }
+        private void Hattyu_Ser_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+            invcnt();
+        }
 
+        private void SetFormDataGridView()
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;
+            
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+
+        private void SetDataGridView()
+        {
+            
+            
+
+            //列名の中央揃え
+            foreach (DataGridViewColumn clm in dataGridView1.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            //各列幅の指定
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 100;
+            dataGridView1.Columns[2].Width = 100;
+            dataGridView1.Columns[3].Width = 100;
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Width = 100;
+            dataGridView1.Columns[6].Width = 100;
+            dataGridView1.Columns[7].Width = 100;
+            dataGridView1.Columns[8].Width = 100;
+            dataGridView1.Columns[9].Width = 100;
+            dataGridView1.Columns[10].Width = 100;
+            dataGridView1.Columns[11].Width = 200;
+
+            //各列の文字位置の指定
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            
+        }
+
+        private void invcnt()
+        {
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            
+        }
+
+        private void incntok()
+        {
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
+           
+        }
+
+       
     }
 }
 
