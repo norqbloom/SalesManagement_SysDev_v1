@@ -117,7 +117,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
 
             //発注年月日　
-            //HaDate ???
+            //HaDate 
 
 
             //発注管理フラグ
@@ -158,26 +158,28 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
             return new T_Hattyu
             {
-                //これ以外も書く
-                HaID = int.Parse(HaID.Text.Trim()),
-                
-
-                  
+                HaID = int.Parse(HaID.Text),
+                MaID = int.Parse(MaID.Text),
+                EmID = int.Parse(EmID.Text),
+                HaDate = HaDate.Value,
+                //WaWarehouseFlag = checkflg,
+                HaFlag = checkflg,
+                HaHidden = HaHidden.Text
             };
         }
-            private void UpdateItem(T_Hattyu updemp)
-            {
-                DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
-                if (result == DialogResult.Cancel)
-                    return;
-                //登録
-                bool flg = HattyuDataAccess.UpdHattyuData(updemp);
-                if (flg == true)
-                    MessageBox.Show("ok"); //messageDsp.DspMsg("M6015");
-                else
-                    MessageBox.Show("no"); //messageDsp.DspMsg("M6016");
-            }
+        private void UpdateItem(T_Hattyu updemp)
+        {
+            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+                return;
+            //登録
+            bool flg = HattyuDataAccess.UpdHattyuData(updemp);
+            if (flg == true)
+                MessageBox.Show("ok"); //messageDsp.DspMsg("M6015");
+            else
+                MessageBox.Show("no"); //messageDsp.DspMsg("M6016");
         }
     }
+}
 
 
