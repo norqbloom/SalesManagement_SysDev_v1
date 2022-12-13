@@ -139,12 +139,12 @@ namespace SalesManagement_SysDev.Management_Hattyu
                         dateEmget();
                         return;
                     }
-                    // else
-                    // {
+                    else
+                    {
 
-                    // dateemget();
-                    // return;
-                    //  }
+                        dateHaget();
+                        return;
+                    }
                 }
             }
             else if (!String.IsNullOrEmpty(MaID.Text.Trim()))
@@ -206,7 +206,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         }
         private void dateMaget()
         {
-            //
+            
             T_Hattyu selectCondition = new T_Hattyu()
             {
                 EmID = int.Parse(EmID.Text.Trim()),

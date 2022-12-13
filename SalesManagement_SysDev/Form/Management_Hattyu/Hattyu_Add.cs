@@ -116,7 +116,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
 
             //発注年月日　
-            //HaDate ???
+            //HaDate 
 
 
             //発注管理フラグ
