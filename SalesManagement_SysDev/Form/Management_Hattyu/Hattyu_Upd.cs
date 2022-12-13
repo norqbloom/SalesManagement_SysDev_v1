@@ -158,9 +158,11 @@ namespace SalesManagement_SysDev.Management_Hattyu
             }
             return new T_Hattyu
             {
-
+                //これ以外も書く
                 HaID = int.Parse(HaID.Text.Trim()),
+                
 
+                  
             };
         }
             private void UpdateItem(T_Hattyu updemp)
