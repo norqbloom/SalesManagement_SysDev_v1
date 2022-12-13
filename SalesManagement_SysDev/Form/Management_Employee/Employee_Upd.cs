@@ -243,16 +243,32 @@ namespace SalesManagement_SysDev.Management_Employee
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //データグリッドビューからクリックされたデータを各入力エリアへ
-            textBoxEmID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            textBoxEmName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
-            textBoxSoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            textBoxPoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            textBoxEmHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            textBoxEmPhone.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
+            //textBoxEmID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            //textBoxEmName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+            //textBoxSoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
+            //textBoxPoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
+            //dateTimePickerEmHiredate.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
+            //textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            //textBoxEmPhone.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
+            //textBoxEmHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = number
+            };
 
+            employees = employeeDataAccess.GetEmIDdate(selectCondition);
+            var x = employees.FirstOrDefault();
+            textBoxEmID.Text = x.EmID.ToString();
+            textBoxEmName.Text = x.EmName;
+            textBoxSoID.Text = x.SoID.ToString();
+            textBoxPoID.Text = x.PoID.ToString();
+            dateTimePickerEmHiredate.Text = x.EmHiredate;
+            textBoxEmPhone.Text = x.EmPhone;
+            textBoxEmHidden.Text = x.EmHidden;
             //チェックボックスの状態を判断
-            if ((int)dataGridView1.CurrentRow.Cells[9].Value == 0)
+            if ((int)dataGridView1.CurrentRow.Cells[7].Value == 0)
             {
                 checkBoxEmFlag.Checked = false;
             }
@@ -437,6 +453,66 @@ namespace SalesManagement_SysDev.Management_Employee
         }
 
         private void Employee_Upd_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //データグリッドビューからクリックされたデータを各入力エリアへ
+            textBoxEmID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            textBoxEmName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+            textBoxSoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
+            textBoxPoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
+            dateTimePickerEmHiredate.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
+            textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            textBoxEmPhone.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
+            textBoxEmHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            /*int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = number
+            };
+
+            employees = employeeDataAccess.GetEmIDdate(selectCondition);
+            var x = employees.FirstOrDefault();
+            textBoxEmID.Text = x.EmID.ToString();
+            textBoxEmName.Text = x.EmName;
+            textBoxSoID.Text = x.SoID.ToString();
+            textBoxPoID.Text = x.PoID.ToString();
+            dateTimePickerEmHiredate.Value = DateTime.Parse(x.EmHiredate);
+            textBoxEmPhone.Text = x.EmPhone;
+            textBoxEmHidden.Text = x.EmHidden;
+            //チェックボックスの状態を判断
+            */if ((int)dataGridView1.CurrentRow.Cells[7].Value == 0)
+            {
+                checkBoxEmFlag.Checked = false;
+            }
+            else
+            {
+                checkBoxEmFlag.Checked = true;
+            }
+            //非表示理由の状態を判断
+            /*if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value == null)
+            {
+                textBoxPrHidden.Text = null;
+            }
+            else
+            {
+                textBoxPrHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
+            }*/
+            //各種Formロードと各種ボタンに下記を入力する
+            SetFormDataGridView();
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             SetFormDataGridView();
         }
