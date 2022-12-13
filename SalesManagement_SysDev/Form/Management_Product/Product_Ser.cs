@@ -62,8 +62,6 @@ namespace SalesManagement_SysDev.Management_Product
             GenerateDataAtSelect();
 
             SetSelectData();
-            //データグリッドビューの再ロード
-            SetFormDataGridView();
         }
 
         private bool GetProductDataAtSelect()
@@ -176,36 +174,15 @@ namespace SalesManagement_SysDev.Management_Product
         {
             dataGridViewDsp.DataSource = products;
         }
-        private void datePrget()
-        {
-            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
 
-            string dateserch = null;
-            if (checkBoxdate.Checked == true)
-            {
-
-                dateserch = dateTimePickerPrReleaseDate.Value.ToString();
-            }
-
-            M_Product selectCondition = new M_Product()
-            {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateserch
-            };
-            products = productDataAccess.GetPrdata(selectCondition);
-
-        }
         private void dateMaget()
         {
             M_Product selectCondition = new M_Product()
             {
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
+                PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetMadata(selectCondition);
 
@@ -220,7 +197,6 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.Getdubblwdata(selectCondition);
 
@@ -233,7 +209,6 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetScdata(selectCondition);
 
@@ -245,15 +220,13 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate =dateTimePickerPrReleaseDate.Text.Trim()
-        };
+                PrColor = textBoxPrColor.Text.Trim()
+            };
             products = productDataAccess.Getnodata(selectCondition);
 
         }
         private void datePrMaget()
         {
-            DateTime Dt = DateTime.Parse(dateTimePickerPrReleaseDate.Text.Trim());
             M_Product selectCondition = new M_Product()
             {
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
@@ -261,7 +234,6 @@ namespace SalesManagement_SysDev.Management_Product
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                 PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
             };
             products = productDataAccess.GetPrMadata(selectCondition);
 
@@ -274,8 +246,7 @@ namespace SalesManagement_SysDev.Management_Product
                 ScID = int.Parse(textBoxScID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrColor = textBoxPrColor.Text.Trim()
             };
             products = productDataAccess.GetPrScdata(selectCondition);
 
@@ -288,8 +259,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrID = int.Parse(textBoxPrID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                //PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrColor = textBoxPrColor.Text.Trim()
             };
             products = productDataAccess.GetPronlydata(selectCondition);
 
@@ -302,15 +272,11 @@ namespace SalesManagement_SysDev.Management_Product
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-                PrReleaseDate = dateTimePickerPrReleaseDate.Text.Trim()
+                PrColor = textBoxPrColor.Text.Trim()
             };
             products = productDataAccess.GetMaScdata(selectCondition);
 
         }
-
-        //データグリッドビュー用のプロダクトデータ
-        private static List<M_ProductDsp> Product2;
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
         //引　数   ：なし
@@ -320,17 +286,15 @@ namespace SalesManagement_SysDev.Management_Product
         private void SetFormDataGridView()
         {
             //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "20";
+            textBoxPageSize.Text = "10";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
             dataGridViewDsp.ReadOnly = true;
             //行内をクリックすることで行を選択
             dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
             //ヘッダー位置の指定
             dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             //データグリッドビューのデータ取得
             GetDataGridView();
         }
@@ -353,8 +317,7 @@ namespace SalesManagement_SysDev.Management_Product
                 radioint = 0;
             }
             // 商品データの取得
-            Product2 = productDataAccess.GetProductData2(radioint);
-
+            products = productDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }
@@ -368,7 +331,16 @@ namespace SalesManagement_SysDev.Management_Product
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
@@ -376,80 +348,39 @@ namespace SalesManagement_SysDev.Management_Product
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridViewDsp.Columns[0].Width = 80;
-            dataGridViewDsp.Columns[1].Width = 80;
-            dataGridViewDsp.Columns[2].Width = 200;
-            dataGridViewDsp.Columns[3].Width = 200;
-            dataGridViewDsp.Columns[4].Width = 200;
-            dataGridViewDsp.Columns[5].Width = 80;
-            dataGridViewDsp.Columns[6].Width = 80;
-            dataGridViewDsp.Columns[7].Width = 200;
-            dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 100;
+            dataGridViewDsp.Columns[1].Width = 100;
+            dataGridViewDsp.Columns[2].Width = 100;
+            dataGridViewDsp.Columns[3].Width = 100;
+            dataGridViewDsp.Columns[4].Visible = false;
+            dataGridViewDsp.Columns[5].Width = 100;
+            dataGridViewDsp.Columns[6].Width = 100;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 100;
             dataGridViewDsp.Columns[9].Width = 100;
-            dataGridViewDsp.Columns[10].Width = 200;
+            dataGridViewDsp.Columns[10].Width = 100;
+            dataGridViewDsp.Columns[11].Width = 200;
 
             //各列の文字位置の指定
             dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(Product2.Count / (double)pageSize)) + "ページ";
-
-            dataGridViewDsp.Refresh();
-
+            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
         }
 
-
-
-        //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-
-        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            int number;
-            int ClIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            label5.Text = ClIDtxt.ToString();
-
-            serchdateset(number);
-            setdatedetail();
-        }
-        private void serchdateset(int number)
-        {
-
-            M_Prohistory selectCondition = new M_Prohistory
-            {
-                PrID = number.ToString(),
-
-            };
-            history = productDataAccess.getdetail(selectCondition);
-        }
-        private void setdatedetail()
-        {
-            var x = history.FirstOrDefault();
-            if (x == null)
-            {
-                invcnt();
-                return;
-            }
-
-            IDtxt.Text = x.PrID;
-            datetime.Text = x.RegisteredDate;
-            upusername.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpDateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
-            incntok();
+            SetFormDataGridView();
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -513,11 +444,63 @@ namespace SalesManagement_SysDev.Management_Product
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void ButtonCle_Click(object sender, EventArgs e)
         {
-            SetFormDataGridView();
+            ClearInput();
         }
-        
+        private void ClearInput()
+        {
+            textBoxPrID.Text = "";
+            textBoxMaID.Text = "";
+            textBoxPrName.Text = "";
+            textBoxScID.Text = "";
+            textBoxPrModelNumber.Text = "";
+            textBoxPrColor.Text = "";
+            dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            checkBoxPrFlag.Checked = false;
+        }
+
+
+        //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            int ClIDtxt;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            label5.Text = ClIDtxt.ToString();
+
+            serchdateset(number);
+            setdatedetail();
+        }
+        private void serchdateset(int number)
+        {
+
+            M_Prohistory selectCondition = new M_Prohistory
+            {
+                PrID = number.ToString(),
+
+            };
+            history = productDataAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            var x = history.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
+
+            IDtxt.Text = x.PrID;
+            datetime.Text = x.RegisteredDate;
+            upusername.Text = x.regUserID;
+            username.Text = x.regUserName;
+            uptime.Text = x.UpDateTime;
+            upuserid.Text = x.LastupdatedUserID;
+            upusername.Text = x.LastupdatedUserName;
+            incntok();
+        }
     }
 }

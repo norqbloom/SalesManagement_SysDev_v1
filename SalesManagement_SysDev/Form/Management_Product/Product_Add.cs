@@ -16,14 +16,25 @@ namespace SalesManagement_SysDev.Management_Product
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         //データグリッドビュー用のプロダクトデータ
-        private static List<M_ProductDsp> Product2;
+        private static List<M_Product> products;
 
         public Product_Add()
         {
             InitializeComponent();
         }
 
-        
+        ///////////////////////////////
+        //メソッド名：SetFormDateTimePiker()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：デートタイムピッカの初期設定
+        ///////////////////////////////
+        private void SetFormDateTimePiker()
+        {
+            dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            dateTimePickerPrReleaseDate.Checked = true;
+        }
+
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             //商品データ取得
@@ -312,6 +323,9 @@ namespace SalesManagement_SysDev.Management_Product
         private void Product_Add_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
+
+            //デートタイムピッカーの設定
+            SetFormDateTimePiker();
         }
 
         ///////////////////////////////
@@ -323,13 +337,15 @@ namespace SalesManagement_SysDev.Management_Product
         private void SetFormDataGridView()
         {
             //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
+            textBoxPageSize.Text = "20";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
             dataGridViewDsp.ReadOnly = true;
             //行内をクリックすることで行を選択
             dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //ヘッダー位置の指定
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
         }
@@ -351,7 +367,7 @@ namespace SalesManagement_SysDev.Management_Product
                 radioint = 0;
             }
             // 商品データの取得
-            Product2 = productDataAccess.GetProductData2(radioint);
+            products = productDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }
@@ -365,7 +381,7 @@ namespace SalesManagement_SysDev.Management_Product
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -374,7 +390,7 @@ namespace SalesManagement_SysDev.Management_Product
             else
                 textBoxPageNo.Text = "1";
 
-            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
@@ -386,29 +402,30 @@ namespace SalesManagement_SysDev.Management_Product
             dataGridViewDsp.Columns[1].Width = 100;
             dataGridViewDsp.Columns[2].Width = 100;
             dataGridViewDsp.Columns[3].Width = 100;
-            dataGridViewDsp.Columns[4].Width = 100;
+            dataGridViewDsp.Columns[4].Visible = false;
             dataGridViewDsp.Columns[5].Width = 100;
             dataGridViewDsp.Columns[6].Width = 100;
             dataGridViewDsp.Columns[7].Width = 100;
             dataGridViewDsp.Columns[8].Width = 100;
             dataGridViewDsp.Columns[9].Width = 100;
             dataGridViewDsp.Columns[10].Width = 100;
+            dataGridViewDsp.Columns[11].Width = 200;
 
             //各列の文字位置の指定
             dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(Product2.Count / (double)pageSize)) + "ページ";
+            labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -424,7 +441,7 @@ namespace SalesManagement_SysDev.Management_Product
         private void buttonFirstPage_Click(object sender, EventArgs e)
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridViewDsp.DataSource = Product2.Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -435,7 +452,7 @@ namespace SalesManagement_SysDev.Management_Product
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -451,15 +468,15 @@ namespace SalesManagement_SysDev.Management_Product
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text);
             //最終ページの計算
-            int lastNo = (int)Math.Ceiling(Product2.Count / (double)pageSize) - 1;
+            int lastNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
             //最終ページでなければ
             if (pageNo <= lastNo)
-                dataGridViewDsp.DataSource = Product2.Skip(pageSize * pageNo).Take(pageSize).ToList();
+                dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(Product2.Count / (double)pageSize);
+            int lastPage = (int)Math.Ceiling(products.Count / (double)pageSize);
             if (pageNo >= lastPage)
                 textBoxPageNo.Text = lastPage.ToString();
             else
@@ -468,7 +485,20 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void buttonLastPage_Click(object sender, EventArgs e)
         {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void ButtonCle_Click(object sender, EventArgs e)
+        {
+            ClearInput();
         }
     }
 }
