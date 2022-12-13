@@ -368,6 +368,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "表示";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -379,6 +380,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label6
             // 

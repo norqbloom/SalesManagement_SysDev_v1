@@ -210,7 +210,7 @@ namespace SalesManagement_SysDev.Management_Employee
             int checkflg;
             if (checkBoxEmFlag.Checked == true)
             {
-                checkflg = 1;
+                checkflg = 2;
             }
             else
             {
@@ -433,5 +433,14 @@ namespace SalesManagement_SysDev.Management_Employee
 
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            GetDataGridView();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
