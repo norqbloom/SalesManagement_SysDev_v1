@@ -500,5 +500,15 @@ namespace SalesManagement_SysDev.Management_Product
         {
             ClearInput();
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxPrFlag_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace SalesManagement_SysDev
         [DisplayName("役職ID")]
         public int PoID { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("入社年月日")]
         public String EmHiredate { get; set; }
 

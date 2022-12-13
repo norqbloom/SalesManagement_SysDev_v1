@@ -17,6 +17,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<M_Employee> employees;
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
+        private static List<M_EmployeeDsp> Emp1;
         public Employee_Ser()
         {
             InitializeComponent();
@@ -243,23 +244,82 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void SetFormDataGridView()
         {
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ReadOnly = true;
             //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
+            textBoxPageSize.Text = "20";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
+            //読み取り専用に指定
+            dataGridView1.ReadOnly = true;
+            //行内をクリックすることで行を選択
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //ヘッダー位置の指定
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            //データグリッドビューのデータ取得
+            GetDataGridView();
+
+        }
+        private void GetDataGridView()
+        {
+
+            int radioint = 0;
+            if (radioButton1.Checked == true)
+            {
+                radioint = 2;
+            }
+            else
+            {
+                radioint = 0;
+            }
+            // 商品データの取得
+            Emp1 = EmployeeDataAccess.GetProductData2(radioint);
+
+            // DataGridViewに表示するデータを指定
+            SetDataGridView();
         }
         private void SetDataGridView()
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            labelPage.Text = "/" + ((int)Math.Ceiling(employees.Count / (double)pageSize)) + "ページ";
+            dataGridView1.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            //列名の中央揃え
+            foreach (DataGridViewColumn clm in dataGridView1.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            //各列幅の指定
+            dataGridView1.Columns[0].Width = 80;
+            dataGridView1.Columns[1].Width = 80;
+            dataGridView1.Columns[2].Width = 200;
+            dataGridView1.Columns[3].Width = 200;
+            dataGridView1.Columns[4].Width = 200;
+            dataGridView1.Columns[5].Width = 80;
+            dataGridView1.Columns[6].Width = 80;
+            dataGridView1.Columns[7].Width = 100;
+            dataGridView1.Columns[8].Width = 150;
+
+
+
+            //各列の文字位置の指定
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+
+            //dataGridViewの総ページ数
+            labelPage.Text = "/" + ((int)Math.Ceiling(Emp1.Count / (double)pageSize)) + "ページ";
 
             dataGridView1.Refresh();
+
         }
         private void invcnt()
         {
@@ -416,6 +476,11 @@ namespace SalesManagement_SysDev.Management_Employee
         private void textBoxPageNo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
         }
     }
 }

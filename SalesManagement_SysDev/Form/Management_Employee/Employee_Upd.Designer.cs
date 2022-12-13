@@ -379,6 +379,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "表示";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 

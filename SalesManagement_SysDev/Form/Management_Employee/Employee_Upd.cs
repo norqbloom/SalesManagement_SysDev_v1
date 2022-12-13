@@ -511,6 +511,11 @@ namespace SalesManagement_SysDev.Management_Employee
             SetFormDataGridView();
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+        }
     }
 
     
