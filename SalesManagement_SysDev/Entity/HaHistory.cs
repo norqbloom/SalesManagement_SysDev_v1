@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace SalesManagement_SysDev
+namespace SalesManagement_SysDev.Entity
 {
     class Hahistory
     {
