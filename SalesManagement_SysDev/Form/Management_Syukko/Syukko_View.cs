@@ -33,7 +33,11 @@ namespace SalesManagement_SysDev.Management_Syukko
         }
         private void Syu_Con_Button_Click(object sender, EventArgs e)
         {
-            var update = GenerateDataAtUpdate();
+            foreach(var item in commitdata)
+            {
+                MessageBox.Show(item.ToString());
+            }
+            //var update = GenerateDataAtUpdate();
         }
         private T_Syukko GenerateDataAtUpdate()
         {
@@ -88,11 +92,7 @@ namespace SalesManagement_SysDev.Management_Syukko
                 commitdata.AddRange(listdata);
                 dataGridView2.DataSource = null;
                 commitdata.RemoveAt(0);
-                //dataGridView2.Rows.RemoveAt(0);
                 dataGridView2.DataSource = commitdata;
-
-
-
             }
             else
             {

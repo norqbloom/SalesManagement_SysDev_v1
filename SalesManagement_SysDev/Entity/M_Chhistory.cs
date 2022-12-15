@@ -11,6 +11,7 @@ namespace SalesManagement_SysDev
 {
     class M_Chhistory
     {
+        [Key]
         public int hisNo { get; set; }
         public string ChID { get; set; }
         public string RegisteredDate { get; set; }
