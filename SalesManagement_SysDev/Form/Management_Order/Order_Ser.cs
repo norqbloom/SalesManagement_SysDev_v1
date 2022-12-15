@@ -80,55 +80,167 @@ namespace SalesManagement_SysDev.Management_Order
                     {
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
-                            //全て入力されている
-                            datefull();
-                            return;
+                            //全部
                         }
                         else
                         {
-                            //or,em,so
-                            dateorsoem();
-                            return;
+                            //OrID,SoID,EmID
                         }
-                    }
-                    else if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                    {
-                        //or,so,cl
-                        dateorsocl();
-                        return;
                     }
                     else
                     {
-                        //or,so
-                        dateorso();
-                        return;
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //OrID,SoID,ClID
+                        }
+                        else
+                        {
+                            //OrID,SoID
+                        }
                     }
-                }
-                else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                {
-                    //or,em
-                    dateorem();
-                    return;
-                }
-                else if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                {
-                    //or,cl
-                    dateorcl();
-                    return;
                 }
                 else
                 {
-                    //or
-                    dateor();
-                    return;
+                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                    {
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //OrID,EmID,ClID
+                        }
+                        else
+                        {
+                            //OrID,EmID
+                        }
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //OrID,ClID
+                        }
+                        else
+                        {
+                            //OrID
+                        }
+
+                    }
                 }
             }
             else
             {
-                //何も入力されていない
-                dateNo();
-                return;
+                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                {
+                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                    {
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //SoID,EmID,ClID
+                        }
+                        else
+                        {
+                            //SoID,Emid
+                        }
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //SoID.ClID
+                        }
+                        else
+                        {
+                            //SoID
+                        }
+                    }
+                }
+                else
+                {
+                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                    {
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //EmID,ClID
+                        }
+                        else
+                        {
+                            //EmID
+                        }
+
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        {
+                            //ClID
+                        }
+                        else
+                        {
+                            //何もなし
+                        }
+                    }
+
+                }
+
             }
+
+
+            //    if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
+            //    {
+            //        if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            //        {
+            //            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            //            {
+            //                if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+            //                {
+            //                    //全て入力されている
+            //                    datefull();
+            //                    return;
+            //                }
+            //                else
+            //                {
+            //                    //or,em,so
+            //                    dateorsoem();
+            //                    return;
+            //                }
+            //            }
+            //            else if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+            //            {
+            //                //or,so,cl
+            //                dateorsocl();
+            //                return;
+            //            }
+            //            else
+            //            {
+            //                //or,so
+            //                dateorso();
+            //                return;
+            //            }
+            //        }
+            //        else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            //        {
+            //            //or,em
+            //            dateorem();
+            //            return;
+            //        }
+            //        else if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+            //        {
+            //            //or,cl
+            //            dateorcl();
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            //or
+            //            dateor();
+            //            return;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        //何も入力されていない
+            //        dateNo();
+            //        return;
+            //    }
         }
         private void datefull()
         {
