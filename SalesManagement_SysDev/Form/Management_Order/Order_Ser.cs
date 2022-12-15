@@ -28,7 +28,7 @@ namespace SalesManagement_SysDev.Management_Order
 
             GenerateDataAtSelect();
 
-            SetSelectData();
+            //SetSelectData();
         }
         private bool GetClientDataAtSelect()
         {
@@ -142,7 +142,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateorsoem()
         {
@@ -155,7 +155,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders= orderdateAccess.GetMaScget(selectCondition);
+            //orders= orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateorso()
         {
@@ -167,7 +167,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateor()
         {
@@ -178,7 +178,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateNo()
         {
@@ -188,7 +188,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateorsocl()
         {
@@ -201,7 +201,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateorem()
         {
@@ -214,7 +214,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
         private void dateorcl()
         {
@@ -228,7 +228,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.GetMaScget(selectCondition);
+            //orders = orderdateAccess.GetMaScget(selectCondition);
         }
     }
 }
