@@ -28,7 +28,7 @@ namespace SalesManagement_SysDev
         public DbSet<T_ArrivalDetail> T_ArrivalDetails { get; set; }
         public DbSet<T_Chumon> T_Chumons { get; set; }
         public DbSet<T_ChumonDetail> T_ChumonDetails { get; set; }
-        public DbSet<T_Chhistory> M_Chhistory { get; set; }
+        public DbSet<T_Chhistory> T_Chhistory { get; set; }
         public DbSet<T_Hattyu> T_Hattyus { get; set; }
         public DbSet<T_HattyuDetail> T_HattyuDetails { get; set; }
         public DbSet<T_LoginHistory> T_LoginHistorys { get; set; }
