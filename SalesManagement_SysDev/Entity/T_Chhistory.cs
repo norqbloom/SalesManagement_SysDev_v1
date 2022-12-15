@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SalesManagement_SysDev
 {
-    class M_Chhistory
+    class T_Chhistory
     {
         [Key]
         public int hisNo { get; set; }

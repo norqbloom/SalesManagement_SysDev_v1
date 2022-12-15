@@ -15,8 +15,8 @@ namespace SalesManagement_SysDev.Management_Chumon
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         ChumonDataAccess chumonDataAccess = new ChumonDataAccess();
-        private static List<M_Chumon> chumons;
-        private static List<M_Chhistory> history;
+        private static List<T_Chumon> chumons;
+        private static List<T_Chhistory> history;
 
         public Chumon_Ser()
         {
@@ -166,7 +166,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void datedubblwget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 ChID = int.Parse(textBoxChID.Text.Trim()),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
@@ -180,7 +180,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void dateChSoget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 ChID = int.Parse(textBoxChID.Text.Trim()),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
@@ -193,7 +193,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void dateChEmget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 ChID = int.Parse(textBoxChID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
@@ -206,7 +206,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void dateSoEmget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
@@ -219,7 +219,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void dateSoget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
@@ -230,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         }
         private void dateEmget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
@@ -241,7 +241,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         }
         private void datenolwget()
         {
-            M_Chumon selectCondition = new M_Chumon()
+            T_Chumon selectCondition = new T_Chumon()
             {
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
@@ -280,9 +280,10 @@ namespace SalesManagement_SysDev.Management_Chumon
         {
             var conCh = GenerateDataAtConfirm();
             ConfirmChumon(conCh);
+
         }
 
-        private M_Chumon GenerateDataAtConfirm()
+        private T_Chumon GenerateDataAtConfirm()
         {
             int checkflg;
             if (checkBoxChStateFlag.Checked == true)
@@ -293,7 +294,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             {
                 checkflg = 0;
             }
-            return new M_Chumon
+            return new T_Chumon
             {
                 ChID = int.Parse(textBoxChID.Text),
                 SoID = int.Parse(textBoxSoID.Text),
@@ -305,7 +306,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             };
         }
 
-        private void ConfirmChumon(M_Chumon conChumon)
+        private void ConfirmChumon(T_Chumon conChumon)
         {
 
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
@@ -334,7 +335,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void serchdateset(int number)
         {
-            M_Chhistory selectCondition = new M_Chhistory
+            T_Chhistory selectCondition = new T_Chhistory
             {
                 ChID = number.ToString(),
             };

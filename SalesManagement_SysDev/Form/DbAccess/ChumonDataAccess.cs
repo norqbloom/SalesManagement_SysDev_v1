@@ -23,7 +23,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                flg = context.M_Chumons.Any(x => x.ChID == ChID);
+                flg = context.T_Chumons.Any(x => x.ChID == ChID);
                 context.Dispose();
             }
             catch (Exception ex)
@@ -46,8 +46,8 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                var chumons = context.M_Chumons.Single(x => x.ChID == delChumonID);
-                context.M_Chumons.Remove(chumons);
+                var chumons = context.T_Chumons.Single(x => x.ChID == delChumonID);
+                context.T_Chumons.Remove(chumons);
                 context.Dispose();
             }
             catch (Exception ex)
@@ -56,10 +56,7 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        internal bool DeleteChumonData(M_Chumon delChumonID)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         ///////////////////////////////
         //メソッド名：ConfirmChumonsData()
@@ -69,13 +66,13 @@ namespace SalesManagement_SysDev
         //          ：確定成功の場合True
         //          ：確定失敗の場合False
         ///////////////////////////////
-        private bool ConfirmChumonData(int conChumon)
+        public bool ConfirmChumonData(int conChumon)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                var chumons = context.M_Chumons.Single(x => x.ChID == conChumon);
-                context.M_Chumons.Remove(chumons);
+                var chumons = context.T_Chumons.Single(x => x.ChID == conChumon);
+                context.T_Chumons.Remove(chumons);
                 context.Dispose();
             }
             catch (Exception ex)
@@ -84,10 +81,7 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        internal bool ConfirmChumonData(M_Chumon conChumon)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         ///////////////////////////////
         //メソッド名：GetChumonsData()
@@ -95,13 +89,13 @@ namespace SalesManagement_SysDev
         //戻り値   ：注文データ
         //機　能   ：注文データの取得
         ///////////////////////////////
-        public List<M_Chumon> GetChumonData()
+        public List<T_Chumon> GetChumonData()
         {
-            List<M_Chumon> Chumon = new List<M_Chumon>();
+            List<T_Chumon> Chumon = new List<T_Chumon>();
             try
             {
                 var context = new SalesManagement_DevContext();
-                Chumon = context.M_Chumons.ToList();
+                Chumon = context.T_Chumons.ToList();
                 context.Dispose();
 
                 return Chumon;
@@ -119,13 +113,13 @@ namespace SalesManagement_SysDev
         //戻り値   ：表示用注文データ
         //機　能   ：表示用注文データの取得
         ///////////////////////////////
-        public List<M_Chumon> GetChumonDspData()
+        public List<T_Chumon> GetChumonDspData()
         {
-            List<M_Chumon> Chumon = new List<M_Chumon>();
+            List<T_Chumon> Chumon = new List<T_Chumon>();
             try
             {
                 var context = new SalesManagement_DevContext();
-                Chumon = context.M_Chumons.Where(x => x.ChFlag == 0).ToList();
+                Chumon = context.T_Chumons.Where(x => x.ChFlag == 0).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -141,15 +135,15 @@ namespace SalesManagement_SysDev
         //戻り値   ：条件一致注文データ
         //機　能   ：条件一致商品注文データの取得
         ///////////////////////////////
-        public List<M_Chumon> Getdubblwdata(M_Chumon selectCondition)
+        public List<T_Chumon> Getdubblwdata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
@@ -169,15 +163,15 @@ namespace SalesManagement_SysDev
             return chumon;
         }
 
-        public List<M_Chumon> GetChSodata(M_Chumon selectCondition)
+        public List<T_Chumon> GetChSodata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
@@ -195,9 +189,9 @@ namespace SalesManagement_SysDev
             }
             return chumon;
         }
-        public List<M_Chumon> GetChEmdata(M_Chumon selectCondition)
+        public List<T_Chumon> GetChEmdata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
@@ -221,15 +215,15 @@ namespace SalesManagement_SysDev
             }
             return chumon;
         }
-        public List<M_Chumon> GetSoEmdata(M_Chumon selectCondition)
+        public List<T_Chumon> GetSoEmdata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
@@ -250,15 +244,15 @@ namespace SalesManagement_SysDev
 
 
 
-        public List<M_Chumon> GetSodata(M_Chumon selectCondition)
+        public List<T_Chumon> GetSodata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
@@ -275,15 +269,15 @@ namespace SalesManagement_SysDev
             }
             return chumon;
         }
-        public List<M_Chumon> GetEmdata(M_Chumon selectCondition)
+        public List<T_Chumon> GetEmdata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
@@ -300,15 +294,15 @@ namespace SalesManagement_SysDev
             }
             return chumon;
         }
-        public List<M_Chumon> Getnodata(M_Chumon selectCondition)
+        public List<T_Chumon> Getnodata(T_Chumon selectCondition)
         {
-            List<M_Chumon> chumon = new List<M_Chumon>();
+            List<T_Chumon> chumon = new List<T_Chumon>();
 
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
@@ -324,13 +318,13 @@ namespace SalesManagement_SysDev
             }
             return chumon;
         }
-        public List<M_Chhistory> getdetail(M_Chhistory selectCondition)
+        public List<T_Chhistory> getdetail(T_Chhistory selectCondition)
         {
-            List<M_Chhistory> history = new List<M_Chhistory>();
+            List<T_Chhistory> history = new List<T_Chhistory>();
             try
             {
                 var context = new SalesManagement_DevContext();
-                history = context.M_Chhistory.Where(x => x.ChID == selectCondition.ChID).ToList();
+                history = context.T_Chhistory.Where(x => x.ChID == selectCondition.ChID).ToList();
                 context.Dispose();
             }
             catch (Exception ex)

@@ -114,6 +114,22 @@ namespace SalesManagement_SysDev
             return true;
         }
         //SeaHattyuData
+
+        public List<Hahistory> getdetail(Hahistory selectCondition)
+        {
+            List<Hahistory> Hahistory = new List<Hahistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                Hahistory = context.hahistories.Where(x => x.EmID == selectCondition.HaID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Hahistory;
+        }
         ///////////////////////////////
         //メソッド名：DeleteHattyusData()
         //引　数   ：顧客データ
