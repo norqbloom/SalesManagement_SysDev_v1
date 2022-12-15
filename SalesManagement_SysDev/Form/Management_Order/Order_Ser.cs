@@ -12,6 +12,10 @@ namespace SalesManagement_SysDev.Management_Order
 {
     public partial class Order_Ser : Form
     {
+        MessageDsp messageDsp = new MessageDsp();
+        DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+        OrderDateAccess orderDateAccess = new OrderDateAccess();
+
         public Order_Ser()
         {
             InitializeComponent();

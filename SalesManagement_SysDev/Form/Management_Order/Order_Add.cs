@@ -29,13 +29,13 @@ namespace SalesManagement_SysDev.Management_Order
         private void Ord_Add_Button_Click(object sender, EventArgs e)
         {
             //登録
-            if (!GetclientDataAtRegistration())
+            if (!GetorderDataAtRegistration())
                 return;
-            var regCl = GenerateDataAtRegistration();
-            RegistrationClient(regCl);
+            var regOr = GenerateDataAtRegistration();
+            RegistrationOrder(regOr);
         }
 
-        private bool GetclientDataAtRegistration()
+        private bool GetorderDataAtRegistration()
         {
             if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
             {
@@ -62,7 +62,7 @@ namespace SalesManagement_SysDev.Management_Order
                 }
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                   messageDsp.DspMsg("M1005");
+                    messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -77,7 +77,7 @@ namespace SalesManagement_SysDev.Management_Order
                 }
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                   messageDsp.DspMsg("M6002");
+                    messageDsp.DspMsg("M6002");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -125,7 +125,7 @@ namespace SalesManagement_SysDev.Management_Order
         private T_Order GenerateDataAtRegistration()
         {
             int checkflg;
-            if(checkBoxOrFlag.Checked == true)
+            if (checkBoxOrFlag.Checked == true)
             {
                 checkflg = 1;
             }
@@ -155,7 +155,7 @@ namespace SalesManagement_SysDev.Management_Order
                 OrHidden = textBoxOrHidden.Text
             };
         }
-        private void RegistrationClient(T_Order regClient)
+        private void RegistrationOrder(T_Order regClient)
         {
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
@@ -165,13 +165,13 @@ namespace SalesManagement_SysDev.Management_Order
                 messageDsp.DspMsg("M1022");
             else
                 messageDsp.DspMsg("M1023");
-            
+
 
         }
         private void Ord_Del_Button_Click(object sender, EventArgs e)
         {
-            
-           var Oderup = GenerateDel_Ord();
+
+            var Oderup = GenerateDel_Ord();
             Order_update(Oderup);
         }
         private T_Order GenerateDel_Ord()
@@ -182,13 +182,13 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 OrID = number
             };
-                 
+
         }
 
         private void Order_update(T_Order Orderup)
         {
-            DialogResult result = MessageBox.Show("削除よろしいか",MessageBoxButtons.OKCancel.ToString());
-            if(result==DialogResult.Cancel)
+            DialogResult result = MessageBox.Show("削除よろしいか", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
             {
                 return;
             }
@@ -205,8 +205,8 @@ namespace SalesManagement_SysDev.Management_Order
 
         }
 
-       
-      
+
+
 
         //データグリッドビュー用のプロダクトデータ
         private static List<T_Order> orders;
@@ -259,7 +259,10 @@ namespace SalesManagement_SysDev.Management_Order
             else
             {
                 Flg = 0;
+
             }
+            
+
             // 商品データの取得
             //orders = orderDateAccess.GetOrderDataDsp(StateFlg,Flg);
 

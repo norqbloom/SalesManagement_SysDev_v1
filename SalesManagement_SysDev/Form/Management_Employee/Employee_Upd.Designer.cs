@@ -234,6 +234,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1149, 235);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dateTimePickerEmHiredate
             // 
@@ -377,6 +379,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "表示";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
