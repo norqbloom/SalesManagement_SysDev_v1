@@ -81,7 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Emphistory.cs" />
+    <Compile Include="Entity\M_Chhistory.cs" />
+    <Compile Include="Entity\M_Chumon.cs" />
     <Compile Include="Form\DbAccess\ArrivalDataAccess.cs" />
+    <Compile Include="Form\DbAccess\ChumonDataAccess.cs" />
     <Compile Include="Form\DbAccess\HattyuDateAccess.cs" />
     <Compile Include="Form\DbAccess\loginDataAccess.cs" />
     <Compile Include="Form\DbAccess\loginhistoryDataAccess.cs" />
