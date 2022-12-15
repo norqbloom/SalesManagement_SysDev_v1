@@ -163,44 +163,47 @@ namespace SalesManagement_SysDev
             {
 
                 var context = new SalesManagement_DevContext();
-                var tb = from t1 in context.T_Orders
-                         join t2 in context.M_SalesOffices
-                         on t1.SoID equals t2.SoID
-                         join t3 in context.M_Employees
-                         on t1.EmID equals t3.EmID
-                         join t4 in context.M_Clients
-                         on t1.ClID equals t4.ClID
-                         //where t1.OrStateFlag == StateFlg
-                         where t1.OrFlag == radioint
-                         select new
-                         {
-                             t1.OrID,
-                             t2.SoID,
-                             t3.EmID,
-                             t4.ClID,
-                             t1.ClCharge,
-                             t1.OrDate,
-                             t1.OrStateFlag,
-                             t1.OrFlag,
-                             t1.OrHidden
-                         };
-
-                foreach (var p in tb)
-                {
-                    orders.Add(new T_Order()
-                    {
-                        OrID = p.OrID,
-                        SoID = p.SoID,
-                        EmID = p.EmID,
-                        ClID = p.ClID,
-                        ClCharge = p.ClCharge,
-                        OrDate = p.OrDate,
-                        OrStateFlag = p.OrStateFlag,
-                        OrFlag = p.OrFlag,
-                        OrHidden = p.OrHidden
-                    });
-                }
+                orders = context.T_Orders.Where(x => x.OrFlag == radioint).ToList();
+                context.SaveChanges();
                 context.Dispose();
+
+                //var tb = from t1 in context.T_Orders
+                //         join t2 in context.M_SalesOffices
+                //         on t1.SoID equals t2.SoID
+                //         join t3 in context.M_Employees
+                //         on t1.EmID equals t3.EmID
+                //         join t4 in context.M_Clients
+                //         on t1.ClID equals t4.ClID
+                //         //where t1.OrStateFlag == StateFlg
+                //         where t1.OrFlag == radioint
+                //         select new
+                //         {
+                //             t1.OrID,
+                //             t2.SoID,
+                //             t3.EmID,
+                //             t4.ClID,
+                //             t1.ClCharge,
+                //             t1.OrDate,
+                //             t1.OrStateFlag,
+                //             t1.OrFlag,
+                //             t1.OrHidden
+                //         };
+
+                //foreach (var p in tb)
+                //{
+                //    orders.Add(new T_Order()
+                //    {
+                //        OrID = p.OrID,
+                //        SoID = p.SoID,
+                //        EmID = p.EmID,
+                //        ClID = p.ClID,
+                //        ClCharge = p.ClCharge,
+                //        OrDate = p.OrDate,
+                //        OrStateFlag = p.OrStateFlag,
+                //        OrFlag = p.OrFlag,
+                //        OrHidden = p.OrHidden
+                //    });
+                //}
             }
             catch (Exception ex)
             {
