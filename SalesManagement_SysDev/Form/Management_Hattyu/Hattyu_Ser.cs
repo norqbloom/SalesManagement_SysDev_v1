@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         MessageDsp messageDsp = new MessageDsp();
         HattyuDataAccess HattyuDataAccess = new HattyuDataAccess();
         private static List<T_Hattyu> Hattyus;
-        private static List<M_Prohistory> history;
+        private static List<Hahistory> hathistory;
 
         public Hattyu_Ser()
         {
@@ -245,7 +245,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         private void SetDataGridView()
         {
 
-   //列名の中央揃え
+            //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridView1.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -296,6 +296,52 @@ namespace SalesManagement_SysDev.Management_Hattyu
             EmID.Visible = true;
             HaDate.Visible = true;
             HaHidden.Visible = true;
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            serchdateset(number);
+            setdatedetail();
+        }
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
+            HaID.Text = HaID.ToString();
+            MaID.Text = MaID.ToString();
+            EmID.Text = EmID.ToString();
+            serchdateset(number);
+            setdatedetail();
+        }
+
+
+        private void serchdateset(int number)
+        {
+
+            Hahistory selectCondition = new Hahistory
+            {
+                HaID = number.ToString(),
+
+            };
+            hathistory = HattyuDataAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            var x = hathistory.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
+
+            HaID.Text = x.HaID;
+            MaID.Text = x.MaID;
+            EmID.Text = x.EmID;
+            HaDate.Text = x.RegisteredDate;
+            incntok();
+
+
         }
     }
 }
