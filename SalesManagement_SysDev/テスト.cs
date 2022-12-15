@@ -248,14 +248,14 @@ namespace SalesManagement_SysDev
                 checkFlg = 0;
             }
             
-            if(checkFlg == 0)
-            {
-                hidden = String.Empty;
-            }
-            else
-            {
-                hidden = textBoxOrHidden.Text.Trim();
-            }
+            //if(checkFlg == 0)
+            //{
+            //    hidden = String.Empty;
+            //}
+            //else
+            //{
+            //    hidden = textBoxOrHidden.Text.Trim();
+            //}
             return new T_Order
             {
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
@@ -266,7 +266,7 @@ namespace SalesManagement_SysDev
                 OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
                 OrStateFlag = 0,
                 OrFlag = checkFlg,
-                OrHidden = hidden
+                OrHidden = textBoxOrHidden.Text.Trim()
             };
         }
 
