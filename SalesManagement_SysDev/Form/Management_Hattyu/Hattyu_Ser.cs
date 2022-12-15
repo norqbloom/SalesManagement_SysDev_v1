@@ -12,12 +12,12 @@ namespace SalesManagement_SysDev.Management_Hattyu
 {
     public partial class Hattyu_Ser : Form
     {
-        //EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
+        EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         HattyuDataAccess HattyuDataAccess = new HattyuDataAccess();
         private static List<T_Hattyu> Hattyus;
-        //private static List<M_Prohistory> history;
+        private static List<M_Prohistory> history;
 
         public Hattyu_Ser()
         {
@@ -206,7 +206,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         }
         private void dateMaget()
         {
-            
+
             T_Hattyu selectCondition = new T_Hattyu()
             {
                 EmID = int.Parse(EmID.Text.Trim()),
@@ -223,8 +223,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             {
                 EmID = int.Parse(EmID.Text.Trim()),
                 HaID = int.Parse(HaID.Text.Trim()),
-
-                //HaDate = HaDate.Value
+                HaDate = HaDate.Value
             };
             Hattyus = HattyuDataAccess.Getnolwget(selectCondition);
         }
@@ -238,17 +237,15 @@ namespace SalesManagement_SysDev.Management_Hattyu
         {
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ReadOnly = true;
-            
+
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
 
         private void SetDataGridView()
         {
-            
-            
 
-            //列名の中央揃え
+   //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridView1.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -280,34 +277,26 @@ namespace SalesManagement_SysDev.Management_Hattyu
             dataGridView1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            
+
         }
 
         private void invcnt()
         {
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
-            
+            HaID.Visible = false;
+            MaID.Visible = false;
+            EmID.Visible = false;
+            HaDate.Visible = false;
+            HaHidden.Visible = false;
         }
 
         private void incntok()
         {
-            label1.Visible = true;
-            label2.Visible = true;
-            label3.Visible = true;
-            label4.Visible = true;
-            label5.Visible = true;
-            label6.Visible = true;
-            label7.Visible = true;
-           
+            HaID.Visible = true;
+            MaID.Visible = true;
+            EmID.Visible = true;
+            HaDate.Visible = true;
+            HaHidden.Visible = true;
         }
-
-       
     }
 }
 
