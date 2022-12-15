@@ -16,7 +16,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                syukkos = context.T_Syukkos.Where(x => x.SyFlag == 0).ToList();
+                syukkos = context.T_Syukkos.Where(x => x.SyStateFlag == 0).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
