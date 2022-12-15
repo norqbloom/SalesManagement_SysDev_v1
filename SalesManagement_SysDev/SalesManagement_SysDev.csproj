@@ -309,11 +309,11 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
-    <Compile Include="待避所.cs">
+    <Compile Include="テスト.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="待避所.Designer.cs">
-      <DependentUpon>待避所.cs</DependentUpon>
+    <Compile Include="テスト.Designer.cs">
+      <DependentUpon>テスト.cs</DependentUpon>
     </Compile>
     <Compile Include="待避所2.cs">
       <SubType>Form</SubType>
@@ -421,8 +421,8 @@
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="待避所.resx">
-      <DependentUpon>待避所.cs</DependentUpon>
+    <EmbeddedResource Include="テスト.resx">
+      <DependentUpon>テスト.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="待避所2.resx">
       <DependentUpon>待避所2.cs</DependentUpon>

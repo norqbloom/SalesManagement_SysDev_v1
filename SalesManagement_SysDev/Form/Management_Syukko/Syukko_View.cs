@@ -12,9 +12,8 @@ namespace SalesManagement_SysDev.Management_Syukko
 {
     public partial class Syukko_View : Form
     {
-        private static List<T_Syukko> syukkos;
-        private static List<T_Syukko> listdata;
-        private static List<T_Syukko> commitdata;
+        private static List<T_Syukko> listdata = null;
+        private static List<T_Syukko> commitdata=null;
 
 
         SyukkoDataaccess syukkoDataaccess = new SyukkoDataaccess();
@@ -25,11 +24,12 @@ namespace SalesManagement_SysDev.Management_Syukko
 
         private void Syukko_View_Load(object sender, EventArgs e)
         {
-
-        List<T_Syukko> syukkos = new List<T_Syukko>();
-            List<T_Syukko> commitdata = new List<T_Syukko>();
+            List<T_Syukko> syukkos = null;
+            commitdata = null;
+            listdata = null;
             syukkos = syukkoDataaccess.getSyukko();
             dataGridView1.DataSource = syukkos;
+            dataGridView2.DataSource = commitdata;
         }
 
         private void Syu_Con_Button_Click(object sender, EventArgs e)
@@ -74,10 +74,26 @@ namespace SalesManagement_SysDev.Management_Syukko
             {
                 SyID=number
             };
-            listdata = syukkoDataaccess.getsyID(selectCondition);
-            commitdata.AddRange(listdata);
-            dataGridView2.DataSource = commitdata;
-            
+            if (commitdata == null)
+            {
+                commitdata= syukkoDataaccess.getsyID(selectCondition);
+                listdata = syukkoDataaccess.getsyID(selectCondition);
+                commitdata.AddRange(listdata);
+                dataGridView2.DataSource = null;
+                commitdata.RemoveAt(0);
+                //dataGridView2.Rows.RemoveAt(0);
+                dataGridView2.DataSource = commitdata;
+
+
+
+            }
+            else
+            {
+                listdata = syukkoDataaccess.getsyID(selectCondition);
+                commitdata.AddRange(listdata);
+                dataGridView2.DataSource = null;
+                dataGridView2.DataSource = commitdata;
+            }
         }
     }
 }

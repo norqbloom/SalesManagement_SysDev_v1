@@ -29,13 +29,13 @@ namespace SalesManagement_SysDev.Management_Order
         private void Ord_Add_Button_Click(object sender, EventArgs e)
         {
             //登録
-            if (!GetclientDataAtRegistration())
+            if (!GetorderDataAtRegistration())
                 return;
-            var regCl = GenerateDataAtRegistration();
-            RegistrationClient(regCl);
+            var regOr = GenerateDataAtRegistration();
+            RegistrationOrder(regOr);
         }
 
-        private bool GetclientDataAtRegistration()
+        private bool GetorderDataAtRegistration()
         {
             if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
             {
@@ -155,7 +155,7 @@ namespace SalesManagement_SysDev.Management_Order
                 OrHidden = textBoxOrHidden.Text
             };
         }
-        private void RegistrationClient(T_Order regClient)
+        private void RegistrationOrder(T_Order regClient)
         {
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)

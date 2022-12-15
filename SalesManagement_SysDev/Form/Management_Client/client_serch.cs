@@ -48,8 +48,14 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
+            setdata();
             SetFormDataGridView();
             invcnt();
+        }
+        private void setdata()
+        {
+            clients = clientDataAccess.GetClientDspData();
+            dataGridView1.DataSource = clients;
         }
 
         private void serch_Click(object sender, EventArgs e)
@@ -193,6 +199,7 @@ namespace SalesManagement_SysDev
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
         }
         private void SetDataGridView()
