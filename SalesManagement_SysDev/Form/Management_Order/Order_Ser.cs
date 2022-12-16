@@ -81,10 +81,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //全部
+                            datefull();
+                            return;
                         }
                         else
                         {
                             //OrID,SoID,EmID
+                            dateorsoem();
+                            return;
                         }
                     }
                     else
@@ -92,10 +96,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //OrID,SoID,ClID
+                            dateorsocl();
+                            return;
                         }
                         else
                         {
                             //OrID,SoID
+                            dateorso();
+                            return;
                         }
                     }
                 }
@@ -106,10 +114,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //OrID,EmID,ClID
+                            dateoremcl();
+                            return;
                         }
                         else
                         {
                             //OrID,EmID
+                            dateorem();
+                            return;
                         }
                     }
                     else
@@ -117,10 +129,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //OrID,ClID
+                            dateorcl();
+                            return;
                         }
                         else
                         {
                             //OrID
+                            dateor();
+                            return;
                         }
 
                     }
@@ -135,10 +151,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //SoID,EmID,ClID
+                            datesoemcl();
+                            return;
                         }
                         else
                         {
                             //SoID,Emid
+                            datesoemcl();
+                            return;
                         }
                     }
                     else
@@ -146,10 +166,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //SoID.ClID
+                            datesocl();
+                            return;
                         }
                         else
                         {
                             //SoID
+                            datesoemcl();
+                            return;
                         }
                     }
                 }
@@ -160,10 +184,13 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //EmID,ClID
+                            dateemcl();
                         }
                         else
                         {
                             //EmID
+                            dateemcl();
+                            return;
                         }
 
                     }
@@ -172,10 +199,14 @@ namespace SalesManagement_SysDev.Management_Order
                         if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                         {
                             //ClID
+                            datecl();
+                            return;
                         }
                         else
                         {
                             //何もなし
+                            dateNo();
+                            return;
                         }
                     }
 
@@ -184,64 +215,9 @@ namespace SalesManagement_SysDev.Management_Order
             }
 
 
-            //    if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
-            //    {
-            //        if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-            //        {
-            //            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-            //            {
-            //                if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-            //                {
-            //                    //全て入力されている
-            //                    datefull();
-            //                    return;
-            //                }
-            //                else
-            //                {
-            //                    //or,em,so
-            //                    dateorsoem();
-            //                    return;
-            //                }
-            //            }
-            //            else if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-            //            {
-            //                //or,so,cl
-            //                dateorsocl();
-            //                return;
-            //            }
-            //            else
-            //            {
-            //                //or,so
-            //                dateorso();
-            //                return;
-            //            }
-            //        }
-            //        else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-            //        {
-            //            //or,em
-            //            dateorem();
-            //            return;
-            //        }
-            //        else if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-            //        {
-            //            //or,cl
-            //            dateorcl();
-            //            return;
-            //        }
-            //        else
-            //        {
-            //            //or
-            //            dateor();
-            //            return;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        //何も入力されていない
-            //        dateNo();
-            //        return;
-            //    }
+            
         }
+
         private void datefull()
         {
             //全て入力されている
@@ -254,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            //orders = orderdateAccess.GetMaScget(selectCondition);
+            orders = orderdateAccess.Getfull(selectCondition);
         }
         private void dateorsoem()
         {
@@ -267,7 +243,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            //orders= orderdateAccess.GetMaScget(selectCondition);
+            orders= orderdateAccess.Get(selectCondition);
         }
         private void dateorso()
         {
@@ -342,5 +318,78 @@ namespace SalesManagement_SysDev.Management_Order
             };
             //orders = orderdateAccess.GetMaScget(selectCondition);
         }
+        private void dateoremcl()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getfull(selectCondition);
+        }
+        private void datesoemcl()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getfull(selectCondition);
+        }
+        private void datesocl()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getfull(selectCondition);
+        }
+        private void dateemcl()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getfull(selectCondition);
+        }
+        private void datecl()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getfull(selectCondition);
+        }
+        
+        
+        
     }
 }
