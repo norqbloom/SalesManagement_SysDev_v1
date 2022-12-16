@@ -60,5 +60,35 @@ namespace SalesManagement_SysDev
             }
 
         }
+        public void genenyuuko(T_Arrival selectCondition)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.T_Arrivals.Add(selectCondition);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public int nyuukodatil(int selectCondition)
+        {
+            int number=-1;
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var Arrivals = context.T_Arrivals.Where(x => x.ArID == selectCondition);
+                var y = Arrivals.FirstOrDefault();
+                number = y.ArID;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return number;
+        }
     }
 }

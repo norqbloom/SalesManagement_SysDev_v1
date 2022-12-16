@@ -39,10 +39,25 @@ namespace SalesManagement_SysDev.Management_Syukko
             foreach(var item in commitdata)
             {
                 GenerateDataAtUpdate(item);
+                GenerateDataNyuuko(item);
+                int number = syukkoDataaccess.nyuukodatil(item.SyID);
             }
-
         }
-        
+
+        private void GenerateDataNyuuko(T_Syukko upitem)
+        {
+            T_Arrival selectCondition = new T_Arrival()
+            {
+                SoID = upitem.SoID,
+                ClID = upitem.ClID,
+                OrID = upitem.OrID,
+                ArFlag = upitem.SyFlag,
+                ArHidden = upitem.SyHidden
+            };
+            syukkoDataaccess.genenyuuko(selectCondition);
+        }
+
+
         private void GenerateDataAtUpdate(T_Syukko upitem)
         {
 
