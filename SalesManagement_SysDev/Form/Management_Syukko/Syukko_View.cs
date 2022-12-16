@@ -33,20 +33,24 @@ namespace SalesManagement_SysDev.Management_Syukko
         }
         private void Syu_Con_Button_Click(object sender, EventArgs e)
         {
+            //int number;
             foreach(var item in commitdata)
-            {
-                MessageBox.Show(item.ToString());
+            {                
+                
             }
             //var update = GenerateDataAtUpdate();
         }
-        private T_Syukko GenerateDataAtUpdate()
+        
+        private void GenerateDataAtUpdate()
         {
 
-            return new T_Syukko
+            T_Syukko selectCondition = new T_Syukko();
             {
-
+               
             };
+            syukkoDataaccess.upflg(selectCondition);
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {

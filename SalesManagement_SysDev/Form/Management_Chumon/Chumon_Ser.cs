@@ -279,7 +279,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         private void buttonCon_Click(object sender, EventArgs e)
         {
             var conCh = GenerateDataAtConfirm();
-            ConfirmChumon(conCh);
+            //ConfirmChumon(conCh);
 
         }
 
@@ -306,18 +306,18 @@ namespace SalesManagement_SysDev.Management_Chumon
             };
         }
 
-        private void ConfirmChumon(T_Chumon conChumon)
-        {
+        //private void ConfirmChumon(T_Chumon conChumon)
+        //{
 
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
-            if (result == DialogResult.Cancel)
-                return;
-            bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
-            if (flg == true)
-                messageDsp.DspMsg("ok");
-            else
-                messageDsp.DspMsg("no");
-        }
+        //    DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+        //    if (result == DialogResult.Cancel)
+        //        return;
+        //    bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
+        //    if (flg == true)
+        //        messageDsp.DspMsg("ok");
+        //    else
+        //        messageDsp.DspMsg("no");
+        //}
 
         //T_ChumonのChStateFlag
 

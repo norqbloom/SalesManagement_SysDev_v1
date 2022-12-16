@@ -197,15 +197,15 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
-                                                 x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 //x.ChDate.Contains(selectCondition.ChDate) &&
-                                                 x.ChStateFlag == 0 &&
-                                                 x.ChFlag == 0
-                                                 ).ToList();
+                //chumon = context.M_Chumons.Where(x =>
+                //                                 x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                //                                 x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                //                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                //                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                //                                 //x.ChDate.Contains(selectCondition.ChDate) &&
+                //                                 x.ChStateFlag == 0 &&
+                //                                 x.ChFlag == 0
+                //                                 ).ToList();
                 context.Dispose();
 
             }
