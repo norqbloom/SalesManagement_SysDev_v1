@@ -27,8 +27,7 @@ namespace SalesManagement_SysDev.Management_Client
         {
             //妥当な役職データ取得
             if (!GetValidDataAtUpdate())
-            {
-                
+            {              
                 return;
             }
 
