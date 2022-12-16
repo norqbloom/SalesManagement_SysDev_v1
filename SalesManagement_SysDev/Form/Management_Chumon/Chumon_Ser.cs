@@ -278,69 +278,59 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void buttonCon_Click(object sender, EventArgs e)
         {
-            var getCh = GetDataGridView();
             var conCh = GenerateDataAtConfirm();
-            //ConfirmChumon(conCh);
-            var decSt = GenerateDataAtDecrease();
-            //DecreaseStock(decCh)
-
+            ConfirmChumon(conCh);
         }
 
-        //private T_Chumon GetDataGridView()
-        //{
-        //    int getCh;
-        //    getCh = (int)dataGridView1.CurrentRow.Cells[0].Value;
-        //}
-
-
-        private T_Chumon GenerateDataAtConfirm()
+         private T_Chumon GenerateDataAtConfirm()
         {
 
             
-            //int checkflg;
-            //if (checkBoxChStateFlag.Checked == true)
-            //{
-            //    checkflg = 1;
-            //}
-            //else
-            //{
-            //    checkflg = 0;
-            //}
+            int checkflg;
+            if (checkBoxChStateFlag.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
             return new T_Chumon
             {
                 ChStateFlag = 1
             };
         }
 
-        //private T_Stock GenerateDataAtDecrease()
-        //{
-        //    int checkflg;
-        //    if (checkBoxChStateFlag.Checked == true)
-        //    {
-        //        checkflg = 1;
-        //    }
-        //    else
-        //    {
-        //        checkflg = 0;
-        //    }
-        //    return new T_Stock
-        //    {
-                 
-        //    }
-        //}
+        private T_Chumon GenerateDataAtConfirm()
 
+        {
+            int checkflg;
+            if (checkBoxChStateFlag.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+            return new T_Chumon
+            {
+                ChID = int.Parse(textBoxChID.Text),
+                SoID = int.Parse(textBoxSoID.Text),
+                EmID = int.Parse(textBoxEmID.Text),
+                ClID = int.Parse(textBoxClID.Text),
+                OrID = int.Parse(textBoxOrID.Text),
+                ChDate = DateTime.Parse(dateTimePickerChDate.Text),
+                ChStateFlag = checkflg
+            };
+        }
         //private void ConfirmChumon(T_Chumon conChumon)
         //{
 
-        //    DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
-        //    if (result == DialogResult.Cancel)
-        //        return;
-        //    bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
-        //    if (flg == true)
-        //        messageDsp.DspMsg("ok");
-        //    else
-        //        messageDsp.DspMsg("no");
-        //}
+       
+
+        //T_ChumonのChStateFlag
+>>>>>>> 30559a188b110d73035309cb806a768d3c6e894c
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
