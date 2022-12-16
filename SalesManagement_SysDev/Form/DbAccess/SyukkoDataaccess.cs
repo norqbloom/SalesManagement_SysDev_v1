@@ -47,7 +47,11 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 var syukko = context.T_Syukkos.Single(x => x.SyID == number.SyID);
+                DateTime dt = DateTime.Now;
+                syukko.SyDate = dt;
                 syukko.SyStateFlag = 1;
+                syukko.EmID = template.EmID;
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
