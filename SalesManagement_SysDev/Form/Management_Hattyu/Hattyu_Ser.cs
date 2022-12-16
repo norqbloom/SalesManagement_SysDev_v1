@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
         MessageDsp messageDsp = new MessageDsp();
         HattyuDataAccess HattyuDataAccess = new HattyuDataAccess();
         private static List<T_Hattyu> Hattyus;
-        private static List<Hahistory> hathistory;
+        //private static List<Hahistory> hathistory;
 
         public Hattyu_Ser()
         {
@@ -319,27 +319,27 @@ namespace SalesManagement_SysDev.Management_Hattyu
         private void serchdateset(int number)
         {
 
-            Hahistory selectCondition = new Hahistory
-            {
-                HaID = number.ToString(),
+            //Hahistory selectCondition = new Hahistory
+            //{
+            //    HaID = number.ToString(),
 
-            };
-            hathistory = HattyuDataAccess.getdetail(selectCondition);
+            //};
+            //hathistory = HattyuDataAccess.getdetail(selectCondition);
         }
         private void setdatedetail()
         {
-            var x = hathistory.FirstOrDefault();
-            if (x == null)
-            {
-                invcnt();
-                return;
-            }
+            //var x = hathistory.FirstOrDefault();
+            //if (x == null)
+            //{
+            //    invcnt();
+            //    return;
+            //}
 
-            HaID.Text = x.HaID;
-            MaID.Text = x.MaID;
-            EmID.Text = x.EmID;
-            HaDate.Text = x.RegisteredDate;
-            incntok();
+            //HaID.Text = x.HaID;
+            //MaID.Text = x.MaID;
+            //EmID.Text = x.EmID;
+            //HaDate.Text = x.RegisteredDate;
+            //incntok();
 
 
         }

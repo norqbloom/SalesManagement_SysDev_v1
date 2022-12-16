@@ -14,6 +14,8 @@ namespace SalesManagement_SysDev.Management_Syukko
     {
         private static List<T_Syukko> listdata = null;
         private static List<T_Syukko> commitdata=null;
+        private static List<T_Syukko> syukkos = null;
+        private static List<T_Syukko> syukkos1 = null;
 
 
         SyukkoDataaccess syukkoDataaccess = new SyukkoDataaccess();
@@ -24,7 +26,7 @@ namespace SalesManagement_SysDev.Management_Syukko
 
         private void Syukko_View_Load(object sender, EventArgs e)
         {
-            List<T_Syukko> syukkos = null;
+            syukkos = null;
             commitdata = null;
             listdata = null;
             syukkos = syukkoDataaccess.getSyukko();
@@ -33,20 +35,24 @@ namespace SalesManagement_SysDev.Management_Syukko
         }
         private void Syu_Con_Button_Click(object sender, EventArgs e)
         {
+            //int number;
             foreach(var item in commitdata)
             {
-                MessageBox.Show(item.ToString());
+                GenerateDataAtUpdate(item);
             }
-            //var update = GenerateDataAtUpdate();
+
         }
-        private T_Syukko GenerateDataAtUpdate()
+        
+        private void GenerateDataAtUpdate(T_Syukko upitem)
         {
 
-            return new T_Syukko
+            T_Syukko selectCondition = new T_Syukko()
             {
-
+                SyID = upitem.SyID
             };
+            syukkoDataaccess.upflg(selectCondition);
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -73,7 +79,7 @@ namespace SalesManagement_SysDev.Management_Syukko
             }
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            List<T_Syukko> syukkos = (List<T_Syukko>)dataGridView1.DataSource;
+            syukkos = (List<T_Syukko>)dataGridView1.DataSource;
             dataGridView1.DataSource = null;
             syukkos.Remove(syukkos.Single(x => x.SyID == number));
             dataGridView1.DataSource = syukkos;
@@ -101,6 +107,19 @@ namespace SalesManagement_SysDev.Management_Syukko
                 dataGridView2.DataSource = null;
                 dataGridView2.DataSource = commitdata;
             }
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            commitdata = null;
+            dataGridView2.DataSource = commitdata;
+            syukkos = syukkoDataaccess.getSyukko();
+            dataGridView1.DataSource = syukkos;
         }
     }
 }

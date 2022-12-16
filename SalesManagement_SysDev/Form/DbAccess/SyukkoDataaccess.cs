@@ -41,5 +41,24 @@ namespace SalesManagement_SysDev
             }
             return syukkos;
         }
+        public void  upflg(T_Syukko number)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var syukko = context.T_Syukkos.Single(x => x.SyID == number.SyID);
+                DateTime dt = DateTime.Now;
+                syukko.SyDate = dt;
+                syukko.SyStateFlag = 1;
+                syukko.EmID = template.EmID;
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
