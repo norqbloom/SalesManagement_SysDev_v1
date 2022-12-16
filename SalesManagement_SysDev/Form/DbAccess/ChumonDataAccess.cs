@@ -56,23 +56,40 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        
+        ///////////////////////////////
+        //メソッド名：GetChumonID()
+        //引　数   ：注文データ
+        //戻り値   ：True or False
+        //機　能   ：dataGridViewから注文IDを取得
+        //          ：取得成功の場合True
+        //          ：取得失敗の場合False
+        ///////////////////////////////
+        public bool GetChumonID(T_Chumon getchumonID)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var chumon = context.T_ChumonDetailss.Single(x => x.ChID == getchumonID.ChID);
+            }
+        }
 
         ///////////////////////////////
-        //メソッド名：ConfirmChumonsData()
+        //メソッド名：ConfirmChumonData()
         //引　数   ：注文データ
         //戻り値   ：True or False
         //機　能   ：注文データの確定
         //          ：確定成功の場合True
         //          ：確定失敗の場合False
         ///////////////////////////////
-        public bool ConfirmChumonData(int conChumon)
+        public bool ConfirmChumonData(T_Chumon conChumon)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                var chumons = context.T_Chumons.Single(x => x.ChID == conChumon);
-                context.T_Chumons.Remove(chumons);
+                var chumons = context.T_Chumons.Single(x => x.ChID == conChumon.ChID);
+                chumons.ChStateFlag = 1;
+
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -81,7 +98,32 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        
+
+        ///////////////////////////////
+        //メソッド名：DecreaseChumonData()
+        //引　数   ：注文データ
+        //戻り値   ：True or False
+        //機　能   ：注文データの減少
+        //          ：減少成功の場合True
+        //          ：減少失敗の場合False
+        ///////////////////////////////
+        public bool DecreaseChumonData(T_OrderDetail decStock)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var chumons = context.T_Stocks.Single(x => x.PrID == decStock.PrID);
+                chumons.StQuantity = chumons.StQuantity - decStock.OrQuantity;
+
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+        }
 
         ///////////////////////////////
         //メソッド名：GetChumonsData()
@@ -197,7 +239,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                chumon = context.M_Chumons.Where(x =>
+                chumon = context.T_Chumons.Where(x =>
                                                  x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&

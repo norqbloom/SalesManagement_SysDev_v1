@@ -278,48 +278,69 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void buttonCon_Click(object sender, EventArgs e)
         {
+            var getCh = GetDataGridView();
             var conCh = GenerateDataAtConfirm();
-            ConfirmChumon(conCh);
+            //ConfirmChumon(conCh);
+            var decSt = GenerateDataAtDecrease();
+            //DecreaseStock(decCh)
 
         }
+
+        //private T_Chumon GetDataGridView()
+        //{
+        //    int getCh;
+        //    getCh = (int)dataGridView1.CurrentRow.Cells[0].Value;
+        //}
+
 
         private T_Chumon GenerateDataAtConfirm()
         {
-            int checkflg;
-            if (checkBoxChStateFlag.Checked == true)
-            {
-                checkflg = 1;
-            }
-            else
-            {
-                checkflg = 0;
-            }
+
+            
+            //int checkflg;
+            //if (checkBoxChStateFlag.Checked == true)
+            //{
+            //    checkflg = 1;
+            //}
+            //else
+            //{
+            //    checkflg = 0;
+            //}
             return new T_Chumon
             {
-                ChID = int.Parse(textBoxChID.Text),
-                SoID = int.Parse(textBoxSoID.Text),
-                EmID = int.Parse(textBoxEmID.Text),
-                ClID = int.Parse(textBoxClID.Text),
-                OrID = int.Parse(textBoxOrID.Text),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text),
-                ChStateFlag = checkflg
+                ChStateFlag = 1
             };
         }
 
-        private void ConfirmChumon(T_Chumon conChumon)
-        {
+        //private T_Stock GenerateDataAtDecrease()
+        //{
+        //    int checkflg;
+        //    if (checkBoxChStateFlag.Checked == true)
+        //    {
+        //        checkflg = 1;
+        //    }
+        //    else
+        //    {
+        //        checkflg = 0;
+        //    }
+        //    return new T_Stock
+        //    {
+                 
+        //    }
+        //}
 
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
-            if (result == DialogResult.Cancel)
-                return;
-            bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
-            if (flg == true)
-                messageDsp.DspMsg("ok");
-            else
-                messageDsp.DspMsg("no");
-        }
+        //private void ConfirmChumon(T_Chumon conChumon)
+        //{
 
-        //T_ChumonのChStateFlag
+        //    DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+        //    if (result == DialogResult.Cancel)
+        //        return;
+        //    bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
+        //    if (flg == true)
+        //        messageDsp.DspMsg("ok");
+        //    else
+        //        messageDsp.DspMsg("no");
+        //}
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
