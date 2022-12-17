@@ -31,8 +31,8 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                syukkos = context.T_Syukkos.Where(x => x.SyFlag == 0&&
-                                                       x.SyID==number.SyID).ToList();
+                syukkos = context.T_Syukkos.Where(x => x.SyFlag == 0 &&
+                                                       x.SyID == number.SyID).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace SalesManagement_SysDev
             }
             return syukkos;
         }
-        public void  upflg(T_Syukko number)
+        public void upflg(T_Syukko number)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace SalesManagement_SysDev
         }
         public int nyuukodatil(int selectCondition)
         {
-            int number=-1;
+            int number = -1;
             try
             {
                 var context = new SalesManagement_DevContext();
@@ -89,6 +89,21 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return number;
+
         }
+        public void regnyuukodatail(int number)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var detail = context.T_ArrivalDetails.Where(x => x.ArID == number);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void 
     }
 }
