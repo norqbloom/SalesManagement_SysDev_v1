@@ -40,7 +40,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    MessageBox.Show("社員コードは半角数値入力です","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     textBoxEmID.Focus();
                     return false;
                 }

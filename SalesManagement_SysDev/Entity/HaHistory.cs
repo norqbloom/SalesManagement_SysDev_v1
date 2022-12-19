@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace SalesManagement_SysDev
+
 {
     class Hahistory
     {

@@ -279,30 +279,11 @@ namespace SalesManagement_SysDev.Management_Chumon
         private void buttonCon_Click(object sender, EventArgs e)
         {
             var conCh = GenerateDataAtConfirm();
-            ConfirmChumon(conCh);
-        }
+            //ConfirmChumon(conCh);
 
-         private T_Chumon GenerateDataAtConfirm()
-        {
-
-            
-            int checkflg;
-            if (checkBoxChStateFlag.Checked == true)
-            {
-                checkflg = 1;
-            }
-            else
-            {
-                checkflg = 0;
-            }
-            return new T_Chumon
-            {
-                ChStateFlag = 1
-            };
         }
 
         private T_Chumon GenerateDataAtConfirm()
-
         {
             int checkflg;
             if (checkBoxChStateFlag.Checked == true)
@@ -324,13 +305,21 @@ namespace SalesManagement_SysDev.Management_Chumon
                 ChStateFlag = checkflg
             };
         }
+
         //private void ConfirmChumon(T_Chumon conChumon)
         //{
 
-       
+        //    DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+        //    if (result == DialogResult.Cancel)
+        //        return;
+        //    bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
+        //    if (flg == true)
+        //        messageDsp.DspMsg("ok");
+        //    else
+        //        messageDsp.DspMsg("no");
+        //}
 
         //T_ChumonのChStateFlag
->>>>>>> 30559a188b110d73035309cb806a768d3c6e894c
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
