@@ -17,6 +17,7 @@ namespace SalesManagement_SysDev.Management_Client
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
+        private static List<M_Client> clients;
         public Client_Upd()
         {
             InitializeComponent();
@@ -26,8 +27,7 @@ namespace SalesManagement_SysDev.Management_Client
         {
             //妥当な役職データ取得
             if (!GetValidDataAtUpdate())
-            {
-                
+            {              
                 return;
             }
 
@@ -271,7 +271,101 @@ namespace SalesManagement_SysDev.Management_Client
             bool flg = clientDataAccess.UpdclhistoryData(uphistory);
         }
 
+        private void Client_Upd_Load(object sender, EventArgs e)
+        {
+            setdata();
+            SetFormDataGridView();
+        }
+        private void setdata()
+        {
+            clients = clientDataAccess.GetClientDspData();
+            dataGridView1.DataSource = clients;
+        }
+        private void SetFormDataGridView()
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;
+            //dataGridViewのページサイズ指定
+            textBoxPageSize.Text = "10";
+            //dataGridViewのページ番号指定
+            textBoxPageNo.Text = "1";
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+
+        }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+            SetDataGridView();
+        }
+        private void SetDataGridView()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            labelPage.Text = "/" + ((int)Math.Ceiling(clients.Count / (double)pageSize)) + "ページ";
+
+            dataGridView1.Refresh();
+        }
+
+        private void buttonFirstPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            dataGridView1.DataSource = clients.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void buttonPreviousPage_Click(object sender, EventArgs e)
+        {
+            
+                int pageSize = int.Parse(textBoxPageSize.Text);
+                int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+                dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+                // DataGridViewを更新
+                dataGridView1.Refresh();
+                //ページ番号の設定
+                if (pageNo + 1 > 1)
+                    textBoxPageNo.Text = (pageNo + 1).ToString();
+                else
+                    textBoxPageNo.Text = "1";
+
+            }
+
+        private void buttonNextPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(clients.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void buttonLastPage_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
+            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
     }
 
 }
