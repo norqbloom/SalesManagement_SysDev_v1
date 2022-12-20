@@ -127,6 +127,41 @@ namespace SalesManagement_SysDev
             }
             return syukkoDetails;
         }
+        //入庫ID
+        public int PriID(int number)
+        {
+            int renumber = -1 ;
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var y = context.T_Arrivals.Where(x => x.OrID == number);
+                var xx = y.FirstOrDefault();
+                renumber = xx.OrID;
+                context.Dispose();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return renumber;
+        }
+        //入庫詳細登録
+
+        public void nyuukodetail(T_ArrivalDetail selectCondition)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.T_ArrivalDetails.Add(selectCondition);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
