@@ -318,6 +318,12 @@
     <Compile Include="テスト.Designer.cs">
       <DependentUpon>テスト.cs</DependentUpon>
     </Compile>
+    <Compile Include="テスト2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="テスト2.Designer.cs">
+      <DependentUpon>テスト2.cs</DependentUpon>
+    </Compile>
     <Compile Include="待避所2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="テスト.resx">
       <DependentUpon>テスト.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="テスト2.resx">
+      <DependentUpon>テスト2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="待避所2.resx">
       <DependentUpon>待避所2.cs</DependentUpon>
