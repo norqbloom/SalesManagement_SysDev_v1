@@ -522,6 +522,82 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+        public List<T_Order> Getem(T_Order selectCondition)
+        {
+            List<T_Order> order = new List<T_Order>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                order = context.T_Orders.Where(x =>
+                                                 x.OrFlag == 0 &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 //x.OrDate.Contains(selectCondition.OrDate) &&
+                                                 x.ClCharge.Contains(selectCondition.ClCharge)
+
+                                                 ).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return order;
+        }
+        public List<T_Order> Getso(T_Order selectCondition)
+        {
+            List<T_Order> order = new List<T_Order>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                order = context.T_Orders.Where(x =>
+                                                 x.OrFlag == 0 &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 //x.OrDate.Contains(selectCondition.OrDate) &&
+                                                 x.ClCharge.Contains(selectCondition.ClCharge)
+
+                                                 ).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return order;
+        }
+        public List<T_Order> Getemso(T_Order selectCondition)
+        {
+            List<T_Order> order = new List<T_Order>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                order = context.T_Orders.Where(x =>
+                                                 x.OrFlag == 0 &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 //x.OrDate.Contains(selectCondition.OrDate) &&
+                                                 x.ClCharge.Contains(selectCondition.ClCharge)
+
+                                                 ).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return order;
+        }
 
     }
 

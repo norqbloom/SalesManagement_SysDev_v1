@@ -157,7 +157,7 @@ namespace SalesManagement_SysDev.Management_Order
                         else
                         {
                             //SoID,Emid
-                            datesoemcl();
+                            dateemso();
                             return;
                         }
                     }
@@ -172,7 +172,7 @@ namespace SalesManagement_SysDev.Management_Order
                         else
                         {
                             //SoID
-                            datesoemcl();
+                            dateso();
                             return;
                         }
                     }
@@ -189,7 +189,7 @@ namespace SalesManagement_SysDev.Management_Order
                         else
                         {
                             //EmID
-                            dateemcl();
+                            dateem();
                             return;
                         }
 
@@ -378,8 +378,42 @@ namespace SalesManagement_SysDev.Management_Order
             };
             orders = orderdateAccess.Getcl(selectCondition);
         }
+        private void dateem()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getem(selectCondition);
+        }
+        private void dateso()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getso(selectCondition);
+        }
+        private void dateemso()
+        {
+            //全て入力されている
+            T_Order selectCondition = new T_Order()
+            {
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+            };
+            orders = orderdateAccess.Getemso(selectCondition);
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////
-        
+
 
 
     }
