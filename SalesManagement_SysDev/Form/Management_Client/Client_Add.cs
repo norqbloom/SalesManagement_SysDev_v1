@@ -286,7 +286,6 @@ namespace SalesManagement_SysDev.Management_Client
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
 
-
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -366,6 +365,7 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void Client_Add_Load(object sender, EventArgs e)
         {
+            
             setdata();
             SetFormDataGridView();
         }
@@ -384,6 +384,11 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxPageNo.Text = "1";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
