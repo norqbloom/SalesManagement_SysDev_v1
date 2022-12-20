@@ -40,22 +40,30 @@ namespace SalesManagement_SysDev.Management_Syukko
             {
                 GenerateDataAtUpdate(item);
                 GenerateDataNyuuko(item);
-                //入庫IDと出庫詳細からIDと数量取得
+                MessageBox.Show("ok");
+                //入庫IDと出庫詳細から商品IDと数量取得
+                //↓商品IDと数量
                 var syukkodetail = syukkoDataaccess.pridget(item.SyID);
+                //入庫ID
+                int number = syukkoDataaccess.PriID(item.OrID);
+                var x = syukkodetail.FirstOrDefault();
+
+                neredetail(number,x.PrID,x.SyQuantity);
 
                 //int number = syukkoDataaccess.nyuukodatil(item.SyID);
 
             }
         }
-        private void neredetail(int upitem,T_SyukkoDetail updata)
+        private void neredetail(int upitem,int PrID,int SyQuantity)
         {
             T_ArrivalDetail selectCondition = new T_ArrivalDetail()
             {
                 ArID=upitem,
-                PrID=updata.PrID,
-                ArQuantity=updata.SyQuantity
+                PrID=PrID,
+                ArQuantity=SyQuantity
 
             };
+
         }
         private void GenerateDataNyuuko(T_Syukko upitem)
         {
