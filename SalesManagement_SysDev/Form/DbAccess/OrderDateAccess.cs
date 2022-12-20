@@ -211,6 +211,34 @@ namespace SalesManagement_SysDev
             }
             return orders;
         }
+        public List<T_Order> GetPrMaget(T_Order selectCondition)
+        {
+            List<T_Order> order = new List<T_Order>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                order = context.T_Orders.Where(x =>
+                                                 x.OrFlag == 0 &&
+                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClCharge.Contains(selectCondition.ClCharge) &&
+                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
+                                                 x.EmPhone.Contains(selectCondition.EmPhone)
+                                                 ).ToList();
+                context.SaveChanges();
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return order;
+        }
 
     }
 }
