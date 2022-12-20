@@ -495,9 +495,7 @@
   <ItemGroup>
     <None Include="Resources\settings_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\Management_Shipment\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
