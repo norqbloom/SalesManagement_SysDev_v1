@@ -264,6 +264,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.change.TabIndex = 21;
             this.change.Text = "行数変更";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // buttonLastPage
             // 
@@ -276,6 +277,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
+            this.buttonLastPage.Click += new System.EventHandler(this.buttonLastPage_Click);
             // 
             // buttonNextPage
             // 
@@ -288,6 +290,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonNextPage.TabIndex = 25;
             this.buttonNextPage.Text = "▶";
             this.buttonNextPage.UseVisualStyleBackColor = true;
+            this.buttonNextPage.Click += new System.EventHandler(this.buttonNextPage_Click);
             // 
             // buttonPreviousPage
             // 
@@ -300,6 +303,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonPreviousPage.TabIndex = 26;
             this.buttonPreviousPage.Text = "◀";
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
+            this.buttonPreviousPage.Click += new System.EventHandler(this.buttonPreviousPage_Click);
             // 
             // label17
             // 
@@ -353,6 +357,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
+            this.buttonFirstPage.Click += new System.EventHandler(this.buttonFirstPage_Click);
             // 
             // Client_Upd
             // 
@@ -382,6 +387,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Client_Upd";
             this.Text = "顧客更新";
+            this.Load += new System.EventHandler(this.Client_Upd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

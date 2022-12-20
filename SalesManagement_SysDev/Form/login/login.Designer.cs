@@ -41,6 +41,7 @@ namespace SalesManagement_SysDev
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lodinggif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +101,7 @@ namespace SalesManagement_SysDev
             // 
             this.lodinggif.Image = global::SalesManagement_SysDev.Properties.Resources.l1oading;
             this.lodinggif.Location = new System.Drawing.Point(130, 398);
-            this.lodinggif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lodinggif.Margin = new System.Windows.Forms.Padding(2);
             this.lodinggif.Name = "lodinggif";
             this.lodinggif.Size = new System.Drawing.Size(110, 73);
             this.lodinggif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -113,7 +114,7 @@ namespace SalesManagement_SysDev
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::SalesManagement_SysDev.Properties.Resources._15642961;
             this.pictureBox1.Location = new System.Drawing.Point(67, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(266, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,7 +131,7 @@ namespace SalesManagement_SysDev
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(9, 398);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 18);
             this.button1.TabIndex = 8;
@@ -141,7 +142,7 @@ namespace SalesManagement_SysDev
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(13, 322);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 18);
             this.button2.TabIndex = 9;
@@ -153,7 +154,7 @@ namespace SalesManagement_SysDev
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(67, 378);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(104, 16);
             this.checkBox1.TabIndex = 10;
@@ -164,7 +165,7 @@ namespace SalesManagement_SysDev
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(13, 214);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 18);
             this.button4.TabIndex = 12;
@@ -172,12 +173,23 @@ namespace SalesManagement_SysDev
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(280, 209);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "テストフォーム";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(382, 493);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
@@ -214,5 +226,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }
