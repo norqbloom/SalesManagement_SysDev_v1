@@ -16,6 +16,7 @@ namespace SalesManagement_SysDev.Management_Order
         MessageDsp messageDsp = new MessageDsp();
         OrderDateAccess orderdateAccess = new OrderDateAccess();
         private static List<T_Order> orders;
+        private static List<T_OrderDsp> Or1;
         public Order_Ser()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace SalesManagement_SysDev.Management_Order
 
             GenerateDataAtSelect();
 
-            //SetSelectData();
+            SetSelectData();
         }
         private bool GetClientDataAtSelect()
         {
@@ -218,6 +219,10 @@ namespace SalesManagement_SysDev.Management_Order
             
         }
 
+        private void SetSelectData()
+        {
+            dataGridView1.DataSource = orders;
+        }
         private void datefull()
         {
             //全て入力されている
@@ -412,8 +417,91 @@ namespace SalesManagement_SysDev.Management_Order
             };
             orders = orderdateAccess.Getemso(selectCondition);
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////
 
+        private void Order_Ser_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        private void SetFormDataGridView()
+        {
+            //dataGridViewのページサイズ指定
+            textBoxPageSize.Text = "20";
+            //dataGridViewのページ番号指定
+            textBoxPageNo.Text = "1";
+            //読み取り専用に指定
+            dataGridView1.ReadOnly = true;
+            //行内をクリックすることで行を選択
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //ヘッダー位置の指定
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //データグリッドビューのデータ取得
+            GetDataGridView();
+
+        }
+        private void GetDataGridView()
+        {
+
+            int radioint = 0;
+            if (radioButton1.Checked == true)
+            {
+                radioint = 2;
+            }
+            else
+            {
+                radioint = 0;
+            }
+            // 商品データの取得
+            Or1 = orderdateAccess.GetProductData2(radioint);
+
+            // DataGridViewに表示するデータを指定
+            SetDataGridView();
+        }
+        private void SetDataGridView()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridView1.DataSource = Or1.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            //列名の中央揃え
+            foreach (DataGridViewColumn clm in dataGridView1.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            //各列幅の指定
+            dataGridView1.Columns[0].Width = 80;
+            dataGridView1.Columns[1].Width = 80;
+            dataGridView1.Columns[2].Width = 200;
+            dataGridView1.Columns[3].Width = 200;
+            dataGridView1.Columns[4].Width = 200;
+            dataGridView1.Columns[5].Width = 80;
+            dataGridView1.Columns[6].Width = 80;
+            dataGridView1.Columns[7].Width = 100;
+            dataGridView1.Columns[8].Width = 150;
+
+
+
+            //各列の文字位置の指定
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+
+            //dataGridViewの総ページ数
+            labelPage.Text = "/" + ((int)Math.Ceiling(Or1.Count / (double)pageSize)) + "ページ";
+
+            dataGridView1.Refresh();
+
+        }
 
 
     }

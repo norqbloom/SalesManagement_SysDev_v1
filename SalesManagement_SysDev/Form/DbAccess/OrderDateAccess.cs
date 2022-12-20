@@ -598,6 +598,51 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+        public List<T_OrderDsp> GetProductData2(int radioint)
+        {
+            List<T_OrderDsp> order = new List<T_OrderDsp>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var tb = from t1 in context.T_Orders
+                         where t1.OrFlag == radioint
+                         select new
+                         {
+                             t1.OrID,
+                             t1.SoID,
+                             t1.EmID,
+                             t1.ClID,
+                             t1.ClCharge,
+                             t1.OrDate,
+                             t1.OrStateFlag,
+                             t1.OrFlag,
+                             t1.OrHidden,
+                         };
+
+                foreach (var p in tb)
+                {
+                    order.Add(new T_OrderDsp()
+                    {
+                        OrID = p.OrID,
+                        SoID = p.SoID,
+                        EmID = p.EmID,
+                        ClID = p.ClID,
+                        ClCharge = p.ClCharge,
+                        OrDate = p.OrDate,
+                        OrStateFlag = p.OrStateFlag,
+                        OrFlag = p.OrFlag,
+                        OrHidden = p.OrHidden,
+                    });
+                }
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return order;
+        }
 
     }
 
