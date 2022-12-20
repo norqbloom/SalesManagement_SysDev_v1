@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SalesManagement_SysDev.Entity
+namespace SalesManagement_SysDev
 {
     class OrHistory
     {

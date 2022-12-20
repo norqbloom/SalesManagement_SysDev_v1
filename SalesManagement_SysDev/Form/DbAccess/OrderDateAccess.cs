@@ -164,10 +164,10 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge) 
                                                  //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
                                                  ).ToList();
@@ -191,10 +191,10 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -219,7 +219,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
@@ -246,7 +246,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
@@ -272,7 +272,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -321,9 +321,9 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -348,7 +348,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
@@ -374,8 +374,8 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -400,9 +400,9 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -429,7 +429,7 @@ namespace SalesManagement_SysDev
                                                  x.OrFlag == 0 &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -455,7 +455,7 @@ namespace SalesManagement_SysDev
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -481,7 +481,7 @@ namespace SalesManagement_SysDev
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
                                                  x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -506,7 +506,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 order = context.T_Orders.Where(x =>
                                                  x.OrFlag == 0 &&
-                                                 x.ClID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
                                                  //x.OrDate.Contains(selectCondition.OrDate) &&
                                                  x.ClCharge.Contains(selectCondition.ClCharge)
 
@@ -642,6 +642,21 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return order;
+        }
+        public List<OrHistory> getdetail(OrHistory selectCondition)
+        {
+            List<OrHistory> Orhistory = new List<OrHistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                Orhistory = context.OrHistories.Where(x => x.OrID == selectCondition.OrID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Orhistory;
         }
 
     }

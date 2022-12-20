@@ -14,6 +14,7 @@ namespace SalesManagement_SysDev.Management_Order
     {
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
+        private static List<OrHistory> Orhistory;
         OrderDateAccess orderdateAccess = new OrderDateAccess();
         private static List<T_Order> orders;
         private static List<T_OrderDsp> Or1;
@@ -65,9 +66,13 @@ namespace SalesManagement_SysDev.Management_Order
             }
             if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
             {
-                messageDsp.DspMsg("M1001");
-                textBoxClID.Focus();
-                return false;
+                //数字チェック
+                if (!dataInputFormCheck.CheckNumeric(textBoxClID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1001");
+                    textBoxEmID.Focus();
+                    return false;
+                }
             }
             return true;
         }
@@ -421,6 +426,33 @@ namespace SalesManagement_SysDev.Management_Order
         private void Order_Ser_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
+            invcnt();
+        }
+        private void invcnt()
+        {
+            labelOr.Visible = false;
+            labelSo.Visible = false;
+            labelEm.Visible = false;
+            labelCl.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+        }
+        private void incntok()
+        {
+            labelOr.Visible = true;
+            labelSo.Visible = true;
+            labelEm.Visible = true;
+            labelCl.Visible = true;
+            datetime.Visible = true;
+            userid.Visible = true;
+            username.Visible = true;
+            uptime.Visible = true;
+            upuserid.Visible = true;
+            upusername.Visible = true;
         }
         ////////////////////////////////////////////////////////////////////////////////////////////
         private void SetFormDataGridView()
@@ -503,6 +535,55 @@ namespace SalesManagement_SysDev.Management_Order
 
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+        }
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
+            labelOr.Text = textBoxOrID.ToString();
+            labelSo.Text = textBoxSoID.ToString();
+            labelEm.Text = textBoxEmID.ToString();
+            labelCl.Text = textBoxClID.ToString();
+            serchdateset(number);
+            setdatedetail();
+        }
 
+
+        private void serchdateset(int number)
+        {
+
+            OrHistory selectCondition = new OrHistory
+            {
+                EmID = number.ToString(),
+
+            };
+            Orhistory = orderdateAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            var x = Orhistory.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
+
+            labelOr.Text = x.OrID;
+            labelSo.Text = x.SoID;
+            labelEm.Text = x.EmID;
+            labelCl.Text = x.ClID;
+            datetime.Text = x.RegisteredDate;
+            userid.Text = x.regUserID;
+            username.Text = x.regUserName;
+            uptime.Text = x.UpDateTime;
+            upuserid.Text = x.LastupdatedUserID;
+            upusername.Text = x.LastupdatedUserName;
+            incntok();
+
+
+        }
     }
 }
