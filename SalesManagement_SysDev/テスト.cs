@@ -14,8 +14,10 @@ namespace SalesManagement_SysDev
     {
         MessageDsp messageDsp = new MessageDsp();
         OrderDateAccess orderDateAccess = new OrderDateAccess();
+        OrderDetailDataAccess orderdetailDataAccess = new OrderDetailDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<T_Order> orders;
+        private static List<T_OrderDetail> orderdetails;
         public テスト()
         {
             InitializeComponent();
@@ -41,16 +43,67 @@ namespace SalesManagement_SysDev
         }
         private void button_Del_Click(object sender, EventArgs e)
         {
+            if (!GetValidDataDelete())
+            {
+                return;
+            }
 
+            var delOrder = GenerateDataAtDelete();
+
+            DeleteOrder(delOrder);
+
+            SetFormDataGridView();
         }
 
         private void button_Cle_Click(object sender, EventArgs e)
         {
             ClearInput();
         }
+        private void button_Con_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             GetDataGridView();
+        }
+        private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //データグリッドビューからクリックされたデータを各入力エリアへ
+            textBoxOrID.Text = dataGridViewDspOrder.CurrentRow.Cells[0].Value.ToString();
+            textBoxSoID.Text = dataGridViewDspOrder.CurrentRow.Cells[1].Value.ToString();
+            textBoxEmID.Text = dataGridViewDspOrder.CurrentRow.Cells[2].Value.ToString();
+            textBoxClID.Text = dataGridViewDspOrder.CurrentRow.Cells[3].Value.ToString();
+            textBoxClChange.Text = dataGridViewDspOrder.CurrentRow.Cells[4].Value.ToString();
+            dateTimePickerOrDate.Text = dataGridViewDspOrder.CurrentRow.Cells[5].Value.ToString();
+            textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
+            //チェックボックスの状態を判断
+            if ((int)dataGridViewDspOrder.CurrentRow.Cells[6].Value == 0)
+            {
+                checkBoxOrStateFlag.Checked = false;
+            }
+            else
+            {
+                checkBoxOrStateFlag.Checked = true;
+            }
+            if ((int)dataGridViewDspOrder.CurrentRow.Cells[7].Value == 0)
+            {
+                checkBoxOrFlag.Checked = false;
+            }
+            else
+            {
+                checkBoxOrFlag.Checked = true;
+            }
+            //非表示理由の状態を判断
+            if (dataGridViewDspOrder.CurrentRow.Cells[8].Value == null)
+            {
+                textBoxOrHidden.Text = String.Empty;
+            }
+            else
+            {
+                textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
+            }
         }
 
         private void ClearInput()
@@ -66,6 +119,7 @@ namespace SalesManagement_SysDev
             textBoxOrHidden.Text = "";
         }
 
+        //Add
         private bool GetValidDataAtRegistration()
         {
             if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
@@ -247,15 +301,15 @@ namespace SalesManagement_SysDev
             {
                 checkFlg = 0;
             }
-            
-            //if(checkFlg == 0)
-            //{
-            //    hidden = String.Empty;
-            //}
-            //else
-            //{
-            //    hidden = textBoxOrHidden.Text.Trim();
-            //}
+
+            if (checkFlg == 0)
+            {
+                hidden = String.Empty;
+            }
+            else
+            {
+                hidden = textBoxOrHidden.Text.Trim();
+            }
             return new T_Order
             {
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
@@ -266,13 +320,14 @@ namespace SalesManagement_SysDev
                 OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
                 OrStateFlag = 0,
                 OrFlag = checkFlg,
-                OrHidden = textBoxOrHidden.Text.Trim()
+                OrHidden = hidden
             };
         }
+        
 
         private void RegistrationOrder(T_Order regOrder)
         {
-            DialogResult result = MessageBox.Show("20");
+            DialogResult result = MessageBox.Show("追加しますか");
             //DialogResult result = messageDsp.DspMsg("");
             if(result == DialogResult.Cancel)
             {
@@ -282,12 +337,233 @@ namespace SalesManagement_SysDev
             bool flg = orderDateAccess.AddorderData(regOrder);
             if(flg == true)
             {
-                MessageBox.Show("21");
+                MessageBox.Show("追加しました");
                 //messageDsp.DspMsg("");
             }
             else
             {
-                MessageBox.Show("22");
+                MessageBox.Show("追加できませんでした");
+                //messageDsp.DspMsg("");
+            }
+            textBoxOrID.Focus();
+
+            ClearInput();
+        }
+
+        //Delete
+        private bool GetValidDataDelete()
+        {
+            if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxOrID.Text.Trim()))
+                {
+                    MessageBox.Show("1");
+                    //messageDsp.DspMsg("");
+                    textBoxOrID.Focus();
+                    return false;
+                }
+
+                if (textBoxOrID.TextLength > 6)
+                {
+                    MessageBox.Show("2");
+                    //messageDsp.DspMsg("");
+                    textBoxOrID.Focus();
+                    return false;
+                }
+
+                if (!orderDateAccess.CheckOrIDExistence(textBoxOrID.Text.Trim()))
+                {
+                    MessageBox.Show("3");
+                    //messageDsp.DspMsg("");
+                    textBoxOrID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("4");
+                //messageDsp.DspMsg("");
+                textBoxOrID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
+                {
+                    MessageBox.Show("5");
+                    //messageDsp.DspMsg("");
+                    textBoxSoID.Focus();
+                    return false;
+                }
+
+                if (textBoxSoID.TextLength > 2)
+                {
+                    MessageBox.Show("6");
+                    //messageDsp.DspMsg("");
+                    textBoxSoID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("7");
+                //messageDsp.DspMsg("");
+                textBoxSoID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
+                {
+                    MessageBox.Show("8");
+                    //messageDsp.DspMsg("");
+                    textBoxEmID.Focus();
+                    return false;
+                }
+
+                if (textBoxEmID.TextLength > 6)
+                {
+                    MessageBox.Show("9");
+                    //messageDsp.DspMsg("");
+                    textBoxEmID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("10");
+                //messageDsp.DspMsg("");
+                textBoxEmID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxClID.Text.Trim()))
+                {
+                    MessageBox.Show("11");
+                    //messageDsp.DspMsg("");
+                    textBoxClID.Focus();
+                    return false;
+                }
+
+                if (textBoxClID.TextLength > 6)
+                {
+                    MessageBox.Show("12");
+                    //messageDsp.DspMsg("");
+                    textBoxClID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("13");
+                //messageDsp.DspMsg("");
+                textBoxClID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxClChange.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckFullWidth(textBoxClChange.Text.Trim()))
+                {
+                    MessageBox.Show("14");
+                    //messageDsp.DspMsg("");
+                    textBoxClChange.Focus();
+                    return false;
+                }
+
+                if (textBoxClChange.TextLength > 50)
+                {
+                    MessageBox.Show("15");
+                    //messageDsp.DspMsg("");
+                    textBoxClChange.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("16");
+                //messageDsp.DspMsg("");
+                textBoxClChange.Focus();
+                return false;
+            }
+
+            if (checkBoxOrStateFlag.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("17");
+                //messageDsp.DspMsg("");
+                checkBoxOrStateFlag.Focus();
+                return false;
+            }
+
+            if (checkBoxOrFlag.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("18");
+                //messageDsp.DspMsg("");
+                checkBoxOrFlag.Focus();
+                return false;
+            }
+
+            if (checkBoxOrFlag.Checked == true)
+            {
+                if (String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
+                {
+                    MessageBox.Show("19");
+                    //messageDsp.DspMsg("");
+                    checkBoxOrFlag.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private T_Order GenerateDataAtDelete()
+        {
+            int checkFlg = 2;
+            string hidden;
+            if (checkFlg == 0)
+            {
+                hidden = String.Empty;
+            }
+            else
+            {
+                hidden = textBoxOrHidden.Text.Trim();
+            }
+            return new T_Order
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+                OrStateFlag = 0,
+                OrFlag = checkFlg,
+                OrHidden = hidden
+            };
+        }
+
+        private void DeleteOrder(T_Order delOrder)
+        {
+            DialogResult result = MessageBox.Show("削除しますか？");
+            //DialogResult result = messageDsp.DspMsg("");
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            bool flg = orderDateAccess.DeleteOrderData(delOrder);
+            if (flg == true)
+            {
+                MessageBox.Show("削除しました");
+                //messageDsp.DspMsg("");
+            }
+            else
+            {
+                MessageBox.Show("削除できませんでした");
                 //messageDsp.DspMsg("");
             }
             textBoxOrID.Focus();
@@ -302,11 +578,14 @@ namespace SalesManagement_SysDev
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
-            dataGridViewDsp.ReadOnly = true;
+            dataGridViewDspOrder.ReadOnly = true;
+            dataGridViewDspOrderDetail.ReadOnly = true;
             //行内をクリックすることで行を選択
-            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDspOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dataGridViewDspOrderDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //ヘッダー位置の指定
-            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrderDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
         }
@@ -314,6 +593,7 @@ namespace SalesManagement_SysDev
         private void GetDataGridView()
         {
             int radioint = 0;
+            int radioint2 = 0;
             if(radioButton1.Checked == true)
             {
                 radioint = 2;
@@ -323,6 +603,7 @@ namespace SalesManagement_SysDev
                 radioint = 0;
             }
             orders = orderDateAccess.GetOrderDataDsp(radioint);
+            orderdetails = orderdetailDataAccess.GetOrderDetailDataDsp(radioint);
             SetDataGridView();
         }
 
@@ -330,46 +611,63 @@ namespace SalesManagement_SysDev
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDsp.Refresh();
+            dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspOrderDetail.DataSource = orderdetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspOrder.Refresh();
+            dataGridViewDspOrderDetail.Refresh();
             
             if (pageNo + 1 > 1)
                 textBoxPageNo.Text = (pageNo + 1).ToString();
             else
                 textBoxPageNo.Text = "1";
             
-            dataGridViewDsp.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspOrderDetail.DataSource = orderdetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
             
-            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
+            foreach (DataGridViewColumn clm in dataGridViewDspOrder.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            foreach (DataGridViewColumn clm in dataGridViewDspOrderDetail.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridViewDsp.Columns[0].Width = 100;
-            dataGridViewDsp.Columns[1].Width = 100;
-            dataGridViewDsp.Columns[2].Width = 100;
-            dataGridViewDsp.Columns[3].Width = 100;
-            dataGridViewDsp.Columns[4].Width = 100;
-            dataGridViewDsp.Columns[5].Width = 100;
-            dataGridViewDsp.Columns[6].Width = 100;
-            dataGridViewDsp.Columns[7].Width = 100;
-            dataGridViewDsp.Columns[8].Width = 100;
+            dataGridViewDspOrder.Columns[0].Width = 100;
+            dataGridViewDspOrder.Columns[1].Width = 100;
+            dataGridViewDspOrder.Columns[2].Width = 100;
+            dataGridViewDspOrder.Columns[3].Width = 100;
+            dataGridViewDspOrder.Columns[4].Width = 100;
+            dataGridViewDspOrder.Columns[5].Width = 100;
+            dataGridViewDspOrder.Columns[6].Width = 100;
+            dataGridViewDspOrder.Columns[7].Width = 100;
+            dataGridViewDspOrder.Columns[8].Width = 100;
+
+            dataGridViewDspOrderDetail.Columns[0].Width = 100;
+            dataGridViewDspOrderDetail.Columns[1].Width = 100;
+            dataGridViewDspOrderDetail.Columns[2].Width = 100;
+            dataGridViewDspOrderDetail.Columns[3].Width = 100;
+            dataGridViewDspOrderDetail.Columns[4].Width = 100;
 
             //各列の文字位置の指定
-            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrder.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            
+            dataGridViewDspOrderDetail.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrderDetail.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrderDetail.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrderDetail.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspOrderDetail.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
-
-        
     }
 }
