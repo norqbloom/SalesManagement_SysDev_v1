@@ -46,11 +46,13 @@ namespace SalesManagement_SysDev.Management_Chumon
             upusername.Visible = true;
         }
 
-        private void Chumon_Ser_Load(object sender,EventArgs e)
-        {
-            SetFormDataGridView();
-            invcnt();
-        }
+        //private void Chumon_Ser_Load(object sender,EventArgs e)
+        //{
+        //    SetFormDataGridView();
+        //    invcnt();
+        //    chumons = chumonDataAccess.GetChumonDspData();
+        //    dataGridView1.DataSource = chumons;
+        //}
 
         private void buttonSer_Click(object sender, EventArgs e)
         {
@@ -250,6 +252,13 @@ namespace SalesManagement_SysDev.Management_Chumon
             chumons = chumonDataAccess.Getdubblwdata(selectCondition);
         }
 
+        ///////////////////////////////
+        //メソッド名：SetFormDataGridView()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：データグリッドビューの設定
+        ///////////////////////////////
+
         private void SetFormDataGridView()
         {
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -261,40 +270,48 @@ namespace SalesManagement_SysDev.Management_Chumon
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
+        ///////////////////////////////
+        //メソッド名：SetDataGridView()
+        //引　数   ：なし
+        //戻り値   ：なし
+        //機　能   ：データグリッドビューへの表示
+        ///////////////////////////////
         private void SetDataGridView()
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridView1.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
             labelPage.Text = "/" + ((int)Math.Ceiling(chumons.Count / (double)pageSize)) + "ページ";
-
+            //DataGridViewを更新
             dataGridView1.Refresh();
         }
 
+        //削除ボタン
         private void buttonDel_Click(object sender, EventArgs e)
         {
             
         }
 
+        //確定ボタン
         private void buttonCon_Click(object sender, EventArgs e)
         {
-            //var getCh = GetDataGridView();
-            var conCh = GenerateDataAtConfirm();
-            //var decSt = GenerateDataAtDecrease();
+            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            GenerateDataAtConfirm(number);
+            int ODnumber = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            GenerateDataAtDecrease(ODnumber);
         }
 
-       // private T_Chumon GetDataGridView()
-
-        private T_Chumon GenerateDataAtConfirm()
+        private void GenerateDataAtConfirm(int conChumon)
         {
-            return new T_Chumon
-            {
-                
-                ChStateFlag = 1
-            };
+            chumonDataAccess.ConfirmChumonData(conChumon);
         }
 
-        //private T_Stock GenerateDataAtDecrease()
+        private void GenerateDataAtDecrease(int decChumon)
+        {
+
+        }
+
+
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -409,6 +426,14 @@ namespace SalesManagement_SysDev.Management_Chumon
             dataGridView1.Refresh();
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void Chumon_Ser_Load_1(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+            invcnt();
+            chumons = chumonDataAccess.GetChumonDspData();
+            dataGridView1.DataSource = chumons;
         }
     }
 }
