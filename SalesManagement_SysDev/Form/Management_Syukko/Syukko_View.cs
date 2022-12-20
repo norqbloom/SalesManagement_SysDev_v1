@@ -34,8 +34,7 @@ namespace SalesManagement_SysDev.Management_Syukko
             dataGridView2.DataSource = commitdata;
         }
         private void Syu_Con_Button_Click(object sender, EventArgs e)
-        {
-            //int number;
+        {            
             foreach(var item in commitdata)
             {
                 GenerateDataAtUpdate(item);
