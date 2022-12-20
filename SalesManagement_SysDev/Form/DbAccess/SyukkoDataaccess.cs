@@ -65,7 +65,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                context.T_Arrivals.Add(selectCondition);
+                context.T_Arrivals.Add(selectCondition);             
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -80,9 +80,11 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                var Arrivals = context.T_Arrivals.Where(x => x.ArID == selectCondition);
+                var Arrivals = context.T_Arrivals.Where(x => x.OrID == selectCondition);
                 var y = Arrivals.FirstOrDefault();
                 number = y.ArID;
+                context.Dispose();
+
             }
             catch (Exception ex)
             {
@@ -98,12 +100,33 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 var detail = context.T_ArrivalDetails.Where(x => x.ArID == number);
 
+                context.Dispose();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void 
+        //出庫IDから商品IDと数量
+        public List<T_SyukkoDetail> pridget(int number)
+        {
+            List<T_SyukkoDetail> syukkoDetails = new List<T_SyukkoDetail>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                syukkoDetails = context.T_SyukkoDetails.Where(x => x.SyID == number).ToList();
+
+
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return syukkoDetails;
+        }
+
     }
 }

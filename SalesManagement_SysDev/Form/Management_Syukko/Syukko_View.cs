@@ -39,10 +39,12 @@ namespace SalesManagement_SysDev.Management_Syukko
             foreach(var item in commitdata)
             {
                 GenerateDataAtUpdate(item);
-                GenerateDataNyuuko(item);              
-                int number = syukkoDataaccess.nyuukodatil(item.SyID);
-                //List<T_SyukkoDetail> details =
-                //neredetail(number,details);
+                GenerateDataNyuuko(item);
+                //入庫IDと出庫詳細からIDと数量取得
+                var syukkodetail = syukkoDataaccess.pridget(item.SyID);
+
+                //int number = syukkoDataaccess.nyuukodatil(item.SyID);
+
             }
         }
         private void neredetail(int upitem,T_SyukkoDetail updata)
