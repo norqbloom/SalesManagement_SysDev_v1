@@ -287,15 +287,6 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private T_Chumon GenerateDataAtConfirm()
         {
-            int checkflg;
-            if (checkBoxChStateFlag.Checked == true)
-            {
-                checkflg = 1;
-            }
-            else
-            {
-                checkflg = 0;
-            }
             return new T_Chumon
             {
                 
