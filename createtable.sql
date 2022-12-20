@@ -519,6 +519,11 @@ INSERT INTO T_Order(OrID,SoID,EmID,ClID,ClCharge,OrDate,OrStateFlag,OrFlag,OrHid
 VALUES(1,1,310,2,N'萬田銀次郎',N'2020/12/10',0,0,null)
 SET IDENTITY_INSERT T_Order OFF
 
+SET IDENTITY_INSERT T_OrderDetail ON
+INSERT INTO T_OrderDetail(OrDetailID,OrID,PrID,OrQuantity,OrTotalPrice)
+VALUES(1,1,3,40,200000 )
+SET IDENTITY_INSERT T_OrderDetail OFF
+
 /*テンプレ*/
 /*SET IDENTITY_INSERT  ON
 INSERT INTO ()

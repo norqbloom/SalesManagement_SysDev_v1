@@ -231,7 +231,7 @@ namespace SalesManagement_SysDev.Management_Product
             //非表示理由
             if (checkBoxPrFlag.Checked == true)
             {
-                if (!String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
+                if (String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
                 {
                     messageDsp.DspMsg("M");//メッセージ不明
                     checkBoxPrFlag.Focus();
