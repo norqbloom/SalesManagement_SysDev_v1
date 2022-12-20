@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Entity\Emphistory.cs" />
     <Compile Include="Entity\HaHistory.cs" />
+    <Compile Include="Entity\OrHistory.cs" />
     <Compile Include="Entity\T_Chhistory.cs" />
     <Compile Include="Form\DbAccess\ArrivalDataAccess.cs" />
     <Compile Include="Form\DbAccess\ChumonDataAccess.cs" />
