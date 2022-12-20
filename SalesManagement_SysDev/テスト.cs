@@ -53,6 +53,8 @@ namespace SalesManagement_SysDev
             DeleteOrder(delOrder);
 
             SetFormDataGridView();
+
+            Confirm_OpenForm();
         }
 
         private void button_Cle_Click(object sender, EventArgs e)
@@ -668,6 +670,14 @@ namespace SalesManagement_SysDev
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
+        }
+
+        private void Confirm_OpenForm()
+        {
+            Form form = new テスト2();
+            form.Show();
+
+
         }
     }
 }
