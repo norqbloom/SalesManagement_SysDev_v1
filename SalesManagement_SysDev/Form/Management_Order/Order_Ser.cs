@@ -230,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            //orders = orderdateAccess.Getfull(selectCondition);
+            orders = orderdateAccess.Getfull(selectCondition);
         }
         private void dateorsoem()
         {
@@ -243,11 +243,8 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-<<<<<<< HEAD
             orders= orderdateAccess.Getorsoem(selectCondition);
-=======
-            //orders= orderdateAccess.Get(selectCondition);
->>>>>>> 2290c642d3d7be6ec045b0aa19e271a9633c0e5b
+
         }
         private void dateorso()
         {
@@ -330,11 +327,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-<<<<<<< HEAD
             orders = orderdateAccess.Getoremcl(selectCondition);
-=======
-            //orders = orderdateAccess.Getfull(selectCondition);
->>>>>>> 2290c642d3d7be6ec045b0aa19e271a9633c0e5b
         }
         private void datesoemcl()
         {
@@ -347,11 +340,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-<<<<<<< HEAD
             orders = orderdateAccess.Getsoemcl(selectCondition);
-=======
-            //orders = orderdateAccess.Getfull(selectCondition);
->>>>>>> 2290c642d3d7be6ec045b0aa19e271a9633c0e5b
         }
         private void datesocl()
         {
@@ -363,11 +352,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-<<<<<<< HEAD
             orders = orderdateAccess.Getsocl(selectCondition);
-=======
-            //orders = orderdateAccess.Getfull(selectCondition);
->>>>>>> 2290c642d3d7be6ec045b0aa19e271a9633c0e5b
         }
         private void dateemcl()
         {
@@ -379,11 +364,8 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-<<<<<<< HEAD
             orders = orderdateAccess.Getemcl(selectCondition);
-=======
-            //orders = orderdateAccess.Getfull(selectCondition);
->>>>>>> 2290c642d3d7be6ec045b0aa19e271a9633c0e5b
+
         }
         private void datecl()
         {
@@ -394,11 +376,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-<<<<<<< HEAD
             orders = orderdateAccess.Getcl(selectCondition);
-=======
-            //orders = orderdateAccess.Getfull(selectCondition);
->>>>>>> 2290c642d3d7be6ec045b0aa19e271a9633c0e5b
         }
         ////////////////////////////////////////////////////////////////////////////////////////////
         
