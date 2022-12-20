@@ -155,6 +155,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 context.T_ArrivalDetails.Add(selectCondition);
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
