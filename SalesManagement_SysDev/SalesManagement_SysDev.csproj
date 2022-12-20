@@ -230,12 +230,6 @@
     <Compile Include="Form\Management_Sales\Sales_Ser.Designer.cs">
       <DependentUpon>Sales_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Management_Shipment\Shipment_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Management_Shipment\Shipment_View.Designer.cs">
-      <DependentUpon>Shipment_View.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Management_Stock\Stock_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,9 +391,6 @@
     <EmbeddedResource Include="Form\Management_Sales\Sales_Ser.resx">
       <DependentUpon>Sales_Ser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Management_Shipment\Shipment_View.resx">
-      <DependentUpon>Shipment_View.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Stock\Stock_Ser.resx">
       <DependentUpon>Stock_Ser.cs</DependentUpon>
     </EmbeddedResource>
@@ -503,6 +494,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings_FILL0_wght400_GRAD0_opsz48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\Management_Shipment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

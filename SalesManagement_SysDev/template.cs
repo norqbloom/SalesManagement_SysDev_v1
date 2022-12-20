@@ -548,7 +548,7 @@ namespace SalesManagement_SysDev
 
         private void shipping_display_Click(object sender, EventArgs e)
         {
-            openChildForm(new Management_Shipment.Shipment_View());
+            //openChildForm(new Management_Shipment.Shipment_View());
         }
 
         private void RegPasswordbtn_Click(object sender, EventArgs e)
