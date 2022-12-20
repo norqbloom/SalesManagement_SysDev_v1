@@ -230,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.Getfull(selectCondition);
+            //orders = orderdateAccess.Getfull(selectCondition);
         }
         private void dateorsoem()
         {
@@ -243,7 +243,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders= orderdateAccess.Get(selectCondition);
+            //orders= orderdateAccess.Get(selectCondition);
         }
         private void dateorso()
         {
@@ -330,7 +330,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.Getfull(selectCondition);
+            //orders = orderdateAccess.Getfull(selectCondition);
         }
         private void datesoemcl()
         {
@@ -344,7 +344,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.Getfull(selectCondition);
+            //orders = orderdateAccess.Getfull(selectCondition);
         }
         private void datesocl()
         {
@@ -358,7 +358,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.Getfull(selectCondition);
+            //orders = orderdateAccess.Getfull(selectCondition);
         }
         private void dateemcl()
         {
@@ -372,7 +372,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.Getfull(selectCondition);
+            //orders = orderdateAccess.Getfull(selectCondition);
         }
         private void datecl()
         {
@@ -386,7 +386,7 @@ namespace SalesManagement_SysDev.Management_Order
                 ClCharge = textBoxClChange.Text.Trim(),
                 //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
-            orders = orderdateAccess.Getfull(selectCondition);
+            //orders = orderdateAccess.Getfull(selectCondition);
         }
         
         
