@@ -31,7 +31,7 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return flg;
-        }
+        } 
 
         ///////////////////////////////
         //メソッド名：DeleteChumonsData()
@@ -56,7 +56,7 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        
+
 
         ///////////////////////////////
         //メソッド名：ConfirmChumonsData()
@@ -72,7 +72,9 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 var chumons = context.T_Chumons.Single(x => x.ChID == conChumon);
-                context.T_Chumons.Remove(chumons);
+                chumons.ChStateFlag = 1;
+
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -81,7 +83,35 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        
+
+        ///////////////////////////////
+        //メソッド名：DecreaseChumonsData()
+        //引　数   ：注文データ
+        //戻り値   ：True or False
+        //機　能   ：注文データの減少
+        //          ：減少成功の場合True
+        //          ：減少失敗の場合False
+        ///////////////////////////////
+
+        //public T_OrderDetail DecreaseChumonData(T_Order decStock)
+        //{
+        //    List<T_OrderDetail> chumons = new List<T_OrderDetail>();
+        //    try
+        //    {
+        //        var context = new SalesManagement_DevContext();
+        //        chumons = context.T_OrderDetails.Where(x => x.OrID == decStock.OrID).ToList();
+        //        //var chumons = context.T_OrderDetail.Where(x => x.PrID == decStock.PrID);
+
+        //        context.SaveChanges();
+        //        context.Dispose();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    return chumons;
+        //}
+
 
         ///////////////////////////////
         //メソッド名：GetChumonsData()
@@ -119,7 +149,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                Chumon = context.T_Chumons.Where(x => x.ChFlag == 0).ToList();
+                Chumon = context.T_Chumons.Where(x => x.ChFlag == 0 && x.ChStateFlag == 1 && x.ChStateFlag == 0).ToList();
                 context.Dispose();
             }
             catch (Exception ex)

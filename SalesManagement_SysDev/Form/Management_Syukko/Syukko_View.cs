@@ -34,28 +34,40 @@ namespace SalesManagement_SysDev.Management_Syukko
             dataGridView2.DataSource = commitdata;
         }
         private void Syu_Con_Button_Click(object sender, EventArgs e)
-        {
-            //int number;
+        {            
             foreach(var item in commitdata)
             {
                 GenerateDataAtUpdate(item);
                 GenerateDataNyuuko(item);
-                //入庫IDと出庫詳細からIDと数量取得
+                MessageBox.Show("ok");
+                //入庫ID
+                int number = syukkoDataaccess.PriID(item.OrID);
+                //商品IDと数量
                 var syukkodetail = syukkoDataaccess.pridget(item.SyID);
-
-                //int number = syukkoDataaccess.nyuukodatil(item.SyID);
-
+                var x = syukkodetail.FirstOrDefault();
+                if (x != null)
+                {
+                    neredetail(number, x.PrID, x.SyQuantity);
+                    MessageBox.Show("ok");
+                }
             }
+            syukkos = syukkoDataaccess.getSyukko();
+            dataGridView1.DataSource = syukkos;
+            commitdata = null;
+            dataGridView2.DataSource = commitdata;
+
         }
-        private void neredetail(int upitem,T_SyukkoDetail updata)
+        private void neredetail(int upitem,int PrID,int SyQuantity)
         {
             T_ArrivalDetail selectCondition = new T_ArrivalDetail()
             {
                 ArID=upitem,
-                PrID=updata.PrID,
-                ArQuantity=updata.SyQuantity
+                PrID=PrID,
+                ArQuantity=SyQuantity
 
             };
+            syukkoDataaccess.nyuukodetail(selectCondition);
+
         }
         private void GenerateDataNyuuko(T_Syukko upitem)
         {
