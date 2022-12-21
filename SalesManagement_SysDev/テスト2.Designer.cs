@@ -29,243 +29,151 @@ namespace SalesManagement_SysDev
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxClChange = new System.Windows.Forms.TextBox();
-            this.dateTimePickerOrDate = new System.Windows.Forms.DateTimePicker();
-            this.checkBoxOrFlag = new System.Windows.Forms.CheckBox();
-            this.textBoxOrHidden = new System.Windows.Forms.TextBox();
-            this.textBoxClID = new System.Windows.Forms.TextBox();
-            this.textBoxEmID = new System.Windows.Forms.TextBox();
-            this.textBoxSoID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBoxOrStateFlag = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxOrID = new System.Windows.Forms.TextBox();
-            this.button_Con = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxOrTotalPrice = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxOrQuantity = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxPrName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBoxPrID = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxClChange
+            // button1
             // 
-            this.textBoxClChange.Location = new System.Drawing.Point(240, 172);
-            this.textBoxClChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClChange.Name = "textBoxClChange";
-            this.textBoxClChange.Size = new System.Drawing.Size(100, 22);
-            this.textBoxClChange.TabIndex = 81;
-            // 
-            // dateTimePickerOrDate
-            // 
-            this.dateTimePickerOrDate.Location = new System.Drawing.Point(240, 196);
-            this.dateTimePickerOrDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerOrDate.Name = "dateTimePickerOrDate";
-            this.dateTimePickerOrDate.Size = new System.Drawing.Size(161, 22);
-            this.dateTimePickerOrDate.TabIndex = 80;
-            // 
-            // checkBoxOrFlag
-            // 
-            this.checkBoxOrFlag.AutoSize = true;
-            this.checkBoxOrFlag.Location = new System.Drawing.Point(240, 272);
-            this.checkBoxOrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBoxOrFlag.Name = "checkBoxOrFlag";
-            this.checkBoxOrFlag.Size = new System.Drawing.Size(34, 19);
-            this.checkBoxOrFlag.TabIndex = 79;
-            this.checkBoxOrFlag.Text = " ";
-            this.checkBoxOrFlag.UseVisualStyleBackColor = true;
-            // 
-            // textBoxOrHidden
-            // 
-            this.textBoxOrHidden.Location = new System.Drawing.Point(240, 306);
-            this.textBoxOrHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxOrHidden.Name = "textBoxOrHidden";
-            this.textBoxOrHidden.Size = new System.Drawing.Size(81, 22);
-            this.textBoxOrHidden.TabIndex = 78;
-            // 
-            // textBoxClID
-            // 
-            this.textBoxClID.Location = new System.Drawing.Point(240, 142);
-            this.textBoxClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClID.Name = "textBoxClID";
-            this.textBoxClID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxClID.TabIndex = 77;
-            // 
-            // textBoxEmID
-            // 
-            this.textBoxEmID.Location = new System.Drawing.Point(240, 111);
-            this.textBoxEmID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxEmID.Name = "textBoxEmID";
-            this.textBoxEmID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxEmID.TabIndex = 76;
-            // 
-            // textBoxSoID
-            // 
-            this.textBoxSoID.Location = new System.Drawing.Point(240, 79);
-            this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxSoID.Name = "textBoxSoID";
-            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxSoID.TabIndex = 75;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 312);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 15);
-            this.label9.TabIndex = 74;
-            this.label9.Text = "非表示理由";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 272);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 15);
-            this.label8.TabIndex = 73;
-            this.label8.Text = "受注管理フラグ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 241);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 15);
-            this.label7.TabIndex = 72;
-            this.label7.Text = "受注状態フラグ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 15);
-            this.label6.TabIndex = 71;
-            this.label6.Text = "受注年月日";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 15);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "顧客担当者名";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
-            this.label4.TabIndex = 69;
-            this.label4.Text = "顧客ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "社員ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 15);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "営業所ID";
-            // 
-            // checkBoxOrStateFlag
-            // 
-            this.checkBoxOrStateFlag.AutoSize = true;
-            this.checkBoxOrStateFlag.Location = new System.Drawing.Point(240, 238);
-            this.checkBoxOrStateFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBoxOrStateFlag.Name = "checkBoxOrStateFlag";
-            this.checkBoxOrStateFlag.Size = new System.Drawing.Size(34, 19);
-            this.checkBoxOrStateFlag.TabIndex = 66;
-            this.checkBoxOrStateFlag.Text = " ";
-            this.checkBoxOrStateFlag.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(470, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 46);
+            this.label1.Location = new System.Drawing.Point(31, 115);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 15);
-            this.label1.TabIndex = 65;
+            this.label1.TabIndex = 25;
             this.label1.Text = "受注ID";
             // 
             // textBoxOrID
             // 
-            this.textBoxOrID.Location = new System.Drawing.Point(240, 46);
-            this.textBoxOrID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxOrID.Location = new System.Drawing.Point(142, 111);
+            this.textBoxOrID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOrID.Name = "textBoxOrID";
-            this.textBoxOrID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxOrID.TabIndex = 64;
+            this.textBoxOrID.Size = new System.Drawing.Size(132, 22);
+            this.textBoxOrID.TabIndex = 24;
             // 
-            // button_Con
+            // label13
             // 
-            this.button_Con.Location = new System.Drawing.Point(664, 312);
-            this.button_Con.Margin = new System.Windows.Forms.Padding(4);
-            this.button_Con.Name = "button_Con";
-            this.button_Con.Size = new System.Drawing.Size(100, 29);
-            this.button_Con.TabIndex = 82;
-            this.button_Con.Text = "Confirm";
-            this.button_Con.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(31, 273);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 15);
+            this.label13.TabIndex = 50;
+            this.label13.Text = "合計金額";
             // 
-            // textBox1
+            // textBoxOrTotalPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(559, 43);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(81, 22);
-            this.textBox1.TabIndex = 83;
+            this.textBoxOrTotalPrice.Location = new System.Drawing.Point(142, 269);
+            this.textBoxOrTotalPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxOrTotalPrice.Name = "textBoxOrTotalPrice";
+            this.textBoxOrTotalPrice.Size = new System.Drawing.Size(132, 22);
+            this.textBoxOrTotalPrice.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(31, 227);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 15);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "数量";
+            // 
+            // textBoxOrQuantity
+            // 
+            this.textBoxOrQuantity.Location = new System.Drawing.Point(142, 223);
+            this.textBoxOrQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxOrQuantity.Name = "textBoxOrQuantity";
+            this.textBoxOrQuantity.Size = new System.Drawing.Size(132, 22);
+            this.textBoxOrQuantity.TabIndex = 47;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(31, 184);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 15);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "商品名";
+            // 
+            // textBoxPrName
+            // 
+            this.textBoxPrName.Location = new System.Drawing.Point(142, 180);
+            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrName.Name = "textBoxPrName";
+            this.textBoxPrName.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPrName.TabIndex = 45;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(502, 46);
+            this.label10.Location = new System.Drawing.Point(31, 145);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 15);
-            this.label10.TabIndex = 84;
-            this.label10.Text = "受注ID";
+            this.label10.TabIndex = 44;
+            this.label10.Text = "商品ID";
+            // 
+            // textBoxPrID
+            // 
+            this.textBoxPrID.Location = new System.Drawing.Point(142, 141);
+            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrID.Name = "textBoxPrID";
+            this.textBoxPrID.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPrID.TabIndex = 43;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(432, 200);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 51;
             // 
             // テスト2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBoxOrTotalPrice);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxOrQuantity);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBoxPrName);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button_Con);
-            this.Controls.Add(this.textBoxClChange);
-            this.Controls.Add(this.dateTimePickerOrDate);
-            this.Controls.Add(this.checkBoxOrFlag);
-            this.Controls.Add(this.textBoxOrHidden);
-            this.Controls.Add(this.textBoxClID);
-            this.Controls.Add(this.textBoxEmID);
-            this.Controls.Add(this.textBoxSoID);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBoxOrStateFlag);
+            this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxOrID);
+            this.Controls.Add(this.button1);
             this.Name = "テスト2";
             this.Text = "テスト2";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,26 +181,17 @@ namespace SalesManagement_SysDev
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxClChange;
-        private System.Windows.Forms.DateTimePicker dateTimePickerOrDate;
-        private System.Windows.Forms.CheckBox checkBoxOrFlag;
-        private System.Windows.Forms.TextBox textBoxOrHidden;
-        private System.Windows.Forms.TextBox textBoxClID;
-        private System.Windows.Forms.TextBox textBoxEmID;
-        private System.Windows.Forms.TextBox textBoxSoID;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBoxOrStateFlag;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxOrID;
-        private System.Windows.Forms.Button button_Con;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxOrTotalPrice;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxOrQuantity;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxPrName;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxPrID;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

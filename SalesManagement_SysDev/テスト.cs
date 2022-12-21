@@ -14,10 +14,10 @@ namespace SalesManagement_SysDev
     {
         MessageDsp messageDsp = new MessageDsp();
         OrderDateAccess orderDateAccess = new OrderDateAccess();
-        OrderDetailDataAccess orderdetailDataAccess = new OrderDetailDataAccess();
+        ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<T_Order> orders;
-        private static List<T_OrderDetail> orderdetails;
+        private static List<M_Product> products;
         public テスト()
         {
             InitializeComponent();
@@ -35,12 +35,15 @@ namespace SalesManagement_SysDev
             }
 
             var regOrder = GenerateDataAtRegistration();
+            var regOrderDetail = GenerateDataAtRegistration_Detail();
 
             RegistrationOrder(regOrder);
+            RegistrationOrderDetail(regOrderDetail);
 
             //Formのデータグリッドビュー
             SetFormDataGridView();
         }
+
         private void button_Del_Click(object sender, EventArgs e)
         {
             if (!GetValidDataDelete())
@@ -61,6 +64,7 @@ namespace SalesManagement_SysDev
         {
             ClearInput();
         }
+
         private void button_Con_Click(object sender, EventArgs e)
         {
 
@@ -70,6 +74,25 @@ namespace SalesManagement_SysDev
         {
             GetDataGridView();
         }
+
+        private void textBoxOrQuantity_TextChanged(object sender, EventArgs e)
+        {
+            int Price = 0;
+            string Quantity = textBoxOrQuantity.Text.Trim();
+            int PriceTotal = 0;
+
+            if (Quantity != "")
+            {
+                Price = int.Parse(dataGridViewDspProduct.CurrentRow.Cells[3].Value.ToString());
+                PriceTotal = Price * int.Parse(textBoxOrQuantity.Text.Trim());
+                textBoxOrTotalPrice.Text = PriceTotal.ToString();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //データグリッドビューからクリックされたデータを各入力エリアへ
@@ -79,7 +102,7 @@ namespace SalesManagement_SysDev
             textBoxClID.Text = dataGridViewDspOrder.CurrentRow.Cells[3].Value.ToString();
             textBoxClChange.Text = dataGridViewDspOrder.CurrentRow.Cells[4].Value.ToString();
             dateTimePickerOrDate.Text = dataGridViewDspOrder.CurrentRow.Cells[5].Value.ToString();
-            textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
+            textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[6].Value.ToString();
             //チェックボックスの状態を判断
             if ((int)dataGridViewDspOrder.CurrentRow.Cells[6].Value == 0)
             {
@@ -106,6 +129,12 @@ namespace SalesManagement_SysDev
             {
                 textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
             }
+        }
+        private void dataGridViewDspProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //データグリッドビューからクリックされたデータを各入力エリアへ
+            textBoxPrID.Text = dataGridViewDspProduct.CurrentRow.Cells[0].Value.ToString();
+            textBoxPrName.Text = dataGridViewDspProduct.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void ClearInput()
@@ -325,7 +354,18 @@ namespace SalesManagement_SysDev
                 OrHidden = hidden
             };
         }
-        
+
+        private T_OrderDetail GenerateDataAtRegistration_Detail()
+        {
+
+            return new T_OrderDetail
+            {
+               OrID = int.Parse(textBoxOrID.Text.Trim()),
+               PrID = int.Parse(textBoxPrID.Text.Trim()),
+               OrQuantity = int.Parse(textBoxOrQuantity.Text.Trim()),
+               OrTotalPrice = int.Parse(textBoxOrTotalPrice.Text.Trim())
+            };
+        }
 
         private void RegistrationOrder(T_Order regOrder)
         {
@@ -337,7 +377,12 @@ namespace SalesManagement_SysDev
             }
 
             bool flg = orderDateAccess.AddorderData(regOrder);
-            if(flg == true)
+        }
+
+        private void RegistrationOrderDetail (T_OrderDetail regOrderDetail)
+        {
+            bool flg = orderDateAccess.AddorderdetailData(regOrderDetail);
+            if (flg == true)
             {
                 MessageBox.Show("追加しました");
                 //messageDsp.DspMsg("");
@@ -351,7 +396,6 @@ namespace SalesManagement_SysDev
 
             ClearInput();
         }
-
         //Delete
         private bool GetValidDataDelete()
         {
@@ -581,13 +625,14 @@ namespace SalesManagement_SysDev
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
             dataGridViewDspOrder.ReadOnly = true;
-            dataGridViewDspOrderDetail.ReadOnly = true;
+            dataGridViewDspProduct.ReadOnly = true;
             //行内をクリックすることで行を選択
             dataGridViewDspOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDspProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //dataGridViewDspOrderDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //ヘッダー位置の指定
             dataGridViewDspOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspProduct.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
         }
@@ -605,7 +650,7 @@ namespace SalesManagement_SysDev
                 radioint = 0;
             }
             orders = orderDateAccess.GetOrderDataDsp(radioint);
-            orderdetails = orderdetailDataAccess.GetOrderDetailDataDsp(radioint);
+            products = productDataAccess.GetProductDataDsp(radioint);
             SetDataGridView();
         }
 
@@ -614,9 +659,9 @@ namespace SalesManagement_SysDev
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDspOrderDetail.DataSource = orderdetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspOrder.Refresh();
-            dataGridViewDspOrderDetail.Refresh();
+            dataGridViewDspProduct.Refresh();
             
             if (pageNo + 1 > 1)
                 textBoxPageNo.Text = (pageNo + 1).ToString();
@@ -624,13 +669,13 @@ namespace SalesManagement_SysDev
                 textBoxPageNo.Text = "1";
             
             dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDspOrderDetail.DataSource = orderdetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             
             foreach (DataGridViewColumn clm in dataGridViewDspOrder.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            foreach (DataGridViewColumn clm in dataGridViewDspOrderDetail.Columns)
+            foreach (DataGridViewColumn clm in dataGridViewDspProduct.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -645,11 +690,18 @@ namespace SalesManagement_SysDev
             dataGridViewDspOrder.Columns[7].Width = 100;
             dataGridViewDspOrder.Columns[8].Width = 100;
 
-            dataGridViewDspOrderDetail.Columns[0].Width = 100;
-            dataGridViewDspOrderDetail.Columns[1].Width = 100;
-            dataGridViewDspOrderDetail.Columns[2].Width = 100;
-            dataGridViewDspOrderDetail.Columns[3].Width = 100;
-            dataGridViewDspOrderDetail.Columns[4].Width = 100;
+            dataGridViewDspProduct.Columns[0].Width = 100;
+            dataGridViewDspProduct.Columns[1].Visible = false;
+            dataGridViewDspProduct.Columns[2].Width = 100;
+            dataGridViewDspProduct.Columns[3].Width = 100;
+            dataGridViewDspProduct.Columns[4].Visible = false;
+            dataGridViewDspProduct.Columns[5].Width = 100;
+            dataGridViewDspProduct.Columns[6].Visible = false;
+            dataGridViewDspProduct.Columns[7].Visible = false;
+            dataGridViewDspProduct.Columns[8].Visible = false;
+            dataGridViewDspProduct.Columns[9].Visible = false;
+            dataGridViewDspProduct.Columns[10].Visible = false;
+            dataGridViewDspProduct.Columns[11].Visible = false;
 
             //各列の文字位置の指定
             dataGridViewDspOrder.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -662,12 +714,10 @@ namespace SalesManagement_SysDev
             dataGridViewDspOrder.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrder.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             
-            dataGridViewDspOrderDetail.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            dataGridViewDspProduct.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspProduct.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspProduct.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspProduct.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
@@ -677,7 +727,9 @@ namespace SalesManagement_SysDev
             Form form = new テスト2();
             form.Show();
 
-
+            textBoxOrID.Text.Trim();
         }
+
+        
     }
 }
