@@ -542,11 +542,13 @@ namespace SalesManagement_SysDev.Management_Order
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int number;
+            int OrIDtxt;
+            OrIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
             number = (int)dataGridView1.CurrentRow.Cells[1].Value;
             labelOr.Text = textBoxOrID.ToString();
-            labelSo.Text = textBoxSoID.ToString();
-            labelEm.Text = textBoxEmID.ToString();
-            labelCl.Text = textBoxClID.ToString();
+            //labelSo.Text = textBoxSoID.ToString();
+            //labelEm.Text = textBoxEmID.ToString();
+            //labelCl.Text = textBoxClID.ToString();
             serchdateset(number);
             setdatedetail();
         }
@@ -557,7 +559,7 @@ namespace SalesManagement_SysDev.Management_Order
 
             OrHistory selectCondition = new OrHistory
             {
-                EmID = number.ToString(),
+                OrID = number.ToString(),
 
             };
             Orhistory = orderdateAccess.getdetail(selectCondition);
