@@ -377,7 +377,7 @@ namespace SalesManagement_SysDev
             }
             return client;
         }
-        public void upflg(int number)
+        public bool upflg(int number)
         {
             try
             {
@@ -393,6 +393,7 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            return true;
         }
     }
 

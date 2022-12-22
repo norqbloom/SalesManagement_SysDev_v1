@@ -429,7 +429,18 @@ namespace SalesManagement_SysDev
         private void button1_Click_1(object sender, EventArgs e)
         {
             int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            clientDataAccess.upflg(number);
+            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+                return;
+            bool flg= clientDataAccess.upflg(number);
+            if (flg == true)
+            {
+                //非表示にしました
+            }
+            else
+            {
+                //非表示に失敗しました。
+            }
             datenolwget();
             dataGridView1.DataSource = clients;
         }
