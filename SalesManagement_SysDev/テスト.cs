@@ -36,13 +36,17 @@ namespace SalesManagement_SysDev
             }
 
             var regOrder = GenerateDataAtRegistration();
-            var regOrderDetail = GenerateDataAtRegistration_Detail();
+            //var regOrderDetail = GenerateDataAtRegistration_Detail();
 
             RegistrationOrder(regOrder);
-            RegistrationOrderDetail(regOrderDetail);
+            //RegistrationOrderDetail(regOrderDetail);
             
             //Formのデータグリッドビュー
             SetFormDataGridView();
+
+            string OrID = textBoxOrID.Text.Trim();
+            var form = new テスト2(OrID);
+            form.Show();
         }
 
         private void button_Del_Click(object sender, EventArgs e)
@@ -171,7 +175,7 @@ namespace SalesManagement_SysDev
                     return false;
                 }
 
-                if(textBoxOrID.TextLength > 6)
+                if (textBoxOrID.TextLength > 6)
                 {
                     MessageBox.Show("2");
                     //messageDsp.DspMsg("");
@@ -351,7 +355,7 @@ namespace SalesManagement_SysDev
             }
             return new T_Order
             {
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                OrID = 0,
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
@@ -409,7 +413,7 @@ namespace SalesManagement_SysDev
                 //messageDsp.DspMsg("");
             }
             textBoxOrID.Focus();
-            ClearInput();
+            //ClearInput();
         }
 
         private void RegistrationOrderDetail (T_OrderDetail regOrderDetail)
@@ -760,6 +764,11 @@ namespace SalesManagement_SysDev
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string OrID = textBoxOrID.Text.Trim();
+            var form = new テスト2(OrID);
+            form.Show();
+        }
     }
 }
