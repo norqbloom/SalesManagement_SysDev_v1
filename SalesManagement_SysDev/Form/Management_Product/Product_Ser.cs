@@ -16,7 +16,7 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
-        private static List<M_Prohistory> history;
+        private static List<Prhistory> history;
    
 
 
@@ -27,10 +27,11 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void invcnt()
         {
-            label5.Visible = false;
-            IDtxt.Visible = false;
+            labelPr.Visible = false;
+            labelMa.Visible = false;
+            labelSc.Visible = false;
             datetime.Visible = false;
-            upusername.Visible = false;
+            userid.Visible = false;
             username.Visible = false;
             uptime.Visible = false;
             upuserid.Visible = false;
@@ -38,10 +39,11 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void incntok()
         {
-            label5.Visible = true;
-            IDtxt.Visible = true;
+            labelPr.Visible = true;
+            labelMa.Visible = true;
+            labelSc.Visible = true;
             datetime.Visible = true;
-            upusername.Visible = true;
+            userid.Visible = true;
             username.Visible = true;
             uptime.Visible = true;
             upuserid.Visible = true;
@@ -466,10 +468,10 @@ namespace SalesManagement_SysDev.Management_Product
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
-            int ClIDtxt;
+            int PrIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            label5.Text = ClIDtxt.ToString();
+            PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            labelPr.Text = PrIDtxt.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -477,7 +479,7 @@ namespace SalesManagement_SysDev.Management_Product
         private void serchdateset(int number)
         {
 
-            M_Prohistory selectCondition = new M_Prohistory
+            Prhistory selectCondition = new Prhistory
             {
                 PrID = number.ToString(),
 
@@ -493,7 +495,9 @@ namespace SalesManagement_SysDev.Management_Product
                 return;
             }
 
-            IDtxt.Text = x.PrID;
+            labelPr.Text = x.PrID;
+            labelMa.Text = x.MaID;
+            labelSc.Text = x.ScID;
             datetime.Text = x.RegisteredDate;
             upusername.Text = x.regUserID;
             username.Text = x.regUserName;
@@ -501,6 +505,11 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
