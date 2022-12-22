@@ -85,6 +85,33 @@ namespace SalesManagement_SysDev
         }
 
         ///////////////////////////////
+        //メソッド名：BringChumonsData()
+        //引　数   ：注文データ
+        //戻り値   ：True or False
+        //機　能   ：受注詳細から数量を持ってくる
+        //          ：成功の場合True
+        //          ：失敗の場合False
+        ///////////////////////////////
+        public List<T_OrderDetail> BringChumonData(int number)
+        {
+            List<T_OrderDetail> chumons = new List<T_OrderDetail>();
+            int nn = 0;
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                chumons = context.T_OrderDetails.Where(x => x.OrID == number).ToList();
+                //var chumons = context.T_OrderDetail.Where(x => x.PrID == decstock.PrID);
+                
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return chumons;
+        }
+
+        ///////////////////////////////
         //メソッド名：DecreaseChumonsData()
         //引　数   ：注文データ
         //戻り値   ：True or False
@@ -93,24 +120,26 @@ namespace SalesManagement_SysDev
         //          ：減少失敗の場合False
         ///////////////////////////////
 
-        //public T_OrderDetail DecreaseChumonData(T_Order decStock)
-        //{
-        //    List<T_OrderDetail> chumons = new List<T_OrderDetail>();
-        //    try
-        //    {
-        //        var context = new SalesManagement_DevContext();
-        //        chumons = context.T_OrderDetails.Where(x => x.OrID == decStock.OrID).ToList();
-        //        //var chumons = context.T_OrderDetail.Where(x => x.PrID == decStock.PrID);
+        public bool DecreaseChumonData(T_OrderDetail decStock)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var chumons = context.T_Stocks.Single(x => x.PrID == decStock.PrID);
+                chumons.StQuantity = chumons.StQuantity - decStock.OrQuantity;
 
-        //        context.SaveChanges();
-        //        context.Dispose();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    return chumons;
-        //}
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+        }
+
+
+        
 
 
         ///////////////////////////////

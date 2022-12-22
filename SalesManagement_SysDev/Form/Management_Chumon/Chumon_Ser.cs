@@ -18,6 +18,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         private static List<T_Chumon> chumons;
         private static List<T_Chhistory> history;
 
+
         public Chumon_Ser()
         {
             InitializeComponent();
@@ -297,8 +298,9 @@ namespace SalesManagement_SysDev.Management_Chumon
         {
             int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             GenerateDataAtConfirm(number);
-            int ODnumber = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            GenerateDataAtDecrease(ODnumber);
+            List<T_OrderDetail> briOrDetail = chumonDataAccess.BringChumonData(number);
+            //bool flg;
+            //flg=chumonDataAccess.DecreaseChumonData(briOrDetail);
         }
 
         private void GenerateDataAtConfirm(int conChumon)
@@ -306,9 +308,14 @@ namespace SalesManagement_SysDev.Management_Chumon
             chumonDataAccess.ConfirmChumonData(conChumon);
         }
 
-        private void GenerateDataAtDecrease(int decChumon)
+        private void GenerateDataAtBring()
         {
+            //chumonDataAccess.BringChumonData();
+        }
 
+        private void GenerateDataAtDecrease()
+        {
+            
         }
 
 
