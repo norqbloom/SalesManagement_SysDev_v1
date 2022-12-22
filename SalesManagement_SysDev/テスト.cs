@@ -18,6 +18,7 @@ namespace SalesManagement_SysDev
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<T_Order> orders;
         private static List<M_Product> products;
+        
         public テスト()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace SalesManagement_SysDev
 
             RegistrationOrder(regOrder);
             RegistrationOrderDetail(regOrderDetail);
-
+            
             //Formのデータグリッドビュー
             SetFormDataGridView();
         }
@@ -57,7 +58,6 @@ namespace SalesManagement_SysDev
 
             SetFormDataGridView();
 
-            Confirm_OpenForm();
         }
 
         private void button_Cle_Click(object sender, EventArgs e)
@@ -68,6 +68,14 @@ namespace SalesManagement_SysDev
         private void button_Con_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_ProAdd_Click(object sender, EventArgs e)
+        {
+            var regOrderDetail = GenerateDataAtRegistration_Detail();
+
+            RegistrationOrderDetail(regOrderDetail);
+            
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -357,18 +365,32 @@ namespace SalesManagement_SysDev
 
         private T_OrderDetail GenerateDataAtRegistration_Detail()
         {
+            //ここは上の方で最初に指定する
+            dataGridViewDspMul.ColumnCount = 4;
 
+            dataGridViewDspMul.Columns[0].HeaderText = "受注ID";
+            dataGridViewDspMul.Columns[1].HeaderText = "商品ID商品";
+            dataGridViewDspMul.Columns[2].HeaderText = "数量";
+            dataGridViewDspMul.Columns[3].HeaderText = "合計金額";
+            //ここは上の方で最初に指定する
+
+            dataGridViewDspMul.Rows.Add(textBoxOrID.Text.Trim(), textBoxPrID.Text.Trim(),
+                                        textBoxOrQuantity.Text.Trim(), textBoxOrTotalPrice.Text.Trim());
+
+            textBoxPrID.Focus();
+            
             return new T_OrderDetail
             {
-               OrID = int.Parse(textBoxOrID.Text.Trim()),
-               PrID = int.Parse(textBoxPrID.Text.Trim()),
-               OrQuantity = int.Parse(textBoxOrQuantity.Text.Trim()),
-               OrTotalPrice = int.Parse(textBoxOrTotalPrice.Text.Trim())
+                OrID = int.Parse(dataGridViewDspMul.CurrentRow.Cells[0].Value.ToString()),
+                PrID = int.Parse(dataGridViewDspMul.CurrentRow.Cells[1].Value.ToString()),
+                OrQuantity = int.Parse(dataGridViewDspMul.CurrentRow.Cells[2].Value.ToString()),
+                OrTotalPrice = int.Parse(dataGridViewDspMul.CurrentRow.Cells[3].Value.ToString())
             };
         }
 
         private void RegistrationOrder(T_Order regOrder)
         {
+            bool flg = orderDateAccess.AddorderData(regOrder);
             DialogResult result = MessageBox.Show("追加しますか");
             //DialogResult result = messageDsp.DspMsg("");
             if(result == DialogResult.Cancel)
@@ -376,12 +398,6 @@ namespace SalesManagement_SysDev
                 return;
             }
 
-            bool flg = orderDateAccess.AddorderData(regOrder);
-        }
-
-        private void RegistrationOrderDetail (T_OrderDetail regOrderDetail)
-        {
-            bool flg = orderDateAccess.AddorderdetailData(regOrderDetail);
             if (flg == true)
             {
                 MessageBox.Show("追加しました");
@@ -393,7 +409,30 @@ namespace SalesManagement_SysDev
                 //messageDsp.DspMsg("");
             }
             textBoxOrID.Focus();
+            ClearInput();
+        }
 
+        private void RegistrationOrderDetail (T_OrderDetail regOrderDetail)
+        {
+            bool flg = orderDateAccess.AddorderdetailData(regOrderDetail);
+            DialogResult result = MessageBox.Show("追加しますか");
+            //DialogResult result = messageDsp.DspMsg("");
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            if (flg == true)
+            {
+                MessageBox.Show("追加しました");
+                //messageDsp.DspMsg("");
+            }
+            else
+            {
+                MessageBox.Show("追加できませんでした");
+                //messageDsp.DspMsg("");
+            }
+            textBoxOrID.Focus();
             ClearInput();
         }
         //Delete
@@ -640,7 +679,6 @@ namespace SalesManagement_SysDev
         private void GetDataGridView()
         {
             int radioint = 0;
-            int radioint2 = 0;
             if(radioButton1.Checked == true)
             {
                 radioint = 2;
@@ -720,14 +758,6 @@ namespace SalesManagement_SysDev
             dataGridViewDspProduct.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
-        }
-
-        private void Confirm_OpenForm()
-        {
-            Form form = new テスト2();
-            form.Show();
-
-            textBoxOrID.Text.Trim();
         }
 
         
