@@ -15,6 +15,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Entity\Emphistory.cs" />
     <Compile Include="Entity\HaHistory.cs" />
+    <Compile Include="Entity\OrHistory.cs" />
     <Compile Include="Entity\T_Chhistory.cs" />
     <Compile Include="Form\DbAccess\ArrivalDataAccess.cs" />
     <Compile Include="Form\DbAccess\ChumonDataAccess.cs" />
@@ -313,12 +314,6 @@
     <Compile Include="テスト.Designer.cs">
       <DependentUpon>テスト.cs</DependentUpon>
     </Compile>
-    <Compile Include="待避所2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="待避所2.Designer.cs">
-      <DependentUpon>待避所2.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form\login\loginhistory.resx">
       <DependentUpon>loginhistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,9 +414,6 @@
     <EmbeddedResource Include="テスト.resx">
       <DependentUpon>テスト.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="待避所2.resx">
-      <DependentUpon>待避所2.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\M_Client.datasource" />
@@ -485,9 +477,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings_FILL0_wght400_GRAD0_opsz48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\Management_Shipment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

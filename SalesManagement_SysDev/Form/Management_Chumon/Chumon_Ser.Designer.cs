@@ -625,6 +625,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Chumon_Ser";
             this.Text = "Chumon_Ser";
+            this.Load += new System.EventHandler(this.Chumon_Ser_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

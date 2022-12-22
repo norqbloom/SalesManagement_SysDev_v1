@@ -274,6 +274,11 @@ namespace SalesManagement_SysDev
             Form form = new テスト();
             form.Show(this);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

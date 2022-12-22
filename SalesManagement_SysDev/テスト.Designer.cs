@@ -57,9 +57,21 @@ namespace SalesManagement_SysDev
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button_Con = new System.Windows.Forms.Button();
-            this.dataGridViewDspOrderDetail = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDspProduct = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxPrID = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxPrName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxOrQuantity = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxOrTotalPrice = new System.Windows.Forms.TextBox();
+            this.buttonSer = new System.Windows.Forms.Button();
+            this.dataGridViewDspMul = new System.Windows.Forms.DataGridView();
+            this.button_ProAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrderDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspMul)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Add
@@ -154,7 +166,7 @@ namespace SalesManagement_SysDev
             // dataGridViewDspOrder
             // 
             this.dataGridViewDspOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDspOrder.Location = new System.Drawing.Point(28, 440);
+            this.dataGridViewDspOrder.Location = new System.Drawing.Point(12, 440);
             this.dataGridViewDspOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDspOrder.Name = "dataGridViewDspOrder";
             this.dataGridViewDspOrder.RowHeadersWidth = 51;
@@ -165,7 +177,7 @@ namespace SalesManagement_SysDev
             // 
             // textBoxPageSize
             // 
-            this.textBoxPageSize.Location = new System.Drawing.Point(546, 359);
+            this.textBoxPageSize.Location = new System.Drawing.Point(414, 359);
             this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageSize.Name = "textBoxPageSize";
             this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
@@ -173,7 +185,7 @@ namespace SalesManagement_SysDev
             // 
             // textBoxPageNo
             // 
-            this.textBoxPageNo.Location = new System.Drawing.Point(666, 359);
+            this.textBoxPageNo.Location = new System.Drawing.Point(534, 359);
             this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(100, 22);
@@ -182,7 +194,7 @@ namespace SalesManagement_SysDev
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(802, 361);
+            this.radioButton1.Location = new System.Drawing.Point(670, 361);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(58, 19);
@@ -194,7 +206,7 @@ namespace SalesManagement_SysDev
             // labelPage
             // 
             this.labelPage.AutoSize = true;
-            this.labelPage.Location = new System.Drawing.Point(543, 396);
+            this.labelPage.Location = new System.Drawing.Point(411, 396);
             this.labelPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPage.Name = "labelPage";
             this.labelPage.Size = new System.Drawing.Size(43, 15);
@@ -227,7 +239,7 @@ namespace SalesManagement_SysDev
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(802, 389);
+            this.radioButton2.Location = new System.Drawing.Point(670, 389);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(73, 19);
@@ -337,23 +349,139 @@ namespace SalesManagement_SysDev
             this.button_Con.UseVisualStyleBackColor = true;
             this.button_Con.Click += new System.EventHandler(this.button_Con_Click);
             // 
-            // dataGridViewDspOrderDetail
+            // dataGridViewDspProduct
             // 
-            this.dataGridViewDspOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDspOrderDetail.Location = new System.Drawing.Point(772, 440);
-            this.dataGridViewDspOrderDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewDspOrderDetail.Name = "dataGridViewDspOrderDetail";
-            this.dataGridViewDspOrderDetail.RowHeadersWidth = 51;
-            this.dataGridViewDspOrderDetail.RowTemplate.Height = 24;
-            this.dataGridViewDspOrderDetail.Size = new System.Drawing.Size(738, 552);
-            this.dataGridViewDspOrderDetail.TabIndex = 34;
+            this.dataGridViewDspProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDspProduct.Location = new System.Drawing.Point(772, 440);
+            this.dataGridViewDspProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewDspProduct.Name = "dataGridViewDspProduct";
+            this.dataGridViewDspProduct.RowHeadersWidth = 51;
+            this.dataGridViewDspProduct.RowTemplate.Height = 24;
+            this.dataGridViewDspProduct.Size = new System.Drawing.Size(738, 552);
+            this.dataGridViewDspProduct.TabIndex = 34;
+            this.dataGridViewDspProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspProduct_CellClick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1087, 120);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 15);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "商品ID";
+            // 
+            // textBoxPrID
+            // 
+            this.textBoxPrID.Location = new System.Drawing.Point(1198, 116);
+            this.textBoxPrID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrID.Name = "textBoxPrID";
+            this.textBoxPrID.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPrID.TabIndex = 35;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1087, 159);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 15);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "商品名";
+            // 
+            // textBoxPrName
+            // 
+            this.textBoxPrName.Location = new System.Drawing.Point(1198, 155);
+            this.textBoxPrName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrName.Name = "textBoxPrName";
+            this.textBoxPrName.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPrName.TabIndex = 37;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1087, 202);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 15);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "数量";
+            // 
+            // textBoxOrQuantity
+            // 
+            this.textBoxOrQuantity.Location = new System.Drawing.Point(1198, 198);
+            this.textBoxOrQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxOrQuantity.Name = "textBoxOrQuantity";
+            this.textBoxOrQuantity.Size = new System.Drawing.Size(132, 22);
+            this.textBoxOrQuantity.TabIndex = 39;
+            this.textBoxOrQuantity.TextChanged += new System.EventHandler(this.textBoxOrQuantity_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1087, 248);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 15);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "合計金額";
+            // 
+            // textBoxOrTotalPrice
+            // 
+            this.textBoxOrTotalPrice.Location = new System.Drawing.Point(1198, 244);
+            this.textBoxOrTotalPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxOrTotalPrice.Name = "textBoxOrTotalPrice";
+            this.textBoxOrTotalPrice.Size = new System.Drawing.Size(132, 22);
+            this.textBoxOrTotalPrice.TabIndex = 41;
+            // 
+            // buttonSer
+            // 
+            this.buttonSer.Location = new System.Drawing.Point(1410, 405);
+            this.buttonSer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSer.Name = "buttonSer";
+            this.buttonSer.Size = new System.Drawing.Size(100, 29);
+            this.buttonSer.TabIndex = 43;
+            this.buttonSer.Text = "Search";
+            this.buttonSer.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewDspMul
+            // 
+            this.dataGridViewDspMul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDspMul.Location = new System.Drawing.Point(670, 83);
+            this.dataGridViewDspMul.Name = "dataGridViewDspMul";
+            this.dataGridViewDspMul.RowHeadersWidth = 51;
+            this.dataGridViewDspMul.RowTemplate.Height = 24;
+            this.dataGridViewDspMul.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewDspMul.TabIndex = 44;
+            // 
+            // button_ProAdd
+            // 
+            this.button_ProAdd.Location = new System.Drawing.Point(1230, 302);
+            this.button_ProAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.button_ProAdd.Name = "button_ProAdd";
+            this.button_ProAdd.Size = new System.Drawing.Size(100, 29);
+            this.button_ProAdd.TabIndex = 45;
+            this.button_ProAdd.Text = "Product_Add";
+            this.button_ProAdd.UseVisualStyleBackColor = true;
+            this.button_ProAdd.Click += new System.EventHandler(this.button_ProAdd_Click);
             // 
             // テスト
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 1013);
-            this.Controls.Add(this.dataGridViewDspOrderDetail);
+            this.Controls.Add(this.button_ProAdd);
+            this.Controls.Add(this.dataGridViewDspMul);
+            this.Controls.Add(this.buttonSer);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBoxOrTotalPrice);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxOrQuantity);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBoxPrName);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBoxPrID);
+            this.Controls.Add(this.dataGridViewDspProduct);
             this.Controls.Add(this.button_Con);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
@@ -387,7 +515,8 @@ namespace SalesManagement_SysDev
             this.Text = "テスト";
             this.Load += new System.EventHandler(this.テスト_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrderDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspMul)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,6 +552,17 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_Con;
-        private System.Windows.Forms.DataGridView dataGridViewDspOrderDetail;
+        private System.Windows.Forms.DataGridView dataGridViewDspProduct;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxPrID;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxPrName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxOrQuantity;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBoxOrTotalPrice;
+        private System.Windows.Forms.Button buttonSer;
+        private System.Windows.Forms.DataGridView dataGridViewDspMul;
+        private System.Windows.Forms.Button button_ProAdd;
     }
 }
