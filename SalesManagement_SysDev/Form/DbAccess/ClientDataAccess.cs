@@ -377,5 +377,23 @@ namespace SalesManagement_SysDev
             }
             return client;
         }
+        public void upflg(int number)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var client = context.M_Clients.Single(x => x.ClID == number);
+                client.ClFlag = 1;
+                context.SaveChanges();
+                context.Dispose();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
+
 }

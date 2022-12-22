@@ -425,5 +425,13 @@ namespace SalesManagement_SysDev
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            clientDataAccess.upflg(number);
+            datenolwget();
+            dataGridView1.DataSource = clients;
+        }
     }
 }
