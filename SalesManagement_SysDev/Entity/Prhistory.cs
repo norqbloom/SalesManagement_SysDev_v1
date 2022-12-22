@@ -15,9 +15,9 @@ namespace SalesManagement_SysDev
         [Key]
         public int hisNo { get; set; }
 
-        public string EmID { get; set; }
-        public string SoID { get; set; }
-        public string PoID { get; set; }
+        public string PrID { get; set; }
+        public string MaID { get; set; }
+        public string ScID { get; set; }
 
         public string RegisteredDate { get; set; }
         public string regUserID { get; set; }

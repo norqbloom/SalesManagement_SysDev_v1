@@ -416,20 +416,20 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
-        public List<Emphistory> getdetail(Emphistory selectCondition)
+        public List<Prhistory> getdetail(Prhistory selectCondition)
         {
-            List<Emphistory> emphistory = new List<Emphistory>();
+            List<Prhistory> Prhistory = new List<Prhistory>();
             try
             {
                 var context = new SalesManagement_DevContext();
-                emphistory = context.emphistories.Where(x => x.EmID == selectCondition.EmID).ToList();
+                Prhistory = context.Prhistories.Where(x => x.PrID == selectCondition.PrID).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return emphistory;
+            return Prhistory;
         }
     }
 }
