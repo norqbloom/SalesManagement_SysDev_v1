@@ -363,6 +363,22 @@ namespace SalesManagement_SysDev
             return product;
         }
 
+        public List<M_Product> PriceGet(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.Dispose();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
         public List<M_Prohistory> getdetail(M_Prohistory selectCondition)
         {
             List<M_Prohistory> history = new List<M_Prohistory>();

@@ -135,7 +135,9 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("郵便番号が入力されていません。"); //messageDsp.DspMsg("M1031");
+                messageDsp.DspMsg("M1031");
+
+                //MessageBox.Show("郵便番号が入力されていません。"); //messageDsp.DspMsg("M1031");
                 textBoxClPostal.Focus();
                 return false;
             }
@@ -144,7 +146,9 @@ namespace SalesManagement_SysDev.Management_Client
             {
                 if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
                 {
-                    MessageBox.Show("住所は全角入力です"); //messageDsp.DspMsg("M1032");
+                    messageDsp.DspMsg("M1032");
+
+                    //MessageBox.Show("住所は全角入力です"); //messageDsp.DspMsg("M1032");
                     textBoxClAddress.Focus();
                     return false;
                 }
@@ -157,7 +161,8 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("住所が入力されていません。"); //messageDsp.DspMsg("M1033");
+                messageDsp.DspMsg("M1033");
+                //MessageBox.Show("住所が入力されていません。"); //messageDsp.DspMsg("M1033");
                 textBoxClPostal.Focus();
                 return false;
             }
@@ -178,7 +183,9 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("FAXが入力されていません。"); //messageDsp.DspMsg("M1034");
+                messageDsp.DspMsg("M1034");
+
+                //MessageBox.Show("FAXが入力されていません。"); //messageDsp.DspMsg("M1034");
                 textBoxClFAX.Focus();
                 return false;
             }
@@ -199,13 +206,15 @@ namespace SalesManagement_SysDev.Management_Client
             }
             else
             {
-                MessageBox.Show("電話番号が入力されていません"); //messageDsp.DspMsg("M1035");
+                messageDsp.DspMsg("M1035");
+                //MessageBox.Show("電話番号が入力されていません"); //messageDsp.DspMsg("M1035");
                 textBoxClPostal.Focus();
                 return false;
             }
             if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
             {
-                MessageBox.Show("非表示理由は全角入力です"); //messageDsp.DspMsg("M2037");
+                messageDsp.DspMsg("M2037");
+                //MessageBox.Show("非表示理由は全角入力です"); //messageDsp.DspMsg("M2037");
                 textBoxClHidden.Focus();
                 return false;
             }
@@ -248,9 +257,11 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             bool flg = clientDataAccess.UpdClientData(updItem);
             if (flg == true)
-                MessageBox.Show("ok"); //messageDsp.DspMsg("M1026");
+                messageDsp.DspMsg("M1026");
+            //MessageBox.Show("ok"); //messageDsp.DspMsg("M1026");
             else
-                MessageBox.Show("no"); //messageDsp.DspMsg("M1027");
+                messageDsp.DspMsg("M1027");
+            //MessageBox.Show("no"); //messageDsp.DspMsg("M1027");
         }
         private M_clhistory GenerateDataAtUpdatehistory()
         {

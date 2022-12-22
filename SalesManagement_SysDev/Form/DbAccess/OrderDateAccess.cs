@@ -57,7 +57,22 @@ namespace SalesManagement_SysDev
                 return false;
             }
         }
-
+        public bool AddorderdetailData(T_OrderDetail regOrderDetail)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.T_OrderDetails.Add(regOrderDetail);
+                context.SaveChanges();
+                context.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
         ///////////////////////////////
         //メソッド名：UpdateOrdersData()
         //引　数   ：受注データ
