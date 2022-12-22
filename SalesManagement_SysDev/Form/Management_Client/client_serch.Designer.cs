@@ -73,6 +73,7 @@ namespace SalesManagement_SysDev
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ClIDtxt = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -440,7 +441,7 @@ namespace SalesManagement_SysDev
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(451, 378);
+            this.Clear.Location = new System.Drawing.Point(473, 377);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(148, 46);
@@ -574,11 +575,23 @@ namespace SalesManagement_SysDev
             this.ClIDtxt.TabIndex = 0;
             this.ClIDtxt.TextChanged += new System.EventHandler(this.ClIDtxt_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(307, 377);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 46);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "非表示にする";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // client_serch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1195, 629);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -659,5 +672,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox ClIDtxt;
+        private System.Windows.Forms.Button button1;
     }
 }

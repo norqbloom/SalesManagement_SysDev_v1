@@ -14,6 +14,7 @@ namespace SalesManagement_SysDev
         public DbSet<M_Client> M_Clients { get; set; }
         public DbSet<Emphistory> emphistories { get; set; }
         public DbSet<M_clhistory> M_Clhistory { get; set; }
+        public DbSet<OrHistory> OrHistories { get; set; }
         public DbSet<M_Prohistory> M_Prohistory { get; set; }
         public DbSet<loginHistory> loginHistories { get; set; }
         public DbSet<Hahistory> hahistories { get; set; } 

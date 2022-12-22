@@ -39,17 +39,26 @@ namespace SalesManagement_SysDev.Management_Syukko
             {
                 GenerateDataAtUpdate(item);
                 GenerateDataNyuuko(item);
-                MessageBox.Show("ok");
                 //入庫ID
                 int number = syukkoDataaccess.PriID(item.OrID);
                 //商品IDと数量
                 var syukkodetail = syukkoDataaccess.pridget(item.SyID);
-                var x = syukkodetail.FirstOrDefault();
-                if (x != null)
+                foreach(var Quantity in syukkodetail)
                 {
-                    neredetail(number, x.PrID, x.SyQuantity);
-                    MessageBox.Show("ok");
+                    if (Quantity != null)
+                    {
+                        neredetail(number, Quantity.PrID, Quantity.SyQuantity);
+                        MessageBox.Show("ok");
+
+                    }
+
                 }
+                //var x = syukkodetail.FirstOrDefault();
+                //if (x != null)
+                //{
+                //    neredetail(number, x.PrID, x.SyQuantity);
+                //    MessageBox.Show("ok");
+                //}
             }
             syukkos = syukkoDataaccess.getSyukko();
             dataGridView1.DataSource = syukkos;
