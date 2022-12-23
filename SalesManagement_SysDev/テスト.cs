@@ -18,7 +18,6 @@ namespace SalesManagement_SysDev
         OrderDetailDataAccess orderDetailDataAccess = new OrderDetailDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<M_Product> products;
-        private static List<M_Product> products_list;
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
         
@@ -66,7 +65,8 @@ namespace SalesManagement_SysDev
 
         private void button_Con_Click(object sender, EventArgs e)
         {
-
+            int OrID_Dsp = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            
         }
 
         private void button_ProAdd_Click(object sender, EventArgs e)
@@ -695,6 +695,7 @@ namespace SalesManagement_SysDev
             dataGridViewDspProduct.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
+           
         }
 
         private void GetDataGridView()
@@ -710,7 +711,7 @@ namespace SalesManagement_SysDev
             }
             orders = orderDateAccess.GetOrderDataDsp(radioint);
             orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(radioint);
-            products_list = productDataAccess.GetProductDataDsp(radioint);
+            products = productDataAccess.GetProductDataDsp(radioint);
             SetDataGridView();
         }
 
@@ -720,7 +721,7 @@ namespace SalesManagement_SysDev
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspOrderDetail.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDspProduct.DataSource = products_list.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspOrder.Refresh();
             dataGridViewDspOrderDetail.Refresh();
             dataGridViewDspProduct.Refresh();
@@ -729,6 +730,7 @@ namespace SalesManagement_SysDev
                 textBoxPageNo.Text = (pageNo + 1).ToString();
             else
                 textBoxPageNo.Text = "1";
+            
             
             foreach (DataGridViewColumn clm in dataGridViewDspOrder.Columns)
             {
