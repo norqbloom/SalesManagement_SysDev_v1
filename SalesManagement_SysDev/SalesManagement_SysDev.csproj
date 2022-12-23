@@ -83,6 +83,7 @@
     <Compile Include="Entity\Emphistory.cs" />
     <Compile Include="Entity\HaHistory.cs" />
     <Compile Include="Entity\OrHistory.cs" />
+    <Compile Include="Entity\Prhistory.cs" />
     <Compile Include="Entity\T_Chhistory.cs" />
     <Compile Include="Form\DbAccess\ArrivalDataAccess.cs" />
     <Compile Include="Form\DbAccess\ChumonDataAccess.cs" />
@@ -314,6 +315,12 @@
     <Compile Include="テスト.Designer.cs">
       <DependentUpon>テスト.cs</DependentUpon>
     </Compile>
+    <Compile Include="テスト2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="テスト2.Designer.cs">
+      <DependentUpon>テスト2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form\login\loginhistory.resx">
       <DependentUpon>loginhistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="テスト.resx">
       <DependentUpon>テスト.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="テスト2.resx">
+      <DependentUpon>テスト2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />

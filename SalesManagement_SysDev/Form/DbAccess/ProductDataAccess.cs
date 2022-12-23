@@ -416,6 +416,21 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        public List<Prhistory> getdetail(Prhistory selectCondition)
+        {
+            List<Prhistory> Prhistory = new List<Prhistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                Prhistory = context.Prhistories.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Prhistory;
+        }
     }
 }
 

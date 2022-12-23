@@ -41,7 +41,7 @@ namespace SalesManagement_SysDev
             }
             return syukkos;
         }
-        public void upflg(T_Syukko number)
+        public bool upflg(T_Syukko number)
         {
             try
             {
@@ -58,9 +58,10 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return true;
 
         }
-        public void genenyuuko(T_Arrival selectCondition)
+        public bool genenyuuko(T_Arrival selectCondition)
         {
             try
             {
@@ -73,6 +74,7 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return true;
         }
         public int nyuukodatil(int selectCondition)
         {
@@ -149,7 +151,7 @@ namespace SalesManagement_SysDev
         }
         //入庫詳細登録
 
-        public void nyuukodetail(T_ArrivalDetail selectCondition)
+        public bool nyuukodetail(T_ArrivalDetail selectCondition)
         {
             try
             {
@@ -162,6 +164,7 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return true;
         }
     }
 }

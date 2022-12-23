@@ -38,7 +38,9 @@ namespace SalesManagement_SysDev.Management_Client
             Updateuphistory(uphistory);
             //役職情報更新
             UpdateItem(updItem);
-            
+            clients = clientDataAccess.GetClientDspData();
+            dataGridView1.DataSource = clients;
+
         }
         private bool GetValidDataAtUpdate()
         {
