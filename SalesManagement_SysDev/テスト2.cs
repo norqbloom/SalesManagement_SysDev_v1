@@ -14,9 +14,10 @@ namespace SalesManagement_SysDev
     {
         MessageDsp messageDsp = new MessageDsp();
         OrderDateAccess orderDateAccess = new OrderDateAccess();
+        OrderDetailDataAccess orderDetailDataAccess = new OrderDetailDataAccess();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
-        private static List<M_Product> products;
+        private static List<T_OrderDetail> orderDetails;
 
         private string _OrID;
         public テスト2(string OrID)
@@ -28,13 +29,7 @@ namespace SalesManagement_SysDev
         private void テスト2_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
-            textBoxOrID2.Text = _OrID;
-            dataGridView1.ColumnCount = 4;
-
-            dataGridView1.Columns[0].HeaderText = "受注ID";
-            dataGridView1.Columns[1].HeaderText = "商品ID商品";
-            dataGridView1.Columns[2].HeaderText = "数量";
-            dataGridView1.Columns[3].HeaderText = "合計金額";
+            textBoxOrID.Text = _OrID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,11 +40,6 @@ namespace SalesManagement_SysDev
 
             //Formのデータグリッドビュー
             SetFormDataGridView();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Add(textBoxOrID2.Text.Trim(), textBoxPrID.Text.Trim(), textBoxOrQuantity.Text.Trim(), textBoxOrTotalPrice.Text.Trim());
         }
 
         private void dataGridViewDspProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -80,7 +70,7 @@ namespace SalesManagement_SysDev
 
         private void ClearInput()
         {
-            textBoxOrID2.Text = "";
+            textBoxOrID.Text = "";
             textBoxPrID.Text = "";
             textBoxPrName.Text = "";
             textBoxOrQuantity.Text = "";
@@ -88,20 +78,13 @@ namespace SalesManagement_SysDev
         }
 
         private T_OrderDetail GenerateDataAtRegistration_Detail()
-        {
-            var list = (from row in dataGridView1.Rows.Cast<DataGridViewRow>()
-                        from cell in row.Cells.Cast<DataGridViewCell>()
-                        select new
-                        {
-                            //project into your new class from the row and cell vars.
-                        }).ToList();
-
+        { 
             return new T_OrderDetail
             {
-                OrID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()),
-                PrID = int.Parse(dataGridView1.CurrentRow.Cells[1].Value.ToString()),
-                OrQuantity = int.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString()),
-                OrTotalPrice = int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString())
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                OrQuantity = int.Parse(textBoxOrQuantity.Text.Trim()),
+                OrTotalPrice = int.Parse(textBoxOrTotalPrice.Text.Trim())
             };
         }
 
@@ -125,7 +108,7 @@ namespace SalesManagement_SysDev
                 MessageBox.Show("追加できませんでした");
                 //messageDsp.DspMsg("");
             }
-            textBoxOrID2.Focus();
+            textBoxOrID.Focus();
             ClearInput();
         }
 
@@ -157,7 +140,7 @@ namespace SalesManagement_SysDev
             {
                 radioint = 0;
             }
-            products = productDataAccess.GetProductDataDsp(radioint);
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(radioint);
             SetDataGridView();
         }
 
@@ -165,7 +148,7 @@ namespace SalesManagement_SysDev
         {
             int pageSize = int.Parse(textBoxPageSize.Text);
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspProduct.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspProduct.Refresh();
 
             if (pageNo + 1 > 1)
@@ -173,7 +156,7 @@ namespace SalesManagement_SysDev
             else
                 textBoxPageNo.Text = "1";
 
-            dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspProduct.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             foreach (DataGridViewColumn clm in dataGridViewDspProduct.Columns)
             {
@@ -185,19 +168,13 @@ namespace SalesManagement_SysDev
             dataGridViewDspProduct.Columns[2].Width = 100;
             dataGridViewDspProduct.Columns[3].Width = 100;
             dataGridViewDspProduct.Columns[4].Width = 100;
-            dataGridViewDspProduct.Columns[5].Width = 100;
-            dataGridViewDspProduct.Columns[6].Width = 100;
-            dataGridViewDspProduct.Columns[7].Width = 100;
-            dataGridViewDspProduct.Columns[8].Width = 100;
-            dataGridViewDspProduct.Columns[9].Width = 100;
-            dataGridViewDspProduct.Columns[10].Width = 100;
-            dataGridViewDspProduct.Columns[11].Width = 100;
 
             //各列の文字位置の指定
             dataGridViewDspProduct.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspProduct.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspProduct.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspProduct.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspProduct.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDspProduct.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //dataGridViewの総ページ数
             //labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
