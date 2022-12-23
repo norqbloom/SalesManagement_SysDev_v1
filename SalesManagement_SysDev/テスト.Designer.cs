@@ -69,6 +69,7 @@ namespace SalesManagement_SysDev
             this.buttonSer = new System.Windows.Forms.Button();
             this.dataGridViewDspMul = new System.Windows.Forms.DataGridView();
             this.button_ProAdd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspMul)).BeginInit();
@@ -447,7 +448,7 @@ namespace SalesManagement_SysDev
             // dataGridViewDspMul
             // 
             this.dataGridViewDspMul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDspMul.Location = new System.Drawing.Point(670, 83);
+            this.dataGridViewDspMul.Location = new System.Drawing.Point(807, 83);
             this.dataGridViewDspMul.Name = "dataGridViewDspMul";
             this.dataGridViewDspMul.RowHeadersWidth = 51;
             this.dataGridViewDspMul.RowTemplate.Height = 24;
@@ -465,11 +466,22 @@ namespace SalesManagement_SysDev
             this.button_ProAdd.UseVisualStyleBackColor = true;
             this.button_ProAdd.Click += new System.EventHandler(this.button_ProAdd_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1435, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // テスト
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 1013);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_ProAdd);
             this.Controls.Add(this.dataGridViewDspMul);
             this.Controls.Add(this.buttonSer);
@@ -564,5 +576,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button buttonSer;
         private System.Windows.Forms.DataGridView dataGridViewDspMul;
         private System.Windows.Forms.Button button_ProAdd;
+        private System.Windows.Forms.Button button1;
     }
 }
