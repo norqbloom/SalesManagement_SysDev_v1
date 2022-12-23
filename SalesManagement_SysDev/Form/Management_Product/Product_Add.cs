@@ -44,8 +44,10 @@ namespace SalesManagement_SysDev.Management_Product
             }
             //商品情報作成
             var regProduct = GenerateDataAtRegistration();
-            //商品情報登録
             RegistrationProduct(regProduct);
+            var reghis = GeneratehistoryDataAtRegistration();
+            //商品情報登録
+            RegistrationClhistory(reghis);
             //データグリッドビューの再ロード
             SetFormDataGridView();
         }
@@ -302,6 +304,40 @@ namespace SalesManagement_SysDev.Management_Product
 
             //入力エリアのクリア
             ClearInput();
+        }
+        private Prhistory GeneratehistoryDataAtRegistration()
+        {
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+
+            return new Prhistory
+            {
+                PrID = textBoxPrID.Text,
+                MaID = textBoxMaID.Text,
+                ScID = textBoxScID.Text,
+                RegisteredDate = regtime,
+                regUserID = template.EmID.ToString(),
+                regUserName = template.loginName,
+                UpDateTime = "なし",
+                LastupdatedUserID = "なし",
+                LastupdatedUserName = "なし"
+
+            };
+        }
+        private void RegistrationClhistory(Prhistory reghis)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.Prhistories.Add(reghis);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         //入力エリアをクリア

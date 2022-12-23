@@ -471,14 +471,13 @@ namespace SalesManagement_SysDev.Management_Product
             int PrIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
             PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            labelPr.Text = textBoxPrID.ToString();
+            labelPr.Text = PrIDtxt.ToString();
 
-            serchdateset(number);
+            serchdateset(PrIDtxt);
             setdatedetail();
         }
         private void serchdateset(int number)
         {
-
             Prhistory selectCondition = new Prhistory
             {
                 PrID = number.ToString(),
