@@ -18,7 +18,6 @@ namespace SalesManagement_SysDev.Management_Chumon
         private static List<T_Chumon> chumons;
         private static List<T_Chhistory> history;
 
-
         public Chumon_Ser()
         {
             InitializeComponent();
@@ -300,7 +299,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             GenerateDataAtConfirm(number);
             List<T_OrderDetail> briOrDetail = chumonDataAccess.BringChumonData(number);
             //bool flg;
-            //flg=chumonDataAccess.DecreaseChumonData(briOrDetail);
+            //flg = chumonDataAccess.DecreaseChumonData(briOrDetail);
         }
 
         private void GenerateDataAtConfirm(int conChumon)

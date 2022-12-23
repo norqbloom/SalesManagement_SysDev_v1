@@ -1061,6 +1061,7 @@ namespace SalesManagement_SysDev
             this.timer.TabIndex = 4;
             this.timer.Text = "Timer";
             this.timer.Visible = false;
+            this.timer.Click += new System.EventHandler(this.timer_Click);
             // 
             // label4
             // 

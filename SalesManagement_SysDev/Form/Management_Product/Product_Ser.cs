@@ -473,12 +473,11 @@ namespace SalesManagement_SysDev.Management_Product
             PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             labelPr.Text = PrIDtxt.ToString();
 
-            serchdateset(number);
+            serchdateset(PrIDtxt);
             setdatedetail();
         }
         private void serchdateset(int number)
         {
-
             Prhistory selectCondition = new Prhistory
             {
                 PrID = number.ToString(),
@@ -499,7 +498,7 @@ namespace SalesManagement_SysDev.Management_Product
             labelMa.Text = x.MaID;
             labelSc.Text = x.ScID;
             datetime.Text = x.RegisteredDate;
-            upusername.Text = x.regUserID;
+            userid.Text = x.regUserID;
             username.Text = x.regUserName;
             uptime.Text = x.UpDateTime;
             upuserid.Text = x.LastupdatedUserID;

@@ -318,6 +318,41 @@ namespace SalesManagement_SysDev.Management_Order
             dataGridViewDsp.Refresh();
 
         }
+        private OrHistory GeneratehistoryDataAtRegistration()
+        {
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+
+            return new OrHistory
+            {
+                OrID = textBoxOrID.Text,
+                SoID = textBoxSoID.Text,
+                EmID = textBoxEmID.Text,
+                ClID = textBoxClID.Text,
+                RegisteredDate = regtime,
+                regUserID = template.EmID.ToString(),
+                regUserName = template.loginName,
+                UpDateTime = "なし",
+                LastupdatedUserID = "なし",
+                LastupdatedUserName = "なし"
+
+            };
+        }
+        private void RegistrationClhistory(OrHistory reghis)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.OrHistories.Add(reghis);
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
