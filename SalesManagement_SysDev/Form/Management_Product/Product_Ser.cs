@@ -473,7 +473,7 @@ namespace SalesManagement_SysDev.Management_Product
             PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             labelPr.Text = PrIDtxt.ToString();
 
-            serchdateset(number);
+            serchdateset(PrIDtxt);
             setdatedetail();
         }
         private void serchdateset(int number)
