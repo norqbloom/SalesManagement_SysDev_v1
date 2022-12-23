@@ -471,7 +471,7 @@ namespace SalesManagement_SysDev.Management_Product
             int PrIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
             PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            labelPr.Text = PrIDtxt.ToString();
+            labelPr.Text = textBoxPrID.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -499,7 +499,7 @@ namespace SalesManagement_SysDev.Management_Product
             labelMa.Text = x.MaID;
             labelSc.Text = x.ScID;
             datetime.Text = x.RegisteredDate;
-            upusername.Text = x.regUserID;
+            userid.Text = x.regUserID;
             username.Text = x.regUserName;
             uptime.Text = x.UpDateTime;
             upuserid.Text = x.LastupdatedUserID;
