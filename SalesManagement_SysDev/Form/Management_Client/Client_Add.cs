@@ -34,6 +34,9 @@ namespace SalesManagement_SysDev.Management_Client
             RegistrationClient(regCl);
             var reghis = GeneratehistoryDataAtRegistration();
             RegistrationClhistory(reghis);
+            clients = clientDataAccess.GetClientDspData();
+            dataGridView1.DataSource = clients;
+
         }
         private bool GetclientDataAtRegistration()
         {
@@ -396,5 +399,6 @@ namespace SalesManagement_SysDev.Management_Client
         {
             
         }
+
     }
 }
