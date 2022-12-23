@@ -560,5 +560,10 @@ namespace SalesManagement_SysDev
         {
             openChildForm(new loginhistory());
         }
+
+        private void timer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
