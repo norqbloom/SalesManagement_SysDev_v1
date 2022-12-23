@@ -12,6 +12,8 @@ namespace SalesManagement_SysDev.Management_Syukko
 {
     public partial class Syukko_View : Form
     {
+        MessageDsp messageDsp = new MessageDsp();
+
         private static List<T_Syukko> listdata = null;
         private static List<T_Syukko> commitdata=null;
         private static List<T_Syukko> syukkos = null;
@@ -37,8 +39,9 @@ namespace SalesManagement_SysDev.Management_Syukko
         {            
             foreach(var item in commitdata)
             {
-                GenerateDataAtUpdate(item);
-                GenerateDataNyuuko(item);
+                bool flg;
+                flg=GenerateDataNyuuko(item);
+               
                 //入庫ID
                 int number = syukkoDataaccess.PriID(item.OrID);
                 //商品IDと数量
@@ -47,18 +50,21 @@ namespace SalesManagement_SysDev.Management_Syukko
                 {
                     if (Quantity != null)
                     {
-                        neredetail(number, Quantity.PrID, Quantity.SyQuantity);
-                        MessageBox.Show("ok");
-
+                        neredetail(number, Quantity.PrID, Quantity.SyQuantity);                     
                     }
+                }
+                flg=GenerateDataAtUpdate(item);
+                if (flg == true)
+                {
 
                 }
-                //var x = syukkodetail.FirstOrDefault();
-                //if (x != null)
-                //{
-                //    neredetail(number, x.PrID, x.SyQuantity);
-                //    MessageBox.Show("ok");
-                //}
+                else
+                {
+                    //確定エラー
+                    //messageDsp.DspMsg("M1023");
+
+                }
+
             }
             syukkos = syukkoDataaccess.getSyukko();
             dataGridView1.DataSource = syukkos;
@@ -66,8 +72,10 @@ namespace SalesManagement_SysDev.Management_Syukko
             dataGridView2.DataSource = commitdata;
 
         }
-        private void neredetail(int upitem,int PrID,int SyQuantity)
+
+        private bool neredetail(int upitem,int PrID,int SyQuantity)
         {
+            bool flg;   
             T_ArrivalDetail selectCondition = new T_ArrivalDetail()
             {
                 ArID=upitem,
@@ -75,11 +83,12 @@ namespace SalesManagement_SysDev.Management_Syukko
                 ArQuantity=SyQuantity
 
             };
-            syukkoDataaccess.nyuukodetail(selectCondition);
-
+            flg=syukkoDataaccess.nyuukodetail(selectCondition);
+            return flg;
         }
-        private void GenerateDataNyuuko(T_Syukko upitem)
+        private bool GenerateDataNyuuko(T_Syukko upitem)
         {
+            bool flg;
             T_Arrival selectCondition = new T_Arrival()
             {
                 SoID = upitem.SoID,
@@ -88,18 +97,20 @@ namespace SalesManagement_SysDev.Management_Syukko
                 ArFlag = upitem.SyFlag,
                 ArHidden = upitem.SyHidden
             };
-            syukkoDataaccess.genenyuuko(selectCondition);
+            flg=syukkoDataaccess.genenyuuko(selectCondition);
+            return flg;
         }
 
 
-        private void GenerateDataAtUpdate(T_Syukko upitem)
+        private bool GenerateDataAtUpdate(T_Syukko upitem)
         {
-
+            bool flg;
             T_Syukko selectCondition = new T_Syukko()
             {
                 SyID = upitem.SyID
             };
-            syukkoDataaccess.upflg(selectCondition);
+            flg=syukkoDataaccess.upflg(selectCondition);
+            return flg;
         }
 
 
