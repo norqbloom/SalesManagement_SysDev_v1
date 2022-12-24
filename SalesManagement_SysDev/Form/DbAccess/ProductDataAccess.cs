@@ -178,6 +178,30 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        public List<M_Product> GetdubblwHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+                                                 x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
 
         public List<M_Product> GetPrdata(M_Product selectCondition)
         {
@@ -201,6 +225,30 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        public List<M_Product> GetPrHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
+                                                 x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
 
         public List<M_Product> GetMadata(M_Product selectCondition)
         {
@@ -213,6 +261,30 @@ namespace SalesManagement_SysDev
                                                 x.PrName.Contains(selectCondition.PrName) &&
                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                x.PrFlag == 0).ToList();
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        //日付
+        public List<M_Product> GetMaHdata(M_Product selectCondition,DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrColor.Contains(selectCondition.PrColor) &&
+                                                x.PrReleaseDate>starttime&&x.PrReleaseDate<stoptime&&
                                                 x.PrFlag == 0).ToList();
                 context.SaveChanges();
                 context.Dispose();
@@ -248,6 +320,32 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        //日付
+        public List<M_Product> GetScHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
+                                                 x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+                                                 x.PrColor.Contains(selectCondition.PrColor)).ToList();
+
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
 
         public List<M_Product> Getnodata(M_Product selectCondition)
         {
@@ -270,6 +368,30 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        //日付
+        public List<M_Product> GetnoHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+                                                 x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
 
         public List<M_Product> Getnodata2(M_Product selectCondition)
         {
@@ -282,6 +404,30 @@ namespace SalesManagement_SysDev
                                                  x.PrName.Contains(selectCondition.PrName) &&
                                                  x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                  x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+        //日付
+        public List<M_Product> GetnoHdata2(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                 x.PrFlag == 0 &&
+                                                 x.PrName.Contains(selectCondition.PrName) &&
+                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                 x.PrColor.Contains(selectCondition.PrColor) &&
+                                                 x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
                                                  x.PrReleaseDate.ToString().Contains(selectCondition.PrReleaseDate.ToString())).ToList();
                 context.SaveChanges();
                 context.Dispose();
@@ -316,6 +462,33 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        //日付
+        public List<M_Product> GetPrMaHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
+
 
         public List<M_Product> GetPrScdata(M_Product selectCondition)
         {
@@ -339,6 +512,32 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        //日付
+        public List<M_Product> GetPrScHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.PrID.ToString().Contains(selectCondition.PrID.ToString()) &&
+                                                x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
 
         public List<M_Product> GetMaScdata(M_Product selectCondition)
         {
@@ -362,6 +561,32 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        //日付
+        public List<M_Product> GetMaScHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.MaID.ToString().Contains(selectCondition.MaID.ToString()) &&
+                                                x.ScID.ToString().Contains(selectCondition.ScID.ToString()) &&
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
 
         public List<M_Product> PriceGet(M_Product selectCondition)
         {
@@ -378,6 +603,23 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        public List<M_Product> PriceHGet(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x => x.PrID == selectCondition.PrID&&
+                                                   x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime  ).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
 
         public List<M_Prohistory> getdetail(M_Prohistory selectCondition)
         {
@@ -394,6 +636,22 @@ namespace SalesManagement_SysDev
             }
             return history;
         }
+        public List<M_Prohistory> getHdetail(M_Prohistory selectCondition)
+        {
+            List<M_Prohistory> history = new List<M_Prohistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                history = context.M_Prohistory.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return history;
+        }
+
 
         public List<M_Product> GetPronlydata(M_Product selectCondition)
         {
@@ -416,6 +674,29 @@ namespace SalesManagement_SysDev
             }
             return product;
         }
+        public List<M_Product> GetPronlyHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Product> product = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x =>
+                                                x.PrID == selectCondition.PrID &&
+                                                x.PrFlag == 0 &&
+                                                x.PrName.Contains(selectCondition.PrName) &&
+                                                x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
+                                                x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
+                                                x.PrColor.Contains(selectCondition.PrColor)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
         public List<Prhistory> getdetail(Prhistory selectCondition)
         {
             List<Prhistory> history = new List<Prhistory>();
@@ -431,6 +712,22 @@ namespace SalesManagement_SysDev
             }
             return history;
         }
+        public List<Prhistory> getHdetail(Prhistory selectCondition)
+        {
+            List<Prhistory> history = new List<Prhistory>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                history = context.Prhistories.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return history;
+        }
+
     }
 }
 
