@@ -36,7 +36,19 @@ namespace SalesManagement_SysDev.Management_Client
             RegistrationClhistory(reghis);
             clients = clientDataAccess.GetClientDspData();
             dataGridView1.DataSource = clients;
+            invcnt();
 
+        }
+        private void invcnt()
+        {
+            textBoxClID.Text = null;
+            textBoxSoID.Text = null;
+            textBoxClName.Text = null;
+            textBoxClPostal.Text = null;
+            textBoxClPhone.Text = null;
+            textBoxClFAX.Text = null;
+            textBoxClAddress.Text = null;
+            textBoxClHidden.Text = null;
         }
         private bool GetclientDataAtRegistration()
         {

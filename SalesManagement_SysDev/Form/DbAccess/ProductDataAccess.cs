@@ -36,6 +36,24 @@ namespace SalesManagement_SysDev
             return flg;
         }
 
+        public List<M_Product> GetProductIDData(M_Product selectCondition)
+        {
+            List<M_Product> product = new List<M_Product>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                product = context.M_Products.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return product;
+        }
+
         ///////////////////////////////
         //メソッド名：AddItemData()
         //引　数   ：商品データ

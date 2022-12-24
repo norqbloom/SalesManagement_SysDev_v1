@@ -44,12 +44,9 @@ namespace SalesManagement_SysDev
             this.labelPage = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBoxOrID2 = new System.Windows.Forms.TextBox();
+            this.textBoxOrID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewDspProduct
@@ -184,12 +181,12 @@ namespace SalesManagement_SysDev
             this.radioButton2.Text = "radioButton2";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // textBoxOrID2
+            // textBoxOrID
             // 
-            this.textBoxOrID2.Location = new System.Drawing.Point(158, 174);
-            this.textBoxOrID2.Name = "textBoxOrID2";
-            this.textBoxOrID2.Size = new System.Drawing.Size(100, 22);
-            this.textBoxOrID2.TabIndex = 18;
+            this.textBoxOrID.Location = new System.Drawing.Point(158, 174);
+            this.textBoxOrID.Name = "textBoxOrID";
+            this.textBoxOrID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxOrID.TabIndex = 18;
             // 
             // label5
             // 
@@ -200,34 +197,12 @@ namespace SalesManagement_SysDev
             this.label5.TabIndex = 17;
             this.label5.Text = "受注ID";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(855, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(624, 216);
-            this.dataGridView1.TabIndex = 19;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(708, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "追加";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // テスト2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1504, 891);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBoxOrID2);
+            this.Controls.Add(this.textBoxOrID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -248,7 +223,6 @@ namespace SalesManagement_SysDev
             this.Text = "テスト2";
             this.Load += new System.EventHandler(this.テスト2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,9 +245,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBoxOrID2;
+        private System.Windows.Forms.TextBox textBoxOrID;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
     }
 }

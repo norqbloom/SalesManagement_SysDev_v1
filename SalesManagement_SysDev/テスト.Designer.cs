@@ -29,6 +29,7 @@ namespace SalesManagement_SysDev
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_Add = new System.Windows.Forms.Button();
             this.textBoxOrID = new System.Windows.Forms.TextBox();
             this.textBoxClID = new System.Windows.Forms.TextBox();
@@ -57,7 +58,7 @@ namespace SalesManagement_SysDev
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button_Con = new System.Windows.Forms.Button();
-            this.dataGridViewDspProduct = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDspOrderDetail = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,12 +68,16 @@ namespace SalesManagement_SysDev
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxOrTotalPrice = new System.Windows.Forms.TextBox();
             this.buttonSer = new System.Windows.Forms.Button();
-            this.dataGridViewDspMul = new System.Windows.Forms.DataGridView();
             this.button_ProAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridViewDspProduct = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrderDetail)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspMul)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Add
@@ -172,9 +177,9 @@ namespace SalesManagement_SysDev
             this.dataGridViewDspOrder.Name = "dataGridViewDspOrder";
             this.dataGridViewDspOrder.RowHeadersWidth = 51;
             this.dataGridViewDspOrder.RowTemplate.Height = 24;
-            this.dataGridViewDspOrder.Size = new System.Drawing.Size(738, 552);
+            this.dataGridViewDspOrder.Size = new System.Drawing.Size(925, 552);
             this.dataGridViewDspOrder.TabIndex = 14;
-            this.dataGridViewDspOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDsp_CellClick);
+            this.dataGridViewDspOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspOrder_CellClick);
             // 
             // textBoxPageSize
             // 
@@ -350,22 +355,25 @@ namespace SalesManagement_SysDev
             this.button_Con.UseVisualStyleBackColor = true;
             this.button_Con.Click += new System.EventHandler(this.button_Con_Click);
             // 
-            // dataGridViewDspProduct
+            // dataGridViewDspOrderDetail
             // 
-            this.dataGridViewDspProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDspProduct.Location = new System.Drawing.Point(772, 440);
-            this.dataGridViewDspProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewDspProduct.Name = "dataGridViewDspProduct";
-            this.dataGridViewDspProduct.RowHeadersWidth = 51;
-            this.dataGridViewDspProduct.RowTemplate.Height = 24;
-            this.dataGridViewDspProduct.Size = new System.Drawing.Size(738, 552);
-            this.dataGridViewDspProduct.TabIndex = 34;
-            this.dataGridViewDspProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspProduct_CellClick);
+            this.dataGridViewDspOrderDetail.AllowUserToDeleteRows = false;
+            this.dataGridViewDspOrderDetail.AllowUserToResizeColumns = false;
+            this.dataGridViewDspOrderDetail.AllowUserToResizeRows = false;
+            this.dataGridViewDspOrderDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDspOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDspOrderDetail.Location = new System.Drawing.Point(943, 440);
+            this.dataGridViewDspOrderDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewDspOrderDetail.Name = "dataGridViewDspOrderDetail";
+            this.dataGridViewDspOrderDetail.RowHeadersWidth = 51;
+            this.dataGridViewDspOrderDetail.RowTemplate.Height = 24;
+            this.dataGridViewDspOrderDetail.Size = new System.Drawing.Size(567, 552);
+            this.dataGridViewDspOrderDetail.TabIndex = 34;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1087, 120);
+            this.label10.Location = new System.Drawing.Point(913, 93);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 15);
@@ -374,16 +382,17 @@ namespace SalesManagement_SysDev
             // 
             // textBoxPrID
             // 
-            this.textBoxPrID.Location = new System.Drawing.Point(1198, 116);
+            this.textBoxPrID.Location = new System.Drawing.Point(1024, 89);
             this.textBoxPrID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(132, 22);
             this.textBoxPrID.TabIndex = 35;
+            this.textBoxPrID.TextChanged += new System.EventHandler(this.textBoxPrID_TextChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1087, 159);
+            this.label11.Location = new System.Drawing.Point(913, 132);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 15);
@@ -392,7 +401,7 @@ namespace SalesManagement_SysDev
             // 
             // textBoxPrName
             // 
-            this.textBoxPrName.Location = new System.Drawing.Point(1198, 155);
+            this.textBoxPrName.Location = new System.Drawing.Point(1024, 128);
             this.textBoxPrName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(132, 22);
@@ -401,7 +410,7 @@ namespace SalesManagement_SysDev
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1087, 202);
+            this.label12.Location = new System.Drawing.Point(913, 175);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 15);
@@ -410,7 +419,7 @@ namespace SalesManagement_SysDev
             // 
             // textBoxOrQuantity
             // 
-            this.textBoxOrQuantity.Location = new System.Drawing.Point(1198, 198);
+            this.textBoxOrQuantity.Location = new System.Drawing.Point(1024, 175);
             this.textBoxOrQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOrQuantity.Name = "textBoxOrQuantity";
             this.textBoxOrQuantity.Size = new System.Drawing.Size(132, 22);
@@ -420,7 +429,7 @@ namespace SalesManagement_SysDev
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1087, 248);
+            this.label13.Location = new System.Drawing.Point(913, 253);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 15);
@@ -429,7 +438,7 @@ namespace SalesManagement_SysDev
             // 
             // textBoxOrTotalPrice
             // 
-            this.textBoxOrTotalPrice.Location = new System.Drawing.Point(1198, 244);
+            this.textBoxOrTotalPrice.Location = new System.Drawing.Point(1024, 249);
             this.textBoxOrTotalPrice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOrTotalPrice.Name = "textBoxOrTotalPrice";
             this.textBoxOrTotalPrice.Size = new System.Drawing.Size(132, 22);
@@ -444,16 +453,6 @@ namespace SalesManagement_SysDev
             this.buttonSer.TabIndex = 43;
             this.buttonSer.Text = "Search";
             this.buttonSer.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewDspMul
-            // 
-            this.dataGridViewDspMul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDspMul.Location = new System.Drawing.Point(807, 83);
-            this.dataGridViewDspMul.Name = "dataGridViewDspMul";
-            this.dataGridViewDspMul.RowHeadersWidth = 51;
-            this.dataGridViewDspMul.RowTemplate.Height = 24;
-            this.dataGridViewDspMul.Size = new System.Drawing.Size(240, 150);
-            this.dataGridViewDspMul.TabIndex = 44;
             // 
             // button_ProAdd
             // 
@@ -476,14 +475,73 @@ namespace SalesManagement_SysDev
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(913, 219);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 15);
+            this.label14.TabIndex = 48;
+            this.label14.Text = "単価";
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(1024, 215);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(132, 22);
+            this.textBoxPrice.TabIndex = 47;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.dataGridViewDspProduct);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.panel1.Location = new System.Drawing.Point(1526, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(357, 1013);
+            this.panel1.TabIndex = 49;
+            // 
+            // dataGridViewDspProduct
+            // 
+            this.dataGridViewDspProduct.AllowUserToAddRows = false;
+            this.dataGridViewDspProduct.AllowUserToDeleteRows = false;
+            this.dataGridViewDspProduct.AllowUserToResizeColumns = false;
+            this.dataGridViewDspProduct.AllowUserToResizeRows = false;
+            this.dataGridViewDspProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDspProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDspProduct.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewDspProduct.Location = new System.Drawing.Point(3, 2);
+            this.dataGridViewDspProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewDspProduct.Name = "dataGridViewDspProduct";
+            this.dataGridViewDspProduct.RowHeadersVisible = false;
+            this.dataGridViewDspProduct.RowHeadersWidth = 51;
+            this.dataGridViewDspProduct.RowTemplate.Height = 24;
+            this.dataGridViewDspProduct.Size = new System.Drawing.Size(351, 1009);
+            this.dataGridViewDspProduct.TabIndex = 50;
+            this.dataGridViewDspProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
+            // 
             // テスト
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1549, 1013);
+            this.ClientSize = new System.Drawing.Size(1883, 1013);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_ProAdd);
-            this.Controls.Add(this.dataGridViewDspMul);
             this.Controls.Add(this.buttonSer);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxOrTotalPrice);
@@ -493,7 +551,7 @@ namespace SalesManagement_SysDev
             this.Controls.Add(this.textBoxPrName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxPrID);
-            this.Controls.Add(this.dataGridViewDspProduct);
+            this.Controls.Add(this.dataGridViewDspOrderDetail);
             this.Controls.Add(this.button_Con);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
@@ -527,8 +585,9 @@ namespace SalesManagement_SysDev
             this.Text = "テスト";
             this.Load += new System.EventHandler(this.テスト_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrderDetail)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspMul)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,7 +623,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_Con;
-        private System.Windows.Forms.DataGridView dataGridViewDspProduct;
+        private System.Windows.Forms.DataGridView dataGridViewDspOrderDetail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label label11;
@@ -574,8 +633,11 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxOrTotalPrice;
         private System.Windows.Forms.Button buttonSer;
-        private System.Windows.Forms.DataGridView dataGridViewDspMul;
         private System.Windows.Forms.Button button_ProAdd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridViewDspProduct;
     }
 }
