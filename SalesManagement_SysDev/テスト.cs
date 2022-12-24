@@ -65,8 +65,15 @@ namespace SalesManagement_SysDev
 
         private void button_Con_Click(object sender, EventArgs e)
         {
-            int OrID_Dsp = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
-            
+            //var list = (from row in dataGridViewDspOrder.Rows.Cast<DataGridViewRow>()
+            //            from cell in row.Cells.Cast<DataGridViewCell>()
+
+            //            select new
+            //            {
+
+            //            }).ToList();
+
+
         }
 
         private void button_ProAdd_Click(object sender, EventArgs e)
