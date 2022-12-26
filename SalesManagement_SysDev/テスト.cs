@@ -73,6 +73,8 @@ namespace SalesManagement_SysDev
 
             //            }).ToList();
 
+            int grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+
 
         }
 
