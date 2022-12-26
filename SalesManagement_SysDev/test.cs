@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SalesManagement_SysDev
 {
-    public partial class テスト : Form
+    public partial class test : Form
     {
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
@@ -20,8 +20,11 @@ namespace SalesManagement_SysDev
         private static List<M_Product> products;
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
-        
-        public テスト()
+
+        static int grid_OrID = 0;
+
+
+        public test()
         {
             InitializeComponent();
         }
@@ -29,6 +32,7 @@ namespace SalesManagement_SysDev
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
+            label15.Text = grid_OrID.ToString();
         }
         private void button_Add_Click(object sender, EventArgs e)
         {
@@ -73,7 +77,9 @@ namespace SalesManagement_SysDev
 
             //            }).ToList();
 
-            int grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            
+            
+            
 
 
         }
@@ -173,6 +179,9 @@ namespace SalesManagement_SysDev
             {
                 textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
             }
+
+            test.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            label15.Text = test.grid_OrID.ToString();
         }
 
         private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)

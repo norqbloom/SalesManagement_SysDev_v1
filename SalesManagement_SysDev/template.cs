@@ -318,7 +318,7 @@ namespace SalesManagement_SysDev
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new テスト());
+            openChildForm(new test());
         }
 
         private void button5_Click(object sender, EventArgs e)
