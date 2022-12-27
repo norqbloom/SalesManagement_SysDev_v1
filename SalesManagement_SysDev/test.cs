@@ -16,6 +16,7 @@ namespace SalesManagement_SysDev
         ProductDataAccess productDataAccess = new ProductDataAccess();
         OrderDateAccess orderDateAccess = new OrderDateAccess();
         OrderDetailDataAccess orderDetailDataAccess = new OrderDetailDataAccess();
+        ChumonDataAccess chumonDataAccess = new ChumonDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<M_Product> products;
         private static List<T_Order> orders;
@@ -433,7 +434,7 @@ namespace SalesManagement_SysDev
                 OrTotalPrice = int.Parse(textBoxOrTotalPrice.Text.Trim())
             };
         }
-        private T_Order GenerateDataAtRegistrationChumon()
+        private T_Chumon GenerateDataAtRegistrationChumon()
         {
             int checkFlg;
             string hidden;
@@ -454,17 +455,17 @@ namespace SalesManagement_SysDev
             {
                 hidden = textBoxOrHidden.Text.Trim();
             }
-            return new T_Order
+
+            return new T_Chumon
             {
-                OrID = 0,
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                EmID = null,
                 ClID = int.Parse(textBoxClID.Text.Trim()),
-                ClCharge = textBoxClChange.Text.Trim(),
-                OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
-                OrStateFlag = 0,
-                OrFlag = checkFlg,
-                OrHidden = hidden
+                OrID = int.Parse(textBoxOrID.Text.Trim()),         
+                ChDate = DateTime.Now,
+                ChStateFlag = 0,
+                ChFlag = checkFlg,
+                ChHidden = hidden
             };
         }
 
@@ -514,9 +515,9 @@ namespace SalesManagement_SysDev
             textBoxOrID.Focus();
             ClearInput();
         }
-        private void RegistrationChumon(T_Order regOrder)
+        private void RegistrationChumon(T_Chumon regChumon)
         {
-            bool flg = orderDateAccess.AddorderData(regOrder);
+            bool flg = chumonDataAccess.AddchumonData(regChumon);
             DialogResult result = MessageBox.Show("追加しますか");
             //DialogResult result = messageDsp.DspMsg("");
             if (result == DialogResult.Cancel)
@@ -1151,7 +1152,7 @@ namespace SalesManagement_SysDev
             }
             textBoxOrID.Focus();
             //入力エリアのクリア
-            ClearInput();
+            //ClearInput();
         }
 
 

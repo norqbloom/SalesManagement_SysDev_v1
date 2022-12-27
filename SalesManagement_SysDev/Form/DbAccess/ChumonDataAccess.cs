@@ -31,8 +31,32 @@ namespace SalesManagement_SysDev
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return flg;
-        } 
+        }
 
+        ///////////////////////////////
+        //メソッド名：DeleteChumonsData()
+        //引　数   ：注文データ
+        //戻り値   ：True or False
+        //機　能   ：注文データの削除
+        //          ：削除成功の場合True
+        //          ：削除失敗の場合False
+        ///////////////////////////////
+        public bool AddchumonData(T_Chumon regChumon)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                context.T_Chumons.Add(regChumon);
+                context.SaveChanges();
+                context.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
         ///////////////////////////////
         //メソッド名：DeleteChumonsData()
         //引　数   ：注文データ
