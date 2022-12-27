@@ -100,7 +100,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.checkBoxClFLG.Location = new System.Drawing.Point(9, 9);
             this.checkBoxClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxClFLG.Name = "checkBoxClFLG";
-            this.checkBoxClFLG.Size = new System.Drawing.Size(239, 40);
+            this.checkBoxClFLG.Size = new System.Drawing.Size(240, 40);
             this.checkBoxClFLG.TabIndex = 54;
             this.checkBoxClFLG.Text = "非表示チェック";
             this.checkBoxClFLG.UseVisualStyleBackColor = true;
@@ -413,7 +413,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(63, 49);
+            this.label9.Location = new System.Drawing.Point(62, 49);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -436,7 +436,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Controls.Add(this.textBoxClAddress);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(437, 72);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(553, 210);
             this.panel3.TabIndex = 60;
@@ -459,7 +459,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4.Controls.Add(this.checkBoxClFLG);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(1060, 74);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(318, 208);
             this.panel4.TabIndex = 62;
@@ -488,7 +488,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.panel5.Location = new System.Drawing.Point(112, 51);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1425, 421);
             this.panel5.TabIndex = 64;

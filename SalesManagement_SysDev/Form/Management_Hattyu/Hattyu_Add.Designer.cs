@@ -46,16 +46,21 @@ namespace SalesManagement_SysDev.Management_Hattyu
             this.HaID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Hattyu_Add_Button = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // HaFlag
             // 
             this.HaFlag.AutoSize = true;
-            this.HaFlag.Location = new System.Drawing.Point(551, 114);
+            this.HaFlag.Location = new System.Drawing.Point(336, 90);
             this.HaFlag.Margin = new System.Windows.Forms.Padding(1);
             this.HaFlag.Name = "HaFlag";
-            this.HaFlag.Size = new System.Drawing.Size(33, 17);
+            this.HaFlag.Size = new System.Drawing.Size(34, 19);
             this.HaFlag.TabIndex = 36;
             this.HaFlag.Text = " ";
             this.HaFlag.UseVisualStyleBackColor = true;
@@ -63,29 +68,29 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // WaWarehouseFlag
             // 
             this.WaWarehouseFlag.AutoSize = true;
-            this.WaWarehouseFlag.Location = new System.Drawing.Point(551, 68);
+            this.WaWarehouseFlag.Location = new System.Drawing.Point(336, 50);
             this.WaWarehouseFlag.Margin = new System.Windows.Forms.Padding(1);
             this.WaWarehouseFlag.Name = "WaWarehouseFlag";
-            this.WaWarehouseFlag.Size = new System.Drawing.Size(33, 17);
+            this.WaWarehouseFlag.Size = new System.Drawing.Size(34, 19);
             this.WaWarehouseFlag.TabIndex = 35;
             this.WaWarehouseFlag.Text = " ";
             this.WaWarehouseFlag.UseVisualStyleBackColor = true;
             // 
             // HaDate
             // 
-            this.HaDate.Location = new System.Drawing.Point(462, 27);
+            this.HaDate.Location = new System.Drawing.Point(209, 11);
             this.HaDate.Margin = new System.Windows.Forms.Padding(1);
             this.HaDate.Name = "HaDate";
-            this.HaDate.Size = new System.Drawing.Size(122, 19);
+            this.HaDate.Size = new System.Drawing.Size(161, 22);
             this.HaDate.TabIndex = 34;
             // 
             // Hattyu_Del_Button
             // 
             this.Hattyu_Del_Button.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.Hattyu_Del_Button.Location = new System.Drawing.Point(551, 228);
+            this.Hattyu_Del_Button.Location = new System.Drawing.Point(735, 285);
             this.Hattyu_Del_Button.Margin = new System.Windows.Forms.Padding(1);
             this.Hattyu_Del_Button.Name = "Hattyu_Del_Button";
-            this.Hattyu_Del_Button.Size = new System.Drawing.Size(98, 41);
+            this.Hattyu_Del_Button.Size = new System.Drawing.Size(131, 51);
             this.Hattyu_Del_Button.TabIndex = 33;
             this.Hattyu_Del_Button.Text = "削除";
             this.Hattyu_Del_Button.UseVisualStyleBackColor = true;
@@ -93,19 +98,19 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(65, 291);
+            this.dataGridView1.Location = new System.Drawing.Point(87, 364);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(710, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(947, 266);
             this.dataGridView1.TabIndex = 32;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label7.Location = new System.Drawing.Point(596, 24);
+            this.label7.Location = new System.Drawing.Point(827, 82);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 27);
@@ -116,7 +121,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label6.Location = new System.Drawing.Point(294, 104);
+            this.label6.Location = new System.Drawing.Point(10, 84);
             this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 27);
@@ -127,7 +132,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label5.Location = new System.Drawing.Point(294, 66);
+            this.label5.Location = new System.Drawing.Point(10, 42);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 27);
@@ -136,17 +141,17 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             // HaHidden
             // 
-            this.HaHidden.Location = new System.Drawing.Point(745, 29);
+            this.HaHidden.Location = new System.Drawing.Point(893, 132);
             this.HaHidden.Margin = new System.Windows.Forms.Padding(1);
             this.HaHidden.Name = "HaHidden";
-            this.HaHidden.Size = new System.Drawing.Size(62, 19);
+            this.HaHidden.Size = new System.Drawing.Size(81, 22);
             this.HaHidden.TabIndex = 28;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label4.Location = new System.Drawing.Point(294, 22);
+            this.label4.Location = new System.Drawing.Point(10, 11);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 27);
@@ -155,17 +160,17 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             // EmID
             // 
-            this.EmID.Location = new System.Drawing.Point(217, 112);
+            this.EmID.Location = new System.Drawing.Point(189, 117);
             this.EmID.Margin = new System.Windows.Forms.Padding(1);
             this.EmID.Name = "EmID";
-            this.EmID.Size = new System.Drawing.Size(62, 19);
+            this.EmID.Size = new System.Drawing.Size(81, 22);
             this.EmID.TabIndex = 26;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label3.Location = new System.Drawing.Point(61, 107);
+            this.label3.Location = new System.Drawing.Point(17, 112);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 27);
@@ -174,17 +179,17 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             // MaID
             // 
-            this.MaID.Location = new System.Drawing.Point(217, 66);
+            this.MaID.Location = new System.Drawing.Point(189, 69);
             this.MaID.Margin = new System.Windows.Forms.Padding(1);
             this.MaID.Name = "MaID";
-            this.MaID.Size = new System.Drawing.Size(62, 19);
+            this.MaID.Size = new System.Drawing.Size(81, 22);
             this.MaID.TabIndex = 24;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label2.Location = new System.Drawing.Point(61, 66);
+            this.label2.Location = new System.Drawing.Point(17, 69);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 27);
@@ -193,17 +198,17 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // 
             // HaID
             // 
-            this.HaID.Location = new System.Drawing.Point(217, 29);
+            this.HaID.Location = new System.Drawing.Point(189, 20);
             this.HaID.Margin = new System.Windows.Forms.Padding(1);
             this.HaID.Name = "HaID";
-            this.HaID.Size = new System.Drawing.Size(62, 19);
+            this.HaID.Size = new System.Drawing.Size(81, 22);
             this.HaID.TabIndex = 22;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.label1.Location = new System.Drawing.Point(61, 27);
+            this.label1.Location = new System.Drawing.Point(17, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 27);
@@ -213,41 +218,73 @@ namespace SalesManagement_SysDev.Management_Hattyu
             // Hattyu_Add_Button
             // 
             this.Hattyu_Add_Button.Font = new System.Drawing.Font("BIZ UDPゴシック", 15.75F);
-            this.Hattyu_Add_Button.Location = new System.Drawing.Point(674, 228);
+            this.Hattyu_Add_Button.Location = new System.Drawing.Point(899, 285);
             this.Hattyu_Add_Button.Margin = new System.Windows.Forms.Padding(1);
             this.Hattyu_Add_Button.Name = "Hattyu_Add_Button";
-            this.Hattyu_Add_Button.Size = new System.Drawing.Size(101, 41);
+            this.Hattyu_Add_Button.Size = new System.Drawing.Size(135, 51);
             this.Hattyu_Add_Button.TabIndex = 20;
             this.Hattyu_Add_Button.Text = "登録";
             this.Hattyu_Add_Button.UseVisualStyleBackColor = true;
             this.Hattyu_Add_Button.Click += new System.EventHandler(this.Hattyu_Add_Button_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.HaID);
+            this.panel1.Controls.Add(this.MaID);
+            this.panel1.Controls.Add(this.EmID);
+            this.panel1.Location = new System.Drawing.Point(87, 82);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(284, 161);
+            this.panel1.TabIndex = 37;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(106, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 15);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "ID";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.HaFlag);
+            this.panel2.Controls.Add(this.HaDate);
+            this.panel2.Controls.Add(this.WaWarehouseFlag);
+            this.panel2.Location = new System.Drawing.Point(396, 82);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(385, 122);
+            this.panel2.TabIndex = 38;
+            // 
             // Hattyu_Add
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 531);
-            this.Controls.Add(this.HaFlag);
-            this.Controls.Add(this.WaWarehouseFlag);
-            this.Controls.Add(this.HaDate);
+            this.ClientSize = new System.Drawing.Size(1119, 664);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Hattyu_Del_Button);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.HaHidden);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.EmID);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.MaID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.HaID);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Hattyu_Add_Button);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Hattyu_Add";
             this.Text = "Hattyu_Add";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +309,8 @@ namespace SalesManagement_SysDev.Management_Hattyu
         private System.Windows.Forms.TextBox HaID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Hattyu_Add_Button;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -226,7 +226,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // checkBoxEmFlag
             // 
             this.checkBoxEmFlag.AutoSize = true;
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(196, 262);
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(279, 269);
             this.checkBoxEmFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxEmFlag.Name = "checkBoxEmFlag";
             this.checkBoxEmFlag.Size = new System.Drawing.Size(34, 19);

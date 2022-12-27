@@ -78,7 +78,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmHidden
             // 
-            this.textBoxEmHidden.Location = new System.Drawing.Point(473, 51);
+            this.textBoxEmHidden.Location = new System.Drawing.Point(531, 59);
             this.textBoxEmHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmHidden.Name = "textBoxEmHidden";
             this.textBoxEmHidden.Size = new System.Drawing.Size(81, 22);
@@ -86,7 +86,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmPhone
             // 
-            this.textBoxEmPhone.Location = new System.Drawing.Point(171, 281);
+            this.textBoxEmPhone.Location = new System.Drawing.Point(242, 293);
             this.textBoxEmPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
@@ -94,7 +94,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmPassword
             // 
-            this.textBoxEmPassword.Location = new System.Drawing.Point(171, 225);
+            this.textBoxEmPassword.Location = new System.Drawing.Point(242, 239);
             this.textBoxEmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmPassword.Name = "textBoxEmPassword";
             this.textBoxEmPassword.Size = new System.Drawing.Size(81, 22);
@@ -102,7 +102,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxPoID
             // 
-            this.textBoxPoID.Location = new System.Drawing.Point(171, 145);
+            this.textBoxPoID.Location = new System.Drawing.Point(243, 140);
             this.textBoxPoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPoID.Name = "textBoxPoID";
             this.textBoxPoID.Size = new System.Drawing.Size(81, 22);
@@ -110,7 +110,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxSoID
             // 
-            this.textBoxSoID.Location = new System.Drawing.Point(171, 104);
+            this.textBoxSoID.Location = new System.Drawing.Point(243, 99);
             this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
@@ -118,7 +118,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmName
             // 
-            this.textBoxEmName.Location = new System.Drawing.Point(171, 78);
+            this.textBoxEmName.Location = new System.Drawing.Point(243, 73);
             this.textBoxEmName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmName.Name = "textBoxEmName";
             this.textBoxEmName.Size = new System.Drawing.Size(81, 22);
@@ -127,78 +127,86 @@ namespace SalesManagement_SysDev.Management_Employee
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(365, 51);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 15);
+            this.label9.Size = new System.Drawing.Size(160, 36);
             this.label9.TabIndex = 31;
             this.label9.Text = "非表示理由";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(75, 338);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 15);
+            this.label8.Size = new System.Drawing.Size(218, 36);
             this.label8.TabIndex = 30;
             this.label8.Text = "社員管理フラグ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(75, 282);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.Size = new System.Drawing.Size(131, 36);
             this.label7.TabIndex = 29;
             this.label7.Text = "電話番号";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(76, 228);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 15);
+            this.label6.Size = new System.Drawing.Size(160, 36);
             this.label6.TabIndex = 28;
             this.label6.Text = "パスワード";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(76, 180);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 15);
+            this.label5.Size = new System.Drawing.Size(160, 36);
             this.label5.TabIndex = 27;
             this.label5.Text = "入社年月日";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(77, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.Size = new System.Drawing.Size(104, 36);
             this.label4.TabIndex = 26;
             this.label4.Text = "役職ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(75, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
+            this.label3.Size = new System.Drawing.Size(133, 36);
             this.label3.TabIndex = 25;
             this.label3.Text = "営業所ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(75, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(102, 36);
             this.label2.TabIndex = 24;
             this.label2.Text = "社員名";
             // 
             // textBoxEmID
             // 
-            this.textBoxEmID.Location = new System.Drawing.Point(171, 42);
+            this.textBoxEmID.Location = new System.Drawing.Point(243, 37);
             this.textBoxEmID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmID.Name = "textBoxEmID";
             this.textBoxEmID.Size = new System.Drawing.Size(81, 22);
@@ -207,9 +215,10 @@ namespace SalesManagement_SysDev.Management_Employee
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(75, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.Size = new System.Drawing.Size(104, 36);
             this.label1.TabIndex = 22;
             this.label1.Text = "社員ID";
             // 
@@ -239,7 +248,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // dateTimePickerEmHiredate
             // 
-            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(171, 180);
+            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(242, 188);
             this.dateTimePickerEmHiredate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(161, 22);
