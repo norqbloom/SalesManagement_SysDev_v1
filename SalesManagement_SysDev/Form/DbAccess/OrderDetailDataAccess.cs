@@ -11,12 +11,12 @@ namespace SalesManagement_SysDev
     {
         public List<T_OrderDetail> GetOrderDetailDataDsp(int radioint)
         {
-            List<T_OrderDetail> ordersdetail = new List<T_OrderDetail>();
+            List<T_OrderDetail> orderDetails = new List<T_OrderDetail>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                ordersdetail = context.T_OrderDetails.ToList();
+                orderDetails = context.T_OrderDetails.ToList();
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -24,7 +24,27 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return ordersdetail;
+            return orderDetails;
         }
+
+        public List<T_OrderDetail> GetOrderDetailDataOrID(int ID)
+        {
+            List<T_OrderDetail> orderDetails = new List<T_OrderDetail>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                orderDetails = context.T_OrderDetails.Where(x => x.OrID == ID).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return orderDetails;
+        }
+
     }
 }

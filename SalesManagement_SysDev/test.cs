@@ -34,6 +34,7 @@ namespace SalesManagement_SysDev
             dateTimePickerOrDate.Value = DateTime.Now;
             label15.Text = grid_OrID.ToString();
         }
+
         private void button_Add_Click(object sender, EventArgs e)
         {
             if (!GetValidDataAtRegistration())
@@ -42,7 +43,7 @@ namespace SalesManagement_SysDev
             }
 
             var regOrder = GenerateDataAtRegistration();
-            RegistrationOrder(regOrder);            
+            RegistrationOrder(regOrder);
             //Formのデータグリッドビュー
             SetFormDataGridView();
         }
@@ -69,19 +70,20 @@ namespace SalesManagement_SysDev
 
         private void button_Con_Click(object sender, EventArgs e)
         {
-            //var list = (from row in dataGridViewDspOrder.Rows.Cast<DataGridViewRow>()
-            //            from cell in row.Cells.Cast<DataGridViewCell>()
+            if (!GetValidDataUpdate())
+            {
+                return;
+            }
 
-            //            select new
-            //            {
+            var updProduct = GenerateDataAtUpdate();
 
-            //            }).ToList();
+            UpdateProduct(updProduct);
 
-            
-            
-            
+            var regChumon = GenerateDataAtRegistrationChumon();
 
+            RegistrationChumon(regChumon);
 
+            SetFormDataGridView();
         }
 
         private void button_ProAdd_Click(object sender, EventArgs e)
@@ -180,8 +182,14 @@ namespace SalesManagement_SysDev
                 textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
             }
 
+            
             test.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            int ID = test.grid_OrID;
             label15.Text = test.grid_OrID.ToString();
+
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
+            GetDataGridView2();
+
         }
 
         private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -425,6 +433,40 @@ namespace SalesManagement_SysDev
                 OrTotalPrice = int.Parse(textBoxOrTotalPrice.Text.Trim())
             };
         }
+        private T_Order GenerateDataAtRegistrationChumon()
+        {
+            int checkFlg;
+            string hidden;
+            if (checkBoxOrFlag.Checked == true)
+            {
+                checkFlg = 2;
+            }
+            else
+            {
+                checkFlg = 0;
+            }
+
+            if (checkFlg == 0)
+            {
+                hidden = String.Empty;
+            }
+            else
+            {
+                hidden = textBoxOrHidden.Text.Trim();
+            }
+            return new T_Order
+            {
+                OrID = 0,
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+                OrStateFlag = 0,
+                OrFlag = checkFlg,
+                OrHidden = hidden
+            };
+        }
 
         private void RegistrationOrder(T_Order regOrder)
         {
@@ -472,6 +514,29 @@ namespace SalesManagement_SysDev
             textBoxOrID.Focus();
             ClearInput();
         }
+        private void RegistrationChumon(T_Order regOrder)
+        {
+            bool flg = orderDateAccess.AddorderData(regOrder);
+            DialogResult result = MessageBox.Show("追加しますか");
+            //DialogResult result = messageDsp.DspMsg("");
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            if (flg == true)
+            {
+                MessageBox.Show("追加しました");
+                //messageDsp.DspMsg("");
+            }
+            else
+            {
+                MessageBox.Show("追加できませんでした");
+                //messageDsp.DspMsg("");
+            }
+            textBoxOrID.Focus();
+        }
+
         //Delete
         private bool GetValidDataDelete()
         {
@@ -718,6 +783,7 @@ namespace SalesManagement_SysDev
 
         private void GetDataGridView()
         {
+            int ID = test.grid_OrID;
             int radioint = 0;
             if(radioButton1.Checked == true)
             {
@@ -731,6 +797,12 @@ namespace SalesManagement_SysDev
             orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(radioint);
             products = productDataAccess.GetProductDataDsp(radioint);
             SetDataGridView();
+        }
+        private void GetDataGridView2()
+        {
+            int ID = test.grid_OrID;
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
+            SetDataGridView2();
         }
 
         private void SetDataGridView()
@@ -824,14 +896,269 @@ namespace SalesManagement_SysDev
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
+        private void SetDataGridView2()
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridViewDspOrderDetail.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspOrderDetail.Refresh();
 
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+
+            foreach (DataGridViewColumn clm in dataGridViewDspOrderDetail.Columns)
+            {
+                clm.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            //dataGridViewの総ページ数
+            labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             string OrID = textBoxOrID.Text.Trim();
             var form = new テスト2(OrID);
             form.Show();
         }
+        /// <summary>
+        /// T_Orderの更新処理
+        /// </summary>
+        /// <returns></returns>
+         private bool GetValidDataUpdate()
+        {
+            if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxOrID.Text.Trim()))
+                {
+                    MessageBox.Show("1");
+                    //messageDsp.DspMsg("");
+                    textBoxOrID.Focus();
+                    return false;
+                }
+
+                if (textBoxOrID.TextLength > 6)
+                {
+                    MessageBox.Show("2");
+                    //messageDsp.DspMsg("");
+                    textBoxOrID.Focus();
+                    return false;
+                }
+
+                if (!orderDateAccess.CheckOrIDExistence(textBoxOrID.Text.Trim()))
+                {
+                    MessageBox.Show("3");
+                    //messageDsp.DspMsg("");
+                    textBoxOrID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("4");
+                //messageDsp.DspMsg("");
+                textBoxOrID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
+                {
+                    MessageBox.Show("5");
+                    //messageDsp.DspMsg("");
+                    textBoxSoID.Focus();
+                    return false;
+                }
+
+                if (textBoxSoID.TextLength > 2)
+                {
+                    MessageBox.Show("6");
+                    //messageDsp.DspMsg("");
+                    textBoxSoID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("7");
+                //messageDsp.DspMsg("");
+                textBoxSoID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
+                {
+                    MessageBox.Show("8");
+                    //messageDsp.DspMsg("");
+                    textBoxEmID.Focus();
+                    return false;
+                }
+
+                if (textBoxEmID.TextLength > 6)
+                {
+                    MessageBox.Show("9");
+                    //messageDsp.DspMsg("");
+                    textBoxEmID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("10");
+                //messageDsp.DspMsg("");
+                textBoxEmID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxClID.Text.Trim()))
+                {
+                    MessageBox.Show("11");
+                    //messageDsp.DspMsg("");
+                    textBoxClID.Focus();
+                    return false;
+                }
+
+                if (textBoxClID.TextLength > 6)
+                {
+                    MessageBox.Show("12");
+                    //messageDsp.DspMsg("");
+                    textBoxClID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("13");
+                //messageDsp.DspMsg("");
+                textBoxClID.Focus();
+                return false;
+            }
+
+            if (!String.IsNullOrEmpty(textBoxClChange.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckFullWidth(textBoxClChange.Text.Trim()))
+                {
+                    MessageBox.Show("14");
+                    //messageDsp.DspMsg("");
+                    textBoxClChange.Focus();
+                    return false;
+                }
+
+                if (textBoxClChange.TextLength > 50)
+                {
+                    MessageBox.Show("15");
+                    //messageDsp.DspMsg("");
+                    textBoxClChange.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("16");
+                //messageDsp.DspMsg("");
+                textBoxClChange.Focus();
+                return false;
+            }
+
+            if (checkBoxOrStateFlag.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("17");
+                //messageDsp.DspMsg("");
+                checkBoxOrStateFlag.Focus();
+                return false;
+            }
+
+            if (checkBoxOrFlag.CheckState == CheckState.Indeterminate)
+            {
+                MessageBox.Show("18");
+                //messageDsp.DspMsg("");
+                checkBoxOrFlag.Focus();
+                return false;
+            }
+
+            if (checkBoxOrFlag.Checked == true)
+            {
+                if (!String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
+                {
+                    MessageBox.Show("19");
+                    //messageDsp.DspMsg("");
+                    checkBoxOrFlag.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private T_Order GenerateDataAtUpdate()
+        {
+            int checkFlg;
+            string hidden;
+            if (checkBoxOrFlag.Checked == true)
+            {
+                checkFlg = 2;
+            }
+            else
+            {
+                checkFlg = 0;
+            }
+
+            if (checkFlg == 0)
+            {
+                hidden = String.Empty;
+            }
+            else
+            {
+                hidden = textBoxOrHidden.Text.Trim();
+            }
+
+            return new T_Order
+            {
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClCharge = textBoxClChange.Text.Trim(),
+                OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
+                OrStateFlag = 1,
+                OrFlag = checkFlg,
+                OrHidden = hidden
+            };
+        }
+
+        private void UpdateProduct(T_Order updOrder)
+        {
+            //更新確認メッセージ
+            DialogResult result = messageDsp.DspMsg("M2033");//商品データを更新してよろしいですか？
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+            //商品情報の更新   
+            bool flg = orderDateAccess.UpdateOrdersData(updOrder);
+            if (flg == true)
+            {
+                messageDsp.DspMsg("M2034");//商品データを更新しました
+            }
+            else
+            {
+                messageDsp.DspMsg("M2035");//商品データ更新に失敗しました
+            }
+            textBoxOrID.Focus();
+            //入力エリアのクリア
+            ClearInput();
+        }
 
 
+
+        /// <summary>
+        /// T_Orderの更新処理
+        /// </summary>
+        /// <returns></returns>
     }
 }
