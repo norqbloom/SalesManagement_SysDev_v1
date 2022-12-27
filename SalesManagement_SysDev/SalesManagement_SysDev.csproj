@@ -263,6 +263,15 @@
       <DependentUpon>loginhistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\DbAccess\OrderDetailDataAccess.cs" />
+    <Compile Include="Migrations\202212230445013_InitialCreate.cs" />
+    <Compile Include="Migrations\202212230445013_InitialCreate.designer.cs">
+      <DependentUpon>202212230445013_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212261108566_Add.cs" />
+    <Compile Include="Migrations\202212261108566_Add.designer.cs">
+      <DependentUpon>202212261108566_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\T_Arrival.cs" />
@@ -309,11 +318,11 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
-    <Compile Include="テスト.cs">
+    <Compile Include="test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="テスト.Designer.cs">
-      <DependentUpon>テスト.cs</DependentUpon>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="テスト2.cs">
       <SubType>Form</SubType>
@@ -399,6 +408,12 @@
     <EmbeddedResource Include="Form\Management_Warehousing\Warehousing_View.resx">
       <DependentUpon>Warehousing_View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212230445013_InitialCreate.resx">
+      <DependentUpon>202212230445013_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212261108566_Add.resx">
+      <DependentUpon>202212261108566_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -418,8 +433,8 @@
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="テスト.resx">
-      <DependentUpon>テスト.cs</DependentUpon>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="テスト2.resx">
       <DependentUpon>テスト2.cs</DependentUpon>

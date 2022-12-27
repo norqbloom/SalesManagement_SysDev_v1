@@ -168,8 +168,6 @@ namespace SalesManagement_SysDev.Management_Product
                 return;
             }
 
-            
-
         
         }
         private void SetSelectData()
@@ -179,104 +177,244 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void dateMaget()
         {
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                MaID = int.Parse(textBoxMaID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-            };
-            products = productDataAccess.GetMadata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetMaHdata(selectCondition,dateTimePickerPrReleaseDate.Value,dateTimePickerPrReleaseDate2.Value);
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetMadata(selectCondition);
+            }
+            //M_Product selectCondition = new M_Product()
+            //{
+            //    MaID = int.Parse(textBoxMaID.Text.Trim()),
+            //    PrName = textBoxPrName.Text.Trim(),
+            //    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+            //    PrColor = textBoxPrColor.Text.Trim(),
+            //};
+            //products = productDataAccess.GetMadata(selectCondition);
 
         }
         private void datedubblwget()
         {
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                MaID = int.Parse(textBoxMaID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                ScID = int.Parse(textBoxScID.Text.Trim()),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-            };
-            products = productDataAccess.Getdubblwdata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetdubblwHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
+
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.Getdubblwdata(selectCondition);
+
+            }
+
 
         }
         private void dateScget()
         {
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                PrName = textBoxPrName.Text.Trim(),
-                ScID = int.Parse(textBoxScID.Text.Trim()),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-            };
-            products = productDataAccess.GetScdata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    PrName = textBoxPrName.Text.Trim(),
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetScHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
 
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    PrName = textBoxPrName.Text.Trim(),
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetScdata(selectCondition);
+
+            }
         }
         private void datenolwget()
         {
-
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim()
-            };
-            products = productDataAccess.Getnodata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetnoHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
+
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.Getnodata(selectCondition);
+
+            }
+
 
         }
         private void datePrMaget()
         {
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                MaID = int.Parse(textBoxMaID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim(),
-            };
-            products = productDataAccess.GetPrMadata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetPrMaHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
+
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim(),
+                };
+                products = productDataAccess.GetPrMadata(selectCondition);
+
+            }
+
 
         }
         private void datePrScget()
         {
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                ScID = int.Parse(textBoxScID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim()
-            };
-            products = productDataAccess.GetPrScdata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetPrScHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
+
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetPrScdata(selectCondition);
+
+            }
+
 
         }
         private void priddate()
         {
-
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim()
-            };
-            products = productDataAccess.GetPronlydata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetPronlyHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
+
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    PrID = int.Parse(textBoxPrID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetPronlydata(selectCondition);
+
+            }
+
 
         }
         private void dateMaScget()
         {
-            M_Product selectCondition = new M_Product()
+            if (checkBoxdate.Checked == true)
             {
-                ScID = int.Parse(textBoxScID.Text.Trim()),
-                MaID = int.Parse(textBoxMaID.Text.Trim()),
-                PrName = textBoxPrName.Text.Trim(),
-                PrModelNumber = textBoxPrModelNumber.Text.Trim(),
-                PrColor = textBoxPrColor.Text.Trim()
-            };
-            products = productDataAccess.GetMaScdata(selectCondition);
+                M_Product selectCondition = new M_Product()
+                {
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetMaScHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
+
+            }
+            else
+            {
+                M_Product selectCondition = new M_Product()
+                {
+                    ScID = int.Parse(textBoxScID.Text.Trim()),
+                    MaID = int.Parse(textBoxMaID.Text.Trim()),
+                    PrName = textBoxPrName.Text.Trim(),
+                    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+                    PrColor = textBoxPrColor.Text.Trim()
+                };
+                products = productDataAccess.GetMaScdata(selectCondition);
+
+            }
 
         }
         ///////////////////////////////

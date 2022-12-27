@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SalesManagement_SysDev
 {
-    public partial class テスト : Form
+    public partial class test : Form
     {
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
@@ -18,11 +18,13 @@ namespace SalesManagement_SysDev
         OrderDetailDataAccess orderDetailDataAccess = new OrderDetailDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<M_Product> products;
-        private static List<M_Product> products_list;
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
-        
-        public テスト()
+
+        static int grid_OrID = 0;
+
+
+        public test()
         {
             InitializeComponent();
         }
@@ -30,6 +32,7 @@ namespace SalesManagement_SysDev
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
+            label15.Text = grid_OrID.ToString();
         }
         private void button_Add_Click(object sender, EventArgs e)
         {
@@ -66,6 +69,18 @@ namespace SalesManagement_SysDev
 
         private void button_Con_Click(object sender, EventArgs e)
         {
+            //var list = (from row in dataGridViewDspOrder.Rows.Cast<DataGridViewRow>()
+            //            from cell in row.Cells.Cast<DataGridViewCell>()
+
+            //            select new
+            //            {
+
+            //            }).ToList();
+
+            
+            
+            
+
 
         }
 
@@ -164,6 +179,9 @@ namespace SalesManagement_SysDev
             {
                 textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
             }
+
+            test.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            label15.Text = test.grid_OrID.ToString();
         }
 
         private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -695,6 +713,7 @@ namespace SalesManagement_SysDev
             dataGridViewDspProduct.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
+           
         }
 
         private void GetDataGridView()
@@ -710,7 +729,7 @@ namespace SalesManagement_SysDev
             }
             orders = orderDateAccess.GetOrderDataDsp(radioint);
             orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(radioint);
-            products_list = productDataAccess.GetProductDataDsp(radioint);
+            products = productDataAccess.GetProductDataDsp(radioint);
             SetDataGridView();
         }
 
@@ -720,7 +739,7 @@ namespace SalesManagement_SysDev
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspOrderDetail.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDspProduct.DataSource = products_list.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspOrder.Refresh();
             dataGridViewDspOrderDetail.Refresh();
             dataGridViewDspProduct.Refresh();
@@ -729,6 +748,7 @@ namespace SalesManagement_SysDev
                 textBoxPageNo.Text = (pageNo + 1).ToString();
             else
                 textBoxPageNo.Text = "1";
+            
             
             foreach (DataGridViewColumn clm in dataGridViewDspOrder.Columns)
             {

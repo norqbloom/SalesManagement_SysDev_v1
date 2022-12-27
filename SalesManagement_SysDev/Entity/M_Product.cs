@@ -47,7 +47,7 @@ namespace SalesManagement_SysDev
 
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         [DisplayName("発売日")]
-        public String PrReleaseDate { get; set; } //発売日		
+        public DateTime? PrReleaseDate { get; set; } //発売日		
 
         [DisplayName("商品管理フラグ")]
         public int PrFlag { get; set; }             //商品管理フラグ

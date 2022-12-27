@@ -271,7 +271,7 @@ namespace SalesManagement_SysDev
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Form form = new テスト();
+            Form form = new test();
             form.Show(this);
         }
 
