@@ -206,7 +206,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmID
             // 
-            this.textBoxEmID.Location = new System.Drawing.Point(243, 37);
+            this.textBoxEmID.Location = new System.Drawing.Point(173, 37);
             this.textBoxEmID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmID.Name = "textBoxEmID";
             this.textBoxEmID.Size = new System.Drawing.Size(81, 22);
@@ -216,7 +216,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(75, 48);
+            this.label1.Location = new System.Drawing.Point(73, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 36);
             this.label1.TabIndex = 22;
