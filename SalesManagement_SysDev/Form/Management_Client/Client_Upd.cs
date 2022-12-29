@@ -387,8 +387,10 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxSoID.Text = "";
             textBoxClPhone.Text = "";
             textBoxClAddress.Text = "";
+            checkBoxClFlag.Checked = false;
             textBoxClPostal.Text = "";
             textBoxClFAX.Text = "";
+            textBoxClHidden.Text = "";
         }
     }
 

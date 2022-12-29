@@ -421,6 +421,8 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClAddress.Text = "";
             textBoxClPostal.Text = "";
             textBoxClFAX.Text = "";
+            textBoxClHidden.Text = "";
+            checkBoxClFLG.Checked = false;
         }
     }
 }

@@ -597,7 +597,7 @@ namespace SalesManagement_SysDev
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.SOIDtxt);
             this.panel3.Location = new System.Drawing.Point(16, 52);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(417, 160);
             this.panel3.TabIndex = 29;
@@ -616,7 +616,7 @@ namespace SalesManagement_SysDev
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.addresstxt);
             this.panel4.Location = new System.Drawing.Point(463, 52);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(462, 282);
             this.panel4.TabIndex = 30;

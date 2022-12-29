@@ -394,6 +394,9 @@ namespace SalesManagement_SysDev
             addresstxt.Text = "";
             ClPostaltxt.Text = "";
             ClFaxtxt.Text = "";
+            
+            
+            
         }
 
         private void addresstxt_TextChanged(object sender, EventArgs e)
