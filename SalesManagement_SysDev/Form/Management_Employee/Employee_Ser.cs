@@ -359,9 +359,12 @@ namespace SalesManagement_SysDev.Management_Employee
         private void Clear_Click(object sender, EventArgs e)
         {
             textBoxEmID.Text = "";
-            textBoxEmName.Text = "";
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
+            textBoxEmName.Text = "";
+            textBoxEmPassword.Text = "";
+            dateTimePickerEmHiredate.Value = DateTime.Now;
+            checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
             textBoxEmHidden.Text = "";
         }
