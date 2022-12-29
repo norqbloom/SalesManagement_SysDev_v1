@@ -66,6 +66,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -100,7 +101,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.checkBoxClFLG.Location = new System.Drawing.Point(9, 9);
             this.checkBoxClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxClFLG.Name = "checkBoxClFLG";
-            this.checkBoxClFLG.Size = new System.Drawing.Size(240, 40);
+            this.checkBoxClFLG.Size = new System.Drawing.Size(239, 40);
             this.checkBoxClFLG.TabIndex = 54;
             this.checkBoxClFLG.Text = "非表示チェック";
             this.checkBoxClFLG.UseVisualStyleBackColor = true;
@@ -479,6 +480,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.Clear);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.panel1);
@@ -503,6 +505,17 @@ namespace SalesManagement_SysDev.Management_Client
             this.label12.Size = new System.Drawing.Size(96, 26);
             this.label12.TabIndex = 63;
             this.label12.Text = "入力項目";
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(958, 332);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.TabIndex = 65;
+            this.Clear.Text = "クリア";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Client_Add
             // 
@@ -573,5 +586,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Clear;
     }
 }
