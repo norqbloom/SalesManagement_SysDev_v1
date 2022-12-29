@@ -351,6 +351,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
+            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -424,7 +425,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBoxPoID);
             this.panel1.Location = new System.Drawing.Point(35, 64);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 162);
             this.panel1.TabIndex = 46;
@@ -441,7 +442,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.textBoxEmPhone);
             this.panel3.Location = new System.Drawing.Point(381, 64);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(389, 191);
             this.panel3.TabIndex = 47;
@@ -476,7 +477,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel4.Controls.Add(this.checkBoxEmFlag);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(811, 64);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(335, 176);
             this.panel4.TabIndex = 50;

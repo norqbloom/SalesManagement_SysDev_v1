@@ -442,5 +442,10 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             
         }
+
+        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
