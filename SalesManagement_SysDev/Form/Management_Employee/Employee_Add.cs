@@ -447,5 +447,16 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
         }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            textBoxEmID = null;
+            textBoxSoID = null;
+            textBoxPoID = null;
+            textBoxEmName = null;
+            textBoxEmPassword = null;
+            textBoxEmPhone = null;
+            textBoxEmHidden = null;
+        }
     }
 }

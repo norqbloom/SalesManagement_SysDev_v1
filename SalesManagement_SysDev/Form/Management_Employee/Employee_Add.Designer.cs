@@ -67,6 +67,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -493,11 +494,23 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label12.TabIndex = 51;
             this.label12.Text = "その他";
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(638, 297);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.TabIndex = 52;
+            this.Clear.Text = "クリア";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
             // Employee_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 666);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label11);
@@ -567,5 +580,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Clear;
     }
 }
