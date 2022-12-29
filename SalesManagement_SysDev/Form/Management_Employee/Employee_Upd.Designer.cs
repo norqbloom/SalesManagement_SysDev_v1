@@ -411,6 +411,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Clear.TabIndex = 53;
             this.Clear.Text = "クリア";
             this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Employee_Upd
             // 
