@@ -359,9 +359,11 @@ namespace SalesManagement_SysDev.Management_Employee
         private void Clear_Click(object sender, EventArgs e)
         {
             textBoxEmID.Text = "";
-            textBoxEmName.Text = "";
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
+            textBoxEmName.Text = "";
+            dateTimePickerEmHiredate.Value = DateTime.Now;
+            checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
             textBoxEmHidden.Text = "";
         }
@@ -487,6 +489,68 @@ namespace SalesManagement_SysDev.Management_Employee
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             SetFormDataGridView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetDataGridView();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            dataGridView1.DataSource = employees.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
         }
     }
 }

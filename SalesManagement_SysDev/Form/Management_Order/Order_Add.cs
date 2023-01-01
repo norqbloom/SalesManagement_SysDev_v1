@@ -398,5 +398,18 @@ namespace SalesManagement_SysDev.Management_Order
 
 
         }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            textBoxOrID.Text = "";
+            textBoxSoID.Text = "";
+            textBoxEmID.Text = "";
+            textBoxClID.Text = "";
+            textBoxClChange.Text = "";
+            dateTimePickerOrDate.Value = DateTime.Now;
+            checkBoxOrStateFlag.Checked = false;
+            checkBoxOrFlag.Checked = false;
+            textBoxOrHidden.Text = "";
+        }
     }
 }

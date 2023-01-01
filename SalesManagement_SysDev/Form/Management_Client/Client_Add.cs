@@ -412,5 +412,17 @@ namespace SalesManagement_SysDev.Management_Client
             
         }
 
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            textBoxClID.Text = "";
+            textBoxClName.Text = "";
+            textBoxSoID.Text = "";
+            textBoxClPhone.Text = "";
+            textBoxClAddress.Text = "";
+            textBoxClPostal.Text = "";
+            textBoxClFAX.Text = "";
+            textBoxClHidden.Text = "";
+            checkBoxClFLG.Checked = false;
+        }
     }
 }

@@ -379,6 +379,19 @@ namespace SalesManagement_SysDev.Management_Client
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            textBoxClID.Text = "";
+            textBoxClName.Text = "";
+            textBoxSoID.Text = "";
+            textBoxClPhone.Text = "";
+            textBoxClAddress.Text = "";
+            checkBoxClFlag.Checked = false;
+            textBoxClPostal.Text = "";
+            textBoxClFAX.Text = "";
+            textBoxClHidden.Text = "";
+        }
     }
 
 }

@@ -67,6 +67,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -351,6 +352,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
+            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -424,7 +426,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBoxPoID);
             this.panel1.Location = new System.Drawing.Point(35, 64);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 162);
             this.panel1.TabIndex = 46;
@@ -441,7 +443,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.textBoxEmPhone);
             this.panel3.Location = new System.Drawing.Point(381, 64);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(389, 191);
             this.panel3.TabIndex = 47;
@@ -476,7 +478,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel4.Controls.Add(this.checkBoxEmFlag);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(811, 64);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(335, 176);
             this.panel4.TabIndex = 50;
@@ -492,11 +494,23 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label12.TabIndex = 51;
             this.label12.Text = "その他";
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(638, 297);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.TabIndex = 52;
+            this.Clear.Text = "クリア";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
             // Employee_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 666);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label11);
@@ -566,5 +580,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button Clear;
     }
 }
