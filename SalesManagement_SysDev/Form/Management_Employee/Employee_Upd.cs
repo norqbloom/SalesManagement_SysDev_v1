@@ -529,6 +529,26 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmPhone.Text = "";
             textBoxEmHidden.Text = "";
         }
+
+        private void textBoxEmPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerEmHiredate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxEmFlag_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     
