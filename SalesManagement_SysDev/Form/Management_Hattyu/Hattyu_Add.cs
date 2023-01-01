@@ -135,7 +135,7 @@ namespace SalesManagement_SysDev.Management_Hattyu
             //非表示理由
             if (!dataInputFormCheck.CheckFullWidth(HaHidden.Text.Trim()))
             {
-                MessageBox.Show("非表示理由は全角入力です"); //messageDsp.DspMsg("M2036");
+                MessageBox.Show("非表示理由は全角入力です"); //messageDsp.DspMsg("M2037");
                 HaHidden.Focus();
                 return false;
             }
