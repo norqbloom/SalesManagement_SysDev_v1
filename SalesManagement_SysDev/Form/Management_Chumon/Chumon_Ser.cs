@@ -289,7 +289,32 @@ namespace SalesManagement_SysDev.Management_Chumon
         //削除ボタン
         private void buttonDel_Click(object sender, EventArgs e)
         {
-            
+            var Chumondel = GenerateChumonDelete();
+            Chumon_delete(Chumondel);
+        }
+
+        private T_Chumon GenerateChumonDelete()
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            return new T_Chumon
+            {
+                ChID = number
+            };
+        }
+
+        private void Chumon_delete(T_Chumon Chumondel)
+        {
+            DialogResult result = MessageBox.Show("削除ｓ", MessageBoxButtons.OKCancel.ToString());
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+            bool flg = chumonDataAccess.DeleteChumonData(Chumondel);
+            if (flg == true)
+                MessageBox.Show("おｋ");
+            else
+                MessageBox.Show("の");
         }
 
         //確定ボタン
@@ -300,6 +325,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             List<T_OrderDetail> briOrDetail = chumonDataAccess.BringChumonData(number);
             //bool flg;
             //flg = chumonDataAccess.DecreaseChumonData(briOrDetail);
+
         }
 
         private void GenerateDataAtConfirm(int conChumon)
@@ -307,15 +333,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             chumonDataAccess.ConfirmChumonData(conChumon);
         }
 
-        private void GenerateDataAtBring()
-        {
-            //chumonDataAccess.BringChumonData();
-        }
-
-        private void GenerateDataAtDecrease()
-        {
-            
-        }
+        
 
 
 
