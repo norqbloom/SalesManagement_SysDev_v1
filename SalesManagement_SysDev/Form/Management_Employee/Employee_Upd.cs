@@ -549,6 +549,26 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
         }
+
+        private void textBoxEmPhone_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmPassword_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerEmHiredate_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxEmFlag_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
     
