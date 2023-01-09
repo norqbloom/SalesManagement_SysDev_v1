@@ -75,6 +75,7 @@ namespace SalesManagement_SysDev
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewDspProduct = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrderDetail)).BeginInit();
             this.panel1.SuspendLayout();
@@ -146,7 +147,7 @@ namespace SalesManagement_SysDev
             this.checkBoxOrStateFlag.Location = new System.Drawing.Point(136, 308);
             this.checkBoxOrStateFlag.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxOrStateFlag.Name = "checkBoxOrStateFlag";
-            this.checkBoxOrStateFlag.Size = new System.Drawing.Size(161, 19);
+            this.checkBoxOrStateFlag.Size = new System.Drawing.Size(158, 19);
             this.checkBoxOrStateFlag.TabIndex = 11;
             this.checkBoxOrStateFlag.Text = "受注状態（初期値:0）";
             this.checkBoxOrStateFlag.UseVisualStyleBackColor = true;
@@ -157,7 +158,7 @@ namespace SalesManagement_SysDev
             this.checkBoxOrFlag.Location = new System.Drawing.Point(136, 335);
             this.checkBoxOrFlag.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxOrFlag.Name = "checkBoxOrFlag";
-            this.checkBoxOrFlag.Size = new System.Drawing.Size(161, 19);
+            this.checkBoxOrFlag.Size = new System.Drawing.Size(158, 19);
             this.checkBoxOrFlag.TabIndex = 12;
             this.checkBoxOrFlag.Text = "受注管理（初期値:0）";
             this.checkBoxOrFlag.UseVisualStyleBackColor = true;
@@ -204,7 +205,7 @@ namespace SalesManagement_SysDev
             this.radioButton1.Location = new System.Drawing.Point(669, 361);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 19);
+            this.radioButton1.Size = new System.Drawing.Size(55, 19);
             this.radioButton1.TabIndex = 17;
             this.radioButton1.Text = "表示";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -249,7 +250,7 @@ namespace SalesManagement_SysDev
             this.radioButton2.Location = new System.Drawing.Point(669, 389);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 19);
+            this.radioButton2.Size = new System.Drawing.Size(70, 19);
             this.radioButton2.TabIndex = 22;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
@@ -262,7 +263,7 @@ namespace SalesManagement_SysDev
             this.label1.Location = new System.Drawing.Point(25, 124);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 25);
+            this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 23;
             this.label1.Text = "受注ID";
             // 
@@ -545,11 +546,22 @@ namespace SalesManagement_SysDev
             this.label15.TabIndex = 50;
             this.label15.Text = "label1";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(413, 151);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1883, 1012);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label14);
@@ -654,5 +666,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridViewDspProduct;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button2;
     }
 }

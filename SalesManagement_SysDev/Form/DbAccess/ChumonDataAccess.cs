@@ -65,12 +65,14 @@ namespace SalesManagement_SysDev
         //          ：削除成功の場合True
         //          ：削除失敗の場合False
         ///////////////////////////////
-        public bool DeleteChumonData(int delChumonID)
+        public bool DeleteChumonData(T_Chumon delChumonID)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                var chumons = context.T_Chumons.Single(x => x.ChID == delChumonID);
+                var chumons = context.T_Chumons.Single(x => x.ChID == delChumonID.ChID);
+                chumons.ChStateFlag = 2;
+
                 context.T_Chumons.Remove(chumons);
                 context.Dispose();
             }
