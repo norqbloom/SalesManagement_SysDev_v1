@@ -421,7 +421,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(528, 138);
+            this.button1.Location = new System.Drawing.Point(316, 345);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
@@ -454,13 +454,14 @@ namespace SalesManagement_SysDev.Management_Order
             this.panel1.Controls.Add(this.textBoxSoID);
             this.panel1.Controls.Add(this.textBoxEmID);
             this.panel1.Controls.Add(this.textBoxClID);
-            this.panel1.Location = new System.Drawing.Point(86, 12);
+            this.panel1.Location = new System.Drawing.Point(72, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 198);
             this.panel1.TabIndex = 69;
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.checkBoxOrStateFlag);
             this.panel3.Controls.Add(this.label7);
@@ -469,7 +470,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.panel3.Controls.Add(this.textBoxOrHidden);
             this.panel3.Controls.Add(this.checkBoxOrFlag);
             this.panel3.Controls.Add(this.dateTimePickerOrDate);
-            this.panel3.Location = new System.Drawing.Point(680, 68);
+            this.panel3.Location = new System.Drawing.Point(492, 68);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(385, 186);
             this.panel3.TabIndex = 70;
