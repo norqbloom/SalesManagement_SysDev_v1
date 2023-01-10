@@ -226,7 +226,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmName = textBoxEmName.Text.Trim(),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 PoID = int.Parse(textBoxPoID.Text.Trim()),
-                EmHiredate = dateTimePickerEmHiredate.Value.ToString(),
+                EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
                 EmPassword = pw,
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 EmFlag = checkflg,
