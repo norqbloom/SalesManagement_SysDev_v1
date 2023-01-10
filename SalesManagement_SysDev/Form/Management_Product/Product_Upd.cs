@@ -520,5 +520,15 @@ namespace SalesManagement_SysDev.Management_Product
         {
 
         }
+
+        private void textBoxPrColor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPrHidden_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
