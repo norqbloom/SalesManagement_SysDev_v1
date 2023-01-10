@@ -332,6 +332,94 @@ namespace SalesManagement_SysDev
             }
             return employee;
         }
+        public List<M_Employee> GetPronlyHdata(M_Employee selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                x.EmFlag == 0 &&
+                                                x.EmName.Contains(selectCondition.EmName) &&
+                                                x.EmHiredate > starttime && x.EmHiredate < stoptime &&
+                                                x.EmPhone.Contains(selectCondition.EmPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetdateHemget(M_Employee selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                x.EmFlag == 0 &&
+                                                x.EmName.Contains(selectCondition.EmName) &&
+                                                x.EmHiredate > starttime && x.EmHiredate < stoptime &&
+                                                x.EmPhone.Contains(selectCondition.EmPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetHPrMaget(M_Employee selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                x.EmFlag == 0 &&
+                                                x.EmName.Contains(selectCondition.EmName) &&
+                                                x.EmHiredate > starttime && x.EmHiredate < stoptime &&
+                                                x.EmPhone.Contains(selectCondition.EmPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
+        public List<M_Employee> GetHPrScget(M_Employee selectCondition, DateTime starttime, DateTime stoptime)
+        {
+            List<M_Employee> employee = new List<M_Employee>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                employee = context.M_Employees.Where(x =>
+                                                x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                x.PoID.ToString().Contains(selectCondition.PoID.ToString()) &&
+                                                x.EmFlag == 0 &&
+                                                x.EmName.Contains(selectCondition.EmName) &&
+                                                x.EmHiredate > starttime && x.EmHiredate < stoptime &&
+                                                x.EmPhone.Contains(selectCondition.EmPhone)).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return employee;
+        }
         ///////////////////////////////
         //メソッド名：UpPass
         //引　数   ：パスワード

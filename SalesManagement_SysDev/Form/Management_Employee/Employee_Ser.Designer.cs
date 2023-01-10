@@ -87,6 +87,9 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.checkBoxdate = new System.Windows.Forms.CheckBox();
+            this.dateTimePickerEmHiredate2 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -608,7 +611,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(409, 148);
+            this.radioButton1.Location = new System.Drawing.Point(458, 127);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(58, 19);
             this.radioButton1.TabIndex = 44;
@@ -620,7 +623,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(409, 194);
+            this.radioButton2.Location = new System.Drawing.Point(558, 127);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(73, 19);
             this.radioButton2.TabIndex = 45;
@@ -752,11 +755,43 @@ namespace SalesManagement_SysDev.Management_Employee
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // checkBoxdate
+            // 
+            this.checkBoxdate.AutoSize = true;
+            this.checkBoxdate.Location = new System.Drawing.Point(605, 200);
+            this.checkBoxdate.Name = "checkBoxdate";
+            this.checkBoxdate.Size = new System.Drawing.Size(89, 19);
+            this.checkBoxdate.TabIndex = 47;
+            this.checkBoxdate.Text = "日付検索";
+            this.checkBoxdate.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerEmHiredate2
+            // 
+            this.dateTimePickerEmHiredate2.Location = new System.Drawing.Point(398, 195);
+            this.dateTimePickerEmHiredate2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerEmHiredate2.Name = "dateTimePickerEmHiredate2";
+            this.dateTimePickerEmHiredate2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerEmHiredate2.TabIndex = 69;
+            this.dateTimePickerEmHiredate2.Value = new System.DateTime(2022, 11, 24, 0, 0, 0, 0);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(362, 201);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 15);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "から";
+            // 
             // Employee_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 580);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dateTimePickerEmHiredate2);
+            this.Controls.Add(this.checkBoxdate);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -856,5 +891,8 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.CheckBox checkBoxdate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate2;
+        private System.Windows.Forms.Label label8;
     }
 }
