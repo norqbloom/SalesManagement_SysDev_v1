@@ -437,7 +437,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Controls.Add(this.textBoxClAddress);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(437, 72);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(553, 210);
             this.panel3.TabIndex = 60;
@@ -460,7 +460,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4.Controls.Add(this.checkBoxClFLG);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(1060, 74);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(318, 208);
             this.panel4.TabIndex = 62;
@@ -490,17 +490,17 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.panel5.Location = new System.Drawing.Point(112, 51);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1425, 421);
             this.panel5.TabIndex = 64;
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(963, 345);
+            this.Clear.Location = new System.Drawing.Point(982, 339);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(131, 42);
+            this.Clear.Size = new System.Drawing.Size(162, 54);
             this.Clear.TabIndex = 65;
             this.Clear.Text = "クリア";
             this.Clear.UseVisualStyleBackColor = true;
