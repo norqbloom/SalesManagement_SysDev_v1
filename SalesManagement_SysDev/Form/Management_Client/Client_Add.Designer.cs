@@ -501,10 +501,17 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // Clear
             // 
+<<<<<<< HEAD
             this.Clear.Location = new System.Drawing.Point(722, 276);
             this.Clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(98, 34);
+=======
+            this.Clear.Location = new System.Drawing.Point(973, 339);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(162, 54);
+>>>>>>> 355e55f2652840e3399a73349458c4c76cd4f7e7
             this.Clear.TabIndex = 65;
             this.Clear.Text = "クリア";
             this.Clear.UseVisualStyleBackColor = true;
@@ -514,9 +521,16 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
+<<<<<<< HEAD
             this.label12.Location = new System.Drawing.Point(98, 29);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 21);
+=======
+            this.label12.Location = new System.Drawing.Point(131, 36);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 26);
+>>>>>>> 355e55f2652840e3399a73349458c4c76cd4f7e7
             this.label12.TabIndex = 63;
             this.label12.Text = "入力項目";
             // 
