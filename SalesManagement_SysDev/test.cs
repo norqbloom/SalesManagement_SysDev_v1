@@ -33,7 +33,6 @@ namespace SalesManagement_SysDev
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
-            label15.Text = grid_OrID.ToString();
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -195,7 +194,6 @@ namespace SalesManagement_SysDev
             
             test.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
             int ID = test.grid_OrID;
-            label15.Text = test.grid_OrID.ToString();
 
             orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
             GetDataGridView2();
@@ -1204,21 +1202,5 @@ namespace SalesManagement_SysDev
             //入力エリアのクリア
             //ClearInput();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var list = (from DataGridViewRow r in dataGridViewDspOrderDetail.Rows select r.Cells).ToList();
-
-            foreach(var li in list)
-            {
-                 
-            } 
-
-        }
-
-        /// <summary>
-        /// T_Orderの更新処理
-        /// </summary>
-        /// <returns></returns>
     }
 }
