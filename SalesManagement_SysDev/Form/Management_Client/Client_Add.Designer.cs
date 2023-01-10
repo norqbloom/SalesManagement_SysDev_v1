@@ -65,7 +65,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Clear = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -485,7 +484,6 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.Clear);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.panel1);
@@ -498,17 +496,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1069, 337);
             this.panel5.TabIndex = 64;
-            // 
-            // Clear
-            // 
-            this.Clear.Location = new System.Drawing.Point(722, 276);
-            this.Clear.Margin = new System.Windows.Forms.Padding(2);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(98, 34);
-            this.Clear.TabIndex = 65;
-            this.Clear.Text = "クリ";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // label12
             // 
@@ -589,6 +576,5 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button Clear;
     }
 }
