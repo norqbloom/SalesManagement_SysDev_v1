@@ -502,7 +502,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(162, 54);
             this.Clear.TabIndex = 65;
-            this.Clear.Text = "クリア";
+            this.Clear.Text = "クリアaaa";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 

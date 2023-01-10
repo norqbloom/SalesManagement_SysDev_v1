@@ -518,7 +518,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // textBoxScID
             // 
-            this.textBoxScID.Location = new System.Drawing.Point(153, 108);
+            this.textBoxScID.Location = new System.Drawing.Point(138, 164);
             this.textBoxScID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(81, 22);
@@ -550,7 +550,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // textBoxMaID
             // 
-            this.textBoxMaID.Location = new System.Drawing.Point(153, 67);
+            this.textBoxMaID.Location = new System.Drawing.Point(138, 90);
             this.textBoxMaID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(81, 22);
@@ -600,7 +600,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(6, 108);
+            this.label14.Location = new System.Drawing.Point(6, 160);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(126, 28);
             this.label14.TabIndex = 113;
@@ -640,7 +640,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label19.Location = new System.Drawing.Point(21, 67);
+            this.label19.Location = new System.Drawing.Point(6, 88);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(104, 28);
             this.label19.TabIndex = 104;
@@ -648,7 +648,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // textBoxPrID
             // 
-            this.textBoxPrID.Location = new System.Drawing.Point(93, 21);
+            this.textBoxPrID.Location = new System.Drawing.Point(138, 27);
             this.textBoxPrID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(81, 22);
@@ -692,7 +692,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel3.Controls.Add(this.textBoxMaID);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.textBoxScID);
-            this.panel3.Location = new System.Drawing.Point(71, 64);
+            this.panel3.Location = new System.Drawing.Point(12, 313);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(303, 206);
             this.panel3.TabIndex = 129;
