@@ -435,10 +435,11 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // ButtonCle
             // 
-            this.ButtonCle.Location = new System.Drawing.Point(530, 282);
+            this.ButtonCle.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ButtonCle.Location = new System.Drawing.Point(438, 344);
             this.ButtonCle.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonCle.Name = "ButtonCle";
-            this.ButtonCle.Size = new System.Drawing.Size(143, 117);
+            this.ButtonCle.Size = new System.Drawing.Size(148, 42);
             this.ButtonCle.TabIndex = 102;
             this.ButtonCle.Text = "クリア";
             this.ButtonCle.UseVisualStyleBackColor = true;
@@ -446,10 +447,11 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // ButtonUpd
             // 
-            this.ButtonUpd.Location = new System.Drawing.Point(677, 282);
+            this.ButtonUpd.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ButtonUpd.Location = new System.Drawing.Point(619, 342);
             this.ButtonUpd.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonUpd.Name = "ButtonUpd";
-            this.ButtonUpd.Size = new System.Drawing.Size(119, 117);
+            this.ButtonUpd.Size = new System.Drawing.Size(148, 46);
             this.ButtonUpd.TabIndex = 101;
             this.ButtonUpd.Text = "更新";
             this.ButtonUpd.UseVisualStyleBackColor = true;
