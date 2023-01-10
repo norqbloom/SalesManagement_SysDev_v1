@@ -83,9 +83,11 @@ namespace SalesManagement_SysDev.Management_Product
             this.label20 = new System.Windows.Forms.Label();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelPage
@@ -435,7 +437,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // ButtonCle
             // 
-            this.ButtonCle.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ButtonCle.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ButtonCle.Location = new System.Drawing.Point(438, 344);
             this.ButtonCle.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonCle.Name = "ButtonCle";
@@ -447,7 +449,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // ButtonUpd
             // 
-            this.ButtonUpd.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ButtonUpd.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ButtonUpd.Location = new System.Drawing.Point(619, 342);
             this.ButtonUpd.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonUpd.Name = "ButtonUpd";
@@ -516,7 +518,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // textBoxScID
             // 
-            this.textBoxScID.Location = new System.Drawing.Point(402, 62);
+            this.textBoxScID.Location = new System.Drawing.Point(153, 108);
             this.textBoxScID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(81, 22);
@@ -548,7 +550,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // textBoxMaID
             // 
-            this.textBoxMaID.Location = new System.Drawing.Point(115, 117);
+            this.textBoxMaID.Location = new System.Drawing.Point(153, 67);
             this.textBoxMaID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(81, 22);
@@ -557,87 +559,96 @@ namespace SalesManagement_SysDev.Management_Product
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(544, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.Size = new System.Drawing.Size(157, 28);
             this.label1.TabIndex = 122;
             this.label1.Text = "非表示理由";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(304, 238);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(99, 28);
             this.label2.TabIndex = 116;
             this.label2.Text = "発売日";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(304, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 15);
+            this.label3.Size = new System.Drawing.Size(41, 28);
             this.label3.TabIndex = 115;
             this.label3.Text = "色";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(304, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 15);
+            this.label4.Size = new System.Drawing.Size(70, 28);
             this.label4.TabIndex = 114;
             this.label4.Text = "型番";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(304, 59);
+            this.label14.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label14.Location = new System.Drawing.Point(6, 108);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 15);
+            this.label14.Size = new System.Drawing.Size(126, 28);
             this.label14.TabIndex = 113;
             this.label14.Text = "小分類ID";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label15.Location = new System.Drawing.Point(28, 264);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 15);
+            this.label15.Size = new System.Drawing.Size(157, 28);
             this.label15.TabIndex = 107;
             this.label15.Text = "安全在庫数";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label16.Location = new System.Drawing.Point(28, 209);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 15);
+            this.label16.Size = new System.Drawing.Size(70, 28);
             this.label16.TabIndex = 106;
             this.label16.Text = "価格";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label18.Location = new System.Drawing.Point(28, 164);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 15);
+            this.label18.Size = new System.Drawing.Size(99, 28);
             this.label18.TabIndex = 105;
             this.label18.Text = "商品名";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(28, 113);
+            this.label19.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label19.Location = new System.Drawing.Point(21, 67);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 15);
+            this.label19.Size = new System.Drawing.Size(104, 28);
             this.label19.TabIndex = 104;
             this.label19.Text = "メーカID";
             // 
             // textBoxPrID
             // 
-            this.textBoxPrID.Location = new System.Drawing.Point(115, 57);
+            this.textBoxPrID.Location = new System.Drawing.Point(93, 21);
             this.textBoxPrID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(81, 22);
@@ -646,19 +657,21 @@ namespace SalesManagement_SysDev.Management_Product
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(28, 57);
+            this.label20.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label20.Location = new System.Drawing.Point(6, 21);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 15);
+            this.label20.Size = new System.Drawing.Size(97, 28);
             this.label20.TabIndex = 103;
             this.label20.Text = "商品ID";
             // 
             // checkBoxPrFlag
             // 
             this.checkBoxPrFlag.AutoSize = true;
+            this.checkBoxPrFlag.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkBoxPrFlag.Location = new System.Drawing.Point(307, 286);
             this.checkBoxPrFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(121, 19);
+            this.checkBoxPrFlag.Size = new System.Drawing.Size(213, 32);
             this.checkBoxPrFlag.TabIndex = 117;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
@@ -670,11 +683,26 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 128;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.textBoxPrID);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.textBoxMaID);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.textBoxScID);
+            this.panel3.Location = new System.Drawing.Point(71, 64);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(303, 206);
+            this.panel3.TabIndex = 129;
+            // 
             // Product_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 629);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -682,22 +710,16 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.textBoxPrHidden);
             this.Controls.Add(this.textBoxPrColor);
             this.Controls.Add(this.textBoxPrModelNumber);
-            this.Controls.Add(this.textBoxScID);
             this.Controls.Add(this.textBoxPrSafetyStock);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.textBoxPrName);
-            this.Controls.Add(this.textBoxMaID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBoxPrID);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.checkBoxPrFlag);
             this.Controls.Add(this.ButtonCle);
             this.Controls.Add(this.ButtonUpd);
@@ -713,6 +735,8 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,5 +798,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.CheckBox checkBoxPrFlag;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
