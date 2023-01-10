@@ -225,7 +225,7 @@ namespace SalesManagement_SysDev
                 EmName=textBoxEmName.Text.Trim(),
                 SoID=int.Parse(textBoxSoID.Text.Trim()),
                 PoID=int.Parse(textBoxPoID.Text.Trim()),
-                EmHiredate=dateTimeHidden.Value.ToString(),
+                EmHiredate= DateTime.Parse(dateTimeHidden.Text),
                 EmPassword=pw,
                 EmPhone=textBoxEmPhone.Text.Trim(),
                 EmFlag=checkflg,

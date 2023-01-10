@@ -220,7 +220,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmName = textBoxEmName.Text.Trim(),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 PoID = int.Parse(textBoxPoID.Text.Trim()),
-                EmHiredate = dateTimePickerEmHiredate.Value.ToString(),
+                EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
                 EmPassword = pw,
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 EmFlag = checkflg,
@@ -265,7 +265,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmName.Text = x.EmName;
             textBoxSoID.Text = x.SoID.ToString();
             textBoxPoID.Text = x.PoID.ToString();
-            dateTimePickerEmHiredate.Text = x.EmHiredate;
+            dateTimePickerEmHiredate.Text = x.EmHiredate.ToString();
             textBoxEmPhone.Text = x.EmPhone;
             textBoxEmHidden.Text = x.EmHidden;
             //チェックボックスの状態を判断
