@@ -26,14 +26,14 @@ namespace SalesManagement_SysDev.Management_Employee
         private void buttonSer_Click(object sender, EventArgs e)
         {
             //入力データ確認
-            if (!GetClientDataAtSelect())
+            if (!GetEmployetDataAtSelect())
                 return;
 
             GenerateDataAtSelect();
 
             SetSelectData();
         }
-        private bool GetClientDataAtSelect()
+        private bool GetEmployetDataAtSelect()
         {
             if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
             {
