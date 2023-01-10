@@ -35,6 +35,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
             // 5.3.2.3 スタッフ情報更新
             UpdateItem(updemp);
+            SetFormDataGridView();
         }
         private bool GetValidDataAtUpdate()
         {
@@ -203,7 +204,7 @@ namespace SalesManagement_SysDev.Management_Employee
             int checkflg;
             if (checkBoxEmFlag.Checked == true)
             {
-                checkflg = 1;
+                checkflg = 2;
             }
             else
             {
@@ -290,7 +291,7 @@ namespace SalesManagement_SysDev.Management_Employee
         }
 
         //データグリッドビュー用のプロダクトデータ
-        private static List<M_EmployeeDsp> Emp1;
+        private static List<M_Employee> Emp1;
 
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
@@ -335,7 +336,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 radioint = 0;
             }
             // 商品データの取得
-            Emp1 = employeeDataAccess.GetProductData2(radioint);
+            Emp1 = employeeDataAccess.GetEmployeeDataDsp(radioint);
             
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -469,10 +470,10 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
             textBoxSoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
             textBoxPoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            dateTimePickerEmHiredate.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            //dateTimePickerEmHiredate.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
+            //textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
             textBoxEmPhone.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
-            textBoxEmHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            
             /*int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             M_Employee selectCondition = new M_Employee()
@@ -499,14 +500,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 checkBoxEmFlag.Checked = true;
             }
             //非表示理由の状態を判断
-            /*if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value == null)
+            if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value == null)
             {
-                textBoxPrHidden.Text = null;
+                textBoxEmHidden.Text = null;
             }
             else
             {
-                textBoxPrHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
-            }*/
+                textBoxEmHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
+            }
             //各種Formロードと各種ボタンに下記を入力する
             SetFormDataGridView();
 
@@ -514,7 +515,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            SetFormDataGridView();
+            GetDataGridView();
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -568,6 +569,19 @@ namespace SalesManagement_SysDev.Management_Employee
         private void checkBoxEmFlag_CheckedChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Clear_Click_1(object sender, EventArgs e)
+        {
+            textBoxEmID.Text = "";
+            textBoxSoID.Text = "";
+            textBoxPoID.Text = "";
+            textBoxEmName.Text = "";
+            textBoxEmPassword.Text = "";
+            dateTimePickerEmHiredate.Value = DateTime.Now;
+            checkBoxEmFlag.Checked = false;
+            textBoxEmPhone.Text = "";
+            textBoxEmHidden.Text = "";
         }
     }
 

@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<M_Employee> employees;
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
-        private static List<M_EmployeeDsp> Emp1;
+        private static List<M_Employee> Emp1;
         public Employee_Ser()
         {
             InitializeComponent();
@@ -273,7 +273,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 radioint = 0;
             }
             // 商品データの取得
-            Emp1 = EmployeeDataAccess.GetProductData2(radioint);
+            Emp1 = EmployeeDataAccess.GetEmployeeDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -363,7 +363,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now;
-            checkBoxEmFlag.Checked = false;
+
             textBoxEmPhone.Text = "";
             textBoxEmHidden.Text = "";
         }

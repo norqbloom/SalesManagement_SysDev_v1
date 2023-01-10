@@ -437,6 +437,23 @@ namespace SalesManagement_SysDev
             }
             return employee;
         }
+        public List<M_Employee> GetEmployeeDataDsp(int radioint)
+        {
+            List<M_Employee> emp = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                emp = context.M_Employees.Where(x => x.EmFlag == radioint).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return emp;
+        }
 
     }
 }

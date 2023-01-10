@@ -36,7 +36,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.textBoxEmName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxEmID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxEmFlag = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -116,7 +114,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmPhone
             // 
-            this.textBoxEmPhone.Location = new System.Drawing.Point(184, 221);
+            this.textBoxEmPhone.Location = new System.Drawing.Point(184, 242);
             this.textBoxEmPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
@@ -155,16 +153,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label9.Size = new System.Drawing.Size(160, 36);
             this.label9.TabIndex = 31;
             this.label9.Text = "非表示理由";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(30, 269);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(218, 36);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "社員管理フラグ";
             // 
             // label7
             // 
@@ -234,17 +222,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label1.TabIndex = 22;
             this.label1.Text = "社員ID";
             // 
-            // checkBoxEmFlag
-            // 
-            this.checkBoxEmFlag.AutoSize = true;
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(279, 269);
-            this.checkBoxEmFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBoxEmFlag.Name = "checkBoxEmFlag";
-            this.checkBoxEmFlag.Size = new System.Drawing.Size(34, 19);
-            this.checkBoxEmFlag.TabIndex = 21;
-            this.checkBoxEmFlag.Text = " ";
-            this.checkBoxEmFlag.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -259,7 +236,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // dateTimePickerEmHiredate
             // 
-            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(184, 174);
+            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(194, 195);
             this.dateTimePickerEmHiredate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(161, 22);
@@ -793,7 +770,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.textBoxSoID);
             this.Controls.Add(this.textBoxEmName);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -801,7 +777,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxEmID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("MS UI Gothic", 9F);
@@ -830,7 +805,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.TextBox textBoxEmName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -838,7 +812,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxEmID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBoxEmFlag;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
         private System.Windows.Forms.Panel panel1;

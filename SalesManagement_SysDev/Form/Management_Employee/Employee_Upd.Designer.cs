@@ -64,6 +64,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,7 +147,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(19, 165);
+            this.label8.Location = new System.Drawing.Point(20, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(218, 36);
             this.label8.TabIndex = 30;
@@ -233,7 +234,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // checkBoxEmFlag
             // 
             this.checkBoxEmFlag.AutoSize = true;
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(133, 165);
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(282, 175);
             this.checkBoxEmFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxEmFlag.Name = "checkBoxEmFlag";
             this.checkBoxEmFlag.Size = new System.Drawing.Size(34, 19);
@@ -440,7 +441,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.Controls.Add(this.textBoxEmPhone);
             this.panel3.Location = new System.Drawing.Point(26, 117);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(357, 226);
+            this.panel3.Size = new System.Drawing.Size(357, 260);
             this.panel3.TabIndex = 47;
             // 
             // panel4
@@ -455,11 +456,23 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel4.Size = new System.Drawing.Size(250, 174);
             this.panel4.TabIndex = 48;
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(699, 306);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.TabIndex = 53;
+            this.Clear.Text = "クリア";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click_1);
+            // 
             // Employee_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 661);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -520,5 +533,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button Clear;
     }
 }
