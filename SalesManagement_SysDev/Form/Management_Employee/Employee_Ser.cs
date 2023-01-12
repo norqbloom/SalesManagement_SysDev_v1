@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<M_Employee> employees;
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
-        private static List<M_EmployeeDsp> Emp1;
+        private static List<M_Employee> Emp1;
         public Employee_Ser()
         {
             InitializeComponent();
@@ -26,14 +26,14 @@ namespace SalesManagement_SysDev.Management_Employee
         private void buttonSer_Click(object sender, EventArgs e)
         {
             //入力データ確認
-            if (!GetClientDataAtSelect())
+            if (!GetEmployetDataAtSelect())
                 return;
 
             GenerateDataAtSelect();
 
             SetSelectData();
         }
-        private bool GetClientDataAtSelect()
+        private bool GetEmployetDataAtSelect()
         {
             if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
             {
@@ -137,104 +137,225 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void datedubblwget()
         {
-            //全て入力されている
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                PoID = int.Parse(textBoxPoID.Text.Trim()),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.GetMaScget(selectCondition);
+                //全て入力されている
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    PoID = int.Parse(textBoxPoID.Text.Trim()),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetPronlyHdata(selectCondition,dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                //全て入力されている
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    PoID = int.Parse(textBoxPoID.Text.Trim()),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetMaScget(selectCondition);
+            }
          }
 
         private void dateemget()
         {
-            //emのみ
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.Getdateemget(selectCondition);
+                //emのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetdateHemget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.Getdateemget(selectCondition);
+            }
         }
         private void datePrMaget()
         {
-            //Em・Soのみ
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.GetPrMaget(selectCondition);
+                //Em・Soのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetHPrMaget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetPrMaget(selectCondition);
+            }
         }
         private void datePrScget()
         {
-            //Em・Poのみ
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                PoID = int.Parse(textBoxPoID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.GetPrScget(selectCondition);
+                //Em・Poのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    PoID = int.Parse(textBoxPoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetHPrScget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                //Em・Poのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmID = int.Parse(textBoxEmID.Text.Trim()),
+                    PoID = int.Parse(textBoxPoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetPrScget(selectCondition);
+            }
         }
         private void dateMaScget()
         {
-            //So・Poのみ
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                PoID = int.Parse(textBoxPoID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.GetMaScget(selectCondition);
+                //So・Poのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    PoID = int.Parse(textBoxPoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetHMaScget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                M_Employee selectCondition = new M_Employee()
+                {
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    PoID = int.Parse(textBoxPoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetMaScget(selectCondition);
+            }
         }
         private void dateMaget()
         {
-            //Soのみ
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.GetMaget(selectCondition);
+                //Soのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetHMaget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                //Soのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    SoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetMaget(selectCondition);
+            }
         }
         private void dateScget()
         {
-            //Poのみ
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                PoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.GetScget(selectCondition);
+                //Poのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    PoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetHScget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                //Poのみ
+                M_Employee selectCondition = new M_Employee()
+                {
+                    PoID = int.Parse(textBoxSoID.Text.Trim()),
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetScget(selectCondition);
+            }
         }
         private void datenolwget()
         {
-            //何も入力されていない
-            M_Employee selectCondition = new M_Employee()
+            if (checkBoxdate.Checked == true)
             {
-                EmName = textBoxEmName.Text.Trim(),
-                EmPhone = textBoxEmPhone.Text.Trim(),
-                //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
-            };
-            employees = EmployeeDataAccess.Getnolwget(selectCondition);
+                //何も入力されていない
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.GetHnolwget(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+            }
+            else
+            {
+                //何も入力されていない
+                M_Employee selectCondition = new M_Employee()
+                {
+                    EmName = textBoxEmName.Text.Trim(),
+                    EmPhone = textBoxEmPhone.Text.Trim(),
+                    //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
+                };
+                employees = EmployeeDataAccess.Getnolwget(selectCondition);
+            }
         }
 
         private void Employee_Ser_Load(object sender, EventArgs e)
@@ -273,7 +394,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 radioint = 0;
             }
             // 商品データの取得
-            Emp1 = EmployeeDataAccess.GetProductData2(radioint);
+            Emp1 = EmployeeDataAccess.GetEmployeeDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -363,7 +484,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now;
-            checkBoxEmFlag.Checked = false;
+
             textBoxEmPhone.Text = "";
             textBoxEmHidden.Text = "";
         }

@@ -73,7 +73,7 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //文字種チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxChID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("注文IDは6文字");
+                    messageDsp.DspMsg("注文IDは6文字"); //messageDsp.DspMsg("M5035");
                     textBoxChID.Focus();
                     return false;
                 }
@@ -85,7 +85,7 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //文字種チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("営業所IDは6文字");
+                    messageDsp.DspMsg("営業所IDは6文字"); //messageDsp.DspMsg("M1008");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -97,7 +97,7 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //文字種チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("社員IDは6もじょ");
+                    messageDsp.DspMsg("社員IDは6もじ"); //messageDsp.DspMsg("M6002");
                     textBoxEmID.Focus();
                     return false;
                 }

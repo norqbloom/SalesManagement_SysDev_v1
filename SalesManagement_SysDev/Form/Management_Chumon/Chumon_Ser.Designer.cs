@@ -74,9 +74,13 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCon
@@ -103,7 +107,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             // 
             // textBoxOrID
             // 
-            this.textBoxOrID.Location = new System.Drawing.Point(201, 189);
+            this.textBoxOrID.Location = new System.Drawing.Point(125, 143);
             this.textBoxOrID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxOrID.Name = "textBoxOrID";
             this.textBoxOrID.Size = new System.Drawing.Size(81, 19);
@@ -111,7 +115,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             // 
             // textBoxClID
             // 
-            this.textBoxClID.Location = new System.Drawing.Point(201, 159);
+            this.textBoxClID.Location = new System.Drawing.Point(125, 109);
             this.textBoxClID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(81, 19);
@@ -119,7 +123,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             // 
             // textBoxEmID
             // 
-            this.textBoxEmID.Location = new System.Drawing.Point(201, 133);
+            this.textBoxEmID.Location = new System.Drawing.Point(125, 75);
             this.textBoxEmID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmID.Name = "textBoxEmID";
             this.textBoxEmID.Size = new System.Drawing.Size(81, 19);
@@ -127,7 +131,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             // 
             // textBoxSoID
             // 
-            this.textBoxSoID.Location = new System.Drawing.Point(201, 104);
+            this.textBoxSoID.Location = new System.Drawing.Point(125, 40);
             this.textBoxSoID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(81, 19);
@@ -136,70 +140,77 @@ namespace SalesManagement_SysDev.Management_Chumon
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(133, 253);
+            this.label7.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(8, 80);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 12);
+            this.label7.Size = new System.Drawing.Size(174, 29);
             this.label7.TabIndex = 30;
             this.label7.Text = "注文状態フラグ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(130, 221);
+            this.label6.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(8, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.Size = new System.Drawing.Size(102, 23);
             this.label6.TabIndex = 29;
             this.label6.Text = "注文年月日";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 189);
+            this.label5.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(15, 134);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 12);
+            this.label5.Size = new System.Drawing.Size(84, 29);
             this.label5.TabIndex = 28;
             this.label5.Text = "受注ID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(133, 159);
+            this.label4.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(15, 100);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 12);
+            this.label4.Size = new System.Drawing.Size(84, 29);
             this.label4.TabIndex = 27;
             this.label4.Text = "顧客ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(133, 133);
+            this.label3.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(15, 71);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 12);
+            this.label3.Size = new System.Drawing.Size(84, 29);
             this.label3.TabIndex = 26;
             this.label3.Text = "社員ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(133, 104);
+            this.label2.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(15, 41);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 12);
+            this.label2.Size = new System.Drawing.Size(107, 29);
             this.label2.TabIndex = 25;
             this.label2.Text = "営業所ID";
             // 
             // checkBoxChStateFlag
             // 
             this.checkBoxChStateFlag.AutoSize = true;
-            this.checkBoxChStateFlag.Location = new System.Drawing.Point(229, 253);
+            this.checkBoxChStateFlag.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxChStateFlag.Location = new System.Drawing.Point(237, 80);
             this.checkBoxChStateFlag.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxChStateFlag.Name = "checkBoxChStateFlag";
-            this.checkBoxChStateFlag.Size = new System.Drawing.Size(28, 16);
+            this.checkBoxChStateFlag.Size = new System.Drawing.Size(25, 18);
             this.checkBoxChStateFlag.TabIndex = 24;
             this.checkBoxChStateFlag.Text = " ";
             this.checkBoxChStateFlag.UseVisualStyleBackColor = true;
@@ -207,16 +218,17 @@ namespace SalesManagement_SysDev.Management_Chumon
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 78);
+            this.label1.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(15, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 12);
+            this.label1.Size = new System.Drawing.Size(84, 29);
             this.label1.TabIndex = 23;
             this.label1.Text = "注文ID";
             // 
             // textBoxChID
             // 
-            this.textBoxChID.Location = new System.Drawing.Point(201, 78);
+            this.textBoxChID.Location = new System.Drawing.Point(125, 14);
             this.textBoxChID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxChID.Name = "textBoxChID";
             this.textBoxChID.Size = new System.Drawing.Size(81, 19);
@@ -247,9 +259,9 @@ namespace SalesManagement_SysDev.Management_Chumon
             // 
             // dateTimePickerChDate
             // 
-            this.dateTimePickerChDate.Location = new System.Drawing.Point(201, 221);
+            this.dateTimePickerChDate.Location = new System.Drawing.Point(115, 32);
             this.dateTimePickerChDate.Name = "dateTimePickerChDate";
-            this.dateTimePickerChDate.Size = new System.Drawing.Size(200, 19);
+            this.dateTimePickerChDate.Size = new System.Drawing.Size(160, 16);
             this.dateTimePickerChDate.TabIndex = 42;
             // 
             // panel1
@@ -597,30 +609,49 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.buttonFirstPage.UseVisualStyleBackColor = true;
             this.buttonFirstPage.Click += new System.EventHandler(this.buttonFirstPage_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.textBoxChID);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.textBoxSoID);
+            this.panel3.Controls.Add(this.textBoxOrID);
+            this.panel3.Controls.Add(this.textBoxEmID);
+            this.panel3.Controls.Add(this.textBoxClID);
+            this.panel3.Location = new System.Drawing.Point(20, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(243, 176);
+            this.panel3.TabIndex = 49;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.checkBoxChStateFlag);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.dateTimePickerChDate);
+            this.panel4.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.panel4.Location = new System.Drawing.Point(293, 46);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(331, 134);
+            this.panel4.TabIndex = 50;
+            // 
             // Chumon_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 614);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTimePickerChDate);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonCon);
             this.Controls.Add(this.buttonSer);
-            this.Controls.Add(this.textBoxOrID);
-            this.Controls.Add(this.textBoxClID);
-            this.Controls.Add(this.textBoxEmID);
-            this.Controls.Add(this.textBoxSoID);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBoxChStateFlag);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxChID);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Chumon_Ser";
@@ -631,8 +662,11 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -683,5 +717,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button buttonFirstPage;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

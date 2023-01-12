@@ -33,7 +33,6 @@ namespace SalesManagement_SysDev
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
-            label15.Text = grid_OrID.ToString();
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -76,15 +75,24 @@ namespace SalesManagement_SysDev
                 return;
             }
 
+            //受注T更新
             var updProduct = GenerateDataAtUpdate();
-
             UpdateProduct(updProduct);
 
+            //注文T登録
             var regChumon = GenerateDataAtRegistrationChumon();
-
             RegistrationChumon(regChumon);
 
+            //注文詳細T登録
+            if(GenerateDataAtRegistrationChumonDetail())
+            {
+                return;
+            }
+            //RegistrationChumonDetail(regChumonDetail);
+
             SetFormDataGridView();
+
+
         }
 
         private void button_ProAdd_Click(object sender, EventArgs e)
@@ -186,7 +194,6 @@ namespace SalesManagement_SysDev
             
             test.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
             int ID = test.grid_OrID;
-            label15.Text = test.grid_OrID.ToString();
 
             orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
             GetDataGridView2();
@@ -469,6 +476,40 @@ namespace SalesManagement_SysDev
             };
         }
 
+
+        private bool GenerateDataAtRegistrationChumonDetail()
+        {
+            int a;
+            int b;
+            int a1;
+            var context = new SalesManagement_DevContext();
+            var c = context.T_OrderDetails.First(x => x.OrID.ToString() == textBoxOrID.Text);
+            var d = context.T_OrderDetails.Count();
+            for (int i = 1; i <= d; i++)
+            {
+                c = context.T_OrderDetails.SingleOrDefault(x => x.OrID.ToString() == textBoxOrID.Text && x.OrDetailID == i);
+                if(!(c == null))
+                {
+                    a = c.PrID;
+                    b = c.OrQuantity;
+                    var xx = context.T_Chumons.First(x => x.OrID.ToString() == textBoxOrID.Text);
+                    a1 = xx.ChID;
+                    T_ChumonDetail e = new T_ChumonDetail
+                    {
+                        ChDetailID = 0,
+                        ChID = a1,
+                        PrID = a,
+                        ChQuantity = b
+                    };
+                    context.T_ChumonDetails.Add(e);
+                }
+            }
+            context.SaveChanges();
+            context.Dispose();
+            MessageBox.Show("OK");
+            return true;
+        }
+
         private void RegistrationOrder(T_Order regOrder)
         {
             bool flg = orderDateAccess.AddorderData(regOrder);
@@ -537,6 +578,13 @@ namespace SalesManagement_SysDev
             }
             textBoxOrID.Focus();
         }
+
+
+        private void RegistrationChumonDetail(T_ChumonDetail regChumonDetail)
+        {
+
+        }
+
 
         //Delete
         private bool GetValidDataDelete()
@@ -1154,12 +1202,5 @@ namespace SalesManagement_SysDev
             //入力エリアのクリア
             //ClearInput();
         }
-
-
-
-        /// <summary>
-        /// T_Orderの更新処理
-        /// </summary>
-        /// <returns></returns>
     }
 }

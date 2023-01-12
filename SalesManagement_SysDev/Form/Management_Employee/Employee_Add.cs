@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev.Management_Employee
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         PasswordHash passwordHash = new PasswordHash();
         private static List<M_Employee> employees;
-        private static List<M_EmployeeDsp> Emp1;
+        private static List<M_Employee> Emp1;
 
         public Employee_Add()
         {
@@ -106,7 +106,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //soid文字数チェック
                 if (textBoxSoID.TextLength > 2)
                 {
-                    messageDsp.DspMsg("M1006");
+                    MessageBox.Show("営業所IDは2文字まで");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -226,7 +226,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmName = textBoxEmName.Text.Trim(),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 PoID = int.Parse(textBoxPoID.Text.Trim()),
-                EmHiredate = dateTimePickerEmHiredate.Value.ToString(),
+                EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
                 EmPassword = pw,
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 EmFlag = checkflg,
@@ -347,7 +347,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 radioint = 0;
             }
             // 商品データの取得
-            Emp1 = employeeDataAccess.GetProductData2(radioint);
+            Emp1 = employeeDataAccess.GetEmployeeDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
