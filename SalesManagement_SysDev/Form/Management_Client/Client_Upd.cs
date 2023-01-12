@@ -392,6 +392,11 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClFAX.Text = "";
             textBoxClHidden.Text = "";
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
