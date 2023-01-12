@@ -71,6 +71,8 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel3.SuspendLayout();
@@ -496,7 +498,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel4.Controls.Add(this.textBoxPrSafetyStock);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Location = new System.Drawing.Point(420, 54);
+            this.panel4.Location = new System.Drawing.Point(396, 54);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(606, 248);
@@ -517,6 +519,8 @@ namespace SalesManagement_SysDev.Management_Product
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.radioButton2);
@@ -549,6 +553,26 @@ namespace SalesManagement_SysDev.Management_Product
             this.label7.Size = new System.Drawing.Size(92, 26);
             this.label7.TabIndex = 136;
             this.label7.Text = "入力項目";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("游ゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(1099, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 26);
+            this.label6.TabIndex = 136;
+            this.label6.Text = "その他";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("游ゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Location = new System.Drawing.Point(425, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 26);
+            this.label5.TabIndex = 137;
+            this.label5.Text = "商品情報";
             // 
             // Product_Add
             // 
@@ -623,5 +647,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
