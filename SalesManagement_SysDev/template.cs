@@ -318,7 +318,7 @@ namespace SalesManagement_SysDev
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new test());
+            openChildForm(new Form1());
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -564,6 +564,14 @@ namespace SalesManagement_SysDev
         private void timer_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string width, height;
+            width = childsubmenu.Width.ToString();
+            height = childsubmenu.Height.ToString();
+            MessageBox.Show(width, height);
         }
     }
 }

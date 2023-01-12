@@ -67,6 +67,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5 = new System.Windows.Forms.Panel();
             this.Clear = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -101,7 +102,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.checkBoxClFLG.Location = new System.Drawing.Point(9, 9);
             this.checkBoxClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxClFLG.Name = "checkBoxClFLG";
-            this.checkBoxClFLG.Size = new System.Drawing.Size(239, 40);
+            this.checkBoxClFLG.Size = new System.Drawing.Size(240, 40);
             this.checkBoxClFLG.TabIndex = 54;
             this.checkBoxClFLG.Text = "非表示チェック";
             this.checkBoxClFLG.UseVisualStyleBackColor = true;
@@ -246,16 +247,15 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(112, 505);
+            this.dataGridView1.Location = new System.Drawing.Point(-11, 605);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1599, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(2044, 315);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -283,7 +283,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(76, 901);
+            this.panel2.Location = new System.Drawing.Point(298, 1048);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 36);
@@ -489,7 +489,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Controls.Add(this.buttonAdd);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.panel5.Location = new System.Drawing.Point(112, 51);
+            this.panel5.Location = new System.Drawing.Point(255, 100);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1425, 421);
@@ -510,7 +510,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(131, 36);
+            this.label12.Location = new System.Drawing.Point(192, 36);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 26);
@@ -522,7 +522,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1540, 845);
+            this.ClientSize = new System.Drawing.Size(1985, 992);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
@@ -587,5 +588,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button button1;
     }
 }
