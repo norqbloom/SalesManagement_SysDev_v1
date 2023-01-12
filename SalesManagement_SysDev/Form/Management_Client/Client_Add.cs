@@ -229,7 +229,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             if(checkBoxClFLG.CheckState == CheckState.Indeterminate)
             {
-                MessageBox.Show("");
+                MessageBox.Show(""); //messageDsp.DspMsg("M4044");
                 checkBoxClFLG.Focus();
                 return false;
             }

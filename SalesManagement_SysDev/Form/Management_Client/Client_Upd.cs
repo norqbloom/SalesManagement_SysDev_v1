@@ -222,7 +222,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
             {
-                MessageBox.Show("");
+                MessageBox.Show(""); //messageDsp.DspMsg("M4044");
                 checkBoxClFlag.Focus();
                 return false;
             }

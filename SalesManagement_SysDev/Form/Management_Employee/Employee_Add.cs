@@ -106,7 +106,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //soid文字数チェック
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("営業所IDは2文字まで");
+                    MessageBox.Show("営業所IDは2文字まで"); //messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
