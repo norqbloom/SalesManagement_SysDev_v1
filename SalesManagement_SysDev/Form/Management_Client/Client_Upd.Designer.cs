@@ -246,8 +246,9 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonUpd
             // 
+            this.buttonUpd.AutoEllipsis = true;
             this.buttonUpd.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.buttonUpd.Location = new System.Drawing.Point(1172, 275);
+            this.buttonUpd.Location = new System.Drawing.Point(1163, 275);
             this.buttonUpd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpd.Name = "buttonUpd";
             this.buttonUpd.Size = new System.Drawing.Size(127, 49);
@@ -453,10 +454,11 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(973, 254);
+            this.Clear.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Clear.Location = new System.Drawing.Point(991, 275);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.Size = new System.Drawing.Size(127, 49);
             this.Clear.TabIndex = 66;
             this.Clear.Text = "クリア";
             this.Clear.UseVisualStyleBackColor = true;

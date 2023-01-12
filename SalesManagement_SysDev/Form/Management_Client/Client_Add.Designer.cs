@@ -65,8 +65,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.Clear = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -414,7 +414,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(62, 49);
+            this.label9.Location = new System.Drawing.Point(61, 49);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -495,6 +495,17 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Size = new System.Drawing.Size(1425, 421);
             this.panel5.TabIndex = 64;
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(982, 339);
+            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(162, 54);
+            this.Clear.TabIndex = 65;
+            this.Clear.Text = "クリア";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -506,23 +517,12 @@ namespace SalesManagement_SysDev.Management_Client
             this.label12.TabIndex = 63;
             this.label12.Text = "入力項目";
             // 
-            // Clear
-            // 
-            this.Clear.Location = new System.Drawing.Point(958, 332);
-            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(148, 70);
-            this.Clear.TabIndex = 65;
-            this.Clear.Text = "クリア";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
-            // 
             // Client_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1744, 960);
+            this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
