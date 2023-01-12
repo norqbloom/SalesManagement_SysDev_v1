@@ -648,17 +648,5 @@ namespace SalesManagement_SysDev.Management_Product
         {
 
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-            string text = "～";
-            StringFormat format = new StringFormat(StringFormatFlags.DirectionVertical);
-
-            using (Graphics g = this..CreateGraphics())
-            {
-                g.DrawString(text, this.Font, Brushes.Black, 0, 0, format);
-            }
-
-        }
     }
 }
