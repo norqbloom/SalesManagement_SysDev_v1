@@ -162,7 +162,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(3, 105);
+            this.label2.Location = new System.Drawing.Point(6, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 36);
             this.label2.TabIndex = 48;
@@ -174,7 +174,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(8, 34);
+            this.label1.Location = new System.Drawing.Point(6, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 36);
             this.label1.TabIndex = 47;
@@ -191,7 +191,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxSoID
             // 
-            this.textBoxSoID.Location = new System.Drawing.Point(200, 119);
+            this.textBoxSoID.Location = new System.Drawing.Point(164, 92);
             this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(81, 23);
@@ -199,7 +199,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxClID
             // 
-            this.textBoxClID.Location = new System.Drawing.Point(200, 48);
+            this.textBoxClID.Location = new System.Drawing.Point(164, 28);
             this.textBoxClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(81, 23);
@@ -404,17 +404,17 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel1.Controls.Add(this.textBoxSoID);
             this.panel1.Controls.Add(this.textBoxClID);
             this.panel1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.panel1.Location = new System.Drawing.Point(52, 74);
+            this.panel1.Location = new System.Drawing.Point(44, 54);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 193);
+            this.panel1.Size = new System.Drawing.Size(317, 147);
             this.panel1.TabIndex = 58;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(61, 49);
+            this.label9.Location = new System.Drawing.Point(71, 41);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -489,7 +489,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Controls.Add(this.buttonAdd);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.panel5.Location = new System.Drawing.Point(112, 51);
+            this.panel5.Location = new System.Drawing.Point(88, 42);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1425, 421);
@@ -510,7 +510,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(131, 36);
+            this.label12.Location = new System.Drawing.Point(128, 29);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 26);

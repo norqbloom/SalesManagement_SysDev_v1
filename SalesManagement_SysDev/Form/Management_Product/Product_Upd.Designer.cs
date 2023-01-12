@@ -209,7 +209,8 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.dataGridViewDsp.AllowUserToResizeColumns = false;
             this.dataGridViewDsp.AllowUserToResizeRows = false;
-            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -495,7 +496,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.textBoxPrModelNumber);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(420, 54);
+            this.panel4.Location = new System.Drawing.Point(396, 54);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(606, 248);
             this.panel4.TabIndex = 130;
@@ -553,7 +554,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("游ゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(448, 41);
+            this.label5.Location = new System.Drawing.Point(425, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 26);
             this.label5.TabIndex = 131;
