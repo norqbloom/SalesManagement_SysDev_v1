@@ -255,7 +255,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1599, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(1400, 315);
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -445,6 +445,7 @@ namespace SalesManagement_SysDev.Management_Client
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label10.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label10.Location = new System.Drawing.Point(467, 49);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
