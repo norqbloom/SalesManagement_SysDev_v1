@@ -235,7 +235,7 @@ namespace SalesManagement_SysDev.Management_Product
             //商品管理フラグ
             if(checkBoxPrFlag.CheckState == CheckState.Indeterminate)
             {
-                messageDsp.DspMsg("");//メッセージ不明
+                messageDsp.DspMsg("");//messageDsp.DspMsg("M4044");
                 checkBoxPrFlag.Focus();
                 return false;
             }
