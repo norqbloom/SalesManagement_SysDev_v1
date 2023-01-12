@@ -319,7 +319,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(188, 197);
             this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
-            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(135, 22);
+            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrSafetyStock.TabIndex = 112;
             // 
             // textBoxPrice
@@ -508,7 +508,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel5.Controls.Add(this.textBoxPrHidden);
             this.panel5.Location = new System.Drawing.Point(1070, 54);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(318, 208);
+            this.panel5.Size = new System.Drawing.Size(332, 208);
             this.panel5.TabIndex = 130;
             // 
             // panel6
