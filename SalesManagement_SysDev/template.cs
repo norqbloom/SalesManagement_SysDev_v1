@@ -64,6 +64,8 @@ namespace SalesManagement_SysDev
             Arrival_btn.Visible = false;
             shipping_btn.Visible = false;
             logout.Visible = false;
+            loginhistorybtn.Visible = false;
+            RegPasswordbtn.Visible = false;
         }
 
         private void PosVisible()
@@ -83,6 +85,8 @@ namespace SalesManagement_SysDev
                 Arrival_btn.Visible = true;
                 shipping_btn.Visible = true;
                 logout.Visible = true;
+                loginhistorybtn.Visible = true;
+                RegPasswordbtn.Visible = true;
             }
             if (PosID == 2)
             {
@@ -123,6 +127,7 @@ namespace SalesManagement_SysDev
             panel12.Visible = false;
             panel13.Visible = false;
             panel14.Visible = false;
+            panel1.Visible = false;
         }
        
         private void hidesubMenu()
@@ -151,6 +156,8 @@ namespace SalesManagement_SysDev
                 panel13.Visible = false;
             if (panel14.Visible == true)
                 panel14.Visible = false;
+            if (panel1.Visible == true)
+                panel1.Visible = false;
         }
 
 
@@ -563,6 +570,12 @@ namespace SalesManagement_SysDev
 
         private void timer_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+            showsubmenu(panel1);
 
         }
     }
