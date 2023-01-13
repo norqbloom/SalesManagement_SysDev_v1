@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SalesManagement_SysDev.DbAccess;
+using SalesManagement_SysDev;
 
 namespace SalesManagement_SysDev.Management_Stock
 {
@@ -157,11 +157,16 @@ namespace SalesManagement_SysDev.Management_Stock
                 if (result == DialogResult.Cancel)
                 return;
                  //登録
-                bool flg = stockDataAccess.UpdateStockData(upStock);
-                if (flg == true)
-                MessageBox.Show("ok"); //messageDsp.DspMsg("M6015");
-                else
-                MessageBox.Show("no"); //messageDsp.DspMsg("M6016");
+                //bool flg = stockDataAccess.UpdateStockData(upStock);
+                //if (flg == true)
+                //MessageBox.Show("ok"); //messageDsp.DspMsg("M6015");
+                //else
+                //MessageBox.Show("no"); //messageDsp.DspMsg("M6016");
              }
+
+        private void Stock_Upd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
