@@ -15,9 +15,11 @@ namespace SalesManagement_SysDev.Management_Chumon
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         MessageDsp messageDsp = new MessageDsp();
         ChumonDataAccess chumonDataAccess = new ChumonDataAccess();
+        StockDataAccess stockDataAccess = new StockDataAccess();
         private static List<T_Chumon> chumons;
         private static List<T_Chhistory> history;
         private static List<T_ChumonDetail> chumondetail;
+        private static List<T_ChumonDetail> chumondetailherasu;
 
         public Chumon_Ser()
         {
@@ -340,15 +342,18 @@ namespace SalesManagement_SysDev.Management_Chumon
             int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             GenerateDataAtConfirm(number);
 
-
-            //List<T_OrderDetail> briOrDetail = chumonDataAccess.BringChumonData(number);
-            //bool flg;
-            //flg = chumonDataAccess.DecreaseChumonData(briOrDetail);
+            //在庫数減らす処理ここから↓
+            //注文ID取得←dataGridView[0]
+            int herasu = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            //注文IDから注文詳細のデータを取得
+            //詳細の数量と商品IDから在庫数を減らす
+            GenerateDataAtReduce();
 
             var regSyukko = GenerateDataAtRegistrationSyukko();
             RegistrationSyukko(regSyukko);
-            var regSyukkoDetail = GenerateDataAtRegistrationSyukkoDetail();
-            RegistrationSyukkoDetail(regSyukkoDetail);
+            GenerateDataAtRegistrationSyukkoDetail();
+            //var regSyukkoDetail = GenerateDataAtRegistrationSyukkoDetail();
+            //RegistrationSyukkoDetail(regSyukkoDetail);
 
         }
 
@@ -364,6 +369,22 @@ namespace SalesManagement_SysDev.Management_Chumon
                 MessageBox.Show("おｋ");
             else
                 MessageBox.Show("の");
+        }
+
+        private void GenerateDataAtReduce()
+        {
+            ChIDsyutoku();
+            //bool flg = stockDataAccess.UpdateStockData(chumondetailherasu);
+        }
+
+        private void ChIDsyutoku()
+        {
+            int ChID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            T_Chumon ChSerch = new T_Chumon
+            {
+                ChID = ChID
+            };
+            chumondetailherasu = chumonDataAccess.GetChIDdata(ChSerch);
         }
 
         private T_Syukko GenerateDataAtRegistrationSyukko()
@@ -398,7 +419,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             bool flg = chumonDataAccess.AddsyukkoData(regSyukko);
         }
 
-        private T_SyukkoDetail GenerateDataAtRegistrationSyukkoDetail()
+        private void GenerateDataAtRegistrationSyukkoDetail()
         {
             int syukkodetail = (int)dataGridView1.CurrentCell.ColumnIndex;
             int checkFlg;
@@ -415,19 +436,12 @@ namespace SalesManagement_SysDev.Management_Chumon
 
             chserch();
 
-            var x = chumondetail.FirstOrDefault();
-
-            int ChID = x.ChID;
-            int PrID = x.PrID;
-            int ChQuantity = x.ChQuantity;
-
-            return new T_SyukkoDetail
+            foreach (var chs in chumondetail)
             {
-                SyID = ChID,
-                PrID = PrID,
-                SyQuantity = ChQuantity
-            };
-
+                bool flg;
+                flg = GenerateDataSyukkoDetail(chs);    
+            }
+            
         }
         private void chserch()
         {
@@ -444,7 +458,18 @@ namespace SalesManagement_SysDev.Management_Chumon
             bool flg = chumonDataAccess.AddsyukkoDetailData(regSyukkoDetail);
         }
 
-
+        private bool GenerateDataSyukkoDetail (T_ChumonDetail upch)
+        {
+            T_SyukkoDetail selectCondition =  new T_SyukkoDetail
+            {
+                SyID = upch.ChID,
+                PrID = upch.PrID,
+                SyQuantity = upch.ChQuantity
+            };
+            bool flg;
+            flg = chumonDataAccess.AddsyukkoDetailData(selectCondition);
+            return flg;
+        }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
