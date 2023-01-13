@@ -214,7 +214,7 @@ namespace SalesManagement_SysDev.Management_Product
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(77, 433);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(86, 433);
             this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 51;
