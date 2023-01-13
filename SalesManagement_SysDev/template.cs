@@ -51,14 +51,14 @@ namespace SalesManagement_SysDev
             colorcomboBox.Visible = false;
             colorlabel.Visible = false;
             comitbtn.Visible = false;
-            btn_client.Visible = false;
-            Product_btn.Visible = false;
-            stock_btn.Visible = false;
-            emp_btn.Visible = false;
-            Earnings_btn.Visible = false;
-            received_btn.Visible = false;
+            client.Visible = false;
+            product.Visible = false;
+            stock.Visible = false;
+            employee.Visible = false;
+            sales.Visible = false;
+            order.Visible = false;
             order_btn.Visible = false;
-            instruct_btn.Visible = false;
+            hattyu.Visible = false;
             warehousing_btn.Visible = false;
             issue_btn.Visible = false;
             Arrival_btn.Visible = false;
@@ -72,14 +72,14 @@ namespace SalesManagement_SysDev
         {
             if (PosID == 1)
             {
-                btn_client.Visible = true;
-                Product_btn.Visible = true;
-                stock_btn.Visible = true;
-                emp_btn.Visible = true;
-                Earnings_btn.Visible = true;
-                received_btn.Visible = true;
+                client.Visible = true;
+                product.Visible = true;
+                stock.Visible = true;
+                employee.Visible = true;
+                sales.Visible = true;
+                order.Visible = true;
                 order_btn.Visible = true;
-                instruct_btn.Visible = true;
+                hattyu.Visible = true;
                 warehousing_btn.Visible = true;
                 issue_btn.Visible = true;
                 Arrival_btn.Visible = true;
@@ -90,20 +90,20 @@ namespace SalesManagement_SysDev
             }
             if (PosID == 2)
             {
-                btn_client.Visible = true;
-                stock_btn.Visible = true;
+                client.Visible = true;
+                stock.Visible = true;
                 //社員管理
-                Earnings_btn.Visible = true;
-                received_btn.Visible = true;
+                sales.Visible = true;
+                order.Visible = true;
                 shipping_btn.Visible = true;
                 Arrival_btn.Visible = true;
             }
             if (PosID == 3)
             {
-                Product_btn.Visible = true;
-                stock_btn.Visible = true;
+                product.Visible = true;
+                stock.Visible = true;
                 order_btn.Visible = true;
-                instruct_btn.Visible = true;
+                hattyu.Visible = true;
                 issue_btn.Visible = true;
                 warehousing_btn.Visible = true;
 
@@ -199,14 +199,14 @@ namespace SalesManagement_SysDev
             close.BackColor = maincolor;
             sidepanel.BackColor = maincolor;
             tilepanel.BackColor = maincolor;
-            btn_client.BackColor = maincolor;
-            Product_btn.BackColor = maincolor;
-            stock_btn.BackColor = maincolor;
-            emp_btn.BackColor = maincolor;
-            Earnings_btn.BackColor = maincolor;
-            received_btn.BackColor = maincolor;
+            client.BackColor = maincolor;
+            product.BackColor = maincolor;
+            stock.BackColor = maincolor;
+            employee.BackColor = maincolor;
+            sales.BackColor = maincolor;
+            order.BackColor = maincolor;
             order_btn.BackColor = maincolor;
-            instruct_btn.BackColor = maincolor;
+            hattyu.BackColor = maincolor;
             warehousing_btn.BackColor = maincolor;
             issue_btn.BackColor = maincolor;
             Arrival_btn.BackColor = maincolor;
@@ -325,7 +325,7 @@ namespace SalesManagement_SysDev
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new test());
+            openChildForm(new Order());
         }
 
         private void button5_Click(object sender, EventArgs e)

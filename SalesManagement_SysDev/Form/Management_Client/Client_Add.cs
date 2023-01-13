@@ -16,6 +16,7 @@ namespace SalesManagement_SysDev.Management_Client
         MessageDsp messageDsp = new MessageDsp();
         //入力形式チェック用クラスのインスタンス化
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
+        //データベース顧客テーブルアクセス用クラスのインスタンス化
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
 
@@ -26,18 +27,21 @@ namespace SalesManagement_SysDev.Management_Client
         }
 
         private void Cli_Upd_Click(object sender, EventArgs e)
-        {
-            // 8.2.1.1 妥当な役職データ取得
+        {   
             if (!GetclientDataAtRegistration())
                 return;
+
             var regCl = GenerateDataAtRegistration();
             RegistrationClient(regCl);
+
             var reghis = GeneratehistoryDataAtRegistration();
             RegistrationClhistory(reghis);
-            clients = clientDataAccess.GetClientDspData();
-            dataGridView1.DataSource = clients;
-            invcnt();
 
+            clients = clientDataAccess.GetClientDspData();
+            
+            dataGridView1.DataSource = clients;
+            
+            invcnt();
         }
         private void invcnt()
         {

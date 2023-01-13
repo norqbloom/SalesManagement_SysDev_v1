@@ -17,8 +17,6 @@ namespace SalesManagement_SysDev.Management_Syukko
         private static List<T_Syukko> listdata = null;
         private static List<T_Syukko> commitdata=null;
         private static List<T_Syukko> syukkos = null;
-        private static List<T_Syukko> syukkos1 = null;
-
 
         SyukkoDataaccess syukkoDataaccess = new SyukkoDataaccess();
         public Syukko_View()

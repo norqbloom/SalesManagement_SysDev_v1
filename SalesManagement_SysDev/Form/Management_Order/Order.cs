@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SalesManagement_SysDev
 {
-    public partial class test : Form
+    public partial class Order : Form
     {
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
@@ -25,7 +25,7 @@ namespace SalesManagement_SysDev
         static int grid_OrID = 0;
 
 
-        public test()
+        public Order()
         {
             InitializeComponent();
         }
@@ -192,8 +192,8 @@ namespace SalesManagement_SysDev
             }
 
             
-            test.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
-            int ID = test.grid_OrID;
+            Order.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            int ID = Order.grid_OrID;
 
             orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
             GetDataGridView2();
@@ -832,7 +832,7 @@ namespace SalesManagement_SysDev
 
         private void GetDataGridView()
         {
-            int ID = test.grid_OrID;
+            int ID = Order.grid_OrID;
             int radioint = 0;
             if(radioButton1.Checked == true)
             {
@@ -849,7 +849,7 @@ namespace SalesManagement_SysDev
         }
         private void GetDataGridView2()
         {
-            int ID = test.grid_OrID;
+            int ID = Order.grid_OrID;
             orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
             SetDataGridView2();
         }

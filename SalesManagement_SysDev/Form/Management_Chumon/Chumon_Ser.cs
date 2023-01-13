@@ -401,16 +401,16 @@ namespace SalesManagement_SysDev.Management_Chumon
         private T_SyukkoDetail GenerateDataAtRegistrationSyukkoDetail()
         {
             int syukkodetail = (int)dataGridView1.CurrentCell.ColumnIndex;
-            int checkFlg;
+            //int checkFlg;
             string hidden;
-            if (checkBoxChStateFlag.Checked == true)
-            {
-                checkFlg = 2;
-            }
-            else
-            {
-                checkFlg = 0;
-            }
+            //if (checkBoxChStateFlag.Checked == true)
+            //{
+            //    checkFlg = 2;
+            //}
+            //else
+            //{
+            //    checkFlg = 0;
+            //}
             hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 
             chserch();

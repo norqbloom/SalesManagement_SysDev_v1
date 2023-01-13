@@ -200,12 +200,6 @@
     <Compile Include="Form\Management_Hattyu\Hattyu_Upd.Designer.cs">
       <DependentUpon>Hattyu_Upd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Management_Order\Order_Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Management_Order\Order_Add.Designer.cs">
-      <DependentUpon>Order_Add.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Management_Order\Order_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,11 +301,11 @@
     <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
+    <Compile Include="Form\Management_Order\Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
+    <Compile Include="Form\Management_Order\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form\login\loginhistory.resx">
       <DependentUpon>loginhistory.cs</DependentUpon>
@@ -361,9 +355,6 @@
     <EmbeddedResource Include="Form\Management_Hattyu\Hattyu_Upd.resx">
       <DependentUpon>Hattyu_Upd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Management_Order\Order_Add.resx">
-      <DependentUpon>Order_Add.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Order\Order_Ser.resx">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,8 +398,8 @@
     <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
+    <EmbeddedResource Include="Form\Management_Order\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
