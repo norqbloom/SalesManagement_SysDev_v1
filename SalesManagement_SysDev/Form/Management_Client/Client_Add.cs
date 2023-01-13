@@ -434,5 +434,10 @@ namespace SalesManagement_SysDev.Management_Client
         {
 
         }
+
+        private void textBoxClHidden_TextChanged(object sender, EventArgs e)
+        {
+            this.textBoxClHidden.Multiline = true;
+        }
     }
 }
