@@ -274,7 +274,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(420, 1114);
+            this.panel2.Location = new System.Drawing.Point(253, 779);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 36);
