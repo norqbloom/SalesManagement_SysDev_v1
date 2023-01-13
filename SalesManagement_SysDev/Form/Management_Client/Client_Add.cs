@@ -418,5 +418,10 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClHidden.Text = "";
             checkBoxClFLG.Checked = false;
         }
+
+        private void textBoxClHidden_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
