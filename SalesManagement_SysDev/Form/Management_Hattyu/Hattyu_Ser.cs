@@ -199,6 +199,8 @@ namespace SalesManagement_SysDev.Management_Hattyu
             {
                 EmID = int.Parse(EmID.Text.Trim()),
                 HaID = int.Parse(HaID.Text.Trim()),
+                //HaDate = HaDate.Value
+
             };
             Hattyus = HattyuDataAccess.GetEmdata(selectCondition);
         }
@@ -208,7 +210,9 @@ namespace SalesManagement_SysDev.Management_Hattyu
             T_Hattyu selectCondition = new T_Hattyu()
             {
                 EmID = int.Parse(EmID.Text.Trim()),
-                HaID = int.Parse(HaID.Text.Trim())
+                HaID = int.Parse(HaID.Text.Trim()),
+
+                //HaDate = HaDate.Value
             };
             Hattyus = HattyuDataAccess.GetMadata(selectCondition);
         }
@@ -283,6 +287,61 @@ namespace SalesManagement_SysDev.Management_Hattyu
             EmID.Visible = false;
             HaDate.Visible = false;
             HaHidden.Visible = false;
+        }
+
+        private void incntok()
+        {
+            HaID.Visible = true;
+            MaID.Visible = true;
+            EmID.Visible = true;
+            HaDate.Visible = true;
+            HaHidden.Visible = true;
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            serchdateset(number);
+            setdatedetail();
+        }
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
+            HaID.Text = HaID.ToString();
+            MaID.Text = MaID.ToString();
+            EmID.Text = EmID.ToString();
+            serchdateset(number);
+            setdatedetail();
+        }
+
+
+        private void serchdateset(int number)
+        {
+
+            //Hahistory selectCondition = new Hahistory
+            //{
+            //    HaID = number.ToString(),
+
+            //};
+            //hathistory = HattyuDataAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            //var x = hathistory.FirstOrDefault();
+            //if (x == null)
+            //{
+            //    invcnt();
+            //    return;
+            //}
+
+            //HaID.Text = x.HaID;
+            //MaID.Text = x.MaID;
+            //EmID.Text = x.EmID;
+            //HaDate.Text = x.RegisteredDate;
+            //incntok();
+
+
         }
     }
 }

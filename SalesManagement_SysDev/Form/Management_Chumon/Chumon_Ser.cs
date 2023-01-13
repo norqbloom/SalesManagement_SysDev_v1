@@ -17,7 +17,6 @@ namespace SalesManagement_SysDev.Management_Chumon
         ChumonDataAccess chumonDataAccess = new ChumonDataAccess();
         private static List<T_Chumon> chumons;
         private static List<T_Chhistory> history;
-        private static List<T_ChumonDetail> chumondetail;
 
         public Chumon_Ser()
         {
@@ -46,6 +45,14 @@ namespace SalesManagement_SysDev.Management_Chumon
             upuserid.Visible = true;
             upusername.Visible = true;
         }
+
+        //private void Chumon_Ser_Load(object sender,EventArgs e)
+        //{
+        //    SetFormDataGridView();
+        //    invcnt();
+        //    chumons = chumonDataAccess.GetChumonDspData();
+        //    dataGridView1.DataSource = chumons;
+        //}
 
         private void buttonSer_Click(object sender, EventArgs e)
         {
@@ -288,12 +295,11 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private T_Chumon GenerateChumonDelete()
         {
-            int checkS;
-            checkS = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            int number;
+            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             return new T_Chumon
             {
-                ChID=checkS,
-                ChFlag = 2
+                ChID = number
             };
         }
 
@@ -314,127 +320,20 @@ namespace SalesManagement_SysDev.Management_Chumon
         //確定ボタン
         private void buttonCon_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridView1.CurrentRow;
-            DataGridViewCell cell = selectedRow.Cells[0];
-            int chumon_id =  (int)cell.Value;
-            GenerateDataAtConfirm(chumon_id);
-            // 注文確定処理
-
-            /// IDから該当注文を取り出す
-            /// 該当注文を確定にする
-            /// 社員IDを保存
-            /// 確定にした注文を保存する
-            /// 在庫減らす
-            /// 出庫テーブルにデータ作成
-            /// 
-            T_Chumon chu = chumonDataAccess.GetChumonDataByChId(chumon_id);
-
             int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             GenerateDataAtConfirm(number);
-
-
-            //List<T_OrderDetail> briOrDetail = chumonDataAccess.BringChumonData(number);
+            List<T_OrderDetail> briOrDetail = chumonDataAccess.BringChumonData(number);
             //bool flg;
             //flg = chumonDataAccess.DecreaseChumonData(briOrDetail);
-
-            var regSyukko = GenerateDataAtRegistrationSyukko();
-            RegistrationSyukko(regSyukko);
-            var regSyukkoDetail = GenerateDataAtRegistrationSyukkoDetail();
-            RegistrationSyukkoDetail(regSyukkoDetail);
 
         }
 
         private void GenerateDataAtConfirm(int conChumon)
         {
-            DialogResult result = MessageBox.Show("確定します", MessageBoxButtons.OKCancel.ToString());
-            if (result == DialogResult.Cancel)
-            {
-                return;
-            }
-            bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
-            if (flg == true)
-                MessageBox.Show("おｋ");
-            else
-                MessageBox.Show("の");
+            chumonDataAccess.ConfirmChumonData(conChumon);
         }
 
-        private T_Syukko GenerateDataAtRegistrationSyukko()
-        {
-            int syukko = (int)dataGridView1.CurrentCell.ColumnIndex;
-            int checkFlg;
-            string hidden;
-            if (checkBoxChStateFlag.Checked == true)
-            {
-                checkFlg = 2;
-            }
-            else
-            {
-                checkFlg = 0;
-            }
-            hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-
-            return new T_Syukko
-            {
-                ClID = (int)dataGridView1.CurrentRow.Cells[3].Value,
-                SoID = (int)dataGridView1.CurrentRow.Cells[1].Value,
-                OrID = (int)dataGridView1.CurrentRow.Cells[4].Value,
-                SyDate = null,
-                SyStateFlag = 0,
-                SyFlag = checkFlg,
-                SyHidden = hidden
-            };
-        }
-
-        private void RegistrationSyukko(T_Syukko regSyukko)
-        {
-            bool flg = chumonDataAccess.AddsyukkoData(regSyukko);
-        }
-
-        private T_SyukkoDetail GenerateDataAtRegistrationSyukkoDetail()
-        {
-            int syukkodetail = (int)dataGridView1.CurrentCell.ColumnIndex;
-            //int checkFlg;
-            string hidden;
-            //if (checkBoxChStateFlag.Checked == true)
-            //{
-            //    checkFlg = 2;
-            //}
-            //else
-            //{
-            //    checkFlg = 0;
-            //}
-            hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-
-            chserch();
-
-            var x = chumondetail.FirstOrDefault();
-
-            int ChID = x.ChID;
-            int PrID = x.PrID;
-            int ChQuantity = x.ChQuantity;
-
-            return new T_SyukkoDetail
-            {
-                SyID = ChID,
-                PrID = PrID,
-                SyQuantity = ChQuantity
-            };
-
-        }
-        private void chserch()
-        {
-            int chid = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            T_Chumon serchch = new T_Chumon
-            {
-                ChID = chid
-            };
-            chumondetail = chumonDataAccess.GetChIDdata(serchch);
-        }
-
-        private void RegistrationSyukkoDetail(T_SyukkoDetail regSyukkoDetail)
-        {
-            bool flg = chumonDataAccess.AddsyukkoDetailData(regSyukkoDetail);
-        }
+        
 
 
 
@@ -476,6 +375,19 @@ namespace SalesManagement_SysDev.Management_Chumon
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            /*
+            ClIDtxt.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+             */
         }
 
         private void change_Click_1(object sender, EventArgs e)

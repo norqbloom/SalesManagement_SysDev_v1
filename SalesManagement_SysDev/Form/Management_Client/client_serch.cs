@@ -265,6 +265,20 @@ namespace SalesManagement_SysDev
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
+            
+
+        }
+        private void label9_Click(object sender, EventArgs e)
+        {
+            /*
+            ClIDtxt.Visible = false;
+            datetime.Visible = false;
+            userid.Visible = false;
+            username.Visible = false;
+            uptime.Visible = false;
+            upuserid.Visible = false;
+            upusername.Visible = false;
+             */
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -347,6 +361,30 @@ namespace SalesManagement_SysDev
             CLNametxt.Text = x.ClName;
         }
 
+        private void SOIDtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void ClPhonetxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void gettextdate()
+        {
+            var x = clients.FirstOrDefault();
+            if (x == null)
+            {
+                return;
+            }
+            SOIDtxt.Text = x.SoID.ToString();
+            ClPhonetxt.Text = x.ClPhone;
+            addresstxt.Text = x.ClAddress;
+            ClPostaltxt.Text = x.ClPostal;
+            ClFaxtxt.Text = x.ClFAX;
+        }
+
         private void Clear_Click(object sender, EventArgs e)
         {
             ClIDtxt.Text = "";
@@ -355,7 +393,45 @@ namespace SalesManagement_SysDev
             ClPhonetxt.Text ="";
             addresstxt.Text = "";
             ClPostaltxt.Text = "";
-            ClFaxtxt.Text = ""; 
+            ClFaxtxt.Text = "";
+            
+            
+            
+        }
+
+        private void addresstxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClPostaltxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClFaxtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPageSize_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

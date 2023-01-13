@@ -43,6 +43,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmName = new System.Windows.Forms.TextBox();
             this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.textBoxPoID = new System.Windows.Forms.TextBox();
+            this.textBoxEmPassword = new System.Windows.Forms.TextBox();
             this.textBoxEmPhone = new System.Windows.Forms.TextBox();
             this.textBoxEmHidden = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonFirstPage = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -157,7 +159,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(8, 115);
+            this.label7.Location = new System.Drawing.Point(8, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 36);
             this.label7.TabIndex = 9;
@@ -207,9 +209,17 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPoID.Size = new System.Drawing.Size(81, 22);
             this.textBoxPoID.TabIndex = 14;
             // 
+            // textBoxEmPassword
+            // 
+            this.textBoxEmPassword.Location = new System.Drawing.Point(178, 106);
+            this.textBoxEmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxEmPassword.Name = "textBoxEmPassword";
+            this.textBoxEmPassword.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmPassword.TabIndex = 15;
+            // 
             // textBoxEmPhone
             // 
-            this.textBoxEmPhone.Location = new System.Drawing.Point(178, 126);
+            this.textBoxEmPhone.Location = new System.Drawing.Point(178, 153);
             this.textBoxEmPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
@@ -342,6 +352,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
+            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -393,6 +404,17 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(8, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 36);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "パスワード";
             // 
             // panel1
             // 
@@ -416,12 +438,14 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.Controls.Add(this.textBoxEmName);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.dateTimePickerEmHiredate);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.textBoxEmPassword);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.textBoxEmPhone);
             this.panel3.Location = new System.Drawing.Point(381, 64);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(389, 162);
+            this.panel3.Size = new System.Drawing.Size(389, 191);
             this.panel3.TabIndex = 47;
             // 
             // label10
@@ -472,7 +496,6 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // Clear
             // 
-            this.Clear.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Clear.Location = new System.Drawing.Point(638, 297);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
@@ -533,6 +556,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.TextBox textBoxEmName;
         private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.TextBox textBoxPoID;
+        private System.Windows.Forms.TextBox textBoxEmPassword;
         private System.Windows.Forms.TextBox textBoxEmPhone;
         private System.Windows.Forms.TextBox textBoxEmHidden;
         private System.Windows.Forms.Button buttonAdd;
@@ -549,6 +573,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Button buttonFirstPage;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;

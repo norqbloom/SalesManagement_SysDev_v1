@@ -32,12 +32,14 @@ namespace SalesManagement_SysDev.Management_Employee
             this.buttonUpd = new System.Windows.Forms.Button();
             this.textBoxEmHidden = new System.Windows.Forms.TextBox();
             this.textBoxEmPhone = new System.Windows.Forms.TextBox();
+            this.textBoxEmPassword = new System.Windows.Forms.TextBox();
             this.textBoxPoID = new System.Windows.Forms.TextBox();
             this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.textBoxEmName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,6 +98,16 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
             this.textBoxEmPhone.TabIndex = 36;
+            this.textBoxEmPhone.TextChanged += new System.EventHandler(this.textBoxEmPhone_TextChanged_1);
+            // 
+            // textBoxEmPassword
+            // 
+            this.textBoxEmPassword.Location = new System.Drawing.Point(186, 66);
+            this.textBoxEmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxEmPassword.Name = "textBoxEmPassword";
+            this.textBoxEmPassword.Size = new System.Drawing.Size(81, 22);
+            this.textBoxEmPassword.TabIndex = 35;
+            this.textBoxEmPassword.TextChanged += new System.EventHandler(this.textBoxEmPassword_TextChanged_1);
             // 
             // textBoxPoID
             // 
@@ -150,6 +162,16 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label7.Size = new System.Drawing.Size(131, 36);
             this.label7.TabIndex = 29;
             this.label7.Text = "電話番号";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(20, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 36);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "パスワード";
             // 
             // label5
             // 
@@ -219,6 +241,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.checkBoxEmFlag.TabIndex = 21;
             this.checkBoxEmFlag.Text = " ";
             this.checkBoxEmFlag.UseVisualStyleBackColor = true;
+            this.checkBoxEmFlag.CheckedChanged += new System.EventHandler(this.checkBoxEmFlag_CheckedChanged_1);
             // 
             // dataGridView1
             // 
@@ -231,6 +254,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1.Size = new System.Drawing.Size(1149, 235);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dateTimePickerEmHiredate
             // 
@@ -239,6 +263,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(161, 22);
             this.dateTimePickerEmHiredate.TabIndex = 40;
+            this.dateTimePickerEmHiredate.ValueChanged += new System.EventHandler(this.dateTimePickerEmHiredate_ValueChanged_1);
             // 
             // panel2
             // 
@@ -409,8 +434,10 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.checkBoxEmFlag);
             this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.dateTimePickerEmHiredate);
+            this.panel3.Controls.Add(this.textBoxEmPassword);
             this.panel3.Controls.Add(this.textBoxEmPhone);
             this.panel3.Location = new System.Drawing.Point(26, 117);
             this.panel3.Name = "panel3";
@@ -474,12 +501,14 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Button buttonUpd;
         private System.Windows.Forms.TextBox textBoxEmHidden;
         private System.Windows.Forms.TextBox textBoxEmPhone;
+        private System.Windows.Forms.TextBox textBoxEmPassword;
         private System.Windows.Forms.TextBox textBoxPoID;
         private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.TextBox textBoxEmName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -218,7 +218,10 @@ namespace SalesManagement_SysDev.Management_Order
 
                 }
 
-            }  
+            }
+
+
+            
         }
 
         private void SetSelectData()
@@ -235,6 +238,7 @@ namespace SalesManagement_SysDev.Management_Order
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getfull(selectCondition);
         }
@@ -247,6 +251,7 @@ namespace SalesManagement_SysDev.Management_Order
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders= orderdateAccess.Getorsoem(selectCondition);
 
@@ -259,6 +264,7 @@ namespace SalesManagement_SysDev.Management_Order
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getorso(selectCondition);
         }
@@ -269,6 +275,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getor(selectCondition);
         }
@@ -278,6 +285,7 @@ namespace SalesManagement_SysDev.Management_Order
             T_Order selectCondition = new T_Order()
             {
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.GetNo(selectCondition);
         }
@@ -290,6 +298,7 @@ namespace SalesManagement_SysDev.Management_Order
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getorsocl(selectCondition);
         }
@@ -301,6 +310,7 @@ namespace SalesManagement_SysDev.Management_Order
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getorem(selectCondition);
         }
@@ -312,6 +322,7 @@ namespace SalesManagement_SysDev.Management_Order
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getorcl(selectCondition);
         }
@@ -324,6 +335,7 @@ namespace SalesManagement_SysDev.Management_Order
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getoremcl(selectCondition);
         }
@@ -336,6 +348,7 @@ namespace SalesManagement_SysDev.Management_Order
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getsoemcl(selectCondition);
         }
@@ -347,6 +360,7 @@ namespace SalesManagement_SysDev.Management_Order
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getsocl(selectCondition);
         }
@@ -358,6 +372,7 @@ namespace SalesManagement_SysDev.Management_Order
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getemcl(selectCondition);
 
@@ -369,6 +384,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getcl(selectCondition);
         }
@@ -379,6 +395,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getem(selectCondition);
         }
@@ -389,6 +406,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getso(selectCondition);
         }
@@ -400,6 +418,7 @@ namespace SalesManagement_SysDev.Management_Order
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
+                //OrDate = DateTime.Parse(dateTimePickerOrDate.Text.Trim()),
             };
             orders = orderdateAccess.Getemso(selectCondition);
         }
@@ -527,6 +546,9 @@ namespace SalesManagement_SysDev.Management_Order
             OrIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
             number = (int)dataGridView1.CurrentRow.Cells[1].Value;
             labelOr.Text = textBoxOrID.ToString();
+            //labelSo.Text = textBoxSoID.ToString();
+            //labelEm.Text = textBoxEmID.ToString();
+            //labelCl.Text = textBoxClID.ToString();
             serchdateset(number);
             setdatedetail();
         }

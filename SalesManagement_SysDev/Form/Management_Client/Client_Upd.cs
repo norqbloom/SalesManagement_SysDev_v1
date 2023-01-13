@@ -222,7 +222,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
             {
-                MessageBox.Show(""); //messageDsp.DspMsg("M4044");
+                MessageBox.Show("");
                 checkBoxClFlag.Focus();
                 return false;
             }
@@ -303,6 +303,8 @@ namespace SalesManagement_SysDev.Management_Client
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -391,4 +393,5 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClHidden.Text = "";
         }
     }
+
 }

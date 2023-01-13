@@ -64,14 +64,11 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,7 +78,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Emphistory.cs" />
@@ -110,10 +106,10 @@
     <Compile Include="Form\DbAccess\ProductDataAccess.cs" />
     <Compile Include="Form\DbAccess\SaleDataAccess.cs" />
     <Compile Include="Form\DbAccess\StockDataAccess.cs" />
-    <Compile Include="Debug\empcnt.cs">
+    <Compile Include="empcnt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Debug\empcnt.Designer.cs">
+    <Compile Include="empcnt.Designer.cs">
       <DependentUpon>empcnt.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\loginHistory.cs" />
@@ -206,6 +202,12 @@
     <Compile Include="Form\Management_Order\Order_Ser.Designer.cs">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Management_Product\Product_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Management_Product\Product_Add.Designer.cs">
+      <DependentUpon>Product_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Management_Product\Product_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,16 +291,16 @@
     <Compile Include="Form\setting.Designer.cs">
       <DependentUpon>setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Debug\template - コピー.cs">
+    <Compile Include="template - コピー.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Debug\template - コピー.Designer.cs">
+    <Compile Include="template - コピー.Designer.cs">
       <DependentUpon>template - コピー.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\template.cs">
+    <Compile Include="template.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\template.Designer.cs">
+    <Compile Include="template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Order\Order.cs">
@@ -306,6 +308,12 @@
     </Compile>
     <Compile Include="Form\Management_Order\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="テスト2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="テスト2.Designer.cs">
+      <DependentUpon>テスト2.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form\login\loginhistory.resx">
       <DependentUpon>loginhistory.cs</DependentUpon>
@@ -316,7 +324,7 @@
     <EmbeddedResource Include="Form\Management_Client\client_serch.resx">
       <DependentUpon>client_serch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Debug\empcnt.resx">
+    <EmbeddedResource Include="empcnt.resx">
       <DependentUpon>empcnt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\login\F_login.resx">
@@ -358,6 +366,9 @@
     <EmbeddedResource Include="Form\Management_Order\Order_Ser.resx">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Management_Product\Product_Add.resx">
+      <DependentUpon>Product_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Product\Product_Ser.resx">
       <DependentUpon>Product_Ser.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,14 +403,17 @@
     <EmbeddedResource Include="Form\setting.resx">
       <DependentUpon>setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Debug\template - コピー.resx">
+    <EmbeddedResource Include="template - コピー.resx">
       <DependentUpon>template - コピー.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\template.resx">
+    <EmbeddedResource Include="template.resx">
       <DependentUpon>template.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Order\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="テスト2.resx">
+      <DependentUpon>テスト2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />

@@ -199,6 +199,14 @@ namespace SalesManagement_SysDev.Management_Product
                 };
                 products = productDataAccess.GetMadata(selectCondition);
             }
+            //M_Product selectCondition = new M_Product()
+            //{
+            //    MaID = int.Parse(textBoxMaID.Text.Trim()),
+            //    PrName = textBoxPrName.Text.Trim(),
+            //    PrModelNumber = textBoxPrModelNumber.Text.Trim(),
+            //    PrColor = textBoxPrColor.Text.Trim(),
+            //};
+            //products = productDataAccess.GetMadata(selectCondition);
 
         }
         private void datedubblwget()
@@ -634,6 +642,11 @@ namespace SalesManagement_SysDev.Management_Product
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

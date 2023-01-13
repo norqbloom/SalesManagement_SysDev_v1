@@ -24,7 +24,6 @@ namespace SalesManagement_SysDev
 
         static int grid_OrID = 0;
 
-
         public Order()
         {
             InitializeComponent();
@@ -88,6 +87,7 @@ namespace SalesManagement_SysDev
             {
                 return;
             }
+            //RegistrationChumonDetail(regChumonDetail);
 
             SetFormDataGridView();
 
@@ -893,8 +893,16 @@ namespace SalesManagement_SysDev
             dataGridViewDspOrder.Columns[7].Width = 100;
             dataGridViewDspOrder.Columns[8].Width = 100;
 
-            dataGridViewDspProduct.Columns[1].Visible = false;
+            //dataGridViewDspOrderDetail.Columns[0].Width = 100;
+            //dataGridViewDspOrderDetail.Columns[1].Width = 100;
+            //dataGridViewDspOrderDetail.Columns[2].Width = 100;
+            //dataGridViewDspOrderDetail.Columns[3].Width = 100;
+            //dataGridViewDspOrderDetail.Columns[4].Width = 100;
 
+            //dataGridViewProduct.Columns[0].Width = 100;
+            dataGridViewDspProduct.Columns[1].Visible = false;
+            //dataGridViewProduct.Columns[2].Width = 100;
+            //dataGridViewProduct.Columns[3].Width = 100;
             dataGridViewDspProduct.Columns[4].Visible = false;
             dataGridViewDspProduct.Columns[5].Visible = false;
             dataGridViewDspProduct.Columns[6].Visible = false;
@@ -921,6 +929,18 @@ namespace SalesManagement_SysDev
             dataGridViewDspOrderDetail.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrderDetail.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            //dataGridViewProduct.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewProduct.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
@@ -1173,6 +1193,8 @@ namespace SalesManagement_SysDev
                 messageDsp.DspMsg("M2035");//商品データ更新に失敗しました
             }
             textBoxOrID.Focus();
+            //入力エリアのクリア
+            //ClearInput();
         }
     }
 }
