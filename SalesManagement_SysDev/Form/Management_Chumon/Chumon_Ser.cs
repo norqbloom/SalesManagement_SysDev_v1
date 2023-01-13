@@ -366,7 +366,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         private void GenerateDataAtReduce()
         {
             ChIDsyutoku();
-            //bool flg = stockDataAccess.UpdateStockData(chumondetailherasu);
+            bool flg = stockDataAccess.UpdateStockData(chumondetailherasu);
         }
 
         private void ChIDsyutoku()
