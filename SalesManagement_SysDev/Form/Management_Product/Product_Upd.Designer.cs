@@ -214,7 +214,7 @@ namespace SalesManagement_SysDev.Management_Product
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(77, 433);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(86, 433);
             this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 51;
@@ -258,7 +258,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -288,7 +287,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrHidden.Name = "textBoxPrHidden";
             this.textBoxPrHidden.Size = new System.Drawing.Size(287, 70);
             this.textBoxPrHidden.TabIndex = 7;
-            this.textBoxPrHidden.TextChanged += new System.EventHandler(this.textBoxPrHidden_TextChanged);
             // 
             // textBoxPrColor
             // 
@@ -297,7 +295,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrColor.TabIndex = 120;
-            this.textBoxPrColor.TextChanged += new System.EventHandler(this.textBoxPrColor_TextChanged);
             // 
             // textBoxPrModelNumber
             // 

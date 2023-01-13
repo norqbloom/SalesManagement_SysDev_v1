@@ -66,22 +66,28 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel4 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.Clear = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewDsp
             // 
+            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(27, 385);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(86, 433);
             this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 62;
             this.dataGridViewDsp.RowTemplate.Height = 27;
-            this.dataGridViewDsp.Size = new System.Drawing.Size(1149, 235);
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1429, 315);
             this.dataGridViewDsp.TabIndex = 0;
             // 
             // checkBoxEmFlag
@@ -147,7 +153,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(8, 56);
+            this.label5.Location = new System.Drawing.Point(12, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 36);
             this.label5.TabIndex = 7;
@@ -157,7 +163,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(8, 115);
+            this.label7.Location = new System.Drawing.Point(12, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 36);
             this.label7.TabIndex = 9;
@@ -185,7 +191,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmName
             // 
-            this.textBoxEmName.Location = new System.Drawing.Point(178, 22);
+            this.textBoxEmName.Location = new System.Drawing.Point(208, 22);
             this.textBoxEmName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmName.Name = "textBoxEmName";
             this.textBoxEmName.Size = new System.Drawing.Size(81, 22);
@@ -193,7 +199,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxSoID
             // 
-            this.textBoxSoID.Location = new System.Drawing.Point(161, 67);
+            this.textBoxSoID.Location = new System.Drawing.Point(161, 75);
             this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
@@ -209,7 +215,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // textBoxEmPhone
             // 
-            this.textBoxEmPhone.Location = new System.Drawing.Point(178, 126);
+            this.textBoxEmPhone.Location = new System.Drawing.Point(208, 126);
             this.textBoxEmPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
@@ -226,10 +232,10 @@ namespace SalesManagement_SysDev.Management_Employee
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Location = new System.Drawing.Point(1021, 295);
+            this.buttonAdd.Location = new System.Drawing.Point(1255, 313);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(135, 72);
+            this.buttonAdd.Size = new System.Drawing.Size(148, 42);
             this.buttonAdd.TabIndex = 19;
             this.buttonAdd.Text = "追加";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -237,7 +243,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // dateTimePickerEmHiredate
             // 
-            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(178, 64);
+            this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(208, 72);
             this.dateTimePickerEmHiredate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(161, 22);
@@ -255,7 +261,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(65, 624);
+            this.panel2.Location = new System.Drawing.Point(376, 777);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 36);
@@ -342,7 +348,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
-            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -372,7 +377,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.radioButton1.Location = new System.Drawing.Point(821, 316);
+            this.radioButton1.Location = new System.Drawing.Point(1143, 267);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(75, 30);
@@ -386,7 +391,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.radioButton2.Location = new System.Drawing.Point(898, 316);
+            this.radioButton2.Location = new System.Drawing.Point(1255, 267);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(96, 30);
@@ -394,7 +399,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // panel1
             // 
@@ -405,10 +409,10 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Controls.Add(this.textBoxSoID);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBoxPoID);
-            this.panel1.Location = new System.Drawing.Point(35, 64);
+            this.panel1.Location = new System.Drawing.Point(98, 54);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 162);
+            this.panel1.Size = new System.Drawing.Size(291, 176);
             this.panel1.TabIndex = 46;
             // 
             // panel3
@@ -420,17 +424,17 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.Controls.Add(this.dateTimePickerEmHiredate);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.textBoxEmPhone);
-            this.panel3.Location = new System.Drawing.Point(381, 64);
+            this.panel3.Location = new System.Drawing.Point(495, 54);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(389, 162);
+            this.panel3.Size = new System.Drawing.Size(389, 176);
             this.panel3.TabIndex = 47;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(40, 47);
+            this.label10.Location = new System.Drawing.Point(125, 41);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 26);
@@ -441,7 +445,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(391, 43);
+            this.label11.Location = new System.Drawing.Point(524, 41);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 26);
@@ -455,7 +459,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel4.Controls.Add(this.textBoxEmHidden);
             this.panel4.Controls.Add(this.checkBoxEmFlag);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(811, 64);
+            this.panel4.Location = new System.Drawing.Point(984, 54);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(335, 176);
@@ -465,7 +469,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(816, 51);
+            this.label12.Location = new System.Drawing.Point(1013, 41);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 26);
@@ -474,31 +478,52 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(638, 297);
+            this.Clear.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Clear.Location = new System.Drawing.Point(1070, 315);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(148, 70);
+            this.Clear.Size = new System.Drawing.Size(148, 42);
             this.Clear.TabIndex = 52;
             this.Clear.Text = "クリア";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.panel1);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.Clear);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.buttonAdd);
+            this.panel5.Controls.Add(this.panel3);
+            this.panel5.Controls.Add(this.radioButton2);
+            this.panel5.Controls.Add(this.radioButton1);
+            this.panel5.Location = new System.Drawing.Point(88, 42);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1427, 366);
+            this.panel5.TabIndex = 53;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("游ゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(128, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 26);
+            this.label6.TabIndex = 134;
+            this.label6.Text = "入力項目";
+            // 
             // Employee_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 666);
-            this.Controls.Add(this.Clear);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(1540, 845);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridViewDsp);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Employee_Add";
@@ -513,6 +538,8 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,5 +584,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label6;
     }
 }

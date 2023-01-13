@@ -49,14 +49,6 @@ namespace SalesManagement_SysDev.Management_Chumon
             upusername.Visible = true;
         }
 
-        //private void Chumon_Ser_Load(object sender,EventArgs e)
-        //{
-        //    SetFormDataGridView();
-        //    invcnt();
-        //    chumons = chumonDataAccess.GetChumonDspData();
-        //    dataGridView1.DataSource = chumons;
-        //}
-
         private void buttonSer_Click(object sender, EventArgs e)
         {
             //入力データ確認
@@ -422,16 +414,16 @@ namespace SalesManagement_SysDev.Management_Chumon
         private void GenerateDataAtRegistrationSyukkoDetail()
         {
             int syukkodetail = (int)dataGridView1.CurrentCell.ColumnIndex;
-            int checkFlg;
+            //int checkFlg;
             string hidden;
-            if (checkBoxChStateFlag.Checked == true)
-            {
-                checkFlg = 2;
-            }
-            else
-            {
-                checkFlg = 0;
-            }
+            //if (checkBoxChStateFlag.Checked == true)
+            //{
+            //    checkFlg = 2;
+            //}
+            //else
+            //{
+            //    checkFlg = 0;
+            //}
             hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 
             chserch();
@@ -509,19 +501,6 @@ namespace SalesManagement_SysDev.Management_Chumon
             upuserid.Text = x.LastupdatedUserID;
             upusername.Text = x.LastupdatedUserName;
             incntok();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-            /*
-            ClIDtxt.Visible = false;
-            datetime.Visible = false;
-            userid.Visible = false;
-            username.Visible = false;
-            uptime.Visible = false;
-            upuserid.Visible = false;
-            upusername.Visible = false;
-             */
         }
 
         private void change_Click_1(object sender, EventArgs e)

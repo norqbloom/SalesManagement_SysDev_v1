@@ -1,7 +1,7 @@
 ﻿
 namespace SalesManagement_SysDev
 {
-    partial class test
+    partial class Order
     {
         /// <summary>
         /// Required designer variable.
