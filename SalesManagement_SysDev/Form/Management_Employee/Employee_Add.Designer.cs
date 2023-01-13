@@ -474,6 +474,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // Clear
             // 
+            this.Clear.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Clear.Location = new System.Drawing.Point(638, 297);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
