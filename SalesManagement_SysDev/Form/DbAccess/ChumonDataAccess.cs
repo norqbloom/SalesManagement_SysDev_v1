@@ -120,8 +120,7 @@ namespace SalesManagement_SysDev
         ///////////////////////////////
         public List<T_OrderDetail> BringChumonData(int number)
         {
-            List<T_OrderDetail> chumons = new List<T_OrderDetail>();
-            int nn = 0;
+            List<T_OrderDetail> chumons = new List<T_OrderDetail>();;
             try
             {
                 var context = new SalesManagement_DevContext();
@@ -290,11 +289,11 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
-                                                 x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.ChID.ToString().Contains(selectCondition.ChID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
                                                  x.ChStateFlag == 0 &&
                                                  x.ChFlag == 0
@@ -318,10 +317,10 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
-                                                 x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.ChID.ToString().Contains(selectCondition.ChID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
                                                  x.ChStateFlag == 0 &&
                                                  x.ChFlag == 0
@@ -343,15 +342,15 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                //chumon = context.M_Chumons.Where(x =>
-                //                                 x.ChID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                //                                 x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                //                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                //                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                //                                 //x.ChDate.Contains(selectCondition.ChDate) &&
-                //                                 x.ChStateFlag == 0 &&
-                //                                 x.ChFlag == 0
-                //                                 ).ToList();
+                chumon = context.T_Chumons.Where(x =>
+                                                 x.ChID.ToString().Contains(selectCondition.ChID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
+                                                 //x.ChDate.Contains(selectCondition.ChDate) &&
+                                                 x.ChStateFlag == 0 &&
+                                                 x.ChFlag == 0
+                                                 ).ToList();
                 context.Dispose();
 
             }
@@ -370,10 +369,10 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
-                                                 x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
                                                  x.ChStateFlag == 0 &&
                                                  x.ChFlag == 0
@@ -399,9 +398,9 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
-                                                 x.SoID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
                                                  x.ChStateFlag == 0 &&
                                                  x.ChFlag == 0
@@ -424,9 +423,9 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
-                                                 x.EmID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
                                                  x.ChStateFlag == 0 &&
                                                  x.ChFlag == 0
@@ -450,7 +449,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
                                                  x.ChStateFlag == 0 &&
                                                  x.ChFlag == 0
@@ -464,6 +463,28 @@ namespace SalesManagement_SysDev
             }
             return chumon;
         }
+
+        public List<T_ChumonDetail> GetChIDdata(T_Chumon selectCondition)
+        {
+            List<T_ChumonDetail> chumondetail = new List<T_ChumonDetail>();
+
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                chumondetail = context.T_ChumonDetails.Where(x =>
+                                                 x.ChID.ToString().Contains(selectCondition.ChID.ToString())
+                                                 ).ToList();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return chumondetail;
+        }
+
         public List<T_Chhistory> getdetail(T_Chhistory selectCondition)
         {
             List<T_Chhistory> history = new List<T_Chhistory>();

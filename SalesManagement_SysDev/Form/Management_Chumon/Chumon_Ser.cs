@@ -17,6 +17,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         ChumonDataAccess chumonDataAccess = new ChumonDataAccess();
         private static List<T_Chumon> chumons;
         private static List<T_Chhistory> history;
+        private static List<T_ChumonDetail> chumondetail;
 
         public Chumon_Ser()
         {
@@ -412,16 +413,38 @@ namespace SalesManagement_SysDev.Management_Chumon
             }
             hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 
+            chserch();
+
+            var x = chumondetail.FirstOrDefault();
+
+            int ChID = x.ChID;
+            int PrID = x.PrID;
+            int ChQuantity = x.ChQuantity;
+
             return new T_SyukkoDetail
             {
-                
+                SyID = ChID,
+                PrID = PrID,
+                SyQuantity = ChQuantity
             };
+
+        }
+        private void chserch()
+        {
+            int chid = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            T_Chumon serchch = new T_Chumon
+            {
+                ChID = chid
+            };
+            chumondetail = chumonDataAccess.GetChIDdata(serchch);
         }
 
         private void RegistrationSyukkoDetail(T_SyukkoDetail regSyukkoDetail)
         {
             bool flg = chumonDataAccess.AddsyukkoDetailData(regSyukkoDetail);
         }
+
+
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {

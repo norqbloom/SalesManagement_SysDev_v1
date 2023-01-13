@@ -56,12 +56,12 @@ namespace SalesManagement_SysDev.Management_Syukko
                 flg=GenerateDataAtUpdate(item);
                 if (flg == true)
                 {
-
+                    messageDsp.DspMsg("M9008");
                 }
                 else
                 {
-                    //確定エラー
-                    //messageDsp.DspMsg("M1023");
+                    
+                    messageDsp.DspMsg("M9009");
 
                 }
 
