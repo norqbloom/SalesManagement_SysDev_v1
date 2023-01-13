@@ -212,12 +212,6 @@
     <Compile Include="Form\Management_Order\Order_Ser.Designer.cs">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Management_Product\Product_Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Management_Product\Product_Add.Designer.cs">
-      <DependentUpon>Product_Add.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Management_Product\Product_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,9 +366,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Order\Order_Ser.resx">
       <DependentUpon>Order_Ser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Management_Product\Product_Add.resx">
-      <DependentUpon>Product_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Product\Product_Ser.resx">
       <DependentUpon>Product_Ser.cs</DependentUpon>

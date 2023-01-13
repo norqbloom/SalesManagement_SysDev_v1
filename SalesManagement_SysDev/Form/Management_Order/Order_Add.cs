@@ -241,8 +241,7 @@ namespace SalesManagement_SysDev.Management_Order
         ///////////////////////////////
         private void GetDataGridView()
         {
-            int StateFlg = 0;
-            int Flg = 0;
+            int StateFlg,Flg;
             if (radioButton1.Checked == true)
             {
                 StateFlg = 2;

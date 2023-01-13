@@ -120,8 +120,7 @@ namespace SalesManagement_SysDev
         ///////////////////////////////
         public List<T_OrderDetail> BringChumonData(int number)
         {
-            List<T_OrderDetail> chumons = new List<T_OrderDetail>();
-            int nn = 0;
+            List<T_OrderDetail> chumons = new List<T_OrderDetail>();;
             try
             {
                 var context = new SalesManagement_DevContext();
