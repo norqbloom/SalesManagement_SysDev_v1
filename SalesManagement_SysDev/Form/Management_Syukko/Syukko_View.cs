@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Management_Syukko
+namespace SalesManagement_SysDev.Management_Syukko 
 {
     public partial class Syukko_View : Form
     {
