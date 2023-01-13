@@ -137,31 +137,31 @@ namespace SalesManagement_SysDev.Management_Employee
                 return false;
             }
 
-            //パスワードの確認
-            if (!String.IsNullOrEmpty(textBoxEmPassword.Text.Trim()))
-            {
-                //文字型
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPassword.Text.Trim()))
-                {
-                    MessageBox.Show("半角英数字やしw");　//messageDsp.DspMsg("M6025");
-                    textBoxEmPassword.Focus();
-                    return false;
-                }
-                //soid文字数チェック
-                if (textBoxEmPassword.TextLength > 10)
-                {
-                    MessageBox.Show("パスワードは文字数は10文字"); //messageDsp.DspMsg("M6026");
-                    textBoxEmPassword.Focus();
-                    return false;
-                }
+            ////パスワードの確認
+            //if (!String.IsNullOrEmpty(textBoxEmPassword.Text.Trim()))
+            //{
+            //    //文字型
+            //    if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPassword.Text.Trim()))
+            //    {
+            //        MessageBox.Show("半角英数字やしw");　//messageDsp.DspMsg("M6025");
+            //        textBoxEmPassword.Focus();
+            //        return false;
+            //    }
+            //    //soid文字数チェック
+            //    if (textBoxEmPassword.TextLength > 10)
+            //    {
+            //        MessageBox.Show("パスワードは文字数は10文字"); //messageDsp.DspMsg("M6026");
+            //        textBoxEmPassword.Focus();
+            //        return false;
+            //    }
 
-            }
-            else
-            {
-                MessageBox.Show("パスワード入力せい"); //messageDsp.DspMsg("M6024");
-                textBoxEmPassword.Focus();
-                return false;
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("パスワード入力せい"); //messageDsp.DspMsg("M6024");
+            //    textBoxEmPassword.Focus();
+            //    return false;
+            //}
 
             //電話番号確認
             if (!String.IsNullOrEmpty(textBoxEmPhone.Text.Trim()))
@@ -212,7 +212,9 @@ namespace SalesManagement_SysDev.Management_Employee
             }
 
 
-            string pw = passwordHash.CreatePasswordHash(textBoxEmPassword.Text.Trim());
+            Random pw = new Random();
+            byte[] rndary = new byte[1];
+            pw.NextBytes(rndary);
             return new M_Employee
             {
 
@@ -221,7 +223,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 PoID = int.Parse(textBoxPoID.Text.Trim()),
                 EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
-                EmPassword = pw,
+                EmPassword = pw.ToString(),
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 EmFlag = checkflg,
                 EmHidden = textBoxEmHidden.Text.Trim()
@@ -524,7 +526,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
-            textBoxEmPassword.Text = "";
+            //textBoxEmPassword.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now;
             checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
@@ -577,7 +579,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
-            textBoxEmPassword.Text = "";
+            //textBoxEmPassword.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now;
             checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
