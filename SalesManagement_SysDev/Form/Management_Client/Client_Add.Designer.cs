@@ -257,7 +257,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1400, 315);
             this.dataGridView1.TabIndex = 39;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // buttonAdd
             // 

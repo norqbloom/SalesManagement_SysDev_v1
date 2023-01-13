@@ -101,7 +101,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(81, 22);
             this.textBoxEmPhone.TabIndex = 36;
-            this.textBoxEmPhone.TextChanged += new System.EventHandler(this.textBoxEmPhone_TextChanged_1);
             // 
             // textBoxPoID
             // 
@@ -225,7 +224,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.checkBoxEmFlag.TabIndex = 21;
             this.checkBoxEmFlag.Text = " ";
             this.checkBoxEmFlag.UseVisualStyleBackColor = true;
-            this.checkBoxEmFlag.CheckedChanged += new System.EventHandler(this.checkBoxEmFlag_CheckedChanged_1);
             // 
             // dataGridView1
             // 
@@ -238,7 +236,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridView1.Size = new System.Drawing.Size(1149, 235);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dateTimePickerEmHiredate
             // 
@@ -247,7 +244,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(161, 22);
             this.dateTimePickerEmHiredate.TabIndex = 40;
-            this.dateTimePickerEmHiredate.ValueChanged += new System.EventHandler(this.dateTimePickerEmHiredate_ValueChanged_1);
             // 
             // panel2
             // 

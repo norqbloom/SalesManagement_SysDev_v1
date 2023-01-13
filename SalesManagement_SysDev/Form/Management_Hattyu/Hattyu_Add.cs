@@ -158,7 +158,6 @@ namespace SalesManagement_SysDev.Management_Hattyu
                 MaID = int.Parse(MaID.Text),
                 EmID = int.Parse(EmID.Text),
                 HaDate = HaDate.Value,
-                //WaWarehouseFlag = checkflg,
                 HaFlag = checkflg,
                 HaHidden = HaHidden.Text
             };

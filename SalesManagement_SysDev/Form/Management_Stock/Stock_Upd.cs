@@ -17,8 +17,6 @@ namespace SalesManagement_SysDev.Management_Stock
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         StockDataAccess stockDataAccess = new StockDataAccess();
         ProductDataAccess productDataAccess = new ProductDataAccess();
-        //private static List<M_Product> products;
-
 
 
         public Stock_Upd()

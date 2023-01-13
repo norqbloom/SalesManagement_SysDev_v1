@@ -22,9 +22,6 @@ namespace SalesManagement_SysDev
         private void serchlogin_Click(object sender, EventArgs e)
         {
             GenerateDataAtSelect();
-
-            SetSelectData();
-
         }
         private void GenerateDataAtSelect()
         {
@@ -80,16 +77,6 @@ namespace SalesManagement_SysDev
         {
             histories = loginhistoryDataAccess.nodatehistory();
             dataGridViewhistory.DataSource = histories;
-
-        }
-
-        private void SetSelectData()
-        {
-            
-        }
-
-        private void loginhistory_Load(object sender, EventArgs e)
-        {
 
         }
     }
