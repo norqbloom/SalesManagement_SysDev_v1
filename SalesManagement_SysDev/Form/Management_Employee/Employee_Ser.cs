@@ -40,7 +40,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    MessageBox.Show("社員コードは半角数値入力です","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("社員コードは半角数値入力です","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error); //messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -50,7 +50,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -60,7 +60,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    messageDsp.DspMsg("M6021");
                     textBoxPoID.Focus();
                     return false;
                 }
@@ -492,15 +492,9 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int number;
             int EmIDtxt;
-            //int SoIDtxt;
-            //int PoIDtxt;
             number = (int)dataGridView1.CurrentRow.Cells[1].Value;
             EmIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            //SoIDtxt = (int)dataGridView1.CurrentRow.Cells[2].Value;
-            //PoIDtxt = (int)dataGridView1.CurrentRow.Cells[3].Value;
             labelEm.Text = textBoxEmID.ToString();
-            //labelSo.Text = textBoxSoID.ToString();
-            //labelPo.Text = textBoxPoID.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -600,11 +594,6 @@ namespace SalesManagement_SysDev.Management_Employee
             dataGridView1.Refresh();
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

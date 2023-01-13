@@ -11,9 +11,8 @@ using System.Runtime.InteropServices;
 
 namespace SalesManagement_SysDev
 {
-    public partial class template2 : Form
+    public partial class template : Form
     {
-
         internal static int loginID ;
         internal static int EmID;
         internal static int PosID;
@@ -21,14 +20,19 @@ namespace SalesManagement_SysDev
         internal static string loginTime ;
         internal static string loginPosition = "";
         internal static string soname = "";
+        internal static Color maincolor = Color.FromArgb(51, 153, 102);
+        internal static Color subcolor= Color.MediumSeaGreen;
+        internal static int Globalint = 0;
 
-        public template2()
+
+        public template()
         {
             InitializeComponent();
         }
 
         private void template_Load(object sender, EventArgs e)
         {
+            colorchange();
             visiblecnt();
             PosVisible();
             customizeDesing();
@@ -40,68 +44,72 @@ namespace SalesManagement_SysDev
             this.Text= Application.ProductName;
             timer1.Interval = 1000;
             timer1.Enabled = true;
+
         }
         private void visiblecnt()
         {
-            btn_client.Visible = false;
-            Product_btn.Visible = false;
-            stock_btn.Visible = false;
-            emp_btn.Visible = false;
-            Earnings_btn.Visible = false;
-            received_btn.Visible = false;
+            colorcomboBox.Visible = false;
+            colorlabel.Visible = false;
+            comitbtn.Visible = false;
+            client.Visible = false;
+            product.Visible = false;
+            stock.Visible = false;
+            employee.Visible = false;
+            sales.Visible = false;
+            order.Visible = false;
             order_btn.Visible = false;
-            instruct_btn.Visible = false;
+            hattyu.Visible = false;
             warehousing_btn.Visible = false;
             issue_btn.Visible = false;
             Arrival_btn.Visible = false;
             shipping_btn.Visible = false;
             logout.Visible = false;
+            loginhistorybtn.Visible = false;
+            RegPasswordbtn.Visible = false;
         }
 
         private void PosVisible()
         {
             if (PosID == 1)
             {
-                btn_client.Visible = true;
-                Product_btn.Visible = true;
-                stock_btn.Visible = true;
-                emp_btn.Visible = true;
-                Earnings_btn.Visible = true;
-                received_btn.Visible = true;
+                client.Visible = true;
+                product.Visible = true;
+                stock.Visible = true;
+                employee.Visible = true;
+                sales.Visible = true;
+                order.Visible = true;
                 order_btn.Visible = true;
-                instruct_btn.Visible = true;
+                hattyu.Visible = true;
                 warehousing_btn.Visible = true;
                 issue_btn.Visible = true;
                 Arrival_btn.Visible = true;
                 shipping_btn.Visible = true;
                 logout.Visible = true;
+                loginhistorybtn.Visible = true;
+                RegPasswordbtn.Visible = true;
             }
             if (PosID == 2)
             {
-                btn_client.Visible = true;
-                stock_btn.Visible = true;
+                client.Visible = true;
+                stock.Visible = true;
                 //社員管理
-                Earnings_btn.Visible = true;
-                received_btn.Visible = true;
+                sales.Visible = true;
+                order.Visible = true;
                 shipping_btn.Visible = true;
                 Arrival_btn.Visible = true;
             }
             if (PosID == 3)
             {
-                Product_btn.Visible = true;
-                stock_btn.Visible = true;
+                product.Visible = true;
+                stock.Visible = true;
                 order_btn.Visible = true;
-                instruct_btn.Visible = true;
+                hattyu.Visible = true;
                 issue_btn.Visible = true;
                 warehousing_btn.Visible = true;
 
             }
         }
-        private void formresize()
-        {
-            int size = 609 / 15;
-            tilepanel.Height = size;
-        }
+
 
         private void customizeDesing()
         {
@@ -119,6 +127,7 @@ namespace SalesManagement_SysDev
             panel12.Visible = false;
             panel13.Visible = false;
             panel14.Visible = false;
+            panel1.Visible = false;
         }
        
         private void hidesubMenu()
@@ -147,6 +156,8 @@ namespace SalesManagement_SysDev
                 panel13.Visible = false;
             if (panel14.Visible == true)
                 panel14.Visible = false;
+            if (panel1.Visible == true)
+                panel1.Visible = false;
         }
 
 
@@ -167,6 +178,10 @@ namespace SalesManagement_SysDev
         private Form activeForm = null;
         private void openChildForm(Form chidform)
         {
+            childsubmenu.Visible = true;
+            colorcomboBox.Visible = false;
+            colorlabel.Visible = false;
+            comitbtn.Visible = false;
             if (activeForm != null)
                 activeForm.Close();
             activeForm = chidform;
@@ -178,7 +193,40 @@ namespace SalesManagement_SysDev
             chidform.BringToFront();
             chidform.Show();
         }
+        private void colorchange()
+        {
+            setting.BackColor = maincolor;
+            close.BackColor = maincolor;
+            sidepanel.BackColor = maincolor;
+            tilepanel.BackColor = maincolor;
+            client.BackColor = maincolor;
+            product.BackColor = maincolor;
+            stock.BackColor = maincolor;
+            employee.BackColor = maincolor;
+            sales.BackColor = maincolor;
+            order.BackColor = maincolor;
+            order_btn.BackColor = maincolor;
+            hattyu.BackColor = maincolor;
+            warehousing_btn.BackColor = maincolor;
+            issue_btn.BackColor = maincolor;
+            Arrival_btn.BackColor = maincolor;
+            shipping_btn.BackColor = maincolor;
+            logout.BackColor = maincolor;
+            subtitlepanel.BackColor = subcolor;
+            clientsubmenu.BackColor = subcolor;
+            Productsubmenu.BackColor = subcolor;
+            stocksubmenu.BackColor = subcolor;
+            empsubmenu.BackColor = subcolor;
+            panel7.BackColor = subcolor;
 
+            receivedsubmenu.BackColor = subcolor;
+            panel9.BackColor = subcolor;
+            instructsubmeun.BackColor = subcolor;
+            panel11.BackColor = subcolor;
+            panel12.BackColor = subcolor;
+            panel13.BackColor = subcolor;
+            panel14.BackColor = subcolor;
+        }
         //フォームドラッグ
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -262,7 +310,7 @@ namespace SalesManagement_SysDev
 
         private void client_upbtn_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Management_Client.Client_Upd());
         }
 
         private void client_serchbtn_Click(object sender, EventArgs e)
@@ -275,21 +323,14 @@ namespace SalesManagement_SysDev
 
         }
 
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click_1(object sender, EventArgs e)
         {
-
+            openChildForm(new Order());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Management_Warehousing.Warehousing_View());
         }
 
         private void tilepanel_Paint(object sender, PaintEventArgs e)
@@ -304,7 +345,7 @@ namespace SalesManagement_SysDev
 
         private void emp_regbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new empcnt());
+            openChildForm(new Management_Employee.Employee_Add());
         }
 
         private void childsubmenu_Paint(object sender, PaintEventArgs e)
@@ -320,14 +361,14 @@ namespace SalesManagement_SysDev
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             logoutuser();
-            this.Close();
+            Application.Exit();
         }
 
         private void Product_regbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new Management_Product.Product_Add());
+            //openChildForm(new Management_Product.Product_Add());
         }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer.Text= DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
@@ -343,8 +384,7 @@ namespace SalesManagement_SysDev
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            Color color = Color.FromArgb(51, 153, 102);
-            close.BackColor = color;
+            close.BackColor = maincolor;
         }
         private void logoutuser()
         {
@@ -363,13 +403,13 @@ namespace SalesManagement_SysDev
         private void outtimereg()
         {
             DateTime dt = DateTime.Now;
-            string logouttime = dt.ToString("MM/dd HH;mm");
-
+            string logouttime = dt.ToString();
+            //DateTime logintime = DateTime.Parse(template.loginTime);
             try
             {
                 var context = new SalesManagement_DevContext();
-                //var loginhistory = context.loginHistories.Single(x => x.loginTime == template.loginTime);
-                //loginhistory.logoutTime = logouttime;
+                //var loginhistory = context.loginHistories.Single(x => x.loginTime == logintime);
+                //loginhistory.logoutTime = DateTime.Parse(logouttime);
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -381,7 +421,11 @@ namespace SalesManagement_SysDev
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            openChildForm(new setting());
+            childsubmenu.Visible = false;
+            colorcomboBox.Visible = true;
+            colorlabel.Visible = true;
+            comitbtn.Visible = true;
+
 
         }
 
@@ -392,8 +436,147 @@ namespace SalesManagement_SysDev
 
         private void setting_MouseLeave(object sender, EventArgs e)
         {
-            Color color = Color.FromArgb(51, 153, 102);
-            setting.BackColor = color;
+            
+            setting.BackColor = maincolor;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (colorcomboBox.SelectedIndex == 0)
+            {
+                //緑
+                template.maincolor = Color.FromArgb(51, 153, 102);
+                template.subcolor = Color.MediumSeaGreen;
+            }
+            else if (colorcomboBox.SelectedIndex == 1)
+            {
+                //青
+                template.maincolor = Color.CornflowerBlue;
+                template.subcolor = Color.DodgerBlue;
+
+            }
+            else if (colorcomboBox.SelectedIndex == 2)
+            {
+                //黒
+                
+            }
+            else if (colorcomboBox.SelectedIndex == 3)
+            {
+                //オレンジ
+            }
+            else if (colorcomboBox.SelectedIndex == 4)
+            {
+                //赤
+            }
+            colorchange();
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Product_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Upd());
+            template.Globalint = 0;
+        }
+
+        private void Product_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Product.Product_Ser());
+        }
+
+        private void stock_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Stock.Stock_Upd());
+        }
+
+        private void stock_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Stock.Stock_Ser());
+        }
+
+        private void emp_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Employee.Employee_Upd());
+        }
+
+        private void emp_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Employee.Employee_Ser());
+        }
+
+        private void Earnings_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Sales.Sales_Ser());
+        }
+
+        private void received_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Order.Order_Ser());
+        }
+
+        private void order_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Chumon.Chumon_Ser());
+        }
+
+        private void instruct_regbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Hattyu.Hattyu_Add());
+        }
+
+        private void instruct_upbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Hattyu.Hattyu_Upd());
+        }
+
+        private void instruct_serchbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Hattyu.Hattyu_Ser());
+        }
+
+        private void issue_display_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Syukko.Syukko_View());
+        }
+
+        private void Arrival_display_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Management_Arrival.Arrival_View());
+        }
+
+        private void shipping_display_Click(object sender, EventArgs e)
+        {
+            //openChildForm(new Management_Shipment.Shipment_View());
+        }
+
+        private void RegPasswordbtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new regPassword());
+        }
+
+        private void loginhistorybtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new loginhistory());
+        }
+
+        private void timer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+            showsubmenu(panel1);
+
         }
     }
 }

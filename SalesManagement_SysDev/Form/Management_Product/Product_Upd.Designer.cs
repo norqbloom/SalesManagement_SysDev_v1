@@ -209,11 +209,12 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.dataGridViewDsp.AllowUserToResizeColumns = false;
             this.dataGridViewDsp.AllowUserToResizeRows = false;
-            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(77, 433);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(86, 433);
             this.dataGridViewDsp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowHeadersWidth = 51;
@@ -257,7 +258,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -287,7 +287,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrHidden.Name = "textBoxPrHidden";
             this.textBoxPrHidden.Size = new System.Drawing.Size(287, 70);
             this.textBoxPrHidden.TabIndex = 7;
-            this.textBoxPrHidden.TextChanged += new System.EventHandler(this.textBoxPrHidden_TextChanged);
             // 
             // textBoxPrColor
             // 
@@ -296,7 +295,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrColor.TabIndex = 120;
-            this.textBoxPrColor.TextChanged += new System.EventHandler(this.textBoxPrColor_TextChanged);
             // 
             // textBoxPrModelNumber
             // 
@@ -319,7 +317,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(188, 197);
             this.textBoxPrSafetyStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
-            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(135, 22);
+            this.textBoxPrSafetyStock.Size = new System.Drawing.Size(81, 22);
             this.textBoxPrSafetyStock.TabIndex = 112;
             // 
             // textBoxPrice
@@ -495,7 +493,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.textBoxPrModelNumber);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(420, 54);
+            this.panel4.Location = new System.Drawing.Point(396, 54);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(606, 248);
             this.panel4.TabIndex = 130;
@@ -508,7 +506,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel5.Controls.Add(this.textBoxPrHidden);
             this.panel5.Location = new System.Drawing.Point(1070, 54);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(318, 208);
+            this.panel5.Size = new System.Drawing.Size(332, 208);
             this.panel5.TabIndex = 130;
             // 
             // panel6
@@ -553,7 +551,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("游ゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(448, 41);
+            this.label5.Location = new System.Drawing.Point(425, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 26);
             this.label5.TabIndex = 131;

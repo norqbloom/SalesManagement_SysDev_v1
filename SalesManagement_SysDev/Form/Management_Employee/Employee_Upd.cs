@@ -137,32 +137,6 @@ namespace SalesManagement_SysDev.Management_Employee
                 return false;
             }
 
-            //パスワードの確認
-            if (!String.IsNullOrEmpty(textBoxEmPassword.Text.Trim()))
-            {
-                //文字型
-                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPassword.Text.Trim()))
-                {
-                    MessageBox.Show("半角英数字やしw");　//messageDsp.DspMsg("M6025");
-                    textBoxEmPassword.Focus();
-                    return false;
-                }
-                //soid文字数チェック
-                if (textBoxEmPassword.TextLength > 10)
-                {
-                    MessageBox.Show("パスワードは文字数は10文字"); //messageDsp.DspMsg("M6026");
-                    textBoxEmPassword.Focus();
-                    return false;
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("パスワード入力せい"); //messageDsp.DspMsg("M6024");
-                textBoxEmPassword.Focus();
-                return false;
-            }
-
             //電話番号確認
             if (!String.IsNullOrEmpty(textBoxEmPhone.Text.Trim()))
             {
@@ -212,7 +186,9 @@ namespace SalesManagement_SysDev.Management_Employee
             }
 
 
-            string pw = passwordHash.CreatePasswordHash(textBoxEmPassword.Text.Trim());
+            Random pw = new Random();
+            byte[] rndary = new byte[1];
+            pw.NextBytes(rndary);
             return new M_Employee
             {
 
@@ -221,7 +197,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 PoID = int.Parse(textBoxPoID.Text.Trim()),
                 EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
-                EmPassword = pw,
+                EmPassword = pw.ToString(),
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 EmFlag = checkflg,
                 EmHidden = textBoxEmHidden.Text.Trim()
@@ -243,15 +219,6 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //データグリッドビューからクリックされたデータを各入力エリアへ
-            //textBoxEmID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            //textBoxEmName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
-            //textBoxSoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            //textBoxPoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            //dateTimePickerEmHiredate.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            //textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
-            //textBoxEmPhone.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
-            //textBoxEmHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[8].Value.ToString();
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             M_Employee selectCondition = new M_Employee()
@@ -276,16 +243,7 @@ namespace SalesManagement_SysDev.Management_Employee
             else
             {
                 checkBoxEmFlag.Checked = true;
-            }
-            //非表示理由の状態を判断
-            /*if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value == null)
-            {
-                textBoxPrHidden.Text = null;
-            }
-            else
-            {
-                textBoxPrHidden.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[10].Value.ToString();
-            }*/
+            }   
             //各種Formロードと各種ボタンに下記を入力する
             SetFormDataGridView();
         }
@@ -458,11 +416,6 @@ namespace SalesManagement_SysDev.Management_Employee
             SetFormDataGridView();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //データグリッドビューからクリックされたデータを各入力エリアへ
@@ -470,28 +423,10 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmName.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
             textBoxSoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
             textBoxPoID.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
-            //dateTimePickerEmHiredate.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            //textBoxEmPassword.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
             textBoxEmPhone.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[6].Value.ToString();
             
-            /*int number;
-            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            M_Employee selectCondition = new M_Employee()
-            {
-                EmID = number
-            };
-
-            employees = employeeDataAccess.GetEmIDdate(selectCondition);
-            var x = employees.FirstOrDefault();
-            textBoxEmID.Text = x.EmID.ToString();
-            textBoxEmName.Text = x.EmName;
-            textBoxSoID.Text = x.SoID.ToString();
-            textBoxPoID.Text = x.PoID.ToString();
-            dateTimePickerEmHiredate.Value = DateTime.Parse(x.EmHiredate);
-            textBoxEmPhone.Text = x.EmPhone;
-            textBoxEmHidden.Text = x.EmHidden;
             //チェックボックスの状態を判断
-            */if ((int)dataGridView1.CurrentRow.Cells[7].Value == 0)
+            if ((int)dataGridView1.CurrentRow.Cells[7].Value == 0)
             {
                 checkBoxEmFlag.Checked = false;
             }
@@ -524,51 +459,10 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
-            textBoxEmPassword.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now;
             checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
             textBoxEmHidden.Text = "";
-        }
-
-        private void textBoxEmPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePickerEmHiredate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxEmFlag_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmPhone_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmPassword_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePickerEmHiredate_ValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxEmFlag_CheckedChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void Clear_Click_1(object sender, EventArgs e)
@@ -577,7 +471,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
-            textBoxEmPassword.Text = "";
+            //textBoxEmPassword.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now;
             checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
