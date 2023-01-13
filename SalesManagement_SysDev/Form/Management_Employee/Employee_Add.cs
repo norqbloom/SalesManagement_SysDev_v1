@@ -143,32 +143,6 @@ namespace SalesManagement_SysDev.Management_Employee
                 return false;
             }
 
-            ////パスワードの確認
-            //if (!String.IsNullOrEmpty(textBoxEmPassword.Text.Trim()))
-            //{
-            //    //文字型
-            //    if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPassword.Text.Trim()))
-            //    {
-            //        MessageBox.Show("半角英数字やしw"); //messageDsp.DspMsg("M6025");
-            //        textBoxEmPassword.Focus();
-            //        return false;
-            //    }
-            //    //パスワード文字数チェック
-            //    if (textBoxEmPassword.TextLength > 10)
-            //    {
-            //        MessageBox.Show("パスワードは文字数は10文字"); //messageDsp.DspMsg("M6026");
-            //        textBoxEmPassword.Focus();
-            //        return false;
-            //    }
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("パスワード入力せい"); //messageDsp.DspMsg("M6024");
-            //    textBoxEmPassword.Focus();
-            //    return false;
-            //}
-
             //電話番号確認
             if (!String.IsNullOrEmpty(textBoxEmPhone.Text.Trim()))
             {
@@ -439,16 +413,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             GetDataGridView();
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Clear_Click(object sender, EventArgs e)

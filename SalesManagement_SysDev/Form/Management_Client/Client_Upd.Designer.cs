@@ -438,7 +438,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(455, 169);
             this.panel3.TabIndex = 48;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label10
             // 
@@ -450,7 +449,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.label10.Size = new System.Drawing.Size(96, 26);
             this.label10.TabIndex = 49;
             this.label10.Text = "個人情報";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -513,7 +511,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.label12.Size = new System.Drawing.Size(96, 26);
             this.label12.TabIndex = 67;
             this.label12.Text = "入力項目";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // Client_Upd
             // 

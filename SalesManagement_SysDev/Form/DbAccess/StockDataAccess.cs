@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.DbAccess
-{
+namespace SalesManagement_SysDev 
+{ 
     class StockDataAccess
     {
         ///////////////////////////////
@@ -67,17 +67,14 @@ namespace SalesManagement_SysDev.DbAccess
         //          ：更新成功の場合True
         //          ：更新失敗の場合False
         ///////////////////////////////
-        public bool UpdateStockData(T_Stock updStock)
+        public bool UpdateStockData(T_ChumonDetail updStock)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
                 var Stock = context.T_Stocks.Single(x => x.PrID == updStock.PrID);
 
-                Stock.StID = updStock.StID;
-                Stock.PrID = updStock.PrID;
-                Stock.StQuantity = updStock.StQuantity;
-                Stock.StFlag = updStock.StFlag;
+                Stock.StQuantity = updStock.ChQuantity;
                 
                 context.SaveChanges();
                 context.Dispose();

@@ -492,15 +492,9 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int number;
             int EmIDtxt;
-            //int SoIDtxt;
-            //int PoIDtxt;
             number = (int)dataGridView1.CurrentRow.Cells[1].Value;
             EmIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            //SoIDtxt = (int)dataGridView1.CurrentRow.Cells[2].Value;
-            //PoIDtxt = (int)dataGridView1.CurrentRow.Cells[3].Value;
             labelEm.Text = textBoxEmID.ToString();
-            //labelSo.Text = textBoxSoID.ToString();
-            //labelPo.Text = textBoxPoID.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -600,11 +594,6 @@ namespace SalesManagement_SysDev.Management_Employee
             dataGridView1.Refresh();
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void textBoxPageNo_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

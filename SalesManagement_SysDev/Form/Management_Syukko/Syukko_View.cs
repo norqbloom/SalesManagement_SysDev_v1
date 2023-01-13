@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Management_Syukko
+namespace SalesManagement_SysDev.Management_Syukko 
 {
     public partial class Syukko_View : Form
     {
@@ -17,8 +17,6 @@ namespace SalesManagement_SysDev.Management_Syukko
         private static List<T_Syukko> listdata = null;
         private static List<T_Syukko> commitdata=null;
         private static List<T_Syukko> syukkos = null;
-        private static List<T_Syukko> syukkos1 = null;
-
 
         SyukkoDataaccess syukkoDataaccess = new SyukkoDataaccess();
         public Syukko_View()
@@ -111,17 +109,6 @@ namespace SalesManagement_SysDev.Management_Syukko
             };
             flg=syukkoDataaccess.upflg(selectCondition);
             return flg;
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

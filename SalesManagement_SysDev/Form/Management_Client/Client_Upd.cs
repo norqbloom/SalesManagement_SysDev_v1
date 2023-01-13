@@ -303,8 +303,6 @@ namespace SalesManagement_SysDev.Management_Client
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -392,21 +390,5 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClFAX.Text = "";
             textBoxClHidden.Text = "";
         }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-
 }
