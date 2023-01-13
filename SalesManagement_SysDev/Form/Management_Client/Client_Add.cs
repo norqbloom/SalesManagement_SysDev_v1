@@ -308,11 +308,6 @@ namespace SalesManagement_SysDev.Management_Client
             
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void change_Click(object sender, EventArgs e)
         {
             SetDataGridView();
@@ -411,11 +406,6 @@ namespace SalesManagement_SysDev.Management_Client
 
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void Clear_Click(object sender, EventArgs e)
         {
             textBoxClID.Text = "";
@@ -427,16 +417,6 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClFAX.Text = "";
             textBoxClHidden.Text = "";
             checkBoxClFLG.Checked = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

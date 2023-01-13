@@ -514,7 +514,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.label13.Size = new System.Drawing.Size(76, 20);
             this.label13.TabIndex = 14;
             this.label13.Text = "商品ID:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 

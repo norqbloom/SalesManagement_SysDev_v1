@@ -66,10 +66,7 @@ namespace SalesManagement_SysDev
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -81,15 +78,6 @@ namespace SalesManagement_SysDev
 
         }
 
-        private void textBox_pass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -158,12 +146,6 @@ namespace SalesManagement_SysDev
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
 
 
         }
@@ -250,11 +232,6 @@ namespace SalesManagement_SysDev
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //Form form = new Management_Product.Product_Add();
-            //form.Show(this);
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -273,11 +250,6 @@ namespace SalesManagement_SysDev
         {
             Form form = new Order();
             form.Show(this);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

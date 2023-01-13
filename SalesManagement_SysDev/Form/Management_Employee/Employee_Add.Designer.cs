@@ -342,7 +342,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
             this.textBoxPageNo.TabIndex = 22;
-            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -394,7 +393,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "非表示";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // panel1
             // 

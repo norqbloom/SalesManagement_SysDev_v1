@@ -100,7 +100,6 @@ namespace SalesManagement_SysDev
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(581, 116);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // panel1
@@ -285,7 +284,6 @@ namespace SalesManagement_SysDev
             this.username.Size = new System.Drawing.Size(63, 20);
             this.username.TabIndex = 3;
             this.username.Text = "label9";
-            this.username.Click += new System.EventHandler(this.label9_Click);
             // 
             // userid
             // 
@@ -344,7 +342,6 @@ namespace SalesManagement_SysDev
             this.textBoxPageSize.Name = "textBoxPageSize";
             this.textBoxPageSize.Size = new System.Drawing.Size(76, 19);
             this.textBoxPageSize.TabIndex = 11;
-            this.textBoxPageSize.TextChanged += new System.EventHandler(this.textBoxPageSize_TextChanged);
             // 
             // buttonFirstPage
             // 
@@ -392,7 +389,6 @@ namespace SalesManagement_SysDev
             this.textBoxPageNo.Name = "textBoxPageNo";
             this.textBoxPageNo.Size = new System.Drawing.Size(41, 19);
             this.textBoxPageNo.TabIndex = 22;
-            this.textBoxPageNo.TextChanged += new System.EventHandler(this.textBoxPageNo_TextChanged);
             // 
             // labelPage
             // 
@@ -523,7 +519,6 @@ namespace SalesManagement_SysDev
             this.ClPhonetxt.Name = "ClPhonetxt";
             this.ClPhonetxt.Size = new System.Drawing.Size(115, 19);
             this.ClPhonetxt.TabIndex = 3;
-            this.ClPhonetxt.TextChanged += new System.EventHandler(this.ClPhonetxt_TextChanged);
             // 
             // addresstxt
             // 
@@ -532,7 +527,6 @@ namespace SalesManagement_SysDev
             this.addresstxt.Name = "addresstxt";
             this.addresstxt.Size = new System.Drawing.Size(184, 19);
             this.addresstxt.TabIndex = 15;
-            this.addresstxt.TextChanged += new System.EventHandler(this.addresstxt_TextChanged);
             // 
             // label4
             // 
@@ -552,7 +546,6 @@ namespace SalesManagement_SysDev
             this.ClPostaltxt.Name = "ClPostaltxt";
             this.ClPostaltxt.Size = new System.Drawing.Size(115, 19);
             this.ClPostaltxt.TabIndex = 17;
-            this.ClPostaltxt.TextChanged += new System.EventHandler(this.ClPostaltxt_TextChanged);
             // 
             // SOIDtxt
             // 
@@ -561,7 +554,6 @@ namespace SalesManagement_SysDev
             this.SOIDtxt.Name = "SOIDtxt";
             this.SOIDtxt.Size = new System.Drawing.Size(184, 19);
             this.SOIDtxt.TabIndex = 1;
-            this.SOIDtxt.TextChanged += new System.EventHandler(this.SOIDtxt_TextChanged);
             // 
             // label1
             // 
@@ -581,7 +573,6 @@ namespace SalesManagement_SysDev
             this.ClFaxtxt.Name = "ClFaxtxt";
             this.ClFaxtxt.Size = new System.Drawing.Size(115, 19);
             this.ClFaxtxt.TabIndex = 16;
-            this.ClFaxtxt.TextChanged += new System.EventHandler(this.ClFaxtxt_TextChanged);
             // 
             // label16
             // 
@@ -653,7 +644,6 @@ namespace SalesManagement_SysDev
             this.label18.Size = new System.Drawing.Size(33, 25);
             this.label18.TabIndex = 31;
             this.label18.Text = "ID";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 

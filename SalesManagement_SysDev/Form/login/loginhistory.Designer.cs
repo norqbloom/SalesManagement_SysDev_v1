@@ -265,7 +265,6 @@ namespace SalesManagement_SysDev
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "loginhistory";
             this.Text = "ログイン履歴";
-            this.Load += new System.EventHandler(this.loginhistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewhistory)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
