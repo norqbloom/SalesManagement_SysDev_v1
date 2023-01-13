@@ -229,7 +229,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             if(checkBoxClFLG.CheckState == CheckState.Indeterminate)
             {
-                MessageBox.Show("");
+                MessageBox.Show(""); //messageDsp.DspMsg("M4044");
                 checkBoxClFLG.Focus();
                 return false;
             }
@@ -423,6 +423,16 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClFAX.Text = "";
             textBoxClHidden.Text = "";
             checkBoxClFLG.Checked = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

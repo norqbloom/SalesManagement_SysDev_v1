@@ -648,5 +648,11 @@ namespace SalesManagement_SysDev.Management_Product
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

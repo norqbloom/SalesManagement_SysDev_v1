@@ -222,7 +222,7 @@ namespace SalesManagement_SysDev.Management_Client
             }
             if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
             {
-                MessageBox.Show("");
+                MessageBox.Show(""); //messageDsp.DspMsg("M4044");
                 checkBoxClFlag.Focus();
                 return false;
             }
@@ -391,6 +391,21 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClPostal.Text = "";
             textBoxClFAX.Text = "";
             textBoxClHidden.Text = "";
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

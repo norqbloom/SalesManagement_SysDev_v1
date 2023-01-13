@@ -40,7 +40,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    MessageBox.Show("社員コードは半角数値入力です","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("社員コードは半角数値入力です","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error); //messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -50,7 +50,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -60,7 +60,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    messageDsp.DspMsg("M6021");
                     textBoxPoID.Focus();
                     return false;
                 }

@@ -965,12 +965,7 @@ namespace SalesManagement_SysDev
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
         
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string OrID = textBoxOrID.Text.Trim();
-            var form = new テスト2(OrID);
-            form.Show();
-        }
+        
         /// <summary>
         /// T_Orderの更新処理
         /// </summary>
