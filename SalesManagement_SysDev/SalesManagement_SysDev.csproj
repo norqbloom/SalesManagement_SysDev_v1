@@ -471,9 +471,7 @@
   <ItemGroup>
     <None Include="Resources\settings_FILL0_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
