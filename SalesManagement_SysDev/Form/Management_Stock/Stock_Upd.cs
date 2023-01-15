@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SalesManagement_SysDev.DbAccess;
 
+
 namespace SalesManagement_SysDev.Management_Stock
 {
     public partial class Stock_Upd : Form
