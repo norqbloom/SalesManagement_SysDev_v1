@@ -357,5 +357,15 @@ namespace SalesManagement_SysDev
             ClPostaltxt.Text = "";
             ClFaxtxt.Text = ""; 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //(int)dataGridView1.CurrentRow.Cells[0].Value;
+            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            MessageBox.Show("非表示にしてもよろしいでしょうか？");
+            clientDataAccess.upflg(number);
+            setdata();
+
+        }
     }
 }
