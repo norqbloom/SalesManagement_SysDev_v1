@@ -236,21 +236,21 @@ namespace SalesManagement_SysDev
             }
             return Chumon;
         }
-        public T_Chumon GetChumonDataByChId(int chId)
-        {
-            List<T_Chumon> Chumon = new List<T_Chumon>();
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                Chumon = context.T_Chumons.Where(x => x.OrID == chId).ToList();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return Chumon[0];
-        }
+        //public T_Chumon GetChumonDataByChId(int chId)
+        //{
+        //    List<T_Chumon> Chumon = new List<T_Chumon>();
+        //    try
+        //    {
+        //        var context = new SalesManagement_DevContext();
+        //        Chumon = context.T_Chumons.Where(x => x.OrID == chId).ToList();
+        //        context.Dispose();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    return Chumon[0];
+        //}
 
         ///////////////////////////////
         //メソッド名：GetChumonsDspData()
@@ -291,12 +291,12 @@ namespace SalesManagement_SysDev
                 chumon = context.T_Chumons.Where(x =>
                                                  x.ChID.ToString().Contains(selectCondition.ChID.ToString()) &&
                                                  x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
+                                                 //x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
                                                  x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) //&&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
-                                                 x.ChStateFlag == 0 &&
-                                                 x.ChFlag == 0
+                                                 //x.ChStateFlag == 0 &&
+                                                 //x.ChFlag == 0
                                                  ).ToList();
                 context.Dispose();
 

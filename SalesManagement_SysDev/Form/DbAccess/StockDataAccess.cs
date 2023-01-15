@@ -74,7 +74,7 @@ namespace SalesManagement_SysDev
                 var context = new SalesManagement_DevContext();
                 var Stock = context.T_Stocks.Single(x => x.PrID == updStock.PrID);
 
-                Stock.StQuantity = updStock.ChQuantity;
+                Stock.StQuantity = Stock.StQuantity-updStock.ChQuantity;
                 
                 context.SaveChanges();
                 context.Dispose();

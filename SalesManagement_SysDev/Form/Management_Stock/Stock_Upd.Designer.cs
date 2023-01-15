@@ -167,6 +167,7 @@ namespace SalesManagement_SysDev.Management_Stock
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Stock_Upd";
             this.Text = "Stock_Upd";
+            this.Load += new System.EventHandler(this.Stock_Upd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

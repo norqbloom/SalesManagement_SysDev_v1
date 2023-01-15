@@ -225,7 +225,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClHidden.ShortcutsEnabled = false;
             this.textBoxClHidden.Size = new System.Drawing.Size(287, 70);
             this.textBoxClHidden.TabIndex = 7;
-            this.textBoxClHidden.TextChanged += new System.EventHandler(this.textBoxClHidden_TextChanged);
             // 
             // textBoxClPhone
             // 
@@ -436,7 +435,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Controls.Add(this.textBoxClAddress);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(412, 72);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(603, 210);
             this.panel3.TabIndex = 60;
@@ -460,7 +459,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4.Controls.Add(this.checkBoxClFLG);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(1060, 74);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(318, 208);
             this.panel4.TabIndex = 62;
@@ -490,7 +489,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.panel5.Location = new System.Drawing.Point(112, 51);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1425, 421);
             this.panel5.TabIndex = 64;

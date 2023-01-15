@@ -75,7 +75,7 @@ namespace SalesManagement_SysDev
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(ClIDtxt.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1001");
+                    messageDsp.DspMsg("M1001"); //顧客IDは半角数字入力です
                     ClIDtxt.Focus();
                     return false;
                 }
@@ -86,7 +86,7 @@ namespace SalesManagement_SysDev
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(SOIDtxt.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1005");
+                    messageDsp.DspMsg("M1005"); //営業所IDは半角数字入力です
                     SOIDtxt.Focus();
                     return false;
                 }
@@ -96,7 +96,7 @@ namespace SalesManagement_SysDev
             {
                 if (!dataInputFormCheck.CheckHalfChar(ClPhonetxt.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1015");
+                    messageDsp.DspMsg("M1015"); //電話番号は半角数値入力です
                     ClPhonetxt.Focus();
                     return false;
 
