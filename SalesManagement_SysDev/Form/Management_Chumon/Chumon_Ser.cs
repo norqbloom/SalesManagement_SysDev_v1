@@ -64,40 +64,43 @@ namespace SalesManagement_SysDev.Management_Chumon
         private bool GetChumonDataAtSelect()
         {
             //注文データの確認
-            if (!String.IsNullOrEmpty(textBoxChID.Text.Trim()))
-            {
-                //文字種チェック
-                if (!dataInputFormCheck.CheckNumeric(textBoxChID.Text.Trim()))
-                {
-                    messageDsp.DspMsg("注文IDは6文字です"); //messageDsp.DspMsg("M5035");
-                    textBoxChID.Focus();
-                    return false;
-                }
-            }
+            //if (!String.IsNullOrEmpty(textBoxChID.Text.Trim()))
+            //{
+            //    //文字種チェック
+            //    if (!dataInputFormCheck.CheckNumeric(textBoxChID.Text.Trim()))
+            //    {
+            //        messageDsp.DspMsg("注文IDが半角数字入力です"); //messageDsp.DspMsg("M5035");
+            //        textBoxChID.Focus();
+            //        return false;
+            //    }
+            //    messageDsp.DspMsg("注文IDが入力されていません"); //messageDsp.DspMsg("M5035");
+            //    textBoxChID.Focus();
+            //    return false;
+            //}
 
-            //営業所IDの確認
-            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-            {
-                //文字種チェック
-                if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
-                {
-                    messageDsp.DspMsg("営業所IDは6文字です"); //messageDsp.DspMsg("M1008");
-                    textBoxSoID.Focus();
-                    return false;
-                }
-            }
+            ////営業所IDの確認
+            //if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            //{
+            //    //文字種チェック
+            //    if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
+            //    {
+            //        messageDsp.DspMsg("営業所IDは6文字です"); //messageDsp.DspMsg("M1008");
+            //        textBoxSoID.Focus();
+            //        return false;
+            //    }
+            //}
 
-            //社員IDの確認
-            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-            {
-                //文字種チェック
-                if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
-                {
-                    messageDsp.DspMsg("社員IDは6文字です"); //messageDsp.DspMsg("M6002");
-                    textBoxEmID.Focus();
-                    return false;
-                }
-            }
+            ////社員IDの確認
+            //if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            //{
+            //    //文字種チェック
+            //    if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
+            //    {
+            //        messageDsp.DspMsg("社員IDは6文字です"); //messageDsp.DspMsg("M6002");
+            //        textBoxEmID.Focus();
+            //        return false;
+            //    }
+            //}
 
             return true;
         }
@@ -113,48 +116,49 @@ namespace SalesManagement_SysDev.Management_Chumon
                         //全て入力されている
                         datedubblwget();
                         return;
-            //        }
-            //        else
-            //        {
-            //            //注文・営業所のみ
-            //            dateChSoget();
-            //            return;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        //注文・社員のみ
-            //        dateChEmget();
-            //        return;
-            //    }
-            //}
-            //else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-            //{
-            //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-            //    {
-            //        //営業所・社員のみ
-            //        dateSoEmget();
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        //営業所のみ
-            //        dateSoget();
-            //        return;
-            //    }
-            //}
-            //else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-            //{
-            //    //社員のみ
-            //    dateEmget();
-            //    return;
-            //}
+
+                //        }
+                //        else
+                //        {
+                //            //注文・営業所のみ
+                //            dateChSoget();
+                //            return;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        //注文・社員のみ
+                //        dateChEmget();
+                //        return;
+                //    }
+                //}
+                //else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                //{
+                //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                //    {
+                //        //営業所・社員のみ
+                //        dateSoEmget();
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        //営業所のみ
+                //        dateSoget();
+                //        return;
+                //    }
+                //}
+                //else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                //{
+                //    //社員のみ
+                //    dateEmget();
+                //    return;
+            }
             //else
             //{
             //    //何も入力されていない
             //    datenolwget();
             //    return;
-            }
+            //}
         }
 
         private void SetSelectData()
@@ -167,16 +171,24 @@ namespace SalesManagement_SysDev.Management_Chumon
             T_Chumon selectCondition = new T_Chumon()
             {
                 ChID = int.Parse(textBoxChID.Text.Trim()),
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                //SoID = int.Parse(textBoxSoID.Text.Trim()),
                 //EmID = int.Parse(textBoxEmID.Text.Trim()),
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
+                //ClID = int.Parse(textBoxClID.Text.Trim()),
+                //OrID = int.Parse(textBoxOrID.Text.Trim()),
+                //ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
             };
             chumons = chumonDataAccess.Getdubblwdata(selectCondition);
         }
 
-        
+        private void datenoget()
+        {
+            T_Chumon selectCondition = new T_Chumon()
+            {
+                
+                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
+            };
+            chumons = chumonDataAccess.Getnodata(selectCondition);
+        }
 
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
