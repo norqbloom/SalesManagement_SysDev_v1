@@ -381,5 +381,15 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClFAX.Text = "";
             textBoxClHidden.Text = "";
         }
+
+        private void textBoxClFAX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxClPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

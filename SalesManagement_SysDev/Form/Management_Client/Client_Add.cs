@@ -417,5 +417,10 @@ namespace SalesManagement_SysDev.Management_Client
         {
 
         }
+
+        private void textBoxClID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
