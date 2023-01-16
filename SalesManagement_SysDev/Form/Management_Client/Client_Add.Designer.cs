@@ -233,7 +233,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClHidden.ShortcutsEnabled = false;
             this.textBoxClHidden.Size = new System.Drawing.Size(216, 57);
             this.textBoxClHidden.TabIndex = 7;
-            this.textBoxClHidden.TextChanged += new System.EventHandler(this.textBoxClHidden_TextChanged);
             // 
             // textBoxClPhone
             // 

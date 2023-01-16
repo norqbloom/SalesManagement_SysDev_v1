@@ -20,6 +20,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         private static List<T_Chhistory> history;
         private static List<T_ChumonDetail> chumondetail;
         private static List<T_ChumonDetail> chumondetailherasu;
+        private static List<T_ChumonDetail> chumo;
 
         public Chumon_Ser()
         {
@@ -68,7 +69,7 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //文字種チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxChID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("注文IDは6文字"); //messageDsp.DspMsg("M5035");
+                    messageDsp.DspMsg("注文IDは6文字です"); //messageDsp.DspMsg("M5035");
                     textBoxChID.Focus();
                     return false;
                 }
@@ -80,7 +81,7 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //文字種チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("営業所IDは6文字"); //messageDsp.DspMsg("M1008");
+                    messageDsp.DspMsg("営業所IDは6文字です"); //messageDsp.DspMsg("M1008");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -92,7 +93,7 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //文字種チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("社員IDは6もじ"); //messageDsp.DspMsg("M6002");
+                    messageDsp.DspMsg("社員IDは6文字です"); //messageDsp.DspMsg("M6002");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -105,54 +106,54 @@ namespace SalesManagement_SysDev.Management_Chumon
         {
             if (!String.IsNullOrEmpty(textBoxChID.Text.Trim()))
             {
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-                {
-                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                    {
+                //if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                //{
+                //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                //    {
                         //全て入力されている
                         datedubblwget();
                         return;
-                    }
-                    else
-                    {
-                        //注文・営業所のみ
-                        dateChSoget();
-                        return;
-                    }
-                }
-                else
-                {
-                    //注文・社員のみ
-                    dateChEmget();
-                    return;
-                }
-            }
-            else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-            {
-                if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                {
-                    //営業所・社員のみ
-                    dateSoEmget();
-                    return;
-                }
-                else
-                {
-                    //営業所のみ
-                    dateSoget();
-                    return;
-                }
-            }
-            else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-            {
-                //社員のみ
-                dateEmget();
-                return;
-            }
-            else
-            {
-                //何も入力されていない
-                datenolwget();
-                return;
+            //        }
+            //        else
+            //        {
+            //            //注文・営業所のみ
+            //            dateChSoget();
+            //            return;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        //注文・社員のみ
+            //        dateChEmget();
+            //        return;
+            //    }
+            //}
+            //else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+            //{
+            //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            //    {
+            //        //営業所・社員のみ
+            //        dateSoEmget();
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        //営業所のみ
+            //        dateSoget();
+            //        return;
+            //    }
+            //}
+            //else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            //{
+            //    //社員のみ
+            //    dateEmget();
+            //    return;
+            //}
+            //else
+            //{
+            //    //何も入力されていない
+            //    datenolwget();
+            //    return;
             }
         }
 
@@ -167,7 +168,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             {
                 ChID = int.Parse(textBoxChID.Text.Trim()),
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
+                //EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClID = int.Parse(textBoxClID.Text.Trim()),
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
                 ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
@@ -175,77 +176,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             chumons = chumonDataAccess.Getdubblwdata(selectCondition);
         }
 
-        private void dateChSoget()
-        {
-            T_Chumon selectCondition = new T_Chumon()
-            {
-                ChID = int.Parse(textBoxChID.Text.Trim()),
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
-            };
-            chumons = chumonDataAccess.Getdubblwdata(selectCondition);
-        }
-
-        private void dateChEmget()
-        {
-            T_Chumon selectCondition = new T_Chumon()
-            {
-                ChID = int.Parse(textBoxChID.Text.Trim()),
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
-            };
-            chumons = chumonDataAccess.Getdubblwdata(selectCondition);
-        }
-
-        private void dateSoEmget()
-        {
-            T_Chumon selectCondition = new T_Chumon()
-            {
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
-            };
-            chumons = chumonDataAccess.Getdubblwdata(selectCondition);
-        }
-
-        private void dateSoget()
-        {
-            T_Chumon selectCondition = new T_Chumon()
-            {
-                SoID = int.Parse(textBoxSoID.Text.Trim()),
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
-            };
-            chumons = chumonDataAccess.Getdubblwdata(selectCondition);
-        }
-        private void dateEmget()
-        {
-            T_Chumon selectCondition = new T_Chumon()
-            {
-                EmID = int.Parse(textBoxEmID.Text.Trim()),
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
-            };
-            chumons = chumonDataAccess.Getdubblwdata(selectCondition);
-        }
-        private void datenolwget()
-        {
-            T_Chumon selectCondition = new T_Chumon()
-            {
-                ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),
-                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
-            };
-            chumons = chumonDataAccess.Getdubblwdata(selectCondition);
-        }
+        
 
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
@@ -301,16 +232,16 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void Chumon_delete(T_Chumon Chumondel)
         {
-            DialogResult result = MessageBox.Show("削除ｓ", MessageBoxButtons.OKCancel.ToString());
+            DialogResult result = MessageBox.Show("削除しますか？", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
             {
                 return;
             }
             bool flg = chumonDataAccess.DeleteChumonData(Chumondel);
             if (flg == true)
-                MessageBox.Show("おｋ");
+                MessageBox.Show("");
             else
-                MessageBox.Show("の");
+                MessageBox.Show("");
         }
 
         //確定ボタン
@@ -329,7 +260,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             /// 在庫減らす
             /// 出庫テーブルにデータ作成
             /// 
-            T_Chumon chu = chumonDataAccess.GetChumonDataByChId(chumon_id);
+            //T_Chumon chu = chumonDataAccess.GetChumonDataByChId(chumon_id);
 
             int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             GenerateDataAtConfirm(number);
@@ -351,22 +282,25 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void GenerateDataAtConfirm(int conChumon)
         {
-            DialogResult result = MessageBox.Show("確定します", MessageBoxButtons.OKCancel.ToString());
+            DialogResult result = MessageBox.Show("確定しますか？", MessageBoxButtons.OKCancel.ToString());
             if (result == DialogResult.Cancel)
             {
                 return;
             }
             bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
             if (flg == true)
-                MessageBox.Show("おｋ");
+                MessageBox.Show("");
             else
-                MessageBox.Show("の");
+                MessageBox.Show("");
         }
 
         private void GenerateDataAtReduce()
         {
             ChIDsyutoku();
-            //bool flg = stockDataAccess.UpdateStockData(chumondetailherasu);
+            foreach (var herasu  in chumondetailherasu)
+            {
+                bool flg = stockDataAccess.UpdateStockData(herasu);
+            }
         }
 
         private void ChIDsyutoku()
