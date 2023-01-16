@@ -662,5 +662,19 @@ namespace SalesManagement_SysDev.Management_Employee
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //(int)dataGridView1.CurrentRow.Cells[0].Value;
+            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            MessageBox.Show("非表示にしてもよろしいでしょうか？");
+            EmployeeDataAccess.upflg(number);
+            setdata();
+        }
+        private void setdata()
+        {
+            Emp1 = EmployeeDataAccess.GetEmployeeDataDsp1();
+            dataGridView1.DataSource = Emp1;
+        }
     }
 }

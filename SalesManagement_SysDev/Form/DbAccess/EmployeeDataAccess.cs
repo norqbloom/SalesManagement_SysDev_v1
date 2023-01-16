@@ -626,6 +626,41 @@ namespace SalesManagement_SysDev
             }
             return emp;
         }
+        public List<M_Employee> GetEmployeeDataDsp1()
+        {
+            List<M_Employee> emp = new List<M_Employee>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                emp = context.M_Employees.Where(x => x.EmFlag == 0).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return emp;
+        }
+        public bool upflg(int number)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var employee = context.M_Employees.Single(x => x.EmID == number);
+                employee.EmFlag = 1;
+                context.SaveChanges();
+                context.Dispose();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return true;
+        }
 
     }
 }
