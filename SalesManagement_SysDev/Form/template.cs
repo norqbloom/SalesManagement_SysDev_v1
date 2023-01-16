@@ -578,5 +578,14 @@ namespace SalesManagement_SysDev
             showsubmenu(panel1);
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Size size = childsubmenu.Size;
+            int w = size.Width;
+            int h = size.Height;
+            MessageBox.Show(w.ToString());
+            MessageBox.Show(h.ToString());
+        }
     }
 }
