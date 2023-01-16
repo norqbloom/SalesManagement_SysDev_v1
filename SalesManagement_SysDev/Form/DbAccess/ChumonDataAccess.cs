@@ -290,15 +290,15 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 chumon = context.T_Chumons.Where(x =>
-                                                 x.ChID.ToString().Contains(selectCondition.ChID.ToString()) //&&
-                                                 //x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
+                                                 x.ChID.ToString().Contains(selectCondition.ChID.ToString()) &&
+                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
                                                  //x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 //x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 //x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
+                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
+                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
                                                  //x.ChDate.Contains(selectCondition.ChDate) &&
-                                                 //x.ChStateFlag == 0 &&
-                                                 //x.ChFlag == 0
-                                                 ).ToList();
+                                                 x.ChStateFlag == 0 &&
+                                                 x.ChFlag == 0 &&
+                                                 x.SoID == selectCondition.SoID).ToList();
                 context.Dispose();
 
             }

@@ -171,11 +171,11 @@ namespace SalesManagement_SysDev.Management_Chumon
             T_Chumon selectCondition = new T_Chumon()
             {
                 ChID = int.Parse(textBoxChID.Text.Trim()),
-                //SoID = int.Parse(textBoxSoID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
                 //EmID = int.Parse(textBoxEmID.Text.Trim()),
-                //ClID = int.Parse(textBoxClID.Text.Trim()),
-                //OrID = int.Parse(textBoxOrID.Text.Trim()),
-                //ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
+                ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
             };
             chumons = chumonDataAccess.Getdubblwdata(selectCondition);
         }
@@ -251,9 +251,9 @@ namespace SalesManagement_SysDev.Management_Chumon
             }
             bool flg = chumonDataAccess.DeleteChumonData(Chumondel);
             if (flg == true)
-                MessageBox.Show("");
+                MessageBox.Show("削除しました");
             else
-                MessageBox.Show("");
+                MessageBox.Show("削除に失敗しました");
         }
 
         //確定ボタン
@@ -275,7 +275,6 @@ namespace SalesManagement_SysDev.Management_Chumon
             //T_Chumon chu = chumonDataAccess.GetChumonDataByChId(chumon_id);
 
             int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            GenerateDataAtConfirm(number);
 
             //在庫数減らす処理ここから↓
             //注文ID取得←dataGridView[0]
@@ -289,21 +288,30 @@ namespace SalesManagement_SysDev.Management_Chumon
             GenerateDataAtRegistrationSyukkoDetail();
             //var regSyukkoDetail = GenerateDataAtRegistrationSyukkoDetail();
             //RegistrationSyukkoDetail(regSyukkoDetail);
-
+            dataGridView1.Refresh();
         }
 
         private void GenerateDataAtConfirm(int conChumon)
         {
-            DialogResult result = MessageBox.Show("確定しますか？", MessageBoxButtons.OKCancel.ToString());
+            bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
+            DialogResult result = MessageBox.Show("確定しますか");
+            //DialogResult result = messageDsp.DspMsg("");
             if (result == DialogResult.Cancel)
             {
                 return;
             }
-            bool flg = chumonDataAccess.ConfirmChumonData(conChumon);
+
             if (flg == true)
-                MessageBox.Show("");
+            {
+                MessageBox.Show("確定しました");
+                //messageDsp.DspMsg("");
+            }
             else
-                MessageBox.Show("");
+            {
+                MessageBox.Show("確定できませんでした");
+                //messageDsp.DspMsg("");
+            }
+            textBoxChID.Focus();
         }
 
         private void GenerateDataAtReduce()
