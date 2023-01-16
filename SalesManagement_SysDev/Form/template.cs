@@ -572,7 +572,9 @@ namespace SalesManagement_SysDev
 
         private void RegPasswordbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new regPassword());
+            //openChildForm(new regPassword());
+            Form form = new regPassword();
+            form.Show(this);
         }
 
         private void loginhistorybtn_Click(object sender, EventArgs e)
