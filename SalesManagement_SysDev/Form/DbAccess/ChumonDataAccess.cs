@@ -264,7 +264,8 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                Chumon = context.T_Chumons.Where(x => x.ChFlag == 0).ToList();
+                Chumon = context.T_Chumons.Where(x => x.ChFlag == 0&&
+                                                      x.ChStateFlag==0).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
