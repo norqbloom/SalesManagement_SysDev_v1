@@ -67,6 +67,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5 = new System.Windows.Forms.Panel();
             this.Clear = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -475,6 +477,8 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.radioButton2);
+            this.panel5.Controls.Add(this.radioButton1);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.Clear);
             this.panel5.Controls.Add(this.label10);
@@ -512,6 +516,28 @@ namespace SalesManagement_SysDev.Management_Client
             this.label12.Size = new System.Drawing.Size(96, 26);
             this.label12.TabIndex = 63;
             this.label12.Text = "入力項目";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(78, 296);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(165, 30);
+            this.radioButton1.TabIndex = 66;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(327, 296);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(165, 30);
+            this.radioButton2.TabIndex = 67;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // Client_Add
             // 
@@ -583,5 +609,7 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
