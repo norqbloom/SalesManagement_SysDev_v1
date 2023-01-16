@@ -110,7 +110,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(285, 85);
+            this.label7.Location = new System.Drawing.Point(302, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 36);
             this.label7.TabIndex = 53;
@@ -120,7 +120,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(11, 85);
+            this.label6.Location = new System.Drawing.Point(11, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 36);
             this.label6.TabIndex = 52;
@@ -130,7 +130,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(285, 15);
+            this.label5.Location = new System.Drawing.Point(302, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 36);
             this.label5.TabIndex = 51;
@@ -183,7 +183,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxClFAX
             // 
             this.textBoxClFAX.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBoxClFAX.Location = new System.Drawing.Point(421, 94);
+            this.textBoxClFAX.Location = new System.Drawing.Point(439, 94);
             this.textBoxClFAX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClFAX.Name = "textBoxClFAX";
             this.textBoxClFAX.Size = new System.Drawing.Size(147, 23);
@@ -191,7 +191,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxSoID
             // 
-            this.textBoxSoID.Location = new System.Drawing.Point(200, 132);
+            this.textBoxSoID.Location = new System.Drawing.Point(200, 130);
             this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(81, 23);
@@ -199,16 +199,17 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxClID
             // 
-            this.textBoxClID.Location = new System.Drawing.Point(200, 61);
+            this.textBoxClID.Location = new System.Drawing.Point(200, 59);
             this.textBoxClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(81, 23);
             this.textBoxClID.TabIndex = 0;
+            this.textBoxClID.TextChanged += new System.EventHandler(this.textBoxClID_TextChanged);
             // 
             // textBoxClName
             // 
             this.textBoxClName.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBoxClName.Location = new System.Drawing.Point(156, 25);
+            this.textBoxClName.Location = new System.Drawing.Point(156, 26);
             this.textBoxClName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClName.Name = "textBoxClName";
             this.textBoxClName.Size = new System.Drawing.Size(123, 23);
@@ -229,7 +230,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxClPhone
             // 
             this.textBoxClPhone.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBoxClPhone.Location = new System.Drawing.Point(421, 25);
+            this.textBoxClPhone.Location = new System.Drawing.Point(439, 26);
             this.textBoxClPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClPhone.Name = "textBoxClPhone";
             this.textBoxClPhone.Size = new System.Drawing.Size(147, 23);
@@ -238,18 +239,19 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxClAddress
             // 
             this.textBoxClAddress.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.textBoxClAddress.Location = new System.Drawing.Point(156, 161);
+            this.textBoxClAddress.Location = new System.Drawing.Point(156, 159);
             this.textBoxClAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClAddress.Name = "textBoxClAddress";
-            this.textBoxClAddress.Size = new System.Drawing.Size(420, 23);
+            this.textBoxClAddress.Size = new System.Drawing.Size(430, 23);
             this.textBoxClAddress.TabIndex = 4;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(112, 505);
+            this.dataGridView1.Location = new System.Drawing.Point(112, 467);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -260,7 +262,7 @@ namespace SalesManagement_SysDev.Management_Client
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonAdd.Location = new System.Drawing.Point(1216, 339);
+            this.buttonAdd.Location = new System.Drawing.Point(1215, 296);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(163, 54);
@@ -271,7 +273,8 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.change);
             this.panel2.Controls.Add(this.buttonLastPage);
             this.panel2.Controls.Add(this.buttonNextPage);
@@ -281,16 +284,15 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(253, 779);
+            this.panel2.Location = new System.Drawing.Point(407, 798);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 36);
+            this.panel2.Size = new System.Drawing.Size(822, 36);
             this.panel2.TabIndex = 57;
             // 
             // change
             // 
-            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.change.Location = new System.Drawing.Point(220, 6);
             this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.change.Name = "change";
@@ -302,12 +304,11 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonLastPage
             // 
-            this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonLastPage.Location = new System.Drawing.Point(775, 9);
             this.buttonLastPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLastPage.Name = "buttonLastPage";
-            this.buttonLastPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonLastPage.Size = new System.Drawing.Size(32, 22);
             this.buttonLastPage.TabIndex = 24;
             this.buttonLastPage.Text = "▶|";
             this.buttonLastPage.UseVisualStyleBackColor = true;
@@ -315,9 +316,8 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonNextPage
             // 
-            this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNextPage.Location = new System.Drawing.Point(745, 9);
+            this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNextPage.Location = new System.Drawing.Point(744, 9);
             this.buttonNextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNextPage.Name = "buttonNextPage";
             this.buttonNextPage.Size = new System.Drawing.Size(28, 22);
@@ -328,9 +328,8 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonPreviousPage
             // 
-            this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPreviousPage.Location = new System.Drawing.Point(711, 9);
+            this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonPreviousPage.Location = new System.Drawing.Point(710, 9);
             this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPreviousPage.Name = "buttonPreviousPage";
             this.buttonPreviousPage.Size = new System.Drawing.Size(28, 22);
@@ -352,8 +351,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxPageSize
             // 
-            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
             this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageSize.Name = "textBoxPageSize";
@@ -362,7 +360,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // textBoxPageNo
             // 
-            this.textBoxPageNo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textBoxPageNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPageNo.Location = new System.Drawing.Point(532, 8);
             this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPageNo.Name = "textBoxPageNo";
@@ -371,8 +369,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // labelPage
             // 
-            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelPage.AutoSize = true;
             this.labelPage.Location = new System.Drawing.Point(591, 10);
             this.labelPage.Name = "labelPage";
@@ -382,12 +379,11 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonFirstPage
             // 
-            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
+            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonFirstPage.Location = new System.Drawing.Point(674, 9);
             this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFirstPage.Name = "buttonFirstPage";
-            this.buttonFirstPage.Size = new System.Drawing.Size(28, 22);
+            this.buttonFirstPage.Size = new System.Drawing.Size(32, 22);
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
@@ -402,7 +398,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel1.Controls.Add(this.textBoxSoID);
             this.panel1.Controls.Add(this.textBoxClID);
             this.panel1.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.panel1.Location = new System.Drawing.Point(52, 74);
+            this.panel1.Location = new System.Drawing.Point(52, 56);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(317, 208);
@@ -412,7 +408,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(63, 56);
+            this.label9.Location = new System.Drawing.Point(71, 41);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -434,10 +430,10 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.textBoxClAddress);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(412, 72);
+            this.panel3.Location = new System.Drawing.Point(412, 56);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(603, 210);
+            this.panel3.Size = new System.Drawing.Size(603, 208);
             this.panel3.TabIndex = 60;
             // 
             // label10
@@ -445,7 +441,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.label10.AutoSize = true;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label10.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(451, 56);
+            this.label10.Location = new System.Drawing.Point(425, 38);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 26);
@@ -458,7 +454,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4.Controls.Add(this.textBoxClHidden);
             this.panel4.Controls.Add(this.checkBoxClFLG);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(1060, 74);
+            this.panel4.Location = new System.Drawing.Point(1060, 56);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(318, 208);
@@ -468,7 +464,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(1069, 56);
+            this.label11.Location = new System.Drawing.Point(1069, 38);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 26);
@@ -491,12 +487,12 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel5.Location = new System.Drawing.Point(112, 51);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1425, 421);
+            this.panel5.Size = new System.Drawing.Size(1425, 378);
             this.panel5.TabIndex = 64;
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(981, 339);
+            this.Clear.Location = new System.Drawing.Point(1003, 296);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(163, 54);
