@@ -79,7 +79,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(15, 56);
+            this.label8.Location = new System.Drawing.Point(29, 59);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(160, 36);
             this.label8.TabIndex = 37;
@@ -97,7 +97,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.checkBoxClFlag.AutoSize = true;
             this.checkBoxClFlag.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.checkBoxClFlag.Location = new System.Drawing.Point(20, 16);
+            this.checkBoxClFlag.Location = new System.Drawing.Point(35, 13);
             this.checkBoxClFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxClFlag.Name = "checkBoxClFlag";
             this.checkBoxClFlag.Size = new System.Drawing.Size(240, 40);
@@ -211,7 +211,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxClHidden
             // 
             this.textBoxClHidden.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.textBoxClHidden.Location = new System.Drawing.Point(20, 111);
+            this.textBoxClHidden.Location = new System.Drawing.Point(15, 120);
             this.textBoxClHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxClHidden.Multiline = true;
             this.textBoxClHidden.Name = "textBoxClHidden";
@@ -242,7 +242,7 @@ namespace SalesManagement_SysDev.Management_Client
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(112, 476);
+            this.dataGridView1.Location = new System.Drawing.Point(112, 467);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -254,7 +254,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.buttonUpd.AutoEllipsis = true;
             this.buttonUpd.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.buttonUpd.Location = new System.Drawing.Point(1239, 308);
+            this.buttonUpd.Location = new System.Drawing.Point(1215, 296);
             this.buttonUpd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpd.Name = "buttonUpd";
             this.buttonUpd.Size = new System.Drawing.Size(163, 54);
@@ -319,7 +319,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(1097, 41);
+            this.label11.Location = new System.Drawing.Point(1069, 38);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 26);
             this.label11.TabIndex = 50;
@@ -331,7 +331,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4.Controls.Add(this.checkBoxClFlag);
             this.panel4.Controls.Add(this.textBoxClHidden);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(1069, 54);
+            this.panel4.Location = new System.Drawing.Point(1060, 56);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(318, 208);
@@ -340,7 +340,7 @@ namespace SalesManagement_SysDev.Management_Client
             // Clear
             // 
             this.Clear.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Clear.Location = new System.Drawing.Point(1036, 308);
+            this.Clear.Location = new System.Drawing.Point(1003, 296);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(163, 54);
@@ -390,7 +390,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(302, 798);
+            this.panel2.Location = new System.Drawing.Point(407, 798);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(822, 36);

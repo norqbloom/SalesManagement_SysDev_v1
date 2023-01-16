@@ -79,7 +79,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(7, 61);
+            this.label8.Location = new System.Drawing.Point(29, 59);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(160, 36);
             this.label8.TabIndex = 56;
@@ -98,7 +98,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.checkBoxClFLG.AutoSize = true;
             this.checkBoxClFLG.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBoxClFLG.Location = new System.Drawing.Point(9, 9);
+            this.checkBoxClFLG.Location = new System.Drawing.Point(35, 13);
             this.checkBoxClFLG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxClFLG.Name = "checkBoxClFLG";
             this.checkBoxClFLG.Size = new System.Drawing.Size(239, 40);
@@ -261,7 +261,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAdd.Font = new System.Drawing.Font("HGSｺﾞｼｯｸM", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonAdd.Location = new System.Drawing.Point(1215, 296);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
@@ -492,6 +492,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             // Clear
             // 
+            this.Clear.Font = new System.Drawing.Font("HGSｺﾞｼｯｸM", 16.2F, System.Drawing.FontStyle.Bold);
             this.Clear.Location = new System.Drawing.Point(1003, 296);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clear.Name = "Clear";
