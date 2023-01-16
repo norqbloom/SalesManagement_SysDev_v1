@@ -90,6 +90,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.checkBoxdate = new System.Windows.Forms.CheckBox();
             this.dateTimePickerEmHiredate2 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -783,11 +784,22 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label8.TabIndex = 70;
             this.label8.Text = "から";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(189, 288);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 71;
+            this.button6.Text = "削除";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Employee_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 580);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimePickerEmHiredate2);
             this.Controls.Add(this.checkBoxdate);
@@ -893,5 +905,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.CheckBox checkBoxdate;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button6;
     }
 }

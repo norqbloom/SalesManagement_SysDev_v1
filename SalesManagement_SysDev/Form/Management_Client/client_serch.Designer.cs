@@ -79,6 +79,8 @@ namespace SalesManagement_SysDev
             this.label19 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -592,7 +594,7 @@ namespace SalesManagement_SysDev
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.SOIDtxt);
             this.panel3.Location = new System.Drawing.Point(48, 68);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(296, 160);
             this.panel3.TabIndex = 29;
@@ -611,7 +613,7 @@ namespace SalesManagement_SysDev
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.addresstxt);
             this.panel4.Location = new System.Drawing.Point(405, 68);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(552, 162);
             this.panel4.TabIndex = 30;
@@ -653,6 +655,8 @@ namespace SalesManagement_SysDev
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.radioButton2);
+            this.panel5.Controls.Add(this.radioButton1);
             this.panel5.Controls.Add(this.label18);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.panel4);
@@ -664,6 +668,29 @@ namespace SalesManagement_SysDev
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1029, 391);
             this.panel5.TabIndex = 34;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(234, 304);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(91, 24);
+            this.radioButton2.TabIndex = 35;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "非表示";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(81, 304);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(73, 24);
+            this.radioButton1.TabIndex = 34;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "表示";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label20
             // 
@@ -759,5 +786,7 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

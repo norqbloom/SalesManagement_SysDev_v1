@@ -268,7 +268,9 @@ namespace SalesManagement_SysDev
 
         private void Earnings_btn_Click(object sender, EventArgs e)
         {
-            showsubmenu(panel7);
+            //showsubmenu(panel7);
+            openChildForm(new Management_Sales.Sales_Ser());
+
         }
         private void Order_btn_Click(object sender, EventArgs e)
         {
@@ -276,7 +278,9 @@ namespace SalesManagement_SysDev
         }
         private void order_btn_Click_1(object sender, EventArgs e)
         {
-            showsubmenu(panel9);
+            //showsubmenu(panel9);
+            openChildForm(new Management_Chumon.Chumon_Ser());
+
         }
         private void instruct_btn_Click(object sender, EventArgs e)
         {
@@ -284,22 +288,30 @@ namespace SalesManagement_SysDev
         }
         private void warehousing_btn_Click(object sender, EventArgs e)
         {
-            showsubmenu(panel11);
+            //showsubmenu(panel11);
+            openChildForm(new Management_Warehousing.Warehousing_View());
+
         }
 
         private void issue_btn_Click(object sender, EventArgs e)
         {
-            showsubmenu(panel12);
+            //showsubmenu(panel12);
+            openChildForm(new Management_Syukko.Syukko_View());
+
         }
 
         private void Arrival_btn_Click(object sender, EventArgs e)
         {
-            showsubmenu(panel13);
+            //showsubmenu(panel13);
+            openChildForm(new Management_Arrival.Arrival_View());
+
         }
 
         private void shipping_btn_Click(object sender, EventArgs e)
         {
-            showsubmenu(panel14);
+            //showsubmenu(panel14);
+            //openChildForm(new Management_Shipment.Shipment_View());
+
         }
         private void client_regbtn_Click(object sender, EventArgs e)
         {
