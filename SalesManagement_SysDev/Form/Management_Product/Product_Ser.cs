@@ -635,5 +635,10 @@ namespace SalesManagement_SysDev.Management_Product
             upusername.Text = x.LastupdatedUserName;
             incntok();
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
