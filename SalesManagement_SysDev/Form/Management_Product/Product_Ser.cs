@@ -17,45 +17,61 @@ namespace SalesManagement_SysDev.Management_Product
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
         private static List<Prhistory> history;
-   
+        private static int grid = 9;
 
+        private void invcnt()
+        {
+            //labelPrID.Visible = false;
+            //labelMaID.Visible = false;
+            //labelScID.Visible = false;
+            //datetime.Visible = false;
+            //userid.Visible = false;
+            //username.Visible = false;
+            //uptime.Visible = false;
+            //upuserid.Visible = false;
+            //upusername.Visible = false;
+        }
 
+        private void incntok()
+        {
+            //labelPr.Visible = true;
+            //labelMa.Visible = true;
+            //labelSc.Visible = true;
+            //datetime.Visible = true;
+            //userid.Visible = true;
+            //username.Visible = true;
+            //uptime.Visible = true;
+            //upuserid.Visible = true;
+            //upusername.Visible = true;
+        }
 
         public Product_Ser()
         {
             InitializeComponent();
         }
-        private void invcnt()
+
+        private void ClearInput()
         {
-            labelPr.Visible = false;
-            labelMa.Visible = false;
-            labelSc.Visible = false;
-            datetime.Visible = false;
-            userid.Visible = false;
-            username.Visible = false;
-            uptime.Visible = false;
-            upuserid.Visible = false;
-            upusername.Visible = false;
+            textBoxPrID.Text = "";
+            textBoxMaID.Text = "";
+            textBoxPrName.Text = "";
+            textBoxPrice.Text = "";
+            textBoxPrSafetyStock.Text = "";
+            textBoxScID.Text = "";
+            textBoxPrModelNumber.Text = "";
+            textBoxPrColor.Text = "";
+            dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            checkBoxPrFlag.Checked = false;
+            textBoxPrHidden.Text = "";
         }
-        private void incntok()
-        {
-            labelPr.Visible = true;
-            labelMa.Visible = true;
-            labelSc.Visible = true;
-            datetime.Visible = true;
-            userid.Visible = true;
-            username.Visible = true;
-            uptime.Visible = true;
-            upuserid.Visible = true;
-            upusername.Visible = true;
-        }
+
         private void Product_Ser_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
             invcnt();
         }
 
-        private void ButtonSer_Click(object sender, EventArgs e)
+        private void button_Ser_Click(object sender, EventArgs e)
         {
             //入力データ確認
             if (!GetProductDataAtSelect())
@@ -64,6 +80,73 @@ namespace SalesManagement_SysDev.Management_Product
             GenerateDataAtSelect();
 
             SetSelectData();
+        }
+
+        private void button_Cle_Click(object sender, EventArgs e)
+        {
+            ClearInput();
+        }
+
+        private void button_Hide_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            dataGridViewDsp.DataSource = products.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(products.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
         }
 
         private bool GetProductDataAtSelect()
@@ -100,7 +183,7 @@ namespace SalesManagement_SysDev.Management_Product
                     textBoxScID.Focus();
                     return false;
                 }
-            }  
+            }
             return true;
         }
 
@@ -167,9 +250,8 @@ namespace SalesManagement_SysDev.Management_Product
                 datenolwget();
                 return;
             }
-
-        
         }
+
         private void SetSelectData()
         {
             dataGridViewDsp.DataSource = products;
@@ -186,7 +268,7 @@ namespace SalesManagement_SysDev.Management_Product
                     PrModelNumber = textBoxPrModelNumber.Text.Trim(),
                     PrColor = textBoxPrColor.Text.Trim(),
                 };
-                products = productDataAccess.GetMaHdata(selectCondition,dateTimePickerPrReleaseDate.Value,dateTimePickerPrReleaseDate2.Value);
+                products = productDataAccess.GetMaHdata(selectCondition, dateTimePickerPrReleaseDate.Value, dateTimePickerPrReleaseDate2.Value);
             }
             else
             {
@@ -405,20 +487,11 @@ namespace SalesManagement_SysDev.Management_Product
                     PrColor = textBoxPrColor.Text.Trim()
                 };
                 products = productDataAccess.GetMaScdata(selectCondition);
-
             }
-
         }
-        ///////////////////////////////
-        //メソッド名：SetFormDataGridView()
-        //引　数   ：なし
-        //戻り値   ：なし
-        //機　能   ：データグリッドビューの設定
-        ///////////////////////////////
+
         private void SetFormDataGridView()
         {
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
@@ -438,16 +511,7 @@ namespace SalesManagement_SysDev.Management_Product
         ///////////////////////////////
         private void GetDataGridView()
         {
-
             int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 2;
-            }
-            else
-            {
-                radioint = 0;
-            }
             // 商品データの取得
             products = productDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定
@@ -461,7 +525,7 @@ namespace SalesManagement_SysDev.Management_Product
         ///////////////////////////////
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
@@ -509,150 +573,62 @@ namespace SalesManagement_SysDev.Management_Product
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-        }
-
-        private void change_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
-
-        private void buttonFirstPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridViewDsp.DataSource = products.Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridViewDsp.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void buttonPreviousPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridViewDsp.Refresh();
-            //ページ番号の設定
-            if (pageNo + 1 > 1)
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-            else
-                textBoxPageNo.Text = "1";
-        }
-
-        private void buttonNextPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridViewDsp.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(products.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void buttonLastPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(products.Count / (double)pageSize) - 1;
-            dataGridViewDsp.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridViewDsp.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-        private void ButtonCle_Click(object sender, EventArgs e)
-        {
-            ClearInput();
-        }
-        private void ClearInput()
-        {
-            textBoxPrID.Text = "";
-            textBoxMaID.Text = "";
-            textBoxPrName.Text = "";
-            textBoxScID.Text = "";
-            textBoxPrModelNumber.Text = "";
-            textBoxPrColor.Text = "";
-            dateTimePickerPrReleaseDate.Value = DateTime.Now;
-            checkBoxPrFlag.Checked = false;
-        }
-
-
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
-        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
-        {
-            int number;
-            int PrIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            labelPr.Text = PrIDtxt.ToString();
+        //private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    int number;
+        //    int PrIDtxt;
+        //    number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+        //    PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+        //    labelPr.Text = PrIDtxt.ToString();
 
-            serchdateset(PrIDtxt);
-            setdatedetail();
-        }
-        private void serchdateset(int number)
-        {
-            Prhistory selectCondition = new Prhistory
-            {
-                PrID = number.ToString(),
+        //    serchdateset(PrIDtxt);
+        //    setdatedetail();
+        //}
+        //private void serchdateset(int number)
+        //{
+        //    Prhistory selectCondition = new Prhistory
+        //    {
+        //        PrID = number.ToString(),
 
-            };
-            history = productDataAccess.getdetail(selectCondition);
-        }
-        private void setdatedetail()
-        {
-            var x = history.FirstOrDefault();
-            if (x == null)
-            {
-                invcnt();
-                return;
-            }
+        //    };
+        //    history = productDataAccess.getdetail(selectCondition);
+        //}
+        //private void setdatedetail()
+        //{
+        //    var x = history.FirstOrDefault();
+        //    if (x == null)
+        //    {
+        //        invcnt();
+        //        return;
+        //    }
 
-            labelPr.Text = x.PrID;
-            labelMa.Text = x.MaID;
-            labelSc.Text = x.ScID;
-            datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpDateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
-            incntok();
-        }
+        //    labelPr.Text = x.PrID;
+        //    labelMa.Text = x.MaID;
+        //    labelSc.Text = x.ScID;
+        //    datetime.Text = x.RegisteredDate;
+        //    userid.Text = x.regUserID;
+        //    username.Text = x.regUserName;
+        //    uptime.Text = x.UpDateTime;
+        //    upuserid.Text = x.LastupdatedUserID;
+        //    upusername.Text = x.LastupdatedUserName;
+        //    incntok();
+        //}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //(int)dataGridView1.CurrentRow.Cells[0].Value;
-            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            MessageBox.Show("非表示にしてもよろしいでしょうか？");
-            productDataAccess.upflg(number);
-            setdata();
-        }
-        private void setdata()
-        {
-            products = productDataAccess.GetProductDataDsp1();
-            dataGridViewDsp.DataSource = products;
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    //(int)dataGridView1.CurrentRow.Cells[0].Value;
+        //    int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+        //    MessageBox.Show("非表示にしてもよろしいでしょうか？");
+        //    productDataAccess.upflg(number);
+        //    setdata();
+        //}
+        //private void setdata()
+        //{
+        //    products = productDataAccess.GetProductDataDsp1();
+        //    dataGridViewDsp.DataSource = products;
+        //}
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
