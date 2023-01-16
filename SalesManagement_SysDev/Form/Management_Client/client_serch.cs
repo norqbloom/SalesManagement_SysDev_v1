@@ -199,7 +199,7 @@ namespace SalesManagement_SysDev
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            GetDataGridView();
+
 
         }
         private void SetDataGridView()
@@ -366,29 +366,6 @@ namespace SalesManagement_SysDev
             clientDataAccess.upflg(number);
             setdata();
 
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-
-        }
-        private void GetDataGridView()
-        {
-
-            int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 0;
-            }
-            else
-            {
-                radioint = 2;
-            }
-            // 商品データの取得
-            clients = clientDataAccess.GetclientDataDsp(radioint);
-            // DataGridViewに表示するデータを指定
-            SetDataGridView();
         }
     }
 }
