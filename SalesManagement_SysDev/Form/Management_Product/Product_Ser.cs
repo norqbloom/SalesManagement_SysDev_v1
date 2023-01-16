@@ -635,5 +635,19 @@ namespace SalesManagement_SysDev.Management_Product
             upusername.Text = x.LastupdatedUserName;
             incntok();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //(int)dataGridView1.CurrentRow.Cells[0].Value;
+            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            MessageBox.Show("非表示にしてもよろしいでしょうか？");
+            productDataAccess.upflg(number);
+            setdata();
+        }
+        private void setdata()
+        {
+            products = productDataAccess.GetProductDataDsp1();
+            dataGridViewDsp.DataSource = products;
+        }
     }
 }
