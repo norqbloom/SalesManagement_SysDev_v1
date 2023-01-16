@@ -649,5 +649,10 @@ namespace SalesManagement_SysDev.Management_Product
             products = productDataAccess.GetProductDataDsp1();
             dataGridViewDsp.DataSource = products;
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
