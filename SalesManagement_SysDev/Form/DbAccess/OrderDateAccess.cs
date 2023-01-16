@@ -673,41 +673,6 @@ namespace SalesManagement_SysDev
             }
             return Orhistory;
         }
-        public List<T_Order> GetOrderDataDsp1()
-        {
-            List<T_Order> ord = new List<T_Order>();
-
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                ord = context.T_Orders.Where(x => x.OrFlag == 0).ToList();
-                context.SaveChanges();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return ord;
-        }
-        public bool upflg(int number)
-        {
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                var order = context.T_Orders.Single(x => x.OrID == number);
-                order.OrFlag = 1;
-                context.SaveChanges();
-                context.Dispose();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return true;
-        }
 
     }
 
