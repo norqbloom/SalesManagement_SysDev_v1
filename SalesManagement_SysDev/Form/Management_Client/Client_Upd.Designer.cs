@@ -56,6 +56,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel4 = new System.Windows.Forms.Panel();
             this.Clear = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.change = new System.Windows.Forms.Button();
@@ -67,8 +69,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.buttonFirstPage = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -370,6 +370,29 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel6.Size = new System.Drawing.Size(1425, 378);
             this.panel6.TabIndex = 67;
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(352, 314);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(91, 24);
+            this.radioButton2.TabIndex = 68;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "非表示";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(188, 314);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(73, 24);
+            this.radioButton1.TabIndex = 67;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "表示";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -493,28 +516,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.buttonFirstPage.TabIndex = 13;
             this.buttonFirstPage.Text = "|◀";
             this.buttonFirstPage.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(188, 314);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 19);
-            this.radioButton1.TabIndex = 67;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(352, 314);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(110, 19);
-            this.radioButton2.TabIndex = 68;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // Client_Upd
             // 
