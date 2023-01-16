@@ -48,6 +48,8 @@ namespace SalesManagement_SysDev
 
         private void client_serch_Load(object sender, EventArgs e)
         {
+            radioButton1.Checked = true;
+
             setdata();
             SetFormDataGridView();
             invcnt();

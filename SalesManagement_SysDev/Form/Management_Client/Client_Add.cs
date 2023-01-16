@@ -379,7 +379,7 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void Client_Add_Load(object sender, EventArgs e)
         {
-            
+            radioButton1.Checked = true;
             setdata();
             SetFormDataGridView();
         }
