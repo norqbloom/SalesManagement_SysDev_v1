@@ -546,5 +546,18 @@ namespace SalesManagement_SysDev.Management_Product
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form form = new Product_Add();
+
+            Size size = form.Size;
+            int w = size.Width;
+            int h = size.Height;
+            MessageBox.Show(w.ToString(),h.ToString());
+
+            
+
+        }
     }
 }

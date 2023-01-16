@@ -79,7 +79,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // buttonLastPage
             // 
-            this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLastPage.Location = new System.Drawing.Point(775, 9);
             this.buttonLastPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -92,7 +92,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // buttonNextPage
             // 
-            this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonNextPage.Location = new System.Drawing.Point(745, 9);
             this.buttonNextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -105,7 +105,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // buttonPreviousPage
             // 
-            this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPreviousPage.Location = new System.Drawing.Point(711, 9);
             this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -136,7 +136,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // change
             // 
-            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.change.Location = new System.Drawing.Point(227, 6);
             this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -149,7 +149,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(3, 11);
@@ -160,7 +160,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // textBoxPageSize
             // 
-            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
             this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -179,7 +179,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // labelPage
             // 
-            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPage.AutoSize = true;
             this.labelPage.Location = new System.Drawing.Point(591, 10);
@@ -190,7 +190,7 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             // buttonFirstPage
             // 
-            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFirstPage.Location = new System.Drawing.Point(677, 9);
             this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -205,8 +205,8 @@ namespace SalesManagement_SysDev.Management_Product
             // 
             this.dataGridViewDsp.AllowUserToResizeColumns = false;
             this.dataGridViewDsp.AllowUserToResizeRows = false;
-            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewDsp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDsp.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -100,6 +100,7 @@ namespace SalesManagement_SysDev
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.comitbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -1127,6 +1128,7 @@ namespace SalesManagement_SysDev
             // tilepanel
             // 
             this.tilepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
+            this.tilepanel.Controls.Add(this.button1);
             this.tilepanel.Controls.Add(this.panel2);
             this.tilepanel.Controls.Add(this.label6);
             this.tilepanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1250,6 +1252,16 @@ namespace SalesManagement_SysDev
             this.comitbtn.UseVisualStyleBackColor = true;
             this.comitbtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(399, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1367,5 +1379,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button RegPasswordbtn;
         private System.Windows.Forms.Button loginhistorybtn;
+        private System.Windows.Forms.Button button1;
     }
 }

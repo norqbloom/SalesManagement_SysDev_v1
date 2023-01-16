@@ -395,23 +395,6 @@ namespace SalesManagement_SysDev
 
             return true;
         }
-        public List<M_Client> GetclientDataDsp(int radioint)
-        {
-            List<M_Client>clients = new List<M_Client>();
-
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                clients = context.M_Clients.Where(x => x.ClFlag == radioint).ToList();
-                context.SaveChanges();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return clients;
-        }
     }
 
 }
