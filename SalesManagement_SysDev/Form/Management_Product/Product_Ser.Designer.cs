@@ -88,6 +88,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -778,11 +779,22 @@ namespace SalesManagement_SysDev.Management_Product
             this.label21.TabIndex = 74;
             this.label21.Text = "入力項目";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(669, 338);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 75;
+            this.button1.Text = "削除";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Product_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 768);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
@@ -874,5 +886,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button1;
     }
 }
