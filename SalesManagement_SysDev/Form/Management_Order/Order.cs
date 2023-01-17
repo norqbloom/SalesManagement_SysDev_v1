@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.M_Order
+namespace SalesManagement_SysDev.Management_Order
 {
     public partial class Order : Form
     {
@@ -21,7 +21,8 @@ namespace SalesManagement_SysDev.M_Order
         private static List<M_Product> products;
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
-        static int grid_OrID = 10;
+        static int grid_OrID = 0;
+        private static int grid = 10;
 
         public Order()
         {
@@ -842,21 +843,19 @@ namespace SalesManagement_SysDev.M_Order
 
         private void SetFormDataGridView()
         {
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "20";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
             dataGridViewDspOrder.ReadOnly = true;
-            dataGridViewDspOrderDetail.ReadOnly = true;
+            dataGridViewDsp.ReadOnly = true;
             dataGridViewDspProduct.ReadOnly = true;
             //行内をクリックすることで行を選択
             dataGridViewDspOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewDspOrderDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewDspProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //ヘッダー位置の指定
             dataGridViewDspOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspProduct.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
@@ -867,14 +866,14 @@ namespace SalesManagement_SysDev.M_Order
         {
             int ID = Order.grid_OrID;
             int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 2;
-            }
-            else
-            {
-                radioint = 0;
-            }
+            //if (radioButton1.Checked == true)
+            //{
+            //    radioint = 2;
+            //}
+            //else
+            //{
+            //    radioint = 0;
+            //}
             orders = orderDateAccess.GetOrderDataDsp(radioint);
             orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(radioint);
             products = productDataAccess.GetProductDataDsp(radioint);
@@ -889,13 +888,13 @@ namespace SalesManagement_SysDev.M_Order
 
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
             dataGridViewDspOrder.DataSource = orders.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDspOrderDetail.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspProduct.DataSource = products.Skip(pageSize * pageNo).Take(pageSize).ToList();
             dataGridViewDspOrder.Refresh();
-            dataGridViewDspOrderDetail.Refresh();
+            dataGridViewDsp.Refresh();
             dataGridViewDspProduct.Refresh();
 
             if (pageNo + 1 > 1)
@@ -908,7 +907,7 @@ namespace SalesManagement_SysDev.M_Order
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            foreach (DataGridViewColumn clm in dataGridViewDspOrderDetail.Columns)
+            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -949,28 +948,28 @@ namespace SalesManagement_SysDev.M_Order
             dataGridViewDspOrder.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrder.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridViewDspOrderDetail.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrderDetail.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
         private void SetDataGridView2()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDspOrderDetail.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            dataGridViewDspOrderDetail.Refresh();
+            dataGridViewDsp.DataSource = orderDetails.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.Refresh();
 
             if (pageNo + 1 > 1)
                 textBoxPageNo.Text = (pageNo + 1).ToString();
             else
                 textBoxPageNo.Text = "1";
 
-            foreach (DataGridViewColumn clm in dataGridViewDspOrderDetail.Columns)
+            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }

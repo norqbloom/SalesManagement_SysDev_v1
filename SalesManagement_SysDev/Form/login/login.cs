@@ -248,7 +248,7 @@ namespace SalesManagement_SysDev
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Form form = new Order();
+            Form form = new Management_Order.Order();
             form.Show(this);
         }
     }

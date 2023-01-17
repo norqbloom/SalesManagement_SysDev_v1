@@ -1,5 +1,5 @@
 ﻿
-namespace SalesManagement_SysDev.M_Order
+namespace SalesManagement_SysDev.Management_Order
 {
     partial class Order
     {
@@ -199,7 +199,6 @@ namespace SalesManagement_SysDev.M_Order
             this.textBoxOrID.Name = "textBoxOrID";
             this.textBoxOrID.Size = new System.Drawing.Size(100, 32);
             this.textBoxOrID.TabIndex = 94;
-            this.textBoxOrID.Text = "1";
             // 
             // label_ClChange
             // 
