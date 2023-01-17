@@ -159,184 +159,160 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxClID.Focus();
                     return false;
                 }
-                else
-                {
-                    messageDsp.DspMsg("M1004"); //顧客IDが入力されていません
-                    textBoxClID.Focus();
-                    return false;
-                }
-
-                //営業所ID
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-                {
-                    //入力チェック
-                    if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
-                    {
-                        messageDsp.DspMsg("M1005"); //営業所IDは半角数字入力です
-                        textBoxSoID.Focus();
-                        return false;
-                    }
-                    if (textBoxSoID.TextLength > 2)
-                    {
-                        messageDsp.DspMsg("M1006"); //営業所IDは2文字です
-                        textBoxSoID.Focus();
-                        return false;
-                    }
-                    if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
-                    {
-                        messageDsp.DspMsg("M1007"); //入力された営業所IDは既に存在しています
-                        textBoxSoID.Focus();
-                        return false;
-                    }
-                }
-                else
-                {
-                    messageDsp.DspMsg("M1008"); //営業所IDが入力されていません
-                    textBoxSoID.Focus();
-                    return false;
-                }
-                //顧客名
-                if (!String.IsNullOrEmpty(textBoxClName.Text.Trim()))
-                {
-                    if (textBoxClName.TextLength > 50)
-                    {
-                        messageDsp.DspMsg("M1010"); //顧客名は50文字以下です
-                        textBoxClName.Focus();
-                        return false;
-                    }
-                }
-                else
-                {
-                    messageDsp.DspMsg("M1011"); //顧客名が入力されていません
-                    textBoxClName.Focus();
-                    return false;
-                }
-                //郵便番号
-                if (!String.IsNullOrEmpty(textBoxClPostal.Text.Trim()))
-                {
-                    if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxClPostal.Text.Trim()))
-                    {
-                        messageDsp.DspMsg("M1017"); //郵便番号は半角数値入力です
-                        textBoxClPostal.Focus();
-                        return false;
-                    }
-                    if (textBoxClPostal.Text.Length > 7)
-                    {
-                        messageDsp.DspMsg("M1018"); //郵便番号は7文字です
-                        textBoxClPostal.Focus();
-                        return false;
-                    }
-                }
-                else
-                {
-                    messageDsp.DspMsg("M1031"); //MessageBox.Show("郵便番号が入力されていません。"); 
-                    textBoxClPostal.Focus();
-                    return false;
-                }
-                //住所
-                if (!String.IsNullOrEmpty(textBoxClAddress.Text.Trim()))
-                {
-                    if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
-                    {
-                        messageDsp.DspMsg("M1032");//MessageBox.Show("住所は全角入力です");
-                        textBoxClAddress.Focus();
-                        return false;
-                    }
-                    if (textBoxClAddress.Text.Length > 50)
-                    {
-                        messageDsp.DspMsg("M1012"); //住所は50文字以下です
-                        textBoxClAddress.Focus();
-                        return false;
-                    }
-                }
-                else
-                {
-                    messageDsp.DspMsg("M1033"); //MessageBox.Show("住所が入力されていません。");
-                    textBoxClPostal.Focus();
-                    return false;
-                }
-                //FAX
-                if (!String.IsNullOrEmpty(textBoxClFAX.Text.Trim()))
-                {
-                    if (!dataInputFormCheck.CheckNumeric(textBoxClFAX.Text.Trim()))
-                    {
-                        messageDsp.DspMsg("M1019"); ////FAX番号は半角数値入力です
-                        textBoxClFAX.Focus();
-                        return false;
-                    }
-                    if (textBoxClFAX.Text.Length > 13)
-                    {
-                        messageDsp.DspMsg("M1020"); //FAX番号は12文字以下です
-                        textBoxClFAX.Focus();
-                        return false;
-                    }
-                }
-                else
-                {
-                    messageDsp.DspMsg("M1034"); //MessageBox.Show("FAXが入力されていません。"); 
-                    textBoxClFAX.Focus();
-                    return false;
-                }
-                //電話番号
-                if (!String.IsNullOrEmpty(textBoxClPhone.Text.Trim()))
-                {
-                    if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxClPhone.Text.Trim()))
-                    {
-                        messageDsp.DspMsg("M1015"); //電話番号は半角数値入力です
-                        textBoxClPhone.Focus();
-                        return false;
-                    }
-                    if (textBoxClPhone.Text.Length > 13)
-                    {
-                        messageDsp.DspMsg("M1016"); //電話番号は13文字以下です
-                        textBoxClPhone.Focus();
-                        return false;
-                    }
-                }
-                else
-                {
-                    messageDsp.DspMsg("M1035"); //MessageBox.Show("電話番号が入力されていません");
-                    textBoxClPhone.Focus();
-                    return false;
-                }
-                //if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
-                //{
-                //    messageDsp.DspMsg("M2037"); //MessageBox.Show("非表示理由は全角入力です");
-                //    textBoxClHidden.Focus();
-                //    return false;
-                //}
-                //if (checkBoxClFLG.CheckState == CheckState.Indeterminate)
-                //{
-                //    MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M4004");
-                //    checkBoxClFLG.Focus();
-                //    return false;
-                //}
-                return true;
-            }
-        }
-
-        private M_Client GenerateDataAtRegistration()
-        {
-            int checkflg;
-            if (checkBoxClFlag.Checked == true)
-            {
-                checkflg = 1;
             }
             else
             {
-                checkflg = 0;
+                messageDsp.DspMsg("M1004"); //顧客IDが入力されていません
+                textBoxClID.Focus();
+                return false;
             }
-            return new M_Client
+
+            //営業所ID
+            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
             {
-                ClID = int.Parse(textBoxClID.Text),
-                SoID = int.Parse(textBoxSoID.Text),
-                ClName = textBoxClName.Text,
-                ClAddress = textBoxClAddress.Text,
-                ClPhone = textBoxClPhone.Text,
-                ClPostal = textBoxClPostal.Text,
-                ClFAX = textBoxClFAX.Text,
-                ClFlag = checkflg,
-            };
+                //入力チェック
+                if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1005"); //営業所IDは半角数字入力です
+                    textBoxSoID.Focus();
+                    return false;
+                }
+                if (textBoxSoID.TextLength > 2)
+                {
+                    messageDsp.DspMsg("M1006"); //営業所IDは2文字です
+                    textBoxSoID.Focus();
+                    return false;
+                }
+                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
+                {
+                    messageDsp.DspMsg("M1007"); //入力された営業所IDは既に存在しています
+                    textBoxSoID.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M1008"); //営業所IDが入力されていません
+                textBoxSoID.Focus();
+                return false;
+            }
+            //顧客名
+            if (!String.IsNullOrEmpty(textBoxClName.Text.Trim()))
+            {
+                if (textBoxClName.TextLength > 50)
+                {
+                    messageDsp.DspMsg("M1010"); //顧客名は50文字以下です
+                    textBoxClName.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M1011"); //顧客名が入力されていません
+                textBoxClName.Focus();
+                return false;
+            }
+            //郵便番号
+            if (!String.IsNullOrEmpty(textBoxClPostal.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxClPostal.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1017"); //郵便番号は半角数値入力です
+                    textBoxClPostal.Focus();
+                    return false;
+                }
+                if (textBoxClPostal.Text.Length > 7)
+                {
+                    messageDsp.DspMsg("M1018"); //郵便番号は7文字です
+                    textBoxClPostal.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M1031"); //MessageBox.Show("郵便番号が入力されていません。"); 
+                textBoxClPostal.Focus();
+                return false;
+            }
+            //住所
+            if (!String.IsNullOrEmpty(textBoxClAddress.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1032");//MessageBox.Show("住所は全角入力です");
+                    textBoxClAddress.Focus();
+                    return false;
+                }
+                if (textBoxClAddress.Text.Length > 50)
+                {
+                    messageDsp.DspMsg("M1012"); //住所は50文字以下です
+                    textBoxClAddress.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M1033"); //MessageBox.Show("住所が入力されていません。");
+                textBoxClPostal.Focus();
+                return false;
+            }
+            //FAX
+            if (!String.IsNullOrEmpty(textBoxClFAX.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckNumeric(textBoxClFAX.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1019"); ////FAX番号は半角数値入力です
+                    textBoxClFAX.Focus();
+                    return false;
+                }
+                if (textBoxClFAX.Text.Length > 13)
+                {
+                    messageDsp.DspMsg("M1020"); //FAX番号は12文字以下です
+                    textBoxClFAX.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M1034"); //MessageBox.Show("FAXが入力されていません。"); 
+                textBoxClFAX.Focus();
+                return false;
+            }
+            //電話番号
+            if (!String.IsNullOrEmpty(textBoxClPhone.Text.Trim()))
+            {
+                if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxClPhone.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1015"); //電話番号は半角数値入力です
+                    textBoxClPhone.Focus();
+                    return false;
+                }
+                if (textBoxClPhone.Text.Length > 13)
+                {
+                    messageDsp.DspMsg("M1016"); //電話番号は13文字以下です
+                    textBoxClPhone.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                messageDsp.DspMsg("M1035"); //MessageBox.Show("電話番号が入力されていません");
+                textBoxClPhone.Focus();
+                return false;
+            }
+            //if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
+            //{
+            //    messageDsp.DspMsg("M2037"); //MessageBox.Show("非表示理由は全角入力です");
+            //    textBoxClHidden.Focus();
+            //    return false;
+            //}
+            //if (checkBoxClFLG.CheckState == CheckState.Indeterminate)
+            //{
+            //    MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M4004");
+            //    checkBoxClFLG.Focus();
+            //    return false;
+            //}
+            return true;
         }
 
         private void RegistrationClient(M_Client regClient)
