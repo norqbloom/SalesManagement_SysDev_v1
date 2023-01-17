@@ -282,11 +282,13 @@ namespace SalesManagement_SysDev.Management_Client
         {
             int number;
             int ClIDtxt;
-            //number = (int)dataGridView1.CurrentRow.Cells[1].Value;
-            //ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            //label5.Text = ClIDtxt.ToString();
+            MessageBox.Show(ClIDtxt.ToString());
             //label5.Text = ClIDtxt.ToString();
 
-            //serchdateset(number);
+            serchdateset(number);
             setdatedetail();
 
         }
@@ -312,13 +314,13 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             }
 
-            //IDtxt.Text = x.ClID;
-            //datetime.Text = x.RegisteredDate;
-            //userid.Text = x.regUserID;
-            //username.Text = x.regUserName;
-            //uptime.Text = x.UpDateTime;
-            //upuserid.Text = x.LastupdatedUserID;
-            //upusername.Text = x.LastupdatedUserName;
+            IDtxt.Text = x.ClID;
+            datetime.Text = x.RegisteredDate;
+            userid.Text = x.regUserID;
+            username.Text = x.regUserName;
+            uptime.Text = x.UpDateTime;
+            upuserid.Text = x.LastupdatedUserID;
+            upusername.Text = x.LastupdatedUserName;
             incntok();
         }
 
