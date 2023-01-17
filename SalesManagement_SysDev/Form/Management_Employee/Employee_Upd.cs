@@ -49,7 +49,7 @@ namespace SalesManagement_SysDev.Management_Employee
             dateTimePickerEmHiredate.Value = DateTime.Now;
             checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
-            //textBoxEmHidden.Text = "";
+            textBoxEmHidden.Text = "";
         }
 
         private void Employee_Upd_Load(object sender, EventArgs e)
