@@ -524,6 +524,17 @@ namespace SalesManagement_SysDev.Management_Chumon
             incntok();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxChID.Text = "";
+            textBoxSoID.Text = "";
+            textBoxEmID.Text = "";
+            textBoxClID.Text = "";
+            textBoxOrID.Text = "";
+            dateTimePickerChDate.Value = DateTime.Now;
+            checkBoxChStateFlag.Checked = false;
+            textBoxChHidden.Text = "";
 
+        }
     }
 }
