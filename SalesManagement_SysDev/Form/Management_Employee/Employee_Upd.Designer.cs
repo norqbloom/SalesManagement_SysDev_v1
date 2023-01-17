@@ -46,7 +46,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.button_First = new System.Windows.Forms.Button();
             this.label_EmHiredate = new System.Windows.Forms.Label();
             this.label_PrHidden = new System.Windows.Forms.Label();
-            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
+            this.textBoxEmHidden = new System.Windows.Forms.TextBox();
             this.textBoxEmPhone = new System.Windows.Forms.TextBox();
             this.label_EmPhone = new System.Windows.Forms.Label();
             this.textBoxPoID = new System.Windows.Forms.TextBox();
@@ -228,14 +228,14 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label_PrHidden.TabIndex = 85;
             this.label_PrHidden.Text = "非表示理由";
             // 
-            // textBoxPrHidden
+            // textBoxEmHidden
             // 
-            this.textBoxPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrHidden.Location = new System.Drawing.Point(735, 141);
-            this.textBoxPrHidden.Multiline = true;
-            this.textBoxPrHidden.Name = "textBoxPrHidden";
-            this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxPrHidden.TabIndex = 84;
+            this.textBoxEmHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxEmHidden.Location = new System.Drawing.Point(735, 141);
+            this.textBoxEmHidden.Multiline = true;
+            this.textBoxEmHidden.Name = "textBoxEmHidden";
+            this.textBoxEmHidden.Size = new System.Drawing.Size(187, 57);
+            this.textBoxEmHidden.TabIndex = 84;
             // 
             // textBoxEmPhone
             // 
@@ -331,7 +331,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label_EmHiredate);
             this.Controls.Add(this.label_PrHidden);
-            this.Controls.Add(this.textBoxPrHidden);
+            this.Controls.Add(this.textBoxEmHidden);
             this.Controls.Add(this.textBoxEmPhone);
             this.Controls.Add(this.label_EmPhone);
             this.Controls.Add(this.textBoxPoID);
@@ -372,7 +372,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Button button_First;
         private System.Windows.Forms.Label label_EmHiredate;
         private System.Windows.Forms.Label label_PrHidden;
-        private System.Windows.Forms.TextBox textBoxPrHidden;
+        private System.Windows.Forms.TextBox textBoxEmHidden;
         private System.Windows.Forms.TextBox textBoxEmPhone;
         private System.Windows.Forms.Label label_EmPhone;
         private System.Windows.Forms.TextBox textBoxPoID;
