@@ -19,7 +19,7 @@ namespace SalesManagement_SysDev.Management_Client
         //データベース顧客テーブルアクセス用クラスのインスタンス化
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
-        private static int grid = 0;
+        private static int grid = 9;
 
         public Client_Add()
         {
@@ -183,12 +183,6 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxSoID.Focus();
                     return false;
                 }
-                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
-                {
-                    messageDsp.DspMsg("M1007"); //入力された営業所IDは既に存在しています
-                    textBoxSoID.Focus();
-                    return false;
-                }
             }
             else
             {
@@ -313,6 +307,30 @@ namespace SalesManagement_SysDev.Management_Client
             //    return false;
             //}
             return true;
+        }
+
+        private M_Client GenerateDataAtRegistration()
+        {
+            int checkflg;
+            if (checkBoxClFlag.Checked == true)
+            {
+                checkflg = 1;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+            return new M_Client
+            {
+                ClID = int.Parse(textBoxClID.Text),
+                SoID = int.Parse(textBoxSoID.Text),
+                ClName = textBoxClName.Text,
+                ClAddress = textBoxClAddress.Text,
+                ClPhone = textBoxClPhone.Text,
+                ClPostal = textBoxClPostal.Text,
+                ClFAX = textBoxClFAX.Text,
+                ClFlag = checkflg
+            };
         }
 
         private void RegistrationClient(M_Client regClient)
