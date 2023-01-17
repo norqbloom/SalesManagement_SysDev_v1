@@ -96,6 +96,12 @@
     <Compile Include="Form\DbAccess\loginDataAccess.cs" />
     <Compile Include="Form\DbAccess\loginhistoryDataAccess.cs" />
     <Compile Include="Form\DbAccess\SyukkoDataaccess.cs" />
+    <Compile Include="Form\Management_Client\Client_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Management_Client\Client_Add.designer.cs">
+      <DependentUpon>Client_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Management_Client\client_serch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,12 +158,6 @@
     </Compile>
     <Compile Include="Form\Management_Chumon\Chumon_Ser.Designer.cs">
       <DependentUpon>Chumon_Ser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Management_Client\Client_Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Management_Client\Client_Add.Designer.cs">
-      <DependentUpon>Client_Add.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Client\Client_Upd.cs">
       <SubType>Form</SubType>
@@ -320,6 +320,9 @@
     <EmbeddedResource Include="Form\login\regPassword.resx">
       <DependentUpon>regPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Management_Client\Client_Add.resx">
+      <DependentUpon>Client_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Client\client_serch.resx">
       <DependentUpon>client_serch.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,9 +340,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Chumon\Chumon_Ser.resx">
       <DependentUpon>Chumon_Ser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Management_Client\Client_Add.resx">
-      <DependentUpon>Client_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Client\Client_Upd.resx">
       <DependentUpon>Client_Upd.cs</DependentUpon>
