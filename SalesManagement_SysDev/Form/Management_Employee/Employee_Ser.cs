@@ -556,7 +556,7 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int number;
             int EmIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             EmIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             //labelEm.Text = textBoxEmID.ToString();
 

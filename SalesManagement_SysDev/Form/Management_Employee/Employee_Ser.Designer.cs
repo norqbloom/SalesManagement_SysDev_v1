@@ -155,9 +155,9 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1358, 0);
+            this.panel1.Location = new System.Drawing.Point(1256, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 970);
+            this.panel1.Size = new System.Drawing.Size(300, 884);
             this.panel1.TabIndex = 78;
             // 
             // label_EmHiredate
@@ -364,7 +364,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.checkBoxdate);
@@ -391,7 +391,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.dateTimePickerEmHiredate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1658, 970);
-            this.MinimumSize = new System.Drawing.Size(1658, 970);
+            this.MinimumSize = new System.Drawing.Size(1534, 814);
             this.Name = "Employee_Ser";
             this.Text = "Employee_Ser";
             this.Load += new System.EventHandler(this.Employee_Ser_Load_1);
