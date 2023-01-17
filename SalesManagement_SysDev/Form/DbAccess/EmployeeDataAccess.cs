@@ -100,7 +100,7 @@ namespace SalesManagement_SysDev
                 Emps.SoID = updEmp.SoID;
                 Emps.PoID = updEmp.PoID;
                 Emps.EmHiredate = updEmp.EmHiredate;
-                Emps.EmPassword = updEmp.EmPassword;
+                //Emps.EmPassword = updEmp.EmPassword;
                 Emps.EmPhone = updEmp.EmPhone;
                 Emps.EmFlag = updEmp.EmFlag;
                 Emps.EmHidden = updEmp.EmHidden;
