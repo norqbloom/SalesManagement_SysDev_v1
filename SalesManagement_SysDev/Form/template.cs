@@ -212,6 +212,7 @@ namespace SalesManagement_SysDev
             Arrival_btn.BackColor = maincolor;
             shipping_btn.BackColor = maincolor;
             logout.BackColor = maincolor;
+            loginbtn.BackColor = maincolor;
             subtitlepanel.BackColor = subcolor;
             clientsubmenu.BackColor = subcolor;
             Productsubmenu.BackColor = subcolor;
@@ -226,6 +227,7 @@ namespace SalesManagement_SysDev
             panel12.BackColor = subcolor;
             panel13.BackColor = subcolor;
             panel14.BackColor = subcolor;
+            panel1.BackColor = subcolor;
         }
         //フォームドラッグ
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

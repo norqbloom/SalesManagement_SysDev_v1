@@ -102,7 +102,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
             this.textBoxPrice.TabIndex = 65;
-            this.textBoxPrice.Text = "1";
             // 
             // labelPrHidden
             // 
@@ -122,7 +121,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrHidden.Name = "textBoxPrHidden";
             this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
             this.textBoxPrHidden.TabIndex = 63;
-            this.textBoxPrHidden.Text = "1";
             // 
             // labelPrice
             // 
@@ -141,7 +139,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
             this.textBoxPrSafetyStock.Size = new System.Drawing.Size(124, 32);
             this.textBoxPrSafetyStock.TabIndex = 61;
-            this.textBoxPrSafetyStock.Text = "1";
             // 
             // labelPrSafetyStock
             // 
@@ -160,7 +157,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(237, 32);
             this.textBoxPrModelNumber.TabIndex = 59;
-            this.textBoxPrModelNumber.Text = "1";
             // 
             // labelPrModelNumber
             // 
@@ -179,7 +175,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(196, 32);
             this.textBoxPrColor.TabIndex = 57;
-            this.textBoxPrColor.Text = "1";
             // 
             // labelPrColor
             // 
@@ -198,7 +193,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(100, 32);
             this.textBoxScID.TabIndex = 55;
-            this.textBoxScID.Text = "1";
             // 
             // labelScID
             // 
@@ -268,7 +262,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
             this.textBoxPrName.TabIndex = 36;
-            this.textBoxPrName.Text = "ああああああああああああああ";
             // 
             // textBoxMaID
             // 
@@ -277,7 +270,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
             this.textBoxMaID.TabIndex = 35;
-            this.textBoxMaID.Text = "1";
             // 
             // textBoxPrID
             // 
@@ -286,7 +278,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
             this.textBoxPrID.TabIndex = 34;
-            this.textBoxPrID.Text = "1";
             // 
             // labelPrName
             // 
