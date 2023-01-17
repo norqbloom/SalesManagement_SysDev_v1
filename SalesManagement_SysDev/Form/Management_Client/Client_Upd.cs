@@ -390,6 +390,26 @@ namespace SalesManagement_SysDev.Management_Client
             clients = clientDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
+        }   
+
+        private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxClID.Text = dataGridViewDsp.CurrentRow.Cells[0].Value.ToString();
+            textBoxSoID.Text = dataGridViewDsp.CurrentRow.Cells[1].Value.ToString();
+            textBoxClName.Text = dataGridViewDsp.CurrentRow.Cells[2].Value.ToString();
+            textBoxClAddress.Text = dataGridViewDsp.CurrentRow.Cells[3].Value.ToString();
+            textBoxClPhone.Text = dataGridViewDsp.CurrentRow.Cells[4].Value.ToString();
+            textBoxClPostal.Text = dataGridViewDsp.CurrentRow.Cells[5].Value.ToString();
+            textBoxClFAX.Text = dataGridViewDsp.CurrentRow.Cells[6].Value.ToString();
+
+            if ((int)dataGridViewDsp.CurrentRow.Cells[7].Value == 0)
+            {
+                checkBoxClFlag.Checked = false;
+            }
+            else
+            {
+                checkBoxClFlag.Checked = true;
+            }
         }
     }
 }
