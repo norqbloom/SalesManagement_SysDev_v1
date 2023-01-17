@@ -55,6 +55,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelPage = new System.Windows.Forms.Label();
             this.label_EmID = new System.Windows.Forms.Label();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
+            this.button_Hide = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.checkBoxEmFlag.AutoSize = true;
             this.checkBoxEmFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(735, 50);
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(990, 50);
             this.checkBoxEmFlag.Name = "checkBoxEmFlag";
             this.checkBoxEmFlag.Size = new System.Drawing.Size(149, 29);
             this.checkBoxEmFlag.TabIndex = 77;
@@ -94,7 +95,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // button_Upd
             // 
             this.button_Upd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Upd.Location = new System.Drawing.Point(1049, 204);
+            this.button_Upd.Location = new System.Drawing.Point(968, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
             this.button_Upd.TabIndex = 74;
@@ -222,7 +223,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label_PrHidden.AutoSize = true;
             this.label_PrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrHidden.Location = new System.Drawing.Point(730, 113);
+            this.label_PrHidden.Location = new System.Drawing.Point(985, 82);
             this.label_PrHidden.Name = "label_PrHidden";
             this.label_PrHidden.Size = new System.Drawing.Size(107, 25);
             this.label_PrHidden.TabIndex = 85;
@@ -231,7 +232,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // textBoxEmHidden
             // 
             this.textBoxEmHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxEmHidden.Location = new System.Drawing.Point(735, 141);
+            this.textBoxEmHidden.Location = new System.Drawing.Point(990, 110);
             this.textBoxEmHidden.Multiline = true;
             this.textBoxEmHidden.Name = "textBoxEmHidden";
             this.textBoxEmHidden.Size = new System.Drawing.Size(187, 57);
@@ -314,11 +315,23 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(237, 32);
             this.dateTimePickerEmHiredate.TabIndex = 87;
             // 
+            // button_Hide
+            // 
+            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Hide.Location = new System.Drawing.Point(1049, 204);
+            this.button_Hide.Name = "button_Hide";
+            this.button_Hide.Size = new System.Drawing.Size(75, 36);
+            this.button_Hide.TabIndex = 140;
+            this.button_Hide.Text = "非表示";
+            this.button_Hide.UseVisualStyleBackColor = true;
+            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
+            // 
             // Employee_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.button_Cle);
@@ -381,5 +394,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Label label_EmID;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
+        private System.Windows.Forms.Button button_Hide;
     }
 }

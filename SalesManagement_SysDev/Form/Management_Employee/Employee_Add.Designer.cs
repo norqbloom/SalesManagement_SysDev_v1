@@ -31,14 +31,11 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.label_EmHiredate = new System.Windows.Forms.Label();
-            this.label_PrHidden = new System.Windows.Forms.Label();
-            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
             this.textBoxEmPhone = new System.Windows.Forms.TextBox();
             this.label_EmPhone = new System.Windows.Forms.Label();
             this.textBoxPoID = new System.Windows.Forms.TextBox();
             this.label_PoID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxEmFlag = new System.Windows.Forms.CheckBox();
             this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.button_Cle = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
@@ -76,25 +73,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label_EmHiredate.Size = new System.Drawing.Size(107, 25);
             this.label_EmHiredate.TabIndex = 86;
             this.label_EmHiredate.Text = "入社年月日";
-            // 
-            // label_PrHidden
-            // 
-            this.label_PrHidden.AutoSize = true;
-            this.label_PrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrHidden.Location = new System.Drawing.Point(730, 113);
-            this.label_PrHidden.Name = "label_PrHidden";
-            this.label_PrHidden.Size = new System.Drawing.Size(107, 25);
-            this.label_PrHidden.TabIndex = 85;
-            this.label_PrHidden.Text = "非表示理由";
-            // 
-            // textBoxPrHidden
-            // 
-            this.textBoxPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrHidden.Location = new System.Drawing.Point(735, 141);
-            this.textBoxPrHidden.Multiline = true;
-            this.textBoxPrHidden.Name = "textBoxPrHidden";
-            this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxPrHidden.TabIndex = 84;
             // 
             // textBoxEmPhone
             // 
@@ -140,17 +118,6 @@ namespace SalesManagement_SysDev.Management_Employee
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 970);
             this.panel1.TabIndex = 78;
-            // 
-            // checkBoxEmFlag
-            // 
-            this.checkBoxEmFlag.AutoSize = true;
-            this.checkBoxEmFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(735, 50);
-            this.checkBoxEmFlag.Name = "checkBoxEmFlag";
-            this.checkBoxEmFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxEmFlag.TabIndex = 77;
-            this.checkBoxEmFlag.Text = "社員管理フラグ";
-            this.checkBoxEmFlag.UseVisualStyleBackColor = true;
             // 
             // dataGridViewDsp
             // 
@@ -322,14 +289,11 @@ namespace SalesManagement_SysDev.Management_Employee
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerEmHiredate);
             this.Controls.Add(this.label_EmHiredate);
-            this.Controls.Add(this.label_PrHidden);
-            this.Controls.Add(this.textBoxPrHidden);
             this.Controls.Add(this.textBoxEmPhone);
             this.Controls.Add(this.label_EmPhone);
             this.Controls.Add(this.textBoxPoID);
             this.Controls.Add(this.label_PoID);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.button_Cle);
             this.Controls.Add(this.button_Add);
@@ -356,14 +320,11 @@ namespace SalesManagement_SysDev.Management_Employee
         #endregion
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
         private System.Windows.Forms.Label label_EmHiredate;
-        private System.Windows.Forms.Label label_PrHidden;
-        private System.Windows.Forms.TextBox textBoxPrHidden;
         private System.Windows.Forms.TextBox textBoxEmPhone;
         private System.Windows.Forms.Label label_EmPhone;
         private System.Windows.Forms.TextBox textBoxPoID;
         private System.Windows.Forms.Label label_PoID;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBoxEmFlag;
         private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.Button button_Cle;
         private System.Windows.Forms.Button button_Add;

@@ -45,7 +45,7 @@ namespace SalesManagement_SysDev.Management_Employee
             dateTimePickerEmHiredate.Value = DateTime.Now;
 
             textBoxEmPhone.Text = "";
-            textBoxEmHidden.Text = "";
+            //textBoxEmHidden.Text = "";
         }
 
         private void button_First_Click(object sender, EventArgs e)
@@ -547,7 +547,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private void dataGridViewDsp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int number;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
             serchdateset(number);
             setdatedetail();
         }
@@ -558,7 +558,7 @@ namespace SalesManagement_SysDev.Management_Employee
             int EmIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             EmIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            //labelEm.Text = textBoxEmID.ToString();
+            labelEmID.Text = textBoxEmID.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -583,15 +583,15 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
 
-            //labelEm.Text = x.EmID;
-            //labelSo.Text = x.SoID;
-            //labelPo.Text = x.PoID;
-            //datetime.Text = x.RegisteredDate;
-            //userid.Text = x.regUserID;
-            //username.Text = x.regUserName;
-            //uptime.Text = x.UpDateTime;
-            //upuserid.Text = x.LastupdatedUserID;
-            //upusername.Text = x.LastupdatedUserName;
+            labelSoID.Text = x.EmID;
+            labelSo.Text = x.SoID;
+            labelPo.Text = x.PoID;
+            labelcreatedate.Text = x.RegisteredDate;
+            labelcreateid.Text = x.regUserID;
+            labelcreatename.Text = x.regUserName;
+            llabelcreateupddate.Text = x.UpDateTime;
+            labelcreateupdid.Text = x.LastupdatedUserID;
+            labelcreateupdname.Text = x.LastupdatedUserName;
             incntok();
 
 
@@ -599,7 +599,6 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void button_Hide_Click(object sender, EventArgs e)
         {
-            //(int)dataGridView1.CurrentRow.Cells[0].Value;
             int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             MessageBox.Show("非表示にしてもよろしいでしょうか？");
             EmployeeDataAccess.upflg(number);

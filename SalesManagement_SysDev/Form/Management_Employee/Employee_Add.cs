@@ -51,10 +51,8 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
-            dateTimePickerEmHiredate.Value = DateTime.Now;
-            checkBoxEmFlag.Checked = false;
+            dateTimePickerEmHiredate.Value = DateTime.Now; 
             textBoxEmPhone.Text = "";
-            textBoxEmHidden.Text = "";
         }
 
         private void button_First_Click(object sender, EventArgs e)
@@ -241,32 +239,11 @@ namespace SalesManagement_SysDev.Management_Employee
                 textBoxEmPhone.Focus();
                 return false;
             }
-
-            if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
-            {
-
-                MessageBox.Show("社員管理フラグが不確定な状況です");//messageDsp.DspMsg("M6027");
-                checkBoxEmFlag.Focus();
-                return false;
-            }
-
-
             return true;
         }
 
         private M_Employee GenerateDataAtRegistration()
         {
-            int checkflg;
-            if (checkBoxEmFlag.Checked == true)
-            {
-                checkflg = 2;
-            }
-            else
-            {
-                checkflg = 0;
-            }
-
-
             Random pw = new Random();
             byte[] rndary = new byte[1];
             pw.NextBytes(rndary);
@@ -281,10 +258,8 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
                 EmPassword = pw.ToString(),
                 EmPhone = textBoxEmPhone.Text.Trim(),
-                EmFlag = checkflg,
-                //EmHidden = textBoxEmHidden.Text.Trim()
-
-
+                EmFlag = 0,
+                EmHidden = String.Empty
             };
         }
 

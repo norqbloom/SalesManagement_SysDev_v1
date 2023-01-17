@@ -278,19 +278,16 @@ namespace SalesManagement_SysDev.Management_Client
         }
 
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int ClIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
             ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             //label5.Text = ClIDtxt.ToString();
-            MessageBox.Show(ClIDtxt.ToString());
-            //label5.Text = ClIDtxt.ToString();
 
             serchdateset(number);
             setdatedetail();
-
         }
 
 
@@ -314,13 +311,13 @@ namespace SalesManagement_SysDev.Management_Client
                 return;
             }
 
-            IDtxt.Text = x.ClID;
-            datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpDateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
+            labelClID.Text = x.ClID;
+            labelcreatedate.Text = x.RegisteredDate;
+            labelcreateid.Text = x.regUserID;
+            labelcreatename.Text = x.regUserName;
+            llabelcreateupddate.Text = x.UpDateTime;
+            labelcreateupdid.Text = x.LastupdatedUserID;
+            labelcreateupdname.Text = x.LastupdatedUserName;
             incntok();
         }
 
@@ -334,18 +331,6 @@ namespace SalesManagement_SysDev.Management_Client
             SetDataGridView();
         }
 
-        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
-        {
-            int number;
-            int ClIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            //label5.Text = ClIDtxt.ToString();
-
-            serchdateset(number);
-            setdatedetail();
-        }
-
-
+        
     }
 }
