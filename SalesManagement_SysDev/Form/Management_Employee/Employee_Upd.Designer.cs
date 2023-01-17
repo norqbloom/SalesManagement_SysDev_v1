@@ -1,5 +1,5 @@
 ﻿
-namespace SalesManagement_SysDev.M_Employee
+namespace SalesManagement_SysDev.Management_Employee
 {
     partial class Employee_Upd
     {
