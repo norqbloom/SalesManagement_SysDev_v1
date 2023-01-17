@@ -110,7 +110,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxEmID.Name = "textBoxEmID";
             this.textBoxEmID.Size = new System.Drawing.Size(100, 32);
             this.textBoxEmID.TabIndex = 104;
-            this.textBoxEmID.Text = "1";
             // 
             // label_EmID
             // 
@@ -140,7 +139,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxOrHidden.Name = "textBoxOrHidden";
             this.textBoxOrHidden.Size = new System.Drawing.Size(187, 57);
             this.textBoxOrHidden.TabIndex = 107;
-            this.textBoxOrHidden.Text = "1";
             // 
             // checkBoxOrStateFlag
             // 
@@ -181,7 +179,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxClChange.Name = "textBoxClChange";
             this.textBoxClChange.Size = new System.Drawing.Size(237, 32);
             this.textBoxClChange.TabIndex = 96;
-            this.textBoxClChange.Text = "ああああああああああああああ";
             // 
             // textBoxSoID
             // 
@@ -190,7 +187,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(100, 32);
             this.textBoxSoID.TabIndex = 95;
-            this.textBoxSoID.Text = "1";
             // 
             // textBoxOrID
             // 
@@ -259,7 +255,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(100, 32);
             this.textBoxClID.TabIndex = 117;
-            this.textBoxClID.Text = "1";
             // 
             // label_ClID
             // 
@@ -311,7 +306,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 32);
             this.textBoxPrice.TabIndex = 127;
-            this.textBoxPrice.Text = "1";
             // 
             // label_Price
             // 
@@ -330,7 +324,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxOrQuantity.Name = "textBoxOrQuantity";
             this.textBoxOrQuantity.Size = new System.Drawing.Size(100, 32);
             this.textBoxOrQuantity.TabIndex = 125;
-            this.textBoxOrQuantity.Text = "1";
             this.textBoxOrQuantity.TextChanged += new System.EventHandler(this.textBoxOrQuantity_TextChanged);
             // 
             // label_OrQuantity
@@ -350,7 +343,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxOrTotalPrice.Name = "textBoxOrTotalPrice";
             this.textBoxOrTotalPrice.Size = new System.Drawing.Size(100, 32);
             this.textBoxOrTotalPrice.TabIndex = 132;
-            this.textBoxOrTotalPrice.Text = "1";
             // 
             // label5
             // 
@@ -379,7 +371,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
             this.textBoxPrName.TabIndex = 136;
-            this.textBoxPrName.Text = "ああああああああああああああ";
             // 
             // textBoxPrID
             // 
@@ -388,7 +379,6 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
             this.textBoxPrID.TabIndex = 135;
-            this.textBoxPrID.Text = "1";
             this.textBoxPrID.TextChanged += new System.EventHandler(this.textBoxPrID_TextChanged);
             // 
             // label_PrName

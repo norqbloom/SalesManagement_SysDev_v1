@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.Management_Employee
+namespace SalesManagement_SysDev.M_Employee
 {
     public partial class Employee_Ser : Form
     {
@@ -18,12 +18,14 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         private static List<M_Employee> Emp1;
+        private static int grid = 10;
+
         public Employee_Ser()
         {
             InitializeComponent();
         }
 
-        private void buttonSer_Click(object sender, EventArgs e)
+        private void button_Ser_Click(object sender, EventArgs e)
         {
             //入力データ確認
             if (!GetEmployetDataAtSelect())
@@ -33,6 +35,81 @@ namespace SalesManagement_SysDev.Management_Employee
 
             SetSelectData();
         }
+
+        private void button_Cle_Click(object sender, EventArgs e)
+        {
+            textBoxEmID.Text = "";
+            textBoxSoID.Text = "";
+            textBoxPoID.Text = "";
+            textBoxEmName.Text = "";
+            dateTimePickerEmHiredate.Value = DateTime.Now;
+
+            textBoxEmPhone.Text = "";
+            textBoxEmHidden.Text = "";
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            dataGridView1.DataSource = employees.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+            int pageSize = int.Parse(textBoxPageSize.Text);
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridView1.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void Employee_Ser_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private bool GetEmployetDataAtSelect()
         {
             if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
@@ -40,7 +117,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    MessageBox.Show("社員コードは半角数値入力です","エラー",MessageBoxButtons.OK,MessageBoxIcon.Error); //messageDsp.DspMsg("M6001");
+                    MessageBox.Show("社員コードは半角数値入力です", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error); //messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -79,7 +156,7 @@ namespace SalesManagement_SysDev.Management_Employee
                         datedubblwget();
                         return;
                     }
-                    else 
+                    else
                     {
                         //Em・Soのみ
                         datePrMaget();
@@ -131,6 +208,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
         }
+
         private void SetSelectData()
         {
             dataGridView1.DataSource = employees;
@@ -149,7 +227,7 @@ namespace SalesManagement_SysDev.Management_Employee
                     EmPhone = textBoxEmPhone.Text.Trim(),
                     //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
                 };
-                employees = EmployeeDataAccess.GetPronlyHdata(selectCondition,dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+                employees = EmployeeDataAccess.GetPronlyHdata(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
             }
             else
             {
@@ -165,7 +243,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 };
                 employees = EmployeeDataAccess.GetMaScget(selectCondition);
             }
-         }
+        }
 
         private void dateemget()
         {
@@ -466,29 +544,16 @@ namespace SalesManagement_SysDev.Management_Employee
             upuserid.Visible = true;
             upusername.Visible = true;
         }
-        
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewDsp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int number;
             number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             serchdateset(number);
             setdatedetail();
         }
-        
 
-        private void Clear_Click(object sender, EventArgs e)
-        {
-            textBoxEmID.Text = "";
-            textBoxSoID.Text = "";
-            textBoxPoID.Text = "";
-            textBoxEmName.Text = "";
-            dateTimePickerEmHiredate.Value = DateTime.Now;
-
-            textBoxEmPhone.Text = "";
-            textBoxEmHidden.Text = "";
-        }
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int EmIDtxt;
@@ -499,7 +564,6 @@ namespace SalesManagement_SysDev.Management_Employee
             serchdateset(number);
             setdatedetail();
         }
-
 
         private void serchdateset(int number)
         {
@@ -534,147 +598,6 @@ namespace SalesManagement_SysDev.Management_Employee
 
         }
 
-        private void change_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
 
-        private void buttonFirstPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridView1.DataSource = employees.Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void buttonPreviousPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            if (pageNo + 1 > 1)
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-            else
-                textBoxPageNo.Text = "1";
-        }
-
-        private void buttonNextPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void buttonLastPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridView1.DataSource = employees.Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            if (pageNo + 1 > 1)
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-            else
-                textBoxPageNo.Text = "1";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //(int)dataGridView1.CurrentRow.Cells[0].Value;
-            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            MessageBox.Show("非表示にしてもよろしいでしょうか？");
-            EmployeeDataAccess.upflg(number);
-            setdata();
-        }
-        private void setdata()
-        {
-            Emp1 = EmployeeDataAccess.GetEmployeeDataDsp1();
-            dataGridView1.DataSource = Emp1;
-        }
     }
 }
