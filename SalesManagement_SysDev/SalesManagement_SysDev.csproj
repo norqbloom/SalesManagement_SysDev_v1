@@ -168,19 +168,19 @@
     <Compile Include="Form\Management_Employee\Employee_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Management_Employee\Employee_Add.Designer.cs">
+    <Compile Include="Form\Management_Employee\Employee_Add.designer.cs">
       <DependentUpon>Employee_Add.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Employee\Employee_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Management_Employee\Employee_Ser.Designer.cs">
+    <Compile Include="Form\Management_Employee\Employee_Ser.designer.cs">
       <DependentUpon>Employee_Ser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Employee\Employee_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Management_Employee\Employee_Upd.Designer.cs">
+    <Compile Include="Form\Management_Employee\Employee_Upd.designer.cs">
       <DependentUpon>Employee_Upd.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Hattyu\Hattyu_Add.cs">
@@ -210,7 +210,7 @@
     <Compile Include="Form\Management_Order\Order_Ser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Management_Order\Order_Ser.Designer.cs">
+    <Compile Include="Form\Management_Order\Order_Ser.designer.cs">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Product\Product_Add.cs">
