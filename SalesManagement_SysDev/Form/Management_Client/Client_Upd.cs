@@ -18,16 +18,25 @@ namespace SalesManagement_SysDev.Management_Client
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
+        private static int grid = 10;
+
         public Client_Upd()
         {
             InitializeComponent();
         }
 
-        private void buttonUpd_Click(object sender, EventArgs e)
+        private void Client_Upd_Load(object sender, EventArgs e)
+        {
+            //adioButton1.Checked = true;
+            setdata();
+            SetFormDataGridView();
+        }
+
+        private void button_Upd_Click(object sender, EventArgs e)
         {
             //妥当な役職データ取得
             if (!GetValidDataAtUpdate())
-            {              
+            {
                 return;
             }
 
@@ -39,9 +48,79 @@ namespace SalesManagement_SysDev.Management_Client
             //役職情報更新
             UpdateItem(updItem);
             clients = clientDataAccess.GetClientDspData();
-            dataGridView1.DataSource = clients;
+            dataGridViewDsp.DataSource = clients;
 
         }
+
+        private void button_Cle_Click(object sender, EventArgs e)
+        {
+            textBoxClID.Text = "";
+            textBoxClName.Text = "";
+            textBoxSoID.Text = "";
+            textBoxClPhone.Text = "";
+            textBoxClAddress.Text = "";
+            textBoxClPostal.Text = "";
+            textBoxClFAX.Text = "";
+            checkBoxClFlag.Checked = false;
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            dataGridViewDsp.DataSource = clients.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(clients.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
         private bool GetValidDataAtUpdate()
         {
             //顧客ID
@@ -205,20 +284,21 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClPostal.Focus();
                 return false;
             }
-            if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
-            {
-                messageDsp.DspMsg("M2037");　//MessageBox.Show("非表示理由は全角入力です"); 
-                textBoxClHidden.Focus();
-                return false;
-            }
-            if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
-            {
-                MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M40０4");
-                checkBoxClFlag.Focus();
-                return false;
-            }
+            //if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
+            //{
+            //    messageDsp.DspMsg("M2037");　//MessageBox.Show("非表示理由は全角入力です"); 
+            //    textBoxClHidden.Focus();
+            //    return false;
+            //}
+            //if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
+            //{
+            //    MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M40０4");
+            //    checkBoxClFlag.Focus();
+            //    return false;
+            //}
             return true;
         }
+
         private M_Client GenerateDataAtUpdate()
         {
             int checkflg;
@@ -240,9 +320,10 @@ namespace SalesManagement_SysDev.Management_Client
                 ClPostal = textBoxClPostal.Text,
                 ClFAX = textBoxClFAX.Text,
                 ClFlag = checkflg,
-                ClHidden = textBoxClHidden.Text
+                //ClHidden = textBoxClHidden.Text
             };
         }
+
         private void UpdateItem(M_Client updItem)
         {
             DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
@@ -264,7 +345,7 @@ namespace SalesManagement_SysDev.Management_Client
             string regtime = dt.ToString("MM/dd HH;mm");
             return new M_clhistory
             {
-                ClID= textBoxSoID.Text,
+                ClID = textBoxSoID.Text,
                 UpDateTime = regtime,
                 LastupdatedUserID = template.EmID.ToString(),
                 LastupdatedUserName = template.loginName
@@ -275,143 +356,36 @@ namespace SalesManagement_SysDev.Management_Client
             bool flg = clientDataAccess.UpdclhistoryData(uphistory);
         }
 
-        private void Client_Upd_Load(object sender, EventArgs e)
-        {
-            radioButton1.Checked = true;
-            setdata();
-            SetFormDataGridView();
-        }
         private void setdata()
         {
             clients = clientDataAccess.GetClientDspData();
-            dataGridView1.DataSource = clients;
+            dataGridViewDsp.DataSource = clients;
         }
         private void SetFormDataGridView()
         {
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ReadOnly = true;
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDsp.ReadOnly = true;
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GetDataGridView();
 
         }
 
-        private void change_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
             labelPage.Text = "/" + ((int)Math.Ceiling(clients.Count / (double)pageSize)) + "ページ";
 
-            dataGridView1.Refresh();
+            dataGridViewDsp.Refresh();
         }
 
-        private void buttonFirstPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridView1.DataSource = clients.Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void buttonPreviousPage_Click(object sender, EventArgs e)
-        {
-            
-                int pageSize = int.Parse(textBoxPageSize.Text);
-                int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-                dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
-                // DataGridViewを更新
-                dataGridView1.Refresh();
-                //ページ番号の設定
-                if (pageNo + 1 > 1)
-                    textBoxPageNo.Text = (pageNo + 1).ToString();
-                else
-                    textBoxPageNo.Text = "1";
-
-            }
-
-        private void buttonNextPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(clients.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void buttonLastPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void Clear_Click(object sender, EventArgs e)
-        {
-            textBoxClID.Text = "";
-            textBoxClName.Text = "";
-            textBoxSoID.Text = "";
-            textBoxClPhone.Text = "";
-            textBoxClAddress.Text = "";
-            checkBoxClFlag.Checked = false;
-            textBoxClPostal.Text = "";
-            textBoxClFAX.Text = "";
-            textBoxClHidden.Text = "";
-        }
-
-        private void textBoxClFAX_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxClPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-
-        }
         private void GetDataGridView()
         {
 
             int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 0;
-            }
-            else
-            {
-                radioint = 2;
-            }
             // 商品データの取得
             clients = clientDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定

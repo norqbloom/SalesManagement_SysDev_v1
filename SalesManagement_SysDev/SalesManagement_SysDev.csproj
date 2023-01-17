@@ -162,7 +162,7 @@
     <Compile Include="Form\Management_Client\Client_Upd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Management_Client\Client_Upd.Designer.cs">
+    <Compile Include="Form\Management_Client\Client_Upd.designer.cs">
       <DependentUpon>Client_Upd.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Employee\Employee_Add.cs">
@@ -200,6 +200,12 @@
     </Compile>
     <Compile Include="Form\Management_Hattyu\Hattyu_Upd.Designer.cs">
       <DependentUpon>Hattyu_Upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Management_Order\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Management_Order\Order.designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Management_Order\Order_Ser.cs">
       <SubType>Form</SubType>
@@ -308,12 +314,6 @@
     <Compile Include="Form\template.Designer.cs">
       <DependentUpon>template.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Management_Order\Order.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Management_Order\Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form\login\loginhistory.resx">
       <DependentUpon>loginhistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +362,9 @@
     <EmbeddedResource Include="Form\Management_Hattyu\Hattyu_Upd.resx">
       <DependentUpon>Hattyu_Upd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Management_Order\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Management_Order\Order_Ser.resx">
       <DependentUpon>Order_Ser.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,9 +410,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\template.resx">
       <DependentUpon>template.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Management_Order\Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />

@@ -29,516 +29,323 @@ namespace SalesManagement_SysDev.Management_Client
         /// </summary>
         private void InitializeComponent()
         {
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxClPostal = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.checkBoxClFlag = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxClPostal = new System.Windows.Forms.TextBox();
+            this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
+            this.button_Cle = new System.Windows.Forms.Button();
+            this.button_Upd = new System.Windows.Forms.Button();
             this.textBoxClFAX = new System.Windows.Forms.TextBox();
+            this.textBoxClAddress = new System.Windows.Forms.TextBox();
+            this.textBoxClPhone = new System.Windows.Forms.TextBox();
+            this.textBoxClName = new System.Windows.Forms.TextBox();
             this.textBoxSoID = new System.Windows.Forms.TextBox();
             this.textBoxClID = new System.Windows.Forms.TextBox();
-            this.textBoxClName = new System.Windows.Forms.TextBox();
-            this.textBoxClHidden = new System.Windows.Forms.TextBox();
-            this.textBoxClPhone = new System.Windows.Forms.TextBox();
-            this.textBoxClAddress = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonUpd = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.Clear = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label_ClFAX = new System.Windows.Forms.Label();
+            this.label_ClAddress = new System.Windows.Forms.Label();
+            this.label_ClPostal = new System.Windows.Forms.Label();
+            this.label_ClPhone = new System.Windows.Forms.Label();
+            this.label_ClName = new System.Windows.Forms.Label();
+            this.label_SoID = new System.Windows.Forms.Label();
+            this.label_ClID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.change = new System.Windows.Forms.Button();
-            this.buttonLastPage = new System.Windows.Forms.Button();
-            this.buttonNextPage = new System.Windows.Forms.Button();
-            this.buttonPreviousPage = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxPageSize = new System.Windows.Forms.TextBox();
+            this.button_Last = new System.Windows.Forms.Button();
+            this.button_Next = new System.Windows.Forms.Button();
+            this.button_Prev = new System.Windows.Forms.Button();
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
-            this.buttonFirstPage = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.button_First = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label8
+            // panel1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(29, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(160, 36);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "非表示理由";
-            // 
-            // textBoxClPostal
-            // 
-            this.textBoxClPostal.Location = new System.Drawing.Point(156, 94);
-            this.textBoxClPostal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClPostal.Name = "textBoxClPostal";
-            this.textBoxClPostal.Size = new System.Drawing.Size(123, 22);
-            this.textBoxClPostal.TabIndex = 3;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1358, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 970);
+            this.panel1.TabIndex = 52;
             // 
             // checkBoxClFlag
             // 
             this.checkBoxClFlag.AutoSize = true;
-            this.checkBoxClFlag.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.checkBoxClFlag.Location = new System.Drawing.Point(35, 13);
-            this.checkBoxClFlag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxClFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBoxClFlag.Location = new System.Drawing.Point(972, 169);
             this.checkBoxClFlag.Name = "checkBoxClFlag";
-            this.checkBoxClFlag.Size = new System.Drawing.Size(240, 40);
-            this.checkBoxClFlag.TabIndex = 35;
+            this.checkBoxClFlag.Size = new System.Drawing.Size(149, 29);
+            this.checkBoxClFlag.TabIndex = 51;
             this.checkBoxClFlag.Text = "顧客管理フラグ";
             this.checkBoxClFlag.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // textBoxClPostal
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(302, 83);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 36);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "FAX";
+            this.textBoxClPostal.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClPostal.Location = new System.Drawing.Point(452, 110);
+            this.textBoxClPostal.Name = "textBoxClPostal";
+            this.textBoxClPostal.Size = new System.Drawing.Size(157, 32);
+            this.textBoxClPostal.TabIndex = 38;
             // 
-            // label6
+            // dataGridViewDsp
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(11, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 36);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "郵便番号";
+            this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDsp.Location = new System.Drawing.Point(62, 246);
+            this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowTemplate.Height = 21;
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
+            this.dataGridViewDsp.TabIndex = 44;
             // 
-            // label5
+            // button_Cle
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(302, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 36);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "電話番号";
+            this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Cle.Location = new System.Drawing.Point(1161, 204);
+            this.button_Cle.Name = "button_Cle";
+            this.button_Cle.Size = new System.Drawing.Size(75, 36);
+            this.button_Cle.TabIndex = 43;
+            this.button_Cle.Text = "クリア";
+            this.button_Cle.UseVisualStyleBackColor = true;
+            this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
             // 
-            // label4
+            // button_Upd
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(11, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 36);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "住所";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(11, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 36);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "顧客名";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 36);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "営業所ID";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(8, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 36);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "顧客ID";
+            this.button_Upd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Upd.Location = new System.Drawing.Point(1080, 204);
+            this.button_Upd.Name = "button_Upd";
+            this.button_Upd.Size = new System.Drawing.Size(75, 36);
+            this.button_Upd.TabIndex = 42;
+            this.button_Upd.Text = "更新";
+            this.button_Upd.UseVisualStyleBackColor = true;
+            this.button_Upd.Click += new System.EventHandler(this.button_Upd_Click);
             // 
             // textBoxClFAX
             // 
-            this.textBoxClFAX.Location = new System.Drawing.Point(439, 94);
-            this.textBoxClFAX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClFAX.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClFAX.Location = new System.Drawing.Point(1061, 110);
             this.textBoxClFAX.Name = "textBoxClFAX";
-            this.textBoxClFAX.Size = new System.Drawing.Size(147, 22);
-            this.textBoxClFAX.TabIndex = 5;
-            this.textBoxClFAX.TextChanged += new System.EventHandler(this.textBoxClFAX_TextChanged);
-            // 
-            // textBoxSoID
-            // 
-            this.textBoxSoID.Location = new System.Drawing.Point(200, 132);
-            this.textBoxSoID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxSoID.Name = "textBoxSoID";
-            this.textBoxSoID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxSoID.TabIndex = 1;
-            // 
-            // textBoxClID
-            // 
-            this.textBoxClID.Location = new System.Drawing.Point(200, 61);
-            this.textBoxClID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClID.Name = "textBoxClID";
-            this.textBoxClID.Size = new System.Drawing.Size(81, 22);
-            this.textBoxClID.TabIndex = 0;
-            // 
-            // textBoxClName
-            // 
-            this.textBoxClName.Location = new System.Drawing.Point(156, 26);
-            this.textBoxClName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClName.Name = "textBoxClName";
-            this.textBoxClName.Size = new System.Drawing.Size(123, 22);
-            this.textBoxClName.TabIndex = 2;
-            // 
-            // textBoxClHidden
-            // 
-            this.textBoxClHidden.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.textBoxClHidden.Location = new System.Drawing.Point(15, 120);
-            this.textBoxClHidden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClHidden.Multiline = true;
-            this.textBoxClHidden.Name = "textBoxClHidden";
-            this.textBoxClHidden.ShortcutsEnabled = false;
-            this.textBoxClHidden.Size = new System.Drawing.Size(287, 70);
-            this.textBoxClHidden.TabIndex = 7;
-            // 
-            // textBoxClPhone
-            // 
-            this.textBoxClPhone.Location = new System.Drawing.Point(439, 26);
-            this.textBoxClPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxClPhone.Name = "textBoxClPhone";
-            this.textBoxClPhone.Size = new System.Drawing.Size(147, 22);
-            this.textBoxClPhone.TabIndex = 6;
-            this.textBoxClPhone.TextChanged += new System.EventHandler(this.textBoxClPhone_TextChanged);
+            this.textBoxClFAX.Size = new System.Drawing.Size(157, 32);
+            this.textBoxClFAX.TabIndex = 40;
             // 
             // textBoxClAddress
             // 
-            this.textBoxClAddress.Location = new System.Drawing.Point(156, 159);
-            this.textBoxClAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxClAddress.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClAddress.Location = new System.Drawing.Point(452, 167);
             this.textBoxClAddress.Name = "textBoxClAddress";
-            this.textBoxClAddress.Size = new System.Drawing.Size(430, 22);
-            this.textBoxClAddress.TabIndex = 4;
+            this.textBoxClAddress.Size = new System.Drawing.Size(417, 32);
+            this.textBoxClAddress.TabIndex = 39;
             // 
-            // dataGridView1
+            // textBoxClPhone
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(112, 467);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1425, 315);
-            this.dataGridView1.TabIndex = 20;
+            this.textBoxClPhone.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClPhone.Location = new System.Drawing.Point(1061, 51);
+            this.textBoxClPhone.Name = "textBoxClPhone";
+            this.textBoxClPhone.Size = new System.Drawing.Size(157, 32);
+            this.textBoxClPhone.TabIndex = 37;
             // 
-            // buttonUpd
+            // textBoxClName
             // 
-            this.buttonUpd.AutoEllipsis = true;
-            this.buttonUpd.Font = new System.Drawing.Font("游ゴシック Medium", 16.2F, System.Drawing.FontStyle.Bold);
-            this.buttonUpd.Location = new System.Drawing.Point(1215, 296);
-            this.buttonUpd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonUpd.Name = "buttonUpd";
-            this.buttonUpd.Size = new System.Drawing.Size(163, 54);
-            this.buttonUpd.TabIndex = 8;
-            this.buttonUpd.Text = "更新";
-            this.buttonUpd.UseVisualStyleBackColor = true;
-            this.buttonUpd.Click += new System.EventHandler(this.buttonUpd_Click);
+            this.textBoxClName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClName.Location = new System.Drawing.Point(452, 48);
+            this.textBoxClName.Name = "textBoxClName";
+            this.textBoxClName.Size = new System.Drawing.Size(237, 32);
+            this.textBoxClName.TabIndex = 36;
             // 
-            // panel1
+            // textBoxSoID
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBoxClID);
-            this.panel1.Controls.Add(this.textBoxSoID);
-            this.panel1.Location = new System.Drawing.Point(52, 56);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 208);
-            this.panel1.TabIndex = 47;
+            this.textBoxSoID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxSoID.Location = new System.Drawing.Point(164, 110);
+            this.textBoxSoID.Name = "textBoxSoID";
+            this.textBoxSoID.Size = new System.Drawing.Size(100, 32);
+            this.textBoxSoID.TabIndex = 35;
             // 
-            // label9
+            // textBoxClID
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(71, 41);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 26);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "ID";
+            this.textBoxClID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClID.Location = new System.Drawing.Point(164, 48);
+            this.textBoxClID.Name = "textBoxClID";
+            this.textBoxClID.Size = new System.Drawing.Size(100, 32);
+            this.textBoxClID.TabIndex = 34;
             // 
-            // panel3
+            // label_ClFAX
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textBoxClPostal);
-            this.panel3.Controls.Add(this.textBoxClName);
-            this.panel3.Controls.Add(this.textBoxClAddress);
-            this.panel3.Controls.Add(this.textBoxClFAX);
-            this.panel3.Controls.Add(this.textBoxClPhone);
-            this.panel3.Location = new System.Drawing.Point(412, 56);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(603, 210);
-            this.panel3.TabIndex = 48;
+            this.label_ClFAX.AutoSize = true;
+            this.label_ClFAX.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_ClFAX.Location = new System.Drawing.Point(967, 113);
+            this.label_ClFAX.Name = "label_ClFAX";
+            this.label_ClFAX.Size = new System.Drawing.Size(46, 25);
+            this.label_ClFAX.TabIndex = 32;
+            this.label_ClFAX.Text = "FAX";
             // 
-            // label10
+            // label_ClAddress
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(425, 38);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 26);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "個人情報";
+            this.label_ClAddress.AutoSize = true;
+            this.label_ClAddress.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_ClAddress.Location = new System.Drawing.Point(358, 170);
+            this.label_ClAddress.Name = "label_ClAddress";
+            this.label_ClAddress.Size = new System.Drawing.Size(50, 25);
+            this.label_ClAddress.TabIndex = 31;
+            this.label_ClAddress.Text = "住所";
             // 
-            // label11
+            // label_ClPostal
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(1069, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 26);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "その他";
+            this.label_ClPostal.AutoSize = true;
+            this.label_ClPostal.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_ClPostal.Location = new System.Drawing.Point(358, 113);
+            this.label_ClPostal.Name = "label_ClPostal";
+            this.label_ClPostal.Size = new System.Drawing.Size(88, 25);
+            this.label_ClPostal.TabIndex = 30;
+            this.label_ClPostal.Text = "郵便番号";
             // 
-            // panel4
+            // label_ClPhone
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.checkBoxClFlag);
-            this.panel4.Controls.Add(this.textBoxClHidden);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(1060, 56);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(318, 208);
-            this.panel4.TabIndex = 51;
+            this.label_ClPhone.AutoSize = true;
+            this.label_ClPhone.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_ClPhone.Location = new System.Drawing.Point(967, 51);
+            this.label_ClPhone.Name = "label_ClPhone";
+            this.label_ClPhone.Size = new System.Drawing.Size(88, 25);
+            this.label_ClPhone.TabIndex = 29;
+            this.label_ClPhone.Text = "電話番号";
             // 
-            // Clear
+            // label_ClName
             // 
-            this.Clear.Font = new System.Drawing.Font("MS UI Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Clear.Location = new System.Drawing.Point(1003, 296);
-            this.Clear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(163, 54);
-            this.Clear.TabIndex = 66;
-            this.Clear.Text = "クリア";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            this.label_ClName.AutoSize = true;
+            this.label_ClName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_ClName.Location = new System.Drawing.Point(358, 51);
+            this.label_ClName.Name = "label_ClName";
+            this.label_ClName.Size = new System.Drawing.Size(69, 25);
+            this.label_ClName.TabIndex = 28;
+            this.label_ClName.Text = "顧客名";
             // 
-            // panel6
+            // label_SoID
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.radioButton2);
-            this.panel6.Controls.Add(this.radioButton1);
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Controls.Add(this.Clear);
-            this.panel6.Controls.Add(this.panel1);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.buttonUpd);
-            this.panel6.Controls.Add(this.panel4);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Location = new System.Drawing.Point(112, 51);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1425, 378);
-            this.panel6.TabIndex = 67;
+            this.label_SoID.AutoSize = true;
+            this.label_SoID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_SoID.Location = new System.Drawing.Point(69, 113);
+            this.label_SoID.Name = "label_SoID";
+            this.label_SoID.Size = new System.Drawing.Size(89, 25);
+            this.label_SoID.TabIndex = 27;
+            this.label_SoID.Text = "営業所ID";
             // 
-            // radioButton2
+            // label_ClID
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(352, 314);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 24);
-            this.radioButton2.TabIndex = 68;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "非表示";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(188, 314);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 24);
-            this.radioButton1.TabIndex = 67;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "表示";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("游ゴシック Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(131, 36);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 26);
-            this.label12.TabIndex = 67;
-            this.label12.Text = "入力項目";
+            this.label_ClID.AutoSize = true;
+            this.label_ClID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_ClID.Location = new System.Drawing.Point(69, 51);
+            this.label_ClID.Name = "label_ClID";
+            this.label_ClID.Size = new System.Drawing.Size(70, 25);
+            this.label_ClID.TabIndex = 26;
+            this.label_ClID.Text = "顧客ID";
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.change);
-            this.panel2.Controls.Add(this.buttonLastPage);
-            this.panel2.Controls.Add(this.buttonNextPage);
-            this.panel2.Controls.Add(this.buttonPreviousPage);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.textBoxPageSize);
+            this.panel2.Controls.Add(this.button_Last);
+            this.panel2.Controls.Add(this.button_Next);
+            this.panel2.Controls.Add(this.button_Prev);
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
-            this.panel2.Controls.Add(this.buttonFirstPage);
-            this.panel2.Location = new System.Drawing.Point(407, 798);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Controls.Add(this.button_First);
+            this.panel2.Location = new System.Drawing.Point(965, 914);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(822, 36);
-            this.panel2.TabIndex = 68;
+            this.panel2.Size = new System.Drawing.Size(271, 35);
+            this.panel2.TabIndex = 138;
             // 
-            // change
+            // button_Last
             // 
-            this.change.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.change.Location = new System.Drawing.Point(220, 6);
-            this.change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(75, 28);
-            this.change.TabIndex = 21;
-            this.change.Text = "行数変更";
-            this.change.UseVisualStyleBackColor = true;
+            this.button_Last.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Last.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Last.Location = new System.Drawing.Point(235, 0);
+            this.button_Last.Name = "button_Last";
+            this.button_Last.Size = new System.Drawing.Size(35, 35);
+            this.button_Last.TabIndex = 47;
+            this.button_Last.Text = "▶|";
+            this.button_Last.UseVisualStyleBackColor = true;
+            this.button_Last.Click += new System.EventHandler(this.button_Last_Click);
             // 
-            // buttonLastPage
+            // button_Next
             // 
-            this.buttonLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonLastPage.Location = new System.Drawing.Point(775, 9);
-            this.buttonLastPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonLastPage.Name = "buttonLastPage";
-            this.buttonLastPage.Size = new System.Drawing.Size(32, 22);
-            this.buttonLastPage.TabIndex = 24;
-            this.buttonLastPage.Text = "▶|";
-            this.buttonLastPage.UseVisualStyleBackColor = true;
+            this.button_Next.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Next.Location = new System.Drawing.Point(194, 0);
+            this.button_Next.Name = "button_Next";
+            this.button_Next.Size = new System.Drawing.Size(35, 35);
+            this.button_Next.TabIndex = 50;
+            this.button_Next.Text = "▶";
+            this.button_Next.UseVisualStyleBackColor = true;
+            this.button_Next.Click += new System.EventHandler(this.button_Next_Click);
             // 
-            // buttonNextPage
+            // button_Prev
             // 
-            this.buttonNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonNextPage.Location = new System.Drawing.Point(744, 9);
-            this.buttonNextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonNextPage.Name = "buttonNextPage";
-            this.buttonNextPage.Size = new System.Drawing.Size(28, 22);
-            this.buttonNextPage.TabIndex = 25;
-            this.buttonNextPage.Text = "▶";
-            this.buttonNextPage.UseVisualStyleBackColor = true;
-            // 
-            // buttonPreviousPage
-            // 
-            this.buttonPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonPreviousPage.Location = new System.Drawing.Point(710, 9);
-            this.buttonPreviousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonPreviousPage.Name = "buttonPreviousPage";
-            this.buttonPreviousPage.Size = new System.Drawing.Size(28, 22);
-            this.buttonPreviousPage.TabIndex = 26;
-            this.buttonPreviousPage.Text = "◀";
-            this.buttonPreviousPage.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 11);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 15);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "1ページ行数";
-            // 
-            // textBoxPageSize
-            // 
-            this.textBoxPageSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxPageSize.Location = new System.Drawing.Point(101, 9);
-            this.textBoxPageSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPageSize.Name = "textBoxPageSize";
-            this.textBoxPageSize.Size = new System.Drawing.Size(100, 22);
-            this.textBoxPageSize.TabIndex = 11;
+            this.button_Prev.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Prev.Location = new System.Drawing.Point(153, 0);
+            this.button_Prev.Name = "button_Prev";
+            this.button_Prev.Size = new System.Drawing.Size(35, 35);
+            this.button_Prev.TabIndex = 49;
+            this.button_Prev.Text = "◀";
+            this.button_Prev.UseVisualStyleBackColor = true;
+            this.button_Prev.Click += new System.EventHandler(this.button_Prev_Click);
             // 
             // textBoxPageNo
             // 
-            this.textBoxPageNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxPageNo.Location = new System.Drawing.Point(532, 8);
-            this.textBoxPageNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPageNo.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxPageNo.Location = new System.Drawing.Point(16, 6);
             this.textBoxPageNo.Name = "textBoxPageNo";
-            this.textBoxPageNo.Size = new System.Drawing.Size(53, 22);
-            this.textBoxPageNo.TabIndex = 22;
+            this.textBoxPageNo.Size = new System.Drawing.Size(33, 25);
+            this.textBoxPageNo.TabIndex = 45;
+            this.textBoxPageNo.Text = "100";
+            this.textBoxPageNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelPage
             // 
-            this.labelPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelPage.AutoSize = true;
-            this.labelPage.Location = new System.Drawing.Point(591, 10);
+            this.labelPage.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelPage.Location = new System.Drawing.Point(55, 9);
             this.labelPage.Name = "labelPage";
-            this.labelPage.Size = new System.Drawing.Size(43, 15);
-            this.labelPage.TabIndex = 23;
+            this.labelPage.Size = new System.Drawing.Size(39, 17);
+            this.labelPage.TabIndex = 46;
             this.labelPage.Text = "ページ";
             // 
-            // buttonFirstPage
+            // button_First
             // 
-            this.buttonFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonFirstPage.Location = new System.Drawing.Point(674, 9);
-            this.buttonFirstPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonFirstPage.Name = "buttonFirstPage";
-            this.buttonFirstPage.Size = new System.Drawing.Size(32, 22);
-            this.buttonFirstPage.TabIndex = 13;
-            this.buttonFirstPage.Text = "|◀";
-            this.buttonFirstPage.UseVisualStyleBackColor = true;
+            this.button_First.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_First.Location = new System.Drawing.Point(112, 0);
+            this.button_First.Name = "button_First";
+            this.button_First.Size = new System.Drawing.Size(35, 35);
+            this.button_First.TabIndex = 48;
+            this.button_First.Text = "|◀";
+            this.button_First.UseVisualStyleBackColor = true;
+            this.button_First.Click += new System.EventHandler(this.button_First_Click);
             // 
             // Client_Upd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 845);
+            this.ClientSize = new System.Drawing.Size(1658, 970);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel6);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.checkBoxClFlag);
+            this.Controls.Add(this.textBoxClPostal);
+            this.Controls.Add(this.dataGridViewDsp);
+            this.Controls.Add(this.button_Cle);
+            this.Controls.Add(this.button_Upd);
+            this.Controls.Add(this.textBoxClFAX);
+            this.Controls.Add(this.textBoxClAddress);
+            this.Controls.Add(this.textBoxClPhone);
+            this.Controls.Add(this.textBoxClName);
+            this.Controls.Add(this.textBoxSoID);
+            this.Controls.Add(this.textBoxClID);
+            this.Controls.Add(this.label_ClFAX);
+            this.Controls.Add(this.label_ClAddress);
+            this.Controls.Add(this.label_ClPostal);
+            this.Controls.Add(this.label_ClPhone);
+            this.Controls.Add(this.label_ClName);
+            this.Controls.Add(this.label_SoID);
+            this.Controls.Add(this.label_ClID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1658, 970);
+            this.MinimumSize = new System.Drawing.Size(1658, 970);
             this.Name = "Client_Upd";
-            this.Text = "顧客更新";
+            this.Text = "Client_Upd";
             this.Load += new System.EventHandler(this.Client_Upd_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -547,46 +354,31 @@ namespace SalesManagement_SysDev.Management_Client
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxClPostal;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBoxClFlag;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxClPostal;
+        private System.Windows.Forms.DataGridView dataGridViewDsp;
+        private System.Windows.Forms.Button button_Cle;
+        private System.Windows.Forms.Button button_Upd;
         private System.Windows.Forms.TextBox textBoxClFAX;
+        private System.Windows.Forms.TextBox textBoxClAddress;
+        private System.Windows.Forms.TextBox textBoxClPhone;
+        private System.Windows.Forms.TextBox textBoxClName;
         private System.Windows.Forms.TextBox textBoxSoID;
         private System.Windows.Forms.TextBox textBoxClID;
-        private System.Windows.Forms.TextBox textBoxClName;
-        private System.Windows.Forms.TextBox textBoxClHidden;
-        private System.Windows.Forms.TextBox textBoxClPhone;
-        private System.Windows.Forms.TextBox textBoxClAddress;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonUpd;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label_ClFAX;
+        private System.Windows.Forms.Label label_ClAddress;
+        private System.Windows.Forms.Label label_ClPostal;
+        private System.Windows.Forms.Label label_ClPhone;
+        private System.Windows.Forms.Label label_ClName;
+        private System.Windows.Forms.Label label_SoID;
+        private System.Windows.Forms.Label label_ClID;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button change;
-        private System.Windows.Forms.Button buttonLastPage;
-        private System.Windows.Forms.Button buttonNextPage;
-        private System.Windows.Forms.Button buttonPreviousPage;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxPageSize;
+        private System.Windows.Forms.Button button_Last;
+        private System.Windows.Forms.Button button_Next;
+        private System.Windows.Forms.Button button_Prev;
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
-        private System.Windows.Forms.Button buttonFirstPage;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button_First;
     }
 }

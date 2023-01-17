@@ -129,6 +129,7 @@ namespace SalesManagement_SysDev.Management_Client
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
+        
 
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -414,5 +415,7 @@ namespace SalesManagement_SysDev.Management_Client
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }
+
+        
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev.M_Client
+namespace SalesManagement_SysDev.Management_Client
 {
     public partial class Client_Ser : Form
     {
@@ -17,6 +17,7 @@ namespace SalesManagement_SysDev.M_Client
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
         private static List<M_clhistory> history;
+        private static int grid = 9;
 
         private void invcnt()
         {
@@ -49,7 +50,7 @@ namespace SalesManagement_SysDev.M_Client
 
         private void Client_Ser_Load(object sender, EventArgs e)
         {
-            radioButton1.Checked = true;
+            //radioButton1.Checked = true;
             setdata();
             SetFormDataGridView();
             invcnt();
@@ -68,49 +69,55 @@ namespace SalesManagement_SysDev.M_Client
 
         private void button_Cle_Click(object sender, EventArgs e)
         {
-
+            textBoxClID.Text = "";
+            textBoxClName.Text = "";
+            textBoxSoID.Text = "";
+            textBoxClPhone.Text = "";
+            textBoxClAddress.Text = "";
+            textBoxClPostal.Text = "";
+            textBoxClFAX.Text = "";
+            checkBoxClFlag.Checked = false;
         }
 
-        private void button_First_Click(object sender, EventArgs e)
+        private void button_First_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void button_Prev_Click(object sender, EventArgs e)
+        private void button_Prev_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void button_Next_Click(object sender, EventArgs e)
+        private void button_Next_Click_1(object sender, EventArgs e)
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text);
             //最終ページの計算
             int lastNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
             //最終ページでなければ
             if (pageNo <= lastNo)
-                dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+                dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             // DataGridViewを更新
-            dataGridView1.Refresh();
+            dataGridViewDsp.Refresh();
             //ページ番号の設定
             int lastPage = (int)Math.Ceiling(clients.Count / (double)pageSize);
             if (pageNo >= lastPage)
                 textBoxPageNo.Text = lastPage.ToString();
             else
                 textBoxPageNo.Text = (pageNo + 1).ToString();
-
         }
 
-        private void button_Last_Click(object sender, EventArgs e)
+        private void button_Last_Click_1(object sender, EventArgs e)
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             //最終ページの計算
             int pageNo = (int)Math.Ceiling(clients.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             // DataGridViewを更新
-            dataGridView1.Refresh();
+            dataGridViewDsp.Refresh();
             //ページ番号の設定
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
@@ -123,7 +130,7 @@ namespace SalesManagement_SysDev.M_Client
         private void setdata()
         {
             clients = clientDataAccess.GetClientDspData();
-            dataGridView1.DataSource = clients;
+            dataGridViewDsp.DataSource = clients;
         }
 
         private bool GetClientDataAtSelect()
@@ -151,12 +158,12 @@ namespace SalesManagement_SysDev.M_Client
                 }
             }
             //Clphone確認
-            if (!String.IsNullOrEmpty(ClPhonetxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxClPhone.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckHalfChar(ClPhonetxt.Text.Trim()))
+                if (!dataInputFormCheck.CheckHalfChar(textBoxClPhone.Text.Trim()))
                 {
                     messageDsp.DspMsg("M1015"); //電話番号は半角数値入力です
-                    ClPhonetxt.Focus();
+                    textBoxClPhone.Focus();
                     return false;
 
                 }
@@ -167,9 +174,9 @@ namespace SalesManagement_SysDev.M_Client
 
         private void GenerateDataAtSelect()
         {
-            if (!String.IsNullOrEmpty(ClIDtxt.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
             {
-                if (!String.IsNullOrEmpty(SOIDtxt.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
                 {
                     datedubblwget();
                 }
@@ -180,7 +187,7 @@ namespace SalesManagement_SysDev.M_Client
             }
             else
             {
-                if (!String.IsNullOrEmpty(SOIDtxt.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
                 {
                     dateSoget();
                 }
@@ -193,19 +200,19 @@ namespace SalesManagement_SysDev.M_Client
 
         private void SetSelectData()
         {
-            dataGridView1.DataSource = clients;
+            dataGridViewDsp.DataSource = clients;
         }
 
         private void dateClget()
         {
             M_Client selectCondition = new M_Client()
             {
-                ClID = int.Parse(ClIDtxt.Text.Trim()),
-                ClName = CLNametxt.Text.Trim(),
-                ClPhone = ClPhonetxt.Text.Trim(),
-                ClAddress = addresstxt.Text.Trim(),
-                ClFAX = ClPostaltxt.Text.Trim(),
-                ClPostal = ClFaxtxt.Text.Trim()
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                ClName = textBoxClName.Text.Trim(),
+                ClPhone = textBoxClPhone.Text.Trim(),
+                ClAddress = textBoxClAddress.Text.Trim(),
+                ClFAX = textBoxClFAX.Text.Trim(),
+                ClPostal = textBoxClPostal.Text.Trim()
             };
             clients = clientDataAccess.GetCldata(selectCondition);
         }
@@ -214,12 +221,12 @@ namespace SalesManagement_SysDev.M_Client
         {
             M_Client selectCondition = new M_Client()
             {
-                SoID = int.Parse(SOIDtxt.Text.Trim()),
-                ClName = CLNametxt.Text.Trim(),
-                ClPhone = ClPhonetxt.Text.Trim(),
-                ClAddress = addresstxt.Text.Trim(),
-                ClFAX = ClFaxtxt.Text.Trim(),
-                ClPostal = ClPostaltxt.Text.Trim()
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                ClName = textBoxClName.Text.Trim(),
+                ClPhone = textBoxClPhone.Text.Trim(),
+                ClAddress = textBoxClAddress.Text.Trim(),
+                ClFAX = textBoxClFAX.Text.Trim(),
+                ClPostal = textBoxClPostal.Text.Trim()
             };
             clients = clientDataAccess.GetSodata(selectCondition);
         }
@@ -227,13 +234,13 @@ namespace SalesManagement_SysDev.M_Client
         {
             M_Client selectCondition = new M_Client()
             {
-                ClID = int.Parse(ClIDtxt.Text.Trim()),
-                SoID = int.Parse(SOIDtxt.Text.Trim()),
-                ClName = CLNametxt.Text.Trim(),
-                ClPhone = ClPhonetxt.Text.Trim(),
-                ClAddress = addresstxt.Text.Trim(),
-                ClFAX = ClPostaltxt.Text.Trim(),
-                ClPostal = ClFaxtxt.Text.Trim()
+                ClID = int.Parse(textBoxClID.Text.Trim()),
+                SoID = int.Parse(textBoxSoID.Text.Trim()),
+                ClName = textBoxClName.Text.Trim(),
+                ClPhone = textBoxClPhone.Text.Trim(),
+                ClAddress = textBoxClAddress.Text.Trim(),
+                ClFAX = textBoxClFAX.Text.Trim(),
+                ClPostal = textBoxClPostal.Text.Trim()
             };
             clients = clientDataAccess.Getdubblwdata(selectCondition);
         }
@@ -241,35 +248,33 @@ namespace SalesManagement_SysDev.M_Client
         {
             M_Client selectCondition = new M_Client()
             {
-                ClName = CLNametxt.Text.Trim(),
-                ClPhone = ClPhonetxt.Text.Trim(),
-                ClAddress = addresstxt.Text.Trim(),
-                ClFAX = ClPostaltxt.Text.Trim(),
-                ClPostal = ClFaxtxt.Text.Trim()
+                ClName = textBoxClName.Text.Trim(),
+                ClPhone = textBoxClPhone.Text.Trim(),
+                ClAddress = textBoxClAddress.Text.Trim(),
+                ClFAX = textBoxClFAX.Text.Trim(),
+                ClPostal = textBoxClPostal.Text.Trim()
             };
             clients = clientDataAccess.Getnodata(selectCondition);
 
         }
         private void SetFormDataGridView()
         {
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ReadOnly = true;
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDsp.ReadOnly = true;
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GetDataGridView();
 
         }
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridView1.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
             labelPage.Text = "/" + ((int)Math.Ceiling(clients.Count / (double)pageSize)) + "ページ";
 
-            dataGridView1.Refresh();
+            dataGridViewDsp.Refresh();
         }
 
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
@@ -277,11 +282,11 @@ namespace SalesManagement_SysDev.M_Client
         {
             int number;
             int ClIDtxt;
-            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            label5.Text = ClIDtxt.ToString();
+            //number = (int)dataGridView1.CurrentRow.Cells[1].Value;
+            //ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            //label5.Text = ClIDtxt.ToString();
 
-            serchdateset(number);
+            //serchdateset(number);
             setdatedetail();
 
         }
@@ -307,13 +312,13 @@ namespace SalesManagement_SysDev.M_Client
                 return;
             }
 
-            IDtxt.Text = x.ClID;
-            datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpDateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
+            //IDtxt.Text = x.ClID;
+            //datetime.Text = x.RegisteredDate;
+            //userid.Text = x.regUserID;
+            //username.Text = x.regUserName;
+            //uptime.Text = x.UpDateTime;
+            //upuserid.Text = x.LastupdatedUserID;
+            //upusername.Text = x.LastupdatedUserName;
             incntok();
         }
 
@@ -321,18 +326,12 @@ namespace SalesManagement_SysDev.M_Client
         {
 
             int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 0;
-            }
-            else
-            {
-                radioint = 2;
-            }
             // 商品データの取得
             clients = clientDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }
+
+        
     }
 }

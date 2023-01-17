@@ -327,7 +327,7 @@ namespace SalesManagement_SysDev
 
         private void client_serchbtn_Click(object sender, EventArgs e)
         {
-            openChildForm(new client_serch());
+            openChildForm(new Management_Client.Client_Ser());
         }
 
         private void sidepanel_Paint(object sender, PaintEventArgs e)

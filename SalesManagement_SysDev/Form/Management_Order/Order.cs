@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalesManagement_SysDev
+namespace SalesManagement_SysDev.M_Order
 {
     public partial class Order : Form
     {
@@ -21,15 +21,14 @@ namespace SalesManagement_SysDev
         private static List<M_Product> products;
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
-
-        static int grid_OrID = 0;
-
+        static int grid_OrID = 10;
 
         public Order()
         {
             InitializeComponent();
         }
-        private void テスト_Load(object sender, EventArgs e)
+
+        private void Order_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
@@ -48,24 +47,13 @@ namespace SalesManagement_SysDev
             SetFormDataGridView();
         }
 
-        private void button_Del_Click(object sender, EventArgs e)
+        private void button_Add_Pro_Click(object sender, EventArgs e)
         {
-            if (!GetValidDataDelete())
-            {
-                return;
-            }
+            var regOrderDetail = GenerateDataAtRegistration_Detail();
 
-            var delOrder = GenerateDataAtDelete();
-
-            DeleteOrder(delOrder);
+            RegistrationOrderDetail(regOrderDetail);
 
             SetFormDataGridView();
-
-        }
-
-        private void button_Cle_Click(object sender, EventArgs e)
-        {
-            ClearInput();
         }
 
         private void button_Con_Click(object sender, EventArgs e)
@@ -84,29 +72,129 @@ namespace SalesManagement_SysDev
             RegistrationChumon(regChumon);
 
             //注文詳細T登録
-            if(GenerateDataAtRegistrationChumonDetail())
+            if (GenerateDataAtRegistrationChumonDetail())
             {
                 return;
             }
 
             SetFormDataGridView();
 
-
         }
 
-        private void button_ProAdd_Click(object sender, EventArgs e)
+        private void button_Del_Click(object sender, EventArgs e)
         {
-            var regOrderDetail = GenerateDataAtRegistration_Detail();
+            if (!GetValidDataDelete())
+            {
+                return;
+            }
 
-            RegistrationOrderDetail(regOrderDetail);
+            var delOrder = GenerateDataAtDelete();
+
+            DeleteOrder(delOrder);
 
             SetFormDataGridView();
-            
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void button_Cle_Click(object sender, EventArgs e)
         {
-            GetDataGridView();
+            ClearInput();
+        }
+
+        private void button_First_Order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Prev_Order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Next_Order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Last_Order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewDspOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //データグリッドビューからクリックされたデータを各入力エリアへ
+            textBoxOrID.Text = dataGridViewDspOrder.CurrentRow.Cells[0].Value.ToString();
+            textBoxSoID.Text = dataGridViewDspOrder.CurrentRow.Cells[1].Value.ToString();
+            textBoxEmID.Text = dataGridViewDspOrder.CurrentRow.Cells[2].Value.ToString();
+            textBoxClID.Text = dataGridViewDspOrder.CurrentRow.Cells[3].Value.ToString();
+            textBoxClChange.Text = dataGridViewDspOrder.CurrentRow.Cells[4].Value.ToString();
+            dateTimePickerOrDate.Text = dataGridViewDspOrder.CurrentRow.Cells[5].Value.ToString();
+            textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[6].Value.ToString();
+            //チェックボックスの状態を判断
+            if ((int)dataGridViewDspOrder.CurrentRow.Cells[6].Value == 0)
+            {
+                checkBoxOrStateFlag.Checked = false;
+            }
+            else
+            {
+                checkBoxOrStateFlag.Checked = true;
+            }
+            //if ((int)dataGridViewDspOrder.CurrentRow.Cells[7].Value == 0)
+            //{
+            //    checkBoxOrFlag.Checked = false;
+            //}
+            //else
+            //{
+            //    checkBoxOrFlag.Checked = true;
+            //}
+            //非表示理由の状態を判断
+            if (dataGridViewDspOrder.CurrentRow.Cells[8].Value == null)
+            {
+                textBoxOrHidden.Text = String.Empty;
+            }
+            else
+            {
+                textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
+            }
+
+
+            Order.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
+            int ID = Order.grid_OrID;
+
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
+            GetDataGridView2();
+        }
+
+        private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewDspProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxPrID.Text = dataGridViewDspProduct.CurrentRow.Cells[0].Value.ToString();
+            textBoxPrName.Text = dataGridViewDspProduct.CurrentRow.Cells[2].Value.ToString();
+            textBoxPrice.Text = dataGridViewDspProduct.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void textBoxOrQuantity_TextChanged(object sender, EventArgs e)
@@ -153,59 +241,6 @@ namespace SalesManagement_SysDev
             textBoxPrice.Text = x.Price.ToString();
         }
 
-        private void dataGridViewDspOrder_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //データグリッドビューからクリックされたデータを各入力エリアへ
-            textBoxOrID.Text = dataGridViewDspOrder.CurrentRow.Cells[0].Value.ToString();
-            textBoxSoID.Text = dataGridViewDspOrder.CurrentRow.Cells[1].Value.ToString();
-            textBoxEmID.Text = dataGridViewDspOrder.CurrentRow.Cells[2].Value.ToString();
-            textBoxClID.Text = dataGridViewDspOrder.CurrentRow.Cells[3].Value.ToString();
-            textBoxClChange.Text = dataGridViewDspOrder.CurrentRow.Cells[4].Value.ToString();
-            dateTimePickerOrDate.Text = dataGridViewDspOrder.CurrentRow.Cells[5].Value.ToString();
-            textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[6].Value.ToString();
-            //チェックボックスの状態を判断
-            if ((int)dataGridViewDspOrder.CurrentRow.Cells[6].Value == 0)
-            {
-                checkBoxOrStateFlag.Checked = false;
-            }
-            else
-            {
-                checkBoxOrStateFlag.Checked = true;
-            }
-            if ((int)dataGridViewDspOrder.CurrentRow.Cells[7].Value == 0)
-            {
-                checkBoxOrFlag.Checked = false;
-            }
-            else
-            {
-                checkBoxOrFlag.Checked = true;
-            }
-            //非表示理由の状態を判断
-            if (dataGridViewDspOrder.CurrentRow.Cells[8].Value == null)
-            {
-                textBoxOrHidden.Text = String.Empty;
-            }
-            else
-            {
-                textBoxOrHidden.Text = dataGridViewDspOrder.CurrentRow.Cells[8].Value.ToString();
-            }
-
-            
-            Order.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
-            int ID = Order.grid_OrID;
-
-            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
-            GetDataGridView2();
-
-        }
-
-        private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBoxPrID.Text = dataGridViewDspProduct.CurrentRow.Cells[0].Value.ToString();
-            textBoxPrName.Text = dataGridViewDspProduct.CurrentRow.Cells[2].Value.ToString();
-            textBoxPrice.Text = dataGridViewDspProduct.CurrentRow.Cells[3].Value.ToString();
-        }
-
         private void ClearInput()
         {
             textBoxOrID.Text = "";
@@ -215,7 +250,7 @@ namespace SalesManagement_SysDev
             textBoxClChange.Text = "";
             dateTimePickerOrDate.Value = DateTime.Now;
             checkBoxOrStateFlag.Checked = false;
-            checkBoxOrFlag.Checked = false;
+            //checkBoxOrFlag.Checked = false;
             textBoxOrHidden.Text = "";
 
             textBoxPrID.Text = "";
@@ -225,7 +260,6 @@ namespace SalesManagement_SysDev
             textBoxOrTotalPrice.Text = "";
         }
 
-        //Add
         private bool GetValidDataAtRegistration()
         {
             if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
@@ -366,7 +400,7 @@ namespace SalesManagement_SysDev
                 return false;
             }
 
-            if(checkBoxOrStateFlag.CheckState == CheckState.Indeterminate)
+            if (checkBoxOrStateFlag.CheckState == CheckState.Indeterminate)
             {
                 MessageBox.Show("17");
                 //messageDsp.DspMsg("");
@@ -399,7 +433,7 @@ namespace SalesManagement_SysDev
         {
             int checkFlg;
             string hidden;
-            if(checkBoxOrFlag.Checked == true)
+            if (checkBoxOrFlag.Checked == true)
             {
                 checkFlg = 2;
             }
@@ -431,7 +465,7 @@ namespace SalesManagement_SysDev
         }
 
         private T_OrderDetail GenerateDataAtRegistration_Detail()
-        {         
+        {
             return new T_OrderDetail
             {
                 OrID = int.Parse(textBoxOrID.Text.Trim()),
@@ -467,7 +501,7 @@ namespace SalesManagement_SysDev
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 EmID = null,
                 ClID = int.Parse(textBoxClID.Text.Trim()),
-                OrID = int.Parse(textBoxOrID.Text.Trim()),         
+                OrID = int.Parse(textBoxOrID.Text.Trim()),
                 ChDate = DateTime.Now,
                 ChStateFlag = 0,
                 ChFlag = checkFlg,
@@ -487,7 +521,7 @@ namespace SalesManagement_SysDev
             for (int i = 1; i <= d; i++)
             {
                 c = context.T_OrderDetails.SingleOrDefault(x => x.OrID.ToString() == textBoxOrID.Text && x.OrDetailID == i);
-                if(!(c == null))
+                if (!(c == null))
                 {
                     a = c.PrID;
                     b = c.OrQuantity;
@@ -514,7 +548,7 @@ namespace SalesManagement_SysDev
             bool flg = orderDateAccess.AddorderData(regOrder);
             DialogResult result = MessageBox.Show("追加しますか");
             //DialogResult result = messageDsp.DspMsg("");
-            if(result == DialogResult.Cancel)
+            if (result == DialogResult.Cancel)
             {
                 return;
             }
@@ -532,7 +566,7 @@ namespace SalesManagement_SysDev
             textBoxOrID.Focus();
         }
 
-        private void RegistrationOrderDetail (T_OrderDetail regOrderDetail)
+        private void RegistrationOrderDetail(T_OrderDetail regOrderDetail)
         {
             bool flg = orderDateAccess.AddorderdetailData(regOrderDetail);
             DialogResult result = MessageBox.Show("追加しますか(詳細)");
@@ -826,14 +860,14 @@ namespace SalesManagement_SysDev
             dataGridViewDspProduct.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //データグリッドビューのデータ取得
             GetDataGridView();
-           
+
         }
 
         private void GetDataGridView()
         {
             int ID = Order.grid_OrID;
             int radioint = 0;
-            if(radioButton1.Checked == true)
+            if (radioButton1.Checked == true)
             {
                 radioint = 2;
             }
@@ -868,8 +902,8 @@ namespace SalesManagement_SysDev
                 textBoxPageNo.Text = (pageNo + 1).ToString();
             else
                 textBoxPageNo.Text = "1";
-            
-            
+
+
             foreach (DataGridViewColumn clm in dataGridViewDspOrder.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -914,7 +948,7 @@ namespace SalesManagement_SysDev
             dataGridViewDspOrder.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrder.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrder.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+
             dataGridViewDspOrderDetail.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrderDetail.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewDspOrderDetail.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -943,13 +977,13 @@ namespace SalesManagement_SysDev
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
         }
-        
-        
+
+
         /// <summary>
         /// T_Orderの更新処理
         /// </summary>
         /// <returns></returns>
-         private bool GetValidDataUpdate()
+        private bool GetValidDataUpdate()
         {
             if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
             {
