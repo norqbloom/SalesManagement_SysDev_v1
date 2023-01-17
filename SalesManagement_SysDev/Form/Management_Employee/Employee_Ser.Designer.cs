@@ -1,5 +1,5 @@
 ﻿
-namespace SalesManagement_SysDev.M_Employee
+namespace SalesManagement_SysDev.Management_Employee
 {
     partial class Employee_Ser
     {
@@ -50,7 +50,7 @@ namespace SalesManagement_SysDev.M_Employee
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEmHiredate2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxdate = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_Last = new System.Windows.Forms.Button();
             this.button_Next = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@ namespace SalesManagement_SysDev.M_Employee
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
+            this.button_Hide = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +99,7 @@ namespace SalesManagement_SysDev.M_Employee
             // button_Ser
             // 
             this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Ser.Location = new System.Drawing.Point(1049, 204);
+            this.button_Ser.Location = new System.Drawing.Point(968, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
             this.button_Ser.TabIndex = 74;
@@ -260,16 +261,16 @@ namespace SalesManagement_SysDev.M_Employee
             this.label1.TabIndex = 89;
             this.label1.Text = "から";
             // 
-            // checkBox1
+            // checkBoxdate
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBox1.Location = new System.Drawing.Point(683, 209);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 19);
-            this.checkBox1.TabIndex = 90;
-            this.checkBox1.Text = "日付検索";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxdate.AutoSize = true;
+            this.checkBoxdate.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.checkBoxdate.Location = new System.Drawing.Point(683, 209);
+            this.checkBoxdate.Name = "checkBoxdate";
+            this.checkBoxdate.Size = new System.Drawing.Size(74, 19);
+            this.checkBoxdate.TabIndex = 90;
+            this.checkBoxdate.Text = "日付検索";
+            this.checkBoxdate.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -348,13 +349,25 @@ namespace SalesManagement_SysDev.M_Employee
             this.button_First.UseVisualStyleBackColor = true;
             this.button_First.Click += new System.EventHandler(this.button_First_Click);
             // 
+            // button_Hide
+            // 
+            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Hide.Location = new System.Drawing.Point(1049, 204);
+            this.button_Hide.Name = "button_Hide";
+            this.button_Hide.Size = new System.Drawing.Size(75, 36);
+            this.button_Hide.TabIndex = 139;
+            this.button_Hide.Text = "非表示";
+            this.button_Hide.UseVisualStyleBackColor = true;
+            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
+            // 
             // Employee_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerEmHiredate2);
             this.Controls.Add(this.checkBoxEmFlag);
@@ -381,7 +394,7 @@ namespace SalesManagement_SysDev.M_Employee
             this.MinimumSize = new System.Drawing.Size(1658, 970);
             this.Name = "Employee_Ser";
             this.Text = "Employee_Ser";
-            this.Load += new System.EventHandler(this.Employee_Ser_Load);
+            this.Load += new System.EventHandler(this.Employee_Ser_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -413,7 +426,7 @@ namespace SalesManagement_SysDev.M_Employee
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxdate;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button_Last;
         private System.Windows.Forms.Button button_Next;
@@ -421,5 +434,6 @@ namespace SalesManagement_SysDev.M_Employee
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button button_First;
+        private System.Windows.Forms.Button button_Hide;
     }
 }
