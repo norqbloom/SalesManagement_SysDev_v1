@@ -106,7 +106,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //soid文字数チェック
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("営業所IDは2文字まで"); //messageDsp.DspMsg("M1006");
+                    messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
@@ -124,21 +124,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //PoID型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    MessageBox.Show("半角数字やしw");　//messageDsp.DspMsg("M6021");
+                    messageDsp.DspMsg("M6021");
                     textBoxPoID.Focus();
                     return false;
                 }
                 //PoID文字数チェック
                 if (textBoxPoID.TextLength > 2)
                 {
-                    MessageBox.Show("PoIDは文字数は2文字");　//messageDsp.DspMsg("M6022");
+                    messageDsp.DspMsg("M6022");
                     textBoxPoID.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("PoID入力せい");　//messageDsp.DspMsg("M6023");
+                messageDsp.DspMsg("M6023");
                 textBoxPoID.Focus();
                 return false;
             }
@@ -163,7 +163,7 @@ namespace SalesManagement_SysDev.Management_Employee
             }
             else
             {
-                MessageBox.Show("電話番号入力せい"); //messageDsp.DspMsg("M1035");
+                messageDsp.DspMsg("M1035");
                 textBoxEmPhone.Focus();
                 return false;
             }
@@ -171,7 +171,7 @@ namespace SalesManagement_SysDev.Management_Employee
             if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
             {
 
-                MessageBox.Show("不確定な状況"); //messageDsp.DspMsg("M6027");
+                messageDsp.DspMsg("M6027");
                 checkBoxEmFlag.Focus();
                 return false;
             }
@@ -222,9 +222,9 @@ namespace SalesManagement_SysDev.Management_Employee
             //登録
             bool flg = employeeDataAccess.AddEmpData(regEmp);
             if (flg == true)
-                MessageBox.Show("ok");　//messageDsp.DspMsg("M6012");
+                messageDsp.DspMsg("M6012");
             else
-                MessageBox.Show("no");　//messageDsp.DspMsg("M6013");
+                messageDsp.DspMsg("M6013");
 
 
         }

@@ -192,7 +192,7 @@ VALUES (N'M1004',N'顧客IDが入力されていません',N'入力確認確認'
 INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)
 VALUES (N'M1005',N'営業所IDは半角数字入力です',N'入力確認確認',0,0)
 INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)
-VALUES (N'M1006',N'営業所IDは６文字です',N'入力確認確認',0,0)
+VALUES (N'M1006',N'営業所IDは2文字です',N'入力確認確認',0,0)
 INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)
 VALUES (N'M1007',N'入力された営業所IDは既に存在しています',N'入力確認確認',0,0)
 INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)
