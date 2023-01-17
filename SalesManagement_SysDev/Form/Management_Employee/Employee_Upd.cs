@@ -186,9 +186,9 @@ namespace SalesManagement_SysDev.Management_Employee
             }
 
 
-            Random pw = new Random();
-            byte[] rndary = new byte[1];
-            pw.NextBytes(rndary);
+            //Random pw = new Random();
+            //byte[] rndary = new byte[1];
+            //pw.NextBytes(rndary);
             return new M_Employee
             {
 
@@ -197,7 +197,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 SoID = int.Parse(textBoxSoID.Text.Trim()),
                 PoID = int.Parse(textBoxPoID.Text.Trim()),
                 EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
-                EmPassword = pw.ToString(),
+                //EmPassword = pw.ToString(),
                 EmPhone = textBoxEmPhone.Text.Trim(),
                 EmFlag = checkflg,
                 EmHidden = textBoxEmHidden.Text.Trim()
