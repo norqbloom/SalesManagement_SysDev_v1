@@ -54,7 +54,7 @@ namespace SalesManagement_SysDev.Management_Employee
             dateTimePickerEmHiredate.Value = DateTime.Now;
             checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
-            textBoxEmHidden.Text = "";
+            //textBoxEmHidden.Text = "";
         }
 
         private void button_First_Click(object sender, EventArgs e)
