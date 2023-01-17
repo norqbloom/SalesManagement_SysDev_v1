@@ -21,36 +21,37 @@ namespace SalesManagement_SysDev.Management_Chumon
         private static List<T_ChumonDetail> chumondetail;
         private static List<T_ChumonDetail> chumondetailherasu;
         private static List<T_ChumonDetail> chumo;
+        private static int grid = 10;
+
+        private void invcnt()
+        {
+            //label5.Visible = false;
+            //IDtxt.Visible = false;
+            //datetime.Visible = false;
+            //userid.Visible = false;
+            //username.Visible = false;
+            //uptime.Visible = false;
+            //upuserid.Visible = false;
+            //upusername.Visible = false;
+        }
+        private void incntok()
+        {
+            //label5.Visible = true;
+            //IDtxt.Visible = true;
+            //datetime.Visible = true;
+            //userid.Visible = true;
+            //username.Visible = true;
+            //uptime.Visible = true;
+            //upuserid.Visible = true;
+            //upusername.Visible = true;
+        }
 
         public Chumon_Ser()
         {
             InitializeComponent();
         }
 
-        private void invcnt()
-        {
-            label5.Visible = false;
-            IDtxt.Visible = false;
-            datetime.Visible = false;
-            userid.Visible = false;
-            username.Visible = false;
-            uptime.Visible = false;
-            upuserid.Visible = false;
-            upusername.Visible = false;
-        }
-        private void incntok()
-        {
-            label5.Visible = true;
-            IDtxt.Visible = true;
-            datetime.Visible = true;
-            userid.Visible = true;
-            username.Visible = true;
-            uptime.Visible = true;
-            upuserid.Visible = true;
-            upusername.Visible = true;
-        }
-
-        private void buttonSer_Click(object sender, EventArgs e)
+        private void button_Ser_Click(object sender, EventArgs e)
         {
             //入力データ確認
             if (!GetChumonDataAtSelect())
@@ -59,6 +60,116 @@ namespace SalesManagement_SysDev.Management_Chumon
             GenerateDataAtSelect();
 
             SetSelectData();
+        }
+
+        private void button_Con_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewDsp.CurrentRow;
+            DataGridViewCell cell = selectedRow.Cells[0];
+            int chumon_id = (int)cell.Value;
+            GenerateDataAtConfirm(chumon_id);
+            // 注文確定処理
+
+            /// IDから該当注文を取り出す
+            /// 該当注文を確定にする
+            /// 社員IDを保存
+            /// 確定にした注文を保存する
+            /// 在庫減らす
+            /// 出庫テーブルにデータ作成
+            /// 
+            //T_Chumon chu = chumonDataAccess.GetChumonDataByChId(chumon_id);
+
+            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+
+            //在庫数減らす処理ここから↓
+            //注文ID取得←dataGridView[0]
+            int herasu = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            //注文IDから注文詳細のデータを取得
+            //詳細の数量と商品IDから在庫数を減らす
+            GenerateDataAtReduce();
+
+            var regSyukko = GenerateDataAtRegistrationSyukko();
+            RegistrationSyukko(regSyukko);
+            GenerateDataAtRegistrationSyukkoDetail();
+            //var regSyukkoDetail = GenerateDataAtRegistrationSyukkoDetail();
+            //RegistrationSyukkoDetail(regSyukkoDetail);
+            dataGridViewDsp.Refresh();
+        }
+
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+            var Chumondel = GenerateChumonDelete();
+            Chumon_delete(Chumondel);
+        }
+
+        private void button_Cle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Chumon_Ser_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+            invcnt();
+            chumons = chumonDataAccess.GetChumonDspData();
+            dataGridViewDsp.DataSource = chumons;
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            dataGridViewDsp.DataSource = chumons.Take(pageSize).ToList();
+            //DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            //DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(chumons.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridViewDsp.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            //DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(chumons.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(chumons.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            //DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
         }
 
         private bool GetChumonDataAtSelect()
@@ -113,9 +224,9 @@ namespace SalesManagement_SysDev.Management_Chumon
                 //{
                 //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
                 //    {
-                        //全て入力されている
-                        datedubblwget();
-                        return;
+                //全て入力されている
+                datedubblwget();
+                return;
 
                 //        }
                 //        else
@@ -163,7 +274,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void SetSelectData()
         {
-            dataGridView1.DataSource = chumons;
+            dataGridViewDsp.DataSource = chumons;
         }
 
         private void datedubblwget()
@@ -184,7 +295,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         {
             T_Chumon selectCondition = new T_Chumon()
             {
-                
+
                 ChDate = DateTime.Parse(dateTimePickerChDate.Text.Trim())
             };
             chumons = chumonDataAccess.Getnodata(selectCondition);
@@ -199,13 +310,11 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void SetFormDataGridView()
         {
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ReadOnly = true;
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "10";
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDsp.ReadOnly = true;
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
 
         ///////////////////////////////
@@ -216,28 +325,21 @@ namespace SalesManagement_SysDev.Management_Chumon
         ///////////////////////////////
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridView1.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
             labelPage.Text = "/" + ((int)Math.Ceiling(chumons.Count / (double)pageSize)) + "ページ";
             //DataGridViewを更新
-            dataGridView1.Refresh();
-        }
-
-        //削除ボタン
-        private void buttonDel_Click(object sender, EventArgs e)
-        {
-            var Chumondel = GenerateChumonDelete();
-            Chumon_delete(Chumondel);
+            dataGridViewDsp.Refresh();
         }
 
         private T_Chumon GenerateChumonDelete()
         {
             int checkS;
-            checkS = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            checkS = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             return new T_Chumon
             {
-                ChID=checkS,
+                ChID = checkS,
                 ChFlag = 2
             };
         }
@@ -254,41 +356,6 @@ namespace SalesManagement_SysDev.Management_Chumon
                 MessageBox.Show("削除しました");
             else
                 MessageBox.Show("削除に失敗しました");
-        }
-
-        //確定ボタン
-        private void buttonCon_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow selectedRow = dataGridView1.CurrentRow;
-            DataGridViewCell cell = selectedRow.Cells[0];
-            int chumon_id =  (int)cell.Value;
-            GenerateDataAtConfirm(chumon_id);
-            // 注文確定処理
-
-            /// IDから該当注文を取り出す
-            /// 該当注文を確定にする
-            /// 社員IDを保存
-            /// 確定にした注文を保存する
-            /// 在庫減らす
-            /// 出庫テーブルにデータ作成
-            /// 
-            //T_Chumon chu = chumonDataAccess.GetChumonDataByChId(chumon_id);
-
-            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-
-            //在庫数減らす処理ここから↓
-            //注文ID取得←dataGridView[0]
-            int herasu = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            //注文IDから注文詳細のデータを取得
-            //詳細の数量と商品IDから在庫数を減らす
-            GenerateDataAtReduce();
-
-            var regSyukko = GenerateDataAtRegistrationSyukko();
-            RegistrationSyukko(regSyukko);
-            GenerateDataAtRegistrationSyukkoDetail();
-            //var regSyukkoDetail = GenerateDataAtRegistrationSyukkoDetail();
-            //RegistrationSyukkoDetail(regSyukkoDetail);
-            dataGridView1.Refresh();
         }
 
         private void GenerateDataAtConfirm(int conChumon)
@@ -317,7 +384,7 @@ namespace SalesManagement_SysDev.Management_Chumon
         private void GenerateDataAtReduce()
         {
             ChIDsyutoku();
-            foreach (var herasu  in chumondetailherasu)
+            foreach (var herasu in chumondetailherasu)
             {
                 bool flg = stockDataAccess.UpdateStockData(herasu);
             }
@@ -325,7 +392,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void ChIDsyutoku()
         {
-            int ChID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            int ChID = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             T_Chumon ChSerch = new T_Chumon
             {
                 ChID = ChID
@@ -335,7 +402,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private T_Syukko GenerateDataAtRegistrationSyukko()
         {
-            int syukko = (int)dataGridView1.CurrentCell.ColumnIndex;
+            int syukko = (int)dataGridViewDsp.CurrentCell.ColumnIndex;
             int checkFlg;
             string hidden;
             if (checkBoxChStateFlag.Checked == true)
@@ -346,13 +413,13 @@ namespace SalesManagement_SysDev.Management_Chumon
             {
                 checkFlg = 0;
             }
-            hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            hidden = dataGridViewDsp.CurrentRow.Cells[8].Value.ToString();
 
             return new T_Syukko
             {
-                ClID = (int)dataGridView1.CurrentRow.Cells[3].Value,
-                SoID = (int)dataGridView1.CurrentRow.Cells[1].Value,
-                OrID = (int)dataGridView1.CurrentRow.Cells[4].Value,
+                ClID = (int)dataGridViewDsp.CurrentRow.Cells[3].Value,
+                SoID = (int)dataGridViewDsp.CurrentRow.Cells[1].Value,
+                OrID = (int)dataGridViewDsp.CurrentRow.Cells[4].Value,
                 SyDate = null,
                 SyStateFlag = 0,
                 SyFlag = checkFlg,
@@ -367,7 +434,7 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void GenerateDataAtRegistrationSyukkoDetail()
         {
-            int syukkodetail = (int)dataGridView1.CurrentCell.ColumnIndex;
+            int syukkodetail = (int)dataGridViewDsp.CurrentCell.ColumnIndex;
             //int checkFlg;
             string hidden;
             //if (checkBoxChStateFlag.Checked == true)
@@ -378,20 +445,20 @@ namespace SalesManagement_SysDev.Management_Chumon
             //{
             //    checkFlg = 0;
             //}
-            hidden = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            hidden = dataGridViewDsp.CurrentRow.Cells[8].Value.ToString();
 
             chserch();
 
             foreach (var chs in chumondetail)
             {
                 bool flg;
-                flg = GenerateDataSyukkoDetail(chs);    
+                flg = GenerateDataSyukkoDetail(chs);
             }
-            
+
         }
         private void chserch()
         {
-            int chid = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            int chid = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             T_Chumon serchch = new T_Chumon
             {
                 ChID = chid
@@ -404,9 +471,9 @@ namespace SalesManagement_SysDev.Management_Chumon
             bool flg = chumonDataAccess.AddsyukkoDetailData(regSyukkoDetail);
         }
 
-        private bool GenerateDataSyukkoDetail (T_ChumonDetail upch)
+        private bool GenerateDataSyukkoDetail(T_ChumonDetail upch)
         {
-            T_SyukkoDetail selectCondition =  new T_SyukkoDetail
+            T_SyukkoDetail selectCondition = new T_SyukkoDetail
             {
                 SyID = upch.ChID,
                 PrID = upch.PrID,
@@ -417,13 +484,13 @@ namespace SalesManagement_SysDev.Management_Chumon
             return flg;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewDspOrder_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int ClIDtxt;
-            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            label5.Text = ClIDtxt.ToString();
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            //label5.Text = ClIDtxt.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -447,85 +514,16 @@ namespace SalesManagement_SysDev.Management_Chumon
                 return;
             }
 
-            IDtxt.Text = x.ChID;
-            datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpdateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
+            //IDtxt.Text = x.ChID;
+            //datetime.Text = x.RegisteredDate;
+            //userid.Text = x.regUserID;
+            //username.Text = x.regUserName;
+            //uptime.Text = x.UpdateTime;
+            //upuserid.Text = x.LastupdatedUserID;
+            //upusername.Text = x.LastupdatedUserName;
             incntok();
         }
 
-        private void change_Click_1(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
 
-        private void buttonFirstPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridView1.DataSource = chumons.Take(pageSize).ToList();
-            //DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void buttonPreviousPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridView1.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            //DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            if (pageNo + 1 > 1)
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-            else
-                textBoxPageNo.Text = "1";
-        }
-
-        private void buttonNextPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(chumons.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridView1.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            //DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(chumons.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void buttonLastPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(chumons.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = chumons.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            //DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void Chumon_Ser_Load_1(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-            invcnt();
-            chumons = chumonDataAccess.GetChumonDspData();
-            dataGridView1.DataSource = chumons;
-        }
     }
 }
-   
