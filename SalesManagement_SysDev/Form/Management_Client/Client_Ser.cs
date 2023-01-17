@@ -332,6 +332,18 @@ namespace SalesManagement_SysDev.Management_Client
             SetDataGridView();
         }
 
-        
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
+        {
+            int number;
+            int ClIDtxt;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            //label5.Text = ClIDtxt.ToString();
+
+            serchdateset(number);
+            setdatedetail();
+        }
+
+
     }
 }

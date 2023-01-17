@@ -79,6 +79,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
             this.dataGridViewDsp.TabIndex = 44;
             this.dataGridViewDsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDsp_CellClick);
+            this.dataGridViewDsp.SelectionChanged += new System.EventHandler(this.dataGridViewDsp_SelectionChanged);
             // 
             // button_Cle
             // 
