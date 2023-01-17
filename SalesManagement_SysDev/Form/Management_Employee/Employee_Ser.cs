@@ -18,12 +18,14 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         private static List<M_Employee> Emp1;
+        private static int grid = 10;
+
         public Employee_Ser()
         {
             InitializeComponent();
         }
 
-        private void buttonSer_Click(object sender, EventArgs e)
+        private void button_Ser_Click(object sender, EventArgs e)
         {
             //入力データ確認
             if (!GetEmployetDataAtSelect())
@@ -33,6 +35,82 @@ namespace SalesManagement_SysDev.Management_Employee
 
             SetSelectData();
         }
+
+        private void button_Cle_Click(object sender, EventArgs e)
+        {
+            textBoxEmID.Text = "";
+            textBoxSoID.Text = "";
+            textBoxPoID.Text = "";
+            textBoxEmName.Text = "";
+            dateTimePickerEmHiredate.Value = DateTime.Now;
+
+            textBoxEmPhone.Text = "";
+            //textBoxEmHidden.Text = "";
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            dataGridViewDsp.DataSource = employees.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text);
+            //最終ページの計算
+            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            //最終ページでなければ
+            if (pageNo <= lastNo)
+                dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
+            if (pageNo >= lastPage)
+                textBoxPageNo.Text = lastPage.ToString();
+            else
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+            int pageSize = grid;
+            //最終ページの計算
+            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = (pageNo + 1).ToString();
+        }
+
+        private void Employee_Ser_Load_1(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+            invcnt();
+        }
+
         private bool GetEmployetDataAtSelect()
         {
             if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
@@ -40,7 +118,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 //数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M6001");
+                    MessageBox.Show("社員コードは半角数値入力です", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error); //messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -79,7 +157,7 @@ namespace SalesManagement_SysDev.Management_Employee
                         datedubblwget();
                         return;
                     }
-                    else 
+                    else
                     {
                         //Em・Soのみ
                         datePrMaget();
@@ -131,9 +209,10 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
         }
+
         private void SetSelectData()
         {
-            dataGridView1.DataSource = employees;
+            dataGridViewDsp.DataSource = employees;
         }
         private void datedubblwget()
         {
@@ -149,7 +228,7 @@ namespace SalesManagement_SysDev.Management_Employee
                     EmPhone = textBoxEmPhone.Text.Trim(),
                     //EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text.Trim())
                 };
-                employees = EmployeeDataAccess.GetPronlyHdata(selectCondition,dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
+                employees = EmployeeDataAccess.GetPronlyHdata(selectCondition, dateTimePickerEmHiredate.Value, dateTimePickerEmHiredate2.Value);
             }
             else
             {
@@ -165,7 +244,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 };
                 employees = EmployeeDataAccess.GetMaScget(selectCondition);
             }
-         }
+        }
 
         private void dateemget()
         {
@@ -365,17 +444,15 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void SetFormDataGridView()
         {
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "20";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
-            dataGridView1.ReadOnly = true;
+            dataGridViewDsp.ReadOnly = true;
             //行内をクリックすることで行を選択
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             //ヘッダー位置の指定
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //データグリッドビューのデータ取得
             GetDataGridView();
@@ -385,14 +462,14 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
             int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 2;
-            }
-            else
-            {
-                radioint = 0;
-            }
+            //if (radioButton1.Checked == true)
+            //{
+            //    radioint = 2;
+            //}
+            //else
+            //{
+            //    radioint = 0;
+            //}
             // 商品データの取得
             Emp1 = EmployeeDataAccess.GetEmployeeDataDsp(radioint);
 
@@ -401,105 +478,91 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridView1.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
-            foreach (DataGridViewColumn clm in dataGridView1.Columns)
+            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridView1.Columns[0].Width = 80;
-            dataGridView1.Columns[1].Width = 80;
-            dataGridView1.Columns[2].Width = 200;
-            dataGridView1.Columns[3].Width = 200;
-            dataGridView1.Columns[4].Width = 200;
-            dataGridView1.Columns[5].Width = 80;
-            dataGridView1.Columns[6].Width = 80;
-            dataGridView1.Columns[7].Width = 100;
-            dataGridView1.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 150;
 
 
 
             //各列の文字位置の指定
-            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(Emp1.Count / (double)pageSize)) + "ページ";
 
-            dataGridView1.Refresh();
+            dataGridViewDsp.Refresh();
 
         }
         private void invcnt()
         {
-            labelEm.Visible = false;
-            labelSo.Visible = false;
-            labelPo.Visible = false;
-            datetime.Visible = false;
-            userid.Visible = false;
-            username.Visible = false;
-            uptime.Visible = false;
-            upuserid.Visible = false;
-            upusername.Visible = false;
+            //labelEm.Visible = false;
+            //labelSo.Visible = false;
+            //labelPo.Visible = false;
+            //datetime.Visible = false;
+            //userid.Visible = false;
+            //username.Visible = false;
+            //uptime.Visible = false;
+            //upuserid.Visible = false;
+            //upusername.Visible = false;
         }
         private void incntok()
         {
-            labelEm.Visible = true;
-            labelSo.Visible = true;
-            labelPo.Visible = true;
-            datetime.Visible = true;
-            userid.Visible = true;
-            username.Visible = true;
-            uptime.Visible = true;
-            upuserid.Visible = true;
-            upusername.Visible = true;
+            //labelEm.Visible = true;
+            //labelSo.Visible = true;
+            //labelPo.Visible = true;
+            //datetime.Visible = true;
+            //userid.Visible = true;
+            //username.Visible = true;
+            //uptime.Visible = true;
+            //upuserid.Visible = true;
+            //upusername.Visible = true;
         }
-        
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewDsp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int number;
-            number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             serchdateset(number);
             setdatedetail();
         }
-        
 
-        private void Clear_Click(object sender, EventArgs e)
-        {
-            textBoxEmID.Text = "";
-            textBoxSoID.Text = "";
-            textBoxPoID.Text = "";
-            textBoxEmName.Text = "";
-            dateTimePickerEmHiredate.Value = DateTime.Now;
-
-            textBoxEmPhone.Text = "";
-            textBoxEmHidden.Text = "";
-        }
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int EmIDtxt;
-            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
-            EmIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            labelEm.Text = textBoxEmID.ToString();
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            EmIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            //labelEm.Text = textBoxEmID.ToString();
 
             serchdateset(number);
             setdatedetail();
         }
-
 
         private void serchdateset(int number)
         {
@@ -520,161 +583,35 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
 
-            labelEm.Text = x.EmID;
-            labelSo.Text = x.SoID;
-            labelPo.Text = x.PoID;
-            datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpDateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
+            //labelEm.Text = x.EmID;
+            //labelSo.Text = x.SoID;
+            //labelPo.Text = x.PoID;
+            //datetime.Text = x.RegisteredDate;
+            //userid.Text = x.regUserID;
+            //username.Text = x.regUserName;
+            //uptime.Text = x.UpDateTime;
+            //upuserid.Text = x.LastupdatedUserID;
+            //upusername.Text = x.LastupdatedUserName;
             incntok();
 
 
         }
 
-        private void change_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
-
-        private void buttonFirstPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridView1.DataSource = employees.Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void buttonPreviousPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            if (pageNo + 1 > 1)
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-            else
-                textBoxPageNo.Text = "1";
-        }
-
-        private void buttonNextPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void buttonLastPage_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SetDataGridView();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            dataGridView1.DataSource = employees.Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = "1";
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            if (pageNo + 1 > 1)
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-            else
-                textBoxPageNo.Text = "1";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
-                textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int pageSize = int.Parse(textBoxPageSize.Text);
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            dataGridView1.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
-            // DataGridViewを更新
-            dataGridView1.Refresh();
-            //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void button_Hide_Click(object sender, EventArgs e)
         {
             //(int)dataGridView1.CurrentRow.Cells[0].Value;
-            int number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             MessageBox.Show("非表示にしてもよろしいでしょうか？");
             EmployeeDataAccess.upflg(number);
             setdata();
         }
+
         private void setdata()
         {
             Emp1 = EmployeeDataAccess.GetEmployeeDataDsp1();
-            dataGridView1.DataSource = Emp1;
+            dataGridViewDsp.DataSource = Emp1;
         }
+
+        
     }
 }

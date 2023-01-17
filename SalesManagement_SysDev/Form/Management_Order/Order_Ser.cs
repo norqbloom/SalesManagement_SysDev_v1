@@ -18,12 +18,47 @@ namespace SalesManagement_SysDev.Management_Order
         OrderDateAccess orderdateAccess = new OrderDateAccess();
         private static List<T_Order> orders;
         private static List<T_OrderDsp> Or1;
+        private static int grid = 10;
+
         public Order_Ser()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void invcnt()
+        {
+            //labelOr.Visible = false;
+            //labelSo.Visible = false;
+            //labelEm.Visible = false;
+            //labelCl.Visible = false;
+            //datetime.Visible = false;
+            //userid.Visible = false;
+            //username.Visible = false;
+            //uptime.Visible = false;
+            //upuserid.Visible = false;
+            //upusername.Visible = false;
+        }
+        private void incntok()
+        {
+            //labelOr.Visible = true;
+            //labelSo.Visible = true;
+            //labelEm.Visible = true;
+            //labelCl.Visible = true;
+            //datetime.Visible = true;
+            //userid.Visible = true;
+            //username.Visible = true;
+            //uptime.Visible = true;
+            //upuserid.Visible = true;
+            //upusername.Visible = true;
+        }
+
+        private void Order_Ser_Load(object sender, EventArgs e)
+        {
+            SetFormDataGridView();
+            invcnt();
+        }
+
+        private void button_Ser_Click(object sender, EventArgs e)
         {
             if (!GetClientDataAtSelect())
                 return;
@@ -32,6 +67,32 @@ namespace SalesManagement_SysDev.Management_Order
 
             SetSelectData();
         }
+
+        private void button_Cle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_First_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Prev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Last_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool GetClientDataAtSelect()
         {
             if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
@@ -218,13 +279,14 @@ namespace SalesManagement_SysDev.Management_Order
 
                 }
 
-            }  
+            }
         }
 
         private void SetSelectData()
         {
-            dataGridView1.DataSource = orders;
+            dataGridViewDsp.DataSource = orders;
         }
+
         private void datefull()
         {
             //全て入力されている
@@ -248,7 +310,7 @@ namespace SalesManagement_SysDev.Management_Order
                 EmID = int.Parse(textBoxEmID.Text.Trim()),
                 ClCharge = textBoxClChange.Text.Trim(),
             };
-            orders= orderdateAccess.Getorsoem(selectCondition);
+            orders = orderdateAccess.Getorsoem(selectCondition);
 
         }
         private void dateorso()
@@ -404,51 +466,18 @@ namespace SalesManagement_SysDev.Management_Order
             orders = orderdateAccess.Getemso(selectCondition);
         }
 
-        private void Order_Ser_Load(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-            invcnt();
-        }
-        private void invcnt()
-        {
-            labelOr.Visible = false;
-            labelSo.Visible = false;
-            labelEm.Visible = false;
-            labelCl.Visible = false;
-            datetime.Visible = false;
-            userid.Visible = false;
-            username.Visible = false;
-            uptime.Visible = false;
-            upuserid.Visible = false;
-            upusername.Visible = false;
-        }
-        private void incntok()
-        {
-            labelOr.Visible = true;
-            labelSo.Visible = true;
-            labelEm.Visible = true;
-            labelCl.Visible = true;
-            datetime.Visible = true;
-            userid.Visible = true;
-            username.Visible = true;
-            uptime.Visible = true;
-            upuserid.Visible = true;
-            upusername.Visible = true;
-        }
         ////////////////////////////////////////////////////////////////////////////////////////////
         private void SetFormDataGridView()
         {
-            //dataGridViewのページサイズ指定
-            textBoxPageSize.Text = "20";
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
             //読み取り専用に指定
-            dataGridView1.ReadOnly = true;
+            dataGridViewDsp.ReadOnly = true;
             //行内をクリックすることで行を選択
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDsp.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             //ヘッダー位置の指定
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //データグリッドビューのデータ取得
             GetDataGridView();
@@ -458,14 +487,14 @@ namespace SalesManagement_SysDev.Management_Order
         {
 
             int radioint = 0;
-            if (radioButton1.Checked == true)
-            {
-                radioint = 2;
-            }
-            else
-            {
-                radioint = 0;
-            }
+            //if (radioButton1.Checked == true)
+            //{
+            //    radioint = 2;
+            //}
+            //else
+            //{
+            //    radioint = 0;
+            //}
             // 商品データの取得
             Or1 = orderdateAccess.GetProductData2(radioint);
 
@@ -474,63 +503,58 @@ namespace SalesManagement_SysDev.Management_Order
         }
         private void SetDataGridView()
         {
-            int pageSize = int.Parse(textBoxPageSize.Text);
+            int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridView1.DataSource = Or1.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = Or1.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
-            foreach (DataGridViewColumn clm in dataGridView1.Columns)
+            foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridView1.Columns[0].Width = 80;
-            dataGridView1.Columns[1].Width = 80;
-            dataGridView1.Columns[2].Width = 200;
-            dataGridView1.Columns[3].Width = 200;
-            dataGridView1.Columns[4].Width = 200;
-            dataGridView1.Columns[5].Width = 80;
-            dataGridView1.Columns[6].Width = 80;
-            dataGridView1.Columns[7].Width = 100;
-            dataGridView1.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 150;
 
 
 
             //各列の文字位置の指定
-            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(Or1.Count / (double)pageSize)) + "ページ";
 
-            dataGridView1.Refresh();
+            dataGridViewDsp.Refresh();
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            SetFormDataGridView();
-        }
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewDspOrder_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int OrIDtxt;
-            OrIDtxt = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            number = (int)dataGridView1.CurrentRow.Cells[1].Value;
-            labelOr.Text = textBoxOrID.ToString();
+            OrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            //labelOr.Text = textBoxOrID.ToString();
             serchdateset(number);
             setdatedetail();
         }
-
 
         private void serchdateset(int number)
         {
@@ -551,16 +575,16 @@ namespace SalesManagement_SysDev.Management_Order
                 return;
             }
 
-            labelOr.Text = x.OrID;
-            labelSo.Text = x.SoID;
-            labelEm.Text = x.EmID;
-            labelCl.Text = x.ClID;
-            datetime.Text = x.RegisteredDate;
-            userid.Text = x.regUserID;
-            username.Text = x.regUserName;
-            uptime.Text = x.UpDateTime;
-            upuserid.Text = x.LastupdatedUserID;
-            upusername.Text = x.LastupdatedUserName;
+            //labelOr.Text = x.OrID;
+            //labelSo.Text = x.SoID;
+            //labelEm.Text = x.EmID;
+            //labelCl.Text = x.ClID;
+            //datetime.Text = x.RegisteredDate;
+            //userid.Text = x.regUserID;
+            //username.Text = x.regUserName;
+            //uptime.Text = x.UpDateTime;
+            //upuserid.Text = x.LastupdatedUserID;
+            //upusername.Text = x.LastupdatedUserName;
             incntok();
 
 
