@@ -124,21 +124,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //PoID型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M6021");
+                    MessageBox.Show("役職IDは半角数字入力です");//messageDsp.DspMsg("M6021");
                     textBoxPoID.Focus();
                     return false;
                 }
                 //PoID文字数チェック
                 if (textBoxPoID.TextLength > 2)
                 {
-                    messageDsp.DspMsg("M6022");
+                    MessageBox.Show("役職IDは文字数は2文字以下です");//messageDsp.DspMsg("M6022");
                     textBoxPoID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M6023");
+                MessageBox.Show("役職IDを入力してください");//messageDsp.DspMsg("M6023");
                 textBoxPoID.Focus();
                 return false;
             }
@@ -163,7 +163,7 @@ namespace SalesManagement_SysDev.Management_Employee
             }
             else
             {
-                messageDsp.DspMsg("M1035");
+                MessageBox.Show("電話番号入力してください");//messageDsp.DspMsg("M1035");
                 textBoxEmPhone.Focus();
                 return false;
             }
@@ -171,7 +171,7 @@ namespace SalesManagement_SysDev.Management_Employee
             if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
             {
 
-                messageDsp.DspMsg("M6027");
+                MessageBox.Show("社員管理フラグが不確定な状況です");//messageDsp.DspMsg("M6027");
                 checkBoxEmFlag.Focus();
                 return false;
             }

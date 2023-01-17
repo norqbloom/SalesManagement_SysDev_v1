@@ -118,21 +118,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //PoID型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    MessageBox.Show("半角数字やしw");　//messageDsp.DspMsg("M6021");
+                    MessageBox.Show("役職IDは半角数字入力です");　//messageDsp.DspMsg("M6021");
                     textBoxPoID.Focus();
                     return false;
                 }
                 //PoID文字数チェック
                 if (textBoxPoID.TextLength > 2)
                 {
-                    MessageBox.Show("PoIDは文字数は2文字");　//messageDsp.DspMsg("M6022");
+                    MessageBox.Show("役職IDは文字数は2文字以下です");　//messageDsp.DspMsg("M6022");
                     textBoxPoID.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("PoID入力せい");　//messageDsp.DspMsg("M6023");
+                MessageBox.Show("役職IDを入力してください");　//messageDsp.DspMsg("M6023");
                 textBoxPoID.Focus();
                 return false;
             }
@@ -157,7 +157,7 @@ namespace SalesManagement_SysDev.Management_Employee
             }
             else
             {
-                MessageBox.Show("電話番号入力せい");　//messageDsp.DspMsg("M1035");
+                MessageBox.Show("電話番号入力してください");　//messageDsp.DspMsg("M1035");
                 textBoxEmPhone.Focus();
                 return false;
             }
@@ -165,7 +165,7 @@ namespace SalesManagement_SysDev.Management_Employee
             if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
             {
 
-                MessageBox.Show("不確定な状況");　//messageDsp.DspMsg("M6027");
+                MessageBox.Show("社員管理フラグが不確定な状況です");　//messageDsp.DspMsg("M6027");
                 checkBoxEmFlag.Focus();
                 return false;
             }
@@ -213,9 +213,9 @@ namespace SalesManagement_SysDev.Management_Employee
             //登録
             bool flg = employeeDataAccess.UpdEmployeeData(updemp);
             if (flg == true)
-                MessageBox.Show("ok");　//messageDsp.DspMsg("M6015");
+                MessageBox.Show("社員情報を登録しました");　//messageDsp.DspMsg("M6015");
             else
-                MessageBox.Show("no");　//messageDsp.DspMsg("M6016");
+                MessageBox.Show("社員情報の登録に失敗しました");　//messageDsp.DspMsg("M6016");
         }
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
