@@ -411,5 +411,7 @@ namespace SalesManagement_SysDev.Management_Client
                 checkBoxClFlag.Checked = true;
             }
         }
+
+       
     }
 }

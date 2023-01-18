@@ -70,7 +70,6 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxClAddress.Text = "";
             textBoxClPostal.Text = "";
             textBoxClFAX.Text = "";
-            checkBoxClFlag.Checked = false;
         }
 
         private void button_First_Click(object sender, EventArgs e)
@@ -312,15 +311,7 @@ namespace SalesManagement_SysDev.Management_Client
 
         private M_Client GenerateDataAtRegistration()
         {
-            int checkflg;
-            if (checkBoxClFlag.Checked == true)
-            {
-                checkflg = 1;
-            }
-            else
-            {
-                checkflg = 0;
-            }
+            int checkflg　= 0;
             return new M_Client
             {
                 ClID = int.Parse(textBoxClID.Text),

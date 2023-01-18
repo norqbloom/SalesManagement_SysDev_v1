@@ -54,7 +54,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.label_PrHidden = new System.Windows.Forms.Label();
             this.label_PrReleaseDate = new System.Windows.Forms.Label();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
-            this.button_Hide = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_Last = new System.Windows.Forms.Button();
             this.button_Next = new System.Windows.Forms.Button();
@@ -98,7 +97,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1080, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 43;
@@ -109,7 +108,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Add
             // 
             this.button_Add.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Add.Location = new System.Drawing.Point(999, 204);
+            this.button_Add.Location = new System.Drawing.Point(1081, 204);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(75, 36);
             this.button_Add.TabIndex = 42;
@@ -298,17 +297,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 32);
             this.dateTimePickerPrReleaseDate.TabIndex = 67;
             // 
-            // button_Hide
-            // 
-            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Hide.Location = new System.Drawing.Point(1162, 204);
-            this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(75, 36);
-            this.button_Hide.TabIndex = 68;
-            this.button_Hide.Text = "非表示";
-            this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button_Last);
@@ -388,7 +376,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.label_PrReleaseDate);
             this.Controls.Add(this.textBoxPrice);
@@ -454,7 +441,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label_PrHidden;
         private System.Windows.Forms.Label label_PrReleaseDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
-        private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button_Last;
         private System.Windows.Forms.Button button_Next;

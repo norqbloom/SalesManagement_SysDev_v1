@@ -55,7 +55,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelPage = new System.Windows.Forms.Label();
             this.label_EmID = new System.Windows.Forms.Label();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
-            this.button_Hide = new System.Windows.Forms.Button();
+            this.button_Del = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1130, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1131, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 75;
@@ -95,7 +95,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // button_Upd
             // 
             this.button_Upd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Upd.Location = new System.Drawing.Point(968, 204);
+            this.button_Upd.Location = new System.Drawing.Point(969, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
             this.button_Upd.TabIndex = 74;
@@ -315,23 +315,22 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(237, 32);
             this.dateTimePickerEmHiredate.TabIndex = 87;
             // 
-            // button_Hide
+            // button_Del
             // 
-            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Hide.Location = new System.Drawing.Point(1049, 204);
-            this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(75, 36);
-            this.button_Hide.TabIndex = 140;
-            this.button_Hide.Text = "非表示";
-            this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
+            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Del.Location = new System.Drawing.Point(1050, 204);
+            this.button_Del.Name = "button_Del";
+            this.button_Del.Size = new System.Drawing.Size(75, 36);
+            this.button_Del.TabIndex = 140;
+            this.button_Del.Text = "削除";
+            this.button_Del.UseVisualStyleBackColor = true;
             // 
             // Employee_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
-            this.Controls.Add(this.button_Hide);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.button_Cle);
@@ -394,6 +393,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Label label_EmID;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
-        private System.Windows.Forms.Button button_Hide;
+        private System.Windows.Forms.Button button_Del;
     }
 }

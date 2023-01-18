@@ -70,6 +70,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
+            this.button_Del = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,7 +81,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.checkBoxClFlag.AutoSize = true;
             this.checkBoxClFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxClFlag.Location = new System.Drawing.Point(972, 169);
+            this.checkBoxClFlag.Location = new System.Drawing.Point(1081, 50);
             this.checkBoxClFlag.Name = "checkBoxClFlag";
             this.checkBoxClFlag.Size = new System.Drawing.Size(149, 29);
             this.checkBoxClFlag.TabIndex = 51;
@@ -101,7 +102,7 @@ namespace SalesManagement_SysDev.Management_Client
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1161, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 43;
@@ -112,7 +113,7 @@ namespace SalesManagement_SysDev.Management_Client
             // button_Ser
             // 
             this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Ser.Location = new System.Drawing.Point(1080, 204);
+            this.button_Ser.Location = new System.Drawing.Point(1000, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
             this.button_Ser.TabIndex = 42;
@@ -123,7 +124,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxClFAX
             // 
             this.textBoxClFAX.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxClFAX.Location = new System.Drawing.Point(1061, 110);
+            this.textBoxClFAX.Location = new System.Drawing.Point(875, 110);
             this.textBoxClFAX.Name = "textBoxClFAX";
             this.textBoxClFAX.Size = new System.Drawing.Size(157, 32);
             this.textBoxClFAX.TabIndex = 40;
@@ -147,7 +148,7 @@ namespace SalesManagement_SysDev.Management_Client
             // textBoxClPhone
             // 
             this.textBoxClPhone.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxClPhone.Location = new System.Drawing.Point(1061, 51);
+            this.textBoxClPhone.Location = new System.Drawing.Point(875, 48);
             this.textBoxClPhone.Name = "textBoxClPhone";
             this.textBoxClPhone.Size = new System.Drawing.Size(157, 32);
             this.textBoxClPhone.TabIndex = 37;
@@ -180,7 +181,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label_ClFAX.AutoSize = true;
             this.label_ClFAX.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_ClFAX.Location = new System.Drawing.Point(967, 113);
+            this.label_ClFAX.Location = new System.Drawing.Point(781, 113);
             this.label_ClFAX.Name = "label_ClFAX";
             this.label_ClFAX.Size = new System.Drawing.Size(46, 25);
             this.label_ClFAX.TabIndex = 32;
@@ -210,7 +211,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.label_ClPhone.AutoSize = true;
             this.label_ClPhone.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_ClPhone.Location = new System.Drawing.Point(967, 51);
+            this.label_ClPhone.Location = new System.Drawing.Point(781, 51);
             this.label_ClPhone.Name = "label_ClPhone";
             this.label_ClPhone.Size = new System.Drawing.Size(88, 25);
             this.label_ClPhone.TabIndex = 29;
@@ -526,11 +527,23 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_First.UseVisualStyleBackColor = true;
             this.button_First.Click += new System.EventHandler(this.button_First_Click_1);
             // 
+            // button_Del
+            // 
+            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Del.Location = new System.Drawing.Point(1081, 204);
+            this.button_Del.Name = "button_Del";
+            this.button_Del.Size = new System.Drawing.Size(75, 36);
+            this.button_Del.TabIndex = 139;
+            this.button_Del.Text = "削除";
+            this.button_Del.UseVisualStyleBackColor = true;
+            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
+            // 
             // Client_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBoxClFlag);
@@ -612,5 +625,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label labelcreateid;
         private System.Windows.Forms.Label labelcreatedate;
         private System.Windows.Forms.Label labelClID;
+        private System.Windows.Forms.Button button_Del;
     }
 }

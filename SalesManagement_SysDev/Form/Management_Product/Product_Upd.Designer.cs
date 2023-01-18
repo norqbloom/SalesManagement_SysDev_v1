@@ -29,7 +29,6 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Hide = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.labelPrReleaseDate = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
@@ -62,20 +61,10 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
+            this.button_Del = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button_Hide
-            // 
-            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Hide.Location = new System.Drawing.Point(1162, 204);
-            this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(75, 36);
-            this.button_Hide.TabIndex = 68;
-            this.button_Hide.Text = "非表示";
-            this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
             // dateTimePickerPrReleaseDate
             // 
@@ -232,11 +221,12 @@ namespace SalesManagement_SysDev.Management_Product
             this.dataGridViewDsp.RowTemplate.Height = 21;
             this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
             this.dataGridViewDsp.TabIndex = 44;
+            this.dataGridViewDsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDsp_CellClick);
             // 
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1080, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 43;
@@ -247,7 +237,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Upd
             // 
             this.button_Upd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Upd.Location = new System.Drawing.Point(999, 204);
+            this.button_Upd.Location = new System.Drawing.Point(1000, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
             this.button_Upd.TabIndex = 42;
@@ -317,7 +307,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.button_First);
-            this.panel2.Location = new System.Drawing.Point(966, 914);
+            this.panel2.Location = new System.Drawing.Point(1047, 914);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 35);
             this.panel2.TabIndex = 138;
@@ -383,13 +373,23 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_First.Text = "|◀";
             this.button_First.UseVisualStyleBackColor = true;
             // 
+            // button_Del
+            // 
+            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Del.Location = new System.Drawing.Point(1081, 204);
+            this.button_Del.Name = "button_Del";
+            this.button_Del.Size = new System.Drawing.Size(75, 36);
+            this.button_Del.TabIndex = 140;
+            this.button_Del.Text = "削除";
+            this.button_Del.UseVisualStyleBackColor = true;
+            // 
             // Product_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.labelPrReleaseDate);
             this.Controls.Add(this.textBoxPrice);
@@ -430,8 +430,6 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
         private System.Windows.Forms.Label labelPrReleaseDate;
         private System.Windows.Forms.TextBox textBoxPrice;
@@ -464,5 +462,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button button_First;
+        private System.Windows.Forms.Button button_Del;
     }
 }

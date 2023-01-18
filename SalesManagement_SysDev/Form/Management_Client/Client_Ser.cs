@@ -331,6 +331,9 @@ namespace SalesManagement_SysDev.Management_Client
             SetDataGridView();
         }
 
-        
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

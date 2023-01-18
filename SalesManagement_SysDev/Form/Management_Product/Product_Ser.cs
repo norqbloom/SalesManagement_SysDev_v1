@@ -62,7 +62,6 @@ namespace SalesManagement_SysDev.Management_Product
             textBoxPrColor.Text = "";
             dateTimePickerPrReleaseDate.Value = DateTime.Now;
             checkBoxPrFlag.Checked = false;
-            textBoxPrHidden.Text = "";
         }
 
         private void Product_Ser_Load(object sender, EventArgs e)

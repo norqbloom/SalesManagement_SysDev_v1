@@ -29,12 +29,9 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Hide = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.labelPrReleaseDate = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.labelPrHidden = new System.Windows.Forms.Label();
-            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
             this.textBoxPrSafetyStock = new System.Windows.Forms.TextBox();
             this.labelPrSafetyStock = new System.Windows.Forms.Label();
@@ -45,6 +42,20 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID = new System.Windows.Forms.TextBox();
             this.labelScID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelPrID = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelcreateupdname = new System.Windows.Forms.Label();
+            this.labelcreateupdid = new System.Windows.Forms.Label();
+            this.llabelcreateupddate = new System.Windows.Forms.Label();
+            this.labelcreatename = new System.Windows.Forms.Label();
+            this.labelcreateid = new System.Windows.Forms.Label();
+            this.labelcreatedate = new System.Windows.Forms.Label();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.button_Cle = new System.Windows.Forms.Button();
@@ -65,35 +76,11 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelPrID = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelcreateupdname = new System.Windows.Forms.Label();
-            this.labelcreateupdid = new System.Windows.Forms.Label();
-            this.llabelcreateupddate = new System.Windows.Forms.Label();
-            this.labelcreatename = new System.Windows.Forms.Label();
-            this.labelcreateid = new System.Windows.Forms.Label();
-            this.labelcreatedate = new System.Windows.Forms.Label();
+            this.button_Del = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button_Hide
-            // 
-            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Hide.Location = new System.Drawing.Point(1162, 204);
-            this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(75, 36);
-            this.button_Hide.TabIndex = 68;
-            this.button_Hide.Text = "非表示";
-            this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
             // dateTimePickerPrReleaseDate
             // 
@@ -120,25 +107,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
             this.textBoxPrice.TabIndex = 65;
-            // 
-            // labelPrHidden
-            // 
-            this.labelPrHidden.AutoSize = true;
-            this.labelPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.labelPrHidden.Location = new System.Drawing.Point(1032, 114);
-            this.labelPrHidden.Name = "labelPrHidden";
-            this.labelPrHidden.Size = new System.Drawing.Size(107, 25);
-            this.labelPrHidden.TabIndex = 64;
-            this.labelPrHidden.Text = "非表示理由";
-            // 
-            // textBoxPrHidden
-            // 
-            this.textBoxPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrHidden.Location = new System.Drawing.Point(1039, 142);
-            this.textBoxPrHidden.Multiline = true;
-            this.textBoxPrHidden.Name = "textBoxPrHidden";
-            this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxPrHidden.TabIndex = 63;
             // 
             // labelPrice
             // 
@@ -244,205 +212,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 970);
             this.panel1.TabIndex = 52;
-            // 
-            // checkBoxPrFlag
-            // 
-            this.checkBoxPrFlag.AutoSize = true;
-            this.checkBoxPrFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxPrFlag.Location = new System.Drawing.Point(1037, 82);
-            this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxPrFlag.TabIndex = 51;
-            this.checkBoxPrFlag.Text = "商品管理フラグ";
-            this.checkBoxPrFlag.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewDsp
-            // 
-            this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(62, 246);
-            this.dataGridViewDsp.Name = "dataGridViewDsp";
-            this.dataGridViewDsp.RowTemplate.Height = 21;
-            this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
-            this.dataGridViewDsp.TabIndex = 44;
-            // 
-            // button_Cle
-            // 
-            this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1080, 204);
-            this.button_Cle.Name = "button_Cle";
-            this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 43;
-            this.button_Cle.Text = "クリア";
-            this.button_Cle.UseVisualStyleBackColor = true;
-            this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
-            // 
-            // button_Ser
-            // 
-            this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Ser.Location = new System.Drawing.Point(999, 204);
-            this.button_Ser.Name = "button_Ser";
-            this.button_Ser.Size = new System.Drawing.Size(75, 36);
-            this.button_Ser.TabIndex = 42;
-            this.button_Ser.Text = "検索";
-            this.button_Ser.UseVisualStyleBackColor = true;
-            this.button_Ser.Click += new System.EventHandler(this.button_Ser_Click);
-            // 
-            // textBoxPrName
-            // 
-            this.textBoxPrName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrName.Location = new System.Drawing.Point(409, 48);
-            this.textBoxPrName.Name = "textBoxPrName";
-            this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrName.TabIndex = 36;
-            // 
-            // textBoxMaID
-            // 
-            this.textBoxMaID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxMaID.Location = new System.Drawing.Point(164, 110);
-            this.textBoxMaID.Name = "textBoxMaID";
-            this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxMaID.TabIndex = 35;
-            // 
-            // textBoxPrID
-            // 
-            this.textBoxPrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrID.Location = new System.Drawing.Point(164, 48);
-            this.textBoxPrID.Name = "textBoxPrID";
-            this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxPrID.TabIndex = 34;
-            // 
-            // labelPrName
-            // 
-            this.labelPrName.AutoSize = true;
-            this.labelPrName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.labelPrName.Location = new System.Drawing.Point(315, 51);
-            this.labelPrName.Name = "labelPrName";
-            this.labelPrName.Size = new System.Drawing.Size(69, 25);
-            this.labelPrName.TabIndex = 28;
-            this.labelPrName.Text = "商品名";
-            // 
-            // label_PrID
-            // 
-            this.label_PrID.AutoSize = true;
-            this.label_PrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrID.Location = new System.Drawing.Point(69, 51);
-            this.label_PrID.Name = "label_PrID";
-            this.label_PrID.Size = new System.Drawing.Size(70, 25);
-            this.label_PrID.TabIndex = 26;
-            this.label_PrID.Text = "商品ID";
-            // 
-            // labelMaID
-            // 
-            this.labelMaID.AutoSize = true;
-            this.labelMaID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.labelMaID.Location = new System.Drawing.Point(69, 113);
-            this.labelMaID.Name = "labelMaID";
-            this.labelMaID.Size = new System.Drawing.Size(73, 25);
-            this.labelMaID.TabIndex = 27;
-            this.labelMaID.Text = "メーカID";
-            // 
-            // checkBoxdate
-            // 
-            this.checkBoxdate.AutoSize = true;
-            this.checkBoxdate.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBoxdate.Location = new System.Drawing.Point(791, 82);
-            this.checkBoxdate.Name = "checkBoxdate";
-            this.checkBoxdate.Size = new System.Drawing.Size(74, 19);
-            this.checkBoxdate.TabIndex = 69;
-            this.checkBoxdate.Text = "日付検索";
-            this.checkBoxdate.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerPrReleaseDate2
-            // 
-            this.dateTimePickerPrReleaseDate2.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.dateTimePickerPrReleaseDate2.Location = new System.Drawing.Point(1031, 45);
-            this.dateTimePickerPrReleaseDate2.Name = "dateTimePickerPrReleaseDate2";
-            this.dateTimePickerPrReleaseDate2.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePickerPrReleaseDate2.TabIndex = 70;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(997, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 17);
-            this.label1.TabIndex = 71;
-            this.label1.Text = "から";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button_Last);
-            this.panel2.Controls.Add(this.button_Next);
-            this.panel2.Controls.Add(this.button_Prev);
-            this.panel2.Controls.Add(this.textBoxPageNo);
-            this.panel2.Controls.Add(this.labelPage);
-            this.panel2.Controls.Add(this.button_First);
-            this.panel2.Location = new System.Drawing.Point(966, 914);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 35);
-            this.panel2.TabIndex = 138;
-            // 
-            // button_Last
-            // 
-            this.button_Last.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Last.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Last.Location = new System.Drawing.Point(235, 0);
-            this.button_Last.Name = "button_Last";
-            this.button_Last.Size = new System.Drawing.Size(35, 35);
-            this.button_Last.TabIndex = 47;
-            this.button_Last.Text = "▶|";
-            this.button_Last.UseVisualStyleBackColor = true;
-            // 
-            // button_Next
-            // 
-            this.button_Next.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Next.Location = new System.Drawing.Point(194, 0);
-            this.button_Next.Name = "button_Next";
-            this.button_Next.Size = new System.Drawing.Size(35, 35);
-            this.button_Next.TabIndex = 50;
-            this.button_Next.Text = "▶";
-            this.button_Next.UseVisualStyleBackColor = true;
-            // 
-            // button_Prev
-            // 
-            this.button_Prev.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Prev.Location = new System.Drawing.Point(153, 0);
-            this.button_Prev.Name = "button_Prev";
-            this.button_Prev.Size = new System.Drawing.Size(35, 35);
-            this.button_Prev.TabIndex = 49;
-            this.button_Prev.Text = "◀";
-            this.button_Prev.UseVisualStyleBackColor = true;
-            // 
-            // textBoxPageNo
-            // 
-            this.textBoxPageNo.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxPageNo.Location = new System.Drawing.Point(16, 6);
-            this.textBoxPageNo.Name = "textBoxPageNo";
-            this.textBoxPageNo.Size = new System.Drawing.Size(33, 25);
-            this.textBoxPageNo.TabIndex = 45;
-            this.textBoxPageNo.Text = "100";
-            this.textBoxPageNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // labelPage
-            // 
-            this.labelPage.AutoSize = true;
-            this.labelPage.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelPage.Location = new System.Drawing.Point(55, 9);
-            this.labelPage.Name = "labelPage";
-            this.labelPage.Size = new System.Drawing.Size(39, 17);
-            this.labelPage.TabIndex = 46;
-            this.labelPage.Text = "ページ";
-            // 
-            // button_First
-            // 
-            this.button_First.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_First.Location = new System.Drawing.Point(112, 0);
-            this.button_First.Name = "button_First";
-            this.button_First.Size = new System.Drawing.Size(35, 35);
-            this.button_First.TabIndex = 48;
-            this.button_First.Text = "|◀";
-            this.button_First.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -612,21 +381,228 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelcreatedate.TabIndex = 30;
             this.labelcreatedate.Text = "label7";
             // 
+            // checkBoxPrFlag
+            // 
+            this.checkBoxPrFlag.AutoSize = true;
+            this.checkBoxPrFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBoxPrFlag.Location = new System.Drawing.Point(1037, 82);
+            this.checkBoxPrFlag.Name = "checkBoxPrFlag";
+            this.checkBoxPrFlag.Size = new System.Drawing.Size(149, 29);
+            this.checkBoxPrFlag.TabIndex = 51;
+            this.checkBoxPrFlag.Text = "商品管理フラグ";
+            this.checkBoxPrFlag.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewDsp
+            // 
+            this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDsp.Location = new System.Drawing.Point(62, 246);
+            this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowTemplate.Height = 21;
+            this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
+            this.dataGridViewDsp.TabIndex = 44;
+            // 
+            // button_Cle
+            // 
+            this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Cle.Location = new System.Drawing.Point(1162, 204);
+            this.button_Cle.Name = "button_Cle";
+            this.button_Cle.Size = new System.Drawing.Size(75, 36);
+            this.button_Cle.TabIndex = 43;
+            this.button_Cle.Text = "クリア";
+            this.button_Cle.UseVisualStyleBackColor = true;
+            this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
+            // 
+            // button_Ser
+            // 
+            this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Ser.Location = new System.Drawing.Point(1000, 204);
+            this.button_Ser.Name = "button_Ser";
+            this.button_Ser.Size = new System.Drawing.Size(75, 36);
+            this.button_Ser.TabIndex = 42;
+            this.button_Ser.Text = "検索";
+            this.button_Ser.UseVisualStyleBackColor = true;
+            this.button_Ser.Click += new System.EventHandler(this.button_Ser_Click);
+            // 
+            // textBoxPrName
+            // 
+            this.textBoxPrName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxPrName.Location = new System.Drawing.Point(409, 48);
+            this.textBoxPrName.Name = "textBoxPrName";
+            this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
+            this.textBoxPrName.TabIndex = 36;
+            // 
+            // textBoxMaID
+            // 
+            this.textBoxMaID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxMaID.Location = new System.Drawing.Point(164, 110);
+            this.textBoxMaID.Name = "textBoxMaID";
+            this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
+            this.textBoxMaID.TabIndex = 35;
+            // 
+            // textBoxPrID
+            // 
+            this.textBoxPrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxPrID.Location = new System.Drawing.Point(164, 48);
+            this.textBoxPrID.Name = "textBoxPrID";
+            this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
+            this.textBoxPrID.TabIndex = 34;
+            // 
+            // labelPrName
+            // 
+            this.labelPrName.AutoSize = true;
+            this.labelPrName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.labelPrName.Location = new System.Drawing.Point(315, 51);
+            this.labelPrName.Name = "labelPrName";
+            this.labelPrName.Size = new System.Drawing.Size(69, 25);
+            this.labelPrName.TabIndex = 28;
+            this.labelPrName.Text = "商品名";
+            // 
+            // label_PrID
+            // 
+            this.label_PrID.AutoSize = true;
+            this.label_PrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label_PrID.Location = new System.Drawing.Point(69, 51);
+            this.label_PrID.Name = "label_PrID";
+            this.label_PrID.Size = new System.Drawing.Size(70, 25);
+            this.label_PrID.TabIndex = 26;
+            this.label_PrID.Text = "商品ID";
+            // 
+            // labelMaID
+            // 
+            this.labelMaID.AutoSize = true;
+            this.labelMaID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.labelMaID.Location = new System.Drawing.Point(69, 113);
+            this.labelMaID.Name = "labelMaID";
+            this.labelMaID.Size = new System.Drawing.Size(73, 25);
+            this.labelMaID.TabIndex = 27;
+            this.labelMaID.Text = "メーカID";
+            // 
+            // checkBoxdate
+            // 
+            this.checkBoxdate.AutoSize = true;
+            this.checkBoxdate.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.checkBoxdate.Location = new System.Drawing.Point(791, 82);
+            this.checkBoxdate.Name = "checkBoxdate";
+            this.checkBoxdate.Size = new System.Drawing.Size(74, 19);
+            this.checkBoxdate.TabIndex = 69;
+            this.checkBoxdate.Text = "日付検索";
+            this.checkBoxdate.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerPrReleaseDate2
+            // 
+            this.dateTimePickerPrReleaseDate2.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.dateTimePickerPrReleaseDate2.Location = new System.Drawing.Point(1031, 45);
+            this.dateTimePickerPrReleaseDate2.Name = "dateTimePickerPrReleaseDate2";
+            this.dateTimePickerPrReleaseDate2.Size = new System.Drawing.Size(200, 32);
+            this.dateTimePickerPrReleaseDate2.TabIndex = 70;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(997, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 17);
+            this.label1.TabIndex = 71;
+            this.label1.Text = "から";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button_Last);
+            this.panel2.Controls.Add(this.button_Next);
+            this.panel2.Controls.Add(this.button_Prev);
+            this.panel2.Controls.Add(this.textBoxPageNo);
+            this.panel2.Controls.Add(this.labelPage);
+            this.panel2.Controls.Add(this.button_First);
+            this.panel2.Location = new System.Drawing.Point(966, 914);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(271, 35);
+            this.panel2.TabIndex = 138;
+            // 
+            // button_Last
+            // 
+            this.button_Last.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Last.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Last.Location = new System.Drawing.Point(235, 0);
+            this.button_Last.Name = "button_Last";
+            this.button_Last.Size = new System.Drawing.Size(35, 35);
+            this.button_Last.TabIndex = 47;
+            this.button_Last.Text = "▶|";
+            this.button_Last.UseVisualStyleBackColor = true;
+            // 
+            // button_Next
+            // 
+            this.button_Next.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Next.Location = new System.Drawing.Point(194, 0);
+            this.button_Next.Name = "button_Next";
+            this.button_Next.Size = new System.Drawing.Size(35, 35);
+            this.button_Next.TabIndex = 50;
+            this.button_Next.Text = "▶";
+            this.button_Next.UseVisualStyleBackColor = true;
+            // 
+            // button_Prev
+            // 
+            this.button_Prev.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Prev.Location = new System.Drawing.Point(153, 0);
+            this.button_Prev.Name = "button_Prev";
+            this.button_Prev.Size = new System.Drawing.Size(35, 35);
+            this.button_Prev.TabIndex = 49;
+            this.button_Prev.Text = "◀";
+            this.button_Prev.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPageNo
+            // 
+            this.textBoxPageNo.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxPageNo.Location = new System.Drawing.Point(16, 6);
+            this.textBoxPageNo.Name = "textBoxPageNo";
+            this.textBoxPageNo.Size = new System.Drawing.Size(33, 25);
+            this.textBoxPageNo.TabIndex = 45;
+            this.textBoxPageNo.Text = "100";
+            this.textBoxPageNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelPage
+            // 
+            this.labelPage.AutoSize = true;
+            this.labelPage.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelPage.Location = new System.Drawing.Point(55, 9);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(39, 17);
+            this.labelPage.TabIndex = 46;
+            this.labelPage.Text = "ページ";
+            // 
+            // button_First
+            // 
+            this.button_First.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_First.Location = new System.Drawing.Point(112, 0);
+            this.button_First.Name = "button_First";
+            this.button_First.Size = new System.Drawing.Size(35, 35);
+            this.button_First.TabIndex = 48;
+            this.button_First.Text = "|◀";
+            this.button_First.UseVisualStyleBackColor = true;
+            // 
+            // button_Del
+            // 
+            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Del.Location = new System.Drawing.Point(1081, 204);
+            this.button_Del.Name = "button_Del";
+            this.button_Del.Size = new System.Drawing.Size(75, 36);
+            this.button_Del.TabIndex = 139;
+            this.button_Del.Text = "削除";
+            this.button_Del.UseVisualStyleBackColor = true;
+            // 
             // Product_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerPrReleaseDate2);
             this.Controls.Add(this.checkBoxdate);
-            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.labelPrReleaseDate);
             this.Controls.Add(this.textBoxPrice);
-            this.Controls.Add(this.labelPrHidden);
-            this.Controls.Add(this.textBoxPrHidden);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.textBoxPrSafetyStock);
             this.Controls.Add(this.labelPrSafetyStock);
@@ -664,13 +640,9 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
         private System.Windows.Forms.Label labelPrReleaseDate;
         private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.Label labelPrHidden;
-        private System.Windows.Forms.TextBox textBoxPrHidden;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.TextBox textBoxPrSafetyStock;
         private System.Windows.Forms.Label labelPrSafetyStock;
@@ -715,5 +687,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label labelcreatename;
         private System.Windows.Forms.Label labelcreateid;
         private System.Windows.Forms.Label labelcreatedate;
+        private System.Windows.Forms.Button button_Del;
     }
 }
