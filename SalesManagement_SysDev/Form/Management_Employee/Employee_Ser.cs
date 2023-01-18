@@ -487,28 +487,28 @@ namespace SalesManagement_SysDev.Management_Employee
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridViewDsp.Columns[0].Width = 80;
-            dataGridViewDsp.Columns[1].Width = 80;
-            dataGridViewDsp.Columns[2].Width = 200;
-            dataGridViewDsp.Columns[3].Width = 200;
-            dataGridViewDsp.Columns[4].Width = 200;
-            dataGridViewDsp.Columns[5].Width = 80;
-            dataGridViewDsp.Columns[6].Width = 80;
-            dataGridViewDsp.Columns[7].Width = 100;
-            dataGridViewDsp.Columns[8].Width = 150;
+            //dataGridViewDsp.Columns[0].Width = 80;
+            //dataGridViewDsp.Columns[1].Width = 80;
+            //dataGridViewDsp.Columns[2].Width = 200;
+            //dataGridViewDsp.Columns[3].Width = 200;
+            //dataGridViewDsp.Columns[4].Width = 200;
+            //dataGridViewDsp.Columns[5].Width = 80;
+            //dataGridViewDsp.Columns[6].Width = 80;
+            //dataGridViewDsp.Columns[7].Width = 100;
+            //dataGridViewDsp.Columns[8].Width = 150;
 
 
 
             //各列の文字位置の指定
-            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
@@ -610,6 +610,9 @@ namespace SalesManagement_SysDev.Management_Employee
             dataGridViewDsp.DataSource = Emp1;
         }
 
-        
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

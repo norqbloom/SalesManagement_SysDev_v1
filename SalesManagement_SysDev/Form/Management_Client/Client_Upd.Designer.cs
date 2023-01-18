@@ -114,7 +114,7 @@ namespace SalesManagement_SysDev.Management_Client
             // button_Upd
             // 
             this.button_Upd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Upd.Location = new System.Drawing.Point(1081, 204);
+            this.button_Upd.Location = new System.Drawing.Point(1000, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
             this.button_Upd.TabIndex = 42;
@@ -321,7 +321,7 @@ namespace SalesManagement_SysDev.Management_Client
             // button_Del
             // 
             this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Del.Location = new System.Drawing.Point(1000, 204);
+            this.button_Del.Location = new System.Drawing.Point(1081, 204);
             this.button_Del.Name = "button_Del";
             this.button_Del.Size = new System.Drawing.Size(75, 36);
             this.button_Del.TabIndex = 140;

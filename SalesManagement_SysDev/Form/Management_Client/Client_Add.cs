@@ -231,12 +231,6 @@ namespace SalesManagement_SysDev.Management_Client
             //住所
             if (!String.IsNullOrEmpty(textBoxClAddress.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
-                {
-                    messageDsp.DspMsg("M1032");//MessageBox.Show("住所は全角入力です");
-                    textBoxClAddress.Focus();
-                    return false;
-                }
                 if (textBoxClAddress.Text.Length > 50)
                 {
                     messageDsp.DspMsg("M1012"); //住所は50文字以下です
@@ -294,18 +288,7 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClPhone.Focus();
                 return false;
             }
-            //if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
-            //{
-            //    messageDsp.DspMsg("M2037"); //MessageBox.Show("非表示理由は全角入力です");
-            //    textBoxClHidden.Focus();
-            //    return false;
-            //}
-            //if (checkBoxClFLG.CheckState == CheckState.Indeterminate)
-            //{
-            //    MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M4004");
-            //    checkBoxClFLG.Focus();
-            //    return false;
-            //}
+
             return true;
         }
 
@@ -371,16 +354,6 @@ namespace SalesManagement_SysDev.Management_Client
             }
         }
 
-        private void SetDataGridView()
-        {
-            int pageSize = grid;
-            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
-            labelPage.Text = "/" + ((int)Math.Ceiling(clients.Count / (double)pageSize)) + "ページ";
-
-            dataGridViewDsp.Refresh();
-        }
-
         private void setdata()
         {
             clients = clientDataAccess.GetClientDspData();
@@ -393,7 +366,7 @@ namespace SalesManagement_SysDev.Management_Client
             dataGridViewDsp.ReadOnly = true;
             //dataGridViewのページ番号指定
             textBoxPageNo.Text = "1";
-            dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GetDataGridView();
         }
 
@@ -407,6 +380,14 @@ namespace SalesManagement_SysDev.Management_Client
             SetDataGridView();
         }
 
-        
+        private void SetDataGridView()
+        {
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text) - 1;
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            labelPage.Text = "/" + ((int)Math.Ceiling(clients.Count / (double)pageSize)) + "ページ";
+
+            dataGridViewDsp.Refresh();
+        }
     }
 }

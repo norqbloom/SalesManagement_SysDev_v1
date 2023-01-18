@@ -320,6 +320,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Last.TabIndex = 47;
             this.button_Last.Text = "▶|";
             this.button_Last.UseVisualStyleBackColor = true;
+            this.button_Last.Click += new System.EventHandler(this.button_Last_Click_1);
             // 
             // button_Next
             // 
@@ -330,6 +331,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Next.TabIndex = 50;
             this.button_Next.Text = "▶";
             this.button_Next.UseVisualStyleBackColor = true;
+            this.button_Next.Click += new System.EventHandler(this.button_Next_Click_1);
             // 
             // button_Prev
             // 
@@ -340,6 +342,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Prev.TabIndex = 49;
             this.button_Prev.Text = "◀";
             this.button_Prev.UseVisualStyleBackColor = true;
+            this.button_Prev.Click += new System.EventHandler(this.button_Prev_Click_1);
             // 
             // textBoxPageNo
             // 
@@ -369,6 +372,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_First.TabIndex = 48;
             this.button_First.Text = "|◀";
             this.button_First.UseVisualStyleBackColor = true;
+            this.button_First.Click += new System.EventHandler(this.button_First_Click_1);
             // 
             // Product_Add
             // 

@@ -265,8 +265,18 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxPageNo.Text = "1";
             dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GetDataGridView();
-
         }
+
+        private void GetDataGridView()
+        {
+
+            int radioint = 0;
+            // 商品データの取得
+            clients = clientDataAccess.GetProductDataDsp(radioint);
+            // DataGridViewに表示するデータを指定
+            SetDataGridView();
+        }
+     
         private void SetDataGridView()
         {
             int pageSize = grid;
@@ -277,6 +287,10 @@ namespace SalesManagement_SysDev.Management_Client
             dataGridViewDsp.Refresh();
         }
 
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+
+        }
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
@@ -321,19 +335,6 @@ namespace SalesManagement_SysDev.Management_Client
             incntok();
         }
 
-        private void GetDataGridView()
-        {
-
-            int radioint = 0;
-            // 商品データの取得
-            clients = clientDataAccess.GetProductDataDsp(radioint);
-            // DataGridViewに表示するデータを指定
-            SetDataGridView();
-        }
-
-        private void button_Del_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

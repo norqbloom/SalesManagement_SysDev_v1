@@ -169,12 +169,6 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxSoID.Focus();
                     return false;
                 }
-                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
-                {
-                    messageDsp.DspMsg("M1007");　//入力された営業所IDは既に存在しています
-                    textBoxSoID.Focus();
-                    return false;
-                }
             }
             else
             {
@@ -223,12 +217,6 @@ namespace SalesManagement_SysDev.Management_Client
             //住所
             if (!String.IsNullOrEmpty(textBoxClAddress.Text.Trim()))
             {
-                if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
-                {
-                    messageDsp.DspMsg("M1032"); //MessageBox.Show("住所は全角入力です");
-                    textBoxClAddress.Focus();
-                    return false;
-                }
                 if (textBoxClAddress.Text.Length > 50)
                 {
                     messageDsp.DspMsg("M1012");　//住所は50文字以下です
@@ -284,18 +272,7 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClPostal.Focus();
                 return false;
             }
-            //if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
-            //{
-            //    messageDsp.DspMsg("M2037");　//MessageBox.Show("非表示理由は全角入力です"); 
-            //    textBoxClHidden.Focus();
-            //    return false;
-            //}
-            //if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
-            //{
-            //    MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M40０4");
-            //    checkBoxClFlag.Focus();
-            //    return false;
-            //}
+
             return true;
         }
 
@@ -340,12 +317,12 @@ namespace SalesManagement_SysDev.Management_Client
         private M_clhistory GenerateDataAtUpdatehistory()
         {
             var context = new SalesManagement_DevContext();
-            var clhistorie = context.M_Clhistory.Single(x => x.ClID == textBoxSoID.Text);
+            var clhistorie = context.M_Clhistory.Single(x => x.ClID == textBoxClID.Text);
             DateTime dt = DateTime.Now;
             string regtime = dt.ToString("MM/dd HH;mm");
             return new M_clhistory
             {
-                ClID = textBoxSoID.Text,
+                ClID = textBoxClID.Text,
                 UpDateTime = regtime,
                 LastupdatedUserID = template.EmID.ToString(),
                 LastupdatedUserName = template.loginName

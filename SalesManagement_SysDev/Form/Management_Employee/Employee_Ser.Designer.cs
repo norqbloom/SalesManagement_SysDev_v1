@@ -534,6 +534,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.button_Del.TabIndex = 139;
             this.button_Del.Text = "削除";
             this.button_Del.UseVisualStyleBackColor = true;
+            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
             // 
             // Employee_Ser
             // 

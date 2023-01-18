@@ -425,5 +425,10 @@ namespace SalesManagement_SysDev.Management_Employee
             Emp1 = employeeDataAccess.GetEmployeeDataDsp1();
             dataGridViewDsp.DataSource = Emp1;
         }
+
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

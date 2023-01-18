@@ -101,7 +101,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClFAX.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.textBoxClFAX.Location = new System.Drawing.Point(1061, 110);
             this.textBoxClFAX.Name = "textBoxClFAX";
-            this.textBoxClFAX.Size = new System.Drawing.Size(91, 32);
+            this.textBoxClFAX.Size = new System.Drawing.Size(157, 32);
             this.textBoxClFAX.TabIndex = 40;
             // 
             // textBoxClAddress
