@@ -377,7 +377,7 @@ namespace SalesManagement_SysDev
             }
             return client;
         }
-        public bool upflg(int number)
+        public bool delflg(int number)
         {
             try
             {

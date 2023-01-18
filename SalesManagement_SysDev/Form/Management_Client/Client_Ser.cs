@@ -289,7 +289,20 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void button_Del_Click(object sender, EventArgs e)
         {
-
+            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            DialogResult result =  MessageBox.Show("keshimasuka?","kes",MessageBoxButtons.OKCancel);
+            if(result == DialogResult.OK)
+            {
+                clientDataAccess.delflg(number);
+                setdata();
+            }
+            else
+            {
+                return;
+            }
+            //MessageBox.Show("非表示にしてもよろしいでしょうか？");
+            //clientDataAccess.delflg(number);
+            //setdata();
         }
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
