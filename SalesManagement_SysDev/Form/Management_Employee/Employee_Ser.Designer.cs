@@ -95,7 +95,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dataGridViewDsp.RowTemplate.Height = 21;
             this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
             this.dataGridViewDsp.TabIndex = 76;
-            this.dataGridViewDsp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDsp_CellContentClick);
+            this.dataGridViewDsp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDsp_CellContentClick_1);
             this.dataGridViewDsp.SelectionChanged += new System.EventHandler(this.dataGridViewDsp_SelectionChanged);
             // 
             // button_Cle

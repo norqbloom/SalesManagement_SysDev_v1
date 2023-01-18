@@ -461,14 +461,6 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
             int radioint = 0;
-            //if (radioButton1.Checked == true)
-            //{
-            //    radioint = 2;
-            //}
-            //else
-            //{
-            //    radioint = 0;
-            //}
             // 商品データの取得
             Emp1 = EmployeeDataAccess.GetEmployeeDataDsp(radioint);
 
@@ -543,12 +535,13 @@ namespace SalesManagement_SysDev.Management_Employee
             //upusername.Visible = true;
         }
 
-        private void dataGridViewDsp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dataGridViewDsp_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int number;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            serchdateset(number);
-            setdatedetail();
+            //int number;
+            //number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            //serchdateset(number);
+            //setdatedetail();
         }
 
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
@@ -614,5 +607,7 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
         }
+
+        
     }
 }

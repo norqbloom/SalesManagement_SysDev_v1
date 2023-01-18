@@ -293,23 +293,12 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int number;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            M_Employee selectCondition = new M_Employee()
-            {
-                EmID = number
-            };
-
-            employees = employeeDataAccess.GetEmIDdate(selectCondition);
-            var x = employees.FirstOrDefault();
-            textBoxEmID.Text = x.EmID.ToString();
-            textBoxEmName.Text = x.EmName;
-            textBoxSoID.Text = x.SoID.ToString();
-            textBoxPoID.Text = x.PoID.ToString();
-            dateTimePickerEmHiredate.Text = x.EmHiredate.ToString();
-            textBoxEmPhone.Text = x.EmPhone;
-            //textBoxEmHidden.Text = x.EmHidden;
-            //チェックボックスの状態を判断
+            textBoxEmID.Text = dataGridViewDsp.CurrentRow.Cells[0].Value.ToString();
+            textBoxEmName.Text = dataGridViewDsp.CurrentRow.Cells[1].Value.ToString();
+            textBoxSoID.Text = dataGridViewDsp.CurrentRow.Cells[2].Value.ToString();
+            textBoxPoID.Text = dataGridViewDsp.CurrentRow.Cells[3].Value.ToString();
+            dateTimePickerEmHiredate.Text = dataGridViewDsp.CurrentRow.Cells[4].Value.ToString();
+            textBoxEmPhone.Text = dataGridViewDsp.CurrentRow.Cells[6].Value.ToString();
             if ((int)dataGridViewDsp.CurrentRow.Cells[7].Value == 0)
             {
                 checkBoxEmFlag.Checked = false;
@@ -318,8 +307,15 @@ namespace SalesManagement_SysDev.Management_Employee
             {
                 checkBoxEmFlag.Checked = true;
             }
-            //各種Formロードと各種ボタンに下記を入力する
-            SetFormDataGridView();
+
+            if (dataGridViewDsp.CurrentRow.Cells[8].Value == null)
+            {
+                textBoxEmHidden.Text = null;
+            }
+            else
+            {
+                textBoxEmHidden.Text = dataGridViewDsp.CurrentRow.Cells[8].Value.ToString();
+            }        
         }
 
         private static List<M_Employee> Emp1;
