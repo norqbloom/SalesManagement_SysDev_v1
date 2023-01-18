@@ -53,6 +53,7 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmName.Text = "";
             dateTimePickerEmHiredate.Value = DateTime.Now; 
             textBoxEmPhone.Text = "";
+            textBoxEmHidden.Text = "";
         }
 
         private void button_First_Click(object sender, EventArgs e)
