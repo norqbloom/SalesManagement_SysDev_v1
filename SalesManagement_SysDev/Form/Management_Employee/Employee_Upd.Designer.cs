@@ -225,9 +225,9 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label_PrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.label_PrHidden.Location = new System.Drawing.Point(985, 82);
             this.label_PrHidden.Name = "label_PrHidden";
-            this.label_PrHidden.Size = new System.Drawing.Size(107, 25);
+            this.label_PrHidden.Size = new System.Drawing.Size(183, 25);
             this.label_PrHidden.TabIndex = 85;
-            this.label_PrHidden.Text = "非表示理由";
+            this.label_PrHidden.Text = "削除理由（非表示）";
             // 
             // textBoxEmHidden
             // 
