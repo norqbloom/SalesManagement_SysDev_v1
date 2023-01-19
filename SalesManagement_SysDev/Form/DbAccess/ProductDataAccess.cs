@@ -11,6 +11,25 @@ namespace SalesManagement_SysDev
     class ProductDataAccess
     {
 
+        public bool delflg(int number)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var client = context.M_Products.Single(x => x.PrID == number);
+                client.PrFlag = 2;
+                context.SaveChanges();
+                context.Dispose();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return true;
+        }
+
         ///////////////////////////////
         //メソッド名：CheckPrIDExistence()
         //引　数   ：商品ID

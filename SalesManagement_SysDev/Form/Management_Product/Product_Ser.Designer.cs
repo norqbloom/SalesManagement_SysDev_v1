@@ -76,7 +76,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
-            this.button_Del = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
@@ -415,7 +414,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Ser
             // 
             this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Ser.Location = new System.Drawing.Point(1000, 204);
+            this.button_Ser.Location = new System.Drawing.Point(1081, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
             this.button_Ser.TabIndex = 42;
@@ -584,23 +583,11 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_First.UseVisualStyleBackColor = true;
             this.button_First.Click += new System.EventHandler(this.button_First_Click_1);
             // 
-            // button_Del
-            // 
-            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Del.Location = new System.Drawing.Point(1081, 204);
-            this.button_Del.Name = "button_Del";
-            this.button_Del.Size = new System.Drawing.Size(75, 36);
-            this.button_Del.TabIndex = 139;
-            this.button_Del.Text = "削除";
-            this.button_Del.UseVisualStyleBackColor = true;
-            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
-            // 
             // Product_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
-            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerPrReleaseDate2);
@@ -692,6 +679,5 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label labelcreatename;
         private System.Windows.Forms.Label labelcreateid;
         private System.Windows.Forms.Label labelcreatedate;
-        private System.Windows.Forms.Button button_Del;
     }
 }

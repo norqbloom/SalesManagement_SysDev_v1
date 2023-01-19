@@ -383,7 +383,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 var client = context.M_Clients.Single(x => x.ClID == number);
-                client.ClFlag = 1;
+                client.ClFlag = 2;
                 context.SaveChanges();
                 context.Dispose();
             }

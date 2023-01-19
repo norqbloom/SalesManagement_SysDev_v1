@@ -310,7 +310,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
             if (dataGridViewDsp.CurrentRow.Cells[8].Value == null)
             {
-                textBoxEmHidden.Text = null;
+                textBoxEmHidden.Text = String.Empty;
             }
             else
             {
@@ -424,7 +424,28 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void button_Del_Click(object sender, EventArgs e)
         {
-
+            if (!String.IsNullOrEmpty(textBoxEmHidden.Text.Trim()))
+            {
+                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    employeeDataAccess.delflg(number);
+                    int radioint = 0;
+                    employees = employeeDataAccess.GetEmployeeDataDsp(radioint);
+                    dataGridViewDsp.DataSource = employees;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("削除理由が入力されていません");
+                textBoxEmHidden.Focus();
+                return;
+            }
         }
     }
 }

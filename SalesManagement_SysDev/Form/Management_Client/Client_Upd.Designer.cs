@@ -57,7 +57,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_First = new System.Windows.Forms.Button();
             this.button_Del = new System.Windows.Forms.Button();
             this.labelPrHidden = new System.Windows.Forms.Label();
-            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
+            this.textBoxClHidden = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -327,6 +327,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Del.TabIndex = 140;
             this.button_Del.Text = "削除";
             this.button_Del.UseVisualStyleBackColor = true;
+            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
             // 
             // labelPrHidden
             // 
@@ -334,18 +335,18 @@ namespace SalesManagement_SysDev.Management_Client
             this.labelPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.labelPrHidden.Location = new System.Drawing.Point(1076, 113);
             this.labelPrHidden.Name = "labelPrHidden";
-            this.labelPrHidden.Size = new System.Drawing.Size(107, 25);
+            this.labelPrHidden.Size = new System.Drawing.Size(183, 25);
             this.labelPrHidden.TabIndex = 142;
-            this.labelPrHidden.Text = "非表示理由";
+            this.labelPrHidden.Text = "削除理由（非表示）";
             // 
-            // textBoxPrHidden
+            // textBoxClHidden
             // 
-            this.textBoxPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrHidden.Location = new System.Drawing.Point(1083, 141);
-            this.textBoxPrHidden.Multiline = true;
-            this.textBoxPrHidden.Name = "textBoxPrHidden";
-            this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxPrHidden.TabIndex = 141;
+            this.textBoxClHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxClHidden.Location = new System.Drawing.Point(1083, 141);
+            this.textBoxClHidden.Multiline = true;
+            this.textBoxClHidden.Name = "textBoxClHidden";
+            this.textBoxClHidden.Size = new System.Drawing.Size(187, 57);
+            this.textBoxClHidden.TabIndex = 141;
             // 
             // Client_Upd
             // 
@@ -353,7 +354,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
             this.Controls.Add(this.labelPrHidden);
-            this.Controls.Add(this.textBoxPrHidden);
+            this.Controls.Add(this.textBoxClHidden);
             this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -418,6 +419,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Button button_First;
         private System.Windows.Forms.Button button_Del;
         private System.Windows.Forms.Label labelPrHidden;
-        private System.Windows.Forms.TextBox textBoxPrHidden;
+        private System.Windows.Forms.TextBox textBoxClHidden;
     }
 }
