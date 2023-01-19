@@ -80,9 +80,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
             this.button_Del = new System.Windows.Forms.Button();
-<<<<<<< HEAD
->>>>>>> parent of 6b341c6 (a)
-=======
 >>>>>>> parent of 6b341c6 (a)
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel1.SuspendLayout();
@@ -470,17 +467,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Del.UseVisualStyleBackColor = true;
             this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
             // 
-            // button_Del
-            // 
-            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Del.Location = new System.Drawing.Point(1081, 204);
-            this.button_Del.Name = "button_Del";
-            this.button_Del.Size = new System.Drawing.Size(75, 36);
-            this.button_Del.TabIndex = 139;
-            this.button_Del.Text = "削除";
-            this.button_Del.UseVisualStyleBackColor = true;
-            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
-            // 
             // Client_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -579,9 +565,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label labelcreatedate;
         private System.Windows.Forms.Label labelClID;
         private System.Windows.Forms.Button button_Del;
-<<<<<<< HEAD
->>>>>>> parent of 6b341c6 (a)
-=======
 >>>>>>> parent of 6b341c6 (a)
     }
 }
