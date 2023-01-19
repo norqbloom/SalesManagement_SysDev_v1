@@ -56,6 +56,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.upusername = new System.Windows.Forms.Label();
             this.upuserid = new System.Windows.Forms.Label();
             this.uptime = new System.Windows.Forms.Label();
@@ -63,6 +64,23 @@ namespace SalesManagement_SysDev.Management_Client
             this.userid = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.Label();
             this.IDtxt = new System.Windows.Forms.Label();
+=======
+            this.labelcreateupdname = new System.Windows.Forms.Label();
+            this.labelcreateupdid = new System.Windows.Forms.Label();
+            this.llabelcreateupddate = new System.Windows.Forms.Label();
+            this.labelcreatename = new System.Windows.Forms.Label();
+            this.labelcreateid = new System.Windows.Forms.Label();
+            this.labelcreatedate = new System.Windows.Forms.Label();
+            this.labelClID = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button_Last = new System.Windows.Forms.Button();
+            this.button_Next = new System.Windows.Forms.Button();
+            this.button_Prev = new System.Windows.Forms.Button();
+            this.textBoxPageNo = new System.Windows.Forms.TextBox();
+            this.labelPage = new System.Windows.Forms.Label();
+            this.button_First = new System.Windows.Forms.Button();
+            this.button_Del = new System.Windows.Forms.Button();
+>>>>>>> parent of 6b341c6 (a)
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,7 +123,7 @@ namespace SalesManagement_SysDev.Management_Client
             // button_Ser
             // 
             this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Ser.Location = new System.Drawing.Point(1078, 204);
+            this.button_Ser.Location = new System.Drawing.Point(1000, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
             this.button_Ser.TabIndex = 42;
@@ -438,11 +456,23 @@ namespace SalesManagement_SysDev.Management_Client
             this.IDtxt.TabIndex = 0;
             this.IDtxt.Text = "label6";
             // 
+            // button_Del
+            // 
+            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Del.Location = new System.Drawing.Point(1081, 204);
+            this.button_Del.Name = "button_Del";
+            this.button_Del.Size = new System.Drawing.Size(75, 36);
+            this.button_Del.TabIndex = 139;
+            this.button_Del.Text = "削除";
+            this.button_Del.UseVisualStyleBackColor = true;
+            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
+            // 
             // Client_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBoxClFlag);
@@ -517,6 +547,7 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+<<<<<<< HEAD
         private System.Windows.Forms.Label upusername;
         private System.Windows.Forms.Label upuserid;
         private System.Windows.Forms.Label uptime;
@@ -525,5 +556,15 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label datetime;
         private System.Windows.Forms.Label IDtxt;
 
+=======
+        private System.Windows.Forms.Label labelcreateupdname;
+        private System.Windows.Forms.Label labelcreateupdid;
+        private System.Windows.Forms.Label llabelcreateupddate;
+        private System.Windows.Forms.Label labelcreatename;
+        private System.Windows.Forms.Label labelcreateid;
+        private System.Windows.Forms.Label labelcreatedate;
+        private System.Windows.Forms.Label labelClID;
+        private System.Windows.Forms.Button button_Del;
+>>>>>>> parent of 6b341c6 (a)
     }
 }

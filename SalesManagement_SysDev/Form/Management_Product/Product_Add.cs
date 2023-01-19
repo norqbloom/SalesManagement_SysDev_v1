@@ -132,6 +132,8 @@ namespace SalesManagement_SysDev.Management_Product
             textBoxPrModelNumber.Text = "";
             textBoxPrColor.Text = "";
             dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            checkBoxPrFlag.Checked = false;
+            textBoxPrHidden.Text = "";
         }
 
         private bool GetValidDataAtRegistration()
@@ -313,13 +315,38 @@ namespace SalesManagement_SysDev.Management_Product
                 messageDsp.DspMsg("M2026");//色は入力されていません
                 textBoxPrColor.Focus();
                 return false;
-            }         
+            }
+            //商品管理フラグ
+            if (checkBoxPrFlag.CheckState == CheckState.Indeterminate)
+            {
+                messageDsp.DspMsg("");//メッセージ不明
+                checkBoxPrFlag.Focus();
+                return false;
+            }
+            //非表示理由
+            if (checkBoxPrFlag.Checked == true)
+            {
+                if (!String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M");//メッセージ不明
+                    checkBoxPrFlag.Focus();
+                    return false;
+                }
+            }
             return true;
             }
         private M_Product GenerateDataAtRegistration()
         {
             //フラグが選択されている場合
-            int checkflg = 0;
+            int checkflg;
+            if (checkBoxPrFlag.Checked == true)
+            {
+                checkflg = 2;
+            }
+            else
+            {
+                checkflg = 0;
+            }
             //登録情報のセット
             return new M_Product
             {
@@ -333,7 +360,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text),
                 PrFlag = checkflg,
-                PrHidden = null
+                PrHidden = textBoxPrHidden.Text.Trim()
             };
         }
 
