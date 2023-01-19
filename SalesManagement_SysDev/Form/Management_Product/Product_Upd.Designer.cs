@@ -98,9 +98,9 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.labelPrHidden.Location = new System.Drawing.Point(1042, 82);
             this.labelPrHidden.Name = "labelPrHidden";
-            this.labelPrHidden.Size = new System.Drawing.Size(183, 25);
+            this.labelPrHidden.Size = new System.Drawing.Size(107, 25);
             this.labelPrHidden.TabIndex = 64;
-            this.labelPrHidden.Text = "削除理由（非表示）";
+            this.labelPrHidden.Text = "非表示理由";
             // 
             // textBoxPrHidden
             // 
