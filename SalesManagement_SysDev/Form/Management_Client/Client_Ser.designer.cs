@@ -524,6 +524,5 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Label userid;
         private System.Windows.Forms.Label datetime;
         private System.Windows.Forms.Label IDtxt;
-
     }
 }
