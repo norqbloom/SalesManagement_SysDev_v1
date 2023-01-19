@@ -313,7 +313,8 @@ namespace SalesManagement_SysDev.Management_Client
                 invcnt();
                 return;
             }
-            ClIDtxt.Text = x.ClID;
+
+            IDtxt.Text = x.ClID;
             datetime.Text = x.RegisteredDate;
             userid.Text = x.regUserID;
             username.Text = x.regUserName;
