@@ -262,6 +262,10 @@ namespace SalesManagement_SysDev.Management_Employee
                 checkflg = 0;
             }
 
+
+            //Random pw = new Random();
+            //byte[] rndary = new byte[1];
+            //pw.NextBytes(rndary);
             return new M_Employee
             {
 
@@ -293,12 +297,23 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxEmID.Text = dataGridViewDsp.CurrentRow.Cells[0].Value.ToString();
-            textBoxEmName.Text = dataGridViewDsp.CurrentRow.Cells[1].Value.ToString();
-            textBoxSoID.Text = dataGridViewDsp.CurrentRow.Cells[2].Value.ToString();
-            textBoxPoID.Text = dataGridViewDsp.CurrentRow.Cells[3].Value.ToString();
-            dateTimePickerEmHiredate.Text = dataGridViewDsp.CurrentRow.Cells[4].Value.ToString();
-            textBoxEmPhone.Text = dataGridViewDsp.CurrentRow.Cells[6].Value.ToString();
+            int number;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            M_Employee selectCondition = new M_Employee()
+            {
+                EmID = number
+            };
+
+            employees = employeeDataAccess.GetEmIDdate(selectCondition);
+            var x = employees.FirstOrDefault();
+            textBoxEmID.Text = x.EmID.ToString();
+            textBoxEmName.Text = x.EmName;
+            textBoxSoID.Text = x.SoID.ToString();
+            textBoxPoID.Text = x.PoID.ToString();
+            dateTimePickerEmHiredate.Text = x.EmHiredate.ToString();
+            textBoxEmPhone.Text = x.EmPhone;
+            //textBoxEmHidden.Text = x.EmHidden;
+            //チェックボックスの状態を判断
             if ((int)dataGridViewDsp.CurrentRow.Cells[7].Value == 0)
             {
                 checkBoxEmFlag.Checked = false;
@@ -307,15 +322,8 @@ namespace SalesManagement_SysDev.Management_Employee
             {
                 checkBoxEmFlag.Checked = true;
             }
-
-            if (dataGridViewDsp.CurrentRow.Cells[8].Value == null)
-            {
-                textBoxEmHidden.Text = String.Empty;
-            }
-            else
-            {
-                textBoxEmHidden.Text = dataGridViewDsp.CurrentRow.Cells[8].Value.ToString();
-            }        
+            //各種Formロードと各種ボタンに下記を入力する
+            SetFormDataGridView();
         }
 
         private static List<M_Employee> Emp1;
@@ -351,6 +359,14 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
             int radioint = 0;
+            //if (radioButton1.Checked == true)
+            //{
+            //    radioint = 2;
+            //}
+            //else
+            //{
+            //    radioint = 0;
+            //}
             // 商品データの取得
             Emp1 = employeeDataAccess.GetEmployeeDataDsp(radioint);
 
@@ -376,28 +392,28 @@ namespace SalesManagement_SysDev.Management_Employee
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 80;
-            //dataGridViewDsp.Columns[1].Width = 80;
-            //dataGridViewDsp.Columns[2].Width = 200;
-            //dataGridViewDsp.Columns[3].Width = 200;
-            //dataGridViewDsp.Columns[4].Width = 200;
-            //dataGridViewDsp.Columns[5].Width = 80;
-            //dataGridViewDsp.Columns[6].Width = 80;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 150;
 
 
 
             //各列の文字位置の指定
-            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
@@ -406,46 +422,6 @@ namespace SalesManagement_SysDev.Management_Employee
 
             dataGridViewDsp.Refresh();
 
-        }
-
-        private void button_Hide_Click(object sender, EventArgs e)
-        {
-            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            MessageBox.Show("非表示にしてもよろしいでしょうか？");
-            employeeDataAccess.upflg(number);
-            setdata();
-        }
-
-        private void setdata()
-        {
-            Emp1 = employeeDataAccess.GetEmployeeDataDsp1();
-            dataGridViewDsp.DataSource = Emp1;
-        }
-
-        private void button_Del_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(textBoxEmHidden.Text.Trim()))
-            {
-                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
-                {
-                    employeeDataAccess.delflg(number);
-                    int radioint = 0;
-                    employees = employeeDataAccess.GetEmployeeDataDsp(radioint);
-                    dataGridViewDsp.DataSource = employees;
-                }
-                else
-                {
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("削除理由が入力されていません");
-                textBoxEmHidden.Focus();
-                return;
-            }
         }
     }
 }

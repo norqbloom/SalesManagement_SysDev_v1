@@ -58,7 +58,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         }
 
-        private void button_First_Click_1(object sender, EventArgs e)
+        private void button_First_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
             dataGridViewDsp.DataSource = products.Take(pageSize).ToList();
@@ -68,7 +68,7 @@ namespace SalesManagement_SysDev.Management_Product
             textBoxPageNo.Text = "1";
         }
 
-        private void button_Prev_Click_1(object sender, EventArgs e)
+        private void button_Prev_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 2;
@@ -82,7 +82,7 @@ namespace SalesManagement_SysDev.Management_Product
                 textBoxPageNo.Text = "1";
         }
 
-        private void button_Next_Click_1(object sender, EventArgs e)
+        private void button_Next_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text);
@@ -102,7 +102,7 @@ namespace SalesManagement_SysDev.Management_Product
                 textBoxPageNo.Text = (pageNo + 1).ToString();
         }
 
-        private void button_Last_Click_1(object sender, EventArgs e)
+        private void button_Last_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
             //最終ページの計算
@@ -132,6 +132,8 @@ namespace SalesManagement_SysDev.Management_Product
             textBoxPrModelNumber.Text = "";
             textBoxPrColor.Text = "";
             dateTimePickerPrReleaseDate.Value = DateTime.Now;
+            checkBoxPrFlag.Checked = false;
+            textBoxPrHidden.Text = "";
         }
 
         private bool GetValidDataAtRegistration()
@@ -313,13 +315,38 @@ namespace SalesManagement_SysDev.Management_Product
                 messageDsp.DspMsg("M2026");//色は入力されていません
                 textBoxPrColor.Focus();
                 return false;
-            }         
+            }
+            //商品管理フラグ
+            if (checkBoxPrFlag.CheckState == CheckState.Indeterminate)
+            {
+                messageDsp.DspMsg("");//メッセージ不明
+                checkBoxPrFlag.Focus();
+                return false;
+            }
+            //非表示理由
+            if (checkBoxPrFlag.Checked == true)
+            {
+                if (!String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M");//メッセージ不明
+                    checkBoxPrFlag.Focus();
+                    return false;
+                }
+            }
             return true;
             }
         private M_Product GenerateDataAtRegistration()
         {
             //フラグが選択されている場合
-            int checkflg = 0;
+            int checkflg;
+            if (checkBoxPrFlag.Checked == true)
+            {
+                checkflg = 2;
+            }
+            else
+            {
+                checkflg = 0;
+            }
             //登録情報のセット
             return new M_Product
             {
@@ -333,7 +360,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrColor = textBoxPrColor.Text.Trim(),
                 PrReleaseDate = DateTime.Parse(dateTimePickerPrReleaseDate.Text),
                 PrFlag = checkflg,
-                PrHidden = null
+                PrHidden = textBoxPrHidden.Text.Trim()
             };
         }
 
@@ -450,31 +477,31 @@ namespace SalesManagement_SysDev.Management_Product
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 100;
-            //dataGridViewDsp.Columns[1].Width = 100;
-            //dataGridViewDsp.Columns[2].Width = 100;
-            //dataGridViewDsp.Columns[3].Width = 100;
-            //dataGridViewDsp.Columns[4].Visible = false;
-            //dataGridViewDsp.Columns[5].Width = 100;
-            //dataGridViewDsp.Columns[6].Width = 100;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 100;
-            //dataGridViewDsp.Columns[9].Width = 100;
-            //dataGridViewDsp.Columns[10].Width = 100;
-            //dataGridViewDsp.Columns[11].Width = 200;
+            dataGridViewDsp.Columns[0].Width = 100;
+            dataGridViewDsp.Columns[1].Width = 100;
+            dataGridViewDsp.Columns[2].Width = 100;
+            dataGridViewDsp.Columns[3].Width = 100;
+            dataGridViewDsp.Columns[4].Visible = false;
+            dataGridViewDsp.Columns[5].Width = 100;
+            dataGridViewDsp.Columns[6].Width = 100;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 100;
+            dataGridViewDsp.Columns[9].Width = 100;
+            dataGridViewDsp.Columns[10].Width = 100;
+            dataGridViewDsp.Columns[11].Width = 200;
 
             //各列の文字位置の指定
-            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";

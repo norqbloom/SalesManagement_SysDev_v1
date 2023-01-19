@@ -232,7 +232,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridViewDsp.Location = new System.Drawing.Point(634, 237);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
             this.dataGridViewDsp.RowTemplate.Height = 21;
-            this.dataGridViewDsp.Size = new System.Drawing.Size(556, 662);
+            this.dataGridViewDsp.Size = new System.Drawing.Size(557, 662);
             this.dataGridViewDsp.TabIndex = 114;
             this.dataGridViewDsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDsp_CellClick);
             // 

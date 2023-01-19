@@ -169,6 +169,12 @@ namespace SalesManagement_SysDev.Management_Client
                     textBoxSoID.Focus();
                     return false;
                 }
+                if (clientDataAccess.CheckClientCDExistence(int.Parse(textBoxSoID.Text.Trim())))
+                {
+                    messageDsp.DspMsg("M1007");　//入力された営業所IDは既に存在しています
+                    textBoxSoID.Focus();
+                    return false;
+                }
             }
             else
             {
@@ -217,6 +223,12 @@ namespace SalesManagement_SysDev.Management_Client
             //住所
             if (!String.IsNullOrEmpty(textBoxClAddress.Text.Trim()))
             {
+                if (!dataInputFormCheck.CheckFullWidth(textBoxClAddress.Text.Trim()))
+                {
+                    messageDsp.DspMsg("M1032"); //MessageBox.Show("住所は全角入力です");
+                    textBoxClAddress.Focus();
+                    return false;
+                }
                 if (textBoxClAddress.Text.Length > 50)
                 {
                     messageDsp.DspMsg("M1012");　//住所は50文字以下です
@@ -272,7 +284,18 @@ namespace SalesManagement_SysDev.Management_Client
                 textBoxClPostal.Focus();
                 return false;
             }
-
+            //if (!dataInputFormCheck.CheckFullWidth(textBoxClHidden.Text.Trim()))
+            //{
+            //    messageDsp.DspMsg("M2037");　//MessageBox.Show("非表示理由は全角入力です"); 
+            //    textBoxClHidden.Focus();
+            //    return false;
+            //}
+            //if (checkBoxClFlag.CheckState == CheckState.Indeterminate)
+            //{
+            //    MessageBox.Show("フラグが不確定の状態です"); //messageDsp.DspMsg("M40０4");
+            //    checkBoxClFlag.Focus();
+            //    return false;
+            //}
             return true;
         }
 
@@ -317,12 +340,12 @@ namespace SalesManagement_SysDev.Management_Client
         private M_clhistory GenerateDataAtUpdatehistory()
         {
             var context = new SalesManagement_DevContext();
-            var clhistorie = context.M_Clhistory.Single(x => x.ClID == textBoxClID.Text);
+            var clhistorie = context.M_Clhistory.Single(x => x.ClID == textBoxSoID.Text);
             DateTime dt = DateTime.Now;
             string regtime = dt.ToString("MM/dd HH;mm");
             return new M_clhistory
             {
-                ClID = textBoxClID.Text,
+                ClID = textBoxSoID.Text,
                 UpDateTime = regtime,
                 LastupdatedUserID = template.EmID.ToString(),
                 LastupdatedUserName = template.loginName
@@ -367,50 +390,6 @@ namespace SalesManagement_SysDev.Management_Client
             clients = clientDataAccess.GetProductDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
-        }   
-
-        private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBoxClID.Text = dataGridViewDsp.CurrentRow.Cells[0].Value.ToString();
-            textBoxSoID.Text = dataGridViewDsp.CurrentRow.Cells[1].Value.ToString();
-            textBoxClName.Text = dataGridViewDsp.CurrentRow.Cells[2].Value.ToString();
-            textBoxClAddress.Text = dataGridViewDsp.CurrentRow.Cells[3].Value.ToString();
-            textBoxClPhone.Text = dataGridViewDsp.CurrentRow.Cells[4].Value.ToString();
-            textBoxClPostal.Text = dataGridViewDsp.CurrentRow.Cells[5].Value.ToString();
-            textBoxClFAX.Text = dataGridViewDsp.CurrentRow.Cells[6].Value.ToString();
-
-            if ((int)dataGridViewDsp.CurrentRow.Cells[7].Value == 0)
-            {
-                checkBoxClFlag.Checked = false;
-            }
-            else
-            {
-                checkBoxClFlag.Checked = true;
-            }
-        }
-
-        private void button_Del_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(textBoxClHidden.Text.Trim()))
-            {
-                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
-                {
-                    clientDataAccess.delflg(number);
-                    setdata();
-                }
-                else
-                {
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("削除理由が入力されていません");
-                textBoxClHidden.Focus();
-                return;
-            }
         }
     }
 }

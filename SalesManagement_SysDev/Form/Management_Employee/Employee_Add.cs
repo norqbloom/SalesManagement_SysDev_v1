@@ -51,8 +51,10 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
-            dateTimePickerEmHiredate.Value = DateTime.Now; 
+            dateTimePickerEmHiredate.Value = DateTime.Now;
+            checkBoxEmFlag.Checked = false;
             textBoxEmPhone.Text = "";
+            //textBoxEmHidden.Text = "";
         }
 
         private void button_First_Click(object sender, EventArgs e)
@@ -239,11 +241,32 @@ namespace SalesManagement_SysDev.Management_Employee
                 textBoxEmPhone.Focus();
                 return false;
             }
+
+            if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
+            {
+
+                MessageBox.Show("社員管理フラグが不確定な状況です");//messageDsp.DspMsg("M6027");
+                checkBoxEmFlag.Focus();
+                return false;
+            }
+
+
             return true;
         }
 
         private M_Employee GenerateDataAtRegistration()
         {
+            int checkflg;
+            if (checkBoxEmFlag.Checked == true)
+            {
+                checkflg = 2;
+            }
+            else
+            {
+                checkflg = 0;
+            }
+
+
             Random pw = new Random();
             byte[] rndary = new byte[1];
             pw.NextBytes(rndary);
@@ -258,8 +281,10 @@ namespace SalesManagement_SysDev.Management_Employee
                 EmHiredate = DateTime.Parse(dateTimePickerEmHiredate.Text),
                 EmPassword = pw.ToString(),
                 EmPhone = textBoxEmPhone.Text.Trim(),
-                EmFlag = 0,
-                EmHidden = String.Empty
+                EmFlag = checkflg,
+                //EmHidden = textBoxEmHidden.Text.Trim()
+
+
             };
         }
 
@@ -326,28 +351,28 @@ namespace SalesManagement_SysDev.Management_Employee
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 80;
-            //dataGridViewDsp.Columns[1].Width = 80;
-            //dataGridViewDsp.Columns[2].Width = 200;
-            //dataGridViewDsp.Columns[3].Width = 200;
-            //dataGridViewDsp.Columns[4].Width = 200;
-            //dataGridViewDsp.Columns[5].Width = 80;
-            //dataGridViewDsp.Columns[6].Width = 80;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 150;
 
 
 
             //各列の文字位置の指定
-            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
@@ -361,6 +386,14 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
             int radioint = 0;
+            //if (radioButton1.Checked == true)
+            //{
+            //    radioint = 2;
+            //}
+            //else
+            //{
+            //    radioint = 0;
+            //}
             // 商品データの取得
             Emp1 = employeeDataAccess.GetEmployeeDataDsp(radioint);
 

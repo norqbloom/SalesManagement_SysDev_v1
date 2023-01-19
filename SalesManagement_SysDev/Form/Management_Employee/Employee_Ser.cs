@@ -461,6 +461,14 @@ namespace SalesManagement_SysDev.Management_Employee
         {
 
             int radioint = 0;
+            //if (radioButton1.Checked == true)
+            //{
+            //    radioint = 2;
+            //}
+            //else
+            //{
+            //    radioint = 0;
+            //}
             // 商品データの取得
             Emp1 = EmployeeDataAccess.GetEmployeeDataDsp(radioint);
 
@@ -479,28 +487,28 @@ namespace SalesManagement_SysDev.Management_Employee
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 80;
-            //dataGridViewDsp.Columns[1].Width = 80;
-            //dataGridViewDsp.Columns[2].Width = 200;
-            //dataGridViewDsp.Columns[3].Width = 200;
-            //dataGridViewDsp.Columns[4].Width = 200;
-            //dataGridViewDsp.Columns[5].Width = 80;
-            //dataGridViewDsp.Columns[6].Width = 80;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 150;
+            dataGridViewDsp.Columns[0].Width = 80;
+            dataGridViewDsp.Columns[1].Width = 80;
+            dataGridViewDsp.Columns[2].Width = 200;
+            dataGridViewDsp.Columns[3].Width = 200;
+            dataGridViewDsp.Columns[4].Width = 200;
+            dataGridViewDsp.Columns[5].Width = 80;
+            dataGridViewDsp.Columns[6].Width = 80;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 150;
 
 
 
             //各列の文字位置の指定
-            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
@@ -535,13 +543,12 @@ namespace SalesManagement_SysDev.Management_Employee
             //upusername.Visible = true;
         }
 
-
-        private void dataGridViewDsp_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewDsp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int number;
-            //number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            //serchdateset(number);
-            //setdatedetail();
+            int number;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            serchdateset(number);
+            setdatedetail();
         }
 
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
@@ -550,7 +557,7 @@ namespace SalesManagement_SysDev.Management_Employee
             int EmIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             EmIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            labelEmID.Text = textBoxEmID.ToString();
+            //labelEm.Text = textBoxEmID.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -575,22 +582,23 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
 
-            //labelSoID.Text = x.EmID;
+            //labelEm.Text = x.EmID;
             //labelSo.Text = x.SoID;
             //labelPo.Text = x.PoID;
-            //labelcreatedate.Text = x.RegisteredDate;
-            //labelcreateid.Text = x.regUserID;
-            //labelcreatename.Text = x.regUserName;
-            //llabelcreateupddate.Text = x.UpDateTime;
-            //labelcreateupdid.Text = x.LastupdatedUserID;
-            //labelcreateupdname.Text = x.LastupdatedUserName;
-            //incntok();
+            //datetime.Text = x.RegisteredDate;
+            //userid.Text = x.regUserID;
+            //username.Text = x.regUserName;
+            //uptime.Text = x.UpDateTime;
+            //upuserid.Text = x.LastupdatedUserID;
+            //upusername.Text = x.LastupdatedUserName;
+            incntok();
 
 
         }
 
         private void button_Hide_Click(object sender, EventArgs e)
         {
+            //(int)dataGridView1.CurrentRow.Cells[0].Value;
             int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             MessageBox.Show("非表示にしてもよろしいでしょうか？");
             EmployeeDataAccess.upflg(number);
@@ -601,11 +609,6 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             Emp1 = EmployeeDataAccess.GetEmployeeDataDsp1();
             dataGridViewDsp.DataSource = Emp1;
-        }
-
-        private void button_Del_Click(object sender, EventArgs e)
-        {
-
         }
 
         

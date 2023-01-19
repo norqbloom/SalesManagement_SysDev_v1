@@ -29,9 +29,12 @@ namespace SalesManagement_SysDev.Management_Product
         /// </summary>
         private void InitializeComponent()
         {
+            this.button_Hide = new System.Windows.Forms.Button();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.labelPrReleaseDate = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.labelPrHidden = new System.Windows.Forms.Label();
+            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
             this.textBoxPrSafetyStock = new System.Windows.Forms.TextBox();
             this.labelPrSafetyStock = new System.Windows.Forms.Label();
@@ -42,20 +45,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID = new System.Windows.Forms.TextBox();
             this.labelScID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelPrID = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelcreateupdname = new System.Windows.Forms.Label();
-            this.labelcreateupdid = new System.Windows.Forms.Label();
-            this.llabelcreateupddate = new System.Windows.Forms.Label();
-            this.labelcreatename = new System.Windows.Forms.Label();
-            this.labelcreateid = new System.Windows.Forms.Label();
-            this.labelcreatedate = new System.Windows.Forms.Label();
             this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.button_Cle = new System.Windows.Forms.Button();
@@ -64,7 +53,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID = new System.Windows.Forms.TextBox();
             this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.labelPrName = new System.Windows.Forms.Label();
-            this.label_PrID = new System.Windows.Forms.Label();
+            this.labelPrID = new System.Windows.Forms.Label();
             this.labelMaID = new System.Windows.Forms.Label();
             this.checkBoxdate = new System.Windows.Forms.CheckBox();
             this.dateTimePickerPrReleaseDate2 = new System.Windows.Forms.DateTimePicker();
@@ -76,10 +65,20 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // button_Hide
+            // 
+            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Hide.Location = new System.Drawing.Point(1162, 204);
+            this.button_Hide.Name = "button_Hide";
+            this.button_Hide.Size = new System.Drawing.Size(75, 36);
+            this.button_Hide.TabIndex = 68;
+            this.button_Hide.Text = "非表示";
+            this.button_Hide.UseVisualStyleBackColor = true;
+            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
             // dateTimePickerPrReleaseDate
             // 
@@ -106,6 +105,25 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
             this.textBoxPrice.TabIndex = 65;
+            // 
+            // labelPrHidden
+            // 
+            this.labelPrHidden.AutoSize = true;
+            this.labelPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.labelPrHidden.Location = new System.Drawing.Point(1032, 114);
+            this.labelPrHidden.Name = "labelPrHidden";
+            this.labelPrHidden.Size = new System.Drawing.Size(107, 25);
+            this.labelPrHidden.TabIndex = 64;
+            this.labelPrHidden.Text = "非表示理由";
+            // 
+            // textBoxPrHidden
+            // 
+            this.textBoxPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxPrHidden.Location = new System.Drawing.Point(1039, 142);
+            this.textBoxPrHidden.Multiline = true;
+            this.textBoxPrHidden.Name = "textBoxPrHidden";
+            this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
+            this.textBoxPrHidden.TabIndex = 63;
             // 
             // labelPrice
             // 
@@ -192,193 +210,11 @@ namespace SalesManagement_SysDev.Management_Product
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.labelPrID);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.labelcreateupdname);
-            this.panel1.Controls.Add(this.labelcreateupdid);
-            this.panel1.Controls.Add(this.llabelcreateupddate);
-            this.panel1.Controls.Add(this.labelcreatename);
-            this.panel1.Controls.Add(this.labelcreateid);
-            this.panel1.Controls.Add(this.labelcreatedate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1358, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 970);
             this.panel1.TabIndex = 52;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(85, 246);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "商品ID:";
-            // 
-            // labelPrID
-            // 
-            this.labelPrID.AutoSize = true;
-            this.labelPrID.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelPrID.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelPrID.Location = new System.Drawing.Point(146, 246);
-            this.labelPrID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPrID.Name = "labelPrID";
-            this.labelPrID.Size = new System.Drawing.Size(82, 16);
-            this.labelPrID.TabIndex = 42;
-            this.labelPrID.Text = "labelEmID";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(68, 513);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 16);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "更新者名:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(69, 471);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 16);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "更新者ID:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(69, 430);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 16);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "更新日時:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(69, 354);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 16);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "作成者名:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(68, 314);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 16);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "作成者ID:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(68, 273);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 16);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "作成日時:";
-            // 
-            // labelcreateupdname
-            // 
-            this.labelcreateupdname.AutoSize = true;
-            this.labelcreateupdname.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelcreateupdname.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreateupdname.Location = new System.Drawing.Point(146, 513);
-            this.labelcreateupdname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelcreateupdname.Name = "labelcreateupdname";
-            this.labelcreateupdname.Size = new System.Drawing.Size(61, 16);
-            this.labelcreateupdname.TabIndex = 35;
-            this.labelcreateupdname.Text = "label12";
-            // 
-            // labelcreateupdid
-            // 
-            this.labelcreateupdid.AutoSize = true;
-            this.labelcreateupdid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelcreateupdid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreateupdid.Location = new System.Drawing.Point(146, 471);
-            this.labelcreateupdid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelcreateupdid.Name = "labelcreateupdid";
-            this.labelcreateupdid.Size = new System.Drawing.Size(61, 16);
-            this.labelcreateupdid.TabIndex = 34;
-            this.labelcreateupdid.Text = "label11";
-            // 
-            // llabelcreateupddate
-            // 
-            this.llabelcreateupddate.AutoSize = true;
-            this.llabelcreateupddate.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.llabelcreateupddate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.llabelcreateupddate.Location = new System.Drawing.Point(146, 430);
-            this.llabelcreateupddate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.llabelcreateupddate.Name = "llabelcreateupddate";
-            this.llabelcreateupddate.Size = new System.Drawing.Size(61, 16);
-            this.llabelcreateupddate.TabIndex = 33;
-            this.llabelcreateupddate.Text = "label10";
-            // 
-            // labelcreatename
-            // 
-            this.labelcreatename.AutoSize = true;
-            this.labelcreatename.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelcreatename.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreatename.Location = new System.Drawing.Point(146, 354);
-            this.labelcreatename.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelcreatename.Name = "labelcreatename";
-            this.labelcreatename.Size = new System.Drawing.Size(52, 16);
-            this.labelcreatename.TabIndex = 32;
-            this.labelcreatename.Text = "label9";
-            // 
-            // labelcreateid
-            // 
-            this.labelcreateid.AutoSize = true;
-            this.labelcreateid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelcreateid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreateid.Location = new System.Drawing.Point(146, 314);
-            this.labelcreateid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelcreateid.Name = "labelcreateid";
-            this.labelcreateid.Size = new System.Drawing.Size(52, 16);
-            this.labelcreateid.TabIndex = 31;
-            this.labelcreateid.Text = "label8";
-            // 
-            // labelcreatedate
-            // 
-            this.labelcreatedate.AutoSize = true;
-            this.labelcreatedate.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelcreatedate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreatedate.Location = new System.Drawing.Point(146, 273);
-            this.labelcreatedate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelcreatedate.Name = "labelcreatedate";
-            this.labelcreatedate.Size = new System.Drawing.Size(52, 16);
-            this.labelcreatedate.TabIndex = 30;
-            this.labelcreatedate.Text = "label7";
             // 
             // checkBoxPrFlag
             // 
@@ -403,7 +239,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1162, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1080, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 43;
@@ -414,7 +250,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Ser
             // 
             this.button_Ser.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Ser.Location = new System.Drawing.Point(1081, 204);
+            this.button_Ser.Location = new System.Drawing.Point(999, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
             this.button_Ser.TabIndex = 42;
@@ -456,15 +292,15 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelPrName.TabIndex = 28;
             this.labelPrName.Text = "商品名";
             // 
-            // label_PrID
+            // labelPrID
             // 
-            this.label_PrID.AutoSize = true;
-            this.label_PrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrID.Location = new System.Drawing.Point(69, 51);
-            this.label_PrID.Name = "label_PrID";
-            this.label_PrID.Size = new System.Drawing.Size(70, 25);
-            this.label_PrID.TabIndex = 26;
-            this.label_PrID.Text = "商品ID";
+            this.labelPrID.AutoSize = true;
+            this.labelPrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.labelPrID.Location = new System.Drawing.Point(69, 51);
+            this.labelPrID.Name = "labelPrID";
+            this.labelPrID.Size = new System.Drawing.Size(70, 25);
+            this.labelPrID.TabIndex = 26;
+            this.labelPrID.Text = "商品ID";
             // 
             // labelMaID
             // 
@@ -528,7 +364,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Last.TabIndex = 47;
             this.button_Last.Text = "▶|";
             this.button_Last.UseVisualStyleBackColor = true;
-            this.button_Last.Click += new System.EventHandler(this.button_Last_Click_1);
             // 
             // button_Next
             // 
@@ -539,7 +374,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Next.TabIndex = 50;
             this.button_Next.Text = "▶";
             this.button_Next.UseVisualStyleBackColor = true;
-            this.button_Next.Click += new System.EventHandler(this.button_Next_Click_1);
             // 
             // button_Prev
             // 
@@ -550,7 +384,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Prev.TabIndex = 49;
             this.button_Prev.Text = "◀";
             this.button_Prev.UseVisualStyleBackColor = true;
-            this.button_Prev.Click += new System.EventHandler(this.button_Prev_Click_1);
             // 
             // textBoxPageNo
             // 
@@ -581,7 +414,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_First.TabIndex = 48;
             this.button_First.Text = "|◀";
             this.button_First.UseVisualStyleBackColor = true;
-            this.button_First.Click += new System.EventHandler(this.button_First_Click_1);
             // 
             // Product_Ser
             // 
@@ -592,9 +424,12 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerPrReleaseDate2);
             this.Controls.Add(this.checkBoxdate);
+            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.labelPrReleaseDate);
             this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.labelPrHidden);
+            this.Controls.Add(this.textBoxPrHidden);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.textBoxPrSafetyStock);
             this.Controls.Add(this.labelPrSafetyStock);
@@ -613,7 +448,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.textBoxMaID);
             this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.labelPrName);
-            this.Controls.Add(this.label_PrID);
+            this.Controls.Add(this.labelPrID);
             this.Controls.Add(this.labelMaID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1658, 970);
@@ -621,8 +456,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.Name = "Product_Ser";
             this.Text = "Product_Ser";
             this.Load += new System.EventHandler(this.Product_Ser_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -632,9 +465,13 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
         private System.Windows.Forms.Label labelPrReleaseDate;
         private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label labelPrHidden;
+        private System.Windows.Forms.TextBox textBoxPrHidden;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.TextBox textBoxPrSafetyStock;
         private System.Windows.Forms.Label labelPrSafetyStock;
@@ -653,7 +490,7 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxMaID;
         private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label labelPrName;
-        private System.Windows.Forms.Label label_PrID;
+        private System.Windows.Forms.Label labelPrID;
         private System.Windows.Forms.Label labelMaID;
         private System.Windows.Forms.CheckBox checkBoxdate;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate2;
@@ -665,19 +502,5 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button button_First;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelPrID;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label labelcreateupdname;
-        private System.Windows.Forms.Label labelcreateupdid;
-        private System.Windows.Forms.Label llabelcreateupddate;
-        private System.Windows.Forms.Label labelcreatename;
-        private System.Windows.Forms.Label labelcreateid;
-        private System.Windows.Forms.Label labelcreatedate;
     }
 }
