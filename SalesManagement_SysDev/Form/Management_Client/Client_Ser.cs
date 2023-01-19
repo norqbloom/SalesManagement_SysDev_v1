@@ -265,8 +265,18 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxPageNo.Text = "1";
             dataGridViewDsp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             GetDataGridView();
-
         }
+
+        private void GetDataGridView()
+        {
+
+            int radioint = 0;
+            // 商品データの取得
+            clients = clientDataAccess.GetProductDataDsp(radioint);
+            // DataGridViewに表示するデータを指定
+            SetDataGridView();
+        }
+     
         private void SetDataGridView()
         {
             int pageSize = grid;
@@ -277,20 +287,34 @@ namespace SalesManagement_SysDev.Management_Client
             dataGridViewDsp.Refresh();
         }
 
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            DialogResult result =  MessageBox.Show("選択した項目を削除（非表示）にしますか？","販売管理システム｜確認メッセージ",MessageBoxButtons.OKCancel);
+            if(result == DialogResult.OK)
+            {
+                clientDataAccess.delflg(number);
+                setdata();
+            }
+            else
+            {
+                return;
+            }
+            //MessageBox.Show("非表示にしてもよろしいでしょうか？");
+            //clientDataAccess.delflg(number);
+            //setdata();
+        }
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
             int ClIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
             ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
             //label5.Text = ClIDtxt.ToString();
-            MessageBox.Show(ClIDtxt.ToString());
-            //label5.Text = ClIDtxt.ToString();
 
             serchdateset(number);
             setdatedetail();
-
         }
 
 
@@ -313,7 +337,8 @@ namespace SalesManagement_SysDev.Management_Client
                 invcnt();
                 return;
             }
-            ClIDtxt.Text = x.ClID;
+
+            IDtxt.Text = x.ClID;
             datetime.Text = x.RegisteredDate;
             userid.Text = x.regUserID;
             username.Text = x.regUserName;
@@ -323,28 +348,6 @@ namespace SalesManagement_SysDev.Management_Client
             incntok();
         }
 
-        private void GetDataGridView()
-        {
-
-            int radioint = 0;
-            // 商品データの取得
-            clients = clientDataAccess.GetProductDataDsp(radioint);
-            // DataGridViewに表示するデータを指定
-            SetDataGridView();
-        }
-
-        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
-        {
-            int number;
-            int ClIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            //label5.Text = ClIDtxt.ToString();
-
-            serchdateset(number);
-            setdatedetail();
-        }
-
-
+        
     }
 }
