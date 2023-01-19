@@ -389,6 +389,28 @@ namespace SalesManagement_SysDev.Management_Client
             }
         }
 
-       
+        private void button_Del_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBoxClHidden.Text.Trim()))
+            {
+                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    clientDataAccess.delflg(number);
+                    setdata();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("削除理由が入力されていません");
+                textBoxClHidden.Focus();
+                return;
+            }
+        }
     }
 }
