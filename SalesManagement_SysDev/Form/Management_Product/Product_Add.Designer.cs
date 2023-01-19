@@ -30,7 +30,6 @@ namespace SalesManagement_SysDev.Management_Product
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxPrFlag = new System.Windows.Forms.CheckBox();
             this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.button_Cle = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
@@ -48,13 +47,10 @@ namespace SalesManagement_SysDev.Management_Product
             this.label_PrModelNumber = new System.Windows.Forms.Label();
             this.textBoxPrSafetyStock = new System.Windows.Forms.TextBox();
             this.label_PrSafetyStock = new System.Windows.Forms.Label();
-            this.textBoxPrHidden = new System.Windows.Forms.TextBox();
             this.label_Price = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.label_PrHidden = new System.Windows.Forms.Label();
             this.label_PrReleaseDate = new System.Windows.Forms.Label();
             this.dateTimePickerPrReleaseDate = new System.Windows.Forms.DateTimePicker();
-            this.button_Hide = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_Last = new System.Windows.Forms.Button();
             this.button_Next = new System.Windows.Forms.Button();
@@ -75,17 +71,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.panel1.Size = new System.Drawing.Size(300, 970);
             this.panel1.TabIndex = 52;
             // 
-            // checkBoxPrFlag
-            // 
-            this.checkBoxPrFlag.AutoSize = true;
-            this.checkBoxPrFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxPrFlag.Location = new System.Drawing.Point(1047, 50);
-            this.checkBoxPrFlag.Name = "checkBoxPrFlag";
-            this.checkBoxPrFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxPrFlag.TabIndex = 51;
-            this.checkBoxPrFlag.Text = "商品管理フラグ";
-            this.checkBoxPrFlag.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewDsp
             // 
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -98,7 +83,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1080, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 43;
@@ -109,7 +94,7 @@ namespace SalesManagement_SysDev.Management_Product
             // button_Add
             // 
             this.button_Add.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Add.Location = new System.Drawing.Point(999, 204);
+            this.button_Add.Location = new System.Drawing.Point(1081, 204);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(75, 36);
             this.button_Add.TabIndex = 42;
@@ -243,15 +228,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.label_PrSafetyStock.TabIndex = 60;
             this.label_PrSafetyStock.Text = "安全在庫数";
             // 
-            // textBoxPrHidden
-            // 
-            this.textBoxPrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrHidden.Location = new System.Drawing.Point(1049, 110);
-            this.textBoxPrHidden.Multiline = true;
-            this.textBoxPrHidden.Name = "textBoxPrHidden";
-            this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxPrHidden.TabIndex = 63;
-            // 
             // label_Price
             // 
             this.label_Price.AutoSize = true;
@@ -270,16 +246,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
             this.textBoxPrice.TabIndex = 65;
             // 
-            // label_PrHidden
-            // 
-            this.label_PrHidden.AutoSize = true;
-            this.label_PrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrHidden.Location = new System.Drawing.Point(1042, 82);
-            this.label_PrHidden.Name = "label_PrHidden";
-            this.label_PrHidden.Size = new System.Drawing.Size(107, 25);
-            this.label_PrHidden.TabIndex = 64;
-            this.label_PrHidden.Text = "非表示理由";
-            // 
             // label_PrReleaseDate
             // 
             this.label_PrReleaseDate.AutoSize = true;
@@ -297,17 +263,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 32);
             this.dateTimePickerPrReleaseDate.TabIndex = 67;
-            // 
-            // button_Hide
-            // 
-            this.button_Hide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Hide.Location = new System.Drawing.Point(1162, 204);
-            this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(75, 36);
-            this.button_Hide.TabIndex = 68;
-            this.button_Hide.Text = "非表示";
-            this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
             // panel2
             // 
@@ -332,6 +287,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Last.TabIndex = 47;
             this.button_Last.Text = "▶|";
             this.button_Last.UseVisualStyleBackColor = true;
+            this.button_Last.Click += new System.EventHandler(this.button_Last_Click_1);
             // 
             // button_Next
             // 
@@ -342,6 +298,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Next.TabIndex = 50;
             this.button_Next.Text = "▶";
             this.button_Next.UseVisualStyleBackColor = true;
+            this.button_Next.Click += new System.EventHandler(this.button_Next_Click_1);
             // 
             // button_Prev
             // 
@@ -352,6 +309,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Prev.TabIndex = 49;
             this.button_Prev.Text = "◀";
             this.button_Prev.UseVisualStyleBackColor = true;
+            this.button_Prev.Click += new System.EventHandler(this.button_Prev_Click_1);
             // 
             // textBoxPageNo
             // 
@@ -381,6 +339,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_First.TabIndex = 48;
             this.button_First.Text = "|◀";
             this.button_First.UseVisualStyleBackColor = true;
+            this.button_First.Click += new System.EventHandler(this.button_First_Click_1);
             // 
             // Product_Add
             // 
@@ -388,12 +347,9 @@ namespace SalesManagement_SysDev.Management_Product
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button_Hide);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.label_PrReleaseDate);
             this.Controls.Add(this.textBoxPrice);
-            this.Controls.Add(this.label_PrHidden);
-            this.Controls.Add(this.textBoxPrHidden);
             this.Controls.Add(this.label_Price);
             this.Controls.Add(this.textBoxPrSafetyStock);
             this.Controls.Add(this.label_PrSafetyStock);
@@ -404,7 +360,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.textBoxScID);
             this.Controls.Add(this.label_ScID);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.checkBoxPrFlag);
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.button_Cle);
             this.Controls.Add(this.button_Add);
@@ -430,7 +385,6 @@ namespace SalesManagement_SysDev.Management_Product
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBoxPrFlag;
         private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.Button button_Cle;
         private System.Windows.Forms.Button button_Add;
@@ -448,13 +402,10 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label label_PrModelNumber;
         private System.Windows.Forms.TextBox textBoxPrSafetyStock;
         private System.Windows.Forms.Label label_PrSafetyStock;
-        private System.Windows.Forms.TextBox textBoxPrHidden;
         private System.Windows.Forms.Label label_Price;
         private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.Label label_PrHidden;
         private System.Windows.Forms.Label label_PrReleaseDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerPrReleaseDate;
-        private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button_Last;
         private System.Windows.Forms.Button button_Next;

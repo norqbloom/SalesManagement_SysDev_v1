@@ -30,7 +30,6 @@ namespace SalesManagement_SysDev.Management_Client
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxClFlag = new System.Windows.Forms.CheckBox();
             this.textBoxClPostal = new System.Windows.Forms.TextBox();
             this.dataGridViewDsp = new System.Windows.Forms.DataGridView();
             this.button_Cle = new System.Windows.Forms.Button();
@@ -68,17 +67,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel1.Size = new System.Drawing.Size(300, 970);
             this.panel1.TabIndex = 52;
             // 
-            // checkBoxClFlag
-            // 
-            this.checkBoxClFlag.AutoSize = true;
-            this.checkBoxClFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxClFlag.Location = new System.Drawing.Point(972, 169);
-            this.checkBoxClFlag.Name = "checkBoxClFlag";
-            this.checkBoxClFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxClFlag.TabIndex = 51;
-            this.checkBoxClFlag.Text = "顧客管理フラグ";
-            this.checkBoxClFlag.UseVisualStyleBackColor = true;
-            // 
             // textBoxClPostal
             // 
             this.textBoxClPostal.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
@@ -113,7 +101,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClFAX.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.textBoxClFAX.Location = new System.Drawing.Point(1061, 110);
             this.textBoxClFAX.Name = "textBoxClFAX";
-            this.textBoxClFAX.Size = new System.Drawing.Size(91, 32);
+            this.textBoxClFAX.Size = new System.Drawing.Size(157, 32);
             this.textBoxClFAX.TabIndex = 40;
             // 
             // textBoxClAddress
@@ -322,7 +310,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.checkBoxClFlag);
             this.Controls.Add(this.textBoxClPostal);
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.button_Cle);
@@ -355,7 +342,6 @@ namespace SalesManagement_SysDev.Management_Client
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBoxClFlag;
         private System.Windows.Forms.TextBox textBoxClPostal;
         private System.Windows.Forms.DataGridView dataGridViewDsp;
         private System.Windows.Forms.Button button_Cle;

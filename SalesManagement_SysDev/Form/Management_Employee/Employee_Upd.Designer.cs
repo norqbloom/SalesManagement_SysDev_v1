@@ -55,6 +55,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelPage = new System.Windows.Forms.Label();
             this.label_EmID = new System.Windows.Forms.Label();
             this.dateTimePickerEmHiredate = new System.Windows.Forms.DateTimePicker();
+            this.button_Del = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.checkBoxEmFlag.AutoSize = true;
             this.checkBoxEmFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxEmFlag.Location = new System.Drawing.Point(735, 50);
+            this.checkBoxEmFlag.Location = new System.Drawing.Point(990, 50);
             this.checkBoxEmFlag.Name = "checkBoxEmFlag";
             this.checkBoxEmFlag.Size = new System.Drawing.Size(149, 29);
             this.checkBoxEmFlag.TabIndex = 77;
@@ -83,7 +84,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1130, 204);
+            this.button_Cle.Location = new System.Drawing.Point(1131, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 75;
@@ -94,7 +95,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // button_Upd
             // 
             this.button_Upd.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Upd.Location = new System.Drawing.Point(1049, 204);
+            this.button_Upd.Location = new System.Drawing.Point(969, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
             this.button_Upd.TabIndex = 74;
@@ -222,16 +223,16 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             this.label_PrHidden.AutoSize = true;
             this.label_PrHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrHidden.Location = new System.Drawing.Point(730, 113);
+            this.label_PrHidden.Location = new System.Drawing.Point(985, 82);
             this.label_PrHidden.Name = "label_PrHidden";
-            this.label_PrHidden.Size = new System.Drawing.Size(107, 25);
+            this.label_PrHidden.Size = new System.Drawing.Size(183, 25);
             this.label_PrHidden.TabIndex = 85;
-            this.label_PrHidden.Text = "非表示理由";
+            this.label_PrHidden.Text = "削除理由（非表示）";
             // 
             // textBoxEmHidden
             // 
             this.textBoxEmHidden.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxEmHidden.Location = new System.Drawing.Point(735, 141);
+            this.textBoxEmHidden.Location = new System.Drawing.Point(990, 110);
             this.textBoxEmHidden.Multiline = true;
             this.textBoxEmHidden.Name = "textBoxEmHidden";
             this.textBoxEmHidden.Size = new System.Drawing.Size(187, 57);
@@ -314,11 +315,23 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(237, 32);
             this.dateTimePickerEmHiredate.TabIndex = 87;
             // 
+            // button_Del
+            // 
+            this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_Del.Location = new System.Drawing.Point(1050, 204);
+            this.button_Del.Name = "button_Del";
+            this.button_Del.Size = new System.Drawing.Size(75, 36);
+            this.button_Del.TabIndex = 140;
+            this.button_Del.Text = "削除";
+            this.button_Del.UseVisualStyleBackColor = true;
+            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
+            // 
             // Employee_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.checkBoxEmFlag);
             this.Controls.Add(this.dataGridViewDsp);
             this.Controls.Add(this.button_Cle);
@@ -381,5 +394,6 @@ namespace SalesManagement_SysDev.Management_Employee
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Label label_EmID;
         private System.Windows.Forms.DateTimePicker dateTimePickerEmHiredate;
+        private System.Windows.Forms.Button button_Del;
     }
 }

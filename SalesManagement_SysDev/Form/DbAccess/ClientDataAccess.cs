@@ -377,13 +377,13 @@ namespace SalesManagement_SysDev
             }
             return client;
         }
-        public bool upflg(int number)
+        public bool delflg(int number)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
                 var client = context.M_Clients.Single(x => x.ClID == number);
-                client.ClFlag = 1;
+                client.ClFlag = 2;
                 context.SaveChanges();
                 context.Dispose();
             }
