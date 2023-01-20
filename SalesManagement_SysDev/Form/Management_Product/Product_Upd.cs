@@ -53,12 +53,39 @@ namespace SalesManagement_SysDev.Management_Product
 
             //商品情報作成
             var updProduct = GenerateDataAtUpdate();
-
+            var upProhistory = GenerateDataAtUpdatehistory();
+            Updateuphistory(upProhistory);
             //商品情報更新
             UpdateProduct(updProduct);
 
             //データグリッドビューの再ロード
             SetFormDataGridView();
+        }
+
+        private M_Prohistory GenerateDataAtUpdatehistory()
+        {
+            var context = new SalesManagement_DevContext();
+            var clhistorie = context.M_Prohistory.Single(x => x.PrID == textBoxPrID.Text);
+            DateTime dt = DateTime.Now;
+            string regtime = dt.ToString("MM/dd HH;mm");
+            return new M_Prohistory
+            {
+                PrID = textBoxPrID.Text,
+                UpDateTime = regtime,
+                LastupdatedUserID = template.EmID.ToString(),
+                LastupdatedUserName = template.loginName
+            };
+        }
+
+        private void Updateuphistory(M_Prohistory uphistory)
+        {
+            bool flg = productDataAccess.UpdProhistoryData(uphistory);
+        }
+
+        private void setdata()
+        {
+            products = productDataAccess.GetProductDspData();
+            dataGridViewDsp.DataSource = products;
         }
 
         private void button_Cle_Click(object sender, EventArgs e)

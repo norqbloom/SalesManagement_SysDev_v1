@@ -170,7 +170,7 @@ namespace SalesManagement_SysDev
         ///////////////////////////////
         public List<M_Product> GetProductDataDsp(int radioint)
         {
-            List<M_Product> product = new  List<M_Product>();
+            List<M_Product> product = new List<M_Product>();
 
             try
             {
@@ -310,7 +310,7 @@ namespace SalesManagement_SysDev
             return product;
         }
         //日付
-        public List<M_Product> GetMaHdata(M_Product selectCondition,DateTime starttime, DateTime stoptime)
+        public List<M_Product> GetMaHdata(M_Product selectCondition, DateTime starttime, DateTime stoptime)
         {
             List<M_Product> product = new List<M_Product>();
             try
@@ -321,7 +321,7 @@ namespace SalesManagement_SysDev
                                                 x.PrName.Contains(selectCondition.PrName) &&
                                                 x.PrModelNumber.Contains(selectCondition.PrModelNumber) &&
                                                 x.PrColor.Contains(selectCondition.PrColor) &&
-                                                x.PrReleaseDate>starttime&&x.PrReleaseDate<stoptime&&
+                                                x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime &&
                                                 x.PrFlag == 0).ToList();
                 context.SaveChanges();
                 context.Dispose();
@@ -634,7 +634,7 @@ namespace SalesManagement_SysDev
                 product = context.M_Products.Where(x => x.PrID == selectCondition.PrID).ToList();
                 context.Dispose();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -646,8 +646,8 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                product = context.M_Products.Where(x => x.PrID == selectCondition.PrID&&
-                                                   x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime  ).ToList();
+                product = context.M_Products.Where(x => x.PrID == selectCondition.PrID &&
+                                                   x.PrReleaseDate > starttime && x.PrReleaseDate < stoptime).ToList();
                 context.Dispose();
             }
             catch (Exception ex)
@@ -801,7 +801,45 @@ namespace SalesManagement_SysDev
             return true;
         }
 
+        public bool UpdProhistoryData(M_Prohistory uphistory)
+        {
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                var uphistorys = context.M_Prohistory.Single(x => x.PrID.ToString() == uphistory.PrID);
+                uphistorys.UpDateTime = uphistory.UpDateTime;
+                uphistorys.LastupdatedUserID = uphistory.LastupdatedUserID;
+                uphistorys.LastupdatedUserName = uphistory.LastupdatedUserName;
+
+                context.SaveChanges();
+                context.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return true;
+        }
+
+        public List<M_Product> GetProductDspData()
+        {
+            List<M_Product> products = new List<M_Product>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                products = context.M_Products.Where(x => x.PrFlag == 0).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return products;
+        }
+
+
     }
 }
-
 
