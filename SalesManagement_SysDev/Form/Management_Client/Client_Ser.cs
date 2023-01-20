@@ -81,12 +81,26 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void button_First_Click_1(object sender, EventArgs e)
         {
-
+            int pageSize = grid;
+            dataGridViewDsp.DataSource = clients.Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            textBoxPageNo.Text = "1";
         }
 
         private void button_Prev_Click_1(object sender, EventArgs e)
         {
-
+            int pageSize = grid;
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = clients.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            // DataGridViewを更新
+            dataGridViewDsp.Refresh();
+            //ページ番号の設定
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
         }
 
         private void button_Next_Click_1(object sender, EventArgs e)
