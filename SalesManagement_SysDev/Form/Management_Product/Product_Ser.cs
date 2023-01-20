@@ -573,63 +573,75 @@ namespace SalesManagement_SysDev.Management_Product
 
         }
 
-        
+        private void labelcreateid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
-        //private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    int number;
-        //    int PrIDtxt;
-        //    number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-        //    PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-        //    labelPr.Text = PrIDtxt.ToString();
+        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
+        {
+            //int number;
+            //int PrIDtxt;
+            //number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            //PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
 
-        //    serchdateset(PrIDtxt);
-        //    setdatedetail();
-        //}
-        //private void serchdateset(int number)
-        //{
-        //    Prhistory selectCondition = new Prhistory
-        //    {
-        //        PrID = number.ToString(),
+            //serchdateset(PrIDtxt);
+            //setdatedetail();
+        }
+        private void serchdateset(int number)
+        {
+            Prhistory selectCondition = new Prhistory
+            {
+                PrID = number.ToString(),
 
-        //    };
-        //    history = productDataAccess.getdetail(selectCondition);
-        //}
-        //private void setdatedetail()
-        //{
-        //    var x = history.FirstOrDefault();
-        //    if (x == null)
-        //    {
-        //        invcnt();
-        //        return;
-        //    }
+            };
+            history = productDataAccess.getdetail(selectCondition);
+        }
+        private void setdatedetail()
+        {
+            var x = history.FirstOrDefault();
+            if (x == null)
+            {
+                invcnt();
+                return;
+            }
 
-        //    labelPr.Text = x.PrID;
-        //    labelMa.Text = x.MaID;
-        //    labelSc.Text = x.ScID;
-        //    datetime.Text = x.RegisteredDate;
-        //    userid.Text = x.regUserID;
-        //    username.Text = x.regUserName;
-        //    uptime.Text = x.UpDateTime;
-        //    upuserid.Text = x.LastupdatedUserID;
-        //    upusername.Text = x.LastupdatedUserName;
-        //    incntok();
-        //}
+            labelPrID.Text = x.PrID;
+            labelcreatedate.Text = x.RegisteredDate;
+            labelcreateid.Text = x.regUserID;
+            labelcreatename.Text = x.regUserName;
+            llabelcreateupddate.Text = x.UpDateTime;
+            labelcreateupdid.Text = x.LastupdatedUserID;
+            labelcreateupdname.Text = x.LastupdatedUserName;
+            incntok();
+        }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    //(int)dataGridView1.CurrentRow.Cells[0].Value;
-        //    int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-        //    MessageBox.Show("非表示にしてもよろしいでしょうか？");
-        //    productDataAccess.upflg(number);
-        //    setdata();
-        //}
-        //private void setdata()
-        //{
-        //    products = productDataAccess.GetProductDataDsp1();
-        //    dataGridViewDsp.DataSource = products;
-        //}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //(int)dataGridView1.CurrentRow.Cells[0].Value;
+            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            MessageBox.Show("非表示にしてもよろしいでしょうか？");
+            productDataAccess.upflg(number);
+            setdata();
+        }
+        private void setdata()
+        {
+            products = productDataAccess.GetProductDataDsp1();
+            dataGridViewDsp.DataSource = products;
+        }
 
+        private void dataGridViewDsp_SelectionChanged_1(object sender, EventArgs e)
+        {
+            int number;
+            int PrIDtxt;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
+            PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+
+            serchdateset(PrIDtxt);
+            setdatedetail();
+        }
     }
 }

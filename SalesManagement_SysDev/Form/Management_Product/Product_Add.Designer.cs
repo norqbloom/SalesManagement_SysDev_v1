@@ -35,7 +35,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Add = new System.Windows.Forms.Button();
             this.textBoxPrName = new System.Windows.Forms.TextBox();
             this.textBoxMaID = new System.Windows.Forms.TextBox();
-            this.textBoxPrID = new System.Windows.Forms.TextBox();
             this.label_PrName = new System.Windows.Forms.Label();
             this.label_MaID = new System.Windows.Forms.Label();
             this.label_ClID = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPageNo = new System.Windows.Forms.TextBox();
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
+            this.textBoxPrID2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -117,14 +117,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
             this.textBoxMaID.TabIndex = 35;
-            // 
-            // textBoxPrID
-            // 
-            this.textBoxPrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrID.Location = new System.Drawing.Point(164, 48);
-            this.textBoxPrID.Name = "textBoxPrID";
-            this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxPrID.TabIndex = 34;
             // 
             // label_PrName
             // 
@@ -341,11 +333,20 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_First.UseVisualStyleBackColor = true;
             this.button_First.Click += new System.EventHandler(this.button_First_Click_1);
             // 
+            // textBoxPrID2
+            // 
+            this.textBoxPrID2.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxPrID2.Location = new System.Drawing.Point(164, 44);
+            this.textBoxPrID2.Name = "textBoxPrID2";
+            this.textBoxPrID2.Size = new System.Drawing.Size(100, 32);
+            this.textBoxPrID2.TabIndex = 140;
+            // 
             // Product_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.textBoxPrID2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
             this.Controls.Add(this.label_PrReleaseDate);
@@ -365,7 +366,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.textBoxPrName);
             this.Controls.Add(this.textBoxMaID);
-            this.Controls.Add(this.textBoxPrID);
             this.Controls.Add(this.label_PrName);
             this.Controls.Add(this.label_MaID);
             this.Controls.Add(this.label_ClID);
@@ -390,7 +390,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.TextBox textBoxPrName;
         private System.Windows.Forms.TextBox textBoxMaID;
-        private System.Windows.Forms.TextBox textBoxPrID;
         private System.Windows.Forms.Label label_PrName;
         private System.Windows.Forms.Label label_MaID;
         private System.Windows.Forms.Label label_ClID;
@@ -413,5 +412,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.TextBox textBoxPageNo;
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button button_First;
+        private System.Windows.Forms.TextBox textBoxPrID2;
     }
 }
