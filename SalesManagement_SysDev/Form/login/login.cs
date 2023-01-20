@@ -251,6 +251,19 @@ namespace SalesManagement_SysDev
             Form form = new Management_Order.Order();
             form.Show(this);
         }
+
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            template.loginName = "テスト";
+            template.loginPosition = "管理者";
+            template.EmID = 116;
+            template.PosID = 1;
+            template.soname = "北大阪営業所";
+            template.loginID = 116;
+            DateTime dt = DateTime.Now;
+            template.loginTime = dt.ToString("MM/dd HH;mm");
+            setting.form.Show(this);
+        }
     }
 }
 

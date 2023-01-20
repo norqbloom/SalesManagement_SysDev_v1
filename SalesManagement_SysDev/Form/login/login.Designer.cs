@@ -37,10 +37,7 @@ namespace SalesManagement_SysDev
             this.lodinggif = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.lodinggif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +95,7 @@ namespace SalesManagement_SysDev
             // 
             this.lodinggif.Image = global::SalesManagement_SysDev.Properties.Resources.l1oading;
             this.lodinggif.Location = new System.Drawing.Point(130, 398);
-            this.lodinggif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lodinggif.Margin = new System.Windows.Forms.Padding(2);
             this.lodinggif.Name = "lodinggif";
             this.lodinggif.Size = new System.Drawing.Size(110, 73);
             this.lodinggif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,12 +107,13 @@ namespace SalesManagement_SysDev
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::SalesManagement_SysDev.Properties.Resources._15642961;
             this.pictureBox1.Location = new System.Drawing.Point(67, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(266, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
             // 
             // backgroundWorker1
             // 
@@ -123,33 +121,11 @@ namespace SalesManagement_SysDev
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(9, 398);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 18);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "追加(いずれ消す)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(13, 322);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 18);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "F_login";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(67, 378);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(104, 16);
             this.checkBox1.TabIndex = 10;
@@ -157,27 +133,13 @@ namespace SalesManagement_SysDev
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(13, 214);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 18);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "ログインスキップ";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(382, 491);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lodinggif);
             this.Controls.Add(this.logina);
             this.Controls.Add(this.pictureBox1);
@@ -206,9 +168,6 @@ namespace SalesManagement_SysDev
         private System.Windows.Forms.Label logina;
         private System.Windows.Forms.PictureBox lodinggif;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
     }
 }

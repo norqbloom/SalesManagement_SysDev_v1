@@ -66,6 +66,8 @@ namespace SalesManagement_SysDev
             logout.Visible = false;
             loginhistorybtn.Visible = false;
             RegPasswordbtn.Visible = false;
+
+            buttonF_Login.Visible = false;
         }
 
         private void PosVisible()
@@ -439,8 +441,7 @@ namespace SalesManagement_SysDev
             colorcomboBox.Visible = true;
             colorlabel.Visible = true;
             comitbtn.Visible = true;
-
-
+            buttonF_Login.Visible = true;
         }
 
         private void setting_MouseEnter(object sender, EventArgs e)
@@ -595,13 +596,10 @@ namespace SalesManagement_SysDev
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void buttonF_Login_Click(object sender, EventArgs e)
         {
-            Size size = childsubmenu.Size;
-            int w = size.Width;
-            int h = size.Height;
-            MessageBox.Show(w.ToString());
-            MessageBox.Show(h.ToString());
+            Form form = new F_Login();
+            form.Show(this);
         }
     }
 }
