@@ -665,6 +665,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 history = context.M_Prohistory.Where(x => x.PrID == selectCondition.PrID).ToList();
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)
