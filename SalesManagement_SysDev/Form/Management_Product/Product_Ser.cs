@@ -593,7 +593,7 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void serchdateset(int number)
         {
-            M_Prohistory selectCondition = new M_Prohistory
+            Prhistory selectCondition = new Prhistory
             {
                 PrID = number.ToString(),
 
