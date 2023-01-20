@@ -171,6 +171,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.textBoxEmID.Location = new System.Drawing.Point(133, 48);
             this.textBoxEmID.Name = "textBoxEmID";
+            this.textBoxEmID.ReadOnly = true;
             this.textBoxEmID.Size = new System.Drawing.Size(100, 32);
             this.textBoxEmID.TabIndex = 71;
             // 

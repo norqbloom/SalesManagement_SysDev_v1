@@ -29,6 +29,10 @@ namespace SalesManagement_SysDev.Management_Product
 
         //デートタイムピッカーの設定
         SetFormDateTimePiker();
+            var context = new SalesManagement_DevContext();
+            var a = context.M_Products.Count();
+            int countplus = a + 1;
+            textBoxPrID.Text = countplus.ToString();
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -41,9 +45,10 @@ namespace SalesManagement_SysDev.Management_Product
             //商品情報作成
             var regProduct = GenerateDataAtRegistration();
             RegistrationProduct(regProduct);
+
             var reghis = GeneratehistoryDataAtRegistration();
-            //商品情報登録
             RegistrationClhistory(reghis);
+            
             //データグリッドビューの再ロード
             SetFormDataGridView();
         }
@@ -123,7 +128,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void ClearInput()
         {
-            textBoxPrID2.Text = "";
+            textBoxPrID.Text = "";
             textBoxMaID.Text = "";
             textBoxPrName.Text = "";
             textBoxPrice.Text = "";
@@ -137,34 +142,34 @@ namespace SalesManagement_SysDev.Management_Product
         private bool GetValidDataAtRegistration()
         {
             //商品データの適否
-            if (!String.IsNullOrEmpty(textBoxPrID2.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
             {
                 //文字種
-                if (!dataInputFormCheck.CheckNumeric(textBoxPrID2.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxPrID.Text.Trim()))
                 {
                     messageDsp.DspMsg("M2001");//商品IDは半角数字入力です
-                    textBoxPrID2.Focus();
+                    textBoxPrID.Focus();
                     return false;
                 }
                 //文字数　
-                if (textBoxPrID2.TextLength > 6)
+                if (textBoxPrID.TextLength > 6)
                 {
                     messageDsp.DspMsg("M2002");//商品IDは6文字です
-                    textBoxPrID2.Focus();
+                    textBoxPrID.Focus();
                     return false;
                 }
                 //存在なしチェック
-                if (productDataAccess.CheckPrIDExistence(textBoxPrID2.Text.Trim()))
+                if (productDataAccess.CheckPrIDExistence(textBoxPrID.Text.Trim()))
                 {
                     messageDsp.DspMsg("M2003");//商品IDは既に存在しています
-                    textBoxPrID2.Focus();
+                    textBoxPrID.Focus();
                     return false;
                 }
             }
             else
             {
                 messageDsp.DspMsg("M2004");//商品IDが入力されていません
-                textBoxPrID2.Focus();
+                textBoxPrID.Focus();
                 return false;
             }
             //メーカIDの適否
@@ -178,7 +183,7 @@ namespace SalesManagement_SysDev.Management_Product
                     return false;
                 }
                 //文字数　
-                if (textBoxPrID2.TextLength > 6)
+                if (textBoxPrID.TextLength > 6)
                 {
                     messageDsp.DspMsg("M2006");//メーカIDは4文字です
                     textBoxMaID.Focus();
@@ -323,7 +328,7 @@ namespace SalesManagement_SysDev.Management_Product
             //登録情報のセット
             return new M_Product
             {
-                PrID = int.Parse(textBoxPrID2.Text.Trim()),
+                PrID = int.Parse(textBoxPrID.Text.Trim()),
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 Price = int.Parse(textBoxPrice.Text.Trim()),
@@ -356,19 +361,19 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 messageDsp.DspMsg("M2031");//商品データ登録に失敗しました
             }
-            textBoxPrID2.Focus();
+            textBoxPrID.Focus();
 
 
         }
 
-        private Prhistory GeneratehistoryDataAtRegistration()
+        private M_Prohistory GeneratehistoryDataAtRegistration()
         {
             DateTime dt = DateTime.Now;
             string regtime = dt.ToString("MM/dd HH;mm");
 
-            return new Prhistory
+            return new M_Prohistory
             {
-                PrID=textBoxPrID2.Text,
+                PrID=textBoxPrID.Text,
                 RegisteredDate = regtime,
                 regUserID = template.EmID.ToString(),
                 regUserName = template.loginName,
@@ -377,12 +382,12 @@ namespace SalesManagement_SysDev.Management_Product
                 LastupdatedUserName = "なし"
             };
         }
-        private void RegistrationClhistory(Prhistory reghis)
+        private void RegistrationClhistory(M_Prohistory reghis)
         {
             try
             {
                 var context = new SalesManagement_DevContext();
-                context.Prhistories.Add(reghis);
+                context.M_Prohistory.Add(reghis);
                 context.SaveChanges();
                 context.Dispose();
             }

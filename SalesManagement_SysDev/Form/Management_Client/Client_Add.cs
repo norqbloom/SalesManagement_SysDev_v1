@@ -41,6 +41,12 @@ namespace SalesManagement_SysDev.Management_Client
         {
             setdata();
             SetFormDataGridView();
+
+            var context = new SalesManagement_DevContext();
+            var a = context.M_Clients.Count();
+            int countplus = a + 1;
+            textBoxClID.Text = countplus.ToString();
+            
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -328,7 +334,7 @@ namespace SalesManagement_SysDev.Management_Client
 
             return new M_clhistory
             {
-                ClID = textBoxSoID.Text,
+                ClID = textBoxClID.Text,
                 RegisteredDate = regtime,
                 regUserID = template.EmID.ToString(),
                 regUserName = template.loginName,

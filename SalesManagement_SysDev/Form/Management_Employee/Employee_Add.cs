@@ -28,6 +28,11 @@ namespace SalesManagement_SysDev.Management_Employee
         private void Employee_Add_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
+
+            var context = new SalesManagement_DevContext();
+            var a = context.M_Employees.Count();
+            int countplus = a + 1;
+            textBoxEmID.Text = countplus.ToString();
         }
 
         private void button_Add_Click(object sender, EventArgs e)

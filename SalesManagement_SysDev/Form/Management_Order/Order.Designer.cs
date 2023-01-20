@@ -193,6 +193,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxOrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.textBoxOrID.Location = new System.Drawing.Point(121, 15);
             this.textBoxOrID.Name = "textBoxOrID";
+            this.textBoxOrID.ReadOnly = true;
             this.textBoxOrID.Size = new System.Drawing.Size(100, 32);
             this.textBoxOrID.TabIndex = 94;
             // 

@@ -141,6 +141,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
             this.textBoxClID.Location = new System.Drawing.Point(164, 48);
             this.textBoxClID.Name = "textBoxClID";
+            this.textBoxClID.ReadOnly = true;
             this.textBoxClID.Size = new System.Drawing.Size(100, 32);
             this.textBoxClID.TabIndex = 34;
             // 

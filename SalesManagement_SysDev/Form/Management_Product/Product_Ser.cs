@@ -593,7 +593,7 @@ namespace SalesManagement_SysDev.Management_Product
         }
         private void serchdateset(int number)
         {
-            Prhistory selectCondition = new Prhistory
+            M_Prohistory selectCondition = new M_Prohistory
             {
                 PrID = number.ToString(),
 
@@ -636,11 +636,9 @@ namespace SalesManagement_SysDev.Management_Product
         private void dataGridViewDsp_SelectionChanged_1(object sender, EventArgs e)
         {
             int number;
-            int PrIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
 
-            serchdateset(PrIDtxt);
+            serchdateset(number);
             setdatedetail();
         }
     }

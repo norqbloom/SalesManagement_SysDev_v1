@@ -136,11 +136,6 @@ namespace SalesManagement_SysDev.Management_Client
             textBoxPageNo.Text = (pageNo + 1).ToString();
         }
 
-        private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void setdata()
         {
             clients = clientDataAccess.GetClientDspData();
@@ -322,10 +317,7 @@ namespace SalesManagement_SysDev.Management_Client
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
-            int ClIDtxt;
-            number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            ClIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            //label5.Text = ClIDtxt.ToString();
+            number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
 
             serchdateset(number);
             setdatedetail();

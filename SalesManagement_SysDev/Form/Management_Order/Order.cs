@@ -33,6 +33,10 @@ namespace SalesManagement_SysDev.Management_Order
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
+            var context = new SalesManagement_DevContext();
+            var a = context.T_Orders.Count();
+            int countplus = a + 1;
+            textBoxOrID.Text = countplus.ToString();
         }
 
         private void button_Add_Click(object sender, EventArgs e)
