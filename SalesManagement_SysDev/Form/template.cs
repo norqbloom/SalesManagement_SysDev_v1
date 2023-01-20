@@ -184,6 +184,7 @@ namespace SalesManagement_SysDev
             colorcomboBox.Visible = false;
             colorlabel.Visible = false;
             comitbtn.Visible = false;
+            buttonF_Login.Visible = false;
             if (activeForm != null)
                 activeForm.Close();
             activeForm = chidform;
