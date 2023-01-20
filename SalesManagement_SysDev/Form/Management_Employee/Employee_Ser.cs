@@ -575,16 +575,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 return;
             }
 
-            //labelSoID.Text = x.EmID;
-            //labelSo.Text = x.SoID;
-            //labelPo.Text = x.PoID;
-            //labelcreatedate.Text = x.RegisteredDate;
-            //labelcreateid.Text = x.regUserID;
-            //labelcreatename.Text = x.regUserName;
-            //llabelcreateupddate.Text = x.UpDateTime;
-            //labelcreateupdid.Text = x.LastupdatedUserID;
-            //labelcreateupdname.Text = x.LastupdatedUserName;
-            //incntok();
+            labelEmID.Text = x.EmID;
+            labelcreatedate.Text = x.RegisteredDate;
+            labelcreateid.Text = x.regUserID;
+            labelcreatename.Text = x.regUserName;
+            llabelcreateupddate.Text = x.UpDateTime;
+            labelcreateupdid.Text = x.LastupdatedUserID;
+            labelcreateupdname.Text = x.LastupdatedUserName;
+            incntok();
 
 
         }

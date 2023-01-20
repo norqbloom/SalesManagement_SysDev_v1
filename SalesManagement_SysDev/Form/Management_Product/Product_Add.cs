@@ -123,7 +123,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void ClearInput()
         {
-            textBoxPrID.Text = "";
+            textBoxPrID2.Text = "";
             textBoxMaID.Text = "";
             textBoxPrName.Text = "";
             textBoxPrice.Text = "";
@@ -137,34 +137,34 @@ namespace SalesManagement_SysDev.Management_Product
         private bool GetValidDataAtRegistration()
         {
             //商品データの適否
-            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+            if (!String.IsNullOrEmpty(textBoxPrID2.Text.Trim()))
             {
                 //文字種
-                if (!dataInputFormCheck.CheckNumeric(textBoxPrID.Text.Trim()))
+                if (!dataInputFormCheck.CheckNumeric(textBoxPrID2.Text.Trim()))
                 {
                     messageDsp.DspMsg("M2001");//商品IDは半角数字入力です
-                    textBoxPrID.Focus();
+                    textBoxPrID2.Focus();
                     return false;
                 }
                 //文字数　
-                if (textBoxPrID.TextLength > 6)
+                if (textBoxPrID2.TextLength > 6)
                 {
                     messageDsp.DspMsg("M2002");//商品IDは6文字です
-                    textBoxPrID.Focus();
+                    textBoxPrID2.Focus();
                     return false;
                 }
                 //存在なしチェック
-                if (productDataAccess.CheckPrIDExistence(textBoxPrID.Text.Trim()))
+                if (productDataAccess.CheckPrIDExistence(textBoxPrID2.Text.Trim()))
                 {
                     messageDsp.DspMsg("M2003");//商品IDは既に存在しています
-                    textBoxPrID.Focus();
+                    textBoxPrID2.Focus();
                     return false;
                 }
             }
             else
             {
                 messageDsp.DspMsg("M2004");//商品IDが入力されていません
-                textBoxPrID.Focus();
+                textBoxPrID2.Focus();
                 return false;
             }
             //メーカIDの適否
@@ -178,7 +178,7 @@ namespace SalesManagement_SysDev.Management_Product
                     return false;
                 }
                 //文字数　
-                if (textBoxPrID.TextLength > 6)
+                if (textBoxPrID2.TextLength > 6)
                 {
                     messageDsp.DspMsg("M2006");//メーカIDは4文字です
                     textBoxMaID.Focus();
@@ -323,7 +323,7 @@ namespace SalesManagement_SysDev.Management_Product
             //登録情報のセット
             return new M_Product
             {
-                PrID = int.Parse(textBoxPrID.Text.Trim()),
+                PrID = int.Parse(textBoxPrID2.Text.Trim()),
                 MaID = int.Parse(textBoxMaID.Text.Trim()),
                 PrName = textBoxPrName.Text.Trim(),
                 Price = int.Parse(textBoxPrice.Text.Trim()),
@@ -356,10 +356,9 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 messageDsp.DspMsg("M2031");//商品データ登録に失敗しました
             }
-            textBoxPrID.Focus();
+            textBoxPrID2.Focus();
 
-            //入力エリアのクリア
-            ClearInput();
+
         }
 
         private Prhistory GeneratehistoryDataAtRegistration()
@@ -369,16 +368,13 @@ namespace SalesManagement_SysDev.Management_Product
 
             return new Prhistory
             {
-                PrID = textBoxPrID.Text,
-                MaID = textBoxMaID.Text,
-                ScID = textBoxScID.Text,
+                PrID=textBoxPrID2.Text,
                 RegisteredDate = regtime,
                 regUserID = template.EmID.ToString(),
                 regUserName = template.loginName,
                 UpDateTime = "なし",
                 LastupdatedUserID = "なし",
                 LastupdatedUserName = "なし"
-
             };
         }
         private void RegistrationClhistory(Prhistory reghis)
@@ -394,6 +390,8 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //入力エリアのクリア
+            ClearInput();
         }
         
         private void SetFormDataGridView()

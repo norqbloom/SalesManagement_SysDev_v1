@@ -165,7 +165,7 @@ namespace SalesManagement_SysDev.Management_Employee
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.labelEmID);
             this.panel1.Controls.Add(this.label12);
@@ -191,7 +191,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(56, 246);
+            this.label2.Location = new System.Drawing.Point(24, 73);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 16);
@@ -203,7 +203,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelEmID.AutoSize = true;
             this.labelEmID.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelEmID.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelEmID.Location = new System.Drawing.Point(117, 246);
+            this.labelEmID.Location = new System.Drawing.Point(100, 73);
             this.labelEmID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmID.Name = "labelEmID";
             this.labelEmID.Size = new System.Drawing.Size(82, 16);
@@ -215,7 +215,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(39, 513);
+            this.label12.Location = new System.Drawing.Point(22, 353);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(80, 16);
@@ -227,7 +227,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(40, 471);
+            this.label11.Location = new System.Drawing.Point(23, 311);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 16);
@@ -239,7 +239,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(40, 430);
+            this.label10.Location = new System.Drawing.Point(23, 270);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 16);
@@ -251,7 +251,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(40, 354);
+            this.label9.Location = new System.Drawing.Point(23, 194);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 16);
@@ -263,7 +263,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(39, 314);
+            this.label8.Location = new System.Drawing.Point(22, 154);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 16);
@@ -275,7 +275,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(39, 273);
+            this.label7.Location = new System.Drawing.Point(22, 113);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 16);
@@ -287,7 +287,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelcreateupdname.AutoSize = true;
             this.labelcreateupdname.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelcreateupdname.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreateupdname.Location = new System.Drawing.Point(117, 513);
+            this.labelcreateupdname.Location = new System.Drawing.Point(100, 353);
             this.labelcreateupdname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelcreateupdname.Name = "labelcreateupdname";
             this.labelcreateupdname.Size = new System.Drawing.Size(61, 16);
@@ -299,7 +299,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelcreateupdid.AutoSize = true;
             this.labelcreateupdid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelcreateupdid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreateupdid.Location = new System.Drawing.Point(117, 471);
+            this.labelcreateupdid.Location = new System.Drawing.Point(100, 311);
             this.labelcreateupdid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelcreateupdid.Name = "labelcreateupdid";
             this.labelcreateupdid.Size = new System.Drawing.Size(61, 16);
@@ -311,7 +311,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.llabelcreateupddate.AutoSize = true;
             this.llabelcreateupddate.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.llabelcreateupddate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.llabelcreateupddate.Location = new System.Drawing.Point(117, 430);
+            this.llabelcreateupddate.Location = new System.Drawing.Point(100, 270);
             this.llabelcreateupddate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llabelcreateupddate.Name = "llabelcreateupddate";
             this.llabelcreateupddate.Size = new System.Drawing.Size(61, 16);
@@ -323,7 +323,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelcreatename.AutoSize = true;
             this.labelcreatename.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelcreatename.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreatename.Location = new System.Drawing.Point(117, 354);
+            this.labelcreatename.Location = new System.Drawing.Point(100, 194);
             this.labelcreatename.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelcreatename.Name = "labelcreatename";
             this.labelcreatename.Size = new System.Drawing.Size(52, 16);
@@ -335,7 +335,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelcreateid.AutoSize = true;
             this.labelcreateid.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelcreateid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreateid.Location = new System.Drawing.Point(117, 314);
+            this.labelcreateid.Location = new System.Drawing.Point(100, 154);
             this.labelcreateid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelcreateid.Name = "labelcreateid";
             this.labelcreateid.Size = new System.Drawing.Size(52, 16);
@@ -347,7 +347,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.labelcreatedate.AutoSize = true;
             this.labelcreatedate.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelcreatedate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelcreatedate.Location = new System.Drawing.Point(117, 273);
+            this.labelcreatedate.Location = new System.Drawing.Point(100, 113);
             this.labelcreatedate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelcreatedate.Name = "labelcreatedate";
             this.labelcreatedate.Size = new System.Drawing.Size(52, 16);
