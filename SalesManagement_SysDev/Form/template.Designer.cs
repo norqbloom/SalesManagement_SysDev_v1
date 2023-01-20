@@ -87,6 +87,7 @@ namespace SalesManagement_SysDev
             this.label4 = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.Label();
             this.childsubmenu = new System.Windows.Forms.Panel();
+            this.buttonF_Login = new System.Windows.Forms.Button();
             this.colorlabel = new System.Windows.Forms.Label();
             this.colorcomboBox = new System.Windows.Forms.ComboBox();
             this.tilepanel = new System.Windows.Forms.Panel();
@@ -100,7 +101,6 @@ namespace SalesManagement_SysDev
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.comitbtn = new System.Windows.Forms.Button();
-            this.buttonF_Login = new System.Windows.Forms.Button();
             this.sidepanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -116,7 +116,6 @@ namespace SalesManagement_SysDev
             this.Productsubmenu.SuspendLayout();
             this.clientsubmenu.SuspendLayout();
             this.subtitlepanel.SuspendLayout();
-            this.childsubmenu.SuspendLayout();
             this.tilepanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting)).BeginInit();
@@ -1097,7 +1096,6 @@ namespace SalesManagement_SysDev
             this.childsubmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.childsubmenu.Controls.Add(this.buttonF_Login);
             this.childsubmenu.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.childsubmenu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.childsubmenu.Location = new System.Drawing.Point(262, 110);
@@ -1106,6 +1104,16 @@ namespace SalesManagement_SysDev
             this.childsubmenu.Size = new System.Drawing.Size(892, 542);
             this.childsubmenu.TabIndex = 1;
             this.childsubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.childsubmenu_Paint);
+            // 
+            // buttonF_Login
+            // 
+            this.buttonF_Login.Location = new System.Drawing.Point(575, 150);
+            this.buttonF_Login.Name = "buttonF_Login";
+            this.buttonF_Login.Size = new System.Drawing.Size(75, 23);
+            this.buttonF_Login.TabIndex = 0;
+            this.buttonF_Login.Text = "F_Login";
+            this.buttonF_Login.UseVisualStyleBackColor = true;
+            this.buttonF_Login.Click += new System.EventHandler(this.buttonF_Login_Click);
             // 
             // colorlabel
             // 
@@ -1262,21 +1270,12 @@ namespace SalesManagement_SysDev
             this.comitbtn.UseVisualStyleBackColor = true;
             this.comitbtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonF_Login
-            // 
-            this.buttonF_Login.Location = new System.Drawing.Point(268, 39);
-            this.buttonF_Login.Name = "buttonF_Login";
-            this.buttonF_Login.Size = new System.Drawing.Size(75, 23);
-            this.buttonF_Login.TabIndex = 0;
-            this.buttonF_Login.Text = "F_Login";
-            this.buttonF_Login.UseVisualStyleBackColor = true;
-            this.buttonF_Login.Click += new System.EventHandler(this.buttonF_Login_Click);
-            // 
             // template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 652);
+            this.Controls.Add(this.buttonF_Login);
             this.Controls.Add(this.comitbtn);
             this.Controls.Add(this.colorlabel);
             this.Controls.Add(this.colorcomboBox);
@@ -1306,7 +1305,6 @@ namespace SalesManagement_SysDev
             this.clientsubmenu.ResumeLayout(false);
             this.subtitlepanel.ResumeLayout(false);
             this.subtitlepanel.PerformLayout();
-            this.childsubmenu.ResumeLayout(false);
             this.tilepanel.ResumeLayout(false);
             this.tilepanel.PerformLayout();
             this.panel2.ResumeLayout(false);
