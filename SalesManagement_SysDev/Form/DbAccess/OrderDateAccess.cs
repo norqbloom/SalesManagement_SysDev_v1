@@ -137,14 +137,34 @@ namespace SalesManagement_SysDev
             return true;
         }
 
-        public List<T_Order> GetOrderDataDsp(int grid_Orflg,int radioint)
+        public List<T_Order> GetOrderDataDsp(int grid_Orflg)
         {
             List<T_Order> orders = new List<T_Order>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                orders = context.T_Orders.Where(x => x.OrFlag == grid_Orflg).ToList();
+                orders = context.T_Orders.Where(x => x.OrFlag == grid_Orflg &&
+                                                     x.OrStateFlag == 0).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return orders;
+        }
+
+        public List<T_Order> GetOrderDataDsp_kakutei(int grid_OrStateflg,int grid_Orflg)
+        {
+            List<T_Order> orders = new List<T_Order>();
+
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                orders = context.T_Orders.Where(x => x.OrStateFlag == grid_OrStateflg &&
+                                                x.OrFlag == grid_Orflg).ToList();
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -183,6 +203,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getorsoem(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -210,6 +231,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getorso(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -236,6 +258,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getor(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -261,6 +284,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> GetNo(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -285,6 +309,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getorsocl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -312,6 +337,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getorem(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -338,6 +364,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getorcl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -364,6 +391,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getoremcl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -391,6 +419,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getsoemcl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -418,6 +447,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getsocl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -444,6 +474,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getemcl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -470,6 +501,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getcl(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -495,6 +527,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getem(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -520,6 +553,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getso(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -545,6 +579,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_Order> Getemso(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
@@ -571,6 +606,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<T_OrderDsp> GetProductData2(int radioint)
         {
             List<T_OrderDsp> order = new List<T_OrderDsp>();
@@ -616,6 +652,7 @@ namespace SalesManagement_SysDev
             }
             return order;
         }
+
         public List<OrHistory> getdetail(OrHistory selectCondition)
         {
             List<OrHistory> Orhistory = new List<OrHistory>();
@@ -631,10 +668,7 @@ namespace SalesManagement_SysDev
             }
             return Orhistory;
         }
-
     }
-
-
 }
     
 

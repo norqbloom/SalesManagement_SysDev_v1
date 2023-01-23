@@ -112,33 +112,39 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 button_hide_nonhide.Text = "非表示";
                 grid_OrFlg = 2;
-                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg,0);
-                SetFormDataGridView();
+                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg);
+                SetDataGridView();
             }
             else
             {
                 button_hide_nonhide.Text = "表示";
                 grid_OrFlg = 0;
-                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
-                SetFormDataGridView();
+                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg);
+                SetDataGridView();
             }
         }
 
         private void button_hide_nonhide_con_Click(object sender, EventArgs e)
         {
-            if (button_hide_nonhide_con.Text == "未確定")
+            if (button_hide_nonhide_con.Text == "確定済")
             {
-                button_hide_nonhide_con.Text = "確定済";
-                grid_OrFlg = 2;
-                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
-                SetFormDataGridView();
+                button_hide_nonhide_con.Text = "未確定";
+                //grid_OrFlg = 2;
+                //orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
+                int grid_StateFlg = 1;
+                int grid_Orflg = 0;
+                orders = orderDateAccess.GetOrderDataDsp_kakutei(grid_StateFlg,grid_Orflg);
+                SetDataGridView();
             }
             else
             {
                 button_hide_nonhide_con.Text = "確定済";
-                grid_OrFlg = 0;
-                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
-                SetFormDataGridView();
+                //grid_OrFlg = 0;
+                //orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
+                int grid_StateFlg = 0;
+                int grid_Orflg = 0;
+                orders = orderDateAccess.GetOrderDataDsp_kakutei(grid_StateFlg, grid_Orflg);
+                SetDataGridView();
             }
         }
 
@@ -220,10 +226,9 @@ namespace SalesManagement_SysDev.Management_Order
             }
 
 
-            Order.grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
-            int ID = Order.grid_OrID;
+            grid_OrID = (int)dataGridViewDspOrder.CurrentRow.Cells[0].Value;
 
-            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(grid_OrID);
             GetDataGridView2();
         }
 
@@ -516,6 +521,7 @@ namespace SalesManagement_SysDev.Management_Order
                 OrTotalPrice = int.Parse(textBoxOrTotalPrice.Text.Trim())
             };
         }
+
         private T_Chumon GenerateDataAtRegistrationChumon()
         {
             int checkFlg;
@@ -550,7 +556,6 @@ namespace SalesManagement_SysDev.Management_Order
                 ChHidden = hidden
             };
         }
-
 
         private bool GenerateDataAtRegistrationChumonDetail()
         {
@@ -631,6 +636,7 @@ namespace SalesManagement_SysDev.Management_Order
             textBoxOrID.Focus();
             ClearInput();
         }
+
         private void RegistrationChumon(T_Chumon regChumon)
         {
             bool flg = chumonDataAccess.AddchumonData(regChumon);
@@ -653,13 +659,6 @@ namespace SalesManagement_SysDev.Management_Order
             }
             textBoxOrID.Focus();
         }
-
-
-        private void RegistrationChumonDetail(T_ChumonDetail regChumonDetail)
-        {
-
-        }
-
 
         //Delete
         private bool GetValidDataDelete()
@@ -905,10 +904,9 @@ namespace SalesManagement_SysDev.Management_Order
 
         private void GetDataGridView()
         {
-            int radioint = 0;
-            orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg,radioint);
-            orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(grid_OrFlg);
-            products = productDataAccess.GetProductDataDsp(radioint);
+            orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg);
+            //orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(grid_OrFlg);
+            products = productDataAccess.GetProductDataDsp(grid_OrFlg);
             SetDataGridView();
         }
         private void GetDataGridView2()
@@ -933,7 +931,7 @@ namespace SalesManagement_SysDev.Management_Order
             else
                 textBoxPageNo.Text = "1";
 
-
+            dataGridViewDspOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             foreach (DataGridViewColumn clm in dataGridViewDspOrder.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -947,18 +945,17 @@ namespace SalesManagement_SysDev.Management_Order
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            dataGridViewDspOrder.Columns[0].Width = 100;
-            dataGridViewDspOrder.Columns[1].Width = 100;
-            dataGridViewDspOrder.Columns[2].Width = 100;
-            dataGridViewDspOrder.Columns[3].Width = 100;
+            dataGridViewDspOrder.Columns[0].Width = 50;
+            dataGridViewDspOrder.Columns[1].Width = 60;
+            dataGridViewDspOrder.Columns[2].Width = 50;
+            dataGridViewDspOrder.Columns[3].Width = 50;
             dataGridViewDspOrder.Columns[4].Width = 100;
             dataGridViewDspOrder.Columns[5].Width = 100;
-            dataGridViewDspOrder.Columns[6].Width = 100;
-            dataGridViewDspOrder.Columns[7].Width = 100;
-            dataGridViewDspOrder.Columns[8].Width = 100;
+            dataGridViewDspOrder.Columns[6].Width = 90;
+            dataGridViewDspOrder.Columns[7].Width = 90;
+            //dataGridViewDspOrder.Columns[8].Width = 100;
 
             dataGridViewDspProduct.Columns[1].Visible = false;
-
             dataGridViewDspProduct.Columns[4].Visible = false;
             dataGridViewDspProduct.Columns[5].Visible = false;
             dataGridViewDspProduct.Columns[6].Visible = false;
@@ -969,21 +966,21 @@ namespace SalesManagement_SysDev.Management_Order
             dataGridViewDspProduct.Columns[11].Visible = false;
 
             //各列の文字位置の指定
-            dataGridViewDspOrder.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDspOrder.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDspOrder.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(orders.Count / (double)pageSize)) + "ページ";
@@ -1237,8 +1234,6 @@ namespace SalesManagement_SysDev.Management_Order
                 messageDsp.DspMsg("M2035");//商品データ更新に失敗しました
             }
             textBoxOrID.Focus();
-        }
-
-        
+        }      
     }
 }
