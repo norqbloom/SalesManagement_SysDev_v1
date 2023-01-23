@@ -78,6 +78,8 @@ namespace SalesManagement_SysDev.Management_Order
             this.button_First_Order = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.checkBoxOrFlag = new System.Windows.Forms.CheckBox();
+            this.button_hide_nonhide = new System.Windows.Forms.Button();
+            this.button_hide_nonhide_con = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).BeginInit();
@@ -580,11 +582,35 @@ namespace SalesManagement_SysDev.Management_Order
             this.checkBoxOrFlag.Text = "受注管理フラグ";
             this.checkBoxOrFlag.UseVisualStyleBackColor = true;
             // 
+            // button_hide_nonhide
+            // 
+            this.button_hide_nonhide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button_hide_nonhide.Location = new System.Drawing.Point(296, 905);
+            this.button_hide_nonhide.Name = "button_hide_nonhide";
+            this.button_hide_nonhide.Size = new System.Drawing.Size(55, 35);
+            this.button_hide_nonhide.TabIndex = 141;
+            this.button_hide_nonhide.Text = "表示";
+            this.button_hide_nonhide.UseVisualStyleBackColor = true;
+            this.button_hide_nonhide.Click += new System.EventHandler(this.button_hide_nonhide_Click);
+            // 
+            // button_hide_nonhide_con
+            // 
+            this.button_hide_nonhide_con.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button_hide_nonhide_con.Location = new System.Drawing.Point(235, 905);
+            this.button_hide_nonhide_con.Name = "button_hide_nonhide_con";
+            this.button_hide_nonhide_con.Size = new System.Drawing.Size(55, 35);
+            this.button_hide_nonhide_con.TabIndex = 142;
+            this.button_hide_nonhide_con.Text = "確定済";
+            this.button_hide_nonhide_con.UseVisualStyleBackColor = true;
+            this.button_hide_nonhide_con.Click += new System.EventHandler(this.button_hide_nonhide_con_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_hide_nonhide_con);
+            this.Controls.Add(this.button_hide_nonhide);
             this.Controls.Add(this.checkBoxOrFlag);
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.panel1);
@@ -691,5 +717,7 @@ namespace SalesManagement_SysDev.Management_Order
         private System.Windows.Forms.Button button_First_Order;
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.CheckBox checkBoxOrFlag;
+        private System.Windows.Forms.Button button_hide_nonhide;
+        private System.Windows.Forms.Button button_hide_nonhide_con;
     }
 }

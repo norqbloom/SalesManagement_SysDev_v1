@@ -21,8 +21,9 @@ namespace SalesManagement_SysDev.Management_Order
         private static List<M_Product> products;
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
-        static int grid_OrID = 0;
+        private static int grid_OrID = 0;
         private static int grid = 10;
+        private static int grid_OrFlg = 0;
 
         public Order()
         {
@@ -103,6 +104,42 @@ namespace SalesManagement_SysDev.Management_Order
         private void button_Cle_Click(object sender, EventArgs e)
         {
             ClearInput();
+        }
+
+        private void button_hide_nonhide_Click(object sender, EventArgs e)
+        {
+            if (button_hide_nonhide.Text == "表示")
+            {
+                button_hide_nonhide.Text = "非表示";
+                grid_OrFlg = 2;
+                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg,0);
+                SetFormDataGridView();
+            }
+            else
+            {
+                button_hide_nonhide.Text = "表示";
+                grid_OrFlg = 0;
+                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
+                SetFormDataGridView();
+            }
+        }
+
+        private void button_hide_nonhide_con_Click(object sender, EventArgs e)
+        {
+            if (button_hide_nonhide_con.Text == "未確定")
+            {
+                button_hide_nonhide_con.Text = "確定済";
+                grid_OrFlg = 2;
+                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
+                SetFormDataGridView();
+            }
+            else
+            {
+                button_hide_nonhide_con.Text = "確定済";
+                grid_OrFlg = 0;
+                orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
+                SetFormDataGridView();
+            }
         }
 
         private void button_First_Order_Click(object sender, EventArgs e)
@@ -868,25 +905,15 @@ namespace SalesManagement_SysDev.Management_Order
 
         private void GetDataGridView()
         {
-            int ID = Order.grid_OrID;
             int radioint = 0;
-            //if (radioButton1.Checked == true)
-            //{
-            //    radioint = 2;
-            //}
-            //else
-            //{
-            //    radioint = 0;
-            //}
-            orders = orderDateAccess.GetOrderDataDsp(radioint);
-            orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(radioint);
+            orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg,radioint);
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(grid_OrFlg);
             products = productDataAccess.GetProductDataDsp(radioint);
             SetDataGridView();
         }
         private void GetDataGridView2()
         {
-            int ID = Order.grid_OrID;
-            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(ID);
+            orderDetails = orderDetailDataAccess.GetOrderDetailDataOrID(grid_OrID);
             SetDataGridView2();
         }
 
@@ -1211,5 +1238,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             textBoxOrID.Focus();
         }
+
+        
     }
 }

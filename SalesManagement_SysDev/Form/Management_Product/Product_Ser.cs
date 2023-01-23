@@ -16,7 +16,7 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
-        private static List<M_Prohistory> history;
+        private static List<Prhistory> history;
         private static int grid = 9;
 
         private void invcnt()

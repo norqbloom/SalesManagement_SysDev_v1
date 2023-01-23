@@ -453,17 +453,17 @@ namespace SalesManagement_SysDev.Management_Product
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 100;
-            //dataGridViewDsp.Columns[1].Width = 100;
-            //dataGridViewDsp.Columns[2].Width = 100;
-            //dataGridViewDsp.Columns[3].Width = 100;
-            //dataGridViewDsp.Columns[4].Visible = false;
-            //dataGridViewDsp.Columns[5].Width = 100;
-            //dataGridViewDsp.Columns[6].Width = 100;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 100;
-            //dataGridViewDsp.Columns[9].Width = 100;
-            //dataGridViewDsp.Columns[10].Width = 100;
+            dataGridViewDsp.Columns[0].Width = 50;
+            dataGridViewDsp.Columns[1].Width = 50;
+            dataGridViewDsp.Columns[2].Width = 100;
+            dataGridViewDsp.Columns[3].Width = 100;
+            dataGridViewDsp.Columns[4].Visible = false;
+            dataGridViewDsp.Columns[5].Width = 75;
+            dataGridViewDsp.Columns[6].Width = 70;
+            dataGridViewDsp.Columns[7].Width = 100;
+            dataGridViewDsp.Columns[8].Width = 90;
+            dataGridViewDsp.Columns[9].Width = 70;
+            dataGridViewDsp.Columns[10].Width = 85;
             //dataGridViewDsp.Columns[11].Width = 200;
 
             //各列の文字位置の指定
@@ -482,7 +482,5 @@ namespace SalesManagement_SysDev.Management_Product
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
         }
-
-        
     }
 }

@@ -136,31 +136,15 @@ namespace SalesManagement_SysDev
             }
             return true;
         }
-        public bool AddClientData(T_Order regClient)
-        {
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                context.T_Orders.Add(regClient);
-                context.SaveChanges();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return true;
 
-        }
-
-        public List<T_Order> GetOrderDataDsp(int radioint)
+        public List<T_Order> GetOrderDataDsp(int grid_Orflg,int radioint)
         {
             List<T_Order> orders = new List<T_Order>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                orders = context.T_Orders.Where(x => x.OrFlag == radioint).ToList();
+                orders = context.T_Orders.Where(x => x.OrFlag == grid_Orflg).ToList();
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -170,33 +154,7 @@ namespace SalesManagement_SysDev
             }
             return orders;
         }
-        public List<T_Order> GetPrMaget(T_Order selectCondition)
-        {
-            List<T_Order> order = new List<T_Order>();
 
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                order = context.T_Orders.Where(x =>
-                                                 x.OrFlag == 0 &&
-                                                 x.OrID.ToString().Contains(selectCondition.OrID.ToString()) &&
-                                                 x.SoID.ToString().Contains(selectCondition.SoID.ToString()) &&
-                                                 x.EmID.ToString().Contains(selectCondition.EmID.ToString()) &&
-                                                 x.ClID.ToString().Contains(selectCondition.ClID.ToString()) &&
-                                                 x.ClCharge.Contains(selectCondition.ClCharge) 
-                                                 //x.EmHiredate.Contains(selectCondition.EmHiredate) &&
-                                                 ).ToList();
-                context.SaveChanges();
-
-                context.Dispose();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return order;
-        }
         public List<T_Order> Getfull(T_Order selectCondition)
         {
             List<T_Order> order = new List<T_Order>();
