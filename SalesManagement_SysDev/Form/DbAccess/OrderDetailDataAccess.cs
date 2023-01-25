@@ -9,14 +9,14 @@ namespace SalesManagement_SysDev
 {
     class OrderDetailDataAccess
     {
-        public List<T_OrderDetail> GetOrderDetailDataDsp(int radioint)
+        public List<T_OrderDetail> GetOrderDetailDataDsp(int ID)
         {
             List<T_OrderDetail> orderDetails = new List<T_OrderDetail>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                orderDetails = context.T_OrderDetails.ToList();
+                orderDetails = context.T_OrderDetails.Where(x => x.OrID == ID).ToList();
                 context.SaveChanges();
                 context.Dispose();
             }
