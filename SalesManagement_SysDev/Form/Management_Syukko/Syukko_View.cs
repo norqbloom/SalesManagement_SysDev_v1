@@ -54,12 +54,14 @@ namespace SalesManagement_SysDev.Management_Syukko
                 flg=GenerateDataAtUpdate(item);
                 if (flg == true)
                 {
-                    messageDsp.DspMsg("M9008");
+                    //messageDsp.DspMsg("M9008");
+                    MessageBox.Show("確定に成功しました");
                 }
                 else
                 {
-                    
-                    messageDsp.DspMsg("M9009");
+
+                    //messageDsp.DspMsg("M9009");
+                    MessageBox.Show("確定に失敗しました");
 
                 }
 
