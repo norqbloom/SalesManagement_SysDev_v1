@@ -338,7 +338,7 @@ namespace SalesManagement_SysDev.Management_Product
             //商品管理フラグ
             if (checkBoxPrFlag.CheckState == CheckState.Indeterminate)
             {
-                messageDsp.DspMsg("");//メッセージ不明
+                messageDsp.DspMsg("M2036");//商品管理フラグが不確定です
                 checkBoxPrFlag.Focus();
                 return false;
             }
@@ -347,7 +347,7 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 if (String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M");//メッセージ不明
+                    messageDsp.DspMsg("M2038");//非表示理由が入力されていません
                     checkBoxPrFlag.Focus();
                     return false;
                 }
@@ -529,26 +529,36 @@ namespace SalesManagement_SysDev.Management_Product
         private void button_Del_Click(object sender, EventArgs e)
         {
             
-            if (!String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
+            if (checkBoxPrFlag.Checked == false)
             {
-                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
+                if (String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
                 {
-                    productDataAccess.delflg(number);
-                    int radioint = 0;
-                    products = productDataAccess.GetProductDataDsp(radioint);
-                    dataGridViewDsp.DataSource = products;
+                    int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+                    DialogResult result = messageDsp.DspMsg("M5555");//選択した項目を削除（非表示）にしますか？
+                    if (result == DialogResult.OK)
+                    {
+                        productDataAccess.delflg(number);
+                        int radioint = 0;
+                        products = productDataAccess.GetProductDataDsp(radioint);
+                        dataGridViewDsp.DataSource = products;
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
+                    messageDsp.DspMsg("M2038");//非表示理由が入力されていません
+                    textBoxPrHidden.Focus();
                     return;
                 }
+                
             }
             else
             {
-                MessageBox.Show("削除理由が入力されていません");
-                textBoxPrHidden.Focus();
+                messageDsp.DspMsg("M2036");//商品管理フラグが不確定です
+                checkBoxPrFlag.Focus();
                 return;
             }
         }

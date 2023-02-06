@@ -316,7 +316,7 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void RegistrationClient(M_Client regClient)
         {
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            DialogResult result = messageDsp.DspMsg("M1021"); //顧客データを登録してよろしいですか？
             if (result == DialogResult.Cancel)
                 return;
             bool flg = clientDataAccess.AddClientData(regClient);

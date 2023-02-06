@@ -309,10 +309,8 @@ namespace SalesManagement_SysDev.Management_Client
             bool flg = clientDataAccess.UpdClientData(updItem);
             if (flg == true)
                 messageDsp.DspMsg("M1026");　//顧客データを更新しました
-            //MessageBox.Show("ok");
             else
                 messageDsp.DspMsg("M1027"); //顧客データ更新に失敗しました
-            //MessageBox.Show("no");
         }
         private M_clhistory GenerateDataAtUpdatehistory()
         {
@@ -391,26 +389,35 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void button_Del_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(textBoxClHidden.Text.Trim()))
+            if (checkBoxClFlag.Checked == true)
             {
-                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
+                if (String.IsNullOrEmpty(textBoxClHidden.Text.Trim()))
                 {
-                    clientDataAccess.delflg(number);
-                    setdata();
+                    int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+                    DialogResult result = messageDsp.DspMsg("M5555");//選択した項目を削除（非表示）にしますか？
+                    if (result == DialogResult.OK)
+                    {
+                        clientDataAccess.delflg(number);
+                        setdata();
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
+                    messageDsp.DspMsg("M2038");//非表示理由が入力されていません
+                    textBoxClHidden.Focus();
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("削除理由が入力されていません");
-                textBoxClHidden.Focus();
+                messageDsp.DspMsg("M1037");//顧客管理フラグが不確定です
+                checkBoxClFlag.Focus();
                 return;
-            }
+            }          
         }
     }
 }

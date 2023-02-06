@@ -52,7 +52,6 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void button_Cle_Click(object sender, EventArgs e)
         {
-            textBoxEmID.Text = "";
             textBoxSoID.Text = "";
             textBoxPoID.Text = "";
             textBoxEmName.Text = "";
@@ -125,14 +124,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 //Emid半角英数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M6001");
+                    messageDsp.DspMsg("M6001");//社員IDは半角数字入力です
                     textBoxEmID.Focus();
                     return false;
                 }
                 //Emid文字数チェック
                 if (textBoxEmID.TextLength > 6)
                 {
-                    messageDsp.DspMsg("M6002");
+                    messageDsp.DspMsg("M6002");//社員IDは６文字です
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -140,7 +139,7 @@ namespace SalesManagement_SysDev.Management_Employee
                 int EmpID = int.Parse(textBoxEmID.Text.Trim());
                 if (employeeDataAccess.CheckEmployeesCDExistence(EmpID))
                 {
-                    messageDsp.DspMsg("M6003");
+                    messageDsp.DspMsg("M6003");//入力された社員IDは既に存在しています
                     textBoxEmID.Focus();
                     return false;
                 }
@@ -148,7 +147,7 @@ namespace SalesManagement_SysDev.Management_Employee
             }
             else
             {
-                messageDsp.DspMsg("M6004");
+                messageDsp.DspMsg("M6004");//社員IDが入力されていません
                 textBoxEmID.Focus();
                 return false;
             }
@@ -159,14 +158,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 //名前文字数
                 if (textBoxEmName.TextLength > 50)
                 {
-                    messageDsp.DspMsg("M6006");
+                    messageDsp.DspMsg("M6006");//社員名は50文字以下です
                     textBoxEmName.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M6007");
+                messageDsp.DspMsg("M6007");//社員名が入力されていません
                 textBoxEmName.Focus();
                 return false;
             }
@@ -176,21 +175,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //SOid型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1005");
+                    messageDsp.DspMsg("M1005");//営業所IDは半角数字入力です
                     textBoxSoID.Focus();
                     return false;
                 }
                 //soid文字数チェック
                 if (textBoxSoID.TextLength > 2)
                 {
-                    messageDsp.DspMsg("M1006");
+                    messageDsp.DspMsg("M1006");//営業所IDは2文字以下です
                     textBoxSoID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M1008");
+                messageDsp.DspMsg("M1008");//営業所IDが入力されていません
                 textBoxSoID.Focus();
                 return false;
             }
@@ -201,21 +200,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //PoID型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    MessageBox.Show("役職IDは半角数字入力です");//messageDsp.DspMsg("M6021");
+                    messageDsp.DspMsg("M6021");//役職IDは数字入力です
                     textBoxPoID.Focus();
                     return false;
                 }
                 //PoID文字数チェック
                 if (textBoxPoID.TextLength > 2)
                 {
-                    MessageBox.Show("役職IDは文字数は2文字以下です");//messageDsp.DspMsg("M6022");
+                    messageDsp.DspMsg("M6022");//役職ID2文字以下です
                     textBoxPoID.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("役職IDを入力してください");//messageDsp.DspMsg("M6023");
+                messageDsp.DspMsg("M6023");//役職IDを入力してください
                 textBoxPoID.Focus();
                 return false;
             }
@@ -226,21 +225,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //文字型
                 if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPhone.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1015");
+                    messageDsp.DspMsg("M1015");//電話番号は半角数値入力です
                     textBoxEmPhone.Focus();
                     return false;
                 }
                 //電話番号文字数チェック
                 if (textBoxEmPhone.TextLength > 13)
                 {
-                    messageDsp.DspMsg("M1016");
+                    messageDsp.DspMsg("M1016");//電話番号は13文字以下です
                     textBoxEmPhone.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("電話番号入力してください");//messageDsp.DspMsg("M1035");
+                messageDsp.DspMsg("M1035");//電話番号が入力されていません
                 textBoxEmPhone.Focus();
                 return false;
             }
@@ -270,15 +269,15 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void RegistrationStaff(M_Employee regEmp)
         {
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            DialogResult result = messageDsp.DspMsg("M6011");//社員データを登録してよろしいですか？
             if (result == DialogResult.Cancel)
                 return;
             //登録
             bool flg = employeeDataAccess.AddEmpData(regEmp);
             if (flg == true)
-                messageDsp.DspMsg("M6012");
+                messageDsp.DspMsg("M6012");//社員データを登録しました
             else
-                messageDsp.DspMsg("M6013");
+                messageDsp.DspMsg("M6013");//社員データ登録に失敗しました
 
 
         }

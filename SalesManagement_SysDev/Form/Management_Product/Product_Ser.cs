@@ -598,7 +598,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrID = number.ToString(),
 
             };
-            //history = productDataAccess.getdetail(selectCondition);
+            history = productDataAccess.getdetail(selectCondition);
         }
         private void setdatedetail()
         {
@@ -619,14 +619,7 @@ namespace SalesManagement_SysDev.Management_Product
             incntok();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //(int)dataGridView1.CurrentRow.Cells[0].Value;
-            int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            MessageBox.Show("非表示にしてもよろしいでしょうか？");
-            productDataAccess.upflg(number);
-            setdata();
-        }
+
         private void setdata()
         {
             products = productDataAccess.GetProductDataDsp1();

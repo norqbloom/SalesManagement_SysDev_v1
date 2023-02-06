@@ -122,27 +122,27 @@ namespace SalesManagement_SysDev.Management_Employee
                 //Emid半角英数字チェック
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M6001");
+                    messageDsp.DspMsg("M6001");//社員IDは半角数字入力です
                     textBoxEmID.Focus();
                     return false;
                 }
                 //Emid文字数チェック
                 if (textBoxEmID.TextLength > 6)
                 {
-                    messageDsp.DspMsg("M6002");
+                    messageDsp.DspMsg("M6002");//社員IDは６文字です
                     textBoxEmID.Focus();
                     return false;
                 }
                 if (!employeeDataAccess.CheckEmployeesCDExistence(int.Parse(textBoxEmID.Text.Trim())))
                 {
-                    messageDsp.DspMsg("M6003");
+                    messageDsp.DspMsg("M6003");//入力された社員IDは既に存在しています
                     textBoxEmID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M6004");
+                messageDsp.DspMsg("M6004");//社員IDが入力されていません
                 textBoxEmID.Focus();
                 return false;
             }
@@ -153,14 +153,14 @@ namespace SalesManagement_SysDev.Management_Employee
                 //名前文字数
                 if (textBoxEmName.TextLength > 50)
                 {
-                    messageDsp.DspMsg("M6006");
+                    messageDsp.DspMsg("M6006");//社員名は50文字以下です
                     textBoxEmName.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M6007");
+                messageDsp.DspMsg("M6007");//社員名が入力されていません
                 textBoxEmName.Focus();
                 return false;
             }
@@ -170,21 +170,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //SOid型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1005");
+                    messageDsp.DspMsg("M1005");//営業所IDは半角数字入力です
                     textBoxSoID.Focus();
                     return false;
                 }
                 //soid文字数チェック
                 if (textBoxSoID.TextLength > 2)
                 {
-                    messageDsp.DspMsg("M1006");
+                    messageDsp.DspMsg("M1006");//営業所IDは2文字以下です
                     textBoxSoID.Focus();
                     return false;
                 }
             }
             else
             {
-                messageDsp.DspMsg("M1008");
+                messageDsp.DspMsg("M1008");//営業所IDが入力されていません
                 textBoxSoID.Focus();
                 return false;
             }
@@ -195,21 +195,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //PoID型確認
                 if (!dataInputFormCheck.CheckNumeric(textBoxPoID.Text.Trim()))
                 {
-                    MessageBox.Show("役職IDは半角数字入力です");　//messageDsp.DspMsg("M6021");
+                    messageDsp.DspMsg("M6021");//役職IDは数字入力です
                     textBoxPoID.Focus();
                     return false;
                 }
                 //PoID文字数チェック
                 if (textBoxPoID.TextLength > 2)
                 {
-                    MessageBox.Show("役職IDは文字数は2文字以下です");　//messageDsp.DspMsg("M6022");
+                    messageDsp.DspMsg("M6022");//役職ID2文字以下です
                     textBoxPoID.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("役職IDを入力してください");　//messageDsp.DspMsg("M6023");
+                messageDsp.DspMsg("M6023");//役職IDを入力してください
                 textBoxPoID.Focus();
                 return false;
             }
@@ -220,21 +220,21 @@ namespace SalesManagement_SysDev.Management_Employee
                 //文字型
                 if (!dataInputFormCheck.CheckHalfAlphabetNumeric(textBoxEmPhone.Text.Trim()))
                 {
-                    messageDsp.DspMsg("M1015");
+                    messageDsp.DspMsg("M1015");//電話番号は半角数値入力です
                     textBoxEmPhone.Focus();
                     return false;
                 }
                 //電話番号文字数チェック
                 if (textBoxEmPhone.TextLength > 13)
                 {
-                    messageDsp.DspMsg("M1016");
+                    messageDsp.DspMsg("M1016");//電話番号は13文字以下です
                     textBoxEmPhone.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("電話番号入力してください");　//messageDsp.DspMsg("M1035");
+                messageDsp.DspMsg("M1035");//電話番号が入力されていません
                 textBoxEmPhone.Focus();
                 return false;
             }
@@ -242,7 +242,7 @@ namespace SalesManagement_SysDev.Management_Employee
             if (checkBoxEmFlag.CheckState == CheckState.Indeterminate)
             {
 
-                MessageBox.Show("社員管理フラグが不確定な状況です");　//messageDsp.DspMsg("M6027");
+                messageDsp.DspMsg("M6027");//社員管理フラグが不確定です
                 checkBoxEmFlag.Focus();
                 return false;
             }
@@ -280,15 +280,15 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void UpdateItem(M_Employee updemp)
         {
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            DialogResult result = messageDsp.DspMsg("M6014");//社員データを更新してよろしいですか？
             if (result == DialogResult.Cancel)
                 return;
             //登録
             bool flg = employeeDataAccess.UpdEmployeeData(updemp);
             if (flg == true)
-                MessageBox.Show("社員情報を登録しました");　//messageDsp.DspMsg("M6015");
+                messageDsp.DspMsg("M6015");//社員データを更新しました
             else
-                MessageBox.Show("社員情報の登録に失敗しました");　//messageDsp.DspMsg("M6016");
+                messageDsp.DspMsg("M6016");//社員データ更新に失敗しました
         }
 
         private void dataGridViewDsp_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -424,26 +424,35 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void button_Del_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(textBoxEmHidden.Text.Trim()))
+            if (checkBoxEmFlag.Checked == true)
             {
-                int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-                DialogResult result = MessageBox.Show("選択した項目を削除（非表示）にしますか？", "販売管理システム｜確認メッセージ", MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
+                if (String.IsNullOrEmpty(textBoxEmHidden.Text.Trim()))
                 {
-                    employeeDataAccess.delflg(number);
-                    int radioint = 0;
-                    employees = employeeDataAccess.GetEmployeeDataDsp(radioint);
-                    dataGridViewDsp.DataSource = employees;
+                    int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
+                    DialogResult result = messageDsp.DspMsg("M5555");//選択した項目を削除（非表示）にしますか？
+                    if (result == DialogResult.OK)
+                    {
+                        employeeDataAccess.delflg(number);
+                        int radioint = 0;
+                        employees = employeeDataAccess.GetEmployeeDataDsp(radioint);
+                        dataGridViewDsp.DataSource = employees;
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
+                    messageDsp.DspMsg("M2038");//非表示理由が入力されていません
+                    textBoxEmHidden.Focus();
                     return;
-                }
+                }             
             }
             else
             {
-                MessageBox.Show("削除理由が入力されていません");
-                textBoxEmHidden.Focus();
+                messageDsp.DspMsg("M6027");//社員管理フラグが不確定です
+                checkBoxEmFlag.Focus();
                 return;
             }
         }
