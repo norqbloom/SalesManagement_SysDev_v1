@@ -598,7 +598,7 @@ namespace SalesManagement_SysDev.Management_Product
                 PrID = number.ToString(),
 
             };
-            history = productDataAccess.getdetail(selectCondition);
+            //history = productDataAccess.getdetail(selectCondition);
         }
         private void setdatedetail()
         {

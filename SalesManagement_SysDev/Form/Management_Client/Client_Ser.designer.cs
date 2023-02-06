@@ -92,6 +92,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDsp.Location = new System.Drawing.Point(62, 246);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowHeadersWidth = 51;
             this.dataGridViewDsp.RowTemplate.Height = 21;
             this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
             this.dataGridViewDsp.TabIndex = 44;
@@ -125,7 +126,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClFAX.Location = new System.Drawing.Point(875, 110);
             this.textBoxClFAX.Name = "textBoxClFAX";
             this.textBoxClFAX.Size = new System.Drawing.Size(157, 32);
-            this.textBoxClFAX.TabIndex = 40;
+            this.textBoxClFAX.TabIndex = 6;
             // 
             // textBoxClAddress
             // 
@@ -133,7 +134,8 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClAddress.Location = new System.Drawing.Point(452, 167);
             this.textBoxClAddress.Name = "textBoxClAddress";
             this.textBoxClAddress.Size = new System.Drawing.Size(417, 32);
-            this.textBoxClAddress.TabIndex = 39;
+            this.textBoxClAddress.TabIndex = 4;
+            this.textBoxClAddress.TextChanged += new System.EventHandler(this.textBoxClAddress_TextChanged);
             // 
             // textBoxClPostal
             // 
@@ -141,7 +143,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClPostal.Location = new System.Drawing.Point(452, 110);
             this.textBoxClPostal.Name = "textBoxClPostal";
             this.textBoxClPostal.Size = new System.Drawing.Size(157, 32);
-            this.textBoxClPostal.TabIndex = 38;
+            this.textBoxClPostal.TabIndex = 3;
             // 
             // textBoxClPhone
             // 
@@ -149,7 +151,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClPhone.Location = new System.Drawing.Point(875, 48);
             this.textBoxClPhone.Name = "textBoxClPhone";
             this.textBoxClPhone.Size = new System.Drawing.Size(157, 32);
-            this.textBoxClPhone.TabIndex = 37;
+            this.textBoxClPhone.TabIndex = 5;
             // 
             // textBoxClName
             // 
@@ -157,7 +159,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClName.Location = new System.Drawing.Point(452, 48);
             this.textBoxClName.Name = "textBoxClName";
             this.textBoxClName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxClName.TabIndex = 36;
+            this.textBoxClName.TabIndex = 2;
             // 
             // textBoxSoID
             // 
@@ -165,7 +167,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxSoID.Location = new System.Drawing.Point(164, 110);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxSoID.TabIndex = 35;
+            this.textBoxSoID.TabIndex = 1;
             // 
             // textBoxClID
             // 
@@ -173,7 +175,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClID.Location = new System.Drawing.Point(164, 48);
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxClID.TabIndex = 34;
+            this.textBoxClID.TabIndex = 0;
             // 
             // label_ClFAX
             // 
@@ -250,9 +252,9 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1358, 0);
+            this.panel1.Location = new System.Drawing.Point(1155, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 970);
+            this.panel1.Size = new System.Drawing.Size(300, 880);
             this.panel1.TabIndex = 52;
             // 
             // panel3
@@ -275,9 +277,9 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(300, 970);
+            this.panel3.Size = new System.Drawing.Size(300, 880);
             this.panel3.TabIndex = 2;
             // 
             // label12
@@ -529,7 +531,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.ClientSize = new System.Drawing.Size(1455, 880);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBoxClFlag);
@@ -552,7 +554,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.label_ClID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1658, 970);
-            this.MinimumSize = new System.Drawing.Size(1658, 970);
+            this.MinimumSize = new System.Drawing.Size(1438, 814);
             this.Name = "Client_Ser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client_Ser";
