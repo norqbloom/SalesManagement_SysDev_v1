@@ -95,7 +95,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.dataGridViewDsp.RowHeadersWidth = 51;
             this.dataGridViewDsp.RowTemplate.Height = 21;
             this.dataGridViewDsp.Size = new System.Drawing.Size(1175, 662);
-            this.dataGridViewDsp.TabIndex = 44;
+            this.dataGridViewDsp.TabIndex = 7;
             this.dataGridViewDsp.SelectionChanged += new System.EventHandler(this.dataGridViewDsp_SelectionChanged);
             // 
             // button_Cle
