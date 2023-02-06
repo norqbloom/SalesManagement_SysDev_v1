@@ -78,6 +78,8 @@ namespace SalesManagement_SysDev.Management_Order
             this.button_First_Order = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.checkBoxOrFlag = new System.Windows.Forms.CheckBox();
+            this.button_hide_nonhide = new System.Windows.Forms.Button();
+            this.button_hide_nonhide_con = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspProduct)).BeginInit();
@@ -156,15 +158,16 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridViewDspOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDspOrder.Location = new System.Drawing.Point(16, 237);
             this.dataGridViewDspOrder.Name = "dataGridViewDspOrder";
+            this.dataGridViewDspOrder.RowHeadersVisible = false;
             this.dataGridViewDspOrder.RowTemplate.Height = 21;
-            this.dataGridViewDspOrder.Size = new System.Drawing.Size(612, 662);
+            this.dataGridViewDspOrder.Size = new System.Drawing.Size(763, 662);
             this.dataGridViewDspOrder.TabIndex = 99;
             this.dataGridViewDspOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspOrder_CellClick);
             // 
             // button_Cle
             // 
             this.button_Cle.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Cle.Location = new System.Drawing.Point(1115, 195);
+            this.button_Cle.Location = new System.Drawing.Point(1272, 192);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
             this.button_Cle.TabIndex = 98;
@@ -229,9 +232,11 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             // dataGridViewDsp
             // 
+            this.dataGridViewDsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDsp.Location = new System.Drawing.Point(634, 237);
+            this.dataGridViewDsp.Location = new System.Drawing.Point(791, 237);
             this.dataGridViewDsp.Name = "dataGridViewDsp";
+            this.dataGridViewDsp.RowHeadersVisible = false;
             this.dataGridViewDsp.RowTemplate.Height = 21;
             this.dataGridViewDsp.Size = new System.Drawing.Size(556, 662);
             this.dataGridViewDsp.TabIndex = 114;
@@ -244,6 +249,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridViewDspProduct.Dock = System.Windows.Forms.DockStyle.Right;
             this.dataGridViewDspProduct.Location = new System.Drawing.Point(1358, 0);
             this.dataGridViewDspProduct.Name = "dataGridViewDspProduct";
+            this.dataGridViewDspProduct.RowHeadersVisible = false;
             this.dataGridViewDspProduct.RowTemplate.Height = 21;
             this.dataGridViewDspProduct.Size = new System.Drawing.Size(300, 970);
             this.dataGridViewDspProduct.TabIndex = 115;
@@ -270,7 +276,7 @@ namespace SalesManagement_SysDev.Management_Order
             // button_Del
             // 
             this.button_Del.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Del.Location = new System.Drawing.Point(1034, 195);
+            this.button_Del.Location = new System.Drawing.Point(1191, 192);
             this.button_Del.Name = "button_Del";
             this.button_Del.Size = new System.Drawing.Size(75, 36);
             this.button_Del.TabIndex = 118;
@@ -281,7 +287,7 @@ namespace SalesManagement_SysDev.Management_Order
             // button_Con
             // 
             this.button_Con.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Con.Location = new System.Drawing.Point(953, 195);
+            this.button_Con.Location = new System.Drawing.Point(1110, 192);
             this.button_Con.Name = "button_Con";
             this.button_Con.Size = new System.Drawing.Size(75, 36);
             this.button_Con.TabIndex = 119;
@@ -292,7 +298,7 @@ namespace SalesManagement_SysDev.Management_Order
             // button_Add_Pro
             // 
             this.button_Add_Pro.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Add_Pro.Location = new System.Drawing.Point(872, 195);
+            this.button_Add_Pro.Location = new System.Drawing.Point(1029, 192);
             this.button_Add_Pro.Name = "button_Add_Pro";
             this.button_Add_Pro.Size = new System.Drawing.Size(75, 36);
             this.button_Add_Pro.TabIndex = 121;
@@ -303,7 +309,7 @@ namespace SalesManagement_SysDev.Management_Order
             // textBoxPrice
             // 
             this.textBoxPrice.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrice.Location = new System.Drawing.Point(804, 140);
+            this.textBoxPrice.Location = new System.Drawing.Point(881, 140);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 32);
             this.textBoxPrice.TabIndex = 127;
@@ -312,7 +318,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.label_Price.AutoSize = true;
             this.label_Price.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_Price.Location = new System.Drawing.Point(709, 143);
+            this.label_Price.Location = new System.Drawing.Point(786, 143);
             this.label_Price.Name = "label_Price";
             this.label_Price.Size = new System.Drawing.Size(50, 25);
             this.label_Price.TabIndex = 126;
@@ -321,7 +327,7 @@ namespace SalesManagement_SysDev.Management_Order
             // textBoxOrQuantity
             // 
             this.textBoxOrQuantity.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxOrQuantity.Location = new System.Drawing.Point(804, 77);
+            this.textBoxOrQuantity.Location = new System.Drawing.Point(881, 77);
             this.textBoxOrQuantity.Name = "textBoxOrQuantity";
             this.textBoxOrQuantity.Size = new System.Drawing.Size(100, 32);
             this.textBoxOrQuantity.TabIndex = 125;
@@ -331,7 +337,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.label_OrQuantity.AutoSize = true;
             this.label_OrQuantity.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_OrQuantity.Location = new System.Drawing.Point(709, 80);
+            this.label_OrQuantity.Location = new System.Drawing.Point(786, 80);
             this.label_OrQuantity.Name = "label_OrQuantity";
             this.label_OrQuantity.Size = new System.Drawing.Size(50, 25);
             this.label_OrQuantity.TabIndex = 123;
@@ -340,7 +346,7 @@ namespace SalesManagement_SysDev.Management_Order
             // textBoxOrTotalPrice
             // 
             this.textBoxOrTotalPrice.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxOrTotalPrice.Location = new System.Drawing.Point(1050, 140);
+            this.textBoxOrTotalPrice.Location = new System.Drawing.Point(1127, 140);
             this.textBoxOrTotalPrice.Name = "textBoxOrTotalPrice";
             this.textBoxOrTotalPrice.Size = new System.Drawing.Size(100, 32);
             this.textBoxOrTotalPrice.TabIndex = 132;
@@ -349,7 +355,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(955, 143);
+            this.label5.Location = new System.Drawing.Point(1032, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 25);
             this.label5.TabIndex = 131;
@@ -358,7 +364,7 @@ namespace SalesManagement_SysDev.Management_Order
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(1048, 138);
+            this.button1.Location = new System.Drawing.Point(1125, 138);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 36);
             this.button1.TabIndex = 130;
@@ -368,15 +374,15 @@ namespace SalesManagement_SysDev.Management_Order
             // textBoxPrName
             // 
             this.textBoxPrName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrName.Location = new System.Drawing.Point(1049, 15);
+            this.textBoxPrName.Location = new System.Drawing.Point(1126, 15);
             this.textBoxPrName.Name = "textBoxPrName";
-            this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
+            this.textBoxPrName.Size = new System.Drawing.Size(221, 32);
             this.textBoxPrName.TabIndex = 136;
             // 
             // textBoxPrID
             // 
             this.textBoxPrID.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrID.Location = new System.Drawing.Point(804, 15);
+            this.textBoxPrID.Location = new System.Drawing.Point(881, 15);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
             this.textBoxPrID.TabIndex = 135;
@@ -386,7 +392,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.label_PrName.AutoSize = true;
             this.label_PrName.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label_PrName.Location = new System.Drawing.Point(955, 18);
+            this.label_PrName.Location = new System.Drawing.Point(1032, 18);
             this.label_PrName.Name = "label_PrName";
             this.label_PrName.Size = new System.Drawing.Size(69, 25);
             this.label_PrName.TabIndex = 134;
@@ -396,7 +402,7 @@ namespace SalesManagement_SysDev.Management_Order
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(709, 18);
+            this.label1.Location = new System.Drawing.Point(786, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 133;
@@ -410,7 +416,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.panel2.Controls.Add(this.textBoxPageNo);
             this.panel2.Controls.Add(this.labelPage);
             this.panel2.Controls.Add(this.button_First);
-            this.panel2.Location = new System.Drawing.Point(920, 905);
+            this.panel2.Location = new System.Drawing.Point(1076, 905);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 35);
             this.panel2.TabIndex = 137;
@@ -488,7 +494,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.panel1.Controls.Add(this.textBoxPageNo_Order);
             this.panel1.Controls.Add(this.labelPage_Order);
             this.panel1.Controls.Add(this.button_First_Order);
-            this.panel1.Location = new System.Drawing.Point(357, 905);
+            this.panel1.Location = new System.Drawing.Point(508, 905);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 35);
             this.panel1.TabIndex = 138;
@@ -561,7 +567,7 @@ namespace SalesManagement_SysDev.Management_Order
             // button_Add
             // 
             this.button_Add.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_Add.Location = new System.Drawing.Point(791, 196);
+            this.button_Add.Location = new System.Drawing.Point(948, 193);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(75, 36);
             this.button_Add.TabIndex = 139;
@@ -580,11 +586,35 @@ namespace SalesManagement_SysDev.Management_Order
             this.checkBoxOrFlag.Text = "受注管理フラグ";
             this.checkBoxOrFlag.UseVisualStyleBackColor = true;
             // 
+            // button_hide_nonhide
+            // 
+            this.button_hide_nonhide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button_hide_nonhide.Location = new System.Drawing.Point(447, 905);
+            this.button_hide_nonhide.Name = "button_hide_nonhide";
+            this.button_hide_nonhide.Size = new System.Drawing.Size(55, 35);
+            this.button_hide_nonhide.TabIndex = 141;
+            this.button_hide_nonhide.Text = "表示";
+            this.button_hide_nonhide.UseVisualStyleBackColor = true;
+            this.button_hide_nonhide.Click += new System.EventHandler(this.button_hide_nonhide_Click);
+            // 
+            // button_hide_nonhide_con
+            // 
+            this.button_hide_nonhide_con.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button_hide_nonhide_con.Location = new System.Drawing.Point(386, 905);
+            this.button_hide_nonhide_con.Name = "button_hide_nonhide_con";
+            this.button_hide_nonhide_con.Size = new System.Drawing.Size(55, 35);
+            this.button_hide_nonhide_con.TabIndex = 142;
+            this.button_hide_nonhide_con.Text = "確定済";
+            this.button_hide_nonhide_con.UseVisualStyleBackColor = true;
+            this.button_hide_nonhide_con.Click += new System.EventHandler(this.button_hide_nonhide_con_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_hide_nonhide_con);
+            this.Controls.Add(this.button_hide_nonhide);
             this.Controls.Add(this.checkBoxOrFlag);
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.panel1);
@@ -691,5 +721,7 @@ namespace SalesManagement_SysDev.Management_Order
         private System.Windows.Forms.Button button_First_Order;
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.CheckBox checkBoxOrFlag;
+        private System.Windows.Forms.Button button_hide_nonhide;
+        private System.Windows.Forms.Button button_hide_nonhide_con;
     }
 }
