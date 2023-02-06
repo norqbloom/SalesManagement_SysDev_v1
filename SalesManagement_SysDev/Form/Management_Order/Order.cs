@@ -350,23 +350,21 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxOrID.Text.Trim()))
                 {
-                    MessageBox.Show("1");
-                    //messageDsp.DspMsg("");
+                    messageDsp.DspMsg("M4023");
                     textBoxOrID.Focus();
                     return false;
                 }
 
                 if (textBoxOrID.TextLength > 6)
                 {
-                    MessageBox.Show("2");
-                    //messageDsp.DspMsg("");
+                    messageDsp.DspMsg("M4022");
                     textBoxOrID.Focus();
                     return false;
                 }
 
                 if (orderDateAccess.CheckOrIDExistence(textBoxOrID.Text.Trim()))
                 {
-                    MessageBox.Show("3");
+                    MessageBox.Show("Existence");
                     //messageDsp.DspMsg("");
                     textBoxOrID.Focus();
                     return false;
@@ -374,8 +372,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             else
             {
-                MessageBox.Show("4");
-                //messageDsp.DspMsg("");
+                messageDsp.DspMsg("M4024");
                 textBoxOrID.Focus();
                 return false;
             }
@@ -384,24 +381,21 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxSoID.Text.Trim()))
                 {
-                    MessageBox.Show("5");
-                    //messageDsp.DspMsg("");
+                    messageDsp.DspMsg("M1005");
                     textBoxSoID.Focus();
                     return false;
                 }
 
                 if (textBoxSoID.TextLength > 2)
                 {
-                    MessageBox.Show("6");
-                    //messageDsp.DspMsg("");
+                    messageDsp.DspMsg("M1006");
                     textBoxSoID.Focus();
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("7");
-                //messageDsp.DspMsg("");
+                messageDsp.DspMsg("M1008");
                 textBoxSoID.Focus();
                 return false;
             }
@@ -410,15 +404,14 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxEmID.Text.Trim()))
                 {
-                    MessageBox.Show("8");
-                    //messageDsp.DspMsg("");
+                    messageDsp.DspMsg("M6001");
                     textBoxEmID.Focus();
                     return false;
                 }
 
                 if (textBoxEmID.TextLength > 6)
                 {
-                    MessageBox.Show("9");
+                    MessageBox.Show("M6002");
                     //messageDsp.DspMsg("");
                     textBoxEmID.Focus();
                     return false;
@@ -426,7 +419,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             else
             {
-                MessageBox.Show("10");
+                MessageBox.Show("M6004");
                 //messageDsp.DspMsg("");
                 textBoxEmID.Focus();
                 return false;
@@ -436,7 +429,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxClID.Text.Trim()))
                 {
-                    MessageBox.Show("11");
+                    MessageBox.Show("M1001");
                     //messageDsp.DspMsg("");
                     textBoxClID.Focus();
                     return false;
@@ -444,7 +437,7 @@ namespace SalesManagement_SysDev.Management_Order
 
                 if (textBoxClID.TextLength > 6)
                 {
-                    MessageBox.Show("12");
+                    MessageBox.Show("M1002");
                     //messageDsp.DspMsg("");
                     textBoxClID.Focus();
                     return false;
@@ -452,7 +445,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             else
             {
-                MessageBox.Show("13");
+                MessageBox.Show("M1004");
                 //messageDsp.DspMsg("");
                 textBoxClID.Focus();
                 return false;
@@ -630,8 +623,7 @@ namespace SalesManagement_SysDev.Management_Order
         private void RegistrationOrder(T_Order regOrder)
         {
             bool flg = orderDateAccess.AddorderData(regOrder);
-            DialogResult result = MessageBox.Show("追加しますか");
-            //DialogResult result = messageDsp.DspMsg("");
+            DialogResult result = messageDsp.DspMsg("M4025");
             if (result == DialogResult.Cancel)
             {
                 return;
@@ -639,13 +631,11 @@ namespace SalesManagement_SysDev.Management_Order
 
             if (flg == true)
             {
-                MessageBox.Show("追加しました");
-                //messageDsp.DspMsg("");
+                messageDsp.DspMsg("M4026");
             }
             else
             {
-                MessageBox.Show("追加できませんでした");
-                //messageDsp.DspMsg("");
+                messageDsp.DspMsg("M4027");
             }
             textBoxOrID.Focus();
         }
