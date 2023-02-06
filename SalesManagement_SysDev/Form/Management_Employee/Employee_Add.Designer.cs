@@ -62,7 +62,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.dateTimePickerEmHiredate.Location = new System.Drawing.Point(406, 170);
             this.dateTimePickerEmHiredate.Name = "dateTimePickerEmHiredate";
             this.dateTimePickerEmHiredate.Size = new System.Drawing.Size(237, 32);
-            this.dateTimePickerEmHiredate.TabIndex = 87;
+            this.dateTimePickerEmHiredate.TabIndex = 5;
             // 
             // label_EmHiredate
             // 
@@ -80,7 +80,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmPhone.Location = new System.Drawing.Point(406, 110);
             this.textBoxEmPhone.Name = "textBoxEmPhone";
             this.textBoxEmPhone.Size = new System.Drawing.Size(237, 32);
-            this.textBoxEmPhone.TabIndex = 83;
+            this.textBoxEmPhone.TabIndex = 4;
             // 
             // label_EmPhone
             // 
@@ -98,7 +98,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxPoID.Location = new System.Drawing.Point(133, 173);
             this.textBoxPoID.Name = "textBoxPoID";
             this.textBoxPoID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxPoID.TabIndex = 81;
+            this.textBoxPoID.TabIndex = 2;
             // 
             // label_PoID
             // 
@@ -134,7 +134,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.button_Cle.Location = new System.Drawing.Point(1130, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 75;
+            this.button_Cle.TabIndex = 7;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -145,7 +145,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.button_Add.Location = new System.Drawing.Point(1049, 204);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(75, 36);
-            this.button_Add.TabIndex = 74;
+            this.button_Add.TabIndex = 6;
             this.button_Add.Text = "登録";
             this.button_Add.UseVisualStyleBackColor = true;
             this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
@@ -156,7 +156,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmName.Location = new System.Drawing.Point(406, 48);
             this.textBoxEmName.Name = "textBoxEmName";
             this.textBoxEmName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxEmName.TabIndex = 73;
+            this.textBoxEmName.TabIndex = 3;
             // 
             // textBoxSoID
             // 
@@ -164,7 +164,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxSoID.Location = new System.Drawing.Point(133, 110);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxSoID.TabIndex = 72;
+            this.textBoxSoID.TabIndex = 1;
             // 
             // textBoxEmID
             // 
@@ -173,7 +173,7 @@ namespace SalesManagement_SysDev.Management_Employee
             this.textBoxEmID.Name = "textBoxEmID";
             this.textBoxEmID.ReadOnly = true;
             this.textBoxEmID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxEmID.TabIndex = 71;
+            this.textBoxEmID.TabIndex = 0;
             // 
             // label_EmName
             // 

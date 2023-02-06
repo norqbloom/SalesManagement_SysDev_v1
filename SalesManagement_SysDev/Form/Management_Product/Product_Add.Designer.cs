@@ -87,7 +87,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 43;
+            this.button_Cle.TabIndex = 10;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -98,7 +98,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Add.Location = new System.Drawing.Point(1081, 204);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(75, 36);
-            this.button_Add.TabIndex = 42;
+            this.button_Add.TabIndex = 9;
             this.button_Add.Text = "登録";
             this.button_Add.UseVisualStyleBackColor = true;
             this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
@@ -109,7 +109,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrName.Location = new System.Drawing.Point(409, 48);
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrName.TabIndex = 36;
+            this.textBoxPrName.TabIndex = 3;
             // 
             // textBoxMaID
             // 
@@ -117,7 +117,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID.Location = new System.Drawing.Point(164, 110);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxMaID.TabIndex = 35;
+            this.textBoxMaID.TabIndex = 1;
             // 
             // label_PrName
             // 
@@ -155,7 +155,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID.Location = new System.Drawing.Point(164, 173);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxScID.TabIndex = 55;
+            this.textBoxScID.TabIndex = 2;
             // 
             // label_ScID
             // 
@@ -173,7 +173,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Location = new System.Drawing.Point(795, 110);
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(196, 32);
-            this.textBoxPrColor.TabIndex = 57;
+            this.textBoxPrColor.TabIndex = 7;
             // 
             // label_PrColor
             // 
@@ -191,7 +191,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrModelNumber.Location = new System.Drawing.Point(409, 110);
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrModelNumber.TabIndex = 59;
+            this.textBoxPrModelNumber.TabIndex = 4;
             // 
             // label_PrModelNumber
             // 
@@ -209,7 +209,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(795, 173);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
             this.textBoxPrSafetyStock.Size = new System.Drawing.Size(124, 32);
-            this.textBoxPrSafetyStock.TabIndex = 61;
+            this.textBoxPrSafetyStock.TabIndex = 8;
             // 
             // label_PrSafetyStock
             // 
@@ -237,7 +237,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Location = new System.Drawing.Point(409, 173);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
-            this.textBoxPrice.TabIndex = 65;
+            this.textBoxPrice.TabIndex = 5;
             // 
             // label_PrReleaseDate
             // 
@@ -255,7 +255,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(791, 45);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePickerPrReleaseDate.TabIndex = 67;
+            this.dateTimePickerPrReleaseDate.TabIndex = 6;
             // 
             // panel2
             // 
@@ -341,7 +341,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.ReadOnly = true;
             this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxPrID.TabIndex = 140;
+            this.textBoxPrID.TabIndex = 0;
             // 
             // Product_Add
             // 

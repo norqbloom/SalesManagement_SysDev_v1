@@ -83,7 +83,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.button_Ser.Location = new System.Drawing.Point(953, 195);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
-            this.button_Ser.TabIndex = 118;
+            this.button_Ser.TabIndex = 10;
             this.button_Ser.Text = "検索";
             this.button_Ser.UseVisualStyleBackColor = true;
             this.button_Ser.Click += new System.EventHandler(this.button_Ser_Click);
@@ -94,7 +94,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxClID.Location = new System.Drawing.Point(121, 193);
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxClID.TabIndex = 117;
+            this.textBoxClID.TabIndex = 3;
             // 
             // label_ClID
             // 
@@ -122,7 +122,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.dateTimePickerOrDate.Location = new System.Drawing.Point(401, 74);
             this.dateTimePickerOrDate.Name = "dateTimePickerOrDate";
             this.dateTimePickerOrDate.Size = new System.Drawing.Size(237, 32);
-            this.dateTimePickerOrDate.TabIndex = 110;
+            this.dateTimePickerOrDate.TabIndex = 5;
             // 
             // textBoxEmID
             // 
@@ -130,7 +130,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxEmID.Location = new System.Drawing.Point(121, 140);
             this.textBoxEmID.Name = "textBoxEmID";
             this.textBoxEmID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxEmID.TabIndex = 104;
+            this.textBoxEmID.TabIndex = 2;
             // 
             // label_EmID
             // 
@@ -149,7 +149,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.checkBoxOrStateFlag.Location = new System.Drawing.Point(274, 142);
             this.checkBoxOrStateFlag.Name = "checkBoxOrStateFlag";
             this.checkBoxOrStateFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxOrStateFlag.TabIndex = 100;
+            this.checkBoxOrStateFlag.TabIndex = 8;
             this.checkBoxOrStateFlag.Text = "受注状態フラグ";
             this.checkBoxOrStateFlag.UseVisualStyleBackColor = true;
             // 
@@ -169,7 +169,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.button_Cle.Location = new System.Drawing.Point(1115, 195);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 98;
+            this.button_Cle.TabIndex = 12;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -180,7 +180,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxClChange.Location = new System.Drawing.Point(401, 15);
             this.textBoxClChange.Name = "textBoxClChange";
             this.textBoxClChange.Size = new System.Drawing.Size(237, 32);
-            this.textBoxClChange.TabIndex = 96;
+            this.textBoxClChange.TabIndex = 4;
             // 
             // textBoxSoID
             // 
@@ -188,7 +188,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxSoID.Location = new System.Drawing.Point(121, 77);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxSoID.TabIndex = 95;
+            this.textBoxSoID.TabIndex = 1;
             // 
             // textBoxOrID
             // 
@@ -196,7 +196,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.textBoxOrID.Location = new System.Drawing.Point(121, 15);
             this.textBoxOrID.Name = "textBoxOrID";
             this.textBoxOrID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxOrID.TabIndex = 94;
+            this.textBoxOrID.TabIndex = 0;
             // 
             // label_ClChange
             // 
@@ -235,7 +235,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.checkBoxOrFlag.Location = new System.Drawing.Point(274, 195);
             this.checkBoxOrFlag.Name = "checkBoxOrFlag";
             this.checkBoxOrFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxOrFlag.TabIndex = 119;
+            this.checkBoxOrFlag.TabIndex = 9;
             this.checkBoxOrFlag.Text = "受注管理フラグ";
             this.checkBoxOrFlag.UseVisualStyleBackColor = true;
             // 
@@ -437,7 +437,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.checkBox1.Location = new System.Drawing.Point(678, 112);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(74, 19);
-            this.checkBox1.TabIndex = 123;
+            this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "日付検索";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -457,7 +457,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.dateTimePickerOrDate2.Location = new System.Drawing.Point(678, 74);
             this.dateTimePickerOrDate2.Name = "dateTimePickerOrDate2";
             this.dateTimePickerOrDate2.Size = new System.Drawing.Size(237, 32);
-            this.dateTimePickerOrDate2.TabIndex = 121;
+            this.dateTimePickerOrDate2.TabIndex = 6;
             // 
             // panel2
             // 
@@ -542,7 +542,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.button_Del.Location = new System.Drawing.Point(1034, 195);
             this.button_Del.Name = "button_Del";
             this.button_Del.Size = new System.Drawing.Size(75, 36);
-            this.button_Del.TabIndex = 125;
+            this.button_Del.TabIndex = 11;
             this.button_Del.Text = "削除";
             this.button_Del.UseVisualStyleBackColor = true;
             // 

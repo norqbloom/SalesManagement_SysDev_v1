@@ -78,7 +78,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.checkBoxClFlag.Location = new System.Drawing.Point(1081, 50);
             this.checkBoxClFlag.Name = "checkBoxClFlag";
             this.checkBoxClFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxClFlag.TabIndex = 51;
+            this.checkBoxClFlag.TabIndex = 7;
             this.checkBoxClFlag.Text = "顧客管理フラグ";
             this.checkBoxClFlag.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +88,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClPostal.Location = new System.Drawing.Point(452, 110);
             this.textBoxClPostal.Name = "textBoxClPostal";
             this.textBoxClPostal.Size = new System.Drawing.Size(157, 32);
-            this.textBoxClPostal.TabIndex = 38;
+            this.textBoxClPostal.TabIndex = 3;
             // 
             // dataGridViewDsp
             // 
@@ -106,7 +106,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 43;
+            this.button_Cle.TabIndex = 11;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -117,7 +117,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Upd.Location = new System.Drawing.Point(1000, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
-            this.button_Upd.TabIndex = 42;
+            this.button_Upd.TabIndex = 9;
             this.button_Upd.Text = "更新";
             this.button_Upd.UseVisualStyleBackColor = true;
             this.button_Upd.Click += new System.EventHandler(this.button_Upd_Click);
@@ -128,7 +128,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClFAX.Location = new System.Drawing.Point(875, 110);
             this.textBoxClFAX.Name = "textBoxClFAX";
             this.textBoxClFAX.Size = new System.Drawing.Size(157, 32);
-            this.textBoxClFAX.TabIndex = 40;
+            this.textBoxClFAX.TabIndex = 6;
             // 
             // textBoxClAddress
             // 
@@ -136,7 +136,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClAddress.Location = new System.Drawing.Point(452, 167);
             this.textBoxClAddress.Name = "textBoxClAddress";
             this.textBoxClAddress.Size = new System.Drawing.Size(417, 32);
-            this.textBoxClAddress.TabIndex = 39;
+            this.textBoxClAddress.TabIndex = 4;
             // 
             // textBoxClPhone
             // 
@@ -144,7 +144,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClPhone.Location = new System.Drawing.Point(875, 48);
             this.textBoxClPhone.Name = "textBoxClPhone";
             this.textBoxClPhone.Size = new System.Drawing.Size(157, 32);
-            this.textBoxClPhone.TabIndex = 37;
+            this.textBoxClPhone.TabIndex = 5;
             // 
             // textBoxClName
             // 
@@ -152,7 +152,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClName.Location = new System.Drawing.Point(452, 48);
             this.textBoxClName.Name = "textBoxClName";
             this.textBoxClName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxClName.TabIndex = 36;
+            this.textBoxClName.TabIndex = 2;
             // 
             // textBoxSoID
             // 
@@ -160,7 +160,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxSoID.Location = new System.Drawing.Point(164, 110);
             this.textBoxSoID.Name = "textBoxSoID";
             this.textBoxSoID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxSoID.TabIndex = 35;
+            this.textBoxSoID.TabIndex = 1;
             // 
             // textBoxClID
             // 
@@ -168,7 +168,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClID.Location = new System.Drawing.Point(164, 48);
             this.textBoxClID.Name = "textBoxClID";
             this.textBoxClID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxClID.TabIndex = 34;
+            this.textBoxClID.TabIndex = 0;
             // 
             // label_ClFAX
             // 
@@ -324,7 +324,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Del.Location = new System.Drawing.Point(1081, 204);
             this.button_Del.Name = "button_Del";
             this.button_Del.Size = new System.Drawing.Size(75, 36);
-            this.button_Del.TabIndex = 140;
+            this.button_Del.TabIndex = 10;
             this.button_Del.Text = "削除";
             this.button_Del.UseVisualStyleBackColor = true;
             this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
@@ -346,7 +346,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClHidden.Multiline = true;
             this.textBoxClHidden.Name = "textBoxClHidden";
             this.textBoxClHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxClHidden.TabIndex = 141;
+            this.textBoxClHidden.TabIndex = 8;
             // 
             // Client_Upd
             // 

@@ -87,7 +87,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(791, 45);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePickerPrReleaseDate.TabIndex = 67;
+            this.dateTimePickerPrReleaseDate.TabIndex = 6;
             // 
             // labelPrReleaseDate
             // 
@@ -105,7 +105,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Location = new System.Drawing.Point(409, 173);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
-            this.textBoxPrice.TabIndex = 65;
+            this.textBoxPrice.TabIndex = 5;
             // 
             // labelPrice
             // 
@@ -123,7 +123,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(795, 173);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
             this.textBoxPrSafetyStock.Size = new System.Drawing.Size(124, 32);
-            this.textBoxPrSafetyStock.TabIndex = 61;
+            this.textBoxPrSafetyStock.TabIndex = 10;
             // 
             // labelPrSafetyStock
             // 
@@ -141,7 +141,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrModelNumber.Location = new System.Drawing.Point(409, 110);
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrModelNumber.TabIndex = 59;
+            this.textBoxPrModelNumber.TabIndex = 4;
             // 
             // labelPrModelNumber
             // 
@@ -159,7 +159,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Location = new System.Drawing.Point(795, 110);
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(196, 32);
-            this.textBoxPrColor.TabIndex = 57;
+            this.textBoxPrColor.TabIndex = 9;
             // 
             // labelPrColor
             // 
@@ -177,7 +177,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID.Location = new System.Drawing.Point(164, 173);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxScID.TabIndex = 55;
+            this.textBoxScID.TabIndex = 2;
             // 
             // labelScID
             // 
@@ -388,7 +388,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag.Location = new System.Drawing.Point(1037, 82);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
             this.checkBoxPrFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxPrFlag.TabIndex = 51;
+            this.checkBoxPrFlag.TabIndex = 11;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
             // 
@@ -408,7 +408,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 43;
+            this.button_Cle.TabIndex = 13;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -419,7 +419,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Ser.Location = new System.Drawing.Point(1081, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
-            this.button_Ser.TabIndex = 42;
+            this.button_Ser.TabIndex = 12;
             this.button_Ser.Text = "検索";
             this.button_Ser.UseVisualStyleBackColor = true;
             this.button_Ser.Click += new System.EventHandler(this.button_Ser_Click);
@@ -430,7 +430,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrName.Location = new System.Drawing.Point(409, 48);
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrName.TabIndex = 36;
+            this.textBoxPrName.TabIndex = 3;
             // 
             // textBoxMaID
             // 
@@ -438,7 +438,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID.Location = new System.Drawing.Point(164, 110);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxMaID.TabIndex = 35;
+            this.textBoxMaID.TabIndex = 1;
             // 
             // textBoxPrID
             // 
@@ -446,7 +446,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrID.Location = new System.Drawing.Point(164, 48);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxPrID.TabIndex = 34;
+            this.textBoxPrID.TabIndex = 0;
             // 
             // labelPrName
             // 
@@ -485,7 +485,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxdate.Location = new System.Drawing.Point(791, 82);
             this.checkBoxdate.Name = "checkBoxdate";
             this.checkBoxdate.Size = new System.Drawing.Size(74, 19);
-            this.checkBoxdate.TabIndex = 69;
+            this.checkBoxdate.TabIndex = 8;
             this.checkBoxdate.Text = "日付検索";
             this.checkBoxdate.UseVisualStyleBackColor = true;
             // 
@@ -495,7 +495,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate2.Location = new System.Drawing.Point(1031, 45);
             this.dateTimePickerPrReleaseDate2.Name = "dateTimePickerPrReleaseDate2";
             this.dateTimePickerPrReleaseDate2.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePickerPrReleaseDate2.TabIndex = 70;
+            this.dateTimePickerPrReleaseDate2.TabIndex = 7;
             // 
             // label1
             // 
