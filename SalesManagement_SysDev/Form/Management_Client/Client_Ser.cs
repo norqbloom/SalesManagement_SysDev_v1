@@ -354,6 +354,9 @@ namespace SalesManagement_SysDev.Management_Client
             incntok();
         }
 
-        
+        private void textBoxClAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
