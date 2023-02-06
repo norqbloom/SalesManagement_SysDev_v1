@@ -72,7 +72,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.dateTimePickerPrReleaseDate.Location = new System.Drawing.Point(791, 45);
             this.dateTimePickerPrReleaseDate.Name = "dateTimePickerPrReleaseDate";
             this.dateTimePickerPrReleaseDate.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePickerPrReleaseDate.TabIndex = 67;
+            this.dateTimePickerPrReleaseDate.TabIndex = 6;
             // 
             // labelPrReleaseDate
             // 
@@ -90,7 +90,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrice.Location = new System.Drawing.Point(409, 173);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(139, 32);
-            this.textBoxPrice.TabIndex = 65;
+            this.textBoxPrice.TabIndex = 5;
             // 
             // labelPrHidden
             // 
@@ -109,7 +109,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrHidden.Multiline = true;
             this.textBoxPrHidden.Name = "textBoxPrHidden";
             this.textBoxPrHidden.Size = new System.Drawing.Size(187, 57);
-            this.textBoxPrHidden.TabIndex = 63;
+            this.textBoxPrHidden.TabIndex = 10;
             // 
             // labelPrice
             // 
@@ -127,7 +127,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrSafetyStock.Location = new System.Drawing.Point(795, 173);
             this.textBoxPrSafetyStock.Name = "textBoxPrSafetyStock";
             this.textBoxPrSafetyStock.Size = new System.Drawing.Size(124, 32);
-            this.textBoxPrSafetyStock.TabIndex = 61;
+            this.textBoxPrSafetyStock.TabIndex = 8;
             // 
             // labelPrSafetyStock
             // 
@@ -145,7 +145,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrModelNumber.Location = new System.Drawing.Point(409, 110);
             this.textBoxPrModelNumber.Name = "textBoxPrModelNumber";
             this.textBoxPrModelNumber.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrModelNumber.TabIndex = 59;
+            this.textBoxPrModelNumber.TabIndex = 4;
             // 
             // labelPrModelNumber
             // 
@@ -163,7 +163,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrColor.Location = new System.Drawing.Point(795, 110);
             this.textBoxPrColor.Name = "textBoxPrColor";
             this.textBoxPrColor.Size = new System.Drawing.Size(196, 32);
-            this.textBoxPrColor.TabIndex = 57;
+            this.textBoxPrColor.TabIndex = 7;
             // 
             // labelPrColor
             // 
@@ -181,7 +181,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxScID.Location = new System.Drawing.Point(164, 173);
             this.textBoxScID.Name = "textBoxScID";
             this.textBoxScID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxScID.TabIndex = 55;
+            this.textBoxScID.TabIndex = 2;
             // 
             // labelScID
             // 
@@ -209,7 +209,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.checkBoxPrFlag.Location = new System.Drawing.Point(1047, 50);
             this.checkBoxPrFlag.Name = "checkBoxPrFlag";
             this.checkBoxPrFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxPrFlag.TabIndex = 51;
+            this.checkBoxPrFlag.TabIndex = 9;
             this.checkBoxPrFlag.Text = "商品管理フラグ";
             this.checkBoxPrFlag.UseVisualStyleBackColor = true;
             // 
@@ -229,7 +229,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 43;
+            this.button_Cle.TabIndex = 13;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -240,7 +240,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Upd.Location = new System.Drawing.Point(1000, 204);
             this.button_Upd.Name = "button_Upd";
             this.button_Upd.Size = new System.Drawing.Size(75, 36);
-            this.button_Upd.TabIndex = 42;
+            this.button_Upd.TabIndex = 11;
             this.button_Upd.Text = "更新";
             this.button_Upd.UseVisualStyleBackColor = true;
             this.button_Upd.Click += new System.EventHandler(this.button_Upd_Click);
@@ -251,7 +251,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrName.Location = new System.Drawing.Point(409, 48);
             this.textBoxPrName.Name = "textBoxPrName";
             this.textBoxPrName.Size = new System.Drawing.Size(237, 32);
-            this.textBoxPrName.TabIndex = 36;
+            this.textBoxPrName.TabIndex = 3;
             // 
             // textBoxMaID
             // 
@@ -259,7 +259,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxMaID.Location = new System.Drawing.Point(164, 110);
             this.textBoxMaID.Name = "textBoxMaID";
             this.textBoxMaID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxMaID.TabIndex = 35;
+            this.textBoxMaID.TabIndex = 1;
             // 
             // textBoxPrID
             // 
@@ -267,7 +267,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.textBoxPrID.Location = new System.Drawing.Point(164, 48);
             this.textBoxPrID.Name = "textBoxPrID";
             this.textBoxPrID.Size = new System.Drawing.Size(100, 32);
-            this.textBoxPrID.TabIndex = 34;
+            this.textBoxPrID.TabIndex = 0;
             // 
             // labelPrName
             // 
@@ -383,7 +383,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Del.Location = new System.Drawing.Point(1081, 204);
             this.button_Del.Name = "button_Del";
             this.button_Del.Size = new System.Drawing.Size(75, 36);
-            this.button_Del.TabIndex = 140;
+            this.button_Del.TabIndex = 12;
             this.button_Del.Text = "削除";
             this.button_Del.UseVisualStyleBackColor = true;
             this.button_Del.Click += new System.EventHandler(this.button_Del_Click);

@@ -83,7 +83,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.checkBoxClFlag.Location = new System.Drawing.Point(1081, 50);
             this.checkBoxClFlag.Name = "checkBoxClFlag";
             this.checkBoxClFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxClFlag.TabIndex = 51;
+            this.checkBoxClFlag.TabIndex = 7;
             this.checkBoxClFlag.Text = "顧客管理フラグ";
             this.checkBoxClFlag.UseVisualStyleBackColor = true;
             // 
@@ -104,7 +104,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Cle.Location = new System.Drawing.Point(1162, 204);
             this.button_Cle.Name = "button_Cle";
             this.button_Cle.Size = new System.Drawing.Size(75, 36);
-            this.button_Cle.TabIndex = 43;
+            this.button_Cle.TabIndex = 9;
             this.button_Cle.Text = "クリア";
             this.button_Cle.UseVisualStyleBackColor = true;
             this.button_Cle.Click += new System.EventHandler(this.button_Cle_Click);
@@ -115,7 +115,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Ser.Location = new System.Drawing.Point(1078, 204);
             this.button_Ser.Name = "button_Ser";
             this.button_Ser.Size = new System.Drawing.Size(75, 36);
-            this.button_Ser.TabIndex = 42;
+            this.button_Ser.TabIndex = 8;
             this.button_Ser.Text = "検索";
             this.button_Ser.UseVisualStyleBackColor = true;
             this.button_Ser.Click += new System.EventHandler(this.button_Ser_Click);
@@ -252,9 +252,9 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1155, 0);
+            this.panel1.Location = new System.Drawing.Point(1358, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 880);
+            this.panel1.Size = new System.Drawing.Size(300, 970);
             this.panel1.TabIndex = 52;
             // 
             // panel3
@@ -277,9 +277,9 @@ namespace SalesManagement_SysDev.Management_Client
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(300, 880);
+            this.panel3.Size = new System.Drawing.Size(300, 970);
             this.panel3.TabIndex = 2;
             // 
             // label12
@@ -531,7 +531,7 @@ namespace SalesManagement_SysDev.Management_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1455, 880);
+            this.ClientSize = new System.Drawing.Size(1658, 970);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBoxClFlag);
@@ -554,7 +554,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.Controls.Add(this.label_ClID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1658, 970);
-            this.MinimumSize = new System.Drawing.Size(1438, 814);
+            this.MinimumSize = new System.Drawing.Size(1658, 970);
             this.Name = "Client_Ser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client_Ser";

@@ -31,10 +31,10 @@ namespace SalesManagement_SysDev.Management_Syukko
         {
             this.Syu_Con_Button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -43,11 +43,11 @@ namespace SalesManagement_SysDev.Management_Syukko
             // Syu_Con_Button
             // 
             this.Syu_Con_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Syu_Con_Button.Location = new System.Drawing.Point(1320, 620);
+            this.Syu_Con_Button.Location = new System.Drawing.Point(990, 496);
             this.Syu_Con_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Syu_Con_Button.Name = "Syu_Con_Button";
-            this.Syu_Con_Button.Size = new System.Drawing.Size(202, 96);
-            this.Syu_Con_Button.TabIndex = 19;
+            this.Syu_Con_Button.Size = new System.Drawing.Size(152, 77);
+            this.Syu_Con_Button.TabIndex = 1;
             this.Syu_Con_Button.Text = "確定";
             this.Syu_Con_Button.UseVisualStyleBackColor = true;
             this.Syu_Con_Button.Click += new System.EventHandler(this.Syu_Con_Button_Click);
@@ -60,10 +60,18 @@ namespace SalesManagement_SysDev.Management_Syukko
             this.panel1.Controls.Add(this.hScrollBar1);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(46, 24);
+            this.panel1.Location = new System.Drawing.Point(34, 19);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1476, 564);
+            this.panel1.Size = new System.Drawing.Size(1107, 451);
             this.panel1.TabIndex = 20;
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(392, 292);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(6, 8);
+            this.hScrollBar1.TabIndex = 2;
             // 
             // dataGridView2
             // 
@@ -71,11 +79,12 @@ namespace SalesManagement_SysDev.Management_Syukko
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(712, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(534, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(768, 561);
+            this.dataGridView2.Size = new System.Drawing.Size(576, 449);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
@@ -85,37 +94,32 @@ namespace SalesManagement_SysDev.Management_Syukko
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(703, 561);
+            this.dataGridView1.Size = new System.Drawing.Size(527, 449);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(772, 594);
+            this.button1.Location = new System.Drawing.Point(579, 475);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 43);
-            this.button1.TabIndex = 21;
+            this.button1.Size = new System.Drawing.Size(88, 34);
+            this.button1.TabIndex = 0;
             this.button1.Text = "クリア";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(522, 365);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(8, 8);
-            this.hScrollBar1.TabIndex = 2;
-            // 
             // Syukko_View
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1572, 760);
+            this.ClientSize = new System.Drawing.Size(1179, 608);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Syu_Con_Button);
