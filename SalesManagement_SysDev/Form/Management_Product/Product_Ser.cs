@@ -69,6 +69,7 @@ namespace SalesManagement_SysDev.Management_Product
         {
             SetFormDataGridView();
             invcnt();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Ser_Click(object sender, EventArgs e)

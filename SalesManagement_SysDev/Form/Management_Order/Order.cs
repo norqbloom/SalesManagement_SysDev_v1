@@ -33,6 +33,7 @@ namespace SalesManagement_SysDev.Management_Order
         {
             SetFormDataGridView();
             dateTimePickerOrDate.Value = DateTime.Now;
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Add_Click(object sender, EventArgs e)

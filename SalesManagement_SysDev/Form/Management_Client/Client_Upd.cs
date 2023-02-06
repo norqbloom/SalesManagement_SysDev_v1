@@ -30,6 +30,7 @@ namespace SalesManagement_SysDev.Management_Client
             //adioButton1.Checked = true;
             setdata();
             SetFormDataGridView();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Upd_Click(object sender, EventArgs e)

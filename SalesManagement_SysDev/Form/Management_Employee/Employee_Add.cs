@@ -28,6 +28,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private void Employee_Add_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Add_Click(object sender, EventArgs e)

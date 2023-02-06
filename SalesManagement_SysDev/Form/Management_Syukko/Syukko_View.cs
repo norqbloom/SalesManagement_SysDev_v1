@@ -32,6 +32,8 @@ namespace SalesManagement_SysDev.Management_Syukko
             syukkos = syukkoDataaccess.getSyukko();
             dataGridView1.DataSource = syukkos;
             dataGridView2.DataSource = commitdata;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         private void Syu_Con_Button_Click(object sender, EventArgs e)
         {            

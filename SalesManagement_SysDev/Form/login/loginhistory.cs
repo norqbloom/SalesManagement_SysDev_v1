@@ -79,5 +79,10 @@ namespace SalesManagement_SysDev
             dataGridViewhistory.DataSource = histories;
 
         }
+
+        private void loginhistory_Load(object sender, EventArgs e)
+        {
+            dataGridViewhistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
     }
 }

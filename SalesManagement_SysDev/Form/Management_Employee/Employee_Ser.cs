@@ -108,6 +108,7 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             SetFormDataGridView();
             invcnt();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private bool GetEmployetDataAtSelect()

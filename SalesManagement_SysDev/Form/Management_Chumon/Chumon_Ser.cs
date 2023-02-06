@@ -113,6 +113,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             invcnt();
             chumons = chumonDataAccess.GetChumonDspData();
             dataGridViewDsp.DataSource = chumons;
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_First_Click(object sender, EventArgs e)

@@ -41,6 +41,7 @@ namespace SalesManagement_SysDev.Management_Product
         private void Product_Upd_Load(object sender, EventArgs e)
         {
             SetFormDataGridView();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Upd_Click(object sender, EventArgs e)

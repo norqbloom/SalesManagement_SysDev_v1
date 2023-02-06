@@ -29,6 +29,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         //デートタイムピッカーの設定
         SetFormDateTimePiker();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Add_Click(object sender, EventArgs e)

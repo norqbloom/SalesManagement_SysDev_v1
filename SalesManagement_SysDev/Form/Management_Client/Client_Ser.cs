@@ -54,6 +54,7 @@ namespace SalesManagement_SysDev.Management_Client
             setdata();
             SetFormDataGridView();
             invcnt();
+            dataGridViewDsp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button_Ser_Click(object sender, EventArgs e)
