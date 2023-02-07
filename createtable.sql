@@ -62,10 +62,10 @@ SET IDENTITY_INSERT M_Maker OFF
 SET IDENTITY_INSERT M_Position ON
 INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
 VALUES(1,N'管理者',0,null)
-/*INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
+INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
 VALUES(2,N'営業',0,null)
 INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
-VALUES(3,N'物流',0,null)*/
+VALUES(3,N'物流',0,null)
 SET IDENTITY_INSERT M_Position OFF
 
 /*商品マスタ*/
@@ -100,12 +100,12 @@ INSERT INTO M_SalesOffice(SoID,SoName,SoAddress,SoPhone,SoPostal,SoFAX,SoFlag,So
 VALUES(1,N'北大阪営業所',N'大阪府吹田市寿町3-4-40',N'06-7011-6123',N'5600046',N'06-6562-2740',0,null)
 INSERT INTO M_SalesOffice(SoID,SoName,SoAddress,SoPhone,SoPostal,SoFAX,SoFlag,SoHidden)
 VALUES(2,N'兵庫営業所',N'兵庫県姫路市東辻井2-5-20',N'079-669-4326',N'6700994',N'079-669-4327',0,null)
+/*INSERT INTO M_SalesOffice(SoID,SoName,SoAddress,SoPhone,SoPostal,SoFAX,SoFlag,SoHidden)*/
+/*VALUES(3,N'鹿営業所',N'奈良県生駒郡三郷町勢野8-7-50',N'0745-99-0084',N'6360814',N'0746-0-1160639',0,null)*/
 INSERT INTO M_SalesOffice(SoID,SoName,SoAddress,SoPhone,SoPostal,SoFAX,SoFlag,SoHidden)
-VALUES(3,N'鹿営業所',N'奈良県生駒郡三郷町勢野8-7-50',N'0745-99-0084',N'6360814',N'0746-0-1160639',0,null)
+VALUES(3,N'京都営業所',N'京都府京都市山科区東野南井ノ上町10-3-7',N'077-6726006',N'6078143',N'0771-85-2574',0,null)
 INSERT INTO M_SalesOffice(SoID,SoName,SoAddress,SoPhone,SoPostal,SoFAX,SoFlag,SoHidden)
-VALUES(4,N'京都営業所',N'京都府京都市山科区東野南井ノ上町10-3-7',N'077-6726006',N'6078143',N'0771-85-2574',0,null)
-INSERT INTO M_SalesOffice(SoID,SoName,SoAddress,SoPhone,SoPostal,SoFAX,SoFlag,SoHidden)
-VALUES(5,N'和歌山営業所',N'和歌山県和歌山市柳丁4-19',N'073-887-1927',N'6408336',N'0735-78-4874',0,null)
+VALUES(4,N'和歌山営業所',N'和歌山県和歌山市柳丁4-19',N'073-887-1927',N'6408336',N'0735-78-4874',0,null)
 SET IDENTITY_INSERT M_SalesOffice OFF
 
 /*小分類マスタ*/
