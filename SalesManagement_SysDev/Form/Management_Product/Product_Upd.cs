@@ -529,18 +529,28 @@ namespace SalesManagement_SysDev.Management_Product
         private void button_Del_Click(object sender, EventArgs e)
         {
             
-            if (checkBoxPrFlag.Checked == false)
+            if (checkBoxPrFlag.Checked == true)
             {
-                if (String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxPrHidden.Text.Trim()))
                 {
                     int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
                     DialogResult result = messageDsp.DspMsg("M5555");//選択した項目を削除（非表示）にしますか？
                     if (result == DialogResult.OK)
                     {
-                        productDataAccess.delflg(number);
+                        bool flg = productDataAccess.delflg(number);
                         int radioint = 0;
+                        if(flg == true)
+                        {
+                            messageDsp.DspMsg("M2037");//商品データを削除しました
+                        }
+                        else
+                        {
+                            messageDsp.DspMsg("M2038");//商品データの削除に失敗しました
+                        }
+
                         products = productDataAccess.GetProductDataDsp(radioint);
                         dataGridViewDsp.DataSource = products;
+                        
                     }
                     else
                     {
@@ -549,11 +559,10 @@ namespace SalesManagement_SysDev.Management_Product
                 }
                 else
                 {
-                    messageDsp.DspMsg("M2038");//非表示理由が入力されていません
+                    messageDsp.DspMsg("M2040");//非表示理由が入力されていません
                     textBoxPrHidden.Focus();
                     return;
-                }
-                
+                }     
             }
             else
             {

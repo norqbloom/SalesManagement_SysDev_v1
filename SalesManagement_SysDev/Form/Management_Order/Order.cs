@@ -89,10 +89,10 @@ namespace SalesManagement_SysDev.Management_Order
 
         private void button_Del_Click(object sender, EventArgs e)
         {
-            if (!GetValidDataDelete())
-            {
-                return;
-            }
+            //if (!GetValidDataDelete())
+            //{
+            //    return;
+            //}
 
             var delOrder = GenerateDataAtDelete();
 
@@ -694,8 +694,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (!dataInputFormCheck.CheckNumeric(textBoxOrID.Text.Trim()))
                 {
-                    MessageBox.Show("1");
-                    //messageDsp.DspMsg("");
+                    messageDsp.DspMsg("");
                     textBoxOrID.Focus();
                     return false;
                 }
@@ -885,8 +884,14 @@ namespace SalesManagement_SysDev.Management_Order
 
         private void DeleteOrder(T_Order delOrder)
         {
-            DialogResult result = MessageBox.Show("削除しますか？");
-            //DialogResult result = messageDsp.DspMsg("");
+            if(checkBoxOrFlag.Checked == false)
+            {
+                if (!String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
+                {
+
+                }
+            }
+            DialogResult result = messageDsp.DspMsg("M5555");//選択した項目を削除（非表示）にしますか？
             if (result == DialogResult.Cancel)
             {
                 return;
@@ -895,13 +900,11 @@ namespace SalesManagement_SysDev.Management_Order
             bool flg = orderDateAccess.DeleteOrderData(delOrder);
             if (flg == true)
             {
-                MessageBox.Show("削除しました");
-                //messageDsp.DspMsg("");
+                messageDsp.DspMsg("M4016");//受注データを削除しました
             }
             else
             {
-                MessageBox.Show("削除できませんでした");
-                //messageDsp.DspMsg("");
+                messageDsp.DspMsg("M4017");//受注データ削除に失敗しました
             }
             textBoxOrID.Focus();
 

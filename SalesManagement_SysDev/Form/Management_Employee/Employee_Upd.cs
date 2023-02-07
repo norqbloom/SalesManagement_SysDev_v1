@@ -426,7 +426,7 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             if (checkBoxEmFlag.Checked == true)
             {
-                if (String.IsNullOrEmpty(textBoxEmHidden.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxEmHidden.Text.Trim()))
                 {
                     int number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
                     DialogResult result = messageDsp.DspMsg("M5555");//選択した項目を削除（非表示）にしますか？
