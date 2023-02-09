@@ -132,8 +132,7 @@ namespace SalesManagement_SysDev.Management_Order
                 //grid_OrFlg = 2;
                 //orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
                 int grid_StateFlg = 1;
-                int grid_Orflg = 0;
-                orders = orderDateAccess.GetOrderDataDsp_kakutei(grid_StateFlg,grid_Orflg);
+                orders = orderDateAccess.GetOrderDataDsp_kakutei(grid_StateFlg);
                 SetDataGridView();
             }
             else
@@ -142,8 +141,7 @@ namespace SalesManagement_SysDev.Management_Order
                 //grid_OrFlg = 0;
                 //orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg, 0);
                 int grid_StateFlg = 0;
-                int grid_Orflg = 0;
-                orders = orderDateAccess.GetOrderDataDsp_kakutei(grid_StateFlg, grid_Orflg);
+                orders = orderDateAccess.GetOrderDataDsp_kakutei(grid_StateFlg);
                 SetDataGridView();
             }
         }
@@ -485,21 +483,21 @@ namespace SalesManagement_SysDev.Management_Order
                 return false;
             }
 
-            if (checkBoxOrFlag.CheckState == CheckState.Indeterminate)
+            if (checkBoxChFlag.CheckState == CheckState.Indeterminate)
             {
                 MessageBox.Show("18");
                 //messageDsp.DspMsg("");
-                checkBoxOrFlag.Focus();
+                checkBoxChFlag.Focus();
                 return false;
             }
 
-            if (checkBoxOrFlag.Checked == true)
+            if (checkBoxChFlag.Checked == true)
             {
                 if (!String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
                 {
                     MessageBox.Show("19");
                     //messageDsp.DspMsg("");
-                    checkBoxOrFlag.Focus();
+                    checkBoxChFlag.Focus();
                     return false;
                 }
             }
@@ -510,7 +508,7 @@ namespace SalesManagement_SysDev.Management_Order
         {
             int checkFlg;
             string hidden;
-            if (checkBoxOrFlag.Checked == true)
+            if (checkBoxChFlag.Checked == true)
             {
                 checkFlg = 2;
             }
@@ -556,7 +554,7 @@ namespace SalesManagement_SysDev.Management_Order
         {
             int checkFlg;
             string hidden;
-            if (checkBoxOrFlag.Checked == true)
+            if (checkBoxChFlag.Checked == true)
             {
                 checkFlg = 2;
             }
@@ -835,21 +833,21 @@ namespace SalesManagement_SysDev.Management_Order
                 return false;
             }
 
-            if (checkBoxOrFlag.CheckState == CheckState.Indeterminate)
+            if (checkBoxChFlag.CheckState == CheckState.Indeterminate)
             {
                 MessageBox.Show("18");
                 //messageDsp.DspMsg("");
-                checkBoxOrFlag.Focus();
+                checkBoxChFlag.Focus();
                 return false;
             }
 
-            if (checkBoxOrFlag.Checked == true)
+            if (checkBoxChFlag.Checked == true)
             {
                 if (String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
                 {
                     MessageBox.Show("19");
                     //messageDsp.DspMsg("");
-                    checkBoxOrFlag.Focus();
+                    checkBoxChFlag.Focus();
                     return false;
                 }
             }
@@ -884,7 +882,7 @@ namespace SalesManagement_SysDev.Management_Order
 
         private void DeleteOrder(T_Order delOrder)
         {
-            if(checkBoxOrFlag.Checked == false)
+            if(checkBoxChFlag.Checked == false)
             {
                 if (!String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
                 {
@@ -934,9 +932,9 @@ namespace SalesManagement_SysDev.Management_Order
 
         private void GetDataGridView()
         {
-            orders = orderDateAccess.GetOrderDataDsp(grid_OrFlg);
+            orders = orderDateAccess.GetOrderDataDsp(0);
             orderDetails = orderDetailDataAccess.GetOrderDetailDataDsp(0);
-            products = productDataAccess.GetProductDataDsp(grid_OrFlg);
+            products = productDataAccess.GetProductDataDsp(0);
             SetDataGridView();
         }
         private void GetDataGridView2()
@@ -1171,21 +1169,21 @@ namespace SalesManagement_SysDev.Management_Order
                 return false;
             }
 
-            if (checkBoxOrFlag.CheckState == CheckState.Indeterminate)
+            if (checkBoxChFlag.CheckState == CheckState.Indeterminate)
             {
                 MessageBox.Show("18");
                 //messageDsp.DspMsg("");
-                checkBoxOrFlag.Focus();
+                checkBoxChFlag.Focus();
                 return false;
             }
 
-            if (checkBoxOrFlag.Checked == true)
+            if (checkBoxChFlag.Checked == true)
             {
                 if (!String.IsNullOrEmpty(textBoxOrHidden.Text.Trim()))
                 {
                     MessageBox.Show("19");
                     //messageDsp.DspMsg("");
-                    checkBoxOrFlag.Focus();
+                    checkBoxChFlag.Focus();
                     return false;
                 }
             }
@@ -1196,7 +1194,7 @@ namespace SalesManagement_SysDev.Management_Order
         {
             int checkFlg;
             string hidden;
-            if (checkBoxOrFlag.Checked == true)
+            if (checkBoxChFlag.Checked == true)
             {
                 checkFlg = 2;
             }

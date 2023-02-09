@@ -17,6 +17,7 @@ namespace SalesManagement_SysDev.Management_Product
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<M_Product> products;
         private static int grid = 9;
+        private static int grid_PrFlg = 0;
 
         public Product_Upd()
         {
@@ -572,6 +573,22 @@ namespace SalesManagement_SysDev.Management_Product
             }
         }
 
-        
+        private void button_hide_nonhide_Click(object sender, EventArgs e)
+        {
+            if (button_hide_nonhide.Text == "表示")
+            {
+                button_hide_nonhide.Text = "非表示";
+                grid_PrFlg = 2;
+                products = productDataAccess.GetProductDataDsp(grid_PrFlg);
+                SetDataGridView();
+            }
+            else
+            {
+                button_hide_nonhide.Text = "表示";
+                grid_PrFlg = 0;
+                products = productDataAccess.GetProductDataDsp(grid_PrFlg);
+                SetDataGridView();
+            }
+        }
     }
 }

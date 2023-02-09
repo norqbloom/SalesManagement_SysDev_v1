@@ -18,6 +18,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<M_Employee> employees;
         PasswordHash passwordHash = new PasswordHash();
         private static int grid = 10;
+        private static int grid_EmFlg = 0;
 
         public Employee_Upd()
         {
@@ -318,8 +319,6 @@ namespace SalesManagement_SysDev.Management_Employee
             }        
         }
 
-        private static List<M_Employee> Emp1;
-
         ///////////////////////////////
         //メソッド名：SetFormDataGridView()
         //引　数   ：なし
@@ -352,7 +351,7 @@ namespace SalesManagement_SysDev.Management_Employee
 
             int radioint = 0;
             // 商品データの取得
-            Emp1 = employeeDataAccess.GetEmployeeDataDsp(radioint);
+            employees = employeeDataAccess.GetEmployeeDataDsp(radioint);
 
             // DataGridViewに表示するデータを指定
             SetDataGridView();
@@ -368,41 +367,16 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 1;
-            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             //列名の中央揃え
             foreach (DataGridViewColumn clm in dataGridViewDsp.Columns)
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 80;
-            //dataGridViewDsp.Columns[1].Width = 80;
-            //dataGridViewDsp.Columns[2].Width = 200;
-            //dataGridViewDsp.Columns[3].Width = 200;
-            //dataGridViewDsp.Columns[4].Width = 200;
-            //dataGridViewDsp.Columns[5].Width = 80;
-            //dataGridViewDsp.Columns[6].Width = 80;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 150;
-
-
-
-            //各列の文字位置の指定
-            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
-
+            
             //dataGridViewの総ページ数
-            labelPage.Text = "/" + ((int)Math.Ceiling(Emp1.Count / (double)pageSize)) + "ページ";
+            labelPage.Text = "/" + ((int)Math.Ceiling(employees.Count / (double)pageSize)) + "ページ";
 
             dataGridViewDsp.Refresh();
 
@@ -418,8 +392,8 @@ namespace SalesManagement_SysDev.Management_Employee
 
         private void setdata()
         {
-            Emp1 = employeeDataAccess.GetEmployeeDataDsp1();
-            dataGridViewDsp.DataSource = Emp1;
+            employees = employeeDataAccess.GetEmployeeDataDsp1();
+            dataGridViewDsp.DataSource = employees;
         }
 
         private void button_Del_Click(object sender, EventArgs e)
@@ -454,6 +428,24 @@ namespace SalesManagement_SysDev.Management_Employee
                 messageDsp.DspMsg("M6027");//社員管理フラグが不確定です
                 checkBoxEmFlag.Focus();
                 return;
+            }
+        }
+
+        private void button_hide_nonhide_Click(object sender, EventArgs e)
+        {
+            if (button_hide_nonhide.Text == "表示")
+            {
+                button_hide_nonhide.Text = "非表示";
+                grid_EmFlg = 2;
+                employees = employeeDataAccess.GetEmployeeDataDsp(grid_EmFlg);
+                SetDataGridView();
+            }
+            else
+            {
+                button_hide_nonhide.Text = "表示";
+                grid_EmFlg = 0;
+                employees = employeeDataAccess.GetEmployeeDataDsp(grid_EmFlg);
+                SetDataGridView();
             }
         }
     }

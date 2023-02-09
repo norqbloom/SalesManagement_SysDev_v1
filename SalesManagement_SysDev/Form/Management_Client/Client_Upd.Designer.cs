@@ -58,6 +58,7 @@ namespace SalesManagement_SysDev.Management_Client
             this.button_Del = new System.Windows.Forms.Button();
             this.labelPrHidden = new System.Windows.Forms.Label();
             this.textBoxClHidden = new System.Windows.Forms.TextBox();
+            this.button_hide_nonhide = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -348,11 +349,23 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClHidden.Size = new System.Drawing.Size(187, 57);
             this.textBoxClHidden.TabIndex = 8;
             // 
+            // button_hide_nonhide
+            // 
+            this.button_hide_nonhide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button_hide_nonhide.Location = new System.Drawing.Point(904, 914);
+            this.button_hide_nonhide.Name = "button_hide_nonhide";
+            this.button_hide_nonhide.Size = new System.Drawing.Size(55, 35);
+            this.button_hide_nonhide.TabIndex = 143;
+            this.button_hide_nonhide.Text = "表示";
+            this.button_hide_nonhide.UseVisualStyleBackColor = true;
+            this.button_hide_nonhide.Click += new System.EventHandler(this.button_hide_nonhide_Click);
+            // 
             // Client_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_hide_nonhide);
             this.Controls.Add(this.labelPrHidden);
             this.Controls.Add(this.textBoxClHidden);
             this.Controls.Add(this.button_Del);
@@ -420,5 +433,6 @@ namespace SalesManagement_SysDev.Management_Client
         private System.Windows.Forms.Button button_Del;
         private System.Windows.Forms.Label labelPrHidden;
         private System.Windows.Forms.TextBox textBoxClHidden;
+        private System.Windows.Forms.Button button_hide_nonhide;
     }
 }

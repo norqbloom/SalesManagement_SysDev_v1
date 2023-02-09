@@ -765,23 +765,7 @@ namespace SalesManagement_SysDev
             }
             return history;
         }
-        public List<M_Product> GetProductDataDsp1()
-        {
-            List<M_Product> Prd = new List<M_Product>();
-
-            try
-            {
-                var context = new SalesManagement_DevContext();
-                Prd = context.M_Products.Where(x => x.PrFlag == 0).ToList();
-                context.SaveChanges();
-                context.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return Prd;
-        }
+       
         public bool upflg(int number)
         {
             try

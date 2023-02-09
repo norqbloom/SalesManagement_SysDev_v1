@@ -144,8 +144,7 @@ namespace SalesManagement_SysDev
             try
             {
                 var context = new SalesManagement_DevContext();
-                orders = context.T_Orders.Where(x => x.OrFlag == grid_Orflg &&
-                                                     x.OrStateFlag == 0).ToList();
+                orders = context.T_Orders.Where(x => x.OrFlag == grid_Orflg).ToList();
                 context.SaveChanges();
                 context.Dispose();
             }
@@ -156,15 +155,14 @@ namespace SalesManagement_SysDev
             return orders;
         }
 
-        public List<T_Order> GetOrderDataDsp_kakutei(int grid_OrStateflg,int grid_Orflg)
+        public List<T_Order> GetOrderDataDsp_kakutei(int grid_OrStateflg)
         {
             List<T_Order> orders = new List<T_Order>();
 
             try
             {
                 var context = new SalesManagement_DevContext();
-                orders = context.T_Orders.Where(x => x.OrStateFlag == grid_OrStateflg &&
-                                                x.OrFlag == grid_Orflg).ToList();
+                orders = context.T_Orders.Where(x => x.OrStateFlag == grid_OrStateflg).ToList();
                 context.SaveChanges();
                 context.Dispose();
             }

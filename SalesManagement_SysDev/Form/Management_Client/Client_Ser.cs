@@ -183,28 +183,44 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void GenerateDataAtSelect()
         {
-            if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+            if (!checkBoxClFlag.Checked == true)
             {
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
                 {
-                    datedubblwget();
+                    if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                    {
+                        datedubblwget();
+                    }
+                    else
+                    {
+                        dateClget();
+                    }
                 }
                 else
                 {
-                    dateClget();
+                    if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                    {
+                        dateSoget();
+                    }
+                    else
+                    {
+                        datenolwget();
+                    }
                 }
             }
             else
             {
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                try
                 {
-                    dateSoget();
+                    var context = new SalesManagement_DevContext();
+                    clients = context.M_Clients.Where(x => x.ClFlag == 2).ToList();
+                    SetDataGridView();
                 }
-                else
+                catch (Exception ex)
                 {
-                    datenolwget();
+                    MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+            }       
         }
 
         private void SetSelectData()
@@ -281,7 +297,7 @@ namespace SalesManagement_SysDev.Management_Client
 
             int radioint = 0;
             // 商品データの取得
-            clients = clientDataAccess.GetProductDataDsp(radioint);
+            clients = clientDataAccess.GetClientDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }

@@ -19,6 +19,7 @@ namespace SalesManagement_SysDev.Management_Client
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
         private static int grid = 10;
+        private static int grid_ClFlg = 0;
 
         public Client_Upd()
         {
@@ -362,7 +363,7 @@ namespace SalesManagement_SysDev.Management_Client
 
             int radioint = 0;
             // 商品データの取得
-            clients = clientDataAccess.GetProductDataDsp(radioint);
+            clients = clientDataAccess.GetClientDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }   
@@ -418,6 +419,24 @@ namespace SalesManagement_SysDev.Management_Client
                 checkBoxClFlag.Focus();
                 return;
             }          
+        }
+
+        private void button_hide_nonhide_Click(object sender, EventArgs e)
+        {
+            if (button_hide_nonhide.Text == "表示")
+            {
+                button_hide_nonhide.Text = "非表示";
+                grid_ClFlg = 2;
+                clients = clientDataAccess.GetClientDataDsp(grid_ClFlg);
+                SetDataGridView();
+            }
+            else
+            {
+                button_hide_nonhide.Text = "表示";
+                grid_ClFlg = 0;
+                clients = clientDataAccess.GetClientDataDsp(grid_ClFlg);
+                SetDataGridView();
+            }
         }
     }
 }
