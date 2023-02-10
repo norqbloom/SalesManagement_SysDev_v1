@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Product
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
         private static List<Prhistory> history;
-        private static int grid = 9;
+        private static int grid = 30;
 
         private void invcnt()
         {

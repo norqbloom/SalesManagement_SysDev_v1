@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         private static List<M_Employee> Emp1;
-        private static int grid = 15;
+        private static int grid = 30;
 
         public Employee_Ser()
         {

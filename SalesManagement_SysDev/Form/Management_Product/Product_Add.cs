@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Product
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         //データグリッドビュー用のプロダクトデータ
         private static List<M_Product> products;
-        private static int grid = 9;
+        private static int grid = 30;
         public Product_Add()
         {
             InitializeComponent();

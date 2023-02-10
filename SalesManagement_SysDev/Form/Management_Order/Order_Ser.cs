@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev.Management_Order
         OrderDateAccess orderdateAccess = new OrderDateAccess();
         private static List<T_Order> orders;
         private static List<T_OrderDsp> Or1;
-        private static int grid = 10;
+        private static int grid = 30;
 
         public Order_Ser()
         {

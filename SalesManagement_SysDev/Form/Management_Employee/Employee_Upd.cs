@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Employee
         EmployeeDataAccess employeeDataAccess = new EmployeeDataAccess();
         private static List<M_Employee> employees;
         PasswordHash passwordHash = new PasswordHash();
-        private static int grid = 10;
+        private static int grid = 30;
         private static int grid_EmFlg = 0;
 
         public Employee_Upd()

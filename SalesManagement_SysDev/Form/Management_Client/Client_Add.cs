@@ -19,7 +19,7 @@ namespace SalesManagement_SysDev.Management_Client
         //データベース顧客テーブルアクセス用クラスのインスタンス化
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
-        private static int grid = 9;
+        private static int grid = 30;
 
         public Client_Add()
         {

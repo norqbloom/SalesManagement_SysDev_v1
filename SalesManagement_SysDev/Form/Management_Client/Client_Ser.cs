@@ -17,7 +17,7 @@ namespace SalesManagement_SysDev.Management_Client
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
         private static List<M_clhistory> history;
-        private static int grid = 9;
+        private static int grid = 30;
 
         private void invcnt()
         {

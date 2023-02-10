@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev.Management_Client
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         ClientDataAccess clientDataAccess = new ClientDataAccess();
         private static List<M_Client> clients;
-        private static int grid = 10;
+        private static int grid = 30;
         private static int grid_ClFlg = 0;
 
         public Client_Upd()

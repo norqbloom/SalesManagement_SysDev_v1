@@ -16,7 +16,7 @@ namespace SalesManagement_SysDev.Management_Product
         ProductDataAccess productDataAccess = new ProductDataAccess();
         DataInputFormCheck dataInputFormCheck = new DataInputFormCheck();
         private static List<M_Product> products;
-        private static int grid = 9;
+        private static int grid = 30;
         private static int grid_PrFlg = 0;
 
         public Product_Upd()

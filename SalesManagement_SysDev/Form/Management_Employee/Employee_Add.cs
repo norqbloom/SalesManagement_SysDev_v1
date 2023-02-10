@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev.Management_Employee
         PasswordHash passwordHash = new PasswordHash();
         private static List<M_Employee> employees;
         private static List<M_Employee> Emp1;
-        private static int grid = 10;
+        private static int grid = 30;
 
         public Employee_Add()
         {

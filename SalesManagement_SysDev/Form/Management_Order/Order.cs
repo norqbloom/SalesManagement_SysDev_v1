@@ -22,7 +22,7 @@ namespace SalesManagement_SysDev.Management_Order
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
         private static int grid_OrID = 0;
-        private static int grid = 10;
+        private static int grid = 30;
         private static int grid_OrFlg = 0;
 
         public Order()
