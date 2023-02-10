@@ -62,6 +62,7 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelPage = new System.Windows.Forms.Label();
             this.button_First = new System.Windows.Forms.Button();
             this.button_Del = new System.Windows.Forms.Button();
+            this.button_hide_nonhide = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -388,11 +389,23 @@ namespace SalesManagement_SysDev.Management_Product
             this.button_Del.UseVisualStyleBackColor = true;
             this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
             // 
+            // button_hide_nonhide
+            // 
+            this.button_hide_nonhide.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button_hide_nonhide.Location = new System.Drawing.Point(905, 914);
+            this.button_hide_nonhide.Name = "button_hide_nonhide";
+            this.button_hide_nonhide.Size = new System.Drawing.Size(55, 35);
+            this.button_hide_nonhide.TabIndex = 144;
+            this.button_hide_nonhide.Text = "表示";
+            this.button_hide_nonhide.UseVisualStyleBackColor = true;
+            this.button_hide_nonhide.Click += new System.EventHandler(this.button_hide_nonhide_Click);
+            // 
             // Product_Upd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.button_hide_nonhide);
             this.Controls.Add(this.button_Del);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePickerPrReleaseDate);
@@ -468,5 +481,6 @@ namespace SalesManagement_SysDev.Management_Product
         private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.Button button_First;
         private System.Windows.Forms.Button button_Del;
+        private System.Windows.Forms.Button button_hide_nonhide;
     }
 }

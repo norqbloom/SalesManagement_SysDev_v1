@@ -77,7 +77,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.labelPage_Order = new System.Windows.Forms.Label();
             this.button_First_Order = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
-            this.checkBoxOrFlag = new System.Windows.Forms.CheckBox();
+            this.checkBoxChFlag = new System.Windows.Forms.CheckBox();
             this.button_hide_nonhide = new System.Windows.Forms.Button();
             this.button_hide_nonhide_con = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDspOrder)).BeginInit();
@@ -577,16 +577,16 @@ namespace SalesManagement_SysDev.Management_Order
             this.button_Add.UseVisualStyleBackColor = true;
             this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
-            // checkBoxOrFlag
+            // checkBoxChFlag
             // 
-            this.checkBoxOrFlag.AutoSize = true;
-            this.checkBoxOrFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBoxOrFlag.Location = new System.Drawing.Point(274, 195);
-            this.checkBoxOrFlag.Name = "checkBoxOrFlag";
-            this.checkBoxOrFlag.Size = new System.Drawing.Size(149, 29);
-            this.checkBoxOrFlag.TabIndex = 7;
-            this.checkBoxOrFlag.Text = "受注管理フラグ";
-            this.checkBoxOrFlag.UseVisualStyleBackColor = true;
+            this.checkBoxChFlag.AutoSize = true;
+            this.checkBoxChFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBoxChFlag.Location = new System.Drawing.Point(274, 195);
+            this.checkBoxChFlag.Name = "checkBoxChFlag";
+            this.checkBoxChFlag.Size = new System.Drawing.Size(149, 29);
+            this.checkBoxChFlag.TabIndex = 7;
+            this.checkBoxChFlag.Text = "受注管理フラグ";
+            this.checkBoxChFlag.UseVisualStyleBackColor = true;
             // 
             // button_hide_nonhide
             // 
@@ -617,7 +617,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.ClientSize = new System.Drawing.Size(1658, 970);
             this.Controls.Add(this.button_hide_nonhide_con);
             this.Controls.Add(this.button_hide_nonhide);
-            this.Controls.Add(this.checkBoxOrFlag);
+            this.Controls.Add(this.checkBoxChFlag);
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -722,7 +722,7 @@ namespace SalesManagement_SysDev.Management_Order
         private System.Windows.Forms.Label labelPage_Order;
         private System.Windows.Forms.Button button_First_Order;
         private System.Windows.Forms.Button button_Add;
-        private System.Windows.Forms.CheckBox checkBoxOrFlag;
+        private System.Windows.Forms.CheckBox checkBoxChFlag;
         private System.Windows.Forms.Button button_hide_nonhide;
         private System.Windows.Forms.Button button_hide_nonhide_con;
     }

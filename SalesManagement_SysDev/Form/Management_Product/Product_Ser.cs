@@ -183,67 +183,82 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void GenerateDataAtSelect()
         {
-            //ここから
-            if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+            if(!checkBoxPrFlag.Checked == true)
             {
-                if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxPrID.Text.Trim()))
+                {
+                    if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
+                    {
+                        if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+                        {
+                            //全て入力されている
+                            datedubblwget();
+                            return;
+                        }
+                        else
+                        {
+                            //商品・メーカーのみ
+                            datePrMaget();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
+                        {
+                            //商品・小分類のみ
+                            datePrScget();
+                            return;
+                        }
+                        else
+                        {
+                            //商品のみ
+                            priddate();
+                            return;
+                        }
+                    }
+                }
+                else if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
                 {
                     if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
                     {
-                        //全て入力されている
-                        datedubblwget();
+                        //メーカー・小分類のみ
+                        dateMaScget();
                         return;
                     }
                     else
                     {
-                        //商品・メーカーのみ
-                        datePrMaget();
+                        //メーカーのみ
+                        dateMaget();
                         return;
                     }
                 }
-                else
+                else if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
                 {
-                    if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
-                    {
-                       　//商品・小分類のみ
-                        datePrScget();
-                        return;
-                    }
-                    else
-                    {
-                        //商品のみ
-                        priddate();
-                        return;
-                    }
-                }
-            }
-            else if (!String.IsNullOrEmpty(textBoxMaID.Text.Trim()))
-            {
-                if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
-                {
-                    //メーカー・小分類のみ
-                    dateMaScget();
+                    //小分類のみ
+                    dateScget();
                     return;
                 }
                 else
                 {
-                    //メーカーのみ
-                    dateMaget();
+                    //何も入力されていない
+                    datenolwget();
                     return;
                 }
-            }
-            else if (!String.IsNullOrEmpty(textBoxScID.Text.Trim()))
-            {
-                //小分類のみ
-                dateScget();
-                return;
             }
             else
             {
-                //何も入力されていない
-                datenolwget();
-                return;
-            }
+                try
+                {
+                    var context = new SalesManagement_DevContext();
+                    products = context.M_Products.Where(x => x.PrFlag == 2).ToList();
+                    SetDataGridView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }           
         }
 
         private void SetSelectData()
@@ -620,11 +635,11 @@ namespace SalesManagement_SysDev.Management_Product
         }
 
 
-        private void setdata()
-        {
-            products = productDataAccess.GetProductDataDsp1();
-            dataGridViewDsp.DataSource = products;
-        }
+        //private void setdata()
+        //{
+        //    products = productDataAccess.GetProductDataDsp(radioint);
+        //    dataGridViewDsp.DataSource = products;
+        //}
 
         private void dataGridViewDsp_SelectionChanged_1(object sender, EventArgs e)
         {

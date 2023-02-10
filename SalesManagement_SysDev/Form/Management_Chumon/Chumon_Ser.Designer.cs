@@ -71,6 +71,7 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.button_Con = new System.Windows.Forms.Button();
             this.label_ChHidden = new System.Windows.Forms.Label();
             this.textBoxChHidden = new System.Windows.Forms.TextBox();
+            this.checkBoxChFlag = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDsp)).BeginInit();
@@ -537,11 +538,23 @@ namespace SalesManagement_SysDev.Management_Chumon
             this.textBoxChHidden.Size = new System.Drawing.Size(187, 57);
             this.textBoxChHidden.TabIndex = 128;
             // 
+            // checkBoxChFlag
+            // 
+            this.checkBoxChFlag.AutoSize = true;
+            this.checkBoxChFlag.Font = new System.Drawing.Font("Yu Gothic UI", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBoxChFlag.Location = new System.Drawing.Point(274, 195);
+            this.checkBoxChFlag.Name = "checkBoxChFlag";
+            this.checkBoxChFlag.Size = new System.Drawing.Size(149, 29);
+            this.checkBoxChFlag.TabIndex = 130;
+            this.checkBoxChFlag.Text = "注文管理フラグ";
+            this.checkBoxChFlag.UseVisualStyleBackColor = true;
+            // 
             // Chumon_Ser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1658, 970);
+            this.Controls.Add(this.checkBoxChFlag);
             this.Controls.Add(this.label_ChHidden);
             this.Controls.Add(this.textBoxChHidden);
             this.Controls.Add(this.button_Con);
@@ -623,5 +636,6 @@ namespace SalesManagement_SysDev.Management_Chumon
         private System.Windows.Forms.Label labelcreatename;
         private System.Windows.Forms.Label labelcreateid;
         private System.Windows.Forms.Label labelcreatedate;
+        private System.Windows.Forms.CheckBox checkBoxChFlag;
     }
 }

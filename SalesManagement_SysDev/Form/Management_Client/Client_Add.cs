@@ -381,7 +381,7 @@ namespace SalesManagement_SysDev.Management_Client
 
             int radioint = 0;
             // 商品データの取得
-            clients = clientDataAccess.GetProductDataDsp(radioint);
+            clients = clientDataAccess.GetClientDataDsp(radioint);
             // DataGridViewに表示するデータを指定
             SetDataGridView();
         }

@@ -218,58 +218,106 @@ namespace SalesManagement_SysDev.Management_Chumon
 
         private void GenerateDataAtSelect()
         {
-            if (!String.IsNullOrEmpty(textBoxChID.Text.Trim()))
+            if((!checkBoxChFlag.Checked == true) && (!checkBoxChStateFlag.Checked == true))
             {
-                //if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-                //{
-                //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                //    {
-                //全て入力されている
-                datedubblwget();
-                return;
+                if (!checkBoxChFlag.Checked == true)
+                {
+                    if (!checkBoxChStateFlag.Checked == true)
+                    {
+                        if (!String.IsNullOrEmpty(textBoxChID.Text.Trim()))
+                        {
+                            //if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                            //{
+                            //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                            //    {
+                            //全て入力されている
+                            datedubblwget();
+                            return;
 
-                //        }
-                //        else
-                //        {
-                //            //注文・営業所のみ
-                //            dateChSoget();
-                //            return;
-                //        }
-                //    }
-                //    else
-                //    {
-                //        //注文・社員のみ
-                //        dateChEmget();
-                //        return;
-                //    }
-                //}
-                //else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-                //{
-                //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                //    {
-                //        //営業所・社員のみ
-                //        dateSoEmget();
-                //        return;
-                //    }
-                //    else
-                //    {
-                //        //営業所のみ
-                //        dateSoget();
-                //        return;
-                //    }
-                //}
-                //else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                //{
-                //    //社員のみ
-                //    dateEmget();
-                //    return;
+                            //        }
+                            //        else
+                            //        {
+                            //            //注文・営業所のみ
+                            //            dateChSoget();
+                            //            return;
+                            //        }
+                            //    }
+                            //    else
+                            //    {
+                            //        //注文・社員のみ
+                            //        dateChEmget();
+                            //        return;
+                            //    }
+                            //}
+                            //else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                            //{
+                            //    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                            //    {
+                            //        //営業所・社員のみ
+                            //        dateSoEmget();
+                            //        return;
+                            //    }
+                            //    else
+                            //    {
+                            //        //営業所のみ
+                            //        dateSoget();
+                            //        return;
+                            //    }
+                            //}
+                            //else if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                            //{
+                            //    //社員のみ
+                            //    dateEmget();
+                            //    return;
+                        }
+                        //else
+                        //{
+                        //    //何も入力されていない
+                        //    datenolwget();
+                        //    return;
+                        //}
+                    }
+                    else
+                    {
+                        try
+                        {
+                            var context = new SalesManagement_DevContext();
+                            chumons = context.T_Chumons.Where(x => x.ChStateFlag == 1).ToList();
+                            SetDataGridView();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        var context = new SalesManagement_DevContext();
+                        chumons = context.T_Chumons.Where(x => x.ChFlag == 2).ToList();
+                        SetDataGridView();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            //else
-            //{
-            //    //何も入力されていない
-            //    datenolwget();
-            //    return;
-            //}
+            else
+            {
+                try
+                {
+                    var context = new SalesManagement_DevContext();
+                    chumons = context.T_Chumons.Where(x => x.ChFlag == 2 && x.ChStateFlag == 1).ToList();
+                    SetDataGridView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }                               
         }
 
         private void SetSelectData()

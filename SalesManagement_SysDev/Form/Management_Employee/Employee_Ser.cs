@@ -145,67 +145,83 @@ namespace SalesManagement_SysDev.Management_Employee
         }
         private void GenerateDataAtSelect()
         {
-            if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+            if(!checkBoxEmFlag.Checked == true)
             {
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
                 {
-                    if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                    if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
                     {
-                        //全て入力されている
-                        datedubblwget();
-                        return;
-                    }
-                    else
-                    {
-                        //Em・Soのみ
-                        datePrMaget();
-                        return;
-                    }
+                        if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                        {
+                            //全て入力されている
+                            datedubblwget();
+                            return;
+                        }
+                        else
+                        {
+                            //Em・Soのみ
+                            datePrMaget();
+                            return;
+                        }
 
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                        {
+                            //Em・Poのみ
+                            datePrScget();
+                            return;
+                        }
+                        else
+                        {
+                            //emのみ
+                            dateemget();
+                            return;
+                        }
+                    }
                 }
-                else
+                else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
                 {
                     if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
                     {
-                       　//Em・Poのみ
-                        datePrScget();
+                        //So・Poのみ
+                        dateMaScget();
                         return;
                     }
                     else
                     {
-                        //emのみ
-                        dateemget();
+                        //Soのみ
+                        dateMaget();
                         return;
                     }
                 }
-            }
-            else if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
-            {
-                if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
+                else if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
                 {
-                    //So・Poのみ
-                    dateMaScget();
+                    //Poのみ
+                    dateScget();
                     return;
                 }
                 else
                 {
-                    //Soのみ
-                    dateMaget();
+                    //何も入力されていない
+                    datenolwget();
                     return;
                 }
-            }
-            else if (!String.IsNullOrEmpty(textBoxPoID.Text.Trim()))
-            {
-                //Poのみ
-                dateScget();
-                return;
             }
             else
             {
-                //何も入力されていない
-                datenolwget();
-                return;
-            }
+                try
+                {
+                    var context = new SalesManagement_DevContext();
+                    employees = context.M_Employees.Where(x => x.EmFlag == 2).ToList();
+                    SetDataGridView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }            
         }
 
         private void SetSelectData()

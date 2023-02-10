@@ -139,147 +139,194 @@ namespace SalesManagement_SysDev.Management_Order
         }
         private void GenerateDataAtSelect()
         {
-            if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
+            if((!checkBoxOrFlag.Checked == true) && (!checkBoxOrStateFlag.Checked == true))
             {
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                if (!checkBoxOrStateFlag.Checked == true)
                 {
-                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                    if (!checkBoxOrFlag.Checked == true)
                     {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        if (!String.IsNullOrEmpty(textBoxOrID.Text.Trim()))
                         {
-                            //全部
-                            datefull();
-                            return;
+                            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                            {
+                                if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //全部
+                                        datefull();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //OrID,SoID,EmID
+                                        dateorsoem();
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //OrID,SoID,ClID
+                                        dateorsocl();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //OrID,SoID
+                                        dateorso();
+                                        return;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //OrID,EmID,ClID
+                                        dateoremcl();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //OrID,EmID
+                                        dateorem();
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //OrID,ClID
+                                        dateorcl();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //OrID
+                                        dateor();
+                                        return;
+                                    }
+
+                                }
+                            }
                         }
                         else
                         {
-                            //OrID,SoID,EmID
-                            dateorsoem();
-                            return;
+                            if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                            {
+                                if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //SoID,EmID,ClID
+                                        datesoemcl();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //SoID,Emid
+                                        dateemso();
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //SoID.ClID
+                                        datesocl();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //SoID
+                                        dateso();
+                                        return;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //EmID,ClID
+                                        dateemcl();
+                                    }
+                                    else
+                                    {
+                                        //EmID
+                                        dateem();
+                                        return;
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                                    {
+                                        //ClID
+                                        datecl();
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        //何もなし
+                                        dateNo();
+                                        return;
+                                    }
+                                }
+
+                            }
                         }
                     }
                     else
                     {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
+                        try
                         {
-                            //OrID,SoID,ClID
-                            dateorsocl();
-                            return;
+                            var context = new SalesManagement_DevContext();
+                            orders = context.T_Orders.Where(x => x.OrFlag == 2).ToList();
+                            SetDataGridView();
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            //OrID,SoID
-                            dateorso();
-                            return;
+                            MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 else
                 {
-                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
+                    try
                     {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                        {
-                            //OrID,EmID,ClID
-                            dateoremcl();
-                            return;
-                        }
-                        else
-                        {
-                            //OrID,EmID
-                            dateorem();
-                            return;
-                        }
+                        var context = new SalesManagement_DevContext();
+                        orders = context.T_Orders.Where(x => x.OrStateFlag == 1).ToList();
+                        SetDataGridView();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                        {
-                            //OrID,ClID
-                            dateorcl();
-                            return;
-                        }
-                        else
-                        {
-                            //OrID
-                            dateor();
-                            return;
-                        }
-
+                        MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                if (!String.IsNullOrEmpty(textBoxSoID.Text.Trim()))
+                try
                 {
-                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                    {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                        {
-                            //SoID,EmID,ClID
-                            datesoemcl();
-                            return;
-                        }
-                        else
-                        {
-                            //SoID,Emid
-                            dateemso();
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                        {
-                            //SoID.ClID
-                            datesocl();
-                            return;
-                        }
-                        else
-                        {
-                            //SoID
-                            dateso();
-                            return;
-                        }
-                    }
+                    var context = new SalesManagement_DevContext();
+                    orders = context.T_Orders.Where(x => x.OrFlag == 2 && x.OrStateFlag == 1).ToList();
+                    SetDataGridView();
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (!String.IsNullOrEmpty(textBoxEmID.Text.Trim()))
-                    {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                        {
-                            //EmID,ClID
-                            dateemcl();
-                        }
-                        else
-                        {
-                            //EmID
-                            dateem();
-                            return;
-                        }
-
-                    }
-                    else
-                    {
-                        if (!String.IsNullOrEmpty(textBoxClID.Text.Trim()))
-                        {
-                            //ClID
-                            datecl();
-                            return;
-                        }
-                        else
-                        {
-                            //何もなし
-                            dateNo();
-                            return;
-                        }
-                    }
-
+                    MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-            }
+            }                                 
         }
 
         private void SetSelectData()

@@ -395,7 +395,7 @@ namespace SalesManagement_SysDev
 
             return true;
         }
-        public List<M_Client> GetProductDataDsp(int radioint)
+        public List<M_Client> GetClientDataDsp(int radioint)
         {
             List<M_Client> clients = new List<M_Client>();
 
