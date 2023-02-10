@@ -75,7 +75,6 @@ namespace SalesManagement_SysDev
             this.textBox_pass.Name = "textBox_pass";
             this.textBox_pass.Size = new System.Drawing.Size(267, 31);
             this.textBox_pass.TabIndex = 1;
-            this.textBox_pass.Text = "パスワード";
             this.textBox_pass.Enter += new System.EventHandler(this.textBox_pass_Enter);
             this.textBox_pass.Leave += new System.EventHandler(this.textBox_pass_Leave);
             // 
@@ -150,6 +149,7 @@ namespace SalesManagement_SysDev
             this.MaximumSize = new System.Drawing.Size(398, 530);
             this.MinimumSize = new System.Drawing.Size(398, 530);
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ログイン";
             this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lodinggif)).EndInit();

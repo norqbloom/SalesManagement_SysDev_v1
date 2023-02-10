@@ -30,6 +30,23 @@ namespace SalesManagement_SysDev
 
             return true;
         }
+
+        public List<M_Employee> GetEmployeeDspData()
+        {
+            List<M_Employee> Emp = new List<M_Employee>();
+            try
+            {
+                var context = new SalesManagement_DevContext();
+                Emp = context.M_Employees.Where(x => x.EmFlag == 0).ToList();
+                context.SaveChanges();
+                context.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "例外エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Emp;
+        }
         ///////////////////////////////
         //メソッド名：CheckEmployeesCDExistence()
         //引　数   ：社員コード

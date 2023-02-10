@@ -18,7 +18,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private static List<Emphistory> emphistories;
         EmployeeDataAccess EmployeeDataAccess = new EmployeeDataAccess();
         private static List<M_Employee> Emp1;
-        private static int grid = 10;
+        private static int grid = 15;
 
         public Employee_Ser()
         {
@@ -46,11 +46,15 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmPhone.Text = "";
             //textBoxEmHidden.Text = "";
         }
-
+        //private void setdata()
+        //{
+        //    employees = EmployeeDataAccess.GetEmployeeDspData();
+        //    dataGridViewDsp.DataSource = clie;
+        //}
         private void button_First_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
-            dataGridViewDsp.DataSource = employees.Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = Emp1.Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -61,7 +65,7 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -74,34 +78,29 @@ namespace SalesManagement_SysDev.Management_Employee
         private void button_Next_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
-            int pageNo = int.Parse(textBoxPageNo.Text);
-            //最終ページの計算
-            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            //最終ページでなければ
-            if (pageNo <= lastNo)
-                dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
-            if (pageNo >= lastPage)
-                textBoxPageNo.Text = lastPage.ToString();
-            else
+            if (pageNo + 1 > 1)
                 textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
         }
 
         private void button_Last_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
-            //最終ページの計算
-            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
-
+            int pageNo = int.Parse(textBoxPageNo.Text) - 2;
+            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
-            textBoxPageNo.Text = (pageNo + 1).ToString();
+            if (pageNo + 1 > 1)
+                textBoxPageNo.Text = (pageNo + 1).ToString();
+            else
+                textBoxPageNo.Text = "1";
         }
 
         private void Employee_Ser_Load_1(object sender, EventArgs e)

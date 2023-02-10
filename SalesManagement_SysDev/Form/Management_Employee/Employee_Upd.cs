@@ -60,7 +60,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private void button_First_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
-            dataGridViewDsp.DataSource = employees.Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = Emp1.Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -71,7 +71,7 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text) - 2;
-            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
@@ -86,15 +86,15 @@ namespace SalesManagement_SysDev.Management_Employee
             int pageSize = grid;
             int pageNo = int.Parse(textBoxPageNo.Text);
             //最終ページの計算
-            int lastNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
+            int lastNo = (int)Math.Ceiling(Emp1.Count / (double)pageSize) - 1;
             //最終ページでなければ
             if (pageNo <= lastNo)
-                dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+                dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             // DataGridViewを更新
             dataGridViewDsp.Refresh();
             //ページ番号の設定
-            int lastPage = (int)Math.Ceiling(employees.Count / (double)pageSize);
+            int lastPage = (int)Math.Ceiling(Emp1.Count / (double)pageSize);
             if (pageNo >= lastPage)
                 textBoxPageNo.Text = lastPage.ToString();
             else
@@ -105,8 +105,8 @@ namespace SalesManagement_SysDev.Management_Employee
         {
             int pageSize = grid;
             //最終ページの計算
-            int pageNo = (int)Math.Ceiling(employees.Count / (double)pageSize) - 1;
-            dataGridViewDsp.DataSource = employees.Skip(pageSize * pageNo).Take(pageSize).ToList();
+            int pageNo = (int)Math.Ceiling(Emp1.Count / (double)pageSize) - 1;
+            dataGridViewDsp.DataSource = Emp1.Skip(pageSize * pageNo).Take(pageSize).ToList();
 
             // DataGridViewを更新
             dataGridViewDsp.Refresh();

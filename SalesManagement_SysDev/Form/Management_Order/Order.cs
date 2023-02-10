@@ -22,7 +22,7 @@ namespace SalesManagement_SysDev.Management_Order
         private static List<T_Order> orders;
         private static List<T_OrderDetail> orderDetails;
         private static int grid_OrID = 0;
-        private static int grid = 1;
+        private static int grid = 10;
         private static int grid_OrFlg = 0;
 
         public Order()
@@ -455,7 +455,7 @@ namespace SalesManagement_SysDev.Management_Order
             {
                 if (!dataInputFormCheck.CheckFullWidth(textBoxClChange.Text.Trim()))
                 {
-                    MessageBox.Show("14");
+                    //MessageBox.Show("14");
                     //messageDsp.DspMsg("");
                     textBoxClChange.Focus();
                     return false;
@@ -463,7 +463,7 @@ namespace SalesManagement_SysDev.Management_Order
 
                 if (textBoxClChange.TextLength > 50)
                 {
-                    MessageBox.Show("15");
+                    //MessageBox.Show("15");
                     //messageDsp.DspMsg("");
                     textBoxClChange.Focus();
                     return false;
@@ -471,7 +471,7 @@ namespace SalesManagement_SysDev.Management_Order
             }
             else
             {
-                MessageBox.Show("16");
+                //MessageBox.Show("16");
                 //messageDsp.DspMsg("");
                 textBoxClChange.Focus();
                 return false;
@@ -623,7 +623,7 @@ namespace SalesManagement_SysDev.Management_Order
         private void RegistrationOrder(T_Order regOrder)
         {
             bool flg = orderDateAccess.AddorderData(regOrder);
-            DialogResult result = messageDsp.DspMsg("M4025");
+            DialogResult result = messageDsp.DspMsg("M4006");
             if (result == DialogResult.Cancel)
             {
                 return;
@@ -631,11 +631,11 @@ namespace SalesManagement_SysDev.Management_Order
 
             if (flg == true)
             {
-                messageDsp.DspMsg("M4026");
+                messageDsp.DspMsg("M4007");
             }
             else
             {
-                messageDsp.DspMsg("M4027");
+                messageDsp.DspMsg("M4008");
             }
             textBoxOrID.Focus();
         }
@@ -1247,6 +1247,16 @@ namespace SalesManagement_SysDev.Management_Order
                 messageDsp.DspMsg("M2035");//商品データ更新に失敗しました
             }
             textBoxOrID.Focus();
-        }      
+        }
+
+        private void dataGridViewDspProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewDspOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

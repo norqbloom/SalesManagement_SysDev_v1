@@ -163,6 +163,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridViewDspOrder.Size = new System.Drawing.Size(763, 662);
             this.dataGridViewDspOrder.TabIndex = 99;
             this.dataGridViewDspOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspOrder_CellClick);
+            this.dataGridViewDspOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspOrder_CellContentClick);
             // 
             // button_Cle
             // 
@@ -254,6 +255,7 @@ namespace SalesManagement_SysDev.Management_Order
             this.dataGridViewDspProduct.Size = new System.Drawing.Size(300, 970);
             this.dataGridViewDspProduct.TabIndex = 115;
             this.dataGridViewDspProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspProduct_CellClick);
+            this.dataGridViewDspProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDspProduct_CellContentClick);
             // 
             // textBoxClID
             // 
