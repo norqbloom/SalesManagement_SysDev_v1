@@ -294,7 +294,7 @@ namespace SalesManagement_SysDev
             this.shipping_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.shipping_btn.Size = new System.Drawing.Size(245, 54);
             this.shipping_btn.TabIndex = 23;
-            this.shipping_btn.Text = "出荷管理";
+            this.shipping_btn.Text = "出荷管理x";
             this.shipping_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.shipping_btn.UseVisualStyleBackColor = false;
             this.shipping_btn.Click += new System.EventHandler(this.shipping_btn_Click);
@@ -343,7 +343,7 @@ namespace SalesManagement_SysDev
             this.Arrival_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.Arrival_btn.Size = new System.Drawing.Size(245, 54);
             this.Arrival_btn.TabIndex = 21;
-            this.Arrival_btn.Text = "入荷管理";
+            this.Arrival_btn.Text = "入荷管理x";
             this.Arrival_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Arrival_btn.UseVisualStyleBackColor = false;
             this.Arrival_btn.Click += new System.EventHandler(this.Arrival_btn_Click);
@@ -441,7 +441,7 @@ namespace SalesManagement_SysDev
             this.warehousing_btn.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.warehousing_btn.Size = new System.Drawing.Size(245, 54);
             this.warehousing_btn.TabIndex = 17;
-            this.warehousing_btn.Text = "入庫管理";
+            this.warehousing_btn.Text = "入庫管理x";
             this.warehousing_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.warehousing_btn.UseVisualStyleBackColor = false;
             this.warehousing_btn.Click += new System.EventHandler(this.warehousing_btn_Click);
@@ -530,7 +530,7 @@ namespace SalesManagement_SysDev
             this.hattyu.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.hattyu.Size = new System.Drawing.Size(245, 54);
             this.hattyu.TabIndex = 15;
-            this.hattyu.Text = "発注管理";
+            this.hattyu.Text = "発注管理x";
             this.hattyu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hattyu.UseVisualStyleBackColor = false;
             this.hattyu.Click += new System.EventHandler(this.instruct_btn_Click);
@@ -697,7 +697,7 @@ namespace SalesManagement_SysDev
             this.sales.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.sales.Size = new System.Drawing.Size(245, 54);
             this.sales.TabIndex = 9;
-            this.sales.Text = "売上管理";
+            this.sales.Text = "売上管理x";
             this.sales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sales.UseVisualStyleBackColor = false;
             this.sales.Click += new System.EventHandler(this.Earnings_btn_Click);
@@ -855,7 +855,7 @@ namespace SalesManagement_SysDev
             this.stock.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.stock.Size = new System.Drawing.Size(245, 54);
             this.stock.TabIndex = 5;
-            this.stock.Text = "在庫管理";
+            this.stock.Text = "在庫管理x";
             this.stock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stock.UseVisualStyleBackColor = false;
             this.stock.Click += new System.EventHandler(this.stock_btn_Click);

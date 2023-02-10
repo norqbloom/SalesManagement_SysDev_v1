@@ -304,7 +304,7 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void UpdateItem(M_Client updItem)
         {
-            DialogResult result = MessageBox.Show("確認", MessageBoxButtons.OKCancel.ToString());
+            DialogResult result = messageDsp.DspMsg("M1025");
             if (result == DialogResult.Cancel)
                 return;
             bool flg = clientDataAccess.UpdClientData(updItem);
