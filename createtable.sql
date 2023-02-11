@@ -19,19 +19,19 @@ SET IDENTITY_INSERT M_Client OFF
 /*社員マスタ*/
 SET IDENTITY_INSERT M_Employee ON
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(116,N'坂口 郁美',2,3,29389,N'0116',N'06-6813-5485',0,null)
+VALUES(1,N'坂口 郁美',2,3,29389,N'0116',N'06-6813-5485',0,null)
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(310,N'高谷春男',1,2,26744,N'0310',N'06-6356-8742',0,null)
+VALUES(2,N'高谷春男',1,2,26744,N'0310',N'06-6356-8742',0,null)
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(1002,N'日下部俊夫',1,2,33120,N'1002',N'06-6579-0622',0,null)
+VALUES(3,N'日下部俊夫',1,2,33120,N'1002',N'06-6579-0622',0,null)
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(1007,N'岸本芽生',3,2,35465,N'1007',N'075-425-3371',0,null)
+VALUES(4,N'岸本芽生',3,2,35465,N'1007',N'075-425-3371',0,null)
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(1111,N'奥村敦彦',4,3,31123,N'999',N'079-145-6121',0,null)
+VALUES(5,N'奥村敦彦',4,3,31123,N'999',N'079-145-6121',0,null)
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(1208,N'渋谷秋昴',5,2,34365,N'1208',N'0790-68-8043',0,null)
+VALUES(6,N'渋谷秋昴',5,2,34365,N'1208',N'0790-68-8043',0,null)
 INSERT INTO M_Employee(EmID,EmName,SoID,PoID,EmHiredate,EmPassword,EmPhone,EmFlag,EmHidden)
-VALUES(1227,N'生田徳次郎',1,1,23456,N'1227',N'06-3021-1630',0,null)
+VALUES(7,N'生田徳次郎',1,1,23456,N'1227',N'06-3021-1630',0,null)
 SET IDENTITY_INSERT M_Employee OFF
 
 /*大分類マスタ*/
