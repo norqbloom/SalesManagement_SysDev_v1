@@ -135,7 +135,6 @@ namespace SalesManagement_SysDev.Management_Client
             this.textBoxClAddress.Name = "textBoxClAddress";
             this.textBoxClAddress.Size = new System.Drawing.Size(417, 32);
             this.textBoxClAddress.TabIndex = 4;
-            this.textBoxClAddress.TextChanged += new System.EventHandler(this.textBoxClAddress_TextChanged);
             // 
             // textBoxClPostal
             // 

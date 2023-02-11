@@ -46,11 +46,11 @@ namespace SalesManagement_SysDev.Management_Employee
             textBoxEmPhone.Text = "";
             //textBoxEmHidden.Text = "";
         }
-        //private void setdata()
-        //{
-        //    employees = EmployeeDataAccess.GetEmployeeDspData();
-        //    dataGridViewDsp.DataSource = clie;
-        //}
+        private void setdata()
+        {
+            employees = EmployeeDataAccess.GetEmployeeDspData();
+            dataGridViewDsp.DataSource = employees;
+        }
         private void button_First_Click(object sender, EventArgs e)
         {
             int pageSize = grid;
@@ -562,10 +562,7 @@ namespace SalesManagement_SysDev.Management_Employee
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
         {
             int number;
-            int EmIDtxt;
             number = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            EmIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-            labelEmID.Text = textBoxEmID.ToString();
 
             serchdateset(number);
             setdatedetail();
@@ -598,8 +595,6 @@ namespace SalesManagement_SysDev.Management_Employee
             labelcreateupdid.Text = x.LastupdatedUserID;
             labelcreateupdname.Text = x.LastupdatedUserName;
             incntok();
-
-
         }
 
         private void button_Hide_Click(object sender, EventArgs e)
@@ -609,18 +604,5 @@ namespace SalesManagement_SysDev.Management_Employee
             EmployeeDataAccess.upflg(number);
             setdata();
         }
-
-        private void setdata()
-        {
-            Emp1 = EmployeeDataAccess.GetEmployeeDataDsp1();
-            dataGridViewDsp.DataSource = Emp1;
-        }
-
-        private void button_Del_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

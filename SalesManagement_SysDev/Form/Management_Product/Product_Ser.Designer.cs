@@ -367,7 +367,6 @@ namespace SalesManagement_SysDev.Management_Product
             this.labelcreateid.Size = new System.Drawing.Size(52, 16);
             this.labelcreateid.TabIndex = 31;
             this.labelcreateid.Text = "label8";
-            this.labelcreateid.Click += new System.EventHandler(this.labelcreateid_Click);
             // 
             // labelcreatedate
             // 

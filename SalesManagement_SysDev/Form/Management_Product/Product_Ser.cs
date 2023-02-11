@@ -16,33 +16,33 @@ namespace SalesManagement_SysDev.Management_Product
         MessageDsp messageDsp = new MessageDsp();
         ProductDataAccess productDataAccess = new ProductDataAccess();
         private static List<M_Product> products;
-        private static List<Prhistory> history;
+        private static List<M_Prohistory> history;
         private static int grid = 30;
 
         private void invcnt()
         {
-            //labelPrID.Visible = false;
-            //labelMaID.Visible = false;
-            //labelScID.Visible = false;
-            //datetime.Visible = false;
-            //userid.Visible = false;
-            //username.Visible = false;
-            //uptime.Visible = false;
-            //upuserid.Visible = false;
-            //upusername.Visible = false;
+            labelPrID.Visible = false;
+            labelMaID.Visible = false;
+            labelScID.Visible = false;
+            labelcreatedate.Visible = false;
+            labelcreateid.Visible = false;
+            labelcreatename.Visible = false;
+            llabelcreateupddate.Visible = false;
+            labelcreateupdid.Visible = false;
+            labelcreateupdname.Visible = false;
         }
 
         private void incntok()
         {
-            //labelPr.Visible = true;
-            //labelMa.Visible = true;
-            //labelSc.Visible = true;
-            //datetime.Visible = true;
-            //userid.Visible = true;
-            //username.Visible = true;
-            //uptime.Visible = true;
-            //upuserid.Visible = true;
-            //upusername.Visible = true;
+            labelPrID.Visible = true;
+            labelMaID.Visible = true;
+            labelScID.Visible = true;
+            labelcreatedate.Visible = true;
+            labelcreateid.Visible = true;
+            labelcreatename.Visible = true;
+            llabelcreateupddate.Visible = true;
+            labelcreateupdid.Visible = true;
+            labelcreateupdname.Visible = true;
         }
 
         public Product_Ser()
@@ -66,6 +66,7 @@ namespace SalesManagement_SysDev.Management_Product
 
         private void Product_Ser_Load(object sender, EventArgs e)
         {
+            setdata();
             SetFormDataGridView();
             invcnt();
         }
@@ -552,63 +553,15 @@ namespace SalesManagement_SysDev.Management_Product
             {
                 clm.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            //各列幅の指定
-            //dataGridViewDsp.Columns[0].Width = 100;
-            //dataGridViewDsp.Columns[1].Width = 100;
-            //dataGridViewDsp.Columns[2].Width = 100;
-            //dataGridViewDsp.Columns[3].Width = 100;
-            //dataGridViewDsp.Columns[4].Visible = false;
-            //dataGridViewDsp.Columns[5].Width = 100;
-            //dataGridViewDsp.Columns[6].Width = 100;
-            //dataGridViewDsp.Columns[7].Width = 100;
-            //dataGridViewDsp.Columns[8].Width = 100;
-            //dataGridViewDsp.Columns[9].Width = 100;
-            //dataGridViewDsp.Columns[10].Width = 100;
-            //dataGridViewDsp.Columns[11].Width = 200;
-
-            //各列の文字位置の指定
-            //dataGridViewDsp.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewDsp.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //dataGridViewの総ページ数
             labelPage.Text = "/" + ((int)Math.Ceiling(products.Count / (double)pageSize)) + "ページ";
         }
 
-        private void button_Del_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelcreateid_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-
-        private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
-        {
-            //int number;
-            //int PrIDtxt;
-            //number = (int)dataGridViewDsp.CurrentRow.Cells[1].Value;
-            //PrIDtxt = (int)dataGridViewDsp.CurrentRow.Cells[0].Value;
-
-            //serchdateset(PrIDtxt);
-            //setdatedetail();
-        }
         private void serchdateset(int number)
         {
-            Prhistory selectCondition = new Prhistory
+            M_Prohistory selectCondition = new M_Prohistory
             {
                 PrID = number.ToString(),
 
@@ -634,13 +587,6 @@ namespace SalesManagement_SysDev.Management_Product
             incntok();
         }
 
-
-        //private void setdata()
-        //{
-        //    products = productDataAccess.GetProductDataDsp(radioint);
-        //    dataGridViewDsp.DataSource = products;
-        //}
-
         private void dataGridViewDsp_SelectionChanged_1(object sender, EventArgs e)
         {
             int number;
@@ -648,6 +594,11 @@ namespace SalesManagement_SysDev.Management_Product
 
             serchdateset(number);
             setdatedetail();
+        }
+        private void setdata()
+        {
+            products = productDataAccess.GetProductDspData();
+            dataGridViewDsp.DataSource = products;
         }
     }
 }

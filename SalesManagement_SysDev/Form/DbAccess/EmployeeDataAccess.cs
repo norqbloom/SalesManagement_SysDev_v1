@@ -570,6 +570,7 @@ namespace SalesManagement_SysDev
             {
                 var context = new SalesManagement_DevContext();
                 emphistory = context.emphistories.Where(x => x.EmID == selectCondition.EmID).ToList();
+                context.SaveChanges();
                 context.Dispose();
             }
             catch (Exception ex)

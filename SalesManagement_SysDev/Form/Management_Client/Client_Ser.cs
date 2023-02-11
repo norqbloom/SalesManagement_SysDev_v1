@@ -21,26 +21,24 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void invcnt()
         {
-            //label5.Visible = false;
-            //IDtxt.Visible = false;
-            //datetime.Visible = false;
-            //userid.Visible = false;
-            //username.Visible = false;
-            //uptime.Visible = false;
-            //upuserid.Visible = false;
-            //upusername.Visible = false;
+            labelClID.Visible = false;
+            labelcreatedate.Visible = false;
+            labelcreateid.Visible = false;
+            labelcreatename.Visible = false;
+            llabelcreateupddate.Visible = false;
+            labelcreateupdid.Visible = false;
+            labelcreateupdname.Visible = false;
         }
 
         private void incntok()
         {
-            //label5.Visible = true;
-            //IDtxt.Visible = true;
-            //datetime.Visible = true;
-            //userid.Visible = true;
-            //username.Visible = true;
-            //uptime.Visible = true;
-            //upuserid.Visible = true;
-            //upusername.Visible = true;
+            labelClID.Visible = true;
+            labelcreatedate.Visible = true;
+            labelcreateid.Visible = true;
+            labelcreatename.Visible = true;
+            llabelcreateupddate.Visible = true;
+            labelcreateupdid.Visible = true;
+            labelcreateupdname.Visible = true;
         }
 
         public Client_Ser()
@@ -50,7 +48,6 @@ namespace SalesManagement_SysDev.Management_Client
 
         private void Client_Ser_Load(object sender, EventArgs e)
         {
-            //radioButton1.Checked = true;
             setdata();
             SetFormDataGridView();
             invcnt();
@@ -325,9 +322,8 @@ namespace SalesManagement_SysDev.Management_Client
             {
                 return;
             }
-            //MessageBox.Show("非表示にしてもよろしいでしょうか？");
-            //clientDataAccess.delflg(number);
-            //setdata();
+            clientDataAccess.delflg(number);
+            setdata();
         }
         //ここから右側↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         private void dataGridViewDsp_SelectionChanged(object sender, EventArgs e)
@@ -368,11 +364,6 @@ namespace SalesManagement_SysDev.Management_Client
             labelcreateupdid.Text = x.LastupdatedUserID;
             labelcreateupdname.Text = x.LastupdatedUserName;
             incntok();
-        }
-
-        private void textBoxClAddress_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
