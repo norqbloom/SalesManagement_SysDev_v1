@@ -46,8 +46,10 @@ namespace SalesManagement_SysDev.Management_Employee
 
             //社員情報登録
             RegistrationStaff(regEmp);
+
             var reghis = GeneratehistoryDataAtRegistration();
             RegistrationClhistory(reghis);
+            SetFormDataGridView();
         }
 
         private void button_Cle_Click(object sender, EventArgs e)
