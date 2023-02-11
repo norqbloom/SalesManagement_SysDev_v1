@@ -58,15 +58,7 @@ INSERT INTO M_Maker(MaID,MaName,MaAdress,MaPhone,MaPostal,MaFAX,MaFlag,MaHidden)
 VALUES(4,N'Dメーカ',N'滋賀',N'000-0000-0000',N'0000000',N'000-0000-0000',0,null)
 SET IDENTITY_INSERT M_Maker OFF
 
-/*役職マスタ*/
-SET IDENTITY_INSERT M_Position ON
-INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
-VALUES(1,N'管理者',0,null)
-INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
-VALUES(2,N'営業',0,null)
-INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
-VALUES(3,N'物流',0,null)
-SET IDENTITY_INSERT M_Position OFF
+
 
 /*商品マスタ*/
 SET IDENTITY_INSERT M_Product ON
@@ -389,23 +381,33 @@ INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)VALUES (N'M13
 INSERT INTO M_Message(MsgCD,MsgComments,MsgTitle,MsgButton,MsgICon)VALUES (N'M1309',N'入荷データ削除に失敗しました',N'削除確認',0,0)
 
 /*出庫テーブル*/
-SET IDENTITY_INSERT T_syukko ON
-INSERT INTO T_syukko(SyID,EmID,ClID,SoID,OrID,SyDate,SyStateFlag,SyFlag,SyHidden)
-VALUES(1,1,2,1,1,N'2022/12/08',0,0,null)
-SET IDENTITY_INSERT T_syukko OFF
+--SET IDENTITY_INSERT T_syukko ON
+--INSERT INTO T_syukko(SyID,EmID,ClID,SoID,OrID,SyDate,SyStateFlag,SyFlag,SyHidden)
+--VALUES(1,1,2,1,1,N'2022/12/08',0,0,null)
+--SET IDENTITY_INSERT T_syukko OFF
 
-SET IDENTITY_INSERT T_Order ON
-INSERT INTO T_Order(OrID,SoID,EmID,ClID,ClCharge,OrDate,OrStateFlag,OrFlag,OrHidden)
-VALUES(1,1,310,2,N'萬田銀次郎',N'2020/12/10',0,0,null)
-SET IDENTITY_INSERT T_Order OFF
+--SET IDENTITY_INSERT T_Order ON
+--INSERT INTO T_Order(OrID,SoID,EmID,ClID,ClCharge,OrDate,OrStateFlag,OrFlag,OrHidden)
+--VALUES(1,1,310,2,N'萬田銀次郎',N'2020/12/10',0,0,null)
+--SET IDENTITY_INSERT T_Order OFF
 
-SET IDENTITY_INSERT T_OrderDetail ON
-INSERT INTO T_OrderDetail(OrDetailID,OrID,PrID,OrQuantity,OrTotalPrice)
-VALUES(1,1,3,40,200000 )
-SET IDENTITY_INSERT T_OrderDetail OFF
+--SET IDENTITY_INSERT T_OrderDetail ON
+--INSERT INTO T_OrderDetail(OrDetailID,OrID,PrID,OrQuantity,OrTotalPrice)
+--VALUES(1,1,3,40,200000 )
+--SET IDENTITY_INSERT T_OrderDetail OFF
 
 /*テンプレ*/
 /*SET IDENTITY_INSERT  ON
 INSERT INTO ()
 VALUES()
 SET IDENTITY_INSERT  OFF*/
+
+/*役職マスタ*/
+SET IDENTITY_INSERT M_Position ON
+INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
+VALUES(1,N'管理者',0,null)
+INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
+VALUES(2,N'営業',0,null)
+INSERT INTO M_Position(PoID,PoName,PoFlag,PoHidden)
+VALUES(3,N'物流',0,null)
+SET IDENTITY_INSERT M_Position OFF
